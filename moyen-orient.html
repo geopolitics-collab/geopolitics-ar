@@ -1,108 +1,86 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-  <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
-  <title>الأقطار العربية — تحليلات جيوسياسية</title>
-  <meta name="description" content="تحليلات معمّقة لكل قطر عربي: سوريا، لبنان، العراق، اليمن، فلسطين — أزمات وصراعات وتحولات."/>
-  <link rel="preconnect" href="https://fonts.googleapis.com"/>
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Arabic:wght@300;400;600;700;900&family=Noto+Naskh+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>الشرق الأوسط — تحليلات جيوسياسية</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Arabic:wght@300;400;600;700;900&family=Noto+Naskh+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <style>
-    :root{--ink:#f0ece3;--dark:#0a0a12;--paper:#13131f;--card:#1a1a2e;--border:#2a2a45;--mid:#7a7590;--light:#4a4560;--or:#d4a843;--or-pale:#e8d5a3;
-      --syrie:#c0392b;--liban:#27ae60;--irak:#2980b9;--yemen:#8e44ad;--palestine:#e67e22;
-      --afrique:#c8821a;--amerique:#b83232;--europe:#1e5fa8;--asie:#1a8a6e;--orient:#8b3a8b}
-    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-    html{scroll-behavior:smooth}
-    body{font-family:'Noto Serif Arabic',Georgia,serif;background:var(--dark);color:var(--ink);line-height:1.9;direction:rtl}
-    a{color:inherit;text-decoration:none}
-    #progress-bar{position:fixed;top:0;right:0;left:0;height:3px;width:0%;background:var(--or);z-index:9999}
+    :root{--ink:#f0ece3;--ink-dark:#0a0a12;--paper:#13131f;--card:#1a1a2e;--border:#2a2a45;--mid:#7a7590;--light:#4a4560;--rule:#252540;--afrique:#c8821a;--amerique:#b83232;--europe:#1e5fa8;--asie:#1a8a6e;--orient:#8b3a8b;--or:#d4a843;--accent:#8b3a8b}
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}
+    body{font-family:'Noto Serif Arabic',Georgia,serif;background:var(--ink-dark);color:var(--ink);line-height:1.9;direction:rtl}a{color:inherit;text-decoration:none}
     .topbar{background:#07070f;color:#5a5570;font-family:'Noto Naskh Arabic',sans-serif;font-size:.75rem;padding:.45rem 2rem;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--border)}
     .topbar a{color:#9a95b0;transition:color .2s}.topbar a:hover{color:var(--or)}
-    .masthead{background:var(--dark);border-bottom:1px solid var(--border);padding:1.4rem 2rem 1rem;display:flex;align-items:flex-end;justify-content:space-between;gap:1rem}
-    .masthead__logo{font-family:'Noto Serif Arabic',serif;font-size:clamp(1.4rem,3vw,2.4rem);font-weight:900;color:var(--or);line-height:1.1}
+    .masthead{background:var(--ink-dark);border-bottom:1px solid var(--border);padding:1.4rem 2rem 1rem;display:flex;align-items:flex-end;justify-content:space-between;gap:1rem}
+    .masthead__logo{font-family:'Noto Serif Arabic',serif;font-size:clamp(1.4rem,3vw,2.4rem);font-weight:900;line-height:1.1;color:var(--or)}
     .masthead__logo span{display:block;font-size:.55em;font-weight:400;color:var(--mid);margin-top:.3rem}
     .masthead__sub{font-family:'Noto Naskh Arabic',sans-serif;font-size:.72rem;color:var(--mid);text-align:left;line-height:1.8}
     nav{background:#07070f;display:flex;flex-wrap:wrap;position:sticky;top:0;z-index:100;border-bottom:1px solid var(--border)}
-    nav a{display:flex;align-items:center;gap:.5rem;padding:.7rem 1rem;font-family:'Noto Naskh Arabic',sans-serif;font-size:.78rem;color:#7a7590;border-left:1px solid var(--border);transition:background .2s,color .2s}
+    nav a{display:flex;align-items:center;gap:.5rem;padding:.7rem 1.1rem;font-family:'Noto Naskh Arabic',sans-serif;font-size:.82rem;color:#7a7590;border-left:1px solid var(--border);transition:background .2s,color .2s}
     nav a:hover,nav a.active{background:#12121e;color:var(--or)}
     nav a .dot{width:7px;height:7px;border-radius:50%;flex-shrink:0}
-    nav a[data-r="mo"] .dot{background:var(--orient)}
-    nav a[data-r="op"] .dot{background:var(--or)}
-    nav a[data-r="afrique"] .dot{background:var(--afrique)}
-    nav a[data-r="amerique"] .dot{background:var(--amerique)}
-    nav a[data-r="europe"] .dot{background:var(--europe)}
-    nav a[data-r="asie"] .dot{background:var(--asie)}
-    nav a[data-r="orient"] .dot{background:var(--orient)}
+    nav a[data-r="afrique"] .dot{background:var(--afrique)}nav a[data-r="amerique"] .dot{background:var(--amerique)}nav a[data-r="europe"] .dot{background:var(--europe)}nav a[data-r="asie"] .dot{background:var(--asie)}nav a[data-r="orient"] .dot{background:var(--orient)}
     nav a.nav-cta{margin-right:auto;background:var(--amerique);color:#fff;border:none;font-weight:600}
-    .page-banner{padding:3rem 2rem 2.5rem;position:relative;overflow:hidden;border-bottom:1px solid var(--border)}
-    .page-banner::before{content:attr(data-text);position:absolute;left:-1rem;top:50%;transform:translateY(-50%);font-family:'Noto Serif Arabic',serif;font-size:clamp(4rem,12vw,11rem);font-weight:900;color:rgba(255,255,255,.05);line-height:1;pointer-events:none;white-space:nowrap}
-    .page-banner__inner{max-width:1280px;margin:0 auto;position:relative;z-index:1}
-    .page-banner__breadcrumb{font-family:'Noto Naskh Arabic',sans-serif;font-size:.72rem;color:rgba(255,255,255,.5);margin-bottom:.8rem}
-    .page-banner__breadcrumb a{color:rgba(255,255,255,.5)}.page-banner__breadcrumb a:hover{color:var(--or)}
-    .page-banner h1{font-family:'Noto Serif Arabic',serif;font-size:clamp(2rem,5vw,3.5rem);font-weight:900;color:#fff;line-height:1.1;margin-bottom:.7rem}
-    .page-banner p{font-size:1rem;color:rgba(255,255,255,.7);max-width:580px;line-height:1.85}
-    .page-banner__stats{margin-top:1.2rem;display:flex;gap:2rem;flex-wrap:wrap}
-    .page-banner__stats span{font-family:'Noto Naskh Arabic',sans-serif;font-size:.72rem;color:rgba(255,255,255,.5)}
-    .page-banner__stats strong{color:var(--or)}
+    .rubrique-banner{background:var(--accent);padding:3rem 2rem 2.5rem;position:relative;overflow:hidden}
+    .rubrique-banner::before{content:'الشرق الأوسط';position:absolute;left:-1rem;top:50%;transform:translateY(-50%);font-family:'Noto Serif Arabic',serif;font-size:clamp(4rem,12vw,10rem);font-weight:900;color:rgba(255,255,255,.07);line-height:1;pointer-events:none;user-select:none;white-space:nowrap}
+    .rubrique-banner__inner{max-width:1280px;margin:0 auto;position:relative;z-index:1}
+    .rubrique-banner__breadcrumb{font-family:'Noto Naskh Arabic',sans-serif;font-size:.72rem;color:rgba(255,255,255,.6);margin-bottom:.8rem}
+    .rubrique-banner__breadcrumb a{color:rgba(255,255,255,.6)}.rubrique-banner__breadcrumb a:hover{color:#fff}
+    .rubrique-banner h1{font-family:'Noto Serif Arabic',serif;font-size:clamp(2rem,5vw,3.5rem);font-weight:900;color:#fff;line-height:1.1;margin-bottom:.8rem}
+    .rubrique-banner p{font-size:1rem;color:rgba(255,255,255,.75);max-width:560px;line-height:1.85}
+    .rubrique-banner__stats{margin-top:1.4rem;display:flex;gap:2rem;flex-wrap:wrap}
+    .rubrique-banner__stats span{font-family:'Noto Naskh Arabic',sans-serif;font-size:.72rem;color:rgba(255,255,255,.6)}
+    .rubrique-banner__stats strong{color:#fff}
     .page-body{max-width:1280px;margin:0 auto;padding:2.5rem 2rem}
-    .section-title{font-family:'Noto Serif Arabic',serif;font-size:1.4rem;font-weight:700;color:var(--or);margin-bottom:1.2rem;padding-bottom:.5rem;border-bottom:1px solid var(--border);display:flex;align-items:baseline;gap:1rem}
-    .section-title .count{font-family:'Noto Naskh Arabic',sans-serif;font-size:.72rem;color:var(--mid);font-weight:400}
-    .filters{display:flex;gap:.5rem;flex-wrap:wrap;margin-bottom:2rem;padding-bottom:1rem;border-bottom:1px solid var(--border)}
-    .filter-btn{font-family:'Noto Naskh Arabic',sans-serif;font-size:.75rem;padding:.35rem .85rem;border:1px solid var(--border);background:transparent;cursor:pointer;color:var(--mid);transition:all .2s}
-    .filter-btn.active,.filter-btn:hover{color:#fff;border-color:currentColor}
-    /* Country grid */
-    .country-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:1.5rem;margin-bottom:3rem}
-    .country-card{background:var(--card);border:1px solid var(--border);overflow:hidden;transition:transform .2s,box-shadow .2s,border-color .2s;display:block}
-    .country-card:hover{transform:translateY(-4px);box-shadow:0 12px 40px rgba(0,0,0,.4);border-color:var(--mid)}
-    .country-card__img{width:100%;height:180px;object-fit:cover;filter:grayscale(20%) brightness(.7);transition:filter .3s}
-    .country-card:hover .country-card__img{filter:grayscale(0%) brightness(.85)}
-    .country-card__body{padding:1.3rem}
-    .country-card__flag{font-size:1.6rem;margin-bottom:.5rem}
-    .country-card__name{font-family:'Noto Serif Arabic',serif;font-size:1.25rem;font-weight:900;margin-bottom:.3rem}
-    .country-card__tag{font-family:'Noto Naskh Arabic',sans-serif;font-size:.65rem;padding:.18rem .5rem;border:1px solid;margin-bottom:.6rem;display:inline-block}
-    .country-card__desc{font-size:.85rem;color:var(--mid);line-height:1.75;margin-bottom:.8rem}
-    .country-card__footer{display:flex;justify-content:space-between;align-items:center;padding-top:.7rem;border-top:1px solid var(--border)}
-    .country-card__footer .meta{font-family:'Noto Naskh Arabic',sans-serif;font-size:.65rem;color:var(--light)}
-    .country-card__footer .arrow{font-size:.9rem;color:var(--or)}
-    /* Article cards */
+    .filters{display:flex;gap:.5rem;flex-wrap:wrap;margin-bottom:2rem;padding-bottom:1.2rem;border-bottom:1px solid var(--border)}
+    .filter-btn{font-family:'Noto Naskh Arabic',sans-serif;font-size:.75rem;padding:.4rem .9rem;border:1px solid var(--border);background:transparent;cursor:pointer;transition:background .2s,border-color .2s,color .2s;color:var(--mid)}
+    .filter-btn:hover,.filter-btn.active{background:var(--accent);border-color:var(--accent);color:#fff}
+    .featured{display:grid;grid-template-columns:420px 1fr;gap:0;border:1px solid var(--border);background:var(--card);overflow:hidden;margin-bottom:2.5rem}
+    @media(max-width:860px){.featured{grid-template-columns:1fr}}
+    .featured__img{width:100%;height:100%;min-height:300px;object-fit:cover;filter:grayscale(20%) brightness(.75)}
+    .featured__body{padding:2rem;display:flex;flex-direction:column;justify-content:center}
+    .featured__badge{display:inline-block;font-family:'Noto Naskh Arabic',sans-serif;font-size:.72rem;background:var(--accent);color:#fff;padding:.22rem .6rem;margin-bottom:1rem;width:fit-content}
+    .featured__body h2{font-family:'Noto Serif Arabic',serif;font-size:1.55rem;font-weight:700;line-height:1.3;margin-bottom:.8rem;color:var(--or)}
+    .featured__body p{font-size:.9rem;color:var(--mid);line-height:1.85;margin-bottom:1.2rem}
+    .meta{font-family:'Noto Naskh Arabic',sans-serif;font-size:.7rem;color:var(--light)}
+    .read-more{display:inline-flex;align-items:center;gap:.4rem;margin-top:1rem;font-family:'Noto Naskh Arabic',sans-serif;font-size:.75rem;color:var(--or);border-bottom:1px solid var(--or);width:fit-content;transition:opacity .2s}.read-more:hover{opacity:.7}
+    .content-sidebar{display:grid;grid-template-columns:1fr 280px;gap:2.5rem;margin-bottom:3rem}
+    @media(max-width:860px){.content-sidebar{grid-template-columns:1fr}}
+    .grid-title{font-family:'Noto Serif Arabic',serif;font-size:1.2rem;font-weight:700;margin-bottom:1.2rem;padding-bottom:.5rem;border-bottom:1px solid var(--border);display:flex;align-items:baseline;gap:1rem;color:var(--or)}
+    .grid-title .count{font-family:'Noto Naskh Arabic',sans-serif;font-size:.72rem;color:var(--mid);font-weight:400}
     .articles-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.5rem;margin-bottom:3rem}
     .article-card{background:var(--card);border:1px solid var(--border);overflow:hidden;transition:transform .2s,box-shadow .2s,border-color .2s;display:flex;flex-direction:column}
     .article-card:hover{transform:translateY(-4px);box-shadow:0 12px 40px rgba(0,0,0,.4);border-color:var(--mid)}
     .article-card__stripe{height:3px}
-    .article-card__img{width:100%;height:155px;object-fit:cover;filter:grayscale(20%) brightness(.75);transition:filter .3s}
-    .article-card:hover .article-card__img{filter:grayscale(0%) brightness(.9)}
+    .article-card__img{width:100%;height:160px;object-fit:cover;filter:grayscale(20%) brightness(.75);transition:filter .3s}.article-card:hover .article-card__img{filter:grayscale(0%) brightness(.9)}
     .article-card__body{padding:1.2rem;flex:1;display:flex;flex-direction:column}
     .topic-tag{display:inline-block;font-family:'Noto Naskh Arabic',sans-serif;font-size:.65rem;border:1px solid;padding:.18rem .5rem;margin-bottom:.7rem;width:fit-content}
     .article-card h3{font-family:'Noto Serif Arabic',serif;font-size:1rem;font-weight:700;line-height:1.45;margin-bottom:.5rem;flex:1;color:var(--ink)}
     .article-card p{font-size:.82rem;color:var(--mid);line-height:1.7;margin-bottom:.8rem}
     .article-card__footer{display:flex;justify-content:space-between;align-items:center;margin-top:auto;padding-top:.8rem;border-top:1px solid var(--border)}
-    .article-card__footer .meta{font-family:'Noto Naskh Arabic',sans-serif;font-size:.65rem;color:var(--light)}
+    .article-card__footer .meta{font-size:.65rem}
     .article-card__footer .arrow{font-size:.85rem;color:var(--or);transition:transform .2s}.article-card:hover .article-card__footer .arrow{transform:translateX(-4px)}
-    /* Opinion tabs */
-    .opinion-tabs{display:flex;gap:0;border-bottom:2px solid var(--border);margin-bottom:2rem;overflow-x:auto}
-    .tab-btn{font-family:'Noto Naskh Arabic',sans-serif;font-size:.82rem;padding:.8rem 1.4rem;border:none;background:transparent;cursor:pointer;color:var(--mid);border-bottom:3px solid transparent;margin-bottom:-2px;white-space:nowrap;transition:color .2s,border-color .2s}
-    .tab-btn.active,.tab-btn:hover{color:var(--or);border-bottom-color:var(--or)}
-    .tab-content{display:none}.tab-content.active{display:block}
-    /* Sidebar */
-    .layout-sidebar{display:grid;grid-template-columns:1fr 270px;gap:2.5rem}
-    @media(max-width:860px){.layout-sidebar{grid-template-columns:1fr}}
     .sidebar-block{margin-bottom:2rem}
     .sidebar-title{font-family:'Noto Naskh Arabic',sans-serif;font-size:.72rem;color:var(--mid);border-bottom:1px solid var(--border);padding-bottom:.4rem;margin-bottom:1rem}
     .sidebar-list{list-style:none}
-    .sidebar-list li{border-bottom:1px solid var(--border);padding:.6rem 0;font-size:.88rem;line-height:1.5;display:flex;gap:.6rem;align-items:flex-start}
+    .sidebar-list li{border-bottom:1px solid var(--border);padding:.7rem 0;font-size:.88rem;line-height:1.5;display:flex;gap:.6rem;align-items:flex-start}
     .sidebar-list li .num{font-family:'Noto Naskh Arabic',sans-serif;font-size:.65rem;color:var(--or);flex-shrink:0}
     .sidebar-list li a{color:var(--ink);transition:color .2s}.sidebar-list li a:hover{color:var(--or)}
-    .cta-box{background:linear-gradient(135deg,#1a0a30,#0d0a20);border:1px solid var(--orient);padding:1.4rem;text-align:center}
-    .cta-box h4{font-family:'Noto Serif Arabic',serif;font-size:1rem;font-weight:700;margin-bottom:.4rem;color:var(--or)}
-    .cta-box p{font-size:.78rem;color:var(--mid);margin-bottom:.9rem;line-height:1.7}
-    .cta-box a{display:inline-block;background:var(--orient);color:#fff;font-family:'Noto Naskh Arabic',sans-serif;font-size:.72rem;padding:.55rem 1.2rem}
+    .other-regions{display:flex;flex-direction:column;gap:.5rem}
+    .other-region-link{display:flex;align-items:center;gap:.6rem;padding:.6rem .8rem;background:var(--card);border:1px solid var(--border);font-family:'Noto Naskh Arabic',sans-serif;font-size:.75rem;transition:border-color .2s}.other-region-link:hover{border-color:var(--or)}
+    .other-region-link .dot{width:8px;height:8px;border-radius:50%;flex-shrink:0}
+    .cta-box{background:linear-gradient(135deg,#1a0a30,#0d0a20);border:1px solid var(--orient);padding:1.6rem;text-align:center}
+    .cta-box h4{font-family:'Noto Serif Arabic',serif;font-size:1.1rem;font-weight:700;margin-bottom:.5rem;color:var(--or)}
+    .cta-box p{font-size:.8rem;color:var(--mid);margin-bottom:1rem;line-height:1.7}
+    .cta-box a{display:inline-block;background:var(--orient);color:#fff;font-family:'Noto Naskh Arabic',sans-serif;font-size:.75rem;padding:.6rem 1.4rem;transition:background .2s}
     footer{background:#05050d;color:#3a3555;padding:2.5rem 2rem;font-family:'Noto Naskh Arabic',sans-serif;font-size:.75rem;border-top:1px solid var(--border)}
     .footer-inner{max-width:1280px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem}
     .footer-links{display:flex;gap:1.5rem;flex-wrap:wrap}.footer-links a{color:#3a3555;transition:color .2s}.footer-links a:hover{color:var(--or)}
     .fade-up{opacity:0;transform:translateY(20px);transition:opacity .5s ease,transform .5s ease}.fade-up.visible{opacity:1;transform:none}
-    @media(max-width:640px){.masthead{flex-direction:column;align-items:flex-start}nav a{font-size:.72rem;padding:.55rem .75rem}.page-body{padding:1.5rem 1rem}.page-banner{padding:2rem 1rem}}
-</style>
+    @media(max-width:640px){.masthead{flex-direction:column;align-items:flex-start}nav a{font-size:.75rem;padding:.6rem .8rem}.page-body{padding:1.5rem 1rem}.rubrique-banner{padding:2rem 1rem}}
+  </style>
 </head>
 <body>
 <div class="topbar">
@@ -111,131 +89,165 @@
 </div>
 <header class="masthead">
   <a href="/" class="masthead__logo">تحليلات جيوسياسية<span>مجلة استراتيجية مستقلة</span></a>
-  <div class="masthead__sub">تأسست عام 2024 · تورسينج، فرنسا · مارس 2026</div>
+  <div class="masthead__sub">تأسست عام 2024<br>تورسينج، فرنسا<br>مارس 2026</div>
 </header>
 <nav>
-  <a href="/" class="active">الرئيسية</a>
+  <a href="/">الرئيسية</a>
   <a href="/afr.html" data-r="afrique"><span class="dot"></span>أفريقيا</a>
   <a href="/ame.html" data-r="amerique"><span class="dot"></span>أمريكا</a>
   <a href="/eu.html" data-r="europe"><span class="dot"></span>أوروبا</a>
   <a href="/asie.html" data-r="asie"><span class="dot"></span>آسيا</a>
-  <a href="/proche-or.html" data-r="orient"><span class="dot"></span>الشرق الأوسط</a>
-  <a href="/moyen-orient.html" data-r="mo" class="active"><span class="dot"></span>الأقطار العربية</a>
-  <a href="/opinion.html" data-r="op"><span class="dot"></span>رأي وميدان</a>
+  <a href="/proche-or.html" data-r="orient" class="active"><span class="dot"></span>الشرق الأوسط</a>
+  <a href="/moyen-orient.html" data-r="orient"><span class="dot" style="width:7px;height:7px;border-radius:50%;flex-shrink:0;background:#8b3a8b"></span>الأقطار العربية</a>
+  <a href="/opinion.html" data-r="op"><span class="dot" style="width:7px;height:7px;border-radius:50%;flex-shrink:0;background:#d4a843"></span>رأي وميدان</a>
   <a href="/abonnement.html" class="nav-cta">الاشتراك المميز ←</a>
 </nav>
 
-<div class="page-banner" data-text="الأقطار العربية" style="background:linear-gradient(135deg,#1a0a30 0%,#0d1520 100%)">
-  <div class="page-banner__inner">
-    <div class="page-banner__breadcrumb"><a href="/">الرئيسية</a> / الأقطار العربية</div>
-    <h1>الأقطار العربية</h1>
-    <p>خمسة أقطار، خمس أزمات مختلفة — لكنها تشترك في إرث استعماري مشترك ومعادلة إقليمية واحدة تتشكّل كل يوم من جديد.</p>
-    <div class="page-banner__stats">
-      <span><strong>5</strong> أقطار مُغطّاة</span>
-      <span><strong>19</strong> تحليلاً منشوراً</span>
+<div class="rubrique-banner">
+  <div class="rubrique-banner__inner">
+    <div class="rubrique-banner__breadcrumb"><a href="/">الرئيسية</a> / الشرق الأوسط</div>
+    <h1>الشرق الأوسط</h1>
+    <p>إيران، إسرائيل، الخليج، الانقسامات الطائفية وإعادة تشكّل المشهد الاستراتيجي في أكثر مناطق العالم اضطراباً.</p>
+    <div class="rubrique-banner__stats">
+      <span><strong>7</strong> تحليلات منشورة</span>
       <span>آخر تحديث: <strong>مارس 2026</strong></span>
     </div>
   </div>
 </div>
 <div class="page-body">
-  <div class="section-title fade-up">اختر قطراً <span class="count">5 أقطار</span></div>
-  <div class="country-grid">
-
-        <a href="/syrie.html" class="country-card fade-up">
-          <img class="country-card__img" src="https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?w=600&auto=format&fit=crop&q=60" alt="سوريا"/>
-          <div class="country-card__body">
-            <div class="country-card__flag">🇸🇾</div>
-            <div class="country-card__name" style="color:#c0392b">سوريا</div>
-            <span class="country-card__tag" style="border-color:#c0392b;color:#c0392b">النزاع والإعمار</span>
-            <div class="country-card__desc">سوريا ما بعد الأسد: إعادة تشكّل السلطة، الفصائل المسلحة، اللاجئون والمسار الدبلوماسي المتعثّر.</div>
-            <div class="country-card__footer">
-              <span class="meta">4 تحليلات</span>
-              <span class="arrow">←</span>
-            </div>
-          </div>
-        </a>
-        <a href="/liban.html" class="country-card fade-up">
-          <img class="country-card__img" src="https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=600&auto=format&fit=crop&q=60" alt="لبنان"/>
-          <div class="country-card__body">
-            <div class="country-card__flag">🇱🇧</div>
-            <div class="country-card__name" style="color:#27ae60">لبنان</div>
-            <span class="country-card__tag" style="border-color:#27ae60;color:#27ae60">الأزمة الهيكلية</span>
-            <div class="country-card__desc">لبنان في مواجهة الانهيار الاقتصادي والفراغ السياسي وإرث الحرب — دولة تتفتّت ببطء.</div>
-            <div class="country-card__footer">
-              <span class="meta">3 تحليلات</span>
-              <span class="arrow">←</span>
-            </div>
-          </div>
-        </a>
-        <a href="/irak.html" class="country-card fade-up">
-          <img class="country-card__img" src="https://images.unsplash.com/photo-1604152135912-04a022e23696?w=600&auto=format&fit=crop&q=60" alt="العراق"/>
-          <div class="country-card__body">
-            <div class="country-card__flag">🇮🇶</div>
-            <div class="country-card__name" style="color:#2980b9">العراق</div>
-            <span class="country-card__tag" style="border-color:#2980b9;color:#2980b9">الأمن والنفوذ الإقليمي</span>
-            <div class="country-card__desc">العراق بين المطرقة الإيرانية والسندان الأمريكي — الدولة الضعيفة في قلب التنافس الإقليمي.</div>
-            <div class="country-card__footer">
-              <span class="meta">3 تحليلات</span>
-              <span class="arrow">←</span>
-            </div>
-          </div>
-        </a>
-        <a href="/yemen.html" class="country-card fade-up">
-          <img class="country-card__img" src="https://images.unsplash.com/photo-1519046904884-53103b34b206?w=600&auto=format&fit=crop&q=60" alt="اليمن"/>
-          <div class="country-card__body">
-            <div class="country-card__flag">🇾🇪</div>
-            <div class="country-card__name" style="color:#8e44ad">اليمن</div>
-            <span class="country-card__tag" style="border-color:#8e44ad;color:#8e44ad">الحرب والمجاعة</span>
-            <div class="country-card__desc">اليمن: أطول حروب العالم نسياناً، أزمة إنسانية تكاد تطغى على السودان، وحوثيون يعيدون رسم الملاحة العالمية.</div>
-            <div class="country-card__footer">
-              <span class="meta">4 تحليلات</span>
-              <span class="arrow">←</span>
-            </div>
-          </div>
-        </a>
-        <a href="/palestine.html" class="country-card fade-up">
-          <img class="country-card__img" src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&auto=format&fit=crop&q=60" alt="فلسطين / غزة"/>
-          <div class="country-card__body">
-            <div class="country-card__flag">🇵🇸</div>
-            <div class="country-card__name" style="color:#e67e22">فلسطين / غزة</div>
-            <span class="country-card__tag" style="border-color:#e67e22;color:#e67e22">الاحتلال والمقاومة</span>
-            <div class="country-card__desc">القضية الفلسطينية في ضوء حرب أكتوبر 2023 وما بعدها — غزة تحت الحصار، الضفة تحت الاستيطان، والقانون الدولي في مواجهة الوقائع.</div>
-            <div class="country-card__footer">
-              <span class="meta">5 تحليلات</span>
-              <span class="arrow">←</span>
-            </div>
-          </div>
-        </a>
+  <div class="filters fade-up">
+    <button class="filter-btn active" onclick="filterArticles('all',event)">الكل</button>
+    <button class="filter-btn" onclick="filterArticles('iran',event)">إيران</button>
+    <button class="filter-btn" onclick="filterArticles('golfe',event)">الخليج</button>
+    <button class="filter-btn" onclick="filterArticles('syrie',event)">سوريا</button>
+    <button class="filter-btn" onclick="filterArticles('yemen',event)">اليمن</button>
+    <button class="filter-btn" onclick="filterArticles('analyse',event)">تحليل</button>
   </div>
+  <div class="featured fade-up">
+    <img class="featured__img" src="https://images.unsplash.com/photo-1604152135912-04a022e23696?w=900&auto=format&fit=crop&q=70" alt="الشرق الأوسط" />
+    <div class="featured__body">
+      <span class="featured__badge">المقال الرئيسي</span>
+      <h2>الإمبراطورية أمام الهاوية الإيرانية: لماذا لا تستطيع أمريكا الانتصار</h2>
+      <p>كلاوزفيتز، ثوسيديدس، والاقتصاد غير المتماثل للهزيمة — ستة فصول في التحليل الاستراتيجي للمواجهة الأمريكية-الإيرانية وحدودها البنيوية.</p>
+      <span class="meta">24 مارس 2026 · قراءة: 18 دقيقة</span>
+      <a href="/articles/empire-gouffre-iranien.html" class="read-more">قراءة التحليل كاملاً ←</a>
+    </div>
+  </div>
+  <div class="content-sidebar">
+    <div>
+      <div class="grid-title fade-up">جميع التحليلات <span class="count">7 مقالات</span></div>
+      <div class="articles-grid" id="articles-grid">
 
-  <div class="section-title fade-up" style="margin-top:1rem">خريطة الأزمات الإقليمية</div>
-  <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:1rem;margin-bottom:3rem">
-    <div style="background:var(--card);border:1px solid var(--border);padding:1.4rem;border-right:4px solid var(--orient)">
-      <div style="font-family:'Noto Serif Arabic',serif;font-size:1rem;font-weight:700;color:var(--or);margin-bottom:.5rem">المحور الإيراني</div>
-      <p style="font-size:.85rem;color:var(--mid);line-height:1.75">سوريا، العراق، لبنان (حزب الله)، اليمن (الحوثيون) — الهلال الشيعي كاستراتيجية توسعية تبلورت على مدى أربعين عاماً.</p>
+        <a href="/articles/empire-gouffre-iranien.html" class="article-card fade-up" data-topic="iran">
+          <div class="article-card__stripe" style="background:#8b3a8b"></div>
+          <img class="article-card__img" src="https://images.unsplash.com/photo-1604152135912-04a022e23696?w=600&auto=format&fit=crop&q=60" alt="إيران" />
+          <div class="article-card__body">
+            <span class="topic-tag" style="border-color:#8b3a8b;color:#8b3a8b">إيران</span>
+            <h3>الإمبراطورية أمام الهاوية الإيرانية: لماذا لا تستطيع أمريكا الانتصار</h3>
+            <p>كلاوزفيتز، ثوسيديدس، الاقتصاد غير المتماثل للهزيمة — تحليل المواجهة الأمريكية-الإيرانية.</p>
+            <div class="article-card__footer"><span class="meta">24 مارس 2026 · 18 دقيقة</span><span class="arrow">←</span></div>
+          </div>
+        </a>
+        <a href="/articles/loup-brebis-boiteuse.html" class="article-card fade-up" data-topic="analyse">
+          <div class="article-card__stripe" style="background:#8b3a8b"></div>
+          <img class="article-card__img" src="https://images.unsplash.com/photo-1536152470836-b943b246224c?w=600&auto=format&fit=crop&q=60" alt="أنثروبولوجيا · اجتماع" />
+          <div class="article-card__body">
+            <span class="topic-tag" style="border-color:#8b3a8b;color:#8b3a8b">أنثروبولوجيا · اجتماع</span>
+            <h3>الذئب لا يأكل إلا النعجة العرجاء</h3>
+            <p>من هوبز إلى بورديو — قراءة أنثروبولوجية في هيمنة الدول القوية على الدول الضعيفة.</p>
+            <div class="article-card__footer"><span class="meta">24 مارس 2026 · 16 دقيقة</span><span class="arrow">←</span></div>
+          </div>
+        </a>
+        <a href="/articles/iran-arabie-saoudite.html" class="article-card fade-up" data-topic="iran">
+          <div class="article-card__stripe" style="background:#8b3a8b"></div>
+          <img class="article-card__img" src="https://images.unsplash.com/photo-1604152135912-04a022e23696?w=600&auto=format&fit=crop&q=60" alt="إيران" />
+          <div class="article-card__body">
+            <span class="topic-tag" style="border-color:#8b3a8b;color:#8b3a8b">إيران</span>
+            <h3>إيران-المملكة العربية السعودية: الانفراج الشكلي وحدوده البنيوية</h3>
+            <p>التطبيع الذي رعته بكين عام 2023 — بعد عامين، التنافس الطائفي لا يزال قائماً.</p>
+            <div class="article-card__footer"><span class="meta">15 مارس 2026 · 11 دقيقة</span><span class="arrow">←</span></div>
+          </div>
+        </a>
+        <a href="/articles/golfe-transition.html" class="article-card fade-up" data-topic="golfe">
+          <div class="article-card__stripe" style="background:#8b3a8b"></div>
+          <img class="article-card__img" src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&auto=format&fit=crop&q=60" alt="الخليج" />
+          <div class="article-card__body">
+            <span class="topic-tag" style="border-color:#8b3a8b;color:#8b3a8b">الخليج</span>
+            <h3>الخليج 2026: ملكيات النفط في مواجهة التحول الكبير</h3>
+            <p>رؤية 2030، التنويع الاقتصادي، التطبيع مع إسرائيل — دول الخليج تلعب على أكثر من طاولة.</p>
+            <div class="article-card__footer"><span class="meta">10 مارس 2026 · 11 دقيقة</span><span class="arrow">←</span></div>
+          </div>
+        </a>
+        <a href="/articles/iran-nucleaire-2026.html" class="article-card fade-up" data-topic="iran">
+          <div class="article-card__stripe" style="background:#8b3a8b"></div>
+          <img class="article-card__img" src="https://images.unsplash.com/photo-1532375810709-75b1da00537c?w=600&auto=format&fit=crop&q=60" alt="إيران" />
+          <div class="article-card__body">
+            <span class="topic-tag" style="border-color:#8b3a8b;color:#8b3a8b">إيران</span>
+            <h3>البرنامج النووي الإيراني: عتبة اللاعودة</h3>
+            <p>بلغت طهران مستوى تخصيب يقتربها من العتبة النووية العسكرية.</p>
+            <div class="article-card__footer"><span class="meta">5 مارس 2026 · 13 دقيقة</span><span class="arrow">←</span></div>
+          </div>
+        </a>
+        <a href="/articles/syrie-apres-conflit.html" class="article-card fade-up" data-topic="syrie">
+          <div class="article-card__stripe" style="background:#8b3a8b"></div>
+          <img class="article-card__img" src="https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?w=600&auto=format&fit=crop&q=60" alt="سوريا" />
+          <div class="article-card__body">
+            <span class="topic-tag" style="border-color:#8b3a8b;color:#8b3a8b">سوريا</span>
+            <h3>سوريا ما بعد الأسد: إعادة تشكّل السلطة والتصدعات الإقليمية</h3>
+            <p>سقوط نظام الأسد فتح فراغاً سياسياً تتنافس عليه فصائل محلية وقوى إقليمية.</p>
+            <div class="article-card__footer"><span class="meta">28 فبراير 2026 · 12 دقيقة</span><span class="arrow">←</span></div>
+          </div>
+        </a>
+        <a href="/articles/houthis-mer-rouge.html" class="article-card fade-up" data-topic="yemen">
+          <div class="article-card__stripe" style="background:#8b3a8b"></div>
+          <img class="article-card__img" src="https://images.unsplash.com/photo-1519046904884-53103b34b206?w=600&auto=format&fit=crop&q=60" alt="اليمن" />
+          <div class="article-card__body">
+            <span class="topic-tag" style="border-color:#8b3a8b;color:#8b3a8b">اليمن</span>
+            <h3>الحوثيون والبحر الأحمر: حرب الطرق البحرية</h3>
+            <p>هجمات الحوثيين تُجبر السفن على الالتفاف حول رأس الرجاء الصالح — أزمة لوجستية عالمية.</p>
+            <div class="article-card__footer"><span class="meta">20 فبراير 2026 · 10 دقائق</span><span class="arrow">←</span></div>
+          </div>
+        </a>
+      </div>
     </div>
-    <div style="background:var(--card);border:1px solid var(--border);padding:1.4rem;border-right:4px solid #c0392b">
-      <div style="font-family:'Noto Serif Arabic',serif;font-size:1rem;font-weight:700;color:var(--or);margin-bottom:.5rem">الورقة الكردية</div>
-      <p style="font-size:.85rem;color:var(--mid);line-height:1.75">الأكراد في سوريا والعراق وتركيا وإيران — ورقة ضغط لكل القوى الإقليمية، لا يُمنحون دولة ولا يُُمكّن تجاهلهم.</p>
-    </div>
-    <div style="background:var(--card);border:1px solid var(--border);padding:1.4rem;border-right:4px solid var(--asie)">
-      <div style="font-family:'Noto Serif Arabic',serif;font-size:1rem;font-weight:700;color:var(--or);margin-bottom:.5rem">الثقل الصيني الصاعد</div>
-      <p style="font-size:.85rem;color:var(--mid);line-height:1.75">بكين تنسج علاقاتها في المنطقة بهدوء: رعاية التطبيع الإيراني-السعودي، الاستثمار في إعادة الإعمار السورية، مشاريع البنية التحتية في العراق.</p>
-    </div>
+    <aside>
+      <div class="sidebar-block fade-up">
+        <div class="sidebar-title">الأكثر قراءة</div>
+        <ul class="sidebar-list">
+          <li><span class="num">01</span><a href="/articles/empire-gouffre-iranien.html">الإمبراطورية أمام الهاوية الإيرانية</a></li>
+          <li><span class="num">02</span><a href="/articles/loup-brebis-boiteuse.html">الذئب والنعجة العرجاء</a></li>
+          <li><span class="num">03</span><a href="/articles/iran-arabie-saoudite.html">إيران-السعودية: الانفراج</a></li>
+          <li><span class="num">04</span><a href="/articles/iran-nucleaire-2026.html">البرنامج النووي الإيراني</a></li>
+          <li><span class="num">05</span><a href="/articles/houthis-mer-rouge.html">الحوثيون والبحر الأحمر</a></li>
+        </ul>
+      </div>
+      <div class="sidebar-block fade-up">
+        <div class="sidebar-title">مناطق أخرى</div>
+        <div class="other-regions">
+          <a href="/afr.html" class="other-region-link"><span class="dot" style="background:#c8821a"></span>أفريقيا</a>
+          <a href="/eu.html" class="other-region-link"><span class="dot" style="background:#1e5fa8"></span>أوروبا</a>
+          <a href="/asie.html" class="other-region-link"><span class="dot" style="background:#1a8a6e"></span>آسيا</a>
+          <a href="/ame.html" class="other-region-link"><span class="dot" style="background:#b83232"></span>أمريكا</a>
+        </div>
+      </div>
+      <div class="cta-box fade-up">
+        <h4>الاشتراك المميز</h4>
+        <p>تحليلات كاملة وأرشيف ومذكرات ميدانية حصرية للمشتركين.</p>
+        <a href="/abonnement.html">اشترك الآن ←</a>
+      </div>
+    </aside>
   </div>
 </div>
 <footer>
   <div class="footer-inner">
     <span>© 2026 تحليلات جيوسياسية — موقع مستقل في الجيوسياسة والعلوم السياسية</span>
-    <div class="footer-links">
-      <a href="/">الرئيسية</a><a href="/moyen-orient.html">الأقطار العربية</a>
-      <a href="/opinion.html">رأي وميدان</a><a href="#">إخلاء المسؤولية</a>
-    </div>
+    <div class="footer-links"><a href="/">الرئيسية</a><a href="/abonnement.html">الاشتراك</a><a href="#">إخلاء المسؤولية</a></div>
   </div>
 </footer>
 <script>
   const obs=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('visible');obs.unobserve(x.target)}})},{threshold:.06});
   document.querySelectorAll('.fade-up').forEach(el=>obs.observe(el));
+  function filterArticles(t,ev){document.querySelectorAll('.filter-btn').forEach(b=>b.classList.remove('active'));ev.target.classList.add('active');document.querySelectorAll('.article-card').forEach(c=>{c.style.display=(t==='all'||c.dataset.topic===t)?'flex':'none'});}
 </script>
 </body>
 </html>
