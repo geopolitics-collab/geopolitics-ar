@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>فلسطين / غزة — تحليلات جيوسياسية</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Arabic:wght@300;400;600;700;900&family=Noto+Naskh+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+  <style>
+    :root{--ink:#f0ece3;--dark:#0a0a12;--paper:#13131f;--card:#1a1a2e;--border:#2a2a45;--mid:#7a7590;--light:#4a4560;--or:#d4a843;--or-pale:#e8d5a3;
+      --syrie:#c0392b;--liban:#27ae60;--irak:#2980b9;--yemen:#8e44ad;--palestine:#e67e22;
+      --afrique:#c8821a;--amerique:#b83232;--europe:#1e5fa8;--asie:#1a8a6e;--orient:#8b3a8b}
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{font-family:'Noto Serif Arabic',Georgia,serif;background:var(--dark);color:var(--ink);line-height:1.9;direction:rtl}
+    a{color:inherit;text-decoration:none}
+    #progress-bar{position:fixed;top:0;right:0;left:0;height:3px;width:0%;background:var(--or);z-index:9999}
+    .topbar{background:#07070f;color:#5a5570;font-family:'Noto Naskh Arabic',sans-serif;font-size:.75rem;padding:.45rem 2rem;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--border)}
+    .topbar a{color:#9a95b0;transition:color .2s}.topbar a:hover{color:var(--or)}
+    .masthead{background:var(--dark);border-bottom:1px solid var(--border);padding:1.4rem 2rem 1rem;display:flex;align-items:flex-end;justify-content:space-between;gap:1rem}
+    .masthead__logo{font-family:'Noto Serif Arabic',serif;font-size:clamp(1.4rem,3vw,2.4rem);font-weight:900;color:var(--or);line-height:1.1}
+    .masthead__logo span{display:block;font-size:.55em;font-weight:400;color:var(--mid);margin-top:.3rem}
+    .masthead__sub{font-family:'Noto Naskh Arabic',sans-serif;font-size:.72rem;color:var(--mid);text-align:left;line-height:1.8}
+    nav{background:#07070f;display:flex;flex-wrap:wrap;position:sticky;top:0;z-index:100;border-bottom:1px solid var(--border)}
+    nav a{display:flex;align-items:center;gap:.5rem;padding:.7rem 1rem;font-family:'Noto Naskh Arabic',sans-serif;font-size:.78rem;color:#7a7590;border-left:1px solid var(--border);transition:background .2s,color .2s}
+    nav a:hover,nav a.active{background:#12121e;color:var(--or)}
+    nav a .dot{width:7px;height:7px;border-radius:50%;flex-shrink:0}
+    nav a[data-r="mo"] .dot{background:var(--orient)}
+    nav a[data-r="op"] .dot{background:var(--or)}
+    nav a[data-r="afrique"] .dot{background:var(--afrique)}
+    nav a[data-r="amerique"] .dot{background:var(--amerique)}
+    nav a[data-r="europe"] .dot{background:var(--europe)}
+    nav a[data-r="asie"] .dot{background:var(--asie)}
+    nav a[data-r="orient"] .dot{background:var(--orient)}
+    nav a.nav-cta{margin-right:auto;background:var(--amerique);color:#fff;border:none;font-weight:600}
+    .page-banner{padding:3rem 2rem 2.5rem;position:relative;overflow:hidden;border-bottom:1px solid var(--border)}
+    .page-banner::before{content:attr(data-text);position:absolute;left:-1rem;top:50%;transform:translateY(-50%);font-family:'Noto Serif Arabic',serif;font-size:clamp(4rem,12vw,11rem);font-weight:900;color:rgba(255,255,255,.05);line-height:1;pointer-events:none;white-space:nowrap}
+    .page-banner__inner{max-width:1280px;margin:0 auto;position:relative;z-index:1}
+    .page-banner__breadcrumb{font-family:'Noto Naskh Arabic',sans-serif;font-size:.72rem;color:rgba(255,255,255,.5);margin-bottom:.8rem}
+    .page-banner__breadcrumb a{color:rgba(255,255,255,.5)}.page-banner__breadcrumb a:hover{color:var(--or)}
+    .page-banner h1{font-family:'Noto Serif Arabic',serif;font-size:clamp(2rem,5vw,3.5rem);font-weight:900;color:#fff;line-height:1.1;margin-bottom:.7rem}
+    .page-banner p{font-size:1rem;color:rgba(255,255,255,.7);max-width:580px;line-height:1.85}
+    .page-banner__stats{margin-top:1.2rem;display:flex;gap:2rem;flex-wrap:wrap}
+    .page-banner__stats span{font-family:'Noto Naskh Arabic',sans-serif;font-size:.72rem;color:rgba(255,255,255,.5)}
+    .page-banner__stats strong{color:var(--or)}
+    .page-body{max-width:1280px;margin:0 auto;padding:2.5rem 2rem}
+    .section-title{font-family:'Noto Serif Arabic',serif;font-size:1.4rem;font-weight:700;color:var(--or);margin-bottom:1.2rem;padding-bottom:.5rem;border-bottom:1px solid var(--border);display:flex;align-items:baseline;gap:1rem}
+    .section-title .count{font-family:'Noto Naskh Arabic',sans-serif;font-size:.72rem;color:var(--mid);font-weight:400}
+    .filters{display:flex;gap:.5rem;flex-wrap:wrap;margin-bottom:2rem;padding-bottom:1rem;border-bottom:1px solid var(--border)}
+    .filter-btn{font-family:'Noto Naskh Arabic',sans-serif;font-size:.75rem;padding:.35rem .85rem;border:1px solid var(--border);background:transparent;cursor:pointer;color:var(--mid);transition:all .2s}
+    .filter-btn.active,.filter-btn:hover{color:#fff;border-color:currentColor}
+    /* Country grid */
+    .country-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:1.5rem;margin-bottom:3rem}
+    .country-card{background:var(--card);border:1px solid var(--border);overflow:hidden;transition:transform .2s,box-shadow .2s,border-color .2s;display:block}
+    .country-card:hover{transform:translateY(-4px);box-shadow:0 12px 40px rgba(0,0,0,.4);border-color:var(--mid)}
+    .country-card__img{width:100%;height:180px;object-fit:cover;filter:grayscale(20%) brightness(.7);transition:filter .3s}
+    .country-card:hover .country-card__img{filter:grayscale(0%) brightness(.85)}
+    .country-card__body{padding:1.3rem}
+    .country-card__flag{font-size:1.6rem;margin-bottom:.5rem}
+    .country-card__name{font-family:'Noto Serif Arabic',serif;font-size:1.25rem;font-weight:900;margin-bottom:.3rem}
+    .country-card__tag{font-family:'Noto Naskh Arabic',sans-serif;font-size:.65rem;padding:.18rem .5rem;border:1px solid;margin-bottom:.6rem;display:inline-block}
+    .country-card__desc{font-size:.85rem;color:var(--mid);line-height:1.75;margin-bottom:.8rem}
+    .country-card__footer{display:flex;justify-content:space-between;align-items:center;padding-top:.7rem;border-top:1px solid var(--border)}
+    .country-card__footer .meta{font-family:'Noto Naskh Arabic',sans-serif;font-size:.65rem;color:var(--light)}
+    .country-card__footer .arrow{font-size:.9rem;color:var(--or)}
+    /* Article cards */
+    .articles-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.5rem;margin-bottom:3rem}
+    .article-card{background:var(--card);border:1px solid var(--border);overflow:hidden;transition:transform .2s,box-shadow .2s,border-color .2s;display:flex;flex-direction:column}
+    .article-card:hover{transform:translateY(-4px);box-shadow:0 12px 40px rgba(0,0,0,.4);border-color:var(--mid)}
+    .article-card__stripe{height:3px}
+    .article-card__img{width:100%;height:155px;object-fit:cover;filter:grayscale(20%) brightness(.75);transition:filter .3s}
+    .article-card:hover .article-card__img{filter:grayscale(0%) brightness(.9)}
+    .article-card__body{padding:1.2rem;flex:1;display:flex;flex-direction:column}
+    .topic-tag{display:inline-block;font-family:'Noto Naskh Arabic',sans-serif;font-size:.65rem;border:1px solid;padding:.18rem .5rem;margin-bottom:.7rem;width:fit-content}
+    .article-card h3{font-family:'Noto Serif Arabic',serif;font-size:1rem;font-weight:700;line-height:1.45;margin-bottom:.5rem;flex:1;color:var(--ink)}
+    .article-card p{font-size:.82rem;color:var(--mid);line-height:1.7;margin-bottom:.8rem}
+    .article-card__footer{display:flex;justify-content:space-between;align-items:center;margin-top:auto;padding-top:.8rem;border-top:1px solid var(--border)}
+    .article-card__footer .meta{font-family:'Noto Naskh Arabic',sans-serif;font-size:.65rem;color:var(--light)}
+    .article-card__footer .arrow{font-size:.85rem;color:var(--or);transition:transform .2s}.article-card:hover .article-card__footer .arrow{transform:translateX(-4px)}
+    /* Opinion tabs */
+    .opinion-tabs{display:flex;gap:0;border-bottom:2px solid var(--border);margin-bottom:2rem;overflow-x:auto}
+    .tab-btn{font-family:'Noto Naskh Arabic',sans-serif;font-size:.82rem;padding:.8rem 1.4rem;border:none;background:transparent;cursor:pointer;color:var(--mid);border-bottom:3px solid transparent;margin-bottom:-2px;white-space:nowrap;transition:color .2s,border-color .2s}
+    .tab-btn.active,.tab-btn:hover{color:var(--or);border-bottom-color:var(--or)}
+    .tab-content{display:none}.tab-content.active{display:block}
+    /* Sidebar */
+    .layout-sidebar{display:grid;grid-template-columns:1fr 270px;gap:2.5rem}
+    @media(max-width:860px){.layout-sidebar{grid-template-columns:1fr}}
+    .sidebar-block{margin-bottom:2rem}
+    .sidebar-title{font-family:'Noto Naskh Arabic',sans-serif;font-size:.72rem;color:var(--mid);border-bottom:1px solid var(--border);padding-bottom:.4rem;margin-bottom:1rem}
+    .sidebar-list{list-style:none}
+    .sidebar-list li{border-bottom:1px solid var(--border);padding:.6rem 0;font-size:.88rem;line-height:1.5;display:flex;gap:.6rem;align-items:flex-start}
+    .sidebar-list li .num{font-family:'Noto Naskh Arabic',sans-serif;font-size:.65rem;color:var(--or);flex-shrink:0}
+    .sidebar-list li a{color:var(--ink);transition:color .2s}.sidebar-list li a:hover{color:var(--or)}
+    .cta-box{background:linear-gradient(135deg,#1a0a30,#0d0a20);border:1px solid var(--orient);padding:1.4rem;text-align:center}
+    .cta-box h4{font-family:'Noto Serif Arabic',serif;font-size:1rem;font-weight:700;margin-bottom:.4rem;color:var(--or)}
+    .cta-box p{font-size:.78rem;color:var(--mid);margin-bottom:.9rem;line-height:1.7}
+    .cta-box a{display:inline-block;background:var(--orient);color:#fff;font-family:'Noto Naskh Arabic',sans-serif;font-size:.72rem;padding:.55rem 1.2rem}
+    footer{background:#05050d;color:#3a3555;padding:2.5rem 2rem;font-family:'Noto Naskh Arabic',sans-serif;font-size:.75rem;border-top:1px solid var(--border)}
+    .footer-inner{max-width:1280px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem}
+    .footer-links{display:flex;gap:1.5rem;flex-wrap:wrap}.footer-links a{color:#3a3555;transition:color .2s}.footer-links a:hover{color:var(--or)}
+    .fade-up{opacity:0;transform:translateY(20px);transition:opacity .5s ease,transform .5s ease}.fade-up.visible{opacity:1;transform:none}
+    @media(max-width:640px){.masthead{flex-direction:column;align-items:flex-start}nav a{font-size:.72rem;padding:.55rem .75rem}.page-body{padding:1.5rem 1rem}.page-banner{padding:2rem 1rem}}
+
+    .pays-hero{position:relative;height:clamp(300px,45vw,520px);overflow:hidden;background:#05050d}
+    .pays-hero__img{width:100%;height:100%;object-fit:cover;filter:grayscale(25%) brightness(.4)}
+    .pays-hero__overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(5,5,13,.97) 35%,rgba(5,5,13,.1) 100%)}
+    .pays-hero__content{position:absolute;bottom:0;left:0;right:0;padding:2.5rem 2rem;max-width:900px;margin:0 auto}
+    .pays-hero__flag{font-size:3rem;margin-bottom:.5rem;display:block}
+    .pays-hero h1{font-family:'Noto Serif Arabic',serif;font-size:clamp(2rem,5vw,3.5rem);font-weight:900;color:#fff;margin-bottom:.6rem}
+    .pays-hero p{font-size:1rem;color:rgba(255,255,255,.65);line-height:1.85;max-width:640px}
+  </style>
+</head>
+<body>
+<div class="topbar">
+  <span>تحليلات جيوسياسية — <strong style="color:var(--or)">القوى والصراعات في القرن الحادي والعشرين</strong></span>
+  <span><a href="/abonnement.html">الاشتراك</a> · <a href="https://xegeo.pages.dev" style="color:var(--or)">🇫🇷 Français</a></span>
+</div>
+<header class="masthead">
+  <a href="/" class="masthead__logo">تحليلات جيوسياسية<span>مجلة استراتيجية مستقلة</span></a>
+  <div class="masthead__sub">تأسست عام 2024 · تورسينج، فرنسا · مارس 2026</div>
+</header>
+<nav>
+  <a href="/" class="active">الرئيسية</a>
+  <a href="/afr.html" data-r="afrique"><span class="dot"></span>أفريقيا</a>
+  <a href="/ame.html" data-r="amerique"><span class="dot"></span>أمريكا</a>
+  <a href="/eu.html" data-r="europe"><span class="dot"></span>أوروبا</a>
+  <a href="/asie.html" data-r="asie"><span class="dot"></span>آسيا</a>
+  <a href="/proche-or.html" data-r="orient"><span class="dot"></span>الشرق الأوسط</a>
+  <a href="/moyen-orient.html" data-r="mo" class="active"><span class="dot"></span>الأقطار العربية</a>
+  <a href="/opinion.html" data-r="op"><span class="dot"></span>رأي وميدان</a>
+  <a href="/abonnement.html" class="nav-cta">الاشتراك المميز ←</a>
+</nav>
+
+<div class="pays-hero">
+  <img class="pays-hero__img" src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1400&auto=format&fit=crop&q=70" alt="فلسطين / غزة"/>
+  <div class="pays-hero__overlay"></div>
+  <div class="pays-hero__content">
+    <span class="pays-hero__flag">🇵🇸</span>
+    <div style="font-family:'Noto Naskh Arabic',sans-serif;font-size:.72rem;color:rgba(255,255,255,.5);margin-bottom:.5rem"><a href="/" style="color:rgba(255,255,255,.5)">الرئيسية</a> / <a href="/moyen-orient.html" style="color:rgba(255,255,255,.5)">الأقطار العربية</a> / فلسطين / غزة</div>
+    <h1 style="color:#e67e22">فلسطين / غزة</h1>
+    <p>القضية الفلسطينية في ضوء حرب أكتوبر 2023 — غزة تحت الحصار والقصف، الضفة تحت الاستيطان المتصاعد، والمجتمع الدولي أمام امتحان حقيقي.</p>
+  </div>
+</div>
+<div class="page-body">
+  <div style="display:grid;grid-template-columns:1fr 260px;gap:2.5rem">
+    <div>
+      <div class="section-title fade-up">التحليلات <span class="count">5 مقالات</span></div>
+      <div class="articles-grid">
+
+        <a href="#" class="article-card fade-up">
+          <div class="article-card__stripe" style="background:#e67e22"></div>
+          <div class="article-card__body">
+            <span class="topic-tag" style="border-color:#e67e22;color:#e67e22">ميداني</span>
+            <h3>غزة: الدمار الهيكلي وسؤال اليوم التالي</h3>
+            <p>ما الذي تبقّى من غزة بعد أشهر من القصف — الأرقام والوقائع والمستقبل المعلّق.</p>
+            <div class="article-card__footer">
+              <span class="meta">مارس 2026 · 15 دقيقة</span>
+              <span class="arrow">←</span>
+            </div>
+          </div>
+        </a>
+        <a href="#" class="article-card fade-up">
+          <div class="article-card__stripe" style="background:#e67e22"></div>
+          <div class="article-card__body">
+            <span class="topic-tag" style="border-color:#e67e22;color:#e67e22">قانوني</span>
+            <h3>القانون الدولي وحرب غزة: انهيار أم اختبار؟</h3>
+            <p>محكمة العدل الدولية، محكمة الجنايات الدولية، مجلس الأمن — ماذا تستطيع هذه المؤسسات فعله فعلاً؟</p>
+            <div class="article-card__footer">
+              <span class="meta">فبراير 2026 · 13 دقيقة</span>
+              <span class="arrow">←</span>
+            </div>
+          </div>
+        </a>
+        <a href="#" class="article-card fade-up">
+          <div class="article-card__stripe" style="background:#e67e22"></div>
+          <div class="article-card__body">
+            <span class="topic-tag" style="border-color:#e67e22;color:#e67e22">سياسي</span>
+            <h3>الاستيطان في الضفة: الضم الصامت</h3>
+            <p>كيف يجعل الاستيطان المتسارع في الضفة الغربية حل الدولتين مجرد خطاب دبلوماسي فارغ.</p>
+            <div class="article-card__footer">
+              <span class="meta">يناير 2026 · 11 دقيقة</span>
+              <span class="arrow">←</span>
+            </div>
+          </div>
+        </a>
+        <a href="#" class="article-card fade-up">
+          <div class="article-card__stripe" style="background:#e67e22"></div>
+          <div class="article-card__body">
+            <span class="topic-tag" style="border-color:#e67e22;color:#e67e22">تحليل</span>
+            <h3>حماس بعد 7 أكتوبر: بقاء أم تحوّل؟</h3>
+            <p>الضربات العسكرية الإسرائيلية أضعفت حماس عسكرياً — لكن هل تُفضي إلى استئصالها أم إعادة تشكّلها؟</p>
+            <div class="article-card__footer">
+              <span class="meta">مارس 2026 · 12 دقيقة</span>
+              <span class="arrow">←</span>
+            </div>
+          </div>
+        </a>
+        <a href="#" class="article-card fade-up">
+          <div class="article-card__stripe" style="background:#e67e22"></div>
+          <div class="article-card__body">
+            <span class="topic-tag" style="border-color:#e67e22;color:#e67e22">إقليمي</span>
+            <h3>دول الخليج وغزة: الموقف المزدوج</h3>
+            <p>الغضب الشعبي الخليجي مقابل الحسابات الدبلوماسية الرسمية — كيف تتعامل السعودية والإمارات مع الملف الفلسطيني؟</p>
+            <div class="article-card__footer">
+              <span class="meta">فبراير 2026 · 10 دقائق</span>
+              <span class="arrow">←</span>
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
+    <aside>
+      <div class="sidebar-block fade-up">
+        <div class="sidebar-title">أقطار أخرى</div>
+        <ul class="sidebar-list">
+          <li><span class="num">🇸🇾</span><a href="/syrie.html">سوريا</a></li>
+          <li><span class="num">🇱🇧</span><a href="/liban.html">لبنان</a></li>
+          <li><span class="num">🇮🇶</span><a href="/irak.html">العراق</a></li>
+          <li><span class="num">🇾🇪</span><a href="/yemen.html">اليمن</a></li>
+          <li><span class="num">🇵🇸</span><a href="/palestine.html">فلسطين / غزة</a></li>
+        </ul>
+      </div>
+      <div class="cta-box fade-up">
+        <h4>الاشتراك المميز</h4>
+        <p>تحليلات كاملة وأرشيف حصري للمشتركين.</p>
+        <a href="/abonnement.html">اشترك الآن ←</a>
+      </div>
+    </aside>
+  </div>
+</div>
+<footer>
+  <div class="footer-inner">
+    <span>© 2026 تحليلات جيوسياسية — موقع مستقل في الجيوسياسة والعلوم السياسية</span>
+    <div class="footer-links">
+      <a href="/">الرئيسية</a><a href="/moyen-orient.html">الأقطار العربية</a>
+      <a href="/opinion.html">رأي وميدان</a><a href="#">إخلاء المسؤولية</a>
+    </div>
+  </div>
+</footer>
+<script>
+  const obs=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('visible');obs.unobserve(x.target)}})},{threshold:.06});
+  document.querySelectorAll('.fade-up').forEach(el=>obs.observe(el));
+</script>
+</body>
+</html>
