@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>تحليلات جيوسياسية — القوى والصراعات في القرن الحادي والعشرين</title>
+  <meta name="description" content="تحليلات استراتيجية معمّقة حول التنافسات الدولية والأزمات الإقليمية وتحولات المشهد السياسي العالمي." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Arabic:wght@300;400;600;700;900&family=Noto+Naskh+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --ink:#f0ece3; --ink-dark:#0a0a12; --paper:#13131f;
+      --card:#1a1a2e; --border:#2a2a45; --mid:#7a7590; --light:#4a4560; --rule:#252540;
+      --afrique:#c8821a; --amerique:#b83232; --europe:#1e5fa8; --asie:#1a8a6e; --orient:#8b3a8b;
+      --or:#d4a843; --hero-h:600px;
+    }
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{font-family:'Noto Serif Arabic',Georgia,serif;background:var(--ink-dark);color:var(--ink);line-height:1.9;direction:rtl}
+    a{color:inherit;text-decoration:none}
+
+    .topbar{background:#07070f;color:#5a5570;font-family:'Noto Naskh Arabic',sans-serif;font-size:.75rem;padding:.45rem 2rem;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--border)}
+    .topbar a{color:#9a95b0;transition:color .2s}.topbar a:hover{color:var(--or)}
+
+    .masthead{background:var(--ink-dark);border-bottom:1px solid var(--border);padding:1.4rem 2rem 1rem;display:flex;align-items:flex-end;justify-content:space-between;gap:1rem}
+    .masthead__logo{font-family:'Noto Serif Arabic',serif;font-size:clamp(1.4rem,3vw,2.4rem);font-weight:900;line-height:1.1;color:var(--or)}
+    .masthead__logo span{display:block;font-size:.55em;font-weight:400;color:var(--mid);margin-top:.3rem}
+    .masthead__sub{font-family:'Noto Naskh Arabic',sans-serif;font-size:.72rem;color:var(--mid);text-align:left;line-height:1.8}
+
+    nav{background:#07070f;display:flex;flex-wrap:wrap;position:sticky;top:0;z-index:100;border-bottom:1px solid var(--border)}
+    nav a{display:flex;align-items:center;gap:.5rem;padding:.7rem 1.1rem;font-family:'Noto Naskh Arabic',sans-serif;font-size:.82rem;color:#7a7590;border-left:1px solid var(--border);transition:background .2s,color .2s}
+    nav a:hover,nav a.active{background:#12121e;color:var(--or)}
+    nav a .dot{width:7px;height:7px;border-radius:50%;flex-shrink:0}
+    nav a[data-r="afrique"] .dot{background:var(--afrique)} nav a[data-r="amerique"] .dot{background:var(--amerique)}
+    nav a[data-r="europe"] .dot{background:var(--europe)} nav a[data-r="asie"] .dot{background:var(--asie)}
+    nav a[data-r="orient"] .dot{background:var(--orient)}
+    nav a.nav-cta{margin-right:auto;background:var(--amerique);color:#fff;border:none;font-weight:600}
+
+    /* HERO */
+    .hero{position:relative;height:var(--hero-h);display:grid;place-items:center;overflow:hidden;background:var(--ink-dark)}
+    .hero__bg{position:absolute;inset:0;background:linear-gradient(160deg,rgba(10,10,18,.9) 40%,rgba(10,10,18,.4) 100%),url('https://images.unsplash.com/photo-1519817914152-22d216bb9170?w=1400&auto=format&fit=crop&q=70') center/cover no-repeat;filter:brightness(.6)}
+    .hero__grid{position:absolute;inset:0;background-image:linear-gradient(rgba(212,168,67,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(212,168,67,.04) 1px,transparent 1px);background-size:60px 60px;animation:gridDrift 20s linear infinite}
+    @keyframes gridDrift{from{transform:translateY(0)}to{transform:translateY(60px)}}
+    .hero__content{position:relative;z-index:2;text-align:center;padding:2rem;max-width:800px}
+    .hero__eyebrow{font-family:'Noto Naskh Arabic',sans-serif;font-size:.8rem;letter-spacing:.1em;color:var(--afrique);margin-bottom:1rem}
+    .hero__title{font-family:'Noto Serif Arabic',serif;font-size:clamp(2rem,5vw,4rem);font-weight:900;line-height:1.15;color:#fff;margin-bottom:1.1rem}
+    .hero__title em{font-style:normal;color:var(--or)}
+    .hero__sub{font-size:1.05rem;color:rgba(255,255,255,.6);max-width:560px;margin:0 auto 2rem;line-height:1.9}
+    .btn-primary{display:inline-block;background:var(--amerique);color:#fff;font-family:'Noto Naskh Arabic',sans-serif;font-size:.85rem;padding:.85rem 2.2rem;transition:background .2s,transform .15s}
+    .btn-primary:hover{background:#9e2020;transform:translateY(-2px)}
+
+    /* TICKER */
+    .ticker-wrap{background:#07070f;border-top:1px solid var(--europe);overflow:hidden;white-space:nowrap;padding:.5rem 0}
+    .ticker{display:inline-block;animation:ticker 40s linear infinite;font-family:'Noto Naskh Arabic',sans-serif;font-size:.75rem;color:#5a5570}
+    .ticker span{margin:0 3rem;color:var(--europe)}
+    @keyframes ticker{from{transform:translateX(-100%)}to{transform:translateX(0)}}
+
+    /* SECTIONS */
+    .section{padding:3.5rem 2rem;max-width:1280px;margin:0 auto}
+    .section-header{display:flex;align-items:baseline;gap:1rem;margin-bottom:2rem;border-bottom:1px solid var(--border);padding-bottom:.6rem}
+    .section-header h2{font-family:'Noto Serif Arabic',serif;font-size:1.7rem;font-weight:700;color:var(--or)}
+    .section-header .see-all{font-family:'Noto Naskh Arabic',sans-serif;font-size:.72rem;color:var(--mid);margin-right:auto;border-bottom:1px solid var(--mid);transition:color .2s}
+    .section-header .see-all:hover{color:var(--or)}
+
+    /* REGION CARDS */
+    .regions-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:1px;background:var(--border);border:1px solid var(--border)}
+    .region-card{background:var(--card);padding:1.6rem 1.4rem;transition:background .2s;display:block}
+    .region-card:hover{background:#20203a}
+    .rc-bar{height:3px;width:36px;margin-bottom:1rem;transition:width .25s}
+    .region-card:hover .rc-bar{width:60px}
+    .rc-title{font-family:'Noto Serif Arabic',serif;font-size:1.25rem;font-weight:700;margin-bottom:.4rem;color:var(--ink)}
+    .rc-desc{font-size:.88rem;color:var(--mid);line-height:1.75}
+    .rc-count{margin-top:.9rem;font-family:'Noto Naskh Arabic',sans-serif;font-size:.7rem;color:var(--mid)}
+
+    /* LATEST */
+    .latest-layout{display:grid;grid-template-columns:1fr 320px;gap:2.5rem}
+    @media(max-width:860px){.latest-layout{grid-template-columns:1fr}}
+    .featured-card{border:1px solid var(--border);background:var(--card);overflow:hidden}
+    .featured-card__img{width:100%;height:280px;object-fit:cover;filter:grayscale(20%) brightness(.75)}
+    .featured-card__body{padding:1.6rem}
+    .tag{display:inline-block;font-family:'Noto Naskh Arabic',sans-serif;font-size:.7rem;padding:.22rem .6rem;margin-bottom:.8rem;color:#fff}
+    .featured-card h3{font-family:'Noto Serif Arabic',serif;font-size:1.55rem;font-weight:700;line-height:1.3;margin-bottom:.7rem;color:var(--or)}
+    .featured-card p{font-size:.92rem;color:var(--mid);line-height:1.85;margin-bottom:1rem}
+    .meta{font-family:'Noto Naskh Arabic',sans-serif;font-size:.7rem;color:var(--light)}
+    .read-more{display:inline-block;margin-top:1rem;font-family:'Noto Naskh Arabic',sans-serif;font-size:.75rem;border-bottom:1px solid var(--or);color:var(--or);padding-bottom:1px;transition:opacity .2s}.read-more:hover{opacity:.7}
+
+    .article-list{display:flex;flex-direction:column;gap:1px;background:var(--border);border:1px solid var(--border)}
+    .article-item{background:var(--card);padding:1.1rem 1.2rem;display:block;transition:background .2s}
+    .article-item:hover{background:#20203a}
+    .article-item__wrap{display:flex;gap:1rem;align-items:flex-start}
+    .article-item__num{font-family:'Noto Serif Arabic',serif;font-size:1.6rem;font-weight:900;color:var(--border);line-height:1;flex-shrink:0;width:32px}
+    .article-item h4{font-family:'Noto Serif Arabic',serif;font-size:.95rem;font-weight:700;line-height:1.4;margin-bottom:.25rem;color:var(--ink)}
+
+    /* ANALYSIS GRID */
+    .analysis-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.5rem}
+    .analysis-card{border:1px solid var(--border);background:var(--card);overflow:hidden;transition:transform .2s,box-shadow .2s,border-color .2s;display:block}
+    .analysis-card:hover{transform:translateY(-4px);box-shadow:0 12px 40px rgba(0,0,0,.4);border-color:var(--mid)}
+    .analysis-card__stripe{height:3px}
+    .analysis-card__body{padding:1.3rem}
+    .analysis-card h4{font-family:'Noto Serif Arabic',serif;font-size:1.05rem;font-weight:700;line-height:1.4;margin-bottom:.5rem;color:var(--or)}
+    .analysis-card p{font-size:.85rem;color:var(--mid);line-height:1.75}
+
+    /* QUOTE */
+    .quote-banner{background:linear-gradient(135deg,#0d0a20,#070510);color:#fff;padding:4rem 2rem;text-align:center;border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+    .quote-banner blockquote{font-family:'Noto Serif Arabic',serif;font-size:clamp(1.2rem,2.5vw,1.9rem);font-weight:600;line-height:1.6;max-width:760px;margin:0 auto .8rem;color:var(--or-pale,#e8d5a3)}
+    .quote-banner cite{font-family:'Noto Naskh Arabic',sans-serif;font-size:.75rem;color:var(--mid)}
+
+    footer{background:#05050d;color:#3a3555;padding:2.5rem 2rem;font-family:'Noto Naskh Arabic',sans-serif;font-size:.75rem;border-top:1px solid var(--border)}
+    .footer-inner{max-width:1280px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem}
+    .footer-links{display:flex;gap:1.5rem;flex-wrap:wrap}.footer-links a{color:#3a3555;transition:color .2s}.footer-links a:hover{color:var(--or)}
+
+    .fade-up{opacity:0;transform:translateY(24px);transition:opacity .6s ease,transform .6s ease}.fade-up.visible{opacity:1;transform:none}
+    @media(max-width:640px){:root{--hero-h:480px}.masthead{flex-direction:column;align-items:flex-start}nav a{font-size:.75rem;padding:.6rem .8rem}.section{padding:2.5rem 1rem}}
+  </style>
+</head>
+<body>
+
+<div class="topbar">
+  <span>تحليلات جيوسياسية — <strong style="color:var(--or)">القوى والصراعات في القرن الحادي والعشرين</strong></span>
+  <span><a href="/abonnement.html">الاشتراك</a> · <a href="#">تواصل معنا</a> · <a href="https://xegeo.pages.dev" style="color:var(--or)">🇫🇷 Français</a></span>
+</div>
+
+<header class="masthead">
+  <a href="/" class="masthead__logo">تحليلات جيوسياسية<span>مجلة استراتيجية مستقلة</span></a>
+  <div class="masthead__sub">تأسست عام 2024<br>تورسينج، فرنسا<br>مارس 2026</div>
+</header>
+
+<nav>
+  <a href="/" class="active">الرئيسية</a>
+  <a href="/afr.html" data-r="afrique"><span class="dot"></span>أفريقيا</a>
+  <a href="/ame.html" data-r="amerique"><span class="dot"></span>أمريكا</a>
+  <a href="/eu.html" data-r="europe"><span class="dot"></span>أوروبا</a>
+  <a href="/asie.html" data-r="asie"><span class="dot"></span>آسيا</a>
+  <a href="/proche-or.html" data-r="orient"><span class="dot"></span>الشرق الأوسط</a>
+  <a href="/abonnement.html" class="nav-cta">الاشتراك المميز ←</a>
+</nav>
+
+<section class="hero">
+  <div class="hero__bg"></div>
+  <div class="hero__grid"></div>
+  <div class="hero__content">
+    <p class="hero__eyebrow">تحليل استراتيجي · مارس 2026</p>
+    <h1 class="hero__title">فهم <em>القوى والصراعات</em><br>في القرن الحادي والعشرين</h1>
+    <p class="hero__sub">تحليلات استراتيجية معمّقة حول التنافسات الدولية والأزمات الإقليمية وتحولات المشهد السياسي العالمي.</p>
+    <a href="/abonnement.html" class="btn-primary">الاشتراك المميز</a>
+  </div>
+</section>
+
+<div class="ticker-wrap">
+  <div class="ticker">
+    <span>◂</span> الساحل: إعادة رسم خريطة التحالفات الأمنية بعد الانسحاب الفرنسي &nbsp;&nbsp;
+    <span>◂</span> مضيق تايوان: توترات متصاعدة عقب مناورات جيش التحرير الشعبي &nbsp;&nbsp;
+    <span>◂</span> أوكرانيا: حصيلة ثلاث سنوات من الحرب وآفاق التسوية &nbsp;&nbsp;
+    <span>◂</span> إيران: ما بعد العقوبات وإعادة توزيع السلطة الداخلية &nbsp;&nbsp;
+    <span>◂</span> البرازيل والصين: محور الجنوب العالمي يعيد رسم الأطلسي &nbsp;&nbsp;
+    <span>◂</span> الساحل: إعادة رسم خريطة التحالفات الأمنية بعد الانسحاب الفرنسي &nbsp;&nbsp;
+    <span>◂</span> مضيق تايوان: توترات متصاعدة عقب مناورات جيش التحرير الشعبي &nbsp;&nbsp;
+    <span>◂</span> أوكرانيا: حصيلة ثلاث سنوات من الحرب وآفاق التسوية &nbsp;&nbsp;
+  </div>
+</div>
+
+<!-- REGIONS -->
+<div class="section fade-up">
+  <div class="section-header">
+    <h2>التحليلات حسب المنطقة</h2>
+  </div>
+  <div class="regions-grid">
+    <a href="/afr.html" class="region-card">
+      <div class="rc-bar" style="background:var(--afrique)"></div>
+      <div class="rc-title">أفريقيا</div>
+      <div class="rc-desc">الساحل بعد فرنسا، الهجرة، النفوذان الروسي والصيني، وإعادة التشكّل الجيوسياسي في القارة.</div>
+      <div class="rc-count">7 تحليلات · تحديث أسبوعي</div>
+    </a>
+    <a href="/ame.html" class="region-card">
+      <div class="rc-bar" style="background:var(--amerique)"></div>
+      <div class="rc-title">أمريكا</div>
+      <div class="rc-desc">السياسة الخارجية الأمريكية، أمريكا اللاتينية، التحالفات والأمن في نصف الكرة الغربي.</div>
+      <div class="rc-count">6 تحليلات · تحديث أسبوعي</div>
+    </a>
+    <a href="/eu.html" class="region-card">
+      <div class="rc-bar" style="background:var(--europe)"></div>
+      <div class="rc-title">أوروبا</div>
+      <div class="rc-desc">الاتحاد الأوروبي، الناتو، روسيا، التوترات السيادية وإعادة ترتيب العلاقة الأطلسية.</div>
+      <div class="rc-count">6 تحليلات · تحديث أسبوعي</div>
+    </a>
+    <a href="/asie.html" class="region-card">
+      <div class="rc-bar" style="background:var(--asie)"></div>
+      <div class="rc-title">آسيا</div>
+      <div class="rc-desc">التنافس الصيني-الأمريكي، المحيط الهندي-الهادئ، تايوان والطرق البحرية الاستراتيجية.</div>
+      <div class="rc-count">4 تحليلات · تحديث أسبوعي</div>
+    </a>
+    <a href="/proche-or.html" class="region-card">
+      <div class="rc-bar" style="background:var(--orient)"></div>
+      <div class="rc-title">الشرق الأوسط</div>
+      <div class="rc-desc">إيران، إسرائيل، الخليج، الانقسامات الطائفية وإعادة تشكّل المشهد الاستراتيجي الإقليمي.</div>
+      <div class="rc-count">7 تحليلات · تحديث أسبوعي</div>
+    </a>
+  </div>
+</div>
+
+<!-- LATEST -->
+<div class="section fade-up">
+  <div class="section-header"><h2>أحدث التحليلات</h2></div>
+  <div class="latest-layout">
+    <div>
+      <div class="featured-card">
+        <img class="featured-card__img" src="https://images.unsplash.com/photo-1536152470836-b943b246224c?w=900&auto=format&fit=crop&q=70" alt="المحور الصيني-الروسي-الإيراني" />
+        <div class="featured-card__body">
+          <span class="tag" style="background:var(--asie)">آسيا</span>
+          <h3>المحور الصيني-الروسي-الإيراني: تشريح تحالف في مواجهة النظام الغربي</h3>
+          <p>من الانشقاق السوفيتي-الصيني إلى الطائرات المسيّرة الإيرانية في الحرب الأوكرانية — كيف بنت ثلاث قوى أكثر التحالفات ثقلاً في القرن الحادي والعشرين.</p>
+          <span class="meta">24 مارس 2026 · قراءة: 20 دقيقة</span><br>
+          <a href="/articles/axe-sino-russo-iranien.html" class="read-more">قراءة التحليل كاملاً ←</a>
+        </div>
+      </div>
+    </div>
+    <aside>
+      <div class="article-list">
+        <a href="/articles/soudan-or-genocide-eau.html" class="article-item">
+          <div class="article-item__wrap">
+            <div class="article-item__num">١</div>
+            <div><span class="tag" style="background:var(--afrique);font-size:.62rem;padding:.15rem .4rem;">أفريقيا</span>
+            <h4>السودان: ذهب الإبادة</h4><p class="meta">مارس 2026</p></div>
+          </div>
+        </a>
+        <a href="/articles/guerre-ukraine.html" class="article-item">
+          <div class="article-item__wrap">
+            <div class="article-item__num">٢</div>
+            <div><span class="tag" style="background:var(--europe);font-size:.62rem;padding:.15rem .4rem;">أوروبا</span>
+            <h4>الحرب في أوكرانيا: تقييم استراتيجي بعد ثلاث سنوات</h4><p class="meta">18 مارس 2026</p></div>
+          </div>
+        </a>
+        <a href="/articles/empire-gouffre-iranien.html" class="article-item">
+          <div class="article-item__wrap">
+            <div class="article-item__num">٣</div>
+            <div><span class="tag" style="background:var(--orient);font-size:.62rem;padding:.15rem .4rem;">الشرق الأوسط</span>
+            <h4>الإمبراطورية أمام الهاوية الإيرانية</h4><p class="meta">24 مارس 2026</p></div>
+          </div>
+        </a>
+        <a href="/articles/loup-brebis-boiteuse.html" class="article-item">
+          <div class="article-item__wrap">
+            <div class="article-item__num">٤</div>
+            <div><span class="tag" style="background:var(--orient);font-size:.62rem;padding:.15rem .4rem;">الشرق الأوسط</span>
+            <h4>الذئب لا يأكل إلا النعجة العرجاء</h4><p class="meta">24 مارس 2026</p></div>
+          </div>
+        </a>
+        <a href="/articles/doctrine-trump.html" class="article-item">
+          <div class="article-item__wrap">
+            <div class="article-item__num">٥</div>
+            <div><span class="tag" style="background:var(--amerique);font-size:.62rem;padding:.15rem .4rem;">أمريكا</span>
+            <h4>مبدأ ترامب 2.0: العزلة أم الواقعية الهجومية؟</h4><p class="meta">7 مارس 2026</p></div>
+          </div>
+        </a>
+      </div>
+    </aside>
+  </div>
+</div>
+
+<!-- THEMATIC -->
+<div style="background:var(--paper);padding:.5rem 0;border-top:1px solid var(--border);border-bottom:1px solid var(--border)">
+  <div class="section fade-up">
+    <div class="section-header"><h2>تحليلات موضوعية</h2></div>
+    <div class="analysis-grid">
+      <a href="/articles/axe-sino-russo-iranien.html" class="analysis-card" style="--accent:var(--asie)">
+        <div class="analysis-card__stripe" style="background:var(--asie)"></div>
+        <div class="analysis-card__body">
+          <span class="tag" style="background:var(--asie);font-size:.65rem;padding:.15rem .45rem;color:#fff;">آسيا</span>
+          <h4>المحور الصيني-الروسي-الإيراني</h4>
+          <p>من الحرب الباردة إلى المسيّرات الإيرانية — دراسة في الجذور والمحركات وحدود التحالف الإقليمي.</p>
+          <span class="meta" style="display:block;margin-top:.8rem">قراءة: 20 دقيقة</span>
+        </div>
+      </a>
+      <a href="/articles/loup-brebis-boiteuse.html" class="analysis-card">
+        <div class="analysis-card__stripe" style="background:var(--orient)"></div>
+        <div class="analysis-card__body">
+          <span class="tag" style="background:var(--orient);font-size:.65rem;padding:.15rem .45rem;color:#fff;">الشرق الأوسط</span>
+          <h4>الذئب لا يأكل إلا النعجة العرجاء</h4>
+          <p>من هوبز إلى بورديو — قراءة أنثروبولوجية في هيمنة الدول القوية على الضعيفة.</p>
+          <span class="meta" style="display:block;margin-top:.8rem">قراءة: 16 دقيقة</span>
+        </div>
+      </a>
+      <a href="/articles/soudan-or-genocide-eau.html" class="analysis-card">
+        <div class="analysis-card__stripe" style="background:var(--afrique)"></div>
+        <div class="analysis-card__body">
+          <span class="tag" style="background:var(--afrique);font-size:.65rem;padding:.15rem .45rem;color:#fff;">أفريقيا</span>
+          <h4>السودان: ذهب الإبادة</h4>
+          <p>150 ألف قتيل، 14 مليون نازح، ومسار ذهب الدم من دارفور إلى دبي.</p>
+          <span class="meta" style="display:block;margin-top:.8rem">قراءة: 18 دقيقة</span>
+        </div>
+      </a>
+      <a href="/articles/empire-gouffre-iranien.html" class="analysis-card">
+        <div class="analysis-card__stripe" style="background:var(--orient)"></div>
+        <div class="analysis-card__body">
+          <span class="tag" style="background:var(--orient);font-size:.65rem;padding:.15rem .45rem;color:#fff;">الشرق الأوسط</span>
+          <h4>الإمبراطورية أمام الهاوية الإيرانية</h4>
+          <p>كلاوزفيتز وثوسيديدس والاقتصاد غير المتماثل للهزيمة — لماذا لا تستطيع أمريكا الانتصار.</p>
+          <span class="meta" style="display:block;margin-top:.8rem">قراءة: 18 دقيقة</span>
+        </div>
+      </a>
+      <a href="/articles/guerre-ukraine.html" class="analysis-card">
+        <div class="analysis-card__stripe" style="background:var(--europe)"></div>
+        <div class="analysis-card__body">
+          <span class="tag" style="background:var(--europe);font-size:.65rem;padding:.15rem .45rem;color:#fff;">أوروبا</span>
+          <h4>الحرب في أوكرانيا: ثلاث سنوات من الاستنزاف</h4>
+          <p>الجبهات، العقوبات، إرهاق الحلفاء وسيناريوهات التسوية الدبلوماسية.</p>
+          <span class="meta" style="display:block;margin-top:.8rem">قراءة: 15 دقيقة</span>
+        </div>
+      </a>
+      <a href="/articles/doctrine-trump.html" class="analysis-card">
+        <div class="analysis-card__stripe" style="background:var(--amerique)"></div>
+        <div class="analysis-card__body">
+          <span class="tag" style="background:var(--amerique);font-size:.65rem;padding:.15rem .45rem;color:#fff;">أمريكا</span>
+          <h4>مبدأ ترامب 2.0</h4>
+          <p>الرسوم الجمركية، الناتو، الصين، أوكرانيا — تفكيك استراتيجية تُربك التحالفات التاريخية الأمريكية.</p>
+          <span class="meta" style="display:block;margin-top:.8rem">قراءة: 13 دقيقة</span>
+        </div>
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- QUOTE -->
+<div class="quote-banner fade-up">
+  <blockquote>« على قدر فراشك مدّ رجلك — ولكن الأهم: اعمل على أن يتسع فراشك »</blockquote>
+  <cite>— حكمة عربية · ناصر الصبري · المعهد الدولي لتحليل التهديدات (ITAB)</cite>
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <span>© 2026 تحليلات جيوسياسية — موقع مستقل في الجيوسياسة والعلوم السياسية</span>
+    <div class="footer-links">
+      <a href="/">الرئيسية</a><a href="/abonnement.html">الاشتراك</a>
+      <a href="#">إخلاء المسؤولية</a><a href="#">تواصل معنا</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const obs=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('visible');obs.unobserve(x.target)}})},{threshold:.08});
+  document.querySelectorAll('.fade-up').forEach(el=>obs.observe(el));
+</script>
+</body>
+</html>
