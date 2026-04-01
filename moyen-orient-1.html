@@ -1,0 +1,807 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>الأقطار العربية — تحليلات جيوسياسية</title>
+  <meta name="description" content="تحليلات جيوسياسية معمّقة للأقطار العربية: فلسطين، لبنان، سوريا، العراق، اليمن، ليبيا. ITAB."/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <!--
+    ✦ FONT CHOICE: Cairo replaces Noto Serif Arabic
+    → Better Arabic legibility at small sizes (mobile)
+    → Geometric, modern, used by Al Jazeera digital
+    → Fallback: Noto Naskh Arabic for body text
+  -->
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&family=Noto+Naskh+Arabic:wght@400;500;600&display=swap" rel="stylesheet"/>
+
+  <style>
+    /* ════════════════════════════════════════════════════
+       § 1. DESIGN TOKENS
+       Single source of truth for all visual values
+    ════════════════════════════════════════════════════ */
+    :root {
+      /* Neutrals */
+      --dark:       #09090f;
+      --surface:    #111120;
+      --card:       #16162a;
+      --card-2:     #121220;
+      --border:     #22223a;
+      --mid:        #7070a0;
+      --muted:      #4a4a70;
+      --text:       #e8e4f4;
+      --text-soft:  rgba(232,228,244,.65);
+
+      /* Accent */
+      --or:         #d4a843;
+      --or-dim:     rgba(212,168,67,.12);
+      --or-glow:    rgba(212,168,67,.22);
+
+      /* Region colours */
+      --afrique:    #c8821a;
+      --amerique:   #b83232;
+      --europe:     #1e5fa8;
+      --asie:       #1a8a6e;
+      --orient:     #8b3a8b;
+
+      /* Country colours */
+      --palestine:  #e67e22;
+      --liban:      #27ae60;
+      --syrie:      #c0392b;
+      --irak:       #2980b9;
+      --yemen:      #8e44ad;
+      --libye:      #16a085;
+
+      /* Layout */
+      --radius:     10px;
+      --radius-sm:  6px;
+      --tr:         .22s ease;
+      --gap:        1rem;
+
+      /* Shadows */
+      --sh-card:    0 2px 16px rgba(0,0,0,.5), 0 1px 3px rgba(0,0,0,.3);
+      --sh-hover:   0 12px 40px rgba(0,0,0,.65), 0 2px 8px rgba(0,0,0,.4);
+      --sh-country: 0 4px 24px rgba(0,0,0,.55), inset 0 1px 0 rgba(255,255,255,.06);
+    }
+
+    /* ════════════════════════════════════════════════════
+       § 2. RESET + BASE
+       Mobile-first: overflow-x hidden, min-width:0
+    ════════════════════════════════════════════════════ */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0; padding: 0;
+    }
+    html {
+      scroll-behavior: smooth;
+      -webkit-text-size-adjust: 100%;
+    }
+    body {
+      /* ✦ Cairo: optimised for Arabic on small screens */
+      font-family: 'Cairo', 'Noto Naskh Arabic', sans-serif;
+      background: var(--dark);
+      color: var(--text);
+      direction: rtl;
+      line-height: 1.75;
+      /* CRITICAL: prevent horizontal overflow */
+      overflow-x: hidden;
+      min-width: 0;
+      -webkit-font-smoothing: antialiased;
+    }
+    a  { color: inherit; text-decoration: none; }
+    img { display: block; max-width: 100%; height: auto; }
+
+    /* ════════════════════════════════════════════════════
+       § 3. TOPBAR
+       FIX: flex-wrap to prevent overflow on narrow screens
+            reduced horizontal padding on mobile
+    ════════════════════════════════════════════════════ */
+    .topbar {
+      background: var(--dark);
+      border-bottom: 1px solid var(--border);
+      /* MOBILE-FIRST: small padding */
+      padding: .42rem 1rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      /* FIX: wrap prevents overflow */
+      flex-wrap: wrap;
+      gap: .35rem;
+      font-size: .72rem;
+    }
+    .topbar-brand { color: var(--text-soft); font-weight: 600; }
+    .topbar-links { display: flex; gap: .9rem; flex-shrink: 0; }
+    .topbar a { color: var(--mid); transition: color var(--tr); }
+    .topbar a:hover { color: var(--or); }
+    .topbar .fr-link { color: var(--or) !important; }
+    /* Expand padding on larger screens */
+    @media(min-width: 640px) { .topbar { padding: .42rem 2rem; } }
+
+    /* ════════════════════════════════════════════════════
+       § 4. MASTHEAD
+       FIX: column-first, then row on tablet+
+            text-align:start for correct RTL alignment
+    ════════════════════════════════════════════════════ */
+    .masthead {
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      /* MOBILE: column */
+      padding: 1.1rem 1rem;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: .45rem;
+    }
+    @media(min-width: 640px) {
+      .masthead {
+        flex-direction: row;
+        align-items: flex-end;
+        justify-content: space-between;
+        padding: 1.3rem 2rem;
+      }
+    }
+    .masthead__logo {
+      font-family: 'Cairo', serif;
+      font-size: clamp(1.3rem, 4vw, 2rem);
+      font-weight: 900;
+      color: var(--or);
+      line-height: 1.1;
+    }
+    .masthead__logo span {
+      display: block;
+      font-size: .54em;
+      font-weight: 400;
+      color: var(--mid);
+      margin-top: .2rem;
+    }
+    /* FIX: text-align:start = right in RTL, correct behavior */
+    .masthead__sub {
+      font-size: .68rem;
+      color: var(--muted);
+      text-align: start;
+      line-height: 1.7;
+    }
+
+    /* ════════════════════════════════════════════════════
+       § 5. NAV
+       FIX #3 (RTL): border-inline-end replaces border-left
+       FIX: overflow-x:auto with hidden scrollbar
+            nav-cta uses margin-inline-end:auto (RTL-aware)
+    ════════════════════════════════════════════════════ */
+    nav {
+      background: var(--dark);
+      display: flex;
+      flex-wrap: nowrap;
+      overflow-x: auto;
+      scrollbar-width: none;
+      -webkit-overflow-scrolling: touch;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      border-bottom: 2px solid var(--or);
+    }
+    nav::-webkit-scrollbar { display: none; }
+    nav a {
+      display: flex;
+      align-items: center;
+      gap: .38rem;
+      padding: .62rem .88rem;
+      font-size: .75rem;
+      font-weight: 600;
+      color: var(--mid);
+      /* FIX: RTL-correct border */
+      border-inline-end: 1px solid var(--border);
+      transition: background var(--tr), color var(--tr);
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+    nav a:hover, nav a.active {
+      background: var(--surface);
+      color: var(--or);
+    }
+    nav a .dot {
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+    nav a[data-r="afrique"]  .dot { background: var(--afrique); }
+    nav a[data-r="amerique"] .dot { background: var(--amerique); }
+    nav a[data-r="europe"]   .dot { background: var(--europe); }
+    nav a[data-r="asie"]     .dot { background: var(--asie); }
+    nav a[data-r="orient"]   .dot { background: var(--orient); }
+    nav a[data-r="mo"]       .dot { background: var(--or); }
+    /* FIX: margin-inline-end:auto pushes to inline-end side (left in RTL) */
+    nav a.nav-cta {
+      margin-inline-end: auto;
+      background: var(--amerique);
+      color: #fff;
+      border: none;
+      font-weight: 700;
+    }
+
+    /* ════════════════════════════════════════════════════
+       § 6. HERO
+    ════════════════════════════════════════════════════ */
+    .hero {
+      position: relative;
+      height: clamp(220px, 38vw, 380px);
+      overflow: hidden;
+      background: var(--dark);
+    }
+    .hero img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      filter: brightness(.35);
+    }
+    .hero__ov {
+      position: absolute; inset: 0;
+      background: linear-gradient(
+        to top,
+        rgba(9,9,15,.98) 30%,
+        rgba(9,9,15,.55) 65%,
+        transparent 100%
+      );
+    }
+    .hero__c {
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      padding: 1.4rem 1rem 1.8rem;
+    }
+    @media(min-width: 640px) {
+      .hero__c { padding: 2rem 2rem; max-width: 1200px; margin: 0 auto; }
+    }
+    .rlabel {
+      font-size: .7rem;
+      color: var(--or);
+      background: rgba(255,255,255,.07);
+      border: 1px solid rgba(212,168,67,.4);
+      display: inline-block;
+      padding: .2rem .65rem;
+      border-radius: var(--radius-sm);
+      margin-bottom: .7rem;
+    }
+    .hero h1 {
+      font-family: 'Cairo', serif;
+      font-size: clamp(1.7rem, 5vw, 2.8rem);
+      font-weight: 900;
+      color: #fff;
+      line-height: 1.1;
+    }
+    .hero h1 em { font-style: normal; color: var(--or); }
+    .rdesc {
+      font-size: clamp(.82rem, 2vw, .92rem);
+      color: rgba(255,255,255,.6);
+      margin-top: .6rem;
+      line-height: 1.75;
+      max-width: 560px;
+    }
+
+    /* ════════════════════════════════════════════════════
+       § 7. META BAR
+    ════════════════════════════════════════════════════ */
+    .rmeta {
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      padding: .75rem 1rem;
+    }
+    @media(min-width: 640px) { .rmeta { padding: .75rem 2rem; } }
+    .rmetai {
+      max-width: 1280px;
+      margin: 0 auto;
+      display: flex;
+      gap: 1rem 1.8rem;
+      align-items: center;
+      font-size: .7rem;
+      color: var(--mid);
+      /* FIX: flex-wrap so items don't overflow on mobile */
+      flex-wrap: wrap;
+    }
+    .rcount { color: var(--or); font-weight: 700; }
+
+    /* ════════════════════════════════════════════════════
+       § 8. PAGE BODY
+       MOBILE-FIRST: 16px padding, expands to 32px on md+
+    ════════════════════════════════════════════════════ */
+    .rbody {
+      max-width: 1280px;
+      margin: 0 auto;
+      /* MOBILE-FIRST padding */
+      padding: 1.4rem 1rem 3rem;
+    }
+    @media(min-width: 640px) { .rbody { padding: 2rem 2rem 4rem; } }
+
+    /* ════════════════════════════════════════════════════
+       § 9. SECTION TITLES
+    ════════════════════════════════════════════════════ */
+    .section-title {
+      font-family: 'Cairo', serif;
+      font-size: clamp(1.1rem, 3vw, 1.35rem);
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 1.2rem;
+      padding-bottom: .55rem;
+      border-bottom: 2px solid var(--or);
+      display: flex;
+      align-items: center;
+      /* FIX: justify-content:space-between works correctly in RTL */
+      justify-content: space-between;
+      gap: .8rem;
+    }
+    .section-title span {
+      font-size: .68rem;
+      font-weight: 400;
+      color: var(--mid);
+    }
+
+    /* ════════════════════════════════════════════════════
+       § 10. COUNTRY CARDS — Option A + Option B hybrid
+       Mobile: horizontal scroll (Option A, Netflix-style)
+       Desktop: 2-3 col grid (Option B)
+    ════════════════════════════════════════════════════ */
+
+    /* OPTION A wrapper: scroll container on mobile */
+    .countries-scroll-wrap {
+      /* Mobile: horizontal scroll */
+      overflow-x: auto;
+      scrollbar-width: none;
+      -webkit-overflow-scrolling: touch;
+      /* Fade right edge to signal more cards */
+      -webkit-mask-image: linear-gradient(
+        to left, transparent 0, black 48px
+      );
+      mask-image: linear-gradient(
+        to left, transparent 0, black 48px
+      );
+      margin-bottom: 2rem;
+      /* Negative margin trick to let cards bleed to edge */
+      margin-right: -1rem;
+      padding-right: 1rem;
+    }
+    .countries-scroll-wrap::-webkit-scrollbar { display: none; }
+
+    /* OPTION A inner row */
+    .countries-scroll-inner {
+      display: flex;
+      gap: .9rem;
+      /* Prevent wrapping in scroll mode */
+      flex-wrap: nowrap;
+      /* Total width grows with content */
+      width: max-content;
+      padding-bottom: .4rem;
+    }
+
+    /* OPTION B: switch to grid on tablet+ */
+    @media(min-width: 600px) {
+      .countries-scroll-wrap {
+        overflow-x: visible;
+        -webkit-mask-image: none;
+        mask-image: none;
+        margin-right: 0;
+        padding-right: 0;
+      }
+      .countries-scroll-inner {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+        flex-wrap: unset;
+        width: auto;
+        gap: 1.1rem;
+      }
+    }
+
+    /* COUNTRY CARD — core styles */
+    .country-card {
+      /* MOBILE: fixed width in scroll mode */
+      width: 200px;
+      flex-shrink: 0;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      /* Accent border at top replaces border-top hack */
+      box-shadow: var(--sh-country);
+      padding: 1.4rem 1.3rem;
+      display: flex;
+      flex-direction: column;
+      gap: .5rem;
+      transition: transform var(--tr), box-shadow var(--tr), border-color var(--tr);
+      position: relative;
+      overflow: hidden;
+    }
+    /* Coloured top accent per country */
+    .country-card::after {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      background: var(--cc, var(--or));
+      border-radius: var(--radius) var(--radius) 0 0;
+    }
+    /* GRID mode: auto width */
+    @media(min-width: 600px) {
+      .country-card { width: auto; }
+    }
+    .country-card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--sh-hover);
+      border-color: rgba(255,255,255,.12);
+    }
+    .country-flag {
+      font-size: 2rem;
+      line-height: 1;
+      display: block;
+    }
+    .country-name {
+      font-family: 'Cairo', serif;
+      font-size: 1.1rem;
+      font-weight: 900;
+      color: var(--text);
+    }
+    .country-desc {
+      font-size: .82rem;
+      color: var(--mid);
+      line-height: 1.72;
+      flex: 1;
+      overflow-wrap: break-word;
+    }
+    .country-read {
+      font-size: .72rem;
+      color: var(--or);
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: .3rem;
+      margin-top: .2rem;
+      transition: gap var(--tr);
+    }
+    .country-card:hover .country-read { gap: .55rem; }
+
+    /* ════════════════════════════════════════════════════
+       § 11. ARTICLE CARDS
+       FIX: width:100%, mobile-first grid
+       IMPROVED: better visual hierarchy, premium shadows
+    ════════════════════════════════════════════════════ */
+    .arts-grid {
+      /* MOBILE: 1 column */
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: .9rem;
+    }
+    @media(min-width: 540px) {
+      /* TABLET+: auto-fill, min 260px */
+      .arts-grid {
+        grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+        gap: 1.1rem;
+      }
+    }
+
+    .art-card {
+      /* FIX: explicit full width */
+      width: 100%;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      /* FIX: border-inline-start for RTL (start = right side) */
+      border-inline-start: 3px solid var(--or);
+      padding: 1.2rem 1.3rem;
+      display: flex;
+      flex-direction: column;
+      gap: .45rem;
+      box-shadow: var(--sh-card);
+      transition: transform var(--tr), box-shadow var(--tr), border-color var(--tr);
+    }
+    .art-card:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--sh-hover);
+      border-inline-start-color: var(--orient);
+    }
+    @media(min-width: 640px) {
+      .art-card { padding: 1.4rem 1.5rem; }
+    }
+
+    .art-badge {
+      font-size: .63rem;
+      font-weight: 700;
+      color: var(--or);
+      letter-spacing: .02em;
+    }
+    .art-title {
+      font-family: 'Cairo', serif;
+      font-size: clamp(.9rem, 2.5vw, 1rem);
+      font-weight: 700;
+      line-height: 1.5;
+      color: var(--text);
+      /* FIX: prevent text overflow */
+      overflow-wrap: break-word;
+      word-break: break-word;
+    }
+    .art-meta {
+      font-size: .65rem;
+      color: var(--muted);
+    }
+    .art-read {
+      font-size: .7rem;
+      font-weight: 600;
+      color: var(--or);
+      display: flex;
+      align-items: center;
+      gap: .3rem;
+      margin-top: .1rem;
+      transition: gap var(--tr);
+    }
+    .art-card:hover .art-read { gap: .55rem; }
+
+    /* ════════════════════════════════════════════════════
+       § 12. FADE-UP ANIMATION
+    ════════════════════════════════════════════════════ */
+    .fade-up {
+      opacity: 0;
+      transform: translateY(16px);
+      transition: opacity .55s ease, transform .55s ease;
+    }
+    .fade-up.visible { opacity: 1; transform: none; }
+
+    /* ════════════════════════════════════════════════════
+       § 13. FOOTER
+       FIX: flex-wrap, padding responsive
+    ════════════════════════════════════════════════════ */
+    footer {
+      background: var(--dark);
+      color: var(--muted);
+      padding: 2rem 1rem;
+      font-size: .72rem;
+      border-top: 1px solid var(--border);
+    }
+    @media(min-width: 640px) { footer { padding: 2.5rem 2rem; } }
+    .fi {
+      max-width: 1280px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: .9rem;
+    }
+    .fl { display: flex; gap: 1.2rem; flex-wrap: wrap; }
+    .fl a { color: var(--muted); transition: color var(--tr); }
+    .fl a:hover { color: var(--or); }
+  </style>
+</head>
+<body>
+
+<!-- ══════════════════════════════════════════
+     TOPBAR — breaking news + links
+     FIX: flex-wrap, proper padding
+══════════════════════════════════════════ -->
+<div class="topbar">
+  <span class="topbar-brand">
+    تحليلات جيوسياسية — <strong style="color:var(--or)">القوى والصراعات في القرن</strong>
+  </span>
+  <div class="topbar-links">
+    <a href="https://xegeo.pages.dev" class="fr-link">🇫🇷 Français</a>
+    <a href="/abonnement.html">الوصول المميز</a>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════
+     MASTHEAD — logo only, clean
+     FIX: column-first, text-align:start RTL
+══════════════════════════════════════════ -->
+<header class="masthead">
+  <a href="/" class="masthead__logo">
+    تحليلات جيوسياسية
+    <span>مجلة استراتيجية مستقلة</span>
+  </a>
+  <div class="masthead__sub">ITAB · 2026</div>
+</header>
+
+<!-- ══════════════════════════════════════════
+     NAV — horizontal scroll + RTL-correct borders
+     FIX: border-inline-end, margin-inline-end:auto
+══════════════════════════════════════════ -->
+<nav>
+  <a href="/">الرئيسية</a>
+  <a href="/afr.html"          data-r="afrique" ><span class="dot"></span>أفريقيا</a>
+  <a href="/ame.html"          data-r="amerique"><span class="dot"></span>أمريكا</a>
+  <a href="/eu.html"           data-r="europe"  ><span class="dot"></span>أوروبا</a>
+  <a href="/asie.html"         data-r="asie"    ><span class="dot"></span>آسيا</a>
+  <a href="/proche-or.html"    data-r="orient"  ><span class="dot"></span>الشرق الأوسط</a>
+  <a href="/moyen-orient.html" data-r="mo" class="active" style="color:var(--or)">
+    🌍 الأقطار العربية
+  </a>
+  <a href="/abonnement.html" class="nav-cta">الوصول المميز ←</a>
+</nav>
+
+<!-- ══════════════════════════════════════════
+     HERO
+══════════════════════════════════════════ -->
+<div class="hero">
+  <img src="https://images.unsplash.com/photo-1547036967-23d11aacaee0?w=1400&q=70" alt="الأقطار العربية" loading="eager"/>
+  <div class="hero__ov"></div>
+  <div class="hero__c">
+    <div class="rlabel">📂 ملف الأقطار العربية</div>
+    <h1>الأقطار <em>العربية</em></h1>
+    <p class="rdesc">
+      فلسطين ولبنان وسوريا والعراق واليمن وليبيا ومصر —
+      تحليلات معمّقة لكل دولة عربية على حدة.
+    </p>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════
+     META BAR
+══════════════════════════════════════════ -->
+<div class="rmeta">
+  <div class="rmetai">
+    <span>🗂 الملف: <strong style="color:var(--or)">الأقطار العربية</strong></span>
+    <span>📰 <span class="rcount">6</span> دول · تحليلات مستقلة</span>
+    <span>📅 مارس 2026</span>
+    <span>✍ ITAB</span>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════
+     PAGE BODY
+══════════════════════════════════════════ -->
+<div class="rbody">
+
+  <!-- ─────────────────────────────────────
+       COUNTRY CARDS
+       Option A (mobile): horizontal scroll
+       Option B (tablet+): auto-fill grid
+  ───────────────────────────────────────── -->
+  <div class="section-title fade-up">
+    🌍 الدول العربية
+    <span>اختر الدولة لقراءة تحليلها المتخصص</span>
+  </div>
+
+  <div class="countries-scroll-wrap">
+    <div class="countries-scroll-inner">
+
+      <a href="/palestine.html" class="country-card fade-up" style="--cc:var(--palestine);animation-delay:.00s">
+        <span class="country-flag">🇵🇸</span>
+        <div class="country-name">فلسطين</div>
+        <div class="country-desc">الأرض والحق والمقاومة — قضية الشرق الأوسط المحورية وسيناريوهات ما بعد غزة.</div>
+        <div class="country-read">← قراءة الملف الكامل</div>
+      </a>
+
+      <a href="/liban.html" class="country-card fade-up" style="--cc:var(--liban);animation-delay:.06s">
+        <span class="country-flag">🇱🇧</span>
+        <div class="country-name">لبنان</div>
+        <div class="country-desc">دولة على حافة الانهيار — حزب الله والأزمة الاقتصادية وإعادة البناء.</div>
+        <div class="country-read">← قراءة الملف الكامل</div>
+      </a>
+
+      <a href="/syrie.html" class="country-card fade-up" style="--cc:var(--syrie);animation-delay:.12s">
+        <span class="country-flag">🇸🇾</span>
+        <div class="country-name">سوريا</div>
+        <div class="country-desc">بعد سقوط الأسد — مشهد التفكك والإعمار ومستقبل الدولة في ظل قوى متنافسة.</div>
+        <div class="country-read">← قراءة الملف الكامل</div>
+      </a>
+
+      <a href="/irak.html" class="country-card fade-up" style="--cc:var(--irak);animation-delay:.18s">
+        <span class="country-flag">🇮🇶</span>
+        <div class="country-name">العراق</div>
+        <div class="country-desc">بين إيران وأمريكا — الحشد الشعبي والنفط والطريق الصعب نحو الاستقرار.</div>
+        <div class="country-read">← قراءة الملف الكامل</div>
+      </a>
+
+      <a href="/yemen.html" class="country-card fade-up" style="--cc:var(--yemen);animation-delay:.24s">
+        <span class="country-flag">🇾🇪</span>
+        <div class="country-name">اليمن</div>
+        <div class="country-desc">الحوثيون، البحر الأحمر، الكارثة الإنسانية — الحرب التي لا تنتهي.</div>
+        <div class="country-read">← قراءة الملف الكامل</div>
+      </a>
+
+      <a href="/articles/libye-fragmentation-politique.html" class="country-card fade-up" style="--cc:var(--libye);animation-delay:.30s">
+        <span class="country-flag">🇱🇾</span>
+        <div class="country-name">ليبيا</div>
+        <div class="country-desc">التفكك السياسي والحرب بالوكالة — حفتر وطرابلس ومستقبل الدولة الغائبة.</div>
+        <div class="country-read">← قراءة التحليل</div>
+      </a>
+
+    </div>
+  </div><!-- /countries-scroll-wrap -->
+
+  <!-- ─────────────────────────────────────
+       RELATED ARTICLES
+       FIX: full-width on mobile, grid on tablet+
+  ───────────────────────────────────────── -->
+  <div class="section-title fade-up" style="margin-top:.5rem">
+    📰 تحليلات ذات صلة
+    <span>قراءات معمّقة تخص الأقطار العربية</span>
+  </div>
+
+  <div class="arts-grid">
+
+    <a href="/articles/soudan-or-genocide-eau.html" class="art-card fade-up" style="animation-delay:.00s;--cc:var(--afrique);border-inline-start-color:var(--afrique)">
+      <div class="art-badge">🌍 السودان</div>
+      <div class="art-title">السودان 2026: الذهب والإبادة والماء — حرب ثلاثية الأبعاد</div>
+      <div class="art-meta">مارس 2026 · 13 دقيقة</div>
+      <div class="art-read">← اقرأ التحليل</div>
+    </a>
+
+    <a href="/articles/egypte-geant-aux-pieds-argile.html" class="art-card fade-up" style="animation-delay:.05s">
+      <div class="art-badge">🇪🇬 مصر</div>
+      <div class="art-title">مصر 2026: العملاق العربي على قدمَين من طين</div>
+      <div class="art-meta">مارس 2026 · 13 دقيقة</div>
+      <div class="art-read">← اقرأ التحليل</div>
+    </a>
+
+    <a href="/articles/yemen-guerre-2026.html" class="art-card fade-up" style="animation-delay:.10s;border-inline-start-color:var(--yemen)">
+      <div class="art-badge">🇾🇪 اليمن</div>
+      <div class="art-title">اليمن 2026: الحرب التي لا تنتهي وأخطر ورقة في الخليج</div>
+      <div class="art-meta">مارس 2026 · 13 دقيقة</div>
+      <div class="art-read">← اقرأ التحليل</div>
+    </a>
+
+    <a href="/articles/libye-fragmentation-politique.html" class="art-card fade-up" style="animation-delay:.15s;border-inline-start-color:var(--libye)">
+      <div class="art-badge">🇱🇾 ليبيا</div>
+      <div class="art-title">ليبيا: التفكك السياسي والحرب بالوكالة 2026</div>
+      <div class="art-meta">مارس 2026 · 12 دقيقة</div>
+      <div class="art-read">← اقرأ التحليل</div>
+    </a>
+
+    <a href="/articles/hezbollah-armee-ou-etat.html" class="art-card fade-up" style="animation-delay:.20s;border-inline-start-color:var(--liban)">
+      <div class="art-badge">🇱🇧 لبنان</div>
+      <div class="art-title">حزب الله: جيش أم دولة داخل دولة؟</div>
+      <div class="art-meta">مارس 2026 · 14 دقيقة</div>
+      <div class="art-read">← اقرأ التحليل</div>
+    </a>
+
+    <a href="/articles/crise-mer-rouge-commerce-mondial.html" class="art-card fade-up" style="animation-delay:.25s;border-inline-start-color:var(--asie)">
+      <div class="art-badge">🌊 البحر الأحمر</div>
+      <div class="art-title">أزمة البحر الأحمر: الحوثيون يُعيدون رسم خرائط التجارة العالمية</div>
+      <div class="art-meta">مارس 2026 · 13 دقيقة</div>
+      <div class="art-read">← اقرأ التحليل</div>
+    </a>
+
+    <a href="/articles/ethiopie-tensions-regionales.html" class="art-card fade-up" style="animation-delay:.30s;border-inline-start-color:var(--afrique)">
+      <div class="art-badge">🌍 القرن الأفريقي</div>
+      <div class="art-title">إثيوبيا والجوار العربي: سد النهضة والتوترات الإقليمية</div>
+      <div class="art-meta">مارس 2026 · 13 دقيقة</div>
+      <div class="art-read">← اقرأ التحليل</div>
+    </a>
+
+    <a href="/articles/loup-brebis-boiteuse.html" class="art-card fade-up" style="animation-delay:.35s">
+      <div class="art-badge">🕊 دبلوماسية</div>
+      <div class="art-title">الذئب والنعجة العرجاء: دبلوماسية الشرق الأوسط بين الواقعية والوهم</div>
+      <div class="art-meta">مارس 2026 · 13 دقيقة</div>
+      <div class="art-read">← اقرأ التحليل</div>
+    </a>
+
+    <a href="/articles/moyen-orient-2035-scenarios.html" class="art-card fade-up" style="animation-delay:.40s;border-inline-start-color:var(--orient)">
+      <div class="art-badge">🔮 مستقبل</div>
+      <div class="art-title">الشرق الأوسط في 2035: ثلاثة سيناريوهات لمنطقة تتشكّل</div>
+      <div class="art-meta">مارس 2026 · 13 دقيقة</div>
+      <div class="art-read">← اقرأ التحليل</div>
+    </a>
+
+  </div><!-- /arts-grid -->
+
+</div><!-- /rbody -->
+
+<footer>
+  <div class="fi">
+    <span>© 2026 تحليلات جيوسياسية · ITAB</span>
+    <div class="fl">
+      <a href="/">الرئيسية</a>
+      <a href="/proche-or.html">الشرق الأوسط</a>
+      <a href="/moyen-orient.html">الأقطار العربية</a>
+      <a href="/abonnement.html">الوصول المميز</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  /* ── Scroll reveal ── */
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+        obs.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.06, rootMargin: '0px 0px -20px 0px' });
+  document.querySelectorAll('.fade-up').forEach(el => obs.observe(el));
+</script>
+</body>
+</html>
