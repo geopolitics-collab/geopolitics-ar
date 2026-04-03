@@ -1,0 +1,952 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>تحليلات جيوسياسية — وراء الأحداث قوى تُحرّك العالم</title>
+  <meta name="description" content="مجلة جيوسياسية مستقلة: تحليلات استراتيجية في الصراعات الدولية، القوى العظمى، الشرق الأوسط، أفريقيا، أوروبا وآسيا. ITAB."/>
+  <meta name="author" content="ناصر الصبري — ITAB"/>
+  <meta property="og:title" content="تحليلات جيوسياسية — وراء الأحداث قوى تُحرّك العالم"/>
+  <meta property="og:description" content="مجلة جيوسياسية مستقلة — تحليلات استراتيجية بقلم ناصر الصبري"/>
+  <meta property="og:image" content="https://images.unsplash.com/photo-1519817914152-22d216bb9170?w=1200&q=80"/>
+  <meta property="og:type" content="website"/>
+  <link rel="canonical" href="https://geopolitics-ar.nasseralsabri.workers.dev/"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&family=Noto+Naskh+Arabic:wght@400;500;600&display=swap" rel="stylesheet"/>
+  <style>
+  /* =================================================================
+     DESIGN TOKENS — identiques à syrie.html / moyen-orient.html
+     Source unique de vérité pour toutes les valeurs visuelles
+  ================================================================= */
+  :root{
+    --dark:#09090f; --surface:#111120; --card:#16162a;
+    --border:#22223a; --mid:#7070a0; --muted:#4a4a70;
+    --text:#e8e4f4; --text-soft:rgba(232,228,244,.65);
+    --or:#d4a843; --or-dim:rgba(212,168,67,.12); --or-glow:rgba(212,168,67,.22);
+    --afrique:#c8821a; --amerique:#b83232; --europe:#1e5fa8;
+    --asie:#1a8a6e; --orient:#8b3a8b;
+    --syrie:#c0392b; --irak:#2980b9; --yemen:#8e44ad;
+    --liban:#27ae60; --libye:#16a085; --arabie:#1abc9c;
+    --radius:10px; --radius-sm:6px; --tr:.22s ease; --max-w:1280px;
+    --sh-sm:0 2px 16px rgba(0,0,0,.5),0 1px 3px rgba(0,0,0,.3);
+    --sh-lg:0 12px 40px rgba(0,0,0,.65),0 2px 8px rgba(0,0,0,.4);
+  }
+
+  /* RESET + BASE */
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;font-size:16px}
+  body{
+    font-family:'Noto Naskh Arabic','Cairo',sans-serif;
+    background:var(--dark);color:var(--text);direction:rtl;
+    line-height:1.75;overflow-x:hidden;min-width:0;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{color:inherit;text-decoration:none}
+  img{display:block;max-width:100%;height:auto}
+
+  /* =================================================================
+     TOPBAR
+  ================================================================= */
+  .topbar{
+    background:var(--dark);border-bottom:1px solid var(--border);
+    padding:.42rem 1rem;display:flex;justify-content:space-between;
+    align-items:center;flex-wrap:wrap;gap:.35rem;
+    font-size:.72rem;font-family:'Cairo',sans-serif;
+  }
+  .topbar-brand{color:var(--text-soft);font-weight:600;white-space:nowrap}
+  .topbar-brand strong{color:var(--or)}
+  .topbar-links{display:flex;gap:.9rem;flex-shrink:0}
+  .topbar a{color:var(--mid);transition:color var(--tr)}
+  .topbar a:hover{color:var(--or)}
+  .topbar .fr{color:var(--or)!important}
+  @media(min-width:640px){.topbar{padding:.42rem 2rem}}
+
+  /* =================================================================
+     MASTHEAD
+  ================================================================= */
+  .masthead{
+    background:var(--surface);border-bottom:1px solid var(--border);
+    padding:1.1rem 1rem;display:flex;flex-direction:column;
+    align-items:flex-start;gap:.45rem;
+  }
+  @media(min-width:640px){
+    .masthead{flex-direction:row;align-items:flex-end;justify-content:space-between;padding:1.3rem 2rem}
+  }
+  .masthead__logo{
+    font-family:'Cairo',serif;font-size:clamp(1.4rem,4.5vw,2.2rem);
+    font-weight:900;color:var(--or);line-height:1.1;letter-spacing:-.01em;
+  }
+  .masthead__logo span{display:block;font-size:.52em;font-weight:400;color:var(--mid);margin-top:.25rem;letter-spacing:0}
+  .masthead__meta{
+    font-family:'Cairo',sans-serif;font-size:.68rem;
+    color:var(--muted);text-align:start;line-height:1.8;flex-shrink:0;
+  }
+
+  /* =================================================================
+     NAVIGATION PRINCIPALE
+     Mobile : scroll horizontal | RTL : border-inline-end
+  ================================================================= */
+  .site-nav{
+    background:var(--dark);display:flex;flex-wrap:nowrap;
+    overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch;
+    position:sticky;top:0;z-index:200;border-bottom:2px solid var(--or);
+  }
+  .site-nav::-webkit-scrollbar{display:none}
+  .site-nav a{
+    display:flex;align-items:center;gap:.42rem;
+    padding:.65rem .95rem;font-family:'Cairo',sans-serif;
+    font-size:.75rem;font-weight:600;color:var(--mid);
+    border-inline-end:1px solid var(--border);
+    transition:background var(--tr),color var(--tr);
+    white-space:nowrap;flex-shrink:0;
+  }
+  .site-nav a:hover,.site-nav a.active{background:var(--surface);color:var(--or)}
+  .nav-dot{width:6px;height:6px;border-radius:50%;flex-shrink:0}
+  .site-nav [data-r="afrique"]  .nav-dot{background:var(--afrique)}
+  .site-nav [data-r="amerique"] .nav-dot{background:var(--amerique)}
+  .site-nav [data-r="europe"]   .nav-dot{background:var(--europe)}
+  .site-nav [data-r="asie"]     .nav-dot{background:var(--asie)}
+  .site-nav [data-r="orient"]   .nav-dot{background:var(--orient)}
+  .site-nav [data-r="mo"]       .nav-dot{background:var(--or)}
+  .site-nav .nav-cta{
+    margin-inline-end:auto;background:var(--amerique);
+    color:#fff;border:none;font-weight:700;
+  }
+  .site-nav .nav-cta:hover{background:#8b1e1e}
+
+  /* =================================================================
+     HERO
+  ================================================================= */
+  .hero{
+    position:relative;height:clamp(280px,55vw,600px);
+    overflow:hidden;background:var(--dark);display:flex;align-items:flex-end;
+  }
+  .hero__bg{
+    position:absolute;inset:0;
+    background-image:url('https://images.unsplash.com/photo-1519817914152-22d216bb9170?w=1400&q=75');
+    background-size:cover;background-position:center;
+    filter:brightness(.32) saturate(.85);
+    transform:scale(1.03);transition:transform 8s ease;
+  }
+  .hero:hover .hero__bg{transform:scale(1)}
+  .hero__overlay{
+    position:absolute;inset:0;
+    background:linear-gradient(to top,rgba(9,9,15,1) 0%,rgba(9,9,15,.92) 25%,rgba(9,9,15,.55) 60%,rgba(9,9,15,.15) 100%);
+  }
+  .hero__content{
+    position:relative;z-index:2;width:100%;
+    padding:1.5rem 1rem 2rem;
+  }
+  @media(min-width:640px){
+    .hero__content{padding:2.5rem 2rem 3rem;max-width:var(--max-w);margin:0 auto}
+  }
+  .hero__badge{
+    display:inline-flex;align-items:center;gap:.5rem;
+    font-family:'Cairo',sans-serif;font-size:.68rem;font-weight:700;
+    color:var(--or);border:1px solid rgba(212,168,67,.35);
+    background:rgba(212,168,67,.08);padding:.22rem .75rem;
+    border-radius:20px;margin-bottom:.9rem;letter-spacing:.04em;
+  }
+  .hero__badge-dot{
+    width:6px;height:6px;border-radius:50%;background:#ff4444;
+    animation:pulse 1.6s ease-in-out infinite;flex-shrink:0;
+  }
+  @keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.4;transform:scale(.7)}}
+  .hero__title{
+    font-family:'Cairo',serif;font-size:clamp(1.9rem,5.5vw,4rem);
+    font-weight:900;line-height:1.1;color:#fff;margin-bottom:.8rem;
+    overflow-wrap:break-word;max-width:760px;
+  }
+  .hero__title em{font-style:normal;color:var(--or)}
+  .hero__sub{
+    font-size:clamp(.85rem,2.2vw,1.05rem);color:rgba(232,228,244,.68);
+    line-height:1.85;max-width:600px;margin-bottom:1.4rem;
+  }
+  .hero__ctas{display:flex;gap:.75rem;flex-wrap:wrap}
+  .btn-primary{
+    display:inline-flex;align-items:center;gap:.45rem;
+    background:var(--amerique);color:#fff;
+    font-family:'Cairo',sans-serif;font-size:.82rem;font-weight:700;
+    padding:.7rem 1.4rem;border-radius:var(--radius-sm);
+    min-height:44px;transition:background var(--tr),transform var(--tr);white-space:nowrap;
+  }
+  .btn-primary:hover{background:#8b1e1e;transform:translateY(-2px)}
+  .btn-ghost{
+    display:inline-flex;align-items:center;gap:.45rem;
+    background:transparent;color:var(--or);
+    font-family:'Cairo',sans-serif;font-size:.82rem;font-weight:700;
+    padding:.7rem 1.4rem;border:1px solid rgba(212,168,67,.4);
+    border-radius:var(--radius-sm);min-height:44px;transition:all var(--tr);white-space:nowrap;
+  }
+  .btn-ghost:hover{background:var(--or-dim);border-color:var(--or)}
+
+  /* =================================================================
+     BARRE DE STATS
+  ================================================================= */
+  .stats-bar{
+    background:var(--surface);border-bottom:1px solid var(--border);
+    padding:.85rem 1rem;
+  }
+  @media(min-width:640px){.stats-bar{padding:.85rem 2rem}}
+  .stats-bar__inner{
+    max-width:var(--max-w);margin:0 auto;
+    display:flex;gap:1.5rem 2.5rem;flex-wrap:wrap;align-items:center;
+    font-family:'Cairo',sans-serif;font-size:.7rem;color:var(--mid);
+  }
+  .stats-bar__item strong{
+    color:var(--or);font-size:.95rem;font-weight:900;font-family:'Cairo',serif;
+  }
+
+  /* =================================================================
+     WRAPPER GÉNÉRAL
+  ================================================================= */
+  .wrap{max-width:var(--max-w);margin:0 auto;padding:2rem 1rem}
+  @media(min-width:640px){.wrap{padding:2.5rem 2rem}}
+  @media(min-width:1024px){.wrap{padding:3rem 2rem}}
+
+  /* =================================================================
+     TITRES DE SECTION
+  ================================================================= */
+  .section-head{
+    display:flex;align-items:baseline;justify-content:space-between;
+    gap:1rem;margin-bottom:1.4rem;padding-bottom:.6rem;
+    border-bottom:2px solid var(--or);
+  }
+  .section-head h2{
+    font-family:'Cairo',serif;font-size:clamp(1.1rem,3vw,1.45rem);
+    font-weight:700;color:var(--text);display:flex;align-items:center;gap:.5rem;
+  }
+  .section-head h2 .accent{
+    display:inline-block;width:10px;height:10px;
+    border-radius:50%;flex-shrink:0;
+  }
+  .section-head a{
+    font-family:'Cairo',sans-serif;font-size:.72rem;font-weight:600;
+    color:var(--or);white-space:nowrap;opacity:.8;transition:opacity var(--tr);
+  }
+  .section-head a:hover{opacity:1}
+
+  /* =================================================================
+     ARTICLE À LA UNE (FEATURED)
+     Mobile : colonne unique | Desktop ≥720px : 2 colonnes
+  ================================================================= */
+  .featured{
+    display:grid;grid-template-columns:1fr;gap:0;
+    background:var(--card);border:1px solid var(--border);
+    border-radius:var(--radius);overflow:hidden;
+    box-shadow:var(--sh-sm);
+    transition:box-shadow var(--tr),transform var(--tr);margin-bottom:2rem;
+  }
+  .featured:hover{box-shadow:var(--sh-lg);transform:translateY(-3px)}
+  @media(min-width:720px){.featured{grid-template-columns:1fr 1fr}}
+  .featured__img{position:relative;min-height:220px;overflow:hidden;background:#0a0a18}
+  @media(min-width:720px){.featured__img{min-height:320px}}
+  .featured__img img{
+    width:100%;height:100%;object-fit:cover;
+    filter:brightness(.65) saturate(.85);
+    transition:filter var(--tr),transform .4s ease;
+  }
+  .featured:hover .featured__img img{filter:brightness(.75) saturate(1);transform:scale(1.03)}
+  .featured__img-label{
+    position:absolute;top:.9rem;right:.9rem;
+    background:var(--amerique);color:#fff;
+    font-family:'Cairo',sans-serif;font-size:.62rem;font-weight:700;
+    padding:.22rem .6rem;border-radius:var(--radius-sm);
+  }
+  .featured__body{
+    padding:1.4rem 1.3rem;display:flex;flex-direction:column;
+    gap:.7rem;justify-content:center;
+  }
+  @media(min-width:640px){.featured__body{padding:2rem 1.8rem}}
+  .featured__region{
+    font-family:'Cairo',sans-serif;font-size:.65rem;font-weight:700;
+    letter-spacing:.05em;color:var(--or);
+  }
+  .featured__title{
+    font-family:'Cairo',serif;font-size:clamp(1.1rem,3vw,1.55rem);
+    font-weight:900;line-height:1.3;color:var(--text);overflow-wrap:break-word;
+  }
+  .featured:hover .featured__title{color:var(--or)}
+  .featured__desc{font-size:.88rem;color:var(--mid);line-height:1.8;overflow-wrap:break-word}
+  .featured__meta{
+    display:flex;align-items:center;gap:.6rem;
+    font-family:'Cairo',sans-serif;font-size:.65rem;color:var(--muted);flex-wrap:wrap;
+  }
+  .featured__meta .sep{color:var(--border)}
+  .featured__read{
+    display:inline-flex;align-items:center;gap:.4rem;
+    font-family:'Cairo',sans-serif;font-size:.75rem;font-weight:700;color:var(--or);
+    margin-top:auto;padding-top:.6rem;border-top:1px solid var(--border);
+    transition:gap var(--tr);
+  }
+  .featured:hover .featured__read{gap:.65rem}
+
+  /* =================================================================
+     GRILLE D'ARTICLES
+     Mobile : 1 col | Tablette : 2 cols | Desktop : 3 cols
+  ================================================================= */
+  .articles-grid{
+    display:grid;grid-template-columns:1fr;gap:1rem;
+  }
+  @media(min-width:480px){.articles-grid{grid-template-columns:1fr 1fr}}
+  @media(min-width:900px){.articles-grid{grid-template-columns:repeat(3,1fr);gap:1.2rem}}
+
+  .art-card{
+    background:var(--card);border:1px solid var(--border);
+    border-radius:var(--radius);overflow:hidden;display:flex;
+    flex-direction:column;box-shadow:var(--sh-sm);
+    transition:transform var(--tr),box-shadow var(--tr),border-color var(--tr);
+  }
+  .art-card:hover{transform:translateY(-4px);box-shadow:var(--sh-lg);border-color:rgba(255,255,255,.1)}
+  .art-card__stripe{height:3px;flex-shrink:0}
+  .art-card__img{
+    width:100%;height:140px;object-fit:cover;
+    filter:brightness(.65) saturate(.8);transition:filter var(--tr);flex-shrink:0;
+  }
+  .art-card:hover .art-card__img{filter:brightness(.8) saturate(1)}
+  .art-card__body{padding:1rem 1.1rem 1.1rem;flex:1;display:flex;flex-direction:column;gap:.45rem}
+  .art-card__tag{
+    display:inline-block;font-family:'Cairo',sans-serif;font-size:.62rem;font-weight:700;
+    padding:.18rem .6rem;border:1px solid;border-radius:var(--radius-sm);width:fit-content;
+  }
+  .art-card h3{
+    font-family:'Cairo',serif;font-size:clamp(.88rem,2.5vw,.98rem);
+    font-weight:700;line-height:1.5;color:var(--text);flex:1;
+    overflow-wrap:break-word;word-break:break-word;
+  }
+  .art-card:hover h3{color:var(--or)}
+  .art-card__foot{
+    display:flex;justify-content:space-between;align-items:center;
+    margin-top:auto;padding-top:.65rem;border-top:1px solid var(--border);
+  }
+  .art-card__meta{font-family:'Cairo',sans-serif;font-size:.62rem;color:var(--muted)}
+  .art-card__arrow{font-size:.85rem;color:var(--or);transition:transform var(--tr)}
+  .art-card:hover .art-card__arrow{transform:translateX(4px)}
+
+  /* =================================================================
+     TUILES RÉGIONS
+     Mobile : 2 cols | Tablette : 3 cols | Desktop : 5 cols
+  ================================================================= */
+  .regions-grid{
+    display:grid;grid-template-columns:repeat(2,1fr);gap:.75rem;margin-bottom:.75rem;
+  }
+  @media(min-width:540px){.regions-grid{grid-template-columns:repeat(3,1fr)}}
+  @media(min-width:900px){.regions-grid{grid-template-columns:repeat(5,1fr);gap:1rem}}
+
+  .region-tile{
+    position:relative;background:var(--card);border:1px solid var(--border);
+    border-radius:var(--radius);border-top:3px solid var(--rc,var(--or));
+    padding:1.1rem 1rem 1rem;display:flex;flex-direction:column;gap:.4rem;
+    overflow:hidden;transition:transform var(--tr),box-shadow var(--tr);
+  }
+  .region-tile::before{
+    content:'';position:absolute;inset:0;background:var(--rc,var(--or));
+    opacity:0;transition:opacity var(--tr);pointer-events:none;
+  }
+  .region-tile:hover{transform:translateY(-4px);box-shadow:0 8px 30px rgba(0,0,0,.55)}
+  .region-tile:hover::before{opacity:.06}
+  .region-tile__icon{font-size:1.6rem;line-height:1}
+  .region-tile__name{font-family:'Cairo',serif;font-size:.95rem;font-weight:700;color:var(--text)}
+  .region-tile__count{font-family:'Cairo',sans-serif;font-size:.65rem;color:var(--muted)}
+  .region-tile__arrow{
+    font-size:.8rem;color:var(--rc,var(--or));margin-top:auto;padding-top:.4rem;
+    transition:transform var(--tr);
+  }
+  .region-tile:hover .region-tile__arrow{transform:translateX(4px)}
+
+  /* =================================================================
+     LISTE PAYS (horizontale, design moyen-orient.html)
+  ================================================================= */
+  .country-list{display:flex;flex-direction:column;gap:.65rem}
+  .country-item{
+    display:flex;align-items:center;gap:.9rem;
+    background:var(--card);border:1px solid var(--border);
+    border-radius:var(--radius);border-inline-start:4px solid var(--cc,var(--or));
+    padding:.85rem 1rem;
+    transition:transform var(--tr),background var(--tr),box-shadow var(--tr);
+  }
+  .country-item:hover{transform:translateX(-4px);background:#18182e;box-shadow:var(--sh-sm)}
+  .country-item__flag{font-size:1.65rem;line-height:1;flex-shrink:0;filter:drop-shadow(0 2px 4px rgba(0,0,0,.4))}
+  .country-item__info{flex:1;min-width:0}
+  .country-item__name{font-family:'Cairo',serif;font-size:.95rem;font-weight:900;color:var(--text);margin-bottom:.1rem}
+  .country-item__desc{font-size:.78rem;color:var(--mid);line-height:1.55;overflow-wrap:break-word}
+  .country-item__arrow{font-size:.85rem;color:var(--or);flex-shrink:0;opacity:.6;transition:transform var(--tr),opacity var(--tr)}
+  .country-item:hover .country-item__arrow{transform:translateX(4px);opacity:1}
+
+  /* =================================================================
+     LAYOUT AVEC SIDEBAR
+     Mobile : 1 col | Desktop ≥960px : contenu + sidebar
+  ================================================================= */
+  .layout-with-aside{
+    display:grid;grid-template-columns:1fr;gap:2rem;align-items:start;
+  }
+  @media(min-width:960px){.layout-with-aside{grid-template-columns:1fr 280px;gap:2.5rem}}
+
+  /* SIDEBAR */
+  .sidebar{min-width:0}
+  .sidebar__block{
+    background:var(--card);border:1px solid var(--border);
+    border-radius:var(--radius);overflow:hidden;margin-bottom:1.2rem;
+  }
+  .sidebar__head{
+    background:var(--surface);padding:.7rem 1rem;
+    font-family:'Cairo',sans-serif;font-size:.7rem;font-weight:700;
+    color:var(--or);letter-spacing:.04em;border-bottom:1px solid var(--border);
+  }
+  .sidebar__list{list-style:none}
+  .sidebar__item{
+    display:flex;align-items:flex-start;gap:.6rem;padding:.75rem 1rem;
+    border-bottom:1px solid var(--border);transition:background var(--tr);
+  }
+  .sidebar__item:last-child{border-bottom:none}
+  .sidebar__item:hover{background:var(--surface)}
+  .sidebar__num{font-family:'Cairo',sans-serif;font-size:.62rem;font-weight:700;color:var(--or);flex-shrink:0;margin-top:.1rem}
+  .sidebar__title{font-size:.82rem;line-height:1.5;color:var(--text);overflow-wrap:break-word}
+  .sidebar__item:hover .sidebar__title{color:var(--or)}
+  .sidebar-cta{
+    background:linear-gradient(135deg,#1a0a30,#0d0a20);
+    border:1px solid var(--orient);border-radius:var(--radius);
+    padding:1.3rem;text-align:center;
+  }
+  .sidebar-cta h4{font-family:'Cairo',serif;font-size:1rem;font-weight:700;color:var(--or);margin-bottom:.4rem}
+  .sidebar-cta p{font-size:.78rem;color:var(--mid);line-height:1.7;margin-bottom:.9rem}
+  .sidebar-cta a{
+    display:inline-block;background:var(--orient);color:#fff;
+    font-family:'Cairo',sans-serif;font-size:.75rem;font-weight:700;
+    padding:.55rem 1.3rem;border-radius:var(--radius-sm);transition:background var(--tr);
+  }
+  .sidebar-cta a:hover{background:#6e2a6e}
+
+  /* =================================================================
+     2 COLONNES ÉGALES
+  ================================================================= */
+  .two-col{display:grid;grid-template-columns:1fr;gap:2rem}
+  @media(min-width:760px){.two-col{grid-template-columns:1fr 1fr;gap:2.5rem}}
+
+  /* =================================================================
+     CITATION ÉDITORIALE
+  ================================================================= */
+  .quote-band{
+    background:linear-gradient(135deg,rgba(26,18,50,.98),rgba(10,8,22,.98));
+    border-top:1px solid var(--border);border-bottom:1px solid var(--border);
+    padding:2.5rem 1rem;text-align:center;
+  }
+  @media(min-width:640px){.quote-band{padding:3.5rem 2rem}}
+  .quote-band blockquote{
+    font-family:'Cairo',serif;
+    font-size:clamp(1.05rem,2.8vw,1.65rem);font-weight:600;
+    line-height:1.7;color:#e8d59e;max-width:780px;margin:0 auto .9rem;
+  }
+  .quote-band blockquote::before{content:'«\00A0';color:var(--or)}
+  .quote-band blockquote::after{content:'\00A0»';color:var(--or)}
+  .quote-band cite{font-family:'Cairo',sans-serif;font-size:.72rem;color:var(--mid);font-style:normal}
+
+  /* =================================================================
+     SÉPARATEUR
+  ================================================================= */
+  .section-sep{border:none;border-top:1px solid var(--border);margin:0}
+
+  /* =================================================================
+     ANIMATION FADE-UP
+     Visible par défaut (pas de blocage) — JS anime à l'entrée
+  ================================================================= */
+  .fade-up{opacity:1;transform:none}
+  .fade-up.will-animate{opacity:0;transform:translateY(20px);transition:opacity .6s ease,transform .6s ease}
+  .fade-up.will-animate.visible{opacity:1;transform:none}
+
+  /* =================================================================
+     FOOTER
+  ================================================================= */
+  footer{
+    background:var(--dark);border-top:1px solid var(--border);
+    padding:2rem 1rem 1.5rem;
+    font-family:'Cairo',sans-serif;font-size:.72rem;color:var(--muted);
+  }
+  @media(min-width:640px){footer{padding:2.5rem 2rem 2rem}}
+  .footer__inner{
+    max-width:var(--max-w);margin:0 auto;
+    display:grid;grid-template-columns:1fr;gap:1.5rem;
+  }
+  @media(min-width:640px){.footer__inner{grid-template-columns:1fr auto;align-items:center}}
+  .footer__brand{font-family:'Cairo',serif;font-size:1.1rem;font-weight:900;color:var(--or);margin-bottom:.4rem}
+  .footer__brand span{display:block;font-size:.6em;font-weight:400;color:var(--mid)}
+  .footer__copy{color:var(--muted);line-height:1.7}
+  .footer__links{display:flex;gap:1rem;flex-wrap:wrap}
+  .footer__links a{color:var(--muted);transition:color var(--tr)}
+  .footer__links a:hover{color:var(--or)}
+  </style>
+</head>
+<body>
+
+<!-- TOPBAR -->
+<div class="topbar">
+  <span class="topbar-brand">
+    تحليلات جيوسياسية —
+    <strong>القوى والصراعات في القرن الحادي والعشرين</strong>
+  </span>
+  <div class="topbar-links">
+    <a href="https://xegeo.pages.dev" class="fr">🇫🇷 Français</a>
+    <a href="/abonnement.html">الوصول المميز</a>
+  </div>
+</div>
+
+<!-- MASTHEAD -->
+<header class="masthead">
+  <a href="/" class="masthead__logo">
+    تحليلات جيوسياسية
+    <span>مجلة استراتيجية مستقلة</span>
+  </a>
+  <div class="masthead__meta">ITAB · 2026 · تورسينج، فرنسا</div>
+</header>
+
+<!-- NAVIGATION PRINCIPALE -->
+<nav class="site-nav" role="navigation" aria-label="التنقل الرئيسي">
+  <a href="/" class="active">الرئيسية</a>
+  <a href="/afr.html"          data-r="afrique" ><span class="nav-dot"></span>أفريقيا</a>
+  <a href="/ame.html"          data-r="amerique"><span class="nav-dot"></span>أمريكا</a>
+  <a href="/eu.html"           data-r="europe"  ><span class="nav-dot"></span>أوروبا</a>
+  <a href="/asie.html"         data-r="asie"    ><span class="nav-dot"></span>آسيا</a>
+  <a href="/proche-or.html"    data-r="orient"  ><span class="nav-dot"></span>الشرق الأوسط</a>
+  <a href="/moyen-orient.html" data-r="mo"      ><span class="nav-dot"></span>الأقطار العربية</a>
+  <a href="/opinion.html">رأي وميدان</a>
+  <a href="/abonnement.html" class="nav-cta">الوصول المميز ←</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero" aria-label="الصفحة الرئيسية">
+  <div class="hero__bg" role="img" aria-label="خريطة العالم"></div>
+  <div class="hero__overlay"></div>
+  <div class="hero__content">
+    <div class="hero__badge">
+      <span class="hero__badge-dot"></span>
+      تحليل مستمر — مارس 2026
+    </div>
+    <h1 class="hero__title">
+      وراء الأحداث<br>
+      <em>قوى تُحرّك العالم</em>
+    </h1>
+    <p class="hero__sub">
+      تحليلات جيوسياسية معمّقة في الصراعات الدولية، القوى العظمى، الشرق الأوسط، أفريقيا، أوروبا وآسيا.
+      منظور استراتيجي مستقل بقلم ناصر الصبري — ITAB.
+    </p>
+    <div class="hero__ctas">
+      <a href="/moyen-orient.html" class="btn-primary">📂 الأقطار العربية</a>
+      <a href="/proche-or.html"    class="btn-ghost">🌍 الشرق الأوسط</a>
+    </div>
+  </div>
+</section>
+
+<!-- BARRE STATISTIQUES -->
+<div class="stats-bar">
+  <div class="stats-bar__inner">
+    <span class="stats-bar__item"><strong>150+</strong> تحليل منشور</span>
+    <span class="stats-bar__item"><strong>13</strong> دولة مُغطّاة</span>
+    <span class="stats-bar__item"><strong>6</strong> مناطق جيوسياسية</span>
+    <span class="stats-bar__item"><strong id="days-count">—</strong> يوماً من التحليل المستمر</span>
+  </div>
+</div>
+
+<!-- CORPS PRINCIPAL -->
+<main>
+
+  <!-- §A — ARTICLE À LA UNE -->
+  <div class="wrap">
+    <div class="section-head fade-up">
+      <h2><span class="accent" style="background:var(--amerique)"></span>مقال الأسبوع</h2>
+      <a href="/proche-or.html">جميع التحليلات ←</a>
+    </div>
+
+    <a href="/articles/iran-israel-usa-escalade.html" class="featured fade-up">
+      <div class="featured__img">
+        <img src="https://images.unsplash.com/photo-1578895101408-1a36b834405b?w=800&q=75"
+             alt="إيران إسرائيل أمريكا" loading="lazy"/>
+        <span class="featured__img-label">🔴 مقال الأسبوع</span>
+      </div>
+      <div class="featured__body">
+        <div class="featured__region">🌍 الشرق الأوسط · استراتيجية</div>
+        <h2 class="featured__title">
+          إيران - إسرائيل - أمريكا:<br>نحو تصعيد لا رجعة منه؟
+        </h2>
+        <p class="featured__desc">
+          ثلاثة أطراف، ثلاثة منطقَي ردع، ودائرة صراع باتت أضيق من أن تستوعب سياسات الغموض الاستراتيجي التي حالت دون الانفجار لعقود.
+        </p>
+        <div class="featured__meta">
+          <span>مارس 2026</span><span class="sep">·</span>
+          <span>14 دقيقة</span><span class="sep">·</span>
+          <span>ناصر الصبري</span>
+        </div>
+        <span class="featured__read">← اقرأ التحليل الكامل</span>
+      </div>
+    </a>
+
+    <!-- §B — GRILLE + SIDEBAR -->
+    <div class="layout-with-aside">
+
+      <div>
+        <div class="section-head fade-up" style="margin-top:1rem">
+          <h2><span class="accent" style="background:var(--or)"></span>آخر التحليلات</h2>
+          <a href="/proche-or.html">المزيد ←</a>
+        </div>
+
+        <div class="articles-grid">
+
+          <a href="/articles/trumpisme-retour-consequences-globales.html" class="art-card fade-up">
+            <div class="art-card__stripe" style="background:var(--amerique)"></div>
+            <img class="art-card__img" src="https://images.unsplash.com/photo-1541872703-74c5e44368f9?w=600&q=70" alt="" loading="lazy"/>
+            <div class="art-card__body">
+              <span class="art-card__tag" style="border-color:var(--amerique);color:var(--amerique)">أمريكا</span>
+              <h3>عودة الترامبية: تحولات النظام العالمي</h3>
+              <div class="art-card__foot">
+                <span class="art-card__meta">مارس 2026 · 14 د</span>
+                <span class="art-card__arrow">←</span>
+              </div>
+            </div>
+          </a>
+
+          <a href="/articles/rivalite-usa-chine-guerre-systemique.html" class="art-card fade-up">
+            <div class="art-card__stripe" style="background:var(--asie)"></div>
+            <img class="art-card__img" src="https://images.unsplash.com/photo-1521791136064-7986c2920216?w=600&q=70" alt="" loading="lazy"/>
+            <div class="art-card__body">
+              <span class="art-card__tag" style="border-color:var(--asie);color:var(--asie)">آسيا</span>
+              <h3>التنافس الأمريكي-الصيني: نحو حرب منظومية؟</h3>
+              <div class="art-card__foot">
+                <span class="art-card__meta">مارس 2026 · 15 د</span>
+                <span class="art-card__arrow">←</span>
+              </div>
+            </div>
+          </a>
+
+          <a href="/articles/europe-puissance-strategique.html" class="art-card fade-up">
+            <div class="art-card__stripe" style="background:var(--europe)"></div>
+            <img class="art-card__img" src="https://images.unsplash.com/photo-1527853787696-f7be74f2e39a?w=600&q=70" alt="" loading="lazy"/>
+            <div class="art-card__body">
+              <span class="art-card__tag" style="border-color:var(--europe);color:var(--europe)">أوروبا</span>
+              <h3>أوروبا: هل لا تزال تستطيع أن تكون قوة استراتيجية؟</h3>
+              <div class="art-card__foot">
+                <span class="art-card__meta">مارس 2026 · 13 د</span>
+                <span class="art-card__arrow">←</span>
+              </div>
+            </div>
+          </a>
+
+          <a href="/articles/sahel-zone-affrontement-global.html" class="art-card fade-up">
+            <div class="art-card__stripe" style="background:var(--afrique)"></div>
+            <img class="art-card__img" src="https://images.unsplash.com/photo-1489392191049-fc10c97e64b6?w=600&q=70" alt="" loading="lazy"/>
+            <div class="art-card__body">
+              <span class="art-card__tag" style="border-color:var(--afrique);color:var(--afrique)">أفريقيا</span>
+              <h3>الساحل: منطقة المواجهة الدولية الجديدة</h3>
+              <div class="art-card__foot">
+                <span class="art-card__meta">مارس 2026 · 13 د</span>
+                <span class="art-card__arrow">←</span>
+              </div>
+            </div>
+          </a>
+
+          <a href="/articles/ukraine-conflit-long-terme.html" class="art-card fade-up">
+            <div class="art-card__stripe" style="background:var(--europe)"></div>
+            <img class="art-card__img" src="https://images.unsplash.com/photo-1580940157523-71ee2e4e2026?w=600&q=70" alt="" loading="lazy"/>
+            <div class="art-card__body">
+              <span class="art-card__tag" style="border-color:var(--europe);color:var(--europe)">أوروبا</span>
+              <h3>أوكرانيا: نحو نزاع طويل الأمد؟</h3>
+              <div class="art-card__foot">
+                <span class="art-card__meta">مارس 2026 · 13 د</span>
+                <span class="art-card__arrow">←</span>
+              </div>
+            </div>
+          </a>
+
+          <a href="/articles/gaza-effets-regionaux-moyen-orient.html" class="art-card fade-up">
+            <div class="art-card__stripe" style="background:var(--orient)"></div>
+            <img class="art-card__img" src="https://images.unsplash.com/photo-1604347003892-ef7c8bdb0ce3?w=600&q=70" alt="" loading="lazy"/>
+            <div class="art-card__body">
+              <span class="art-card__tag" style="border-color:var(--orient);color:var(--orient)">الشرق الأوسط</span>
+              <h3>غزة وتداعياتها الإقليمية: الشرق الأوسط بعد أكتوبر 2023</h3>
+              <div class="art-card__foot">
+                <span class="art-card__meta">مارس 2026 · 13 د</span>
+                <span class="art-card__arrow">←</span>
+              </div>
+            </div>
+          </a>
+
+        </div>
+      </div>
+
+      <!-- SIDEBAR -->
+      <aside class="sidebar">
+        <div class="sidebar__block fade-up">
+          <div class="sidebar__head">📈 الأكثر قراءة</div>
+          <ul class="sidebar__list">
+            <li class="sidebar__item">
+              <span class="sidebar__num">01</span>
+              <a href="/articles/yemen-houthis-mer-rouge.html" class="sidebar__title">الحوثيون والبحر الأحمر: أبعاد ما وراء التصعيد</a>
+            </li>
+            <li class="sidebar__item">
+              <span class="sidebar__num">02</span>
+              <a href="/articles/syrie-apres-assad-pouvoir.html" class="sidebar__title">سوريا ما بعد الأسد: من يملأ فراغ السلطة؟</a>
+            </li>
+            <li class="sidebar__item">
+              <span class="sidebar__num">03</span>
+              <a href="/articles/guerre-technologique-usa-chine.html" class="sidebar__title">الحرب التكنولوجية أمريكا-الصين: المعركة الأصل</a>
+            </li>
+            <li class="sidebar__item">
+              <span class="sidebar__num">04</span>
+              <a href="/articles/axe-chine-russie-alliance-opportunisme.html" class="sidebar__title">المحور الصيني-الروسي: تحالف أم انتهازية مشتركة؟</a>
+            </li>
+            <li class="sidebar__item">
+              <span class="sidebar__num">05</span>
+              <a href="/articles/fragmentation-mondialisation.html" class="sidebar__title">تشرذم العولمة: نهاية العالم المتصل أم تحوّله؟</a>
+            </li>
+          </ul>
+        </div>
+        <div class="sidebar-cta fade-up">
+          <h4>الوصول المميز</h4>
+          <p>تحليلات كاملة، أرشيف حصري وتقارير استراتيجية بعمق أكبر.</p>
+          <a href="/abonnement.html">اشترك الآن ←</a>
+        </div>
+      </aside>
+
+    </div>
+  </div>
+
+  <hr class="section-sep"/>
+
+  <!-- §C — RÉGIONS -->
+  <div class="wrap">
+    <div class="section-head fade-up">
+      <h2><span class="accent" style="background:var(--or)"></span>استكشف المناطق</h2>
+    </div>
+    <div class="regions-grid">
+      <a href="/proche-or.html"    class="region-tile fade-up" style="--rc:var(--orient)">
+        <span class="region-tile__icon">🌍</span>
+        <div class="region-tile__name">الشرق الأوسط</div>
+        <div class="region-tile__count">أزمات وتحولات إقليمية</div>
+        <span class="region-tile__arrow">←</span>
+      </a>
+      <a href="/eu.html"           class="region-tile fade-up" style="--rc:var(--europe)">
+        <span class="region-tile__icon">🇪🇺</span>
+        <div class="region-tile__name">أوروبا</div>
+        <div class="region-tile__count">الحرب والهوية والسلطة</div>
+        <span class="region-tile__arrow">←</span>
+      </a>
+      <a href="/asie.html"         class="region-tile fade-up" style="--rc:var(--asie)">
+        <span class="region-tile__icon">🌏</span>
+        <div class="region-tile__name">آسيا</div>
+        <div class="region-tile__count">الصين وتوازنات القرن</div>
+        <span class="region-tile__arrow">←</span>
+      </a>
+      <a href="/afr.html"          class="region-tile fade-up" style="--rc:var(--afrique)">
+        <span class="region-tile__icon">🌍</span>
+        <div class="region-tile__name">أفريقيا</div>
+        <div class="region-tile__count">الساحل والتنافس الكبير</div>
+        <span class="region-tile__arrow">←</span>
+      </a>
+      <a href="/ame.html"          class="region-tile fade-up" style="--rc:var(--amerique)">
+        <span class="region-tile__icon">🌎</span>
+        <div class="region-tile__name">أمريكا</div>
+        <div class="region-tile__count">الهيمنة وتحدياتها</div>
+        <span class="region-tile__arrow">←</span>
+      </a>
+    </div>
+  </div>
+
+  <hr class="section-sep"/>
+
+  <!-- §D — PAYS ARABES + YÉMEN -->
+  <div class="wrap">
+    <div class="two-col">
+      <div>
+        <div class="section-head fade-up">
+          <h2><span class="accent" style="background:var(--or)"></span>الأقطار العربية</h2>
+          <a href="/moyen-orient.html">الكل ←</a>
+        </div>
+        <div class="country-list">
+          <a href="/syrie.html"          class="country-item fade-up" style="--cc:var(--syrie)">
+            <span class="country-item__flag">🇸🇾</span>
+            <div class="country-item__info">
+              <div class="country-item__name">سوريا</div>
+              <div class="country-item__desc">فراغ السلطة ومستقبل الدولة</div>
+            </div>
+            <span class="country-item__arrow">←</span>
+          </a>
+          <a href="/liban.html"          class="country-item fade-up" style="--cc:var(--liban)">
+            <span class="country-item__flag">🇱🇧</span>
+            <div class="country-item__info">
+              <div class="country-item__name">لبنان</div>
+              <div class="country-item__desc">حزب الله والانهيار الاقتصادي</div>
+            </div>
+            <span class="country-item__arrow">←</span>
+          </a>
+          <a href="/irak.html"           class="country-item fade-up" style="--cc:var(--irak)">
+            <span class="country-item__flag">🇮🇶</span>
+            <div class="country-item__info">
+              <div class="country-item__name">العراق</div>
+              <div class="country-item__desc">بين إيران وأمريكا والنفط</div>
+            </div>
+            <span class="country-item__arrow">←</span>
+          </a>
+          <a href="/palestine.html"      class="country-item fade-up" style="--cc:#e67e22">
+            <span class="country-item__flag">🇵🇸</span>
+            <div class="country-item__info">
+              <div class="country-item__name">فلسطين</div>
+              <div class="country-item__desc">غزة وسيناريوهات ما بعد الحرب</div>
+            </div>
+            <span class="country-item__arrow">←</span>
+          </a>
+          <a href="/arabie-saoudite.html" class="country-item fade-up" style="--cc:var(--arabie)">
+            <span class="country-item__flag">🇸🇦</span>
+            <div class="country-item__info">
+              <div class="country-item__name">السعودية</div>
+              <div class="country-item__desc">رؤية 2030 وإعادة رسم النفوذ</div>
+            </div>
+            <span class="country-item__arrow">←</span>
+          </a>
+        </div>
+      </div>
+
+      <div>
+        <div class="section-head fade-up">
+          <h2><span class="accent" style="background:var(--yemen)"></span>ملف اليمن</h2>
+          <a href="/yemen.html">الكل ←</a>
+        </div>
+        <a href="/articles/yemen-houthis-mer-rouge.html" class="art-card fade-up" style="margin-bottom:1rem">
+          <div class="art-card__stripe" style="background:var(--yemen)"></div>
+          <img class="art-card__img" src="https://images.unsplash.com/photo-1505228395891-9a51e7e86bf6?w=600&q=70" alt="" loading="lazy"/>
+          <div class="art-card__body">
+            <span class="art-card__tag" style="border-color:var(--yemen);color:var(--yemen)">⚓ بحري · استراتيجي</span>
+            <h3>الحوثيون والبحر الأحمر: أبعاد ما وراء التصعيد</h3>
+            <div class="art-card__foot">
+              <span class="art-card__meta">مارس 2026 · 13 د</span>
+              <span class="art-card__arrow">←</span>
+            </div>
+          </div>
+        </a>
+        <a href="/articles/yemen-famine-guerre.html" class="art-card fade-up">
+          <div class="art-card__stripe" style="background:var(--amerique)"></div>
+          <div class="art-card__body">
+            <span class="art-card__tag" style="border-color:var(--amerique);color:var(--amerique)">🌾 إنساني</span>
+            <h3>اليمن الإنساني: الجوع كسلاح حرب</h3>
+            <div class="art-card__foot">
+              <span class="art-card__meta">مارس 2026 · 14 د</span>
+              <span class="art-card__arrow">←</span>
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <hr class="section-sep"/>
+
+  <!-- §E — CITATION ÉDITORIALE -->
+  <div class="quote-band">
+    <blockquote>
+      الصراع الجيوسياسي ليس استثناءً في التاريخ — إنه الحالة الطبيعية للنظام الدولي في غياب سلطة عليا.
+    </blockquote>
+    <cite>— ناصر الصبري · ITAB · تحليلات جيوسياسية</cite>
+  </div>
+
+  <!-- §F — ملفات TRANSVERSALES -->
+  <div class="wrap">
+    <div class="section-head fade-up">
+      <h2><span class="accent" style="background:var(--asie)"></span>ملفات عابرة للحدود</h2>
+      <a href="/proche-or.html">المزيد ←</a>
+    </div>
+    <div class="articles-grid">
+      <a href="/articles/guerre-technologique-usa-chine.html" class="art-card fade-up">
+        <div class="art-card__stripe" style="background:var(--asie)"></div>
+        <div class="art-card__body">
+          <span class="art-card__tag" style="border-color:var(--asie);color:var(--asie)">💻 تكنولوجيا</span>
+          <h3>الحرب التكنولوجية أمريكا-الصين: المعركة الأصل</h3>
+          <div class="art-card__foot">
+            <span class="art-card__meta">مارس 2026 · 13 د</span>
+            <span class="art-card__arrow">←</span>
+          </div>
+        </div>
+      </a>
+      <a href="/articles/fragmentation-mondialisation.html" class="art-card fade-up">
+        <div class="art-card__stripe" style="background:var(--amerique)"></div>
+        <div class="art-card__body">
+          <span class="art-card__tag" style="border-color:var(--amerique);color:var(--amerique)">📦 اقتصاد</span>
+          <h3>تشرذم العولمة: نهاية العالم المتصل أم تحوّله؟</h3>
+          <div class="art-card__foot">
+            <span class="art-card__meta">مارس 2026 · 12 د</span>
+            <span class="art-card__arrow">←</span>
+          </div>
+        </div>
+      </a>
+      <a href="/articles/puissances-moyennes-inde-turquie-saoudie-bresil.html" class="art-card fade-up">
+        <div class="art-card__stripe" style="background:var(--orient)"></div>
+        <div class="art-card__body">
+          <span class="art-card__tag" style="border-color:var(--orient);color:var(--orient)">🌐 قوى متوسطة</span>
+          <h3>الهند وتركيا والسعودية والبرازيل: الصعود والمناورة</h3>
+          <div class="art-card__foot">
+            <span class="art-card__meta">مارس 2026 · 14 د</span>
+            <span class="art-card__arrow">←</span>
+          </div>
+        </div>
+      </a>
+    </div>
+  </div>
+
+</main>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer__inner">
+    <div>
+      <div class="footer__brand">
+        تحليلات جيوسياسية
+        <span>مجلة استراتيجية مستقلة · ITAB</span>
+      </div>
+      <p class="footer__copy">
+        © 2026 ناصر الصبري — تورسينج، فرنسا.
+        جميع التحليلات للأغراض التعليمية والمعلوماتية.
+      </p>
+    </div>
+    <nav class="footer__links" aria-label="روابط التنقل">
+      <a href="/">الرئيسية</a>
+      <a href="/proche-or.html">الشرق الأوسط</a>
+      <a href="/moyen-orient.html">الأقطار العربية</a>
+      <a href="/afr.html">أفريقيا</a>
+      <a href="/eu.html">أوروبا</a>
+      <a href="/asie.html">آسيا</a>
+      <a href="/ame.html">أمريكا</a>
+      <a href="/opinion.html">رأي وميدان</a>
+      <a href="/abonnement.html">الوصول المميز</a>
+    </nav>
+  </div>
+</footer>
+
+<script>
+/* Compteur de jours depuis lancement */
+(function(){
+  var launch = new Date('2026-02-28');
+  var today  = new Date();
+  var days   = Math.floor((today - launch) / 86400000);
+  var el = document.getElementById('days-count');
+  if(el && days > 0) el.textContent = days;
+})();
+
+/* Scroll reveal — visible par défaut, anime à l'entrée */
+(function(){
+  var els = document.querySelectorAll('.fade-up');
+  if(!els.length) return;
+  var obs = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(e.isIntersecting){
+        e.target.classList.add('visible');
+        obs.unobserve(e.target);
+      }
+    });
+  },{threshold:0, rootMargin:'0px 0px 60px 0px'});
+  els.forEach(function(el){
+    var r = el.getBoundingClientRect();
+    var inView = r.top < window.innerHeight && r.bottom > 0;
+    if(inView){ el.classList.add('visible'); }
+    else{ el.classList.add('will-animate'); obs.observe(el); }
+  });
+})();
+</script>
+</body>
+</html>
