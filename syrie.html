@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>سوريا — تحليلات جيوسياسية</title>
+  <meta name="description" content="سوريا ما بعد الأسد: فراغ السلطة، إعادة تشكّل الفصائل، وتنافس القوى الإقليمية. تحليلات جيوسياسية معمّقة — ITAB."/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&family=Noto+Naskh+Arabic:wght@400;500;600&display=swap" rel="stylesheet"/>
+  <style>
+    /* ═══════════════════════ TOKENS ═══════════════════════ */
+    :root{
+      --ink:#0d0e18;--dark:#09090f;--surface:#111120;--card:#16162a;
+      --border:#22223a;--mid:#7070a0;--muted:#4a4a70;
+      --text:#e8e4f4;--text-soft:rgba(232,228,244,.65);
+      --or:#d4a843;--or-glow:rgba(212,168,67,.15);
+      --syrie:#c0392b;--syrie-dim:rgba(192,57,43,.1);
+      --afrique:#c8821a;--amerique:#b83232;--europe:#1e5fa8;--asie:#1a8a6e;--orient:#8b3a8b;
+      --radius:10px;--radius-sm:6px;--tr:.22s ease;
+      --sh-card:0 2px 16px rgba(0,0,0,.5),0 1px 3px rgba(0,0,0,.3);
+      --sh-hover:0 12px 40px rgba(0,0,0,.65),0 2px 8px rgba(0,0,0,.4);
+    }
+    /* ═══════════════════════ RESET ════════════════════════ */
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+    body{
+      font-family:'Cairo','Noto Naskh Arabic',sans-serif;
+      background:var(--dark);color:var(--text);direction:rtl;
+      line-height:1.75;overflow-x:hidden;min-width:0;
+    }
+    a{color:inherit;text-decoration:none}
+    img{display:block;max-width:100%;height:auto}
+
+    #progress-bar{position:fixed;top:0;right:0;left:0;height:3px;width:0%;background:var(--or);z-index:9999;transition:width .1s linear}
+
+    /* ═══════════════════════ TOPBAR ════════════════════════
+       FIX: flex-wrap + reduced padding mobile             */
+    .topbar{
+      background:var(--dark);color:var(--muted);font-size:.72rem;
+      padding:.42rem 1rem;display:flex;justify-content:space-between;
+      align-items:center;flex-wrap:wrap;gap:.4rem;border-bottom:1px solid var(--border);
+    }
+    .topbar .tb-brand{color:var(--text-soft);font-weight:600}
+    .topbar a{color:var(--mid);transition:color var(--tr)}
+    .topbar a:hover{color:var(--or)}
+    .topbar .tb-links{display:flex;gap:.9rem;flex-shrink:0}
+    @media(min-width:640px){.topbar{padding:.42rem 2rem}}
+
+    /* ═══════════════════════ MASTHEAD ═════════════════════
+       FIX: column-first, text-align:start for RTL         */
+    .masthead{
+      background:var(--surface);border-bottom:1px solid var(--border);
+      padding:1.1rem 1rem;display:flex;flex-direction:column;
+      align-items:flex-start;gap:.5rem;
+    }
+    @media(min-width:640px){
+      .masthead{flex-direction:row;align-items:flex-end;justify-content:space-between;padding:1.3rem 2rem}
+    }
+    .masthead__logo{font-family:'Cairo',serif;font-size:clamp(1.3rem,4vw,2rem);font-weight:900;color:var(--or);line-height:1.1}
+    .masthead__logo span{display:block;font-size:.54em;font-weight:400;color:var(--mid);margin-top:.2rem}
+    .masthead__sub{font-size:.68rem;color:var(--muted);text-align:start;line-height:1.7}
+
+    /* ═══════════════════════ NAV ══════════════════════════
+       FIX: border-inline-end, overflow-x:auto scroll      */
+    nav{
+      background:var(--dark);display:flex;flex-wrap:nowrap;
+      overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch;
+      position:sticky;top:0;z-index:100;border-bottom:2px solid var(--or);
+    }
+    nav::-webkit-scrollbar{display:none}
+    nav a{
+      display:flex;align-items:center;gap:.4rem;padding:.62rem .9rem;
+      font-size:.75rem;font-weight:600;color:var(--mid);
+      border-inline-end:1px solid var(--border);  /* FIX RTL */
+      transition:background var(--tr),color var(--tr);
+      white-space:nowrap;flex-shrink:0;
+    }
+    nav a:hover,nav a.active{background:var(--surface);color:var(--or)}
+    nav a .dot{width:6px;height:6px;border-radius:50%;flex-shrink:0}
+    nav a[data-r="afrique"] .dot{background:var(--afrique)}
+    nav a[data-r="amerique"].dot{background:var(--amerique)}
+    nav a[data-r="europe"]  .dot{background:var(--europe)}
+    nav a[data-r="asie"]    .dot{background:var(--asie)}
+    nav a[data-r="orient"]  .dot{background:var(--orient)}
+    nav a[data-r="mo"]      .dot{background:var(--or)}
+    nav a[data-r="op"]      .dot{background:var(--mid)}
+    nav a.nav-cta{margin-inline-end:auto;background:var(--amerique);color:#fff;border:none;font-weight:700}
+
+    /* ═══════════════════════ HERO ══════════════════════════ */
+    .pays-hero{position:relative;height:clamp(260px,45vw,480px);overflow:hidden;background:var(--dark)}
+    .pays-hero__img{width:100%;height:100%;object-fit:cover;filter:grayscale(20%) brightness(.38)}
+    .pays-hero__overlay{
+      position:absolute;inset:0;
+      background:linear-gradient(to top,rgba(9,9,15,.98) 30%,rgba(9,9,15,.5) 65%,rgba(9,9,15,.1) 100%)
+    }
+    .pays-hero__content{position:absolute;bottom:0;left:0;right:0;padding:1.5rem 1rem 2rem}
+    @media(min-width:640px){.pays-hero__content{padding:2.5rem 2rem;max-width:900px;margin:0 auto}}
+    .pays-hero__flag{font-size:2.5rem;margin-bottom:.5rem;display:block;line-height:1}
+    .pays-hero__breadcrumb{font-size:.7rem;color:rgba(255,255,255,.4);margin-bottom:.6rem}
+    .pays-hero__breadcrumb a{color:rgba(255,255,255,.4)}.pays-hero__breadcrumb a:hover{color:var(--or)}
+    .pays-hero h1{font-family:'Cairo',serif;font-size:clamp(2rem,6vw,3.5rem);font-weight:900;color:var(--syrie);line-height:1.05;margin-bottom:.6rem}
+    .pays-hero p{font-size:clamp(.85rem,2.2vw,1rem);color:rgba(255,255,255,.62);line-height:1.85;max-width:580px}
+
+    /* ═══════════════════════ PAGE BODY ════════════════════ */
+    .page-body{max-width:1280px;margin:0 auto;padding:1.5rem 1rem 3rem}
+    @media(min-width:640px){.page-body{padding:2.5rem 2rem 4rem}}
+
+    /* ═══════════════════════ LAYOUT FIX ═══════════════════
+       CRITICAL: Was inline style with no media query
+       Now: proper class + mobile-first grid               */
+    .layout-main{display:grid;grid-template-columns:1fr;gap:2rem}
+    @media(min-width:900px){.layout-main{grid-template-columns:1fr 260px;gap:2.5rem}}
+
+    /* ═══════════════════════ FILTER BAR ═══════════════════
+       Option A: horizontal scroll chips (Netflix style)   */
+    .filter-bar{
+      display:flex;flex-wrap:nowrap;gap:.5rem;overflow-x:auto;
+      scrollbar-width:none;-webkit-overflow-scrolling:touch;
+      padding-bottom:.8rem;margin-bottom:1.5rem;
+      border-bottom:1px solid var(--border);
+    }
+    .filter-bar::-webkit-scrollbar{display:none}
+    .filter-btn{
+      display:inline-flex;align-items:center;gap:.35rem;padding:.42rem .9rem;
+      border:1px solid var(--border);background:transparent;border-radius:20px;
+      cursor:pointer;font-family:'Cairo',sans-serif;font-size:.72rem;font-weight:600;
+      color:var(--mid);transition:all var(--tr);white-space:nowrap;flex-shrink:0;
+    }
+    .filter-btn:hover,.filter-btn.active{background:var(--syrie);border-color:var(--syrie);color:#fff}
+
+    /* ═══════════════════════ SECTION TITLE ════════════════ */
+    .section-title{
+      font-family:'Cairo',serif;font-size:clamp(1.1rem,3vw,1.4rem);font-weight:700;
+      color:var(--or);margin-bottom:1.2rem;padding-bottom:.5rem;
+      border-bottom:1px solid var(--border);display:flex;align-items:baseline;gap:.8rem
+    }
+    .section-title .count{font-size:.72rem;color:var(--mid);font-weight:400}
+
+    /* ═══════════════════════ ARTICLE CARDS ════════════════
+       FIX: explicit width:100%, mobile-first columns      */
+    .articles-grid{display:grid;grid-template-columns:1fr;gap:1rem}
+    @media(min-width:540px){.articles-grid{grid-template-columns:repeat(auto-fill,minmax(260px,1fr))}}
+
+    .article-card{
+      width:100%;background:var(--card);border:1px solid var(--border);
+      border-radius:var(--radius);overflow:hidden;display:flex;
+      flex-direction:column;box-shadow:var(--sh-card);
+      transition:transform var(--tr),box-shadow var(--tr),border-color var(--tr);
+    }
+    .article-card:hover{transform:translateY(-4px);box-shadow:var(--sh-hover);border-color:var(--mid)}
+    .article-card__stripe{height:3px;width:100%;flex-shrink:0}
+    .article-card__body{padding:1.2rem 1.4rem;flex:1;display:flex;flex-direction:column;gap:.5rem}
+    @media(min-width:640px){.article-card__body{padding:1.4rem 1.6rem}}
+
+    .topic-tag{display:inline-block;font-size:.65rem;font-weight:700;padding:.2rem .6rem;border:1px solid;border-radius:var(--radius-sm);width:fit-content}
+
+    /* IMPROVED Arabic title typography */
+    .article-card h3{
+      font-family:'Cairo',serif;font-size:clamp(.95rem,2.5vw,1.05rem);
+      font-weight:700;line-height:1.55;color:var(--text);flex:1;
+      overflow-wrap:break-word;word-break:break-word
+    }
+    .article-card p{font-size:.84rem;color:var(--mid);line-height:1.75;overflow-wrap:break-word}
+
+    .article-card__footer{
+      display:flex;justify-content:space-between;align-items:center;
+      margin-top:auto;padding-top:.8rem;border-top:1px solid var(--border)
+    }
+    .article-card__footer .meta{font-size:.65rem;color:var(--muted)}
+    .article-card__footer .arrow{font-size:.9rem;color:var(--or);transition:transform var(--tr)}
+    /* FIX: RTL-correct direction (right = toward start in RTL) */
+    .article-card:hover .article-card__footer .arrow{transform:translateX(4px)}
+
+    /* ═══════════════════════ SIDEBAR ══════════════════════ */
+    .sidebar{min-width:0}
+    .sidebar-block{margin-bottom:1.5rem}
+    .sidebar-block-title{font-size:.7rem;color:var(--mid);border-bottom:1px solid var(--border);padding-bottom:.4rem;margin-bottom:.8rem;font-weight:600}
+
+    /* OPTION A: Country nav — scroll chips on mobile, list on desktop */
+    .country-nav-scroll{display:flex;flex-wrap:nowrap;overflow-x:auto;gap:.5rem;scrollbar-width:none;-webkit-overflow-scrolling:touch;padding-bottom:.4rem}
+    .country-nav-scroll::-webkit-scrollbar{display:none}
+    .country-nav-item{
+      display:flex;align-items:center;gap:.4rem;padding:.45rem .9rem;
+      background:var(--surface);border:1px solid var(--border);border-radius:20px;
+      font-size:.78rem;font-weight:600;color:var(--mid);white-space:nowrap;
+      flex-shrink:0;transition:all var(--tr);cursor:pointer
+    }
+    .country-nav-item:hover{border-color:var(--or);color:var(--or)}
+    .country-nav-item.current{background:var(--syrie);border-color:var(--syrie);color:#fff}
+
+    /* Desktop sidebar list style */
+    @media(min-width:900px){
+      .country-nav-scroll{flex-direction:column;gap:0;overflow-x:visible;flex-wrap:wrap}
+      .country-nav-item{border-radius:0;border:none;border-bottom:1px solid var(--border);background:transparent;padding:.7rem .4rem;font-size:.85rem}
+      .country-nav-item:last-child{border-bottom:none}
+    }
+
+    .cta-box{
+      background:linear-gradient(135deg,#1a0a30,#0d0a20);
+      border:1px solid var(--orient);border-radius:var(--radius);
+      padding:1.3rem;text-align:center;max-width:100%
+    }
+    .cta-box h4{font-family:'Cairo',serif;font-size:1rem;font-weight:700;margin-bottom:.4rem;color:var(--or)}
+    .cta-box p{font-size:.8rem;color:var(--mid);margin-bottom:.9rem;line-height:1.7}
+    .cta-box a{display:inline-block;background:var(--orient);color:#fff;font-size:.78rem;font-weight:600;padding:.55rem 1.3rem;border-radius:var(--radius-sm);transition:background var(--tr)}
+    .cta-box a:hover{background:#6e2a6e}
+
+    /* ═══════════════════════ MOBILE/DESKTOP SHOW/HIDE ════ */
+    .sidebar-mobile-top{display:block;margin-bottom:1.5rem}
+    @media(min-width:900px){.sidebar-mobile-top{display:none}}
+    .sidebar-desktop-only{display:none}
+    @media(min-width:900px){.sidebar-desktop-only{display:block}}
+
+    /* ═══════════════════════ ANIMATION ════════════════════ */
+    /* Visible par défaut = aucun risque de blocage */
+    .fade-up{opacity:1;transform:none}
+    /* JS marque .will-animate avant observation → animation à l'entrée */
+    .fade-up.will-animate{opacity:0;transform:translateY(18px);transition:opacity .6s ease,transform .6s ease}
+    .fade-up.will-animate.visible{opacity:1;transform:none}
+
+    /* ═══════════════════════ FOOTER ═══════════════════════ */
+    footer{background:var(--dark);color:var(--muted);padding:2rem 1rem;font-size:.72rem;border-top:1px solid var(--border)}
+    @media(min-width:640px){footer{padding:2.5rem 2rem}}
+    .footer-inner{max-width:1280px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem}
+    .footer-links{display:flex;gap:1.2rem;flex-wrap:wrap}
+    .footer-links a{color:var(--muted);transition:color var(--tr)}.footer-links a:hover{color:var(--or)}
+  </style>
+</head>
+<body>
+
+<div id="progress-bar"></div>
+
+<div class="topbar">
+  <span class="tb-brand">تحليلات جيوسياسية</span>
+  <div class="tb-links">
+    <a href="/abonnement.html">الاشتراك</a>
+    <a href="https://https://fr.geopolo.com" style="color:var(--or)">🇫🇷 Fr</a>
+  </div>
+</div>
+
+<header class="masthead">
+  <a href="/" class="masthead__logo">تحليلات جيوسياسية<span>مجلة استراتيجية مستقلة</span></a>
+  <div class="masthead__sub">ITAB · 2026</div>
+</header>
+
+<nav>
+  <a href="/">الرئيسية</a>
+  <a href="/afr.html"         data-r="afrique" ><span class="dot"></span>أفريقيا</a>
+  <a href="/ame.html"         data-r="amerique"><span class="dot"></span>أمريكا</a>
+  <a href="/eu.html"          data-r="europe"  ><span class="dot"></span>أوروبا</a>
+  <a href="/asie.html"        data-r="asie"    ><span class="dot"></span>آسيا</a>
+  <a href="/proche-or.html"   data-r="orient"  ><span class="dot"></span>الشرق الأوسط</a>
+  <a href="/moyen-orient.html"data-r="mo" class="active"><span class="dot"></span>الأقطار العربية</a>
+  <a href="/opinion.html"     data-r="op"      ><span class="dot"></span>رأي وميدان</a>
+  <a href="/abonnement.html" class="nav-cta">الاشتراك المميز ←</a>
+</nav>
+
+<div class="pays-hero">
+  <img class="pays-hero__img" src="https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?w=1400&auto=format&fit=crop&q=70" alt="سوريا"/>
+  <div class="pays-hero__overlay"></div>
+  <div class="pays-hero__content">
+    <span class="pays-hero__flag">🇸🇾</span>
+    <div class="pays-hero__breadcrumb">
+      <a href="/">الرئيسية</a> / <a href="/moyen-orient.html">الأقطار العربية</a> / سوريا
+    </div>
+    <h1>سوريا</h1>
+    <p>سوريا ما بعد الأسد: فراغ السلطة، إعادة تشكّل الفصائل، مسارات الإعمار، وتنافس القوى الإقليمية على رسم ملامح دولة ما بعد الصراع.</p>
+  </div>
+</div>
+
+<div class="page-body">
+
+  <!-- MOBILE: country nav chips shown ABOVE articles -->
+  <div class="sidebar-mobile-top fade-up">
+    <div style="font-size:.7rem;color:var(--mid);margin-bottom:.6rem;font-weight:600">أقطار أخرى</div>
+    <div class="country-nav-scroll">
+      <a href="/syrie.html"     class="country-nav-item current">🇸🇾 سوريا</a>
+      <a href="/liban.html"     class="country-nav-item">🇱🇧 لبنان</a>
+      <a href="/irak.html"      class="country-nav-item">🇮🇶 العراق</a>
+      <a href="/yemen.html"     class="country-nav-item">🇾🇪 اليمن</a>
+      <a href="/palestine.html" class="country-nav-item">🇵🇸 فلسطين</a>
+    </div>
+  </div>
+
+  <!-- FIX: proper class-based grid, NOT inline style -->
+  <div class="layout-main">
+
+    <main>
+      <div class="filter-bar">
+        <button class="filter-btn active">الكل</button>
+        <button class="filter-btn">سياسة</button>
+        <button class="filter-btn">عسكري</button>
+        <button class="filter-btn">إنساني</button>
+        <button class="filter-btn">ميداني</button>
+      </div>
+
+      <div class="section-title fade-up">التحليلات<span class="count">4 مقالات</span></div>
+
+      <div class="articles-grid">
+
+        <a href="/articles/syrie-apres-assad-pouvoir.html" class="article-card fade-up">
+          <div class="article-card__stripe" style="background:var(--syrie)"></div>
+          <div class="article-card__body">
+            <span class="topic-tag" style="border-color:var(--syrie);color:var(--syrie)">سياسة</span>
+            <h3>سوريا ما بعد الأسد: من يملأ فراغ السلطة؟</h3>
+            <p>سقوط نظام الأسد فتح فراغاً سياسياً تتنافس عليه فصائل محلية وقوى إقليمية ودولية — تحليل معمّق لمشهد السلطة الجديد.</p>
+            <div class="article-card__footer">
+              <span class="meta">مارس 2026 · 12 دقيقة</span>
+              <span class="arrow">←</span>
+            </div>
+          </div>
+        </a>
+
+        <a href="/articles/syrie-presence-russe.html" class="article-card fade-up">
+          <div class="article-card__stripe" style="background:var(--syrie)"></div>
+          <div class="article-card__body">
+            <span class="topic-tag" style="border-color:var(--syrie);color:var(--syrie)">عسكري</span>
+            <h3>حميميم وطرطوس: هل تُودّع موسكو موطأها في المتوسط؟</h3>
+            <p>قاعدتا حميميم وطرطوس: هل ستحافظ روسيا على موطئ قدمها في المتوسط بعد سقوط الأسد؟</p>
+            <div class="article-card__footer">
+              <span class="meta">مارس 2026 · 10 دقائق</span>
+              <span class="arrow">←</span>
+            </div>
+          </div>
+        </a>
+
+        <a href="/articles/refugies-syriens-avenir.html" class="article-card fade-up">
+          <div class="article-card__stripe" style="background:var(--syrie)"></div>
+          <div class="article-card__body">
+            <span class="topic-tag" style="border-color:var(--syrie);color:var(--syrie)">إنساني</span>
+            <h3>أربعة عشر مليوناً على الرصيف: مأزق اللاجئين السوريين بعد الأسد</h3>
+            <p>14 مليون نازح ومهجّر: السياسات الأوروبية والتركية والأردنية أمام معضلة بلا حل قريب.</p>
+            <div class="article-card__footer">
+              <span class="meta">مارس 2026 · 11 دقيقة</span>
+              <span class="arrow">←</span>
+            </div>
+          </div>
+        </a>
+
+        <a href="/articles/idlib-accord-avenir.html" class="article-card fade-up">
+          <div class="article-card__stripe" style="background:var(--syrie)"></div>
+          <div class="article-card__body">
+            <span class="topic-tag" style="border-color:var(--syrie);color:var(--syrie)">ميداني</span>
+            <h3>إدلب: مهلة الأقدار الأخيرة بين الاتفاقيات وعقارب الساعة</h3>
+            <p>اتفاقيات وقف إطلاق النار الهشة ومستقبل المنطقة العازلة الأخيرة شمال سوريا.</p>
+            <div class="article-card__footer">
+              <span class="meta">مارس 2026 · 9 دقائق</span>
+              <span class="arrow">←</span>
+            </div>
+          </div>
+        </a>
+
+      </div>
+    </main>
+
+    <!-- DESKTOP sidebar only -->
+    <aside class="sidebar sidebar-desktop-only">
+      <div class="sidebar-block fade-up">
+        <div class="sidebar-block-title">أقطار أخرى</div>
+        <div class="country-nav-scroll">
+          <a href="/syrie.html"     class="country-nav-item current">🇸🇾 سوريا</a>
+          <a href="/liban.html"     class="country-nav-item">🇱🇧 لبنان</a>
+          <a href="/irak.html"      class="country-nav-item">🇮🇶 العراق</a>
+          <a href="/yemen.html"     class="country-nav-item">🇾🇪 اليمن</a>
+          <a href="/palestine.html" class="country-nav-item">🇵🇸 فلسطين / غزة</a>
+        </div>
+      </div>
+      <div class="cta-box fade-up">
+        <h4>الاشتراك المميز</h4>
+        <p>تحليلات كاملة وأرشيف حصري للمشتركين.</p>
+        <a href="/abonnement.html">اشترك الآن ←</a>
+      </div>
+    </aside>
+
+  </div>
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <span>© 2026 تحليلات جيوسياسية — موقع مستقل</span>
+    <div class="footer-links">
+      <a href="/">الرئيسية</a>
+      <a href="/moyen-orient.html">الأقطار العربية</a>
+      <a href="/opinion.html">رأي وميدان</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  /* Reading progress */
+  window.addEventListener('scroll',()=>{
+    const h=document.documentElement;
+    document.getElementById('progress-bar').style.width=
+      (h.scrollTop/(h.scrollHeight-h.clientHeight)*100)+'%';
+  });
+  /* Scroll reveal — robuste: visible par défaut, animation uniquement si hors viewport */
+  (function(){
+    const els = document.querySelectorAll('.fade-up');
+    if(!els.length) return;
+
+    const obs = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if(e.isIntersecting){
+          e.target.classList.add('visible');
+          obs.unobserve(e.target);
+        }
+      });
+    }, {threshold: 0, rootMargin: '0px 0px 60px 0px'});
+
+    els.forEach(el => {
+      const r = el.getBoundingClientRect();
+      const inView = r.top < window.innerHeight && r.bottom > 0;
+      if(inView){
+        /* Déjà visible au chargement — pas d'animation */
+        el.classList.add('visible');
+      } else {
+        /* Hors viewport — prépare l'animation */
+        el.classList.add('will-animate');
+        obs.observe(el);
+      }
+    });
+  })();
+  /* Filter tabs */
+  document.querySelectorAll('.filter-btn').forEach(btn=>{
+    btn.addEventListener('click',()=>{
+      document.querySelectorAll('.filter-btn').forEach(b=>b.classList.remove('active'));
+      btn.classList.add('active');
+    });
+  });
+</script>
+</body>
+</html>

@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>قطر — تحليلات جيوسياسية</title>
+  <meta name="description" content="الدوحة بين الوساطة الدولية والغاز الطبيعي — تحليلات جيوسياسية ITAB"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&family=Noto+Naskh+Arabic:wght@400;500;600&display=swap" rel="stylesheet"/>
+  <style>
+    :root {
+      --dark:    #09090f; --surface: #111120; --card: #16162a;
+      --border:  #22223a; --mid: #7070a0;    --muted: #4a4a70;
+      --text:    #e8e4f4; --or: #d4a843;
+      --country: #c0392b;
+      --radius:  10px;    --radius-sm: 6px;  --tr: .22s ease;
+      --sh-card: 0 2px 16px rgba(0,0,0,.5), 0 1px 3px rgba(0,0,0,.3);
+      --afrique: #c8821a; --amerique: #b83232; --europe: #1e5fa8;
+      --asie:    #1a8a6e; --orient:   #8b3a8b;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+    body {
+      font-family: 'Cairo', 'Noto Naskh Arabic', sans-serif;
+      background: var(--dark); color: var(--text);
+      direction: rtl; line-height: 1.75;
+      overflow-x: hidden; -webkit-font-smoothing: antialiased;
+    }
+    a { color: inherit; text-decoration: none; }
+
+    /* TOPBAR */
+    .topbar {
+      background: var(--dark); border-bottom: 1px solid var(--border);
+      padding: .42rem 1rem; display: flex;
+      justify-content: space-between; align-items: center;
+      flex-wrap: wrap; gap: .35rem; font-size: .72rem;
+    }
+    .topbar a { color: var(--mid); transition: color var(--tr); }
+    .topbar a:hover { color: var(--or); }
+    @media(min-width:640px){.topbar{padding:.42rem 2rem}}
+
+    /* MASTHEAD */
+    .masthead {
+      background: var(--surface); border-bottom: 1px solid var(--border);
+      padding: 1.1rem 1rem; display: flex;
+      flex-direction: column; align-items: flex-start; gap: .45rem;
+    }
+    @media(min-width:640px){
+      .masthead{flex-direction:row;align-items:flex-end;justify-content:space-between;padding:1.3rem 2rem}
+    }
+    .masthead__logo {
+      font-family: 'Cairo', serif; font-size: clamp(1.3rem,4vw,2rem);
+      font-weight: 900; color: var(--or); line-height: 1.1;
+    }
+    .masthead__logo span { display:block;font-size:.54em;font-weight:400;color:var(--mid);margin-top:.2rem; }
+    .masthead__sub { font-size:.68rem;color:var(--muted);text-align:start; }
+
+    /* NAV */
+    nav {
+      background: var(--dark); display: flex; flex-wrap: nowrap;
+      overflow-x: auto; scrollbar-width: none; position: sticky;
+      top: 0; z-index: 100; border-bottom: 2px solid var(--or);
+    }
+    nav::-webkit-scrollbar { display: none; }
+    nav a {
+      display: flex; align-items: center; gap: .38rem;
+      padding: .62rem .88rem; font-size: .75rem; font-weight: 600;
+      color: var(--mid); border-inline-end: 1px solid var(--border);
+      transition: background var(--tr), color var(--tr);
+      white-space: nowrap; flex-shrink: 0;
+    }
+    nav a:hover, nav a.active { background: var(--surface); color: var(--or); }
+    nav a .dot { width:6px;height:6px;border-radius:50%;flex-shrink:0; }
+    nav a[data-r="orient"] .dot { background: var(--orient); }
+    nav a[data-r="mo"]     .dot { background: var(--or); }
+    nav a.nav-cta { margin-inline-end:auto;background:var(--amerique);color:#fff;border:none;font-weight:700; }
+
+    /* HERO PAYS */
+    .pays-hero {
+      background: linear-gradient(135deg, var(--dark), #0a0a1a);
+      border-bottom: 3px solid var(--country);
+      padding: 3rem 1.2rem 2.5rem;
+      display: flex; flex-direction: column;
+      align-items: flex-start; gap: .8rem;
+    }
+    @media(min-width:640px){.pays-hero{padding:3.5rem 2rem 3rem;}}
+    .pays-hero__breadcrumb {
+      font-size: .7rem; color: var(--mid);
+      display: flex; align-items: center; gap: .4rem;
+    }
+    .pays-hero__breadcrumb a { color: var(--mid); }
+    .pays-hero__breadcrumb a:hover { color: var(--or); }
+    .pays-hero__flag { font-size: 3.2rem; line-height: 1; filter: drop-shadow(0 4px 8px rgba(0,0,0,.5)); }
+    .pays-hero__title {
+      font-family: 'Cairo', serif;
+      font-size: clamp(2rem, 6vw, 3.5rem);
+      font-weight: 900; line-height: 1.1;
+      color: var(--country);
+    }
+    .pays-hero__desc {
+      font-size: clamp(.88rem, 2.2vw, 1rem);
+      color: rgba(232,228,244,.65); max-width: 600px; line-height: 1.8;
+    }
+    .pays-hero__meta {
+      display: flex; gap: 1rem; flex-wrap: wrap;
+      font-size: .7rem; color: var(--muted); margin-top: .5rem;
+    }
+    .pays-hero__meta span {
+      background: var(--surface); border: 1px solid var(--border);
+      padding: .25rem .7rem; border-radius: var(--radius-sm);
+    }
+
+    /* MAIN CONTENT */
+    .pays-body {
+      max-width: 1100px; margin: 0 auto;
+      padding: 2.5rem 1rem 4rem;
+    }
+    @media(min-width:640px){.pays-body{padding:3rem 2rem 5rem}}
+
+    /* PLACEHOLDER SECTION */
+    .placeholder-section {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-top: 3px solid var(--country);
+      border-radius: var(--radius);
+      padding: 2.5rem 2rem;
+      margin-bottom: 2rem;
+      text-align: center;
+    }
+    .placeholder-section__icon {
+      font-size: 2.5rem; margin-bottom: 1rem; opacity: .5;
+    }
+    .placeholder-section__title {
+      font-family: 'Cairo', serif; font-size: 1.3rem;
+      font-weight: 700; color: var(--muted); margin-bottom: .5rem;
+    }
+    .placeholder-section__sub {
+      font-size: .85rem; color: var(--muted); opacity: .7; line-height: 1.7;
+    }
+    .placeholder-section__badge {
+      display: inline-block; margin-top: 1.2rem;
+      background: rgba(212,168,67,.1); border: 1px solid rgba(212,168,67,.3);
+      color: var(--or); font-size: .7rem; font-weight: 700;
+      padding: .3rem .9rem; border-radius: 20px; letter-spacing: .05em;
+    }
+
+    /* BACK LINK */
+    .back-link {
+      display: inline-flex; align-items: center; gap: .5rem;
+      font-size: .82rem; font-weight: 600; color: var(--mid);
+      border: 1px solid var(--border); border-radius: var(--radius-sm);
+      padding: .55rem 1.1rem; margin-bottom: 2rem;
+      transition: color var(--tr), border-color var(--tr), background var(--tr);
+    }
+    .back-link:hover { color: var(--or); border-color: var(--or); background: rgba(212,168,67,.05); }
+
+    /* SECTION TITLE */
+    .section-title {
+      font-family: 'Cairo', serif; font-size: 1.2rem; font-weight: 700;
+      color: var(--text); margin-bottom: 1.2rem; padding-bottom: .55rem;
+      border-bottom: 2px solid var(--country);
+    }
+
+    /* FADE-UP */
+    .fade-up { opacity:0;transform:translateY(16px);transition:opacity .55s ease,transform .55s ease; }
+    .fade-up.visible { opacity:1;transform:none; }
+
+    /* FOOTER */
+    footer {
+      background: var(--dark); color: var(--muted);
+      padding: 2rem 1rem; font-size: .72rem;
+      border-top: 1px solid var(--border);
+    }
+    @media(min-width:640px){footer{padding:2.5rem 2rem}}
+    .fi { max-width:1280px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:.9rem; }
+    .fl { display:flex;gap:1.2rem;flex-wrap:wrap; }
+    .fl a { color:var(--muted);transition:color var(--tr); }
+    .fl a:hover { color:var(--or); }
+  </style>
+</head>
+<body>
+
+<!-- TOPBAR -->
+<div class="topbar">
+  <span style="color:var(--text-soft);font-weight:600">
+    تحليلات جيوسياسية — <strong style="color:var(--or)">القوى والصراعات في القرن</strong>
+  </span>
+  <div style="display:flex;gap:.9rem">
+    <a href="https://https://fr.geopolo.com" style="color:var(--or)">🇫🇷 Français</a>
+    <a href="/abonnement.html">الوصول المميز</a>
+  </div>
+</div>
+
+<!-- MASTHEAD -->
+<header class="masthead">
+  <a href="/" class="masthead__logo">
+    تحليلات جيوسياسية
+    <span>مجلة استراتيجية مستقلة</span>
+  </a>
+  <div class="masthead__sub">ITAB · 2026</div>
+</header>
+
+<!-- NAV -->
+<nav>
+  <a href="/">الرئيسية</a>
+  <a href="/proche-or.html" data-r="orient"><span class="dot"></span>الشرق الأوسط</a>
+  <a href="/moyen-orient.html" data-r="mo" class="active" style="color:var(--or)">🌍 الأقطار العربية</a>
+  <a href="/abonnement.html" class="nav-cta">الوصول المميز ←</a>
+</nav>
+
+<!-- HERO PAYS -->
+<div class="pays-hero">
+  <div class="pays-hero__breadcrumb">
+    <a href="/">الرئيسية</a>
+    <span>/</span>
+    <a href="/moyen-orient.html">الأقطار العربية</a>
+    <span>/</span>
+    <span style="color:var(--text)">قطر</span>
+  </div>
+  <span class="pays-hero__flag">🇶🇦</span>
+  <h1 class="pays-hero__title">قطر</h1>
+  <p class="pays-hero__desc">الدوحة بين الوساطة الدولية والغاز الطبيعي</p>
+  <div class="pays-hero__meta">
+    <span>📂 الخليج العربي</span>
+    <span>📅 قريباً · 2026</span>
+    <span>✍ ITAB</span>
+  </div>
+</div>
+
+<!-- MAIN BODY -->
+<div class="pays-body">
+
+  <a href="/moyen-orient.html" class="back-link fade-up">
+    → العودة إلى الأقطار العربية
+  </a>
+
+  <!-- ══════════════════════════════════════════
+       TODO: أضف هنا التحليلات الخاصة بـ قطر
+       ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+       الخطوات المقترحة:
+       1. استبدل قسم .placeholder-section بمقالات حقيقية
+       2. استخدم كلاس .art-card للبطاقات
+       3. أضف صورة للبلد في .pays-hero إن أردت
+  ══════════════════════════════════════════ -->
+
+  <div class="section-title fade-up">📰 التحليلات</div>
+
+  <div class="placeholder-section fade-up">
+    <div class="placeholder-section__icon">📝</div>
+    <div class="placeholder-section__title">هذه الصفحة قيد الإعداد</div>
+    <div class="placeholder-section__sub">
+      سيتم نشر تحليلات جيوسياسية معمّقة خاصة بـقطر قريباً.<br/>
+      تشمل: الوضع السياسي الداخلي، العلاقات الإقليمية، المسار الاقتصادي، والسيناريوهات المستقبلية.
+    </div>
+    <div class="placeholder-section__badge">⏳ قريباً</div>
+  </div>
+
+  <!-- ══════════════════════════════════════════
+       نهاية منطقة المحتوى القابل للتعديل
+  ══════════════════════════════════════════ -->
+
+</div><!-- /pays-body -->
+
+<footer>
+  <div class="fi">
+    <span>© 2026 تحليلات جيوسياسية · ITAB</span>
+    <div class="fl">
+      <a href="/">الرئيسية</a>
+      <a href="/moyen-orient.html">الأقطار العربية</a>
+      <a href="/abonnement.html">الوصول المميز</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); }
+    });
+  }, {threshold:.06});
+  document.querySelectorAll('.fade-up').forEach(el => obs.observe(el));
+</script>
+</body>
+</html>
