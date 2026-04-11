@@ -1,0 +1,2 @@
+# Permet d'ouvrir les articles sans écrire .html
+/articles/:slug   /articles/:slug.html   200
