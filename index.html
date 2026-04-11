@@ -18,229 +18,845 @@
   <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Arabic:wght@400;600;700;900&family=Noto+Naskh+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet"/>
 
   <style>
-    /* ════════════════════════════════════════
-       TOKENS
-    ════════════════════════════════════════ */
-    :root{
-      --black:#08080f; --dark:#0d0d1a; --card:#12121e;
-      --border:#1e1e32; --mid:#6a6585; --light:#9a96b8; --ink:#e8e4f0;
-      --red:#c0202a; --red-dark:#8b1a1a;
-      --gold:#c9a84c; --gold-dim:rgba(201,168,76,.12);
-      --afrique:#c8821a; --amerique:#b83232; --europe:#1e5fa8;
-      --asie:#1a8a6e; --orient:#8b3a8b; --wellbeing:#2a7a6a;
-      --hero-h:680px; --r:12px; --r-sm:8px;
-      --tr:.25s ease;
-      --sh-sm:0 4px 20px rgba(0,0,0,.3);
-      --sh-md:0 8px 40px rgba(0,0,0,.45);
-    }
+  /* ═══════════════════════════════════════════════════════════════
+     TOKENS — MODE CLAIR (fond #f8f7f4, encre #1a1a2a)
+  ═══════════════════════════════════════════════════════════════ */
+  :root{
+    /* Palette lumière */
+    --bg:      #f8f7f4;
+    --surface: #ffffff;
+    --card:    #ffffff;
+    --cream:   #f3f0e8;
+    --ink:     #1a1a2a;
+    --mid:     #5a5870;
+    --muted:   #8a87a0;
+    --rule:    #e2ddd8;
+    --rule-l:  #eeebe5;
 
-    /* ════════════════════════════════════════
-       RESET
-    ════════════════════════════════════════ */
-    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-    html{scroll-behavior:smooth}
-    body{font-family:'Noto Serif Arabic',Georgia,serif;background:var(--black);color:var(--ink);line-height:1.9;direction:rtl}
-    a{color:inherit;text-decoration:none}
+    /* Accents */
+    --or:      #d4a843;
+    --or-dim:  rgba(212,168,67,.1);
+    --or-glow: rgba(212,168,67,.22);
+    --red:     #c8281e;
 
-    /* ════════════════════════════════════════
-       TOPBAR
-    ════════════════════════════════════════ */
-    .topbar{
-      background:var(--black);border-bottom:1px solid var(--border);
-      padding:.42rem 2.5rem;display:flex;justify-content:space-between;align-items:center;
-      font-family:'Noto Naskh Arabic',sans-serif;font-size:.72rem;color:var(--mid);
-    }
-    .tb-left{display:flex;align-items:center;gap:.9rem}
-    .tb-dot{width:6px;height:6px;border-radius:50%;background:var(--red);animation:blink 1.8s ease-in-out infinite;flex-shrink:0}
-    @keyframes blink{0%,100%{opacity:1}50%{opacity:.25}}
-    .tb-news a{color:rgba(255,220,100,.75);border-bottom:1px dotted rgba(255,220,100,.3)}
-    .tb-news strong{color:var(--gold)}
-    .tb-right{display:flex;gap:1.4rem}
-    .tb-right a{color:var(--mid);transition:color var(--tr)}
-    .tb-right a:hover{color:var(--gold)}
-    .tb-lang{color:var(--gold)!important;border:1px solid rgba(201,168,76,.25);padding:.12rem .45rem;border-radius:3px;font-size:.66rem}
+    /* Couleurs rubriques */
+    --afrique:   #c8821a;
+    --amerique:  #b83232;
+    --europe:    #1e5fa8;
+    --asie:      #1a8a6e;
+    --orient:    #8b3a8b;
+    --sante:     #2e7d5f;
+    --voyage:    #c67c2a;
 
-    /* Bouton switch langue — cohérent avec le style topbar arabe */
-    .lang-switch{
-      display:inline-flex;align-items:center;gap:.35rem;
-      background:rgba(201,168,76,.12);
-      color:var(--gold)!important;
-      border:1px solid rgba(201,168,76,.35);
-      padding:.2rem .65rem;border-radius:3px;
-      font-family:'Noto Naskh Arabic',sans-serif;
-      font-size:.72rem;font-weight:600;
-      transition:background var(--tr),transform var(--tr);
-      text-decoration:none;
-    }
-    .lang-switch:hover{
-      background:rgba(201,168,76,.22);
-      transform:translateY(-1px);
-    }
+    /* Typo */
+    --f-display: 'Noto Serif Arabic', Georgia, serif;
+    --f-ui:      'Noto Naskh Arabic', sans-serif;
 
-    /* ════════════════════════════════════════
-       HEADER — logo only, minimal
-    ════════════════════════════════════════ */
-    .site-header{
-      background:var(--black);
-      padding:2rem 2.5rem 1.6rem;
-      display:flex;align-items:center;justify-content:space-between;
-      border-bottom:1px solid var(--border);
-    }
-    .logo{display:flex;flex-direction:column;gap:.1rem}
-    .logo__text{
-      font-family:'Noto Serif Arabic',serif;
-      font-size:clamp(1.55rem,3.5vw,2.5rem);
-      font-weight:900;color:var(--ink);letter-spacing:-.01em;line-height:1;
-    }
-    .logo__text em{font-style:normal;color:var(--gold)}
-    .logo__bar{width:44px;height:2px;background:var(--red);margin-top:.55rem}
-    .header-meta{font-family:'Noto Naskh Arabic',sans-serif;font-size:.68rem;color:var(--mid);text-align:left;line-height:2}
-    .itab{display:inline-block;border:1px solid rgba(201,168,76,.28);color:var(--gold);padding:.1rem .48rem;font-size:.62rem;border-radius:2px}
+    /* Misc */
+    --radius:    8px;
+    --radius-sm: 5px;
+    --tr:        .22s ease;
+    --max-w:     1280px;
+    --sh:        0 1px 4px rgba(0,0,0,.07), 0 4px 16px rgba(0,0,0,.06);
+    --sh-hover:  0 4px 20px rgba(0,0,0,.12), 0 1px 4px rgba(0,0,0,.07);
+  }
 
-    /* ════════════════════════════════════════
-       NAV
-    ════════════════════════════════════════ */
-    .site-nav{
-      background:rgba(8,8,15,.96);
-      backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);
-      position:sticky;top:0;z-index:200;
-      display:flex;border-bottom:1px solid var(--border);
-      overflow-x:auto;scrollbar-width:none;
-    }
-    .site-nav::-webkit-scrollbar{display:none}
-    .site-nav a{
-      display:flex;align-items:center;gap:.4rem;padding:.72rem 1.05rem;
-      font-family:'Noto Naskh Arabic',sans-serif;font-size:.78rem;color:var(--mid);
-      white-space:nowrap;border-left:1px solid var(--border);
-      transition:color var(--tr),background var(--tr);
-    }
-    .site-nav a:hover,.site-nav a.active{background:rgba(255,255,255,.04);color:var(--ink)}
-    .site-nav a.active{color:var(--gold)}
-    .nd{width:6px;height:6px;border-radius:50%;flex-shrink:0}
-    .site-nav [data-r="afrique"]  .nd{background:var(--afrique)}
-    .site-nav [data-r="amerique"] .nd{background:var(--amerique)}
-    .site-nav [data-r="europe"]   .nd{background:var(--europe)}
-    .site-nav [data-r="asie"]     .nd{background:var(--asie)}
-    .site-nav [data-r="orient"]   .nd{background:var(--orient)}
-    .site-nav [data-r="arabes"]   .nd{background:var(--gold)}
-    .site-nav [data-r="wellbeing"].nd{background:var(--wellbeing)}
+  /* RESET */
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;font-size:16px}
+  body{
+    font-family:var(--f-ui);
+    background:var(--bg);color:var(--ink);direction:rtl;
+    line-height:1.75;overflow-x:hidden;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{color:inherit;text-decoration:none}
+  img{display:block;max-width:100%;height:auto}
 
-    /* ════════════════════════════════════════
-       HERO
-    ════════════════════════════════════════ */
-    .hero{
-      position:relative;height:var(--hero-h);
-      display:grid;place-items:center;overflow:hidden;
-    }
-    .hero-bg{
-      position:absolute;inset:0;
-      background:
-        linear-gradient(180deg,rgba(8,8,15,.65) 0%,rgba(8,8,15,.88) 55%,rgba(8,8,15,1) 100%),
-        linear-gradient(110deg,rgba(192,32,42,.1) 0%,transparent 55%),
-        url('https://images.unsplash.com/photo-1519817914152-22d216bb9170?w=1600&auto=format&fit=crop&q=75')
-        center/cover no-repeat;
-    }
-    /* Animated fine grid */
-    .hero-grid{
-      position:absolute;inset:0;
-      background-image:linear-gradient(rgba(201,168,76,.028) 1px,transparent 1px),
-                       linear-gradient(90deg,rgba(201,168,76,.028) 1px,transparent 1px);
-      background-size:62px 62px;
-      animation:gridDrift 28s linear infinite;
-    }
-    @keyframes gridDrift{from{transform:translateY(0)}to{transform:translateY(62px)}}
+  /* ═══ BARRE DE PROGRESSION ════════════════════════════════════ */
+  #pb{position:fixed;top:0;right:0;left:0;height:2.5px;
+      background:var(--or);width:0%;z-index:9999;transition:width .1s linear}
 
-    /* Urgent badge */
-    .hero-badge{
-      position:absolute;top:2rem;right:2rem;
-      display:flex;align-items:center;gap:.5rem;
-      background:rgba(139,26,26,.88);border:1px solid rgba(255,80,80,.22);
-      backdrop-filter:blur(8px);color:#ffd;
-      font-family:'Noto Naskh Arabic',sans-serif;font-size:.68rem;
-      padding:.38rem .88rem;border-radius:4px;
-    }
-    .hero-badge-dot{width:6px;height:6px;border-radius:50%;background:#ff4444;animation:blink 1.4s ease-in-out infinite}
+  /* ═══ TOPBAR ══════════════════════════════════════════════════ */
+  .topbar{
+    background:var(--ink);
+    padding:.38rem 1.2rem;
+    display:flex;justify-content:space-between;align-items:center;
+    font-family:var(--f-ui);font-size:.68rem;gap:.5rem;flex-wrap:wrap;
+  }
+  .topbar-brand{
+    color:rgba(255,255,255,.45);white-space:nowrap;
+    font-weight:500;letter-spacing:.02em;
+  }
+  .topbar-brand strong{color:rgba(255,255,255,.7);font-weight:600}
+  .topbar-links{display:flex;gap:.8rem;align-items:center;flex-shrink:0}
+  .topbar a{color:rgba(255,255,255,.45);transition:color var(--tr)}
+  .topbar a:hover{color:var(--or)}
 
-    /* Content */
-    .hero-content{position:relative;z-index:2;text-align:center;padding:2rem 1.5rem;max-width:860px;width:100%}
-    .hero-kicker{
-      font-family:'Noto Naskh Arabic',sans-serif;font-size:.7rem;letter-spacing:.18em;
-      color:var(--gold);margin-bottom:1.4rem;
-      display:flex;align-items:center;justify-content:center;gap:1rem;
-    }
-    .hero-kicker::before,.hero-kicker::after{content:'';flex:1;max-width:70px;height:1px;background:var(--gold);opacity:.35}
-    .hero-title{
-      font-family:'Noto Serif Arabic',serif;
-      font-size:clamp(2rem,5.5vw,4.1rem);font-weight:900;
-      color:#fff;line-height:1.16;margin-bottom:1.4rem;
-    }
-    .hero-title em{font-style:normal;color:var(--gold);display:block}
-    .hero-title .sub{
-      display:block;font-size:.43em;font-weight:400;
-      color:rgba(255,255,255,.4);margin-top:.6rem;
-      font-family:'Noto Naskh Arabic',sans-serif;letter-spacing:.03em;
-    }
-    .hero-desc{
-      font-family:'Noto Naskh Arabic',sans-serif;font-size:1.05rem;
-      color:rgba(232,228,240,.58);max-width:600px;margin:0 auto 2.6rem;line-height:1.9;
-    }
-    .hero-ctas{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
-    .btn-hero-main{
-      display:inline-flex;align-items:center;gap:.55rem;
-      background:var(--red);border:1px solid var(--red);
-      color:#fff;font-family:'Noto Naskh Arabic',sans-serif;font-size:.85rem;font-weight:600;
-      padding:.88rem 2.2rem;border-radius:var(--r-sm);transition:background var(--tr),transform var(--tr);
-    }
-    .btn-hero-main:hover{background:#a01820;transform:translateY(-2px)}
-    .btn-hero-ghost{
-      display:inline-flex;align-items:center;gap:.55rem;
-      background:transparent;border:1px solid rgba(232,228,240,.18);
-      color:rgba(232,228,240,.72);font-family:'Noto Naskh Arabic',sans-serif;font-size:.85rem;
-      padding:.88rem 2.2rem;border-radius:var(--r-sm);transition:border-color var(--tr),color var(--tr),background var(--tr);
-    }
-    .btn-hero-ghost:hover{border-color:var(--gold);color:var(--gold);background:var(--gold-dim)}
+  /* Bouton FR — encadré soigné */
+  .btn-fr{
+    display:inline-flex;align-items:center;gap:.35rem;
+    background:rgba(255,255,255,.07);
+    border:1px solid rgba(255,255,255,.22);
+    color:rgba(255,255,255,.75) !important;
+    padding:.26rem .65rem;border-radius:var(--radius-sm);
+    font-weight:600;letter-spacing:.03em;
+    transition:background var(--tr),border-color var(--tr),color var(--tr);
+  }
+  .btn-fr:hover{
+    background:var(--or);border-color:var(--or);
+    color:var(--ink) !important;
+  }
+  .btn-fr-flag{font-size:.75rem;line-height:1}
 
-    /* Scroll cue */
-    .hero-scroll{
-      position:absolute;bottom:1.8rem;left:50%;transform:translateX(-50%);
-      display:flex;flex-direction:column;align-items:center;gap:.35rem;
-      color:rgba(255,255,255,.18);font-family:'Noto Naskh Arabic',sans-serif;font-size:.6rem;
-      animation:scrollCue 2.8s ease-in-out infinite;
-    }
-    .hero-scroll-line{width:1px;height:30px;background:linear-gradient(to bottom,rgba(255,255,255,.2),transparent)}
-    @keyframes scrollCue{0%,100%{opacity:.25;transform:translateX(-50%) translateY(0)}50%{opacity:.6;transform:translateX(-50%) translateY(5px)}}
+  @media(min-width:640px){.topbar{padding:.38rem 2rem}}
 
-    /* ════════════════════════════════════════
-       TICKER
-    ════════════════════════════════════════ */
-    .ticker-wrap{
-      background:var(--dark);border-top:1px solid rgba(30,95,168,.35);
-      border-bottom:1px solid var(--border);padding:.52rem 0;overflow:hidden;white-space:nowrap;
-    }
-    .ticker{display:inline-block;animation:tickRTL 52s linear infinite;font-family:'Noto Naskh Arabic',sans-serif;font-size:.73rem;color:var(--mid)}
-    .ticker .sep{margin:0 2.4rem;color:var(--europe);opacity:.75}
-    @keyframes tickRTL{from{transform:translateX(100%)}to{transform:translateX(-100%)}}
+  /* ═══ MASTHEAD ═══════════════════════════════════════════════ */
+  .masthead{
+    background:var(--surface);
+    border-bottom:3px solid var(--ink);
+    padding:1rem 1.2rem;
+    display:flex;align-items:center;justify-content:space-between;gap:1rem;
+    flex-wrap:wrap;
+  }
+  @media(min-width:640px){.masthead{padding:1.2rem 2rem}}
 
-    /* ════════════════════════════════════════
-       STATS BAR
-    ════════════════════════════════════════ */
-    .stats-bar{background:var(--dark);border-bottom:1px solid var(--border);padding:1.6rem 2.5rem}
-    .stats-inner{max-width:1280px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr))}
-    .stat{padding:1rem 1.5rem;text-align:center;border-left:1px solid var(--border)}
-    .stat:last-child{border-left:none}
-    .stat-n{font-family:'Noto Serif Arabic',serif;font-size:2rem;font-weight:900;color:var(--gold);line-height:1;display:block}
-    .stat-l{font-family:'Noto Naskh Arabic',sans-serif;font-size:.62rem;color:var(--mid);margin-top:.3rem;line-height:1.4}
+  .masthead__left{display:flex;align-items:center;gap:1.1rem}
 
-    /* ════════════════════════════════════════
-       LAYOUT HELPERS
-    ════════════════════════════════════════ */
-    .wrap{max-width:1280px;margin:0 auto;padding:4rem 2.5rem}
-    .sec-head{display:flex;align-items:baseline;justify-content:space-between;margin-bottom:2.4rem;padding-bottom:.8rem;border-bottom:1px solid var(--border)}
-    .sec-title{font-family:'Noto Serif Arabic',serif;font-size:1.62rem;font-weight:700;color:var(--ink)}
-    .sec-title em{font-style:normal;color:var(--gold)}
-    .sec-sub{font-family:'Noto Naskh Arabic',sans-serif;font-size:.7rem;color:var(--mid)}
-    .see-all{font-family:'Noto Naskh Arabic',sans-serif;font-size:.72rem;color:var(--mid);border-bottom:1px solid rgba(106,101,133,.35);padding-bottom:1px;transition:color var(--tr),border-color var(--tr)}
-    .see-all:hover{color:var(--gold);border-color:var(--gold)}
+  /* Avatar geopolô */
+  .masthead__avatar{
+    width:52px;height:52px;border-radius:50%;
+    background:linear-gradient(135deg,var(--ink) 0%,#2d2d50 100%);
+    border:2.5px solid var(--or);flex-shrink:0;
+    display:flex;align-items:center;justify-content:center;
+    font-family:var(--f-display);font-weight:900;
+    font-size:.72rem;letter-spacing:-.02em;color:var(--or);
+    line-height:1.1;text-align:center;overflow:hidden;
+    box-shadow:0 0 0 4px var(--or-dim);
+    transition:box-shadow var(--tr);
+  }
+  .masthead__avatar:hover{box-shadow:0 0 0 6px var(--or-glow)}
+  .masthead__avatar img{width:100%;height:100%;object-fit:cover;border-radius:50%}
+
+  .masthead__logo{
+    font-family:var(--f-display);
+    font-size:clamp(1.6rem,4.5vw,2.4rem);
+    font-weight:900;color:var(--ink);line-height:1;letter-spacing:-.025em;
+  }
+  .masthead__logo span{color:var(--red)}
+  .masthead__tagline{
+    font-family:var(--f-ui);font-size:.62rem;color:var(--muted);
+    margin-top:.18rem;letter-spacing:.04em;line-height:1.4;
+  }
+
+  /* Bouton abonnement dans masthead */
+  .masthead__cta{
+    display:inline-flex;align-items:center;gap:.4rem;
+    background:var(--ink);color:#fff;
+    font-family:var(--f-ui);font-size:.72rem;font-weight:700;
+    padding:.52rem 1.1rem;border-radius:var(--radius-sm);
+    letter-spacing:.03em;transition:background var(--tr);white-space:nowrap;
+    flex-shrink:0;
+  }
+  .masthead__cta:hover{background:var(--red)}
+
+  /* ═══ NAVIGATION ═════════════════════════════════════════════ */
+  .site-nav{
+    background:var(--ink);
+    display:flex;flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;
+    position:sticky;top:0;z-index:200;
+    border-bottom:2.5px solid var(--or);
+  }
+  .site-nav::-webkit-scrollbar{display:none}
+  .site-nav a{
+    display:flex;align-items:center;gap:.42rem;
+    padding:.62rem 1rem;
+    font-family:var(--f-ui);
+    font-size:.85rem;   /* taille augmentée */
+    font-weight:600;color:rgba(255,255,255,.5);
+    border-left:1px solid rgba(255,255,255,.06);
+    transition:background var(--tr),color var(--tr);
+    white-space:nowrap;flex-shrink:0;
+  }
+  .site-nav a:hover,.site-nav a.active{
+    background:rgba(255,255,255,.06);color:var(--or);
+  }
+  .nav-dot{width:7px;height:7px;border-radius:50%;flex-shrink:0}
+  .site-nav [data-r="afrique"]  .nav-dot{background:var(--afrique)}
+  .site-nav [data-r="amerique"] .nav-dot{background:var(--amerique)}
+  .site-nav [data-r="europe"]   .nav-dot{background:var(--europe)}
+  .site-nav [data-r="asie"]     .nav-dot{background:var(--asie)}
+  .site-nav [data-r="orient"]   .nav-dot{background:var(--orient)}
+  .site-nav [data-r="mo"]       .nav-dot{background:var(--or)}
+  .site-nav [data-r="sante"]    .nav-dot{background:var(--sante)}
+  .site-nav [data-r="voyage"]   .nav-dot{background:var(--voyage)}
+  .site-nav .nav-cta{
+    margin-inline-end:auto;
+    background:var(--amerique);color:#fff !important;border:none;font-weight:700;
+  }
+  .site-nav .nav-cta:hover{background:#8b1e1e}
+
+  /* ═══ HERO ═══════════════════════════════════════════════════ */
+  .hero{
+    position:relative;height:clamp(280px,52vw,560px);
+    overflow:hidden;background:#1a1a2a;display:flex;align-items:flex-end;
+  }
+  .hero__bg{
+    position:absolute;inset:0;
+    background-image:url('https://images.unsplash.com/photo-1519817914152-22d216bb9170?w=1400&q=75');
+    background-size:cover;background-position:center;
+    filter:brightness(.38) saturate(.9);
+    transform:scale(1.03);transition:transform 8s ease;
+  }
+  .hero:hover .hero__bg{transform:scale(1)}
+  .hero__overlay{
+    position:absolute;inset:0;
+    background:linear-gradient(to top,
+      rgba(26,26,42,1) 0%,
+      rgba(26,26,42,.88) 30%,
+      rgba(26,26,42,.4) 65%,
+      rgba(26,26,42,.08) 100%);
+  }
+  .hero__content{
+    position:relative;z-index:2;width:100%;
+    padding:1.5rem 1.2rem 2.2rem;
+  }
+  @media(min-width:640px){
+    .hero__content{padding:2.5rem 2rem 3rem;max-width:var(--max-w);margin:0 auto}
+  }
+  .hero__badge{
+    display:inline-flex;align-items:center;gap:.5rem;
+    font-family:var(--f-ui);font-size:.66rem;font-weight:700;
+    color:var(--or);border:1px solid rgba(212,168,67,.32);
+    background:rgba(212,168,67,.08);padding:.22rem .8rem;
+    border-radius:20px;margin-bottom:1rem;letter-spacing:.05em;
+  }
+  .hero__badge-dot{
+    width:6px;height:6px;border-radius:50%;background:#ff4444;
+    animation:pulse 1.6s ease-in-out infinite;flex-shrink:0;
+  }
+  @keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.35;transform:scale(.65)}}
+  .hero__title{
+    font-family:var(--f-display);
+    font-size:clamp(2rem,5.5vw,4.2rem);
+    font-weight:900;line-height:1.08;color:#fff;
+    margin-bottom:.8rem;max-width:720px;overflow-wrap:break-word;
+  }
+  .hero__title em{font-style:normal;color:var(--or)}
+  .hero__sub{
+    font-size:clamp(.88rem,2vw,1.05rem);color:rgba(255,255,255,.65);
+    line-height:1.9;max-width:560px;margin-bottom:1.5rem;
+  }
+  .hero__ctas{display:flex;gap:.75rem;flex-wrap:wrap}
+  .btn-primary{
+    display:inline-flex;align-items:center;gap:.45rem;
+    background:var(--amerique);color:#fff;
+    font-family:var(--f-ui);font-size:.82rem;font-weight:700;
+    padding:.68rem 1.4rem;border-radius:var(--radius-sm);
+    min-height:44px;transition:background var(--tr),transform var(--tr);
+    white-space:nowrap;
+  }
+  .btn-primary:hover{background:#8b1e1e;transform:translateY(-2px)}
+  .btn-ghost{
+    display:inline-flex;align-items:center;gap:.45rem;
+    background:transparent;color:var(--or);
+    font-family:var(--f-ui);font-size:.82rem;font-weight:700;
+    padding:.68rem 1.4rem;border:1.5px solid rgba(212,168,67,.4);
+    border-radius:var(--radius-sm);min-height:44px;
+    transition:all var(--tr);white-space:nowrap;
+  }
+  .btn-ghost:hover{background:var(--or-dim);border-color:var(--or)}
+
+  /* ═══ BARRE DE STATS ════════════════════════════════════════ */
+  .stats-bar{
+    background:var(--surface);
+    border-bottom:1px solid var(--rule);
+    padding:.8rem 1.2rem;
+  }
+  @media(min-width:640px){.stats-bar{padding:.8rem 2rem}}
+  .stats-bar__inner{
+    max-width:var(--max-w);margin:0 auto;
+    display:flex;gap:1.2rem 2.5rem;flex-wrap:wrap;align-items:center;
+    font-family:var(--f-ui);font-size:.68rem;color:var(--muted);
+  }
+  .stats-bar__item strong{
+    font-family:var(--f-display);font-size:.98rem;font-weight:900;
+    color:var(--ink);margin-left:.2rem;
+  }
+  .stats-bar__sep{color:var(--rule-l);user-select:none}
+
+  /* ═══ WRAPPER ════════════════════════════════════════════════ */
+  .wrap{max-width:var(--max-w);margin:0 auto;padding:2rem 1.2rem}
+  @media(min-width:640px){.wrap{padding:2.5rem 2rem}}
+
+  /* ═══ TITRES DE SECTION ══════════════════════════════════════ */
+  .section-head{
+    display:flex;align-items:baseline;justify-content:space-between;
+    gap:1rem;margin-bottom:1.5rem;padding-bottom:.65rem;
+    border-bottom:2px solid var(--rule);
+  }
+  .section-head h2{
+    font-family:var(--f-display);
+    font-size:clamp(1.15rem,2.8vw,1.5rem); /* taille augmentée */
+    font-weight:700;color:var(--ink);
+    display:flex;align-items:center;gap:.5rem;
+  }
+  .section-head h2 .accent{
+    display:inline-block;width:10px;height:10px;border-radius:50%;flex-shrink:0;
+  }
+  .section-head a{
+    font-family:var(--f-ui);font-size:.72rem;font-weight:600;
+    color:var(--or);white-space:nowrap;opacity:.8;transition:opacity var(--tr);
+  }
+  .section-head a:hover{opacity:1}
+
+  /* ═══ ARTICLE À LA UNE ═══════════════════════════════════════ */
+  .featured{
+    display:grid;grid-template-columns:1fr;gap:0;
+    background:var(--card);border:1.5px solid var(--rule);
+    border-radius:var(--radius);overflow:hidden;
+    box-shadow:var(--sh);
+    transition:box-shadow var(--tr),transform var(--tr);margin-bottom:2rem;
+  }
+  .featured:hover{box-shadow:var(--sh-hover);transform:translateY(-3px)}
+  @media(min-width:720px){.featured{grid-template-columns:1fr 1fr}}
+  .featured__img{position:relative;min-height:220px;overflow:hidden;background:var(--cream)}
+  @media(min-width:720px){.featured__img{min-height:320px}}
+  .featured__img img{
+    width:100%;height:100%;object-fit:cover;
+    filter:brightness(.82) saturate(.9);
+    transition:filter var(--tr),transform .4s ease;
+  }
+  .featured:hover .featured__img img{filter:brightness(.92) saturate(1);transform:scale(1.03)}
+  .featured__img-label{
+    position:absolute;top:.9rem;right:.9rem;
+    background:var(--amerique);color:#fff;
+    font-family:var(--f-ui);font-size:.6rem;font-weight:700;
+    padding:.22rem .65rem;border-radius:var(--radius-sm);
+  }
+  .featured__body{
+    padding:1.5rem 1.4rem;display:flex;flex-direction:column;
+    gap:.75rem;justify-content:center;
+  }
+  @media(min-width:640px){.featured__body{padding:2rem 1.8rem}}
+  .featured__region{font-family:var(--f-ui);font-size:.64rem;font-weight:700;letter-spacing:.05em;color:var(--or)}
+  .featured__title{
+    font-family:var(--f-display);
+    font-size:clamp(1.1rem,2.8vw,1.6rem);
+    font-weight:900;line-height:1.28;color:var(--ink);overflow-wrap:break-word;
+  }
+  .featured:hover .featured__title{color:var(--red)}
+  .featured__desc{font-size:.88rem;color:var(--mid);line-height:1.85;overflow-wrap:break-word}
+  .featured__meta{
+    display:flex;align-items:center;gap:.5rem;
+    font-family:var(--f-ui);font-size:.63rem;color:var(--muted);flex-wrap:wrap;
+  }
+  .featured__meta .sep{color:var(--rule)}
+  .featured__read{
+    display:inline-flex;align-items:center;gap:.4rem;
+    font-family:var(--f-ui);font-size:.75rem;font-weight:700;color:var(--or);
+    margin-top:auto;padding-top:.65rem;border-top:1px solid var(--rule-l);
+    transition:gap var(--tr);
+  }
+  .featured:hover .featured__read{gap:.65rem}
+
+  /* ═══ GRILLE D'ARTICLES ══════════════════════════════════════ */
+  .articles-grid{
+    display:grid;grid-template-columns:1fr;gap:1rem;
+  }
+  @media(min-width:480px){.articles-grid{grid-template-columns:1fr 1fr}}
+  @media(min-width:900px){.articles-grid{grid-template-columns:repeat(3,1fr);gap:1.2rem}}
+
+  .art-card{
+    background:var(--card);border:1.5px solid var(--rule);
+    border-radius:var(--radius);overflow:hidden;display:flex;
+    flex-direction:column;box-shadow:var(--sh);
+    transition:transform var(--tr),box-shadow var(--tr),border-color var(--tr);
+  }
+  .art-card:hover{transform:translateY(-4px);box-shadow:var(--sh-hover);border-color:var(--rule)}
+  .art-card__stripe{height:3px;flex-shrink:0}
+  .art-card__img{
+    width:100%;height:140px;object-fit:cover;
+    filter:brightness(.82) saturate(.85);transition:filter var(--tr);flex-shrink:0;
+  }
+  .art-card:hover .art-card__img{filter:brightness(.95) saturate(1)}
+  .art-card__body{padding:1rem 1.1rem 1.1rem;flex:1;display:flex;flex-direction:column;gap:.45rem}
+  .art-card__tag{
+    display:inline-block;font-family:var(--f-ui);font-size:.6rem;font-weight:700;
+    padding:.18rem .6rem;border:1px solid;border-radius:var(--radius-sm);width:fit-content;
+  }
+  .art-card h3{
+    font-family:var(--f-display);font-size:clamp(.88rem,2.3vw,.98rem);
+    font-weight:700;line-height:1.5;color:var(--ink);flex:1;overflow-wrap:break-word;
+  }
+  .art-card:hover h3{color:var(--red)}
+  .art-card__foot{
+    display:flex;justify-content:space-between;align-items:center;
+    margin-top:auto;padding-top:.6rem;border-top:1px solid var(--rule-l);
+  }
+  .art-card__meta{font-family:var(--f-ui);font-size:.6rem;color:var(--muted)}
+  .art-card__arrow{font-size:.85rem;color:var(--or);transition:transform var(--tr)}
+  .art-card:hover .art-card__arrow{transform:translateX(-4px)}
+
+  /* ═══ TUILES RÉGIONS ═════════════════════════════════════════ */
+  .regions-grid{
+    display:grid;grid-template-columns:repeat(2,1fr);gap:.75rem;
+  }
+  @media(min-width:540px){.regions-grid{grid-template-columns:repeat(3,1fr)}}
+  @media(min-width:900px){.regions-grid{grid-template-columns:repeat(5,1fr) repeat(2,1fr);gap:1rem}}
+
+  .region-tile{
+    background:var(--card);border:1.5px solid var(--rule);
+    border-radius:var(--radius);border-top:3px solid var(--rc,var(--or));
+    padding:1.1rem 1rem 1rem;display:flex;flex-direction:column;gap:.4rem;
+    overflow:hidden;position:relative;
+    transition:transform var(--tr),box-shadow var(--tr),border-color var(--tr);
+    box-shadow:var(--sh);
+  }
+  .region-tile::after{
+    content:'';position:absolute;inset:0;
+    background:var(--rc,var(--or));opacity:0;
+    transition:opacity var(--tr);pointer-events:none;
+  }
+  .region-tile:hover{transform:translateY(-4px);box-shadow:var(--sh-hover)}
+  .region-tile:hover::after{opacity:.04}
+  .region-tile__icon{font-size:1.5rem;line-height:1}
+  .region-tile__name{
+    font-family:var(--f-display);
+    font-size:1rem;  /* taille augmentée */
+    font-weight:700;color:var(--ink);
+  }
+  .region-tile__count{font-family:var(--f-ui);font-size:.63rem;color:var(--muted);line-height:1.4}
+  .region-tile__arrow{
+    font-size:.8rem;color:var(--rc,var(--or));margin-top:auto;padding-top:.4rem;
+    transition:transform var(--tr);
+  }
+  .region-tile:hover .region-tile__arrow{transform:translateX(-4px)}
+
+  /* ═══ LISTE PAYS ═════════════════════════════════════════════ */
+  .country-list{display:flex;flex-direction:column;gap:0}
+  .country-item{
+    display:flex;align-items:center;gap:.9rem;
+    padding:.82rem .95rem;border-bottom:1px solid var(--rule-l);
+    background:var(--card);
+    border-right:3px solid var(--cc,var(--or));
+    transition:background var(--tr);cursor:pointer;
+  }
+  .country-item:first-child{border-radius:var(--radius) var(--radius) 0 0}
+  .country-item:last-child{border-bottom:none;border-radius:0 0 var(--radius) var(--radius)}
+  .country-item:hover{background:var(--cream)}
+  .country-item__flag{font-size:1.4rem;flex-shrink:0}
+  .country-item__info{flex:1;min-width:0}
+  .country-item__name{
+    font-family:var(--f-display);font-size:.96rem;font-weight:700;color:var(--ink);
+  }
+  .country-item:hover .country-item__name{color:var(--red)}
+  .country-item__desc{font-size:.77rem;color:var(--mid);line-height:1.5;overflow-wrap:break-word}
+  .country-item__arrow{font-size:.85rem;color:var(--or);flex-shrink:0;opacity:.6;transition:transform var(--tr),opacity var(--tr)}
+  .country-item:hover .country-item__arrow{transform:translateX(-4px);opacity:1}
+
+  /* ═══ LAYOUT AVEC SIDEBAR ════════════════════════════════════ */
+  .layout-with-aside{
+    display:grid;grid-template-columns:1fr;gap:2rem;align-items:start;
+  }
+  @media(min-width:960px){.layout-with-aside{grid-template-columns:1fr 280px;gap:2.5rem}}
+
+  .sidebar{min-width:0}
+  .sidebar__block{
+    background:var(--card);border:1.5px solid var(--rule);
+    border-radius:var(--radius);overflow:hidden;margin-bottom:1.2rem;
+  }
+  .sidebar__head{
+    background:var(--cream);padding:.7rem 1rem;
+    font-family:var(--f-ui);font-size:.7rem;font-weight:700;
+    color:var(--ink);letter-spacing:.04em;border-bottom:1px solid var(--rule);
+  }
+  .sidebar__list{list-style:none}
+  .sidebar__item{
+    display:flex;align-items:flex-start;gap:.6rem;padding:.75rem 1rem;
+    border-bottom:1px solid var(--rule-l);transition:background var(--tr);
+  }
+  .sidebar__item:last-child{border-bottom:none}
+  .sidebar__item:hover{background:var(--cream)}
+  .sidebar__num{font-family:var(--f-ui);font-size:.62rem;font-weight:700;color:var(--or);flex-shrink:0;margin-top:.1rem}
+  .sidebar__title{font-size:.82rem;line-height:1.5;color:var(--ink);overflow-wrap:break-word}
+  .sidebar__item:hover .sidebar__title{color:var(--red)}
+  .sidebar-cta{
+    background:linear-gradient(135deg,var(--ink) 0%,#2d1a3a 100%);
+    border-radius:var(--radius);padding:1.3rem;text-align:center;
+  }
+  .sidebar-cta h4{font-family:var(--f-display);font-size:1rem;font-weight:700;color:var(--or);margin-bottom:.4rem}
+  .sidebar-cta p{font-size:.78rem;color:rgba(255,255,255,.6);line-height:1.7;margin-bottom:.9rem}
+  .sidebar-cta a{
+    display:inline-block;background:var(--orient);color:#fff;
+    font-family:var(--f-ui);font-size:.75rem;font-weight:700;
+    padding:.55rem 1.3rem;border-radius:var(--radius-sm);transition:background var(--tr);
+  }
+  .sidebar-cta a:hover{background:#6e2a6e}
+
+  /* ═══ 2 COLONNES ═════════════════════════════════════════════ */
+  .two-col{display:grid;grid-template-columns:1fr;gap:2rem}
+  @media(min-width:760px){.two-col{grid-template-columns:1fr 1fr;gap:2.5rem}}
+
+  /* ═══ RUBRIQUES SPÉCIALES (Santé + Voyage) ═══════════════════ */
+  .special-grid{
+    display:grid;grid-template-columns:1fr;gap:1rem;
+  }
+  @media(min-width:640px){.special-grid{grid-template-columns:1fr 1fr;gap:1.5rem}}
+
+  .special-card{
+    background:var(--card);border:1.5px solid var(--rule);
+    border-radius:var(--radius);overflow:hidden;
+    box-shadow:var(--sh);transition:box-shadow var(--tr),transform var(--tr);
+    display:flex;flex-direction:column;
+  }
+  .special-card:hover{box-shadow:var(--sh-hover);transform:translateY(-3px)}
+
+  .special-card__header{
+    padding:1.2rem 1.3rem .8rem;
+    display:flex;align-items:center;gap:.75rem;
+    border-bottom:1px solid var(--rule-l);
+  }
+  .special-card__icon{
+    width:44px;height:44px;border-radius:var(--radius-sm);
+    display:flex;align-items:center;justify-content:center;
+    font-size:1.35rem;flex-shrink:0;
+  }
+  .special-card__heading{
+    font-family:var(--f-display);font-size:1.1rem;font-weight:700;color:var(--ink);
+  }
+  .special-card__sub{font-family:var(--f-ui);font-size:.65rem;color:var(--muted);margin-top:.1rem}
+
+  .special-card__articles{list-style:none;padding:0}
+  .special-card__articles li{
+    border-bottom:1px solid var(--rule-l);
+  }
+  .special-card__articles li:last-child{border-bottom:none}
+  .special-card__articles a{
+    display:flex;align-items:center;justify-content:space-between;gap:.7rem;
+    padding:.82rem 1.2rem;
+    font-family:var(--f-display);font-size:.88rem;font-weight:600;
+    color:var(--ink);line-height:1.45;
+    transition:background var(--tr);
+  }
+  .special-card__articles a:hover{background:var(--cream);color:var(--red)}
+  .special-card__articles a span{font-size:.75rem;color:var(--or);flex-shrink:0}
+
+  .special-card__footer{
+    padding:.75rem 1.3rem;margin-top:auto;
+    border-top:1px solid var(--rule-l);
+    background:var(--cream);
+  }
+  .special-card__footer a{
+    font-family:var(--f-ui);font-size:.72rem;font-weight:700;
+    color:var(--or);display:flex;align-items:center;gap:.3rem;
+  }
+  .special-card__footer a:hover{color:var(--ink)}
+
+  /* ═══ CITATION ÉDITORIALE ════════════════════════════════════ */
+  .quote-band{
+    background:var(--ink);
+    border-top:1px solid rgba(255,255,255,.05);
+    padding:2.5rem 1.2rem;text-align:center;
+  }
+  @media(min-width:640px){.quote-band{padding:3.5rem 2rem}}
+  .quote-band blockquote{
+    font-family:var(--f-display);
+    font-size:clamp(1.05rem,2.8vw,1.6rem);font-weight:600;
+    line-height:1.75;color:#e8d59e;max-width:760px;margin:0 auto .9rem;
+  }
+  .quote-band blockquote::before{content:'«\00A0';color:var(--or)}
+  .quote-band blockquote::after{content:'\00A0»';color:var(--or)}
+  .quote-band cite{font-family:var(--f-ui);font-size:.7rem;color:rgba(255,255,255,.4);font-style:normal}
+
+  /* ═══ SÉPARATEUR ═════════════════════════════════════════════ */
+  .section-sep{border:none;border-top:1px solid var(--rule);margin:0}
+
+  /* ═══ FADE-UP ANIMATION ══════════════════════════════════════ */
+  .fade-up{opacity:1;transform:none}
+  .fade-up.will-animate{opacity:0;transform:translateY(18px);transition:opacity .55s ease,transform .55s ease}
+  .fade-up.will-animate.visible{opacity:1;transform:none}
+
+  /* ═══ FOOTER ═════════════════════════════════════════════════ */
+  footer{
+    background:var(--ink);
+    border-top:3px solid var(--or);
+    padding:2rem 1.2rem 1.5rem;
+    font-family:var(--f-ui);font-size:.72rem;color:rgba(255,255,255,.4);
+  }
+  @media(min-width:640px){footer{padding:2.5rem 2rem 2rem}}
+  .footer__inner{
+    max-width:var(--max-w);margin:0 auto;
+    display:grid;grid-template-columns:1fr;gap:1.5rem;
+  }
+  @media(min-width:640px){.footer__inner{grid-template-columns:1fr auto;align-items:center}}
+  .footer__brand{
+    font-family:var(--f-display);font-size:1.2rem;font-weight:900;
+    color:var(--or);margin-bottom:.35rem;letter-spacing:-.015em;
+  }
+  .footer__brand span{color:var(--red)}
+  .footer__copy{color:rgba(255,255,255,.3);line-height:1.7;font-size:.68rem}
+  .footer__links{display:flex;gap:1rem;flex-wrap:wrap}
+  .footer__links a{color:rgba(255,255,255,.35);transition:color var(--tr)}
+  .footer__links a:hover{color:var(--or)}
+
+  @media(max-width:639px){
+    .regions-grid{grid-template-columns:1fr 1fr}
+    .hero__title{font-size:1.9rem}
+  }
+  </style>
+</head>
+<body>
+<div id="pb"></div>
+
+<!-- ═══ TOPBAR ══════════════════════════════════════════════════ -->
+<div class="topbar">
+  <span class="topbar-brand">
+    geopolô —
+    <strong>القوى والصراعات في القرن الحادي والعشرين</strong>
+  </span>
+  <div class="topbar-links">
+    <a href="https://fr.geopolo.com" class="btn-fr">
+      <span class="btn-fr-flag">🇫🇷</span>
+      Français
+    </a>
+    <a href="/abonnement.html">الوصول المميز</a>
+  </div>
+</div>
+
+<!-- ═══ MASTHEAD ════════════════════════════════════════════════ -->
+<header class="masthead">
+  <div class="masthead__left">
+
+    <!-- AVATAR / LOGO geopolô -->
+    <div class="masthead__avatar" title="geopolô">
+      <!-- Pour ajouter une photo : <img src="/avatar.jpg" alt="geopolô"/> -->
+      <span>geo<br>polô</span>
+    </div>
+
+    <div>
+      <a href="/" class="masthead__logo">
+        geo<span>polô</span>
+      </a>
+      <div class="masthead__tagline">
+        مجلة جيوسياسية استراتيجية مستقلة · ar.geopolo.com
+      </div>
+    </div>
+
+  </div>
+  <a href="/abonnement.html" class="masthead__cta">الوصول المميز ←</a>
+</header>
+
+<!-- ═══ NAVIGATION ════════════════════════════════════════════ -->
+<nav class="site-nav" role="navigation" aria-label="التنقل الرئيسي">
+  <a href="/" class="active">الرئيسية</a>
+  <a href="/afr.html"          data-r="afrique" ><span class="nav-dot"></span>أفريقيا</a>
+  <a href="/ame.html"          data-r="amerique"><span class="nav-dot"></span>أمريكا</a>
+  <a href="/eu.html"           data-r="europe"  ><span class="nav-dot"></span>أوروبا</a>
+  <a href="/asie.html"         data-r="asie"    ><span class="nav-dot"></span>آسيا</a>
+  <a href="/proche-or.html"    data-r="orient"  ><span class="nav-dot"></span>الشرق الأوسط</a>
+  <a href="/moyen-orient.html" data-r="mo"      ><span class="nav-dot"></span>الأقطار العربية</a>
+  <a href="/sante.html"        data-r="sante"   ><span class="nav-dot"></span>صحة</a>
+  <a href="/voyage.html"       data-r="voyage"  ><span class="nav-dot"></span>سفر</a>
+  <a href="/abonnement.html" class="nav-cta">الوصول المميز ←</a>
+</nav>
+
+<!-- ═══ HERO ═════════════════════════════════════════════════ -->
+<section class="hero" aria-label="الصفحة الرئيسية">
+  <div class="hero__bg" role="img" aria-label="خريطة العالم"></div>
+  <div class="hero__overlay"></div>
+  <div class="hero__content">
+    <div class="hero__badge">
+      <span class="hero__badge-dot"></span>
+      تحليل مستمر — أبريل 2026
+    </div>
+    <h1 class="hero__title">
+      وراء الأحداث<br>
+      <em>قوى تُحرّك العالم</em>
+    </h1>
+    <p class="hero__sub">
+      تحليلات جيوسياسية معمّقة في الصراعات الدولية، القوى العظمى، الشرق الأوسط، أفريقيا، أوروبا وآسيا. منظور استراتيجي مستقل.
+    </p>
+    <div class="hero__ctas">
+      <a href="/moyen-orient.html" class="btn-primary">📂 الأقطار العربية</a>
+      <a href="/proche-or.html"    class="btn-ghost">🌍 الشرق الأوسط</a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ BARRE DE STATS ════════════════════════════════════════ -->
+<div class="stats-bar">
+  <div class="stats-bar__inner">
+    <span class="stats-bar__item"><strong>150+</strong> تحليل منشور</span>
+    <span class="stats-bar__sep">·</span>
+    <span class="stats-bar__item"><strong>13</strong> دولة مُغطّاة</span>
+    <span class="stats-bar__sep">·</span>
+    <span class="stats-bar__item"><strong>8</strong> مناطق جيوسياسية</span>
+    <span class="stats-bar__sep">·</span>
+    <span class="stats-bar__item"><strong>ar.geopolo.com</strong> — تحليل مستقل</span>
+  </div>
+</div>
+
+<!-- ═══ CORPS PRINCIPAL ═══════════════════════════════════════ -->
+<main>
+
+  <!-- §A — ARTICLE À LA UNE -->
+  <div class="wrap">
+    <div class="section-head fade-up">
+      <h2><span class="accent" style="background:var(--amerique)"></span>مقال الأسبوع</h2>
+      <a href="/proche-or.html">جميع التحليلات ←</a>
+    </div>
+
+    <a href="/articles/iran-israel-usa-escalade.html" class="featured fade-up">
+      <div class="featured__img">
+        <img src="https://images.unsplash.com/photo-1578895101408-1a36b834405b?w=800&q=75"
+             alt="إيران إسرائيل أمريكا" loading="lazy"/>
+        <span class="featured__img-label">🔴 مقال الأسبوع</span>
+      </div>
+      <div class="featured__body">
+        <div class="featured__region">🌍 الشرق الأوسط · استراتيجية</div>
+        <h2 class="featured__title">
+          إيران - إسرائيل - أمريكا:<br>نحو تصعيد لا رجعة منه؟
+        </h2>
+        <p class="featured__desc">
+          ثلاثة أطراف، ثلاثة منطقَي ردع، ودائرة صراع باتت أضيق من أن تستوعب سياسات الغموض الاستراتيجي التي حالت دون الانفجار لعقود.
+        </p>
+        <div class="featured__meta">
+          <span>أبريل 2026</span><span class="sep">·</span>
+          <span>14 دقيقة</span><span class="sep">·</span>
+          <span>geopolô</span>
+        </div>
+        <span class="featured__read">← اقرأ التحليل الكامل</span>
+      </div>
+    </a>
+
+    <!-- §B — GRILLE + SIDEBAR -->
+    <div class="layout-with-aside">
+      <div>
+        <div class="section-head fade-up" style="margin-top:1rem">
+          <h2><span class="accent" style="background:var(--or)"></span>آخر التحليلات</h2>
+          <a href="/proche-or.html">المزيد ←</a>
+        </div>
+        <div class="articles-grid">
+
+          <a href="/articles/trumpisme-retour-consequences-globales.html" class="art-card fade-up">
+            <div class="art-card__stripe" style="background:var(--amerique)"></div>
+            <img class="art-card__img" src="https://images.unsplash.com/photo-1541872703-74c5e44368f9?w=600&q=70" alt="" loading="lazy"/>
+            <div class="art-card__body">
+              <span class="art-card__tag" style="border-color:var(--amerique);color:var(--amerique)">أمريكا</span>
+              <h3>عودة الترامبية: تحولات النظام العالمي</h3>
+              <div class="art-card__foot">
+                <span class="art-card__meta">أبريل 2026 · 14 د</span>
+                <span class="art-card__arrow">←</span>
+              </div>
+            </div>
+          </a>
+
+          <a href="/articles/rivalite-usa-chine-guerre-systemique.html" class="art-card fade-up">
+            <div class="art-card__stripe" style="background:var(--asie)"></div>
+            <img class="art-card__img" src="https://images.unsplash.com/photo-1521791136064-7986c2920216?w=600&q=70" alt="" loading="lazy"/>
+            <div class="art-card__body">
+              <span class="art-card__tag" style="border-color:var(--asie);color:var(--asie)">آسيا</span>
+              <h3>التنافس الأمريكي-الصيني: نحو حرب منظومية؟</h3>
+              <div class="art-card__foot">
+                <span class="art-card__meta">أبريل 2026 · 15 د</span>
+                <span class="art-card__arrow">←</span>
+              </div>
+            </div>
+          </a>
+
+          <a href="/articles/europe-puissance-strategique.html" class="art-card fade-up">
+            <div class="art-card__stripe" style="background:var(--europe)"></div>
+            <img class="art-card__img" src="https://images.unsplash.com/photo-1527853787696-f7be74f2e39a?w=600&q=70" alt="" loading="lazy"/>
+            <div class="art-card__body">
+              <span class="art-card__tag" style="border-color:var(--europe);color:var(--europe)">أوروبا</span>
+              <h3>أوروبا: هل لا تزال تستطيع أن تكون قوة استراتيجية؟</h3>
+              <div class="art-card__foot">
+                <span class="art-card__meta">أبريل 2026 · 13 د</span>
+                <span class="art-card__arrow">←</span>
+              </div>
+            </div>
+          </a>
+
+          <a href="/articles/sahel-zone-affrontement-global.html" class="art-card fade-up">
+            <div class="art-card__stripe" style="background:var(--afrique)"></div>
+            <img class="art-card__img" src="https://images.unsplash.com/photo-1489392191049-fc10c97e64b6?w=600&q=70" alt="" loading="lazy"/>
+            <div class="art-card__body">
+              <span class="art-card__tag" style="border-color:var(--afrique);color:var(--afrique)">أفريقيا</span>
+              <h3>الساحل: منطقة المواجهة الدولية الجديدة</h3>
+              <div class="art-card__foot">
+                <span class="art-card__meta">أبريل 2026 · 13 د</span>
+                <span class="art-card__arrow">←</span>
+              </div>
+            </div>
+          </a>
+
+          <a href="/articles/ukraine-conflit-long-terme.html" class="art-card fade-up">
+            <div class="art-card__stripe" style="background:var(--europe)"></div>
+            <img class="art-card__img" src="https://images.unsplash.com/photo-1580940157523-71ee2e4e2026?w=600&q=70" alt="" loading="lazy"/>
+            <div class="art-card__body">
+              <span class="art-card__tag" style="border-color:var(--europe);color:var(--europe)">أوروبا</span>
+              <h3>أوكرانيا: نحو نزاع طويل الأمد؟</h3>
+              <div class="art-card__foot">
+                <span class="art-card__meta">أبريل 2026 · 13 د</span>
+                <span class="art-card__arrow">←</span>
+              </div>
+            </div>
+          </a>
+
+          <a href="/articles/gaza-effets-regionaux-moyen-orient.html" class="art-card fade-up">
+            <div class="art-card__stripe" style="background:var(--orient)"></div>
+            <img class="art-card__img" src="https://images.unsplash.com/photo-1604347003892-ef7c8bdb0ce3?w=600&q=70" alt="" loading="lazy"/>
+            <div class="art-card__body">
+              <span class="art-card__tag" style="border-color:var(--orient);color:var(--orient)">الشرق الأوسط</span>
+              <h3>غزة وتداعياتها الإقليمية: الشرق الأوسط بعد أكتوبر 2023</h3>
+              <div class="art-card__foot">
+                <span class="art-card__meta">أبريل 2026 · 13 د</span>
+                <span class="art-card__arrow">←</span>
+              </div>
+            </div>
+          </a>
+
+        </div>
+      </div>
+
+      <!-- SIDEBAR -->
+      <aside class="sidebar">
+        <div class="sidebar__block fade-up">
+          <div class="sidebar__head">📈 الأكثر قراءة</div>
+          <ul class="sidebar__list">
+            <li class="sidebar__item">
+              <span class="sidebar__num">01</span>
+              <a href="/articles/yemen-houthis-mer-rouge.html" class="sidebar__title">الحوثيون والبحر الأحمر: أبعاد ما وراء التصعيد</a>
+            </li>
+            <li class="sidebar__item">
+              <span class="sidebar__num">02</span>
+              <a href="/articles/syrie-apres-assad-pouvoir.html" class="sidebar__title">سوريا ما بعد الأسد: من يملأ فراغ السلطة؟</a>
+            </li>
+            <li class="sidebar__item">
+              <span class="sidebar__num">03</span>
+              <a href="/articles/guerre-technologique-usa-chine.html" class="sidebar__title">الحرب التكنولوجية أمريكا-الصين: المعركة الأصل</a>
+            </li>
+            <li class="sidebar__item">
+              <span class="sidebar__num">04</span>
+              <a href="/articles/axe-chine-russie-alliance-opportunisme.html" class="sidebar__title">المحور الصيني-الروسي: تحالف أم انتهازية مشتركة؟</a>
+            </li>
+            <li class="sidebar__item">
+              <span class="sidebar__num">05</span>
+              <a href="/articles/fragmentation-mondialisation.html" class="sidebar__title">تشرذم العولمة: نهاية العالم المتصل أم تحوّله؟</a>
+            </li>
+          </ul>
+        </div>
+        <div class="sidebar-cta fade-up">
+          <h4>الوصول المميز</h4>
+          <p>تحليلات كاملة، أرشيف حصري وتقارير استراتيجية بعمق أكبر.</p>
+          <a href="/abonnement.html">اشترك الآن ←</a>
+        </div>
+      </aside>
+    </div>
+  </div>
+
+  <hr class="section-sep"/>
 
     /* ════════════════════════════════════════
        REGION CARDS — GLASSMORPHISM
