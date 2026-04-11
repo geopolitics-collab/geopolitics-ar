@@ -1,0 +1,10 @@
+# Cloudflare Pages _redirects
+# Compatibilité URLs sans extension .html
+/articles/:slug   /articles/:slug.html   200
+
+# Anciennes URLs (nasseralsabri.workers.dev → ar.geopolo.com)
+https://geopolitics-ar.nasseralsabri.workers.dev/*  https://ar.geopolo.com/:splat  301
+https://xegeo.pages.dev/*  https://ar.geopolo.com/:splat  301
+
+# 404 personnalisé
+/*   /404.html   404
