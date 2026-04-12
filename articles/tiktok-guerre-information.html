@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>حرب المعلومات على تيك توك: حين تصبح الخوارزميات سلاحاً جيوسياسياً — تحليلات جيوسياسية</title>
+<meta name="description" content="تحقيق استقصائي في كيفية تحوّل تيك توك من تطبيق ترفيهي إلى ساحة صراع جيوسياسي بين واشنطن وبكين. من الخوارزميات إلى قوانين الحظر، كيف تُعاد صياغة الحرب الباردة رقمياً؟"/>
+<meta name="keywords" content="تيك توك, حرب المعلومات, الصين, أمريكا, خوارزميات, حظر تيك توك, الحرب الرقمية, ByteDance"/>
+<meta property="og:title" content="حرب المعلومات على تيك توك: حين تصبح الخوارزميات سلاحاً جيوسياسياً"/>
+<meta property="og:description" content="تحقيق استقصائي في كيفية تحوّل تيك توك إلى ساحة صراع جيوسياسي بين واشنطن وبكين."/>
+<meta property="og:image" content="https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?w=1400&q=70"/>
+<meta property="og:type" content="article"/>
+<link rel="canonical" href="https://ar.geopolo.com/articles/tiktok-guerre-information.html"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/><link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Arabic:wght@400;700;900&family=Noto+Naskh+Arabic:wght@400;600&display=swap" rel="stylesheet"/>
+<style>
+:root{--a:#7c3aed;--ink:#1a1a2a;--bg:#f8f7f4;--paper:#fff;--cream:#f3f0e8;--mid:#5a5870;--rule:#e2ddd8;--or:#d4a843;--afrique:#c8821a;--amerique:#b83232;--europe:#1e5fa8;--asie:#1a8a6e;--orient:#8b3a8b;--moyen:#d4652a;--sante:#2a9d5c;--culture:#7c3aed;--voyage:#0891b2}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}
+body{font-family:'Noto Serif Arabic',Georgia,serif;background:var(--bg);color:var(--ink);direction:rtl;line-height:1.9}
+a{color:inherit;text-decoration:none}
+#pb{position:fixed;top:0;right:0;left:0;height:3px;background:var(--a);width:0%;z-index:9999;transition:width .1s}
+.top{background:#1a1a2a;color:#8a87a0;font-family:'Noto Naskh Arabic',sans-serif;font-size:.75rem;padding:.4rem 2rem;display:flex;justify-content:space-between;align-items:center}
+.top a{color:#b8b4d0}.top a:hover{color:var(--or)}
+.mast{background:var(--paper);border-bottom:3px solid var(--ink);padding:1.2rem 2rem;display:flex;justify-content:space-between;align-items:flex-end}
+.logo{font-family:'Noto Serif Arabic',serif;font-size:clamp(1.3rem,3vw,2.2rem);font-weight:900;color:var(--culture)}
+.logo span{display:block;font-size:.52em;font-weight:400;color:var(--mid)}
+.msub{font-family:'Noto Naskh Arabic',sans-serif;font-size:.7rem;color:var(--mid);text-align:left}
+nav{background:#1a1a2a;display:flex;flex-wrap:wrap;position:sticky;top:0;z-index:100;border-bottom:3px solid var(--a)}
+nav a{display:flex;align-items:center;gap:.4rem;padding:.65rem .9rem;font-family:'Noto Naskh Arabic',sans-serif;font-size:.78rem;color:#9a96b0;border-left:1px solid #2a2a3a;transition:all .2s}
+nav a:hover,nav a.active{background:#252535;color:var(--or)}
+nav a .dot{width:6px;height:6px;border-radius:50%;flex-shrink:0}
+nav a[data-r="afrique"] .dot{background:var(--afrique)}nav a[data-r="amerique"] .dot{background:var(--amerique)}
+nav a[data-r="europe"] .dot{background:var(--europe)}nav a[data-r="asie"] .dot{background:var(--asie)}nav a[data-r="orient"] .dot{background:var(--orient)}
+nav a[data-r="moyen"] .dot{background:var(--moyen)}nav a[data-r="sante"] .dot{background:var(--sante)}
+nav a[data-r="culture"] .dot{background:var(--culture)}nav a[data-r="voyage"] .dot{background:var(--voyage)}
+nav a.nav-cta{margin-right:auto;background:var(--culture);color:#fff;border:none;font-weight:600}
+nav a.nav-fr{color:#b8b4d0;font-size:.72rem}
+.hero{position:relative;height:clamp(300px,45vw,520px);overflow:hidden;background:#1a1a2a}
+.hero img{width:100%;height:100%;object-fit:cover;filter:brightness(.42)}
+.hero__ov{position:absolute;inset:0;background:linear-gradient(to top,rgba(26,26,42,.97) 35%,rgba(26,26,42,.1) 100%)}
+.hero__c{position:absolute;bottom:0;left:0;right:0;padding:2.5rem 2rem;max-width:900px;margin:0 auto}
+.hbadge{display:inline-block;font-family:'Noto Naskh Arabic',sans-serif;font-size:.7rem;padding:.22rem .7rem;color:#fff;margin-bottom:.8rem;border:1px solid rgba(255,255,255,.3)}
+.hero h1{font-family:'Noto Serif Arabic',serif;font-size:clamp(1.6rem,3.5vw,2.8rem);font-weight:900;line-height:1.15;color:#fff;margin-bottom:.8rem}
+.hero h1 em{font-style:normal;color:var(--or)}
+.hsub{font-size:.98rem;color:rgba(255,255,255,.72);max-width:650px;line-height:1.85}
+.meta{background:var(--paper);border-bottom:1px solid var(--rule);padding:.8rem 2rem}
+.metai{max-width:1060px;margin:0 auto;display:flex;flex-wrap:wrap;gap:1rem;align-items:center}
+.mi{font-family:'Noto Naskh Arabic',sans-serif;font-size:.7rem;color:#9a96b0}.mi strong{color:var(--mid)}
+.sep{color:var(--rule)}
+.layout{max-width:1200px;margin:0 auto;padding:2.5rem 1.5rem;display:grid;grid-template-columns:1fr 290px;gap:4rem;align-items:start}
+@media(max-width:960px){.layout{grid-template-columns:1fr;gap:2rem}}
+.kwb{background:var(--cream);border:1px solid var(--rule);border-right:3px solid var(--a);padding:.65rem 1rem;margin-bottom:2rem;display:flex;flex-wrap:wrap;gap:.4rem;align-items:center}
+.kwl{font-family:'Noto Naskh Arabic',sans-serif;font-size:.65rem;font-weight:700;color:var(--a);margin-left:.5rem}
+.kw{font-family:'Noto Naskh Arabic',sans-serif;font-size:.65rem;padding:.18rem .55rem;border:1px solid var(--rule);background:var(--paper);color:var(--mid)}
+.body>p:first-of-type::first-letter{font-size:3.8rem;font-weight:900;float:right;line-height:.85;margin:.05em 0 -.05em .15em;color:var(--a)}
+.body p{font-size:1.05rem;line-height:1.95;margin-bottom:1.6rem;color:#2a2a3a}
+.body strong{font-weight:700;color:var(--ink)}
+.body a.ext{color:var(--a);border-bottom:1px dotted var(--a);transition:color .2s}.body a.ext:hover{color:var(--orient)}
+.body ul{margin:1rem 0 1.5rem;padding-right:1.6rem}.body li{font-size:1rem;line-height:1.85;margin-bottom:.55rem;color:#2a2a3a}
+.chl{font-family:'Noto Naskh Arabic',sans-serif;font-size:.68rem;color:var(--a);margin-bottom:.25rem;display:flex;align-items:center;gap:.7rem;flex-direction:row-reverse}
+.chl::before{content:'';flex:1;height:1px;background:var(--rule)}
+.body h2{font-family:'Noto Serif Arabic',serif;font-size:1.6rem;font-weight:700;margin:2.8rem 0 .9rem;padding-top:.6rem;border-top:2px solid var(--ink);color:var(--ink)}
+.body h3{font-family:'Noto Serif Arabic',serif;font-size:1.08rem;font-weight:600;margin:1.8rem 0 .7rem;color:var(--a)}
+.body blockquote{margin:2rem 0;padding:1.5rem 1.8rem;border-right:4px solid var(--a);background:var(--cream);font-family:'Noto Serif Arabic',serif;font-size:1.05rem;font-weight:600;line-height:1.65;color:var(--ink)}
+.body blockquote cite{display:block;margin-top:.6rem;font-family:'Noto Naskh Arabic',sans-serif;font-size:.65rem;font-weight:400;color:var(--mid)}
+.stats{display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:1px;background:var(--rule);border:1px solid var(--rule);margin:2rem 0}
+.sc{background:var(--paper);padding:1.1rem;text-align:center}
+.scn{font-family:'Noto Serif Arabic',serif;font-size:1.7rem;font-weight:900;color:var(--a);line-height:1}
+.scl{font-family:'Noto Naskh Arabic',sans-serif;font-size:.6rem;color:var(--mid);margin-top:.25rem;line-height:1.4}
+.ctable{margin:2rem 0;overflow-x:auto}.ctable table{width:100%;border-collapse:collapse;font-size:.88rem}
+.ctable th{background:var(--ink);color:#fff;font-family:'Noto Naskh Arabic',sans-serif;font-size:.65rem;padding:.65rem 1rem;text-align:right}
+.ctable td{padding:.6rem 1rem;border-bottom:1px solid var(--rule);text-align:right}
+.ctable tr:nth-child(even) td{background:var(--cream)}
+.verdict{margin:2.5rem 0;border:2px solid var(--a);background:var(--paper);overflow:hidden}
+.vt{background:var(--a);color:#fff;font-family:'Noto Naskh Arabic',sans-serif;font-size:.76rem;padding:.7rem 1.2rem;font-weight:700}
+.vc{padding:1.3rem 1.5rem}.vc p{font-size:.93rem;line-height:1.75;margin-bottom:.6rem;color:#2a2a3a}
+.faq{margin:2.5rem 0;background:var(--paper);border:1px solid var(--rule);overflow:hidden}
+.faqt{background:var(--ink);color:#fff;font-family:'Noto Naskh Arabic',sans-serif;font-size:.76rem;padding:.75rem 1.2rem;font-weight:700}
+.fqi{border-bottom:1px solid var(--rule);padding:.9rem 1.2rem}.fqi:last-child{border:none}
+.fqq{font-family:'Noto Serif Arabic',serif;font-size:.92rem;font-weight:700;color:var(--ink);margin-bottom:.35rem}
+.fqa{font-family:'Noto Naskh Arabic',sans-serif;font-size:.85rem;color:var(--mid);line-height:1.65}
+.au{margin:2.5rem 0;padding:1.3rem 1.5rem;background:var(--cream);border:1px solid var(--rule);border-right:4px solid var(--a);display:flex;gap:1rem}
+.au img{width:60px;height:60px;border-radius:50%;object-fit:cover;border:2px solid var(--a)}
+.aui{flex:1}.aun{font-weight:700;font-size:.95rem;color:var(--ink)}
+.aur{font-family:'Noto Naskh Arabic',sans-serif;font-size:.68rem;color:var(--a)}
+.aup{font-family:'Noto Naskh Arabic',sans-serif;font-size:.78rem;color:var(--mid);margin-top:.25rem;line-height:1.6}
+.rel{margin:2rem 0}.relt{font-family:'Noto Naskh Arabic',sans-serif;font-size:.76rem;font-weight:700;color:var(--a);margin-bottom:.7rem}
+.relg{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:1rem}
+.relc{border:1px solid var(--rule);background:var(--paper);overflow:hidden;transition:border-color .2s}
+.relc:hover{border-color:var(--a)}
+.relc img{width:100%;height:110px;object-fit:cover}
+.relci{padding:.6rem}.relci h4{font-size:.82rem;line-height:1.5;font-weight:700}
+.relci p{font-family:'Noto Naskh Arabic',sans-serif;font-size:.62rem;color:var(--mid);margin-top:.25rem}
+aside{position:sticky;top:60px}
+.sb{background:var(--paper);border:1px solid var(--rule);margin-bottom:1.5rem;overflow:hidden}
+.sbt{background:var(--ink);color:#fff;font-family:'Noto Naskh Arabic',sans-serif;font-size:.72rem;padding:.6rem 1rem;font-weight:700}
+.toc{list-style:none;padding:.6rem 1rem}.toc li{margin-bottom:.45rem}
+.toc a{font-family:'Noto Naskh Arabic',sans-serif;font-size:.78rem;color:var(--mid);display:flex;gap:.4rem;transition:color .2s}
+.toc a:hover{color:var(--a)}.toc .num{color:var(--a);font-weight:700;min-width:1.4rem}
+.field{padding:.5rem}.field img{width:100%;margin-bottom:.4rem}
+.field p{font-family:'Noto Naskh Arabic',sans-serif;font-size:.65rem;color:var(--mid);padding:0 .5rem}
+.cta-sb{padding:1rem;text-align:center}
+.cta-sb p{font-family:'Noto Naskh Arabic',sans-serif;font-size:.78rem;color:var(--mid);margin-bottom:.6rem;line-height:1.5}
+.cta-sb a{display:inline-block;background:var(--culture);color:#fff;font-family:'Noto Naskh Arabic',sans-serif;font-size:.8rem;padding:.5rem 1.5rem;font-weight:600;transition:opacity .2s}
+.cta-sb a:hover{opacity:.85}
+footer{background:#1a1a2a;color:#8a87a0;padding:2rem;text-align:center;font-family:'Noto Naskh Arabic',sans-serif;font-size:.72rem;margin-top:3rem}
+footer a{color:#b8b4d0;margin:0 .5rem}footer a:hover{color:var(--or)}
+.fu{opacity:0;transform:translateY(28px);transition:opacity .55s ease,transform .55s ease}.vis{opacity:1;transform:none}
+@media(max-width:600px){.hero__c{padding:1.5rem 1rem}.layout{padding:1.5rem .8rem}.body p{font-size:.97rem}.body h2{font-size:1.3rem}}
+</style>
+<script src="https://sites.super.myninja.ai/_assets/ninja-daytona-script.js"></script>
+</head>
+<body>
+<div id="pb"></div>
+
+<div class="top">
+<span>الثقافة والجيوسياسة — تحليلات استراتيجية</span>
+<a href="/">GeoPolo.com ←</a>
+</div>
+
+<div class="mast">
+<a href="/" class="logo">جيوبولو<span>تحليلات جيوسياسية معمّقة</span></a>
+<div class="msub">ISSN 2960-4001 &bull; Geopolitical Analysis</div>
+</div>
+
+<nav>
+<a href="/">الرئيسية</a>
+<a href="/afr.html" data-r="afrique"><span class="dot"></span>أفريقيا</a>
+<a href="/ame.html" data-r="amerique"><span class="dot"></span>أمريكا</a>
+<a href="/eu.html" data-r="europe"><span class="dot"></span>أوروبا</a>
+<a href="/asie.html" data-r="asie"><span class="dot"></span>آسيا</a>
+<a href="/proche-or.html" data-r="orient"><span class="dot"></span>الشرق الأدنى</a>
+<a href="/moyen-orient.html" data-r="moyen"><span class="dot"></span>الشرق الأوسط</a>
+<a href="/sante.html" data-r="sante"><span class="dot"></span>صحة</a>
+<a href="/culture.html" data-r="culture" class="active"><span class="dot"></span>ثقافة</a>
+<a href="/voyage.html" data-r="voyage"><span class="dot"></span>سفر</a>
+<a href="https://fr.geopolo.com/" class="nav-fr">🇫🇷 Français</a>
+<a href="/abonnement.html" class="nav-cta">الاشتراك ←</a>
+</nav>
+
+<section class="hero">
+<img src="https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?w=1400&q=70" alt="تيك توك وحرب المعلومات"/>
+<div class="hero__ov"></div>
+<div class="hero__c">
+<span class="hbadge">حروب رقمية</span>
+<h1>حرب المعلومات على تيك توك: حين تصبح <em>الخوارزميات</em> سلاحاً جيوسياسياً</h1>
+<p class="hsub">١.٧ مليار مستخدم، ٩٥ دقيقة يومياً، وخوارزمية صينية واحدة تُقرّر ما يراه جيل بأكمله — تحقيق في التطبيق الذي تحوّل إلى ملف أمن قومي.</p>
+</div>
+</section>
+
+<div class="meta">
+<div class="metai">
+<span class="mi"><strong>تحقيق:</strong> طارق الهاشمي</span><span class="sep">|</span>
+<span class="mi"><strong>المؤسسة:</strong> مركز جيوبولو للدراسات الاستراتيجية</span><span class="sep">|</span>
+<span class="mi"><strong>النشر:</strong> ٢٥ مارس ٢٠٢٥</span><span class="sep">|</span>
+<span class="mi"><strong>القراءة:</strong> ١٩ دقيقة</span><span class="sep">|</span>
+<span class="mi"><strong>القسم:</strong> <a href="/culture.html" style="color:var(--a)">ثقافة وجيوسياسة</a></span>
+</div>
+</div>
+
+<div class="layout">
+<article class="body">
+
+<div class="kwb fu">
+<span class="kwl">الكلمات المفتاحية:</span>
+<span class="kw">تيك توك</span><span class="kw">ByteDance</span><span class="kw">حرب المعلومات</span><span class="kw">خوارزميات</span><span class="kw">حظر تيك توك</span><span class="kw">الأمن القومي</span><span class="kw">الحرب الباردة الرقمية</span>
+</div>
+
+<!-- intro -->
+<p class="fu">في يناير ٢٠٢٥، أقرّت المحكمة العليا الأمريكية بالإجماع دستورية قانون يُجبر شركة ByteDance الصينية على بيع تطبيق تيك توك أو مواجهة حظره الكامل في الولايات المتحدة. لم يكن هذا القرار مفاجئاً لمن يتابع التصعيد الجيوسياسي المتسارع حول التطبيق الأكثر تأثيراً في العالم، لكنه أكّد حقيقة باتت واضحة: تيك توك لم يعد مجرد تطبيق لمقاطع الرقص والطبخ، بل أصبح ملفاً من ملفات الأمن القومي تُناقشه أعلى المحاكم وغرف القرار الاستراتيجي في واشنطن وبكين وبروكسل. الحرب على تيك توك هي في جوهرها حرب على من يتحكم في "بوابة الانتباه" — من يُقرّر ما يراه ١.٧ مليار إنسان يومياً.</p>
+
+<p class="fu">لفهم أبعاد هذه المعركة، يجب النظر إلى تيك توك ليس كتطبيق ترفيهي بل كبنية تحتية معلوماتية ذات أبعاد استراتيجية. في هذا التحقيق، نكشف كيف تحوّل تطبيق صيني أُطلق عام ٢٠١٦ تحت اسم "Douyin" إلى ساحة المعركة الرئيسية في الحرب الباردة الرقمية بين أمريكا والصين، وكيف تُستخدم الخوارزميات كأسلحة جيوسياسية صامتة تُعيد تشكيل الرأي العام دون أن يشعر المستخدمون بذلك.</p>
+
+<!-- ch1 -->
+<div class="chl fu">الفصل الأول</div>
+<h2 id="c1" class="fu">صعود تيك توك: من تطبيق كاريوكي إلى قوة عظمى رقمية</h2>
+
+<p class="fu">بدأت قصة تيك توك عام ٢٠١٦ حين أطلق المهندس الصيني تشانغ يي مينغ، مؤسس شركة ByteDance، تطبيق "Douyin" في السوق الصيني. كان التطبيق بسيطاً: مقاطع فيديو قصيرة مدتها ١٥ ثانية مع موسيقى. لكن ما ميّزه عن المنافسين لم يكن المحتوى بل الخوارزمية: محرك توصية مبني على الذكاء الاصطناعي يتعلّم من سلوك المستخدم بسرعة مذهلة — في أقل من ٤٠ دقيقة من الاستخدام، تستطيع خوارزمية تيك توك بناء "بصمة نفسية" دقيقة للمستخدم تُحدّد اهتماماته ونقاط ضعفه العاطفية ومواقفه السياسية.</p>
+
+<p class="fu">في عام ٢٠١٧، استحوذت ByteDance على تطبيق "Musical.ly" الأمريكي مقابل مليار دولار ودمجته مع Douyin لإنشاء النسخة العالمية "TikTok". الانتشار كان صاعقاً: من صفر إلى مليار مستخدم نشط شهرياً في أقل من أربع سنوات — وهو رقم احتاج فيسبوك ثماني سنوات لتحقيقه وإنستغرام ست سنوات. بحلول عام ٢٠٢٥، تجاوز عدد مستخدمي تيك توك ١.٧ مليار شخص، منهم أكثر من ١٧٠ مليون أمريكي — أي نصف سكان الولايات المتحدة.</p>
+
+<div class="stats fu">
+<div class="sc"><div class="scn">١.٧ مليار</div><div class="scl">مستخدم نشط شهرياً حول العالم</div></div>
+<div class="sc"><div class="scn">٩٥ دقيقة</div><div class="scl">متوسط الاستخدام اليومي لكل مستخدم</div></div>
+<div class="sc"><div class="scn">١٧٠ مليون</div><div class="scl">مستخدم أمريكي — نصف السكان</div></div>
+<div class="sc"><div class="scn">٤٠ دقيقة</div><div class="scl">تكفي الخوارزمية لبناء "بصمة نفسية" للمستخدم</div></div>
+</div>
+
+<!-- ch2 -->
+<div class="chl fu">الفصل الثاني</div>
+<h2 id="c2" class="fu">الخوارزمية كسلاح: ما الذي يجعل تيك توك مختلفاً؟</h2>
+
+<p class="fu">ما يجعل تيك توك تهديداً جيوسياسياً في نظر واشنطن ليس حجمه فحسب، بل طبيعة خوارزميته الفريدة. على عكس فيسبوك أو إنستغرام اللذين يعتمدان أساساً على "الشبكة الاجتماعية" — أي محتوى من أصدقائك ومتابعيك — يعتمد تيك توك على "الرسم البياني للاهتمام" (Interest Graph): الخوارزمية لا تهتم بمن تعرفه بل بما يثيرك عاطفياً. هذا يعني أن ByteDance تملك خريطة نفسية تفصيلية لأكثر من مليار إنسان — أكبر قاعدة بيانات سلوكية في تاريخ البشرية.</p>
+
+<p class="fu">الجانب الأخطر هو ما يُسمّيه خبراء الأمن السيبراني "التلاعب الخوارزمي غير المرئي". من الناحية النظرية، تستطيع ByteDance — أو الحكومة الصينية التي تملك حق الوصول بموجب قانون الاستخبارات الصيني لعام ٢٠١٧ — تعديل الخوارزمية بشكل طفيف لتحقيق أهداف استراتيجية: زيادة ظهور المحتوى الذي يُعمّق الانقسام السياسي الأمريكي، تقليل ظهور المحتوى المؤيد لتايوان، ترويج الرسائل التي تُحسّن صورة الصين. هذه التعديلات لا تحتاج إلى "أوامر مباشرة" بل يكفي تغيير معاملات رياضية في الخوارزمية بنسب لا تتجاوز ٠.١٪ — ولن يلاحظ أي مستخدم الفرق.</p>
+
+<blockquote class="fu">
+"تيك توك ليس مجرد تطبيق ترفيهي. إنه أكبر عملية جمع بيانات سلوكية في تاريخ البشرية، تُديرها شركة تخضع لقانون استخباراتي يُلزمها بالتعاون مع الحكومة الصينية."
+<cite>— كريستوفر راي، مدير مكتب التحقيقات الفيدرالي FBI (شهادة أمام الكونغرس، ٢٠٢٣)</cite>
+</blockquote>
+
+<h3 class="fu">الدليل: ما كشفته التسريبات</h3>
+
+<p class="fu">في عام ٢٠٢٢، نشرت مجلة BuzzFeed News تسريبات صوتية من اجتماعات داخلية لتيك توك كشفت أن مهندسين في الصين تمكّنوا من الوصول إلى بيانات المستخدمين الأمريكيين رغم تأكيدات الشركة المتكررة بأن البيانات مُخزَّنة في خوادم أمريكية فقط. أحد الموظفين صرّح حرفياً: "كل شيء يُرى في الصين." هذه التسريبات أطلقت موجة من التحقيقات الحكومية في واشنطن ولندن وبروكسل وكانبيرا، وأدت في نهاية المطاف إلى تشريع قانون "حماية الأمريكيين من تطبيقات الخصوم الأجانب" في أبريل ٢٠٢٤.</p>
+
+<p class="fu">لكن ما لا يُناقَش كثيراً هو البُعد العكسي: الفرق الجوهري بين نسخة تيك توك العالمية والنسخة الصينية "Douyin". في الصين، يُقيَّد استخدام الأطفال بـ ٤٠ دقيقة يومياً، والمحتوى مُراقَب ويُركّز على العلوم والثقافة والإنجازات الوطنية. في النسخة العالمية، لا قيود مماثلة، والخوارزمية تُفضّل المحتوى الأكثر إثارة عاطفياً — بما في ذلك المحتوى المُنقسم سياسياً والمُضلّل. هذا التباين يُعبّر عنه خبراء السياسة التقنية بعبارة لافتة: "الصين تُصدّر الأفيون الرقمي وتحظره على مواطنيها."</p>
+
+<!-- ch3 -->
+<div class="chl fu">الفصل الثالث</div>
+<h2 id="c3" class="fu">ساحة المعركة: من الكونغرس إلى جنيف</h2>
+
+<p class="fu">الاستجابة الغربية لتهديد تيك توك جاءت على موجات متصاعدة. بدأت مع إدارة ترامب عام ٢٠٢٠ التي أصدرت أمراً تنفيذياً بحظر التطبيق — عُلِّق قضائياً — ثم تصاعدت مع إدارة بايدن التي حظرت التطبيق على الأجهزة الحكومية الفيدرالية في ديسمبر ٢٠٢٢، قبل أن يُقرّ الكونغرس قانون البيع أو الحظر في أبريل ٢٠٢٤ بأغلبية ساحقة من الحزبين — وهو إجماع نادر في واشنطن المنقسمة يكشف عمق القلق الأمني.</p>
+
+<p class="fu">لكن المعركة لا تقتصر على واشنطن. الاتحاد الأوروبي فرض قيوداً صارمة بموجب قانون الخدمات الرقمية (DSA) وغرّم تيك توك ٣٤٥ مليون يورو عام ٢٠٢٣ لانتهاك خصوصية الأطفال. الهند سبقت الجميع وحظرت التطبيق بالكامل في يونيو ٢٠٢٠ بعد مواجهة حدودية مع الصين في لاداخ — في أوضح ربط بين الجيوسياسة وقرار تقني. أستراليا ونيوزيلندا وكندا وبريطانيا حظرت التطبيق على الأجهزة الحكومية. تايوان تدرس حظراً شاملاً خوفاً من "عمليات تأثير" صينية عبر الخوارزمية.</p>
+
+<div class="ctable fu">
+<table>
+<tr><th>الدولة/الكيان</th><th>الإجراء</th><th>التاريخ</th><th>المبرر المعلن</th><th>الأثر</th></tr>
+<tr><td>الولايات المتحدة</td><td>قانون البيع أو الحظر</td><td>أبريل ٢٠٢٤</td><td>الأمن القومي</td><td>مهلة ٢٧٠ يوماً للبيع</td></tr>
+<tr><td>الهند</td><td>حظر شامل</td><td>يونيو ٢٠٢٠</td><td>أمن البيانات + التوتر الحدودي</td><td>فقدان ٢٠٠ مليون مستخدم</td></tr>
+<tr><td>الاتحاد الأوروبي</td><td>غرامة + قيود DSA</td><td>سبتمبر ٢٠٢٣</td><td>خصوصية الأطفال</td><td>٣٤٥ مليون يورو غرامة</td></tr>
+<tr><td>أستراليا</td><td>حظر على الأجهزة الحكومية</td><td>أبريل ٢٠٢٣</td><td>أمن المعلومات</td><td>شمل أجهزة الوزراء والنواب</td></tr>
+<tr><td>تايوان</td><td>دراسة حظر شامل</td><td>٢٠٢٤-٢٠٢٥</td><td>عمليات تأثير صينية</td><td>قيد التشريع</td></tr>
+<tr><td>إندونيسيا</td><td>حظر التجارة على التطبيق</td><td>أكتوبر ٢٠٢٣</td><td>حماية التجار المحليين</td><td>إغلاق TikTok Shop</td></tr>
+</table>
+</div>
+
+<!-- ch4 -->
+<div class="chl fu">الفصل الرابع</div>
+<h2 id="c4" class="fu">تيك توك والعالم العربي: فضاء بلا حراسة</h2>
+
+<p class="fu">بينما تتسارع الاستجابات الغربية، يبقى العالم العربي في معظمه فضاءً مفتوحاً أمام تأثير تيك توك دون أي إطار تنظيمي يُذكر. تشير التقديرات إلى أن أكثر من ١٢٠ مليون عربي يستخدمون التطبيق بشكل نشط، مع معدلات استخدام يومية تتجاوز المتوسط العالمي في دول مثل مصر والسعودية والعراق والجزائر. اللغة العربية هي خامس أكثر لغة استخداماً على المنصة، والمحتوى العربي يحصد مليارات المشاهدات يومياً.</p>
+
+<p class="fu">الخطورة في السياق العربي مضاعفة لعدة أسباب. أولاً، غياب شبه كامل لقوانين حماية البيانات الشخصية في معظم الدول العربية — باستثناء بعض التشريعات في الإمارات والبحرين — يعني أن بيانات المستخدمين العرب أقل حماية من نظرائهم الغربيين. ثانياً، الفجوة في الوعي الرقمي تجعل المستخدم العربي أكثر عرضة للتلاعب الخوارزمي. ثالثاً، والأهم استراتيجياً، تيك توك أصبح المنصة الإخبارية الأولى للشباب العربي تحت ٢٥ عاماً — الشريحة الأكبر ديموغرافياً — مما يعني أن خوارزمية صينية واحدة تتحكم فعلياً في المعلومات التي يستهلكها الجيل العربي القادم.</p>
+
+<h3 class="fu">حالة غزة: الخوارزمية في الميدان</h3>
+
+<p class="fu">كشفت أحداث غزة منذ أكتوبر ٢٠٢٣ عن الدور الجيوسياسي الفعلي لتيك توك بشكل لم يسبق له مثيل. على عكس المنصات الغربية التي قمعت المحتوى الفلسطيني وفق توثيقات منظمة هيومن رايتس ووتش و7amleh، سمحت خوارزمية تيك توك بانتشار واسع للمحتوى المؤيد لغزة — خاصة بين الشباب الغربي. النتيجة: تحوّلٌ غير مسبوق في الرأي العام الغربي الشبابي، حيث أظهرت استطلاعات هارفارد أن ٥١٪ من الأمريكيين بين ١٨-٢٤ عاماً يتعاطفون مع الفلسطينيين مقابل ١٩٪ فقط يتعاطفون مع إسرائيل. هذا التحول أثار قلقاً إسرائيلياً-أمريكياً صريحاً: السيناتور ميت رومني صرّح علناً بأن تيك توك يجب حظره جزئياً بسبب تأثيره على الرأي العام تجاه إسرائيل.</p>
+
+<blockquote class="fu">
+"تيك توك هو السبب في أن الشباب الأمريكي يرى الصراع بعيون مختلفة عن آبائهم. وهذا بالضبط ما يجعله خطيراً على مصالحنا."
+<cite>— سيناتور أمريكي خلال جلسات الكونغرس حول تيك توك، مارس ٢٠٢٤</cite>
+</blockquote>
+
+<!-- ch5 -->
+<div class="chl fu">الفصل الخامس</div>
+<h2 id="c5" class="fu">مستقبل الحرب الرقمية: ماذا بعد تيك توك؟</h2>
+
+<p class="fu">بصرف النظر عن مصير تيك توك — بيعاً أو حظراً أو حلاً وسطاً — فإن المعركة التي أشعلها تُشير إلى تحوّل جوهري في طبيعة الصراع الجيوسياسي في القرن الحادي والعشرين. لم يعد السؤال "من يملك الأرض؟" بل "من يملك الخوارزمية؟". السيادة الرقمية أصبحت ركيزة أساسية من ركائز الأمن القومي، والدول التي لا تملك منصاتها الرقمية الخاصة ستبقى عرضة للتلاعب المعلوماتي من الخارج.</p>
+
+<p class="fu">الصين أدركت هذا مبكراً: لديها نسختها الخاصة من كل منصة غربية — Weibo بدل تويتر، WeChat بدل واتساب، Baidu بدل غوغل، Douyin بدل تيك توك — محمية خلف "جدار الحماية العظيم" الذي يمنع أي تطبيق أجنبي من الوصول إلى ١.٤ مليار صيني. أمريكا، بعد عقود من التبشير بحرية الإنترنت المفتوح، تكتشف الآن أن هذا الانفتاح يمكن أن يُستخدم ضدها. أوروبا تحاول بناء "سيادة رقمية" عبر تشريعات مثل GDPR وDSA. أما العالم العربي فيبقى — في الأغلب — مستهلكاً للمنصات الأجنبية دون رؤية استراتيجية للسيادة الرقمية.</p>
+
+<h3 class="fu">سيناريوهات ٢٠٢٦-٢٠٣٠</h3>
+
+<p class="fu">يُرجّح الخبراء ثلاثة سيناريوهات لمستقبل الصراع الرقمي. السيناريو الأول: "شبكة الإنترنت المُنقسمة" (Splinternet) حيث ينقسم الفضاء الرقمي إلى كتل: كتلة أمريكية (غوغل، ميتا، أبل)، كتلة صينية (ByteDance، تينسنت، علي بابا)، وكتلة أوروبية تنظيمية. السيناريو الثاني: "التنظيم المتبادل" حيث تتفق القوى الكبرى على معايير مشتركة لتداول البيانات ومسؤولية الخوارزميات — وهو السيناريو الأقل احتمالاً في ظل التنافس المتصاعد. السيناريو الثالث: "عسكرة الخوارزميات" حيث تتحول المنصات الرقمية صراحةً إلى أدوات حرب معلوماتية تُوظّفها الدول في صراعاتها، مع استخدام الذكاء الاصطناعي التوليدي لإنتاج محتوى مُضلّل على نطاق صناعي.</p>
+
+<p class="fu">ما يجعل هذا الصراع مختلفاً عن كل الحروب السابقة هو أنه يجري داخل عقول البشر — في المساحة بين الوعي واللاوعي — حيث تقرر خوارزمية ما تراه عيناك قبل أن يُقرّر عقلك ما يفكر فيه. في هذا العالم الجديد، القوة ليست في من يملك أكثر الأسلحة فتكاً بل في من يملك أدقّ الخوارزميات تأثيراً.</p>
+
+<!-- verdict -->
+<div class="verdict fu">
+<div class="vt">⟡ الخلاصة الاستراتيجية</div>
+<div class="vc">
+<p>تيك توك ليس مجرد أزمة تقنية بل عَرَض لتحوّل جيوسياسي أعمق: انتقال الصراع بين القوى العظمى من الجغرافيا المادية إلى الجغرافيا الرقمية. الخوارزمية التي تُقرّر ما يراه ١.٧ مليار إنسان يومياً هي — بكل المقاييس — أقوى سلاح ناعم في التاريخ. معركة واشنطن وبكين على تيك توك هي معركة على "بوابة الانتباه العالمية"، والرابح سيتحكم في أقوى أشكال التأثير: القدرة على تشكيل ما يعتقده الناس أنه حقيقي.</p>
+<p>بالنسبة للعالم العربي، الرسالة واضحة: في غياب استراتيجية سيادة رقمية عربية — تشمل تشريعات حماية البيانات، ومنصات محلية قادرة على المنافسة، وبرامج توعية رقمية شاملة — سيبقى ١٢٠ مليون مستخدم عربي ساحة مفتوحة لكل من يملك الخوارزمية الأذكى والبيانات الأضخم.</p>
+</div>
+</div>
+
+<!-- faq -->
+<div class="faq fu">
+<div class="faqt">أسئلة شائعة</div>
+<div class="fqi">
+<div class="fqq">هل تيك توك يتجسس فعلاً على مستخدميه؟</div>
+<div class="fqa">تيك توك يجمع بيانات واسعة مشابهة لما تجمعه منصات غربية (موقع جغرافي، جهات اتصال، عادات التصفح)، لكن المخاوف تتركز حول إمكانية وصول الحكومة الصينية لهذه البيانات بموجب قانون الاستخبارات الصيني الذي يُلزم أي شركة صينية بالتعاون مع أجهزة الأمن عند الطلب.</div>
+</div>
+<div class="fqi">
+<div class="fqq">ما الفرق بين Douyin الصيني وTikTok العالمي؟</div>
+<div class="fqa">الفرق جوهري: Douyin مقيّد للأطفال بـ ٤٠ دقيقة يومياً، ومحتواه يركز على العلوم والتعليم والإنجازات الوطنية، بينما TikTok العالمي لا يفرض قيوداً مماثلة وخوارزميته تُفضّل المحتوى المثير عاطفياً. البعض يعتبر هذا دليلاً على أن الصين تعامل التطبيق كسلاح تصديري.</div>
+</div>
+<div class="fqi">
+<div class="fqq">هل سيُحظر تيك توك فعلاً في أمريكا؟</div>
+<div class="fqa">القانون يمنح ByteDance مهلة حتى يناير ٢٠٢٥ لبيع العمليات الأمريكية لمشترٍ غير صيني. الصين أعلنت معارضتها لأي بيع قسري. السيناريو الأرجح هو تسوية تقنية تتضمن تخزين البيانات في خوادم أمريكية مع إشراف مستقل، لكن المشهد يتغير بسرعة مع كل تطور سياسي.</div>
+</div>
+<div class="fqi">
+<div class="fqq">كيف يمكنني حماية بياناتي على تيك توك؟</div>
+<div class="fqa">تقليل المعلومات الشخصية في الملف، إيقاف تتبع الموقع، تحديد الجمهور الذي يرى محتواك، استخدام VPN، وأهم من كل ذلك: الوعي بأن كل ثانية تقضيها على التطبيق تُغذّي خوارزمية تبني ملفاً نفسياً مفصّلاً عنك.</div>
+</div>
+</div>
+
+<!-- author -->
+<div class="au fu">
+<img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=120&q=70" alt="طارق الهاشمي"/>
+<div class="aui">
+<div class="aun">طارق الهاشمي</div>
+<div class="aur">خبير أمن سيبراني وتقنيات رقمية</div>
+<div class="aup">باحث متخصص في الأمن السيبراني والحوكمة الرقمية، عمل مستشاراً لعدة حكومات عربية في مجال استراتيجيات السيادة الرقمية. حاصل على ماجستير من MIT في هندسة الأنظمة الذكية، ويكتب بانتظام لمنصات بحثية دولية حول التقاطع بين التكنولوجيا والجيوسياسة.</div>
+</div>
+</div>
+
+<!-- related -->
+<div class="rel fu">
+<div class="relt">مقالات ذات صلة</div>
+<div class="relg">
+<a class="relc" href="/articles/hollywood-pentagone-soft-power.html">
+<img src="https://images.unsplash.com/photo-1485846234645-a62644f84728?w=400&q=60" alt="هوليوود والبنتاغون"/>
+<div class="relci"><h4>هوليوود والبنتاغون: كيف يُصنع الوعي عبر الشاشة الكبيرة</h4><p>ثقافة وجيوسياسة</p></div>
+</a>
+<a class="relc" href="/articles/hallyu-coree-soft-power.html">
+<img src="https://images.unsplash.com/photo-1617886903355-9354bb57751f?w=400&q=60" alt="الموجة الكورية"/>
+<div class="relci"><h4>الموجة الكورية: غزو ثقافي ناعم يهزّ عروش هوليوود</h4><p>ثقافة وجيوسياسة</p></div>
+</a>
+<a class="relc" href="/articles/cyber-guerre-espionnage-numerique.html">
+<img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=400&q=60" alt="الحرب السيبرانية"/>
+<div class="relci"><h4>الحرب السيبرانية والتجسس الرقمي: ساحة المعركة الخفية</h4><p>تحليلات استراتيجية</p></div>
+</a>
+</div>
+</div>
+
+</article>
+
+<!-- sidebar -->
+<aside>
+<div class="sb">
+<div class="sbt">فهرس المقال</div>
+<ol class="toc">
+<li><a href="#c1"><span class="num">١</span>صعود تيك توك: من تطبيق كاريوكي إلى قوة عظمى</a></li>
+<li><a href="#c2"><span class="num">٢</span>الخوارزمية كسلاح: ما الذي يجعل تيك توك مختلفاً</a></li>
+<li><a href="#c3"><span class="num">٣</span>ساحة المعركة: من الكونغرس إلى جنيف</a></li>
+<li><a href="#c4"><span class="num">٤</span>تيك توك والعالم العربي: فضاء بلا حراسة</a></li>
+<li><a href="#c5"><span class="num">٥</span>مستقبل الحرب الرقمية: ماذا بعد تيك توك؟</a></li>
+</ol>
+</div>
+<div class="sb">
+<div class="sbt">صورة من الميدان</div>
+<div class="field">
+<img src="https://images.unsplash.com/photo-1563986768609-322da13575f2?w=400&q=60" alt="شاب يستخدم تيك توك"/>
+<p>شاب يتصفح تيك توك — ٩٥ دقيقة يومياً من الاستهلاك تُغذّي أكبر قاعدة بيانات سلوكية في التاريخ. © Reuters</p>
+</div>
+</div>
+<div class="sb">
+<div class="cta-sb">
+<p>للاطلاع على تحليلاتنا الحصرية حول الثقافة والجيوسياسة</p>
+<a href="/abonnement.html">اشترك الآن ←</a>
+</div>
+</div>
+</aside>
+</div>
+
+<footer>
+<div>جيوبولو — تحليلات جيوسياسية معمّقة © ٢٠٢٥</div>
+<div style="margin-top:.5rem">
+<a href="/">الرئيسية</a>
+<a href="/culture.html">ثقافة</a>
+<a href="/sante.html">صحة</a>
+<a href="/voyage.html">سفر</a>
+<a href="/abonnement.html">اشتراك</a>
+</div>
+</footer>
+
+<script>
+const pb=document.getElementById('pb');window.addEventListener('scroll',()=>{const s=document.documentElement,h=s.scrollHeight-s.clientHeight;pb.style.width=h?(s.scrollTop/h*100).toFixed(1)+'%':'0%'});
+const io=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('vis');io.unobserve(e.target)}})},{threshold:.12});
+document.querySelectorAll('.fu').forEach(el=>io.observe(el));
+</script>
+</body>
+</html>
