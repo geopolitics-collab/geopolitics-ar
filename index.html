@@ -50,7 +50,55 @@
       "url": "https://ar.geopolo.com"
     }
   }
-  </script>
+  
+function subscribeGeo(form, lang) {
+  lang = lang || 'ar';
+  var input = form.querySelector('input[type="email"]');
+  var btn   = form.querySelector('button[type="submit"]');
+  var msg   = form.parentElement.querySelector('.nl-msg') ||
+              form.nextElementSibling ||
+              (function(){ var p=document.createElement('p'); p.className='nl-msg'; form.parentNode.insertBefore(p,form.nextSibling); return p; })();
+
+  var email = input ? input.value.trim() : '';
+  if (!email || !/^[^@]+@[^@]+\.[^@]+$/.test(email)) {
+    msg.innerHTML = '<span style="color:#e05a2b">⚠️ يرجى إدخال بريد إلكتروني صحيح</span>';
+    if(input) input.focus();
+    return false;
+  }
+
+  var origText = btn ? btn.textContent : '';
+  if (btn) { btn.textContent = '⏳...'; btn.disabled = true; }
+  msg.innerHTML = '';
+
+  fetch('https://floral-math-8fc3.nasseralsabri.workers.dev/subscribe', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ email: email, lang: lang })
+  })
+  .then(function(r) { return r.json(); })
+  .then(function(data) {
+    if (data.message || data.success) {
+      msg.innerHTML = '<span style="color:#1a8a6e;font-family:var(--sans,sans-serif);font-size:.85rem">✅ تم الاشتراك بنجاح — شكراً!</span>';
+      if(input) input.value = '';
+      if(btn)   { btn.textContent = '✓ تم'; btn.style.background='#1a8a6e'; }
+    } else {
+      var errMsg = data.error || data.message || 'حدث خطأ';
+      if(errMsg.toLowerCase().includes('already') || errMsg.includes('موجود')) {
+        msg.innerHTML = '<span style="color:#c8920a;font-family:var(--sans,sans-serif);font-size:.85rem">ℹ️ هذا البريد مشترك بالفعل</span>';
+      } else {
+        msg.innerHTML = '<span style="color:#e05a2b;font-family:var(--sans,sans-serif);font-size:.85rem">⚠️ ' + errMsg + '</span>';
+      }
+      if(btn)   { btn.textContent = origText; btn.disabled = false; }
+    }
+  })
+  .catch(function() {
+    msg.innerHTML = '<span style="color:#e05a2b;font-family:var(--sans,sans-serif);font-size:.85rem">❌ خطأ في الاتصال — حاول مجدداً</span>';
+    if(btn) { btn.textContent = origText; btn.disabled = false; }
+  });
+  return false;
+}
+
+</script>
 
   <style>
   /* ═══════════════════════════════════════════════════════════════
@@ -898,6 +946,8 @@
 .share-rd{background:#ff4500;color:#fff}
 .share-ss{background:#ff6719;color:#fff}
 
+
+.nl-msg{margin-top:.6rem;min-height:1.2rem;text-align:center;font-family:var(--sans,'Noto Naskh Arabic',sans-serif);font-size:.82rem;line-height:1.5;position:relative;z-index:11}
 </style>
 <script src="https://sites.super.myninja.ai/_assets/ninja-daytona-script.js"></script>
 </head>
@@ -1623,8 +1673,8 @@
       <p class="newsletter__desc">
         احصل على أحدث التحليلات الجيوسياسية مباشرة في بريدك الإلكتروني. تحليلات أسبوعية حصرية من فريق Geopolo.
       </p>
-      <form class="newsletter__form" onsubmit="return false;">
-        <input type="email" class="newsletter__input" placeholder="بريدك الإلكتروني" aria-label="البريد الإلكتروني" required/>
+      <form class="newsletter__form" onsubmit="return subscribeGeo(this,'ar')" novalidate>
+        <input type="email" class="newsletter__input" name="email" placeholder="بريدك الإلكتروني" autocomplete="email" required aria-label="البريد الإلكتروني" required/>
         <button type="submit" class="newsletter__btn">اشتراك ←</button>
       </form>
     </div>

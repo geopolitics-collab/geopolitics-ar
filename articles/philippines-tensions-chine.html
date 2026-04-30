@@ -24,6 +24,54 @@
 <link rel="canonical" href="https://ar.geopolo.com/articles/philippines-tensions-chine.html"/>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"NewsArticle","headline":"الفلبين ضد الصين: التصعيد في بحر الصين الجنوبي 2026","description":"تحليل التوترات الفلبينية-الصينية في بحر الصين الجنوبي: النزاعات على الجزر، التحالف مع أمريكا، حوادث 2024-2026، والسيناريوهات المحتملة.","image":"https://images.unsplash.com/photo-1559494007-9f5847c49d94?w=1400&q=80","url":"https://ar.geopolo.com/articles/philippines-tensions-chine.html","datePublished":"2026-04-30","dateModified":"2026-04-30","author":{"@type":"Organization","name":"geopolô","url":"https://ar.geopolo.com"},"publisher":{"@type":"Organization","name":"geopolô"},"inLanguage":"ar","isAccessibleForFree":true}
+
+function subscribeGeo(form, lang) {
+  lang = lang || 'ar';
+  var input = form.querySelector('input[type="email"]');
+  var btn   = form.querySelector('button[type="submit"]');
+  var msg   = form.parentElement.querySelector('.nl-msg') ||
+              form.nextElementSibling ||
+              (function(){ var p=document.createElement('p'); p.className='nl-msg'; form.parentNode.insertBefore(p,form.nextSibling); return p; })();
+
+  var email = input ? input.value.trim() : '';
+  if (!email || !/^[^@]+@[^@]+\.[^@]+$/.test(email)) {
+    msg.innerHTML = '<span style="color:#e05a2b">⚠️ يرجى إدخال بريد إلكتروني صحيح</span>';
+    if(input) input.focus();
+    return false;
+  }
+
+  var origText = btn ? btn.textContent : '';
+  if (btn) { btn.textContent = '⏳...'; btn.disabled = true; }
+  msg.innerHTML = '';
+
+  fetch('https://floral-math-8fc3.nasseralsabri.workers.dev/subscribe', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ email: email, lang: lang })
+  })
+  .then(function(r) { return r.json(); })
+  .then(function(data) {
+    if (data.message || data.success) {
+      msg.innerHTML = '<span style="color:#1a8a6e;font-family:var(--sans,sans-serif);font-size:.85rem">✅ تم الاشتراك بنجاح — شكراً!</span>';
+      if(input) input.value = '';
+      if(btn)   { btn.textContent = '✓ تم'; btn.style.background='#1a8a6e'; }
+    } else {
+      var errMsg = data.error || data.message || 'حدث خطأ';
+      if(errMsg.toLowerCase().includes('already') || errMsg.includes('موجود')) {
+        msg.innerHTML = '<span style="color:#c8920a;font-family:var(--sans,sans-serif);font-size:.85rem">ℹ️ هذا البريد مشترك بالفعل</span>';
+      } else {
+        msg.innerHTML = '<span style="color:#e05a2b;font-family:var(--sans,sans-serif);font-size:.85rem">⚠️ ' + errMsg + '</span>';
+      }
+      if(btn)   { btn.textContent = origText; btn.disabled = false; }
+    }
+  })
+  .catch(function() {
+    msg.innerHTML = '<span style="color:#e05a2b;font-family:var(--sans,sans-serif);font-size:.85rem">❌ خطأ في الاتصال — حاول مجدداً</span>';
+    if(btn) { btn.textContent = origText; btn.disabled = false; }
+  });
+  return false;
+}
+
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Arabic:wght@400;700;900&family=Noto+Naskh+Arabic:wght@400;600&display=swap" rel="stylesheet"/>
@@ -99,6 +147,8 @@ a{color:inherit;text-decoration:none}img{display:block;max-width:100%;height:aut
 .an{font-family:var(--serif);font-size:.95rem;font-weight:700}
 .ar2{font-family:var(--sans);font-size:.65rem;color:var(--brand);margin-bottom:.4rem}
 .ab{font-size:.85rem;color:var(--ink-3);line-height:1.65}
+
+.nl-msg{margin-top:.6rem;min-height:1.2rem;text-align:center;font-family:var(--sans,'Noto Naskh Arabic',sans-serif);font-size:.82rem;line-height:1.5;position:relative;z-index:11}
 </style>
 </head>
 <body>
@@ -164,11 +214,12 @@ a{color:inherit;text-decoration:none}img{display:block;max-width:100%;height:aut
       <div class="nl-cta">
         <h3>📬 النشرة الأسبوعية</h3>
         <p>تحليلات جيوسياسية معمّقة كل أحد في بريدك — مجاناً.</p>
-        <form class="nl-form" onsubmit="return false">
-          <input class="nl-input" type="email" placeholder="بريدك الإلكتروني"/>
+        <form class="nl-form" onsubmit="return subscribeGeo(this,'ar')" novalidate>
+          <input class="nl-input" type="email" name="email" placeholder="بريدك الإلكتروني" autocomplete="email" required/>
           <button class="nl-btn" type="submit">اشترك</button>
         </form>
-        <p class="nl-note">بدون إزعاج · إلغاء في أي وقت</p>
+        <p class="nl-msg" aria-live="polite"></p>
+      <p class="nl-note">بدون إزعاج · إلغاء في أي وقت</p>
       </div>
       <div class="au"><div class="av">geo<br>polô</div><div>
         <div class="an">geopolô</div>

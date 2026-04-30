@@ -110,6 +110,8 @@ button:hover {
 .share-rd{background:#ff4500;color:#fff}
 .share-ss{background:#ff6719;color:#fff}
 
+
+.nl-msg{margin-top:.6rem;min-height:1.2rem;text-align:center;font-family:var(--sans,'Noto Naskh Arabic',sans-serif);font-size:.82rem;line-height:1.5;position:relative;z-index:11}
 </style>
 </head>
 
@@ -119,8 +121,8 @@ button:hover {
   <h1>📬 النشرة الإخبارية</h1>
   <p>تحليلات جيوسياسية حصرية مباشرة في بريدك</p>
 
-  <form onsubmit="return sendEmail(this)">
-    <input type="email" placeholder="بريدك الإلكتروني" required>
+  <form onsubmit="return subscribeGeo(this,'ar')" novalidate>
+    <input type="email" name="email" autocomplete="email" placeholder="بريدك الإلكتروني" required>
     <button type="submit">اشترك الآن</button>
   </form>
 
@@ -128,43 +130,54 @@ button:hover {
 </div>
 
 <script>
-function sendEmail(form) {
 
-  const input = form.querySelector("input");
-  const btn = form.querySelector("button");
-  const msg = document.getElementById("msg");
+function subscribeGeo(form, lang) {
+  lang = lang || 'ar';
+  var input = form.querySelector('input[type="email"]');
+  var btn   = form.querySelector('button[type="submit"]');
+  var msg   = form.parentElement.querySelector('.nl-msg') ||
+              form.nextElementSibling ||
+              (function(){ var p=document.createElement('p'); p.className='nl-msg'; form.parentNode.insertBefore(p,form.nextSibling); return p; })();
 
-  btn.innerText = "⏳ ...";
-  btn.disabled = true;
+  var email = input ? input.value.trim() : '';
+  if (!email || !/^[^@]+@[^@]+\.[^@]+$/.test(email)) {
+    msg.innerHTML = '<span style="color:#e05a2b">⚠️ يرجى إدخال بريد إلكتروني صحيح</span>';
+    if(input) input.focus();
+    return false;
+  }
 
-  fetch("https://floral-math-8fc3.nasseralsabri.workers.dev/subscribe", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json"
-    },
-    body: JSON.stringify({
-      email: input.value,
-      lang: "ar"
-    })
+  var origText = btn ? btn.textContent : '';
+  if (btn) { btn.textContent = '⏳...'; btn.disabled = true; }
+  msg.innerHTML = '';
+
+  fetch('https://floral-math-8fc3.nasseralsabri.workers.dev/subscribe', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ email: email, lang: lang })
   })
-  .then(res => res.json())
-  .then(data => {
-    if (data.message) {
-      msg.innerText = "✅ تم الاشتراك بنجاح";
-      input.value = "";
-      btn.innerText = "✓ تم";
+  .then(function(r) { return r.json(); })
+  .then(function(data) {
+    if (data.message || data.success) {
+      msg.innerHTML = '<span style="color:#1a8a6e;font-family:var(--sans,sans-serif);font-size:.85rem">✅ تم الاشتراك بنجاح — شكراً!</span>';
+      if(input) input.value = '';
+      if(btn)   { btn.textContent = '✓ تم'; btn.style.background='#1a8a6e'; }
     } else {
-      msg.innerText = "⚠️ " + data.error;
-      btn.disabled = false;
+      var errMsg = data.error || data.message || 'حدث خطأ';
+      if(errMsg.toLowerCase().includes('already') || errMsg.includes('موجود')) {
+        msg.innerHTML = '<span style="color:#c8920a;font-family:var(--sans,sans-serif);font-size:.85rem">ℹ️ هذا البريد مشترك بالفعل</span>';
+      } else {
+        msg.innerHTML = '<span style="color:#e05a2b;font-family:var(--sans,sans-serif);font-size:.85rem">⚠️ ' + errMsg + '</span>';
+      }
+      if(btn)   { btn.textContent = origText; btn.disabled = false; }
     }
   })
-  .catch(() => {
-    msg.innerText = "❌ خطأ في الاتصال";
-    btn.disabled = false;
+  .catch(function() {
+    msg.innerHTML = '<span style="color:#e05a2b;font-family:var(--sans,sans-serif);font-size:.85rem">❌ خطأ في الاتصال — حاول مجدداً</span>';
+    if(btn) { btn.textContent = origText; btn.disabled = false; }
   });
-
   return false;
 }
+
 </script>
 
 <footer class="geo-footer">
