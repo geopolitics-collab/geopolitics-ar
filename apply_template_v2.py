@@ -1,51 +1,14 @@
-<!DOCTYPE html>
-<html lang="ar" dir="rtl">
-<head>
-<meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/>
-<title>إندونيسيا: العملاق النائم يستيقظ على مضيق مالاكا</title>
-  <link rel="alternate" hreflang="fr" href="https://geopolo.com/articles/indonesie-geopolitique-maritime.html"/>
-  <link rel="alternate" hreflang="ar" href="https://ar.geopolo.com/articles/indonesie-geopolitique-maritime.html"/>
-  <link rel="alternate" hreflang="x-default" href="https://geopolo.com/articles/indonesie-geopolitique-maritime.html"/>
-<meta name="description" content="إندونيسيا الجيوسياسية 2026: مضيق مالاكا وسوندا، القوة الاقتصادية الصاعدة، التنافس الصيني-الأمريكي وسياسة عدم الانحياز."/>
-<meta name="keywords" content="إندونيسيا جيوسياسة, مضيق مالاكا إندونيسيا, إندونيسيا والصين أمريكا, إندونيسيا قوة إقليمية, ASEAN إندونيسيا"/>
-<meta property="og:title" content="إندونيسيا: العملاق النائم يستيقظ على مضيق مالاكا"/>
-<meta property="og:description" content="إندونيسيا الجيوسياسية 2026: مضيق مالاكا وسوندا، القوة الاقتصادية الصاعدة، التنافس الصيني-الأمريكي وسياسة عدم الانحياز."/>
-<meta property="og:image" content="https://images.unsplash.com/photo-1555899434-94d1368aa7af?w=1400&q=80"/>
-<meta property="og:type" content="article"/>
-<meta property="og:locale" content="ar_AR"/>
-<meta name="twitter:card" content="summary_large_image"/>
-<meta name="twitter:site" content="@geopolo_ar"/>
-<link rel="canonical" href="https://ar.geopolo.com/articles/indonesie-geopolitique-maritime.html"/>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "NewsArticle",
-  "headline": "إندونيسيا: العملاق النائم يستيقظ على مضيق مالاكا",
-  "description": "إندونيسيا الجيوسياسية 2026: مضيق مالاكا وسوندا، القوة الاقتصادية الصاعدة، التنافس الصيني-الأمريكي وسياسة عدم الانحياز.",
-  "image": "https://images.unsplash.com/photo-1555899434-94d1368aa7af?w=1400&q=80",
-  "url": "https://ar.geopolo.com/articles/indonesie-geopolitique-maritime.html",
-  "datePublished": "2026-04-29",
-  "dateModified": "2026-04-29",
-  "author": {
-    "@type": "Organization",
-    "name": "geopolô",
-    "url": "https://ar.geopolo.com"
-  },
-  "publisher": {
-    "@type": "Organization",
-    "name": "geopolô",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "https://ar.geopolo.com/favicon.ico"
-    }
-  },
-  "inLanguage": "ar",
-  "isAccessibleForFree": true
-}
-</script>
-<link rel="preconnect" href="https://fonts.googleapis.com"/>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Arabic:wght@400;600;700;900&family=Noto+Naskh+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet"/>
-<style>
+#!/usr/bin/env python3
+"""Apply new v2 design template to all 174 articles.
+Strategy: extract content from existing articles, rebuild with new shell.
+"""
+import os, re, glob
+from bs4 import BeautifulSoup, NavigableString
+
+DIR = "/workspaces/geopolitics-ar/articles"
+
+# ── New CSS (structural shell only) ──────────────────────────────────────────
+NEW_CSS = """
 :root{--brand:#0f4c81;--brand-dark:#0a3560;--accent:#c8920a;--accent-light:#fdf3dc;--danger:#b83232;--ink:#12131a;--ink-2:#2e3040;--ink-3:#5a5c72;--rule:#ddd9d0;--bg:#f6f4ef;--surface:#ffffff;--cream:#f0ece3;--serif:'Noto Serif Arabic',Georgia,serif;--sans:'Noto Naskh Arabic',sans-serif;--layout-max:1200px;--cat-asie:#1a8a6e;--cat-orient:#8b3a8b;--cat-europe:#1e5fa8;--cat-afrique:#c8821a;--cat-amerique:#b83232}
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}
 body{font-family:var(--serif);background:var(--bg);color:var(--ink);direction:rtl;line-height:1.9;-webkit-font-smoothing:antialiased}
@@ -193,152 +156,9 @@ img{display:block;max-width:100%;height:auto}a{color:inherit;text-decoration:non
 .footer-bottom{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:.5rem;color:#3a3850;padding-top:1rem;border-top:1px solid #252535;margin-top:1rem}
 .fl2{display:flex;gap:1.2rem}.fl2 a{color:#5a5870;transition:color .2s}.fl2 a:hover{color:var(--accent)}
 @media(max-width:640px){.site-header{padding:.8rem 1rem}.hero-content{padding:1.5rem 1rem}.page-layout{padding:1.5rem 1rem}.nl-form{flex-direction:column}.topbar{display:none}}
-</style>
-</head>
-<body>
-<div id="pb"></div>
-<div class="topbar">
-  <span>تحليلات جيوسياسية — <strong style="color:var(--accent)">القوى والصراعات في القرن الحادي والعشرين</strong></span>
-  <span><a href="https://geopolo.com">🇫🇷 Français</a> · <a href="/abonnement.html">الاشتراك</a></span>
-</div>
-<header class="site-header">
-  <a href="/" style="display:block">
-    <div class="logo">geo<em>polô</em></div>
-    <div class="logo-tagline">مجلة جيوسياسية استراتيجية مستقلة · ar.geopolo.com</div>
-  </a>
-  <a href="/abonnement.html" class="header-cta">📧 الاشتراك ←</a>
-</header>
-<nav class="site-nav"><div class="nav-inner">
-  <a href="/">الرئيسية</a>
-  <a href="/afr.html" data-r="afrique"><span class="nav-dot" style="background:var(--cat-afrique)"></span>أفريقيا</a>
-  <a href="/ame.html" data-r="amerique"><span class="nav-dot" style="background:var(--cat-amerique)"></span>أمريكا</a>
-  <a href="/eu.html" data-r="europe"><span class="nav-dot" style="background:var(--cat-europe)"></span>أوروبا</a>
-  <a href="/asie.html" data-r="asie"  class="active"><span class="nav-dot" style="background:var(--cat-asie)"></span>آسيا</a>
-  <a href="/proche-or.html" data-r="orient"><span class="nav-dot" style="background:var(--cat-orient)"></span>الشرق الأوسط</a>
-  <div class="nav-sub"><a href="/abonnement.html">الاشتراك ←</a></div>
-</div></nav>
-<div class="hero">
-  <img src="https://images.unsplash.com/photo-1555899434-94d1368aa7af?w=1400&q=80" alt="إندونيسيا: العملاق النائم يستيقظ على مضيق مالاكا" loading="eager"/>
-  <div class="hero-overlay"></div>
-  <div class="hero-content">
-    <div class="hero-category" style="background:#1a8a6e">🌊 جيوسياسة بحرية · آسيا</div>
-    <h1>إندونيسيا:<br/><em>العملاق النائم يستيقظ</em></h1>
-    <p class="hero-subtitle">17,000 جزيرة، 280 مليون نسمة، والسيطرة على مالاكا وسوندا — إندونيسيا القوة التي لم تُقرر بعد كيف تستخدم ثقلها.</p>
-  </div>
-</div>
-<div class="meta-bar"><div class="meta-inner">
-  <span class="mi">✍ <strong>geopolô</strong></span><span class="sep">·</span><span class="mi">📅 <strong>مارس 2026</strong></span><span class="sep">·</span><span class="mi">⏱ <strong>13 دقيقة</strong></span><span class="sep">·</span><span class="mi">🗂 <strong style="color:#1a8a6e">آسيا</strong></span><span class="sep">·</span>
-  <span class="reading-badge">⏱ 13 دقيقة قراءة</span>
-</div></div>
-<div class="share-bar"><div class="share-inner">
-  <span class="share-label">شارك:</span>
-  <button class="share-btn share-x" onclick="shareX()">𝕏</button>
-  <button class="share-btn share-wa" onclick="shareWA()">📱 واتساب</button>
-  <button class="share-btn share-copy" onclick="copyLink()">🔗 نسخ الرابط</button>
-</div></div>
-<div class="page-layout">
-  <div class="article-body">
-    <article class="body">
-<div class="kwb"><span class="kwl">🔑 الكلمات المفتاحية:</span><span class="kw">إندونيسيا جيوسياسة</span><span class="kw">مضيق مالاكا إندونيسيا</span><span class="kw">إندونيسيا والصين أمريكا</span><span class="kw">إندونيسيا قوة إقليمية</span><span class="kw">ASEAN إندونيسيا</span></div>
-<p>17,000 جزيرة. 280 مليون نسمة — رابع أكبر دولة سكانياً في العالم. أرخبيل يمتد من المحيط الهندي إلى المحيط الهادئ. والأهم: السيطرة على مضيق مالاكا — أكثر الممرات البحرية حركة في العالم. إندونيسيا قوة جيوسياسية بكل معنى الكلمة. لكنها لم تقرر بعد كيف تستخدم هذا الثقل الاستراتيجي الهائل.</p>
-<div class="stats">
-<div class="sc"><div class="scn">280 مليون</div><div class="scl">نسمة — رابع أكبر تجمع بشري</div></div>
-<div class="sc"><div class="scn">17,000</div><div class="scl">جزيرة تُشكّل الأرخبيل الأكبر في العالم</div></div>
-<div class="sc"><div class="scn">25%</div><div class="scl">من التجارة العالمية تمر بمضيق مالاكا</div></div>
-<div class="sc"><div class="scn">#16</div><div class="scl">اقتصادياً عالمياً — يتجه نحو Top 10 بحلول 2035</div></div>
-</div>
-<div class="chl">البُعد الأول · مضيق مالاكا</div>
-<h2 id="malacca">مضيق مالاكا: 900 كم تُغذّي ثلاثة مليارات إنسان</h2>
-<p>مضيق مالاكا يربط المحيط الهندي ببحر الصين الجنوبي — أي طريق نفط الخليج إلى الصين واليابان وكوريا الجنوبية. 25% من التجارة البحرية العالمية، و80% من نفط الصين المستورَد يمران هنا. في أضيق نقطة، المضيق لا يتجاوز 2.8 كيلومتر عرضاً — وإندونيسيا وماليزيا وسنغافورة تتشارك إدارته. أي اضطراب هنا يُصيب الاقتصادَين الصيني والياباني بالعمى الطاقوي.</p>
-<p>هذا ما يُسمّى في بكين «معضلة مالاكا» — الاعتماد المُقلق على ممر تُسيطر عليه دول لا تُوالي الصين ويقع في مدى القوة البحرية الأمريكية.</p>
-<div class="chl">البُعد الثاني · مضيق سوندا وسيطرة الأرخبيل</div>
-<h2 id="sunda">مضيق سوندا ولومبوك: الأوراق الاحتياطية</h2>
-<p>إندونيسيا تتحكم أيضاً في مضيقَي سوندا ولومبوك — الطريقَين البديلَين عن مالاكا للسفن الكبيرة. مضيق سوندا بين جاوة وسومطرة، ولومبوك بين بالي ولومبوك. في حالة إغلاق مالاكا أو مرور السفن الحربية الكبيرة التي لا تستطيع الأعماق الضحلة لمالاكا استيعابها، هذه المضايق الإندونيسية هي البديل. بمعنى آخر: إندونيسيا تُسيطر على ثلاثة ممرات استراتيجية في وقت واحد — لا يوجد مثيل لهذا في العالم.</p>
-<div class="ctable">
-<table>
-<thead><tr><th>المضيق</th><th>يقع بين</th><th>العرض الأدنى</th><th>حركة السفن</th><th>من يتحكم؟</th></tr></thead>
-<tbody>
-<tr><td>مالاكا</td><td>ماليزيا / إندونيسيا / سنغافورة</td><td>2.8 كم</td><td>الأكثر عالمياً</td><td>مشترك (ثلاثي)</td></tr>
-<tr><td>سوندا</td><td>جاوة / سومطرة (إندونيسيا)</td><td>24 كم</td><td>متوسط</td><td>🇮🇩 إندونيسيا وحدها</td></tr>
-<tr><td>لومبوك</td><td>بالي / لومبوك (إندونيسيا)</td><td>40 كم</td><td>عميق للسفن الكبرى</td><td>🇮🇩 إندونيسيا وحدها</td></tr>
-</tbody>
-</table>
-</div>
-<div class="chl">البُعد الثالث · الحياد الفعّال</div>
-<h2 id="china_us">بين الصين وأمريكا: «أصدقاء الجميع» كاستراتيجية</h2>
-<p>إندونيسيا تتبنّى سياسة «بيباس أكتيف» (Bebas Aktif) — «مستقلة ونشطة». لا تحالف مع أمريكا ولا تحالف مع الصين. الصين أكبر شريك تجاري. أمريكا حامية الأمن الإقليمي. جاكرتا تستفيد من كليهما وترفض الاختيار بينهما. في عالم تتصاعد فيه حدة المنافسة الأمريكية-الصينية، هذا الموقف يُصبح أصعب الحفاظ عليه — لكنه أيضاً يُعطي إندونيسيا ورقة ضغط على الطرفَين.</p>
-<blockquote>«إندونيسيا هي القوة الجيوسياسية الأقل استغلالاً لثقلها في العالم. 280 مليون إنسان وثلاثة مضايق استراتيجية — وهي ما زالت لا تُعلن نفسها قوة إقليمية فاعلة.»<cite>— ديفيد فينكلستاين، مؤسسة CNA الأمريكية، 2025</cite></blockquote>
-<div class="chl">البُعد الرابع · عهد برابووو</div>
-<h2 id="prabowo">برابووو سوبيانتو: هل يُغيّر الحياد الإندونيسي؟</h2>
-<p>في أكتوبر 2024، تولّى الجنرال المتقاعد برابووو سوبيانتو رئاسة إندونيسيا — وزير الدفاع السابق وخصم يودويونو وجوكووي الانتخابي لسنوات. برابووو أكثر ميلاً للاستعراض العسكري وأكثر صراحةً بشأن الثقل الإقليمي الإندونيسي. لكنه لم يُغيّر المسار الاستراتيجي الأساسي — إندونيسيا لن تختار بين واشنطن وبكين في المدى المنظور.</p>
-<div class="verdict">
-<div class="vt">⚖️ إندونيسيا 2030: هل يستيقظ العملاق؟</div>
-<div class="vc">
-<p><strong>الثروة الاستراتيجية لا تُستخدم بالكامل:</strong> إندونيسيا تملك كل مقومات القوة الإقليمية الكبرى لكنها تتصرف بتحفظ. هذا قرار سياسي واعٍ — ليس ضعفاً.</p>
-<p><strong>الاقتصاد سيُحسم الأمر:</strong> إذا واصلت إندونيسيا نمو 5-5.5% سنوياً ودخلت Top 10 اقتصادياً بحلول 2035، سيتعامل معها الجميع كقوة كبرى تلقائياً.</p>
-<p><strong>التحدي الأكبر:</strong> التحويل الاقتصادي من مصدر مواد خام إلى اقتصاد صناعي وخدمي متقدم. هذا ما يُحدد إذا كانت إندونيسيا ستكون فعلاً قوة عظمى القرن الحادي والعشرين أم مجرد موردٍ كبير.</p>
-</div>
-</div>
-<div class="faq"><div class="faqt">❓ أسئلة شائعة — FAQ</div><div class="fqi"><div class="fqq">لماذا مضيق مالاكا مهم جداً؟</div><div class="fqa">25% من التجارة البحرية العالمية و80% من نفط الصين المستورَد يمران عبره. إغلاقه يُضر الاقتصادَين الصيني والياباني فورياً.</div></div><div class="fqi"><div class="fqq">ما «معضلة مالاكا» الصينية؟</div><div class="fqa">الصين تخشى أن تُغلق أمريكا أو دول عدائية مضيق مالاكا ما سيقطع إمدادات نفطها. لهذا تبحث عن طرق بديلة عبر CPEC (باكستان) وشبكة الطاقة البرية.</div></div><div class="fqi"><div class="fqq">هل إندونيسيا حليفة لأمريكا أو للصين؟</div><div class="fqa">لا لهذه ولا لتلك. إندونيسيا تتبع سياسة «بيباس أكتيف» — مستقلة ونشطة. الصين أكبر شريك تجاري وأمريكا أهم شريك أمني، وجاكرتا ترفض الاختيار.</div></div><div class="fqi"><div class="fqq">ما الفرق بين مضيق سوندا ومالاكا؟</div><div class="fqa">مالاكا أكثر حركة لكنه ضحل. سوندا ولومبوك أعمق — تستخدمها السفن الحربية الكبرى والناقلات العملاقة التي لا تُناسبها أعماق مالاكا.</div></div></div>
-<div class="also">
-<h4>📚 اقرأ أيضاً</h4>
-<ul>
-<li><a href="/articles/alliances-secretes-monde.html">التحالفات الخفية للعالم: ما لا تقوله الدول علناً</a></li>
-<li><a href="/articles/asean-plus3-transition-climatique.html">قمة ASEAN+3: 80 مليار دولار لتمويل التحول المناخي في جنوب شرق آسيا</a></li>
-<li><a href="/articles/asie-chine-inde-coree-triangles.html">آسيا 2026: الصين والهند وكوريا الشمالية — ثلاث قوى تُعيد تشكيل القارة</a></li>
-<li><a href="/articles/asie-commerce-rcep-nouveau-ordre.html">آسيا تُعيد كتابة قواعد التجارة الدولية: نهاية النظام الذي صاغته واشنطن؟</a></li>
-</ul>
-</div>
-<div class="au"><div class="av">ن</div><div>
-<div class="an">ناصر الصبري</div>
-<div class="ar2">مدير · المعهد الدولي لتحليل التهديدات (ITAB) — تورسينج، فرنسا</div>
-<p class="ab">محلل في الجيوسياسة والعلاقات الدولية. يُدير ITAB ويُصدر مجلة ARES للجيوسياسة الاستراتيجية.</p>
-</div></div>
-<div class="rel"><div class="relt">📚 مقالات ذات صلة</div><div class="rg"><a class="rc" href="/articles/top-10-detroits-strategiques.html"><div class="rs" style="background:#1a8a6e"></div><div class="rb"><h4>أهم 10 مضائق استراتيجية</h4><p class="rd">مالاكا في المرتبة الأولى</p><span class="ra">← اقرأ المقال</span></div></a><a class="rc" href="/articles/chine-usa-pacifique-militaire.html"><div class="rs" style="background:#1a8a6e"></div><div class="rb"><h4>الصين ضد أمريكا في المحيط الهادئ</h4><p class="rd">الصراع على مالاكا</p><span class="ra">← اقرأ المقال</span></div></a><a class="rc" href="/articles/pourquoi-chine-menace-taiwan.html"><div class="rs" style="background:#1a8a6e"></div><div class="rb"><h4>لماذا تهدد الصين تايوان؟</h4><p class="rd">سلسلة الجزر وهاجس المضايق</p><span class="ra">← اقرأ المقال</span></div></a><a class="rc" href="/articles/guerre-lithium.html"><div class="rs" style="background:#1a8a6e"></div><div class="rb"><h4>حرب الليثيوم</h4><p class="rd">إندونيسيا تملك النيكل</p><span class="ra">← اقرأ المقال</span></div></a></div></div>
-</article>
-    <div class="nl-cta">
-      <h3>📬 النشرة الأسبوعية — مجاناً</h3>
-      <p>تحليلات جيوسياسية معمّقة كل أحد في بريدك. انضم إلى 12,000 قارئ.</p>
-      <form class="nl-form" onsubmit="return false">
-        <input class="nl-input" type="email" placeholder="بريدك الإلكتروني"/>
-        <button class="nl-btn" type="submit">اشترك</button>
-      </form>
-      <p class="nl-note">بدون إزعاج · إلغاء في أي وقت</p>
-    </div>
-  </div>
-  <aside class="sidebar">
-    <div class="sb2">
-      <div class="stl2">📋 المحتويات</div>
-      <ul class="tl2"><li><a href="#scale"><span class="tn2">1.</span>280 مليون و17000 جزيرة</a></li>
-<li><a href="#malacca"><span class="tn2">2.</span>سيد مضيق مالاكا</a></li>
-<li><a href="#sunda"><span class="tn2">3.</span>مضيق سوندا: الورقة الثانية</a></li>
-<li><a href="#economy"><span class="tn2">4.</span>الاقتصاد الصاعد</a></li>
-<li><a href="#china_us"><span class="tn2">5.</span>بين الصين وأمريكا: الحياد الفعّال</a></li>
-<li><a href="#prabowo"><span class="tn2">6.</span>عهد برابووو 2024: هل تغيّر شيء؟</a></li>
-<li><a href="#verdict"><span class="tn2">7.</span>إلى أين يتجه العملاق؟</a></li>
-</ul>
-    </div>
-    <div class="sb2">
-      <div class="sb-nl">
-        <h4>النشرة الأسبوعية</h4>
-        <p>تحليلات جيوسياسية معمّقة كل أحد — مجاناً.</p>
-        <a href="/abonnement.html">اشترك مجاناً ←</a>
-      </div>
-    </div>
-  </aside>
-</div>
-<footer class="site-footer"><div class="footer-inner">
-  <div class="footer-bottom">
-    <span>© 2026 geopolô · ar.geopolo.com</span>
-    <div class="fl2">
-      <a href="/">الرئيسية</a>
-      <a href="/asie.html">آسيا</a>
-      <a href="/abonnement.html">الاشتراك</a>
-      <a href="https://geopolo.com">🇫🇷 Français</a>
-    </div>
-  </div>
-</div></footer>
-<script>
+"""
+
+NEW_JS = """
 window.addEventListener('scroll',()=>{
   const d=document.documentElement;
   document.getElementById('pb').style.width=(d.scrollTop/(d.scrollHeight-d.clientHeight)*100)+'%';
@@ -362,5 +182,255 @@ if(secs.length&&tocLinks.length){
 function shareX(){window.open('https://twitter.com/intent/tweet?url='+encodeURIComponent(location.href)+'&text='+encodeURIComponent(document.title));}
 function shareWA(){window.open('https://wa.me/?text='+encodeURIComponent(document.title+' '+location.href));}
 function copyLink(){navigator.clipboard.writeText(location.href).then(()=>alert('تم نسخ الرابط ✓'));}
-</script>
-</body></html>
+"""
+
+CAT_COLORS = {
+    "afrique": "#c8821a", "amerique": "#b83232",
+    "europe": "#1e5fa8", "asie": "#1a8a6e",
+    "orient": "#8b3a8b", "default": "#0f4c81"
+}
+CAT_LABELS = {
+    "afrique": "أفريقيا", "amerique": "أمريكا",
+    "europe": "أوروبا", "asie": "آسيا",
+    "orient": "الشرق الأوسط", "default": "جيوسياسة"
+}
+
+
+def detect_cat(soup, filepath):
+    a = soup.find("a", class_="active")
+    if a and a.get("data-r"):
+        return a["data-r"]
+    fn = os.path.basename(filepath).lower()
+    if any(k in fn for k in ["afrique","africa","sahel","congo","nigeria","kenya","maroc","algerie","ethiopie","soudan","libye","afr"]):
+        return "afrique"
+    if any(k in fn for k in ["amerique","usa","bresil","mexique","argentine","colombie","canada","panama","ame"]):
+        return "amerique"
+    if any(k in fn for k in ["europe","france","allemagne","ukraine","pologne","otan","finlande","hongrie","roumanie","eu"]):
+        return "europe"
+    if any(k in fn for k in ["asie","chine","japon","coree","inde","tsmc","samsung","taiwan","indonesie","mongolie"]):
+        return "asie"
+    if any(k in fn for k in ["iran","israel","arabie","liban","syrie","irak","yemen","qatar","golfe","oman","jordanie","palestine","egypte","proche"]):
+        return "orient"
+    return "default"
+
+
+def build_page(soup, filepath, cat, color, cat_label):
+    # ── Extract meta ──────────────────────────────────────────────────────────
+    title_tag = soup.title
+    title = title_tag.string if title_tag else ""
+    og_title = soup.find("meta", property="og:title")
+    og_title = og_title["content"] if og_title else title
+    desc = soup.find("meta", attrs={"name":"description"})
+    desc = desc["content"] if desc else ""
+    keywords = soup.find("meta", attrs={"name":"keywords"})
+    keywords = keywords["content"] if keywords else ""
+    canonical = soup.find("link", rel="canonical")
+    canonical_url = canonical["href"] if canonical else ""
+    hreflang_fr = soup.find("link", rel="alternate", hreflang="fr")
+    hreflang_ar = soup.find("link", rel="alternate", hreflang="ar")
+    hreflang_def = soup.find("link", rel="alternate", hreflang="x-default")
+    jsonld = soup.find("script", {"type":"application/ld+json"})
+    og_image = soup.find("meta", property="og:image")
+    og_image = og_image["content"] if og_image else ""
+
+    # ── Extract hero ──────────────────────────────────────────────────────────
+    hero_div = soup.find(class_="hero")
+    hero_img_tag = hero_div.find("img") if hero_div else None
+    img_src = hero_img_tag["src"] if hero_img_tag else og_image
+    img_alt = hero_img_tag.get("alt","") if hero_img_tag else og_title
+    badge_tag = soup.find(class_="hbadge")
+    badge_text = badge_tag.get_text(strip=True) if badge_tag else cat_label
+    h1_tag = soup.find("h1")
+    h1_html = str(h1_tag) if h1_tag else f"<h1>{og_title}</h1>"
+    hsub_tag = soup.find(class_="hsub")
+    hsub_text = hsub_tag.get_text(strip=True) if hsub_tag else desc
+
+    # ── Extract meta bar items ─────────────────────────────────────────────────
+    meta_items = soup.find_all(class_="mi")
+    meta_html = ""
+    reading_time = "10 دقائق"
+    for mi in meta_items:
+        txt = mi.get_text(strip=True)
+        if "⏱" in txt:
+            reading_time = re.sub(r"⏱\s*", "", txt).strip()
+            meta_html += f'<span class="mi">⏱ <strong>{reading_time}</strong></span><span class="sep">·</span>'
+        elif "✍" in txt:
+            meta_html += f'<span class="mi">✍ <strong>geopolô</strong></span><span class="sep">·</span>'
+        elif "📅" in txt:
+            date_val = re.sub(r"📅\s*", "", txt).strip()
+            meta_html += f'<span class="mi">📅 <strong>{date_val}</strong></span><span class="sep">·</span>'
+        elif "🗂" in txt:
+            cat_val = re.sub(r"🗂\s*", "", txt).strip()
+            meta_html += f'<span class="mi">🗂 <strong style="color:{color}">{cat_val}</strong></span><span class="sep">·</span>'
+
+    # ── Extract article content ───────────────────────────────────────────────
+    article = soup.find("article")
+    body_html = str(article) if article else ""
+    body_html = body_html.replace('class="body fu"', 'class="body"')
+    body_html = body_html.replace('class="body  fu"', 'class="body"')
+
+    # ── Extract sidebar TOC ───────────────────────────────────────────────────
+    toc_ul = soup.find(class_="tl")
+    toc_html = ""
+    if toc_ul:
+        for li in toc_ul.find_all("li"):
+            a = li.find("a")
+            if a:
+                href = a.get("href","#")
+                tn = a.find(class_="tn")
+                num = tn.get_text(strip=True) if tn else ""
+                text = a.get_text(strip=True).replace(num,"").strip()
+                toc_html += f'<li><a href="{href}"><span class="tn2">{num}</span>{text}</a></li>\n'
+
+    if not toc_html:
+        # Generate from h2 headings
+        body_soup = BeautifulSoup(body_html, "html.parser")
+        for i, h2 in enumerate(body_soup.find_all("h2"), 1):
+            hid = h2.get("id", f"s{i}")
+            if not h2.get("id"):
+                h2["id"] = hid
+            toc_html += f'<li><a href="#{hid}"><span class="tn2">{i}.</span>{h2.get_text(strip=True)[:40]}</a></li>\n'
+            body_html = str(body_soup)
+
+    # ── Build hreflang tags ───────────────────────────────────────────────────
+    hreflang_html = ""
+    if hreflang_fr:
+        hreflang_html += f'  <link rel="alternate" hreflang="fr" href="{hreflang_fr["href"]}"/>\n'
+    if hreflang_ar:
+        hreflang_html += f'  <link rel="alternate" hreflang="ar" href="{hreflang_ar["href"]}"/>\n'
+    if hreflang_def:
+        hreflang_html += f'  <link rel="alternate" hreflang="x-default" href="{hreflang_def["href"]}"/>\n'
+
+    slug = os.path.basename(filepath).replace(".html","")
+
+    return f"""<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>{title}</title>
+{hreflang_html}<meta name="description" content="{desc}"/>
+<meta name="keywords" content="{keywords}"/>
+<meta property="og:title" content="{og_title}"/>
+<meta property="og:description" content="{desc}"/>
+<meta property="og:image" content="{og_image}"/>
+<meta property="og:type" content="article"/>
+<meta property="og:locale" content="ar_AR"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:site" content="@geopolo_ar"/>
+<link rel="canonical" href="{canonical_url}"/>
+{str(jsonld) if jsonld else ""}
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Arabic:wght@400;600;700;900&family=Noto+Naskh+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+<style>{NEW_CSS}</style>
+</head>
+<body>
+<div id="pb"></div>
+<div class="topbar">
+  <span>تحليلات جيوسياسية — <strong style="color:var(--accent)">القوى والصراعات في القرن الحادي والعشرين</strong></span>
+  <span><a href="https://geopolo.com">🇫🇷 Français</a> · <a href="/abonnement.html">الاشتراك</a></span>
+</div>
+<header class="site-header">
+  <a href="/" style="display:block">
+    <div class="logo">geo<em>polô</em></div>
+    <div class="logo-tagline">مجلة جيوسياسية استراتيجية مستقلة · ar.geopolo.com</div>
+  </a>
+  <a href="/abonnement.html" class="header-cta">📧 الاشتراك ←</a>
+</header>
+<nav class="site-nav"><div class="nav-inner">
+  <a href="/">الرئيسية</a>
+  <a href="/afr.html" data-r="afrique"{"  class=\"active\"" if cat=="afrique" else ""}><span class="nav-dot" style="background:var(--cat-afrique)"></span>أفريقيا</a>
+  <a href="/ame.html" data-r="amerique"{"  class=\"active\"" if cat=="amerique" else ""}><span class="nav-dot" style="background:var(--cat-amerique)"></span>أمريكا</a>
+  <a href="/eu.html" data-r="europe"{"  class=\"active\"" if cat=="europe" else ""}><span class="nav-dot" style="background:var(--cat-europe)"></span>أوروبا</a>
+  <a href="/asie.html" data-r="asie"{"  class=\"active\"" if cat=="asie" else ""}><span class="nav-dot" style="background:var(--cat-asie)"></span>آسيا</a>
+  <a href="/proche-or.html" data-r="orient"{"  class=\"active\"" if cat=="orient" else ""}><span class="nav-dot" style="background:var(--cat-orient)"></span>الشرق الأوسط</a>
+  <div class="nav-sub"><a href="/abonnement.html">الاشتراك ←</a></div>
+</div></nav>
+<div class="hero">
+  <img src="{img_src}" alt="{img_alt}" loading="eager"/>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <div class="hero-category" style="background:{color}">{badge_text}</div>
+    {h1_html}
+    <p class="hero-subtitle">{hsub_text}</p>
+  </div>
+</div>
+<div class="meta-bar"><div class="meta-inner">
+  {meta_html}
+  <span class="reading-badge">⏱ {reading_time} قراءة</span>
+</div></div>
+<div class="share-bar"><div class="share-inner">
+  <span class="share-label">شارك:</span>
+  <button class="share-btn share-x" onclick="shareX()">𝕏</button>
+  <button class="share-btn share-wa" onclick="shareWA()">📱 واتساب</button>
+  <button class="share-btn share-copy" onclick="copyLink()">🔗 نسخ الرابط</button>
+</div></div>
+<div class="page-layout">
+  <div class="article-body">
+    {body_html}
+    <div class="nl-cta">
+      <h3>📬 النشرة الأسبوعية — مجاناً</h3>
+      <p>تحليلات جيوسياسية معمّقة كل أحد في بريدك. انضم إلى 12,000 قارئ.</p>
+      <form class="nl-form" onsubmit="return false">
+        <input class="nl-input" type="email" placeholder="بريدك الإلكتروني"/>
+        <button class="nl-btn" type="submit">اشترك</button>
+      </form>
+      <p class="nl-note">بدون إزعاج · إلغاء في أي وقت</p>
+    </div>
+  </div>
+  <aside class="sidebar">
+    <div class="sb2">
+      <div class="stl2">📋 المحتويات</div>
+      <ul class="tl2">{toc_html}</ul>
+    </div>
+    <div class="sb2">
+      <div class="sb-nl">
+        <h4>النشرة الأسبوعية</h4>
+        <p>تحليلات جيوسياسية معمّقة كل أحد — مجاناً.</p>
+        <a href="/abonnement.html">اشترك مجاناً ←</a>
+      </div>
+    </div>
+  </aside>
+</div>
+<footer class="site-footer"><div class="footer-inner">
+  <div class="footer-bottom">
+    <span>© 2026 geopolô · ar.geopolo.com</span>
+    <div class="fl2">
+      <a href="/">الرئيسية</a>
+      <a href="/{cat if cat!="default" else "asie"}.html">{cat_label}</a>
+      <a href="/abonnement.html">الاشتراك</a>
+      <a href="https://geopolo.com">🇫🇷 Français</a>
+    </div>
+  </div>
+</div></footer>
+<script>{NEW_JS}</script>
+</body></html>"""
+
+
+def main():
+    files = sorted(glob.glob(os.path.join(DIR, "*.html")))
+    print(f"🎨 Application du template v2 sur {len(files)} articles...\n")
+    ok = err = 0
+    for i, fp in enumerate(files, 1):
+        try:
+            with open(fp, encoding="utf-8") as f:
+                soup = BeautifulSoup(f.read(), "html.parser")
+            if soup.html and soup.html.get("lang","") != "ar":
+                print(f"  — [{i:03d}] {os.path.basename(fp)} (ignoré: pas arabe)")
+                continue
+            cat = detect_cat(soup, fp)
+            color = CAT_COLORS.get(cat, CAT_COLORS["default"])
+            cat_label = CAT_LABELS.get(cat, "جيوسياسة")
+            html = build_page(soup, fp, cat, color, cat_label)
+            with open(fp, "w", encoding="utf-8") as f:
+                f.write(html)
+            ok += 1
+            print(f"  ✅ [{i:03d}/{len(files)}] {os.path.basename(fp)}")
+        except Exception as e:
+            err += 1
+            print(f"  ❌ [{i:03d}] {os.path.basename(fp)} — {e}")
+
+    print(f"\n✅ {ok} articles mis à jour | ❌ {err} erreurs")
+
+
+if __name__ == "__main__":
+    main()

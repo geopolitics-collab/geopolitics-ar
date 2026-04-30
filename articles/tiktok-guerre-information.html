@@ -9,107 +9,13 @@
 <meta name="description" content="تحقيق استقصائي في كيفية تحوّل تيك توك من تطبيق ترفيهي إلى ساحة صراع جيوسياسي بين واشنطن وبكين. من الخوارزميات إلى قوانين الحظر، كيف تُعاد صياغة الحرب..."/>
 <meta name="keywords" content="تيك توك, حرب المعلومات, الصين, أمريكا, خوارزميات, حظر تيك توك, الحرب الرقمية, ByteDance"/>
 <meta property="og:title" content="حرب المعلومات على تيك توك: حين تصبح الخوارزميات سلاحاً جيوسياسياً"/>
-<meta property="og:description" content="تحقيق استقصائي في كيفية تحوّل تيك توك إلى ساحة صراع جيوسياسي بين واشنطن وبكين."/>
+<meta property="og:description" content="تحقيق استقصائي في كيفية تحوّل تيك توك من تطبيق ترفيهي إلى ساحة صراع جيوسياسي بين واشنطن وبكين. من الخوارزميات إلى قوانين الحظر، كيف تُعاد صياغة الحرب..."/>
 <meta property="og:image" content="https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?w=1400&q=70"/>
 <meta property="og:type" content="article"/>
+<meta property="og:locale" content="ar_AR"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:site" content="@geopolo_ar"/>
 <link rel="canonical" href="https://ar.geopolo.com/articles/tiktok-guerre-information.html"/>
-<link rel="preconnect" href="https://fonts.googleapis.com"/><link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Arabic:wght@400;700;900&family=Noto+Naskh+Arabic:wght@400;600&display=swap" rel="stylesheet"/>
-<style>
-:root{--a:#7c3aed;--ink:#1a1a2a;--bg:#f8f7f4;--paper:#fff;--cream:#f3f0e8;--mid:#5a5870;--rule:#e2ddd8;--or:#d4a843;--afrique:#c8821a;--amerique:#b83232;--europe:#1e5fa8;--asie:#1a8a6e;--orient:#8b3a8b;--moyen:#d4652a;--sante:#2a9d5c;--culture:#7c3aed;--voyage:#0891b2}
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}
-body{font-family:'Noto Serif Arabic',Georgia,serif;background:var(--bg);color:var(--ink);direction:rtl;line-height:1.9}
-a{color:inherit;text-decoration:none}
-#pb{position:fixed;top:0;right:0;left:0;height:3px;background:var(--a);width:0%;z-index:9999;transition:width .1s}
-.top{background:#1a1a2a;color:#8a87a0;font-family:'Noto Naskh Arabic',sans-serif;font-size:.75rem;padding:.4rem 2rem;display:flex;justify-content:space-between;align-items:center}
-.top a{color:#b8b4d0}.top a:hover{color:var(--or)}
-.mast{background:var(--paper);border-bottom:3px solid var(--ink);padding:1.2rem 2rem;display:flex;justify-content:space-between;align-items:flex-end}
-.logo{font-family:'Noto Serif Arabic',serif;font-size:clamp(1.3rem,3vw,2.2rem);font-weight:900;color:var(--culture)}
-.logo span{display:block;font-size:.52em;font-weight:400;color:var(--mid)}
-.msub{font-family:'Noto Naskh Arabic',sans-serif;font-size:.7rem;color:var(--mid);text-align:left}
-nav{background:#1a1a2a;display:flex;flex-wrap:wrap;position:sticky;top:0;z-index:100;border-bottom:3px solid var(--a)}
-nav a{display:flex;align-items:center;gap:.4rem;padding:.65rem .9rem;font-family:'Noto Naskh Arabic',sans-serif;font-size:.78rem;color:#9a96b0;border-left:1px solid #2a2a3a;transition:all .2s}
-nav a:hover,nav a.active{background:#252535;color:var(--or)}
-nav a .dot{width:6px;height:6px;border-radius:50%;flex-shrink:0}
-nav a[data-r="afrique"] .dot{background:var(--afrique)}nav a[data-r="amerique"] .dot{background:var(--amerique)}
-nav a[data-r="europe"] .dot{background:var(--europe)}nav a[data-r="asie"] .dot{background:var(--asie)}nav a[data-r="orient"] .dot{background:var(--orient)}
-nav a[data-r="moyen"] .dot{background:var(--moyen)}nav a[data-r="sante"] .dot{background:var(--sante)}
-nav a[data-r="culture"] .dot{background:var(--culture)}nav a[data-r="voyage"] .dot{background:var(--voyage)}
-nav a.nav-cta{margin-right:auto;background:var(--culture);color:#fff;border:none;font-weight:600}
-nav a.nav-fr{color:#b8b4d0;font-size:.72rem}
-.hero{position:relative;height:clamp(300px,45vw,520px);overflow:hidden;background:#1a1a2a}
-.hero img{width:100%;height:100%;object-fit:cover;filter:brightness(.42)}
-.hero__ov{position:absolute;inset:0;background:linear-gradient(to top,rgba(26,26,42,.97) 35%,rgba(26,26,42,.1) 100%)}
-.hero__c{position:absolute;bottom:0;left:0;right:0;padding:2.5rem 2rem;max-width:900px;margin:0 auto}
-.hbadge{display:inline-block;font-family:'Noto Naskh Arabic',sans-serif;font-size:.7rem;padding:.22rem .7rem;color:#fff;margin-bottom:.8rem;border:1px solid rgba(255,255,255,.3)}
-.hero h1{font-family:'Noto Serif Arabic',serif;font-size:clamp(1.6rem,3.5vw,2.8rem);font-weight:900;line-height:1.15;color:#fff;margin-bottom:.8rem}
-.hero h1 em{font-style:normal;color:var(--or)}
-.hsub{font-size:.98rem;color:rgba(255,255,255,.72);max-width:650px;line-height:1.85}
-.meta{background:var(--paper);border-bottom:1px solid var(--rule);padding:.8rem 2rem}
-.metai{max-width:1060px;margin:0 auto;display:flex;flex-wrap:wrap;gap:1rem;align-items:center}
-.mi{font-family:'Noto Naskh Arabic',sans-serif;font-size:.7rem;color:#9a96b0}.mi strong{color:var(--mid)}
-.sep{color:var(--rule)}
-.layout{max-width:1200px;margin:0 auto;padding:2.5rem 1.5rem;display:grid;grid-template-columns:1fr 290px;gap:4rem;align-items:start}
-@media(max-width:960px){.layout{grid-template-columns:1fr;gap:2rem}}
-.kwb{background:var(--cream);border:1px solid var(--rule);border-right:3px solid var(--a);padding:.65rem 1rem;margin-bottom:2rem;display:flex;flex-wrap:wrap;gap:.4rem;align-items:center}
-.kwl{font-family:'Noto Naskh Arabic',sans-serif;font-size:.65rem;font-weight:700;color:var(--a);margin-left:.5rem}
-.kw{font-family:'Noto Naskh Arabic',sans-serif;font-size:.65rem;padding:.18rem .55rem;border:1px solid var(--rule);background:var(--paper);color:var(--mid)}
-.body>p:first-of-type::first-letter{font-size:3.8rem;font-weight:900;float:right;line-height:.85;margin:.05em 0 -.05em .15em;color:var(--a)}
-.body p{font-size:1.05rem;line-height:1.95;margin-bottom:1.6rem;color:#2a2a3a}
-.body strong{font-weight:700;color:var(--ink)}
-.body a.ext{color:var(--a);border-bottom:1px dotted var(--a);transition:color .2s}.body a.ext:hover{color:var(--orient)}
-.body ul{margin:1rem 0 1.5rem;padding-right:1.6rem}.body li{font-size:1rem;line-height:1.85;margin-bottom:.55rem;color:#2a2a3a}
-.chl{font-family:'Noto Naskh Arabic',sans-serif;font-size:.68rem;color:var(--a);margin-bottom:.25rem;display:flex;align-items:center;gap:.7rem;flex-direction:row-reverse}
-.chl::before{content:'';flex:1;height:1px;background:var(--rule)}
-.body h2{font-family:'Noto Serif Arabic',serif;font-size:1.6rem;font-weight:700;margin:2.8rem 0 .9rem;padding-top:.6rem;border-top:2px solid var(--ink);color:var(--ink)}
-.body h3{font-family:'Noto Serif Arabic',serif;font-size:1.08rem;font-weight:600;margin:1.8rem 0 .7rem;color:var(--a)}
-.body blockquote{margin:2rem 0;padding:1.5rem 1.8rem;border-right:4px solid var(--a);background:var(--cream);font-family:'Noto Serif Arabic',serif;font-size:1.05rem;font-weight:600;line-height:1.65;color:var(--ink)}
-.body blockquote cite{display:block;margin-top:.6rem;font-family:'Noto Naskh Arabic',sans-serif;font-size:.65rem;font-weight:400;color:var(--mid)}
-.stats{display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:1px;background:var(--rule);border:1px solid var(--rule);margin:2rem 0}
-.sc{background:var(--paper);padding:1.1rem;text-align:center}
-.scn{font-family:'Noto Serif Arabic',serif;font-size:1.7rem;font-weight:900;color:var(--a);line-height:1}
-.scl{font-family:'Noto Naskh Arabic',sans-serif;font-size:.6rem;color:var(--mid);margin-top:.25rem;line-height:1.4}
-.ctable{margin:2rem 0;overflow-x:auto}.ctable table{width:100%;border-collapse:collapse;font-size:.88rem}
-.ctable th{background:var(--ink);color:#fff;font-family:'Noto Naskh Arabic',sans-serif;font-size:.65rem;padding:.65rem 1rem;text-align:right}
-.ctable td{padding:.6rem 1rem;border-bottom:1px solid var(--rule);text-align:right}
-.ctable tr:nth-child(even) td{background:var(--cream)}
-.verdict{margin:2.5rem 0;border:2px solid var(--a);background:var(--paper);overflow:hidden}
-.vt{background:var(--a);color:#fff;font-family:'Noto Naskh Arabic',sans-serif;font-size:.76rem;padding:.7rem 1.2rem;font-weight:700}
-.vc{padding:1.3rem 1.5rem}.vc p{font-size:.93rem;line-height:1.75;margin-bottom:.6rem;color:#2a2a3a}
-.faq{margin:2.5rem 0;background:var(--paper);border:1px solid var(--rule);overflow:hidden}
-.faqt{background:var(--ink);color:#fff;font-family:'Noto Naskh Arabic',sans-serif;font-size:.76rem;padding:.75rem 1.2rem;font-weight:700}
-.fqi{border-bottom:1px solid var(--rule);padding:.9rem 1.2rem}.fqi:last-child{border:none}
-.fqq{font-family:'Noto Serif Arabic',serif;font-size:.92rem;font-weight:700;color:var(--ink);margin-bottom:.35rem}
-.fqa{font-family:'Noto Naskh Arabic',sans-serif;font-size:.85rem;color:var(--mid);line-height:1.65}
-.au{margin:2.5rem 0;padding:1.3rem 1.5rem;background:var(--cream);border:1px solid var(--rule);border-right:4px solid var(--a);display:flex;gap:1rem}
-.au img{width:60px;height:60px;border-radius:50%;object-fit:cover;border:2px solid var(--a)}
-.aui{flex:1}.aun{font-weight:700;font-size:.95rem;color:var(--ink)}
-.aur{font-family:'Noto Naskh Arabic',sans-serif;font-size:.68rem;color:var(--a)}
-.aup{font-family:'Noto Naskh Arabic',sans-serif;font-size:.78rem;color:var(--mid);margin-top:.25rem;line-height:1.6}
-.rel{margin:2rem 0}.relt{font-family:'Noto Naskh Arabic',sans-serif;font-size:.76rem;font-weight:700;color:var(--a);margin-bottom:.7rem}
-.relg{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:1rem}
-.relc{border:1px solid var(--rule);background:var(--paper);overflow:hidden;transition:border-color .2s}
-.relc:hover{border-color:var(--a)}
-.relc img{width:100%;height:110px;object-fit:cover}
-.relci{padding:.6rem}.relci h4{font-size:.82rem;line-height:1.5;font-weight:700}
-.relci p{font-family:'Noto Naskh Arabic',sans-serif;font-size:.62rem;color:var(--mid);margin-top:.25rem}
-aside{position:sticky;top:60px}
-.sb{background:var(--paper);border:1px solid var(--rule);margin-bottom:1.5rem;overflow:hidden}
-.sbt{background:var(--ink);color:#fff;font-family:'Noto Naskh Arabic',sans-serif;font-size:.72rem;padding:.6rem 1rem;font-weight:700}
-.toc{list-style:none;padding:.6rem 1rem}.toc li{margin-bottom:.45rem}
-.toc a{font-family:'Noto Naskh Arabic',sans-serif;font-size:.78rem;color:var(--mid);display:flex;gap:.4rem;transition:color .2s}
-.toc a:hover{color:var(--a)}.toc .num{color:var(--a);font-weight:700;min-width:1.4rem}
-.field{padding:.5rem}.field img{width:100%;margin-bottom:.4rem}
-.field p{font-family:'Noto Naskh Arabic',sans-serif;font-size:.65rem;color:var(--mid);padding:0 .5rem}
-.cta-sb{padding:1rem;text-align:center}
-.cta-sb p{font-family:'Noto Naskh Arabic',sans-serif;font-size:.78rem;color:var(--mid);margin-bottom:.6rem;line-height:1.5}
-.cta-sb a{display:inline-block;background:var(--culture);color:#fff;font-family:'Noto Naskh Arabic',sans-serif;font-size:.8rem;padding:.5rem 1.5rem;font-weight:600;transition:opacity .2s}
-.cta-sb a:hover{opacity:.85}
-footer{background:#1a1a2a;color:#8a87a0;padding:2rem;text-align:center;font-family:'Noto Naskh Arabic',sans-serif;font-size:.72rem;margin-top:3rem}
-footer a{color:#b8b4d0;margin:0 .5rem}footer a:hover{color:var(--or)}
-.fu{opacity:0;transform:translateY(28px);transition:opacity .55s ease,transform .55s ease}.vis{opacity:1;transform:none}
-@media(max-width:600px){.hero__c{padding:1.5rem 1rem}.layout{padding:1.5rem .8rem}.body p{font-size:.97rem}.body h2{font-size:1.3rem}}
-</style>
-<script src="https://sites.super.myninja.ai/_assets/ninja-daytona-script.js"></script>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -137,110 +43,237 @@ footer a{color:#b8b4d0;margin:0 .5rem}footer a:hover{color:var(--or)}
   "isAccessibleForFree": true
 }
 </script>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Arabic:wght@400;600;700;900&family=Noto+Naskh+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+<style>
+:root{--brand:#0f4c81;--brand-dark:#0a3560;--accent:#c8920a;--accent-light:#fdf3dc;--danger:#b83232;--ink:#12131a;--ink-2:#2e3040;--ink-3:#5a5c72;--rule:#ddd9d0;--bg:#f6f4ef;--surface:#ffffff;--cream:#f0ece3;--serif:'Noto Serif Arabic',Georgia,serif;--sans:'Noto Naskh Arabic',sans-serif;--layout-max:1200px;--cat-asie:#1a8a6e;--cat-orient:#8b3a8b;--cat-europe:#1e5fa8;--cat-afrique:#c8821a;--cat-amerique:#b83232}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}
+body{font-family:var(--serif);background:var(--bg);color:var(--ink);direction:rtl;line-height:1.9;-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%;height:auto}a{color:inherit;text-decoration:none}
+#pb{position:fixed;top:0;right:0;left:0;height:3px;background:var(--accent);width:0%;z-index:1000;transition:width .1s linear}
+.topbar{background:var(--ink);color:#7a788a;font-family:var(--sans);font-size:.72rem;padding:.4rem 1.5rem;display:flex;justify-content:space-between;align-items:center;gap:1rem}
+.topbar a{color:#b0adcc;transition:color .2s}.topbar a:hover{color:var(--accent)}
+.site-header{background:var(--surface);border-bottom:2px solid var(--ink);padding:1rem 1.5rem;display:flex;align-items:center;justify-content:space-between;gap:1rem}
+.logo{font-family:var(--serif);font-size:clamp(1.4rem,3vw,2rem);font-weight:900;color:var(--brand);line-height:1}
+.logo em{font-style:normal;color:var(--accent)}
+.logo-tagline{font-family:var(--sans);font-size:.6rem;color:var(--ink-3);margin-top:.2rem}
+.header-cta{display:inline-flex;align-items:center;gap:.4rem;background:var(--danger);color:#fff;font-family:var(--sans);font-size:.75rem;font-weight:600;padding:.5rem 1rem;transition:background .2s;white-space:nowrap}
+.header-cta:hover{background:#9a2020}
+.site-nav{background:var(--ink);border-bottom:3px solid var(--brand);position:sticky;top:0;z-index:200;overflow-x:auto;scrollbar-width:none}
+.site-nav::-webkit-scrollbar{display:none}
+.nav-inner{display:flex;align-items:stretch;min-width:max-content}
+.nav-inner a{display:flex;align-items:center;gap:.35rem;padding:.65rem 1rem;font-family:var(--sans);font-size:.78rem;color:#9a96b4;border-left:1px solid #252535;transition:background .15s,color .15s;white-space:nowrap}
+.nav-inner a:hover,.nav-inner a.active{background:#1a1a2e;color:var(--accent)}
+.nav-dot{width:7px;height:7px;border-radius:50%;flex-shrink:0}
+.nav-sub{margin-right:auto}.nav-sub a{background:var(--brand);color:#fff;border:none;font-weight:600}
+.nav-sub a:hover{background:var(--brand-dark);color:#fff}
+.hero{position:relative;height:clamp(280px,42vw,500px);background:var(--ink);overflow:hidden}
+.hero img{width:100%;height:100%;object-fit:cover;filter:brightness(.42) saturate(1.1)}
+.hero-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(12,13,22,.98) 30%,rgba(12,13,22,.4) 65%,transparent 100%)}
+.hero-content{position:absolute;bottom:0;right:0;left:0;padding:2.5rem 1.5rem;max-width:1200px;margin:0 auto}
+.hero-category{display:inline-flex;align-items:center;gap:.4rem;background:var(--brand);color:#fff;font-family:var(--sans);font-size:.68rem;font-weight:600;padding:.25rem .7rem;margin-bottom:.9rem;letter-spacing:.04em}
+.hero h1{font-family:var(--serif);font-size:clamp(1.5rem,3.5vw,2.8rem);font-weight:900;line-height:1.18;color:#fff;margin-bottom:.75rem;text-shadow:0 2px 12px rgba(0,0,0,.4)}
+.hero h1 em{font-style:normal;color:var(--accent)}
+.hero-subtitle{font-family:var(--sans);font-size:clamp(.85rem,1.5vw,1rem);color:rgba(255,255,255,.78);max-width:620px;line-height:1.8}
+.meta-bar{background:var(--surface);border-bottom:1px solid var(--rule);padding:.75rem 1.5rem}
+.meta-inner{max-width:1200px;margin:0 auto;display:flex;flex-wrap:wrap;align-items:center;gap:.5rem 1.2rem}
+.mi{font-family:var(--sans);font-size:.7rem;color:var(--ink-3)}.mi strong{color:var(--ink-2)}
+.sep{color:var(--rule);font-size:.8rem}
+.reading-badge{margin-right:auto;background:var(--accent-light);color:var(--accent);font-family:var(--sans);font-size:.65rem;font-weight:700;padding:.2rem .6rem;border:1px solid var(--accent)}
+.share-bar{background:var(--cream);border-bottom:1px solid var(--rule);padding:.55rem 1.5rem}
+.share-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;gap:.6rem}
+.share-label{font-family:var(--sans);font-size:.65rem;color:var(--ink-3);margin-left:.2rem}
+.share-btn{display:inline-flex;align-items:center;gap:.3rem;padding:.3rem .7rem;font-family:var(--sans);font-size:.65rem;font-weight:600;cursor:pointer;transition:opacity .2s;border:none}
+.share-btn:hover{opacity:.85}
+.share-x{background:#000;color:#fff}.share-wa{background:#25d366;color:#fff}.share-copy{background:var(--ink-2);color:#fff}
+.page-layout{max-width:var(--layout-max);margin:0 auto;padding:2.5rem 1.5rem;display:grid;grid-template-columns:1fr 260px;gap:3.5rem;align-items:start}
+@media(max-width:960px){.page-layout{grid-template-columns:1fr;gap:2rem}}
+/* ── ARTICLE BODY (keep old classes + new) ── */
+.article-body{min-width:0;opacity:0;transform:translateY(20px);transition:opacity .6s,transform .6s}
+.article-body.visible{opacity:1;transform:none}
+.kwb{background:var(--cream);border:1px solid var(--rule);border-right:3px solid var(--brand);padding:.65rem 1rem;margin-bottom:2rem;display:flex;flex-wrap:wrap;gap:.4rem;align-items:center}
+.kwl{font-family:var(--sans);font-size:.65rem;font-weight:700;color:var(--brand);margin-left:.5rem}
+.kw{font-family:var(--sans);font-size:.65rem;padding:.18rem .55rem;border:1px solid var(--rule);background:var(--surface);color:var(--ink-3)}
+.body>p:first-of-type::first-letter{font-size:4rem;font-weight:900;float:right;line-height:.82;margin:.04em 0 -.04em .15em;color:var(--brand)}
+.body p{font-size:1.06rem;line-height:2;color:var(--ink-2);margin-bottom:1.5rem}
+.body strong{color:var(--ink);font-weight:700}
+.body a.ext{color:var(--brand);border-bottom:1px dotted var(--brand)}
+.body ul{margin:1rem 0 1.5rem;padding-right:1.8rem}.body li{font-size:1rem;line-height:1.85;color:var(--ink-2);margin-bottom:.5rem}
+.chl{font-family:var(--sans);font-size:.65rem;color:var(--brand);margin-bottom:.25rem;display:flex;align-items:center;gap:.7rem;flex-direction:row-reverse}
+.chl::before{content:'';flex:1;height:1px;background:var(--rule)}
+.body h2{font-family:var(--serif);font-size:clamp(1.3rem,2.5vw,1.65rem);font-weight:800;line-height:1.25;color:var(--ink);margin:2.8rem 0 .85rem;padding-top:.6rem;border-top:2px solid var(--ink)}
+.body h3{font-family:var(--serif);font-size:1.1rem;font-weight:700;color:var(--brand);margin:2rem 0 .65rem}
+.body blockquote{margin:2rem 0;padding:1.5rem 1.8rem;border-right:4px solid var(--brand);background:var(--cream);font-family:var(--serif);font-size:1.05rem;font-weight:600;line-height:1.65;color:var(--ink)}
+.body blockquote cite{display:block;margin-top:.6rem;font-family:var(--sans);font-size:.65rem;font-weight:400;color:var(--ink-3)}
+.quote{margin:2.5rem 0;padding:1.6rem 2rem;border-right:5px solid var(--brand);background:var(--surface);font-family:var(--serif);font-size:1.15rem;font-weight:700;line-height:1.6;color:var(--ink);font-style:italic}
+.quote cite{display:block;margin-top:.7rem;font-size:.68rem;font-weight:400;font-style:normal;font-family:var(--sans);color:var(--ink-3)}
+.stats{display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:1px;background:var(--rule);border:1px solid var(--rule);margin:2rem 0}
+.sc{background:var(--surface);padding:1.1rem;text-align:center}
+.scn{font-family:var(--serif);font-size:1.7rem;font-weight:900;color:var(--brand);line-height:1}
+.scl{font-family:var(--sans);font-size:.6rem;color:var(--ink-3);margin-top:.25rem;line-height:1.4}
+.ctable{margin:2rem 0;overflow-x:auto}.ctable table{width:100%;border-collapse:collapse;font-size:.88rem}
+.ctable th{background:var(--ink);color:#fff;font-family:var(--sans);font-size:.65rem;padding:.65rem 1rem;text-align:right}
+.ctable td{padding:.6rem 1rem;border-bottom:1px solid var(--rule);text-align:right}
+.ctable tr:nth-child(even) td{background:var(--cream)}
+.box{margin:2.2rem 0;padding:1.4rem 1.6rem;background:var(--cream);border:1px solid var(--rule);border-right:4px solid var(--brand)}
+.box h4{font-family:var(--sans);font-size:.72rem;font-weight:700;color:var(--brand);margin-bottom:.75rem}
+.box p{font-size:.95rem;line-height:1.85;color:var(--ink-2);margin-bottom:.6rem}
+.alert{margin:2.2rem 0;padding:1.2rem 1.5rem;background:#fff8e8;border:1px solid #e8c84a;border-right:4px solid #c8a020}
+.alert h4{font-family:var(--sans);font-size:.72rem;font-weight:700;color:#8a6010;margin-bottom:.65rem}
+.alert p{font-size:.95rem;line-height:1.85;color:#3a3020;margin-bottom:.5rem}
+.chead{display:grid;grid-template-columns:1fr auto 1fr;gap:.8rem;align-items:center;margin:2rem 0;padding:1.3rem;background:var(--surface);border:1px solid var(--rule)}
+.cbox{text-align:center}.cflag{font-size:2.5rem;margin-bottom:.3rem}
+.cname{font-family:var(--serif);font-size:1.1rem;font-weight:900;margin-bottom:.2rem}
+.cscore{font-family:var(--sans);font-size:.65rem;color:var(--ink-3)}
+.vs{font-family:var(--serif);font-size:2rem;font-weight:900;color:var(--brand);text-align:center}
+.verdict{margin:2.5rem 0;border:2px solid var(--brand);background:var(--surface);overflow:hidden}
+.vt{background:var(--brand);color:#fff;font-family:var(--sans);font-size:.76rem;padding:.7rem 1.2rem;font-weight:700}
+.vc{padding:1.3rem 1.5rem}.vc p{font-size:.93rem;line-height:1.75;margin-bottom:.6rem;color:var(--ink-2)}
+.scenario{margin:2rem 0;background:var(--surface);border:1px solid var(--rule);overflow:hidden}
+.sc-head{background:var(--brand);color:#fff;font-family:var(--sans);font-size:.76rem;padding:.7rem 1.2rem;font-weight:700;display:flex;justify-content:space-between}
+.sc-body{padding:1.3rem 1.5rem}
+.sc-step{display:flex;gap:1rem;margin-bottom:1.2rem;padding-bottom:1.2rem;border-bottom:1px solid var(--rule)}.sc-step:last-child{border:none;margin:0;padding:0}
+.sc-num{font-family:var(--serif);font-size:1.8rem;font-weight:900;color:var(--brand);opacity:.3;flex-shrink:0;line-height:1;min-width:2rem;text-align:center}
+.sc-text h4{font-family:var(--serif);font-size:.98rem;font-weight:700;margin-bottom:.3rem;color:var(--ink)}
+.sc-text p{font-family:var(--sans);font-size:.85rem;color:var(--ink-3);line-height:1.65;margin:0}
+.faq{margin:2.5rem 0;background:var(--surface);border:1px solid var(--rule);overflow:hidden}
+.faqt{background:var(--ink);color:#fff;font-family:var(--sans);font-size:.76rem;padding:.75rem 1.2rem;font-weight:700}
+.fqi{border-bottom:1px solid var(--rule);padding:.9rem 1.2rem}.fqi:last-child{border:none}
+.fqq{font-family:var(--serif);font-size:.92rem;font-weight:700;color:var(--ink);margin-bottom:.35rem}
+.fqa{font-family:var(--sans);font-size:.85rem;color:var(--ink-3);line-height:1.65}
+.also{margin:2.5rem 0;padding:1.3rem 1.5rem;background:var(--surface);border:1px solid var(--rule)}
+.also h4{font-family:var(--sans);font-size:.72rem;font-weight:700;color:var(--ink);border-bottom:2px solid var(--brand);padding-bottom:.4rem;margin-bottom:.9rem}
+.also ul{list-style:none;padding:0}.also li{border-bottom:1px solid var(--rule);padding:.55rem 0}.also li:last-child{border:none}
+.also a{font-family:var(--serif);font-size:.92rem;font-weight:600;color:var(--brand)}.also a:hover{color:var(--accent)}
+.au{margin:2.5rem 0;padding:1.3rem 1.5rem;background:var(--cream);border:1px solid var(--rule);border-right:4px solid var(--brand);display:flex;gap:1rem}
+.av{width:52px;height:52px;border-radius:50%;background:var(--brand);flex-shrink:0;display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-size:.85rem;font-weight:900;color:#fff;letter-spacing:-.03em;text-align:center;line-height:1.2}
+.an{font-family:var(--serif);font-size:.95rem;font-weight:700;color:var(--ink)}
+.ar2{font-family:var(--sans);font-size:.65rem;color:var(--brand);margin-bottom:.4rem}
+.ab{font-size:.85rem;color:var(--ink-3);line-height:1.65;margin:0!important}
+.rel{margin-top:3rem;padding-top:1.3rem;border-top:2px solid var(--ink)}
+.relt{font-family:var(--serif);font-size:1.1rem;font-weight:700;margin-bottom:1.2rem}
+.rg{display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:.9rem}
+.rc{border:1px solid var(--rule);background:var(--surface);overflow:hidden;transition:transform .2s,box-shadow .2s;display:block}
+.rc:hover{transform:translateY(-3px);box-shadow:0 6px 20px rgba(0,0,0,.1)}
+.rs{height:4px}.rb{padding:.9rem 1rem}
+.rc h4{font-family:var(--serif);font-size:.92rem;font-weight:700;line-height:1.35;margin-bottom:.35rem;color:var(--ink)}
+.rd{font-family:var(--sans);font-size:.72rem;color:var(--ink-3);margin-bottom:.35rem;line-height:1.4}
+.ra{font-family:var(--sans);font-size:.68rem;color:var(--brand)}
+.ext-box{margin:2rem 0;padding:1.2rem 1.5rem;background:var(--cream);border:1px solid var(--rule);border-right:3px solid var(--brand)}
+.ext-box h4{font-family:var(--sans);font-size:.7rem;font-weight:700;color:var(--brand);margin-bottom:.8rem}
+.ext-box ul{list-style:none;padding:0}.ext-box li{margin-bottom:.4rem}
+.ext-box a{font-family:var(--sans);font-size:.82rem;color:var(--brand);border-bottom:1px dotted var(--brand)}
+/* Newsletter CTA */
+.nl-cta{margin:2.5rem 0;background:linear-gradient(135deg,var(--brand-dark),#1a2a4a);padding:2rem 1.8rem;text-align:center;position:relative;overflow:hidden}
+.nl-cta::before{content:'';position:absolute;top:-50%;left:-50%;width:200%;height:200%;background:radial-gradient(circle at 70% 50%,rgba(200,146,10,.08),transparent 60%)}
+.nl-cta h3{font-family:var(--serif);font-size:1.3rem;font-weight:800;color:#fff;margin-bottom:.5rem}
+.nl-cta p{font-family:var(--sans);font-size:.85rem;color:rgba(255,255,255,.65);margin-bottom:1.3rem;line-height:1.7}
+.nl-form{display:flex;gap:.5rem;max-width:420px;margin:0 auto;flex-direction:row-reverse}
+.nl-input{flex:1;padding:.7rem 1rem;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);color:#fff;font-family:var(--sans);font-size:.85rem;text-align:right;outline:none}
+.nl-input::placeholder{color:rgba(255,255,255,.4)}
+.nl-btn{padding:.7rem 1.2rem;background:var(--accent);color:#fff;border:none;font-family:var(--sans);font-size:.82rem;font-weight:700;cursor:pointer;white-space:nowrap}
+.nl-note{font-family:var(--sans);font-size:.62rem;color:rgba(255,255,255,.4);margin-top:.7rem}
+/* Sidebar */
+.sidebar{position:sticky;top:3.5rem}
+.sb2{margin-bottom:1.5rem;background:var(--surface);border:1px solid var(--rule);overflow:hidden}
+.stl2{font-family:var(--sans);font-size:.68rem;font-weight:700;color:var(--ink);background:var(--cream);border-bottom:2px solid var(--brand);padding:.6rem 1rem;letter-spacing:.03em}
+.tl2{list-style:none;padding:.2rem 0}
+.tl2 li{border-bottom:1px solid var(--rule)}.tl2 li:last-child{border:none}
+.tl2 a{display:flex;align-items:flex-start;gap:.5rem;padding:.55rem 1rem;font-family:var(--sans);font-size:.8rem;color:var(--ink-3);transition:background .15s,color .15s;line-height:1.4;flex-direction:row-reverse}
+.tl2 a:hover{background:var(--accent-light);color:var(--accent)}
+.tl2 a.toc-active{color:var(--brand);font-weight:600;background:var(--cream)}
+.tn2{font-size:.6rem;color:var(--brand);flex-shrink:0;margin-top:.1rem;font-weight:700}
+.sb-nl{background:linear-gradient(160deg,var(--brand-dark),#1a2a4a);padding:1.3rem;text-align:center}
+.sb-nl h4{font-family:var(--serif);font-size:1rem;font-weight:800;color:var(--accent);margin-bottom:.4rem}
+.sb-nl p{font-family:var(--sans);font-size:.78rem;color:rgba(255,255,255,.6);line-height:1.65;margin-bottom:1rem}
+.sb-nl a{display:block;width:100%;padding:.6rem;background:var(--accent);color:#fff;font-family:var(--sans);font-size:.78rem;font-weight:700;text-align:center}
+/* Footer */
+.site-footer{background:var(--ink);color:#5a5870;border-top:3px solid var(--brand);padding:2rem 1.5rem 1.2rem;font-family:var(--sans);font-size:.72rem}
+.footer-inner{max-width:var(--layout-max);margin:0 auto}
+.footer-bottom{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:.5rem;color:#3a3850;padding-top:1rem;border-top:1px solid #252535;margin-top:1rem}
+.fl2{display:flex;gap:1.2rem}.fl2 a{color:#5a5870;transition:color .2s}.fl2 a:hover{color:var(--accent)}
+@media(max-width:640px){.site-header{padding:.8rem 1rem}.hero-content{padding:1.5rem 1rem}.page-layout{padding:1.5rem 1rem}.nl-form{flex-direction:column}.topbar{display:none}}
+</style>
 </head>
 <body>
 <div id="pb"></div>
-
-<div class="top">
-<span>الثقافة والجيوسياسة — تحليلات استراتيجية</span>
-<a href="/">GeoPolo.com ←</a>
+<div class="topbar">
+  <span>تحليلات جيوسياسية — <strong style="color:var(--accent)">القوى والصراعات في القرن الحادي والعشرين</strong></span>
+  <span><a href="https://geopolo.com">🇫🇷 Français</a> · <a href="/abonnement.html">الاشتراك</a></span>
 </div>
-
-<div class="mast">
-<a href="/" class="logo">جيوبولو<span>تحليلات جيوسياسية معمّقة</span></a>
-<div class="msub">ISSN 2960-4001 &bull; Geopolitical Analysis</div>
+<header class="site-header">
+  <a href="/" style="display:block">
+    <div class="logo">geo<em>polô</em></div>
+    <div class="logo-tagline">مجلة جيوسياسية استراتيجية مستقلة · ar.geopolo.com</div>
+  </a>
+  <a href="/abonnement.html" class="header-cta">📧 الاشتراك ←</a>
+</header>
+<nav class="site-nav"><div class="nav-inner">
+  <a href="/">الرئيسية</a>
+  <a href="/afr.html" data-r="afrique"><span class="nav-dot" style="background:var(--cat-afrique)"></span>أفريقيا</a>
+  <a href="/ame.html" data-r="amerique"><span class="nav-dot" style="background:var(--cat-amerique)"></span>أمريكا</a>
+  <a href="/eu.html" data-r="europe"><span class="nav-dot" style="background:var(--cat-europe)"></span>أوروبا</a>
+  <a href="/asie.html" data-r="asie"><span class="nav-dot" style="background:var(--cat-asie)"></span>آسيا</a>
+  <a href="/proche-or.html" data-r="orient"><span class="nav-dot" style="background:var(--cat-orient)"></span>الشرق الأوسط</a>
+  <div class="nav-sub"><a href="/abonnement.html">الاشتراك ←</a></div>
+</div></nav>
+<div class="hero">
+  <img src="https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?w=1400&q=70" alt="تيك توك وحرب المعلومات" loading="eager"/>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <div class="hero-category" style="background:#0f4c81">حروب رقمية</div>
+    <h1>حرب المعلومات على تيك توك: حين تصبح <em>الخوارزميات</em> سلاحاً جيوسياسياً</h1>
+    <p class="hero-subtitle">١.٧ مليار مستخدم، ٩٥ دقيقة يومياً، وخوارزمية صينية واحدة تُقرّر ما يراه جيل بأكمله — تحقيق في التطبيق الذي تحوّل إلى ملف أمن قومي.</p>
+  </div>
 </div>
-
-<nav>
-<a href="/">الرئيسية</a>
-<a href="/afr.html" data-r="afrique"><span class="dot"></span>أفريقيا</a>
-<a href="/ame.html" data-r="amerique"><span class="dot"></span>أمريكا</a>
-<a href="/eu.html" data-r="europe"><span class="dot"></span>أوروبا</a>
-<a href="/asie.html" data-r="asie"><span class="dot"></span>آسيا</a>
-<a href="/proche-or.html" data-r="orient"><span class="dot"></span>الشرق الأدنى</a>
-<a href="/moyen-orient.html" data-r="moyen"><span class="dot"></span>الشرق الأوسط</a>
-<a href="/sante.html" data-r="sante"><span class="dot"></span>صحة</a>
-<a href="/culture.html" data-r="culture" class="active"><span class="dot"></span>ثقافة</a>
-<a href="/voyage.html" data-r="voyage"><span class="dot"></span>سفر</a>
-<a href="https://geopolo.com/" class="nav-fr">🇫🇷 Français</a>
-<a href="/abonnement.html" class="nav-cta">الاشتراك ←</a>
-</nav>
-
-<section class="hero">
-<img src="https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?w=1400&q=70" alt="تيك توك وحرب المعلومات"/>
-<div class="hero__ov"></div>
-<div class="hero__c">
-<span class="hbadge">حروب رقمية</span>
-<h1>حرب المعلومات على تيك توك: حين تصبح <em>الخوارزميات</em> سلاحاً جيوسياسياً</h1>
-<p class="hsub">١.٧ مليار مستخدم، ٩٥ دقيقة يومياً، وخوارزمية صينية واحدة تُقرّر ما يراه جيل بأكمله — تحقيق في التطبيق الذي تحوّل إلى ملف أمن قومي.</p>
-</div>
-</section>
-
-<div class="meta">
-<div class="metai">
-<span class="mi"><strong>تحقيق:</strong> طارق الهاشمي</span><span class="sep">|</span>
-<span class="mi"><strong>المؤسسة:</strong> مركز جيوبولو للدراسات الاستراتيجية</span><span class="sep">|</span>
-<span class="mi"><strong>النشر:</strong> ٢٥ مارس ٢٠٢٥</span><span class="sep">|</span>
-<span class="mi"><strong>القراءة:</strong> ١٩ دقيقة</span><span class="sep">|</span>
-<span class="mi"><strong>القسم:</strong> <a href="/culture.html" style="color:var(--a)">ثقافة وجيوسياسة</a></span>
-</div>
-</div>
-
-<div class="layout">
-<article class="body">
-
+<div class="meta-bar"><div class="meta-inner">
+  
+  <span class="reading-badge">⏱ 10 دقائق قراءة</span>
+</div></div>
+<div class="share-bar"><div class="share-inner">
+  <span class="share-label">شارك:</span>
+  <button class="share-btn share-x" onclick="shareX()">𝕏</button>
+  <button class="share-btn share-wa" onclick="shareWA()">📱 واتساب</button>
+  <button class="share-btn share-copy" onclick="copyLink()">🔗 نسخ الرابط</button>
+</div></div>
+<div class="page-layout">
+  <div class="article-body">
+    <article class="body">
 <div class="kwb fu">
 <span class="kwl">الكلمات المفتاحية:</span>
 <span class="kw">تيك توك</span><span class="kw">ByteDance</span><span class="kw">حرب المعلومات</span><span class="kw">خوارزميات</span><span class="kw">حظر تيك توك</span><span class="kw">الأمن القومي</span><span class="kw">الحرب الباردة الرقمية</span>
 </div>
-
 <!-- intro -->
 <p class="fu">في يناير ٢٠٢٥، أقرّت المحكمة العليا الأمريكية بالإجماع دستورية قانون يُجبر شركة ByteDance الصينية على بيع تطبيق تيك توك أو مواجهة حظره الكامل في الولايات المتحدة. لم يكن هذا القرار مفاجئاً لمن يتابع التصعيد الجيوسياسي المتسارع حول التطبيق الأكثر تأثيراً في العالم، لكنه أكّد حقيقة باتت واضحة: تيك توك لم يعد مجرد تطبيق لمقاطع الرقص والطبخ، بل أصبح ملفاً من ملفات الأمن القومي تُناقشه أعلى المحاكم وغرف القرار الاستراتيجي في واشنطن وبكين وبروكسل. الحرب على تيك توك هي في جوهرها حرب على من يتحكم في "بوابة الانتباه" — من يُقرّر ما يراه ١.٧ مليار إنسان يومياً.</p>
-
 <p class="fu">لفهم أبعاد هذه المعركة، يجب النظر إلى تيك توك ليس كتطبيق ترفيهي بل كبنية تحتية معلوماتية ذات أبعاد استراتيجية. في هذا التحقيق، نكشف كيف تحوّل تطبيق صيني أُطلق عام ٢٠١٦ تحت اسم "Douyin" إلى ساحة المعركة الرئيسية في الحرب الباردة الرقمية بين أمريكا والصين، وكيف تُستخدم الخوارزميات كأسلحة جيوسياسية صامتة تُعيد تشكيل الرأي العام دون أن يشعر المستخدمون بذلك.</p>
-
 <!-- ch1 -->
 <div class="chl fu">الفصل الأول</div>
-<h2 id="c1" class="fu">صعود تيك توك: من تطبيق كاريوكي إلى قوة عظمى رقمية</h2>
-
+<h2 class="fu" id="c1">صعود تيك توك: من تطبيق كاريوكي إلى قوة عظمى رقمية</h2>
 <p class="fu">بدأت قصة تيك توك عام ٢٠١٦ حين أطلق المهندس الصيني تشانغ يي مينغ، مؤسس شركة ByteDance، تطبيق "Douyin" في السوق الصيني. كان التطبيق بسيطاً: مقاطع فيديو قصيرة مدتها ١٥ ثانية مع موسيقى. لكن ما ميّزه عن المنافسين لم يكن المحتوى بل الخوارزمية: محرك توصية مبني على الذكاء الاصطناعي يتعلّم من سلوك المستخدم بسرعة مذهلة — في أقل من ٤٠ دقيقة من الاستخدام، تستطيع خوارزمية تيك توك بناء "بصمة نفسية" دقيقة للمستخدم تُحدّد اهتماماته ونقاط ضعفه العاطفية ومواقفه السياسية.</p>
-
 <p class="fu">في عام ٢٠١٧، استحوذت ByteDance على تطبيق "Musical.ly" الأمريكي مقابل مليار دولار ودمجته مع Douyin لإنشاء النسخة العالمية "TikTok". الانتشار كان صاعقاً: من صفر إلى مليار مستخدم نشط شهرياً في أقل من أربع سنوات — وهو رقم احتاج فيسبوك ثماني سنوات لتحقيقه وإنستغرام ست سنوات. بحلول عام ٢٠٢٥، تجاوز عدد مستخدمي تيك توك ١.٧ مليار شخص، منهم أكثر من ١٧٠ مليون أمريكي — أي نصف سكان الولايات المتحدة.</p>
-
 <div class="stats fu">
 <div class="sc"><div class="scn">١.٧ مليار</div><div class="scl">مستخدم نشط شهرياً حول العالم</div></div>
 <div class="sc"><div class="scn">٩٥ دقيقة</div><div class="scl">متوسط الاستخدام اليومي لكل مستخدم</div></div>
 <div class="sc"><div class="scn">١٧٠ مليون</div><div class="scl">مستخدم أمريكي — نصف السكان</div></div>
 <div class="sc"><div class="scn">٤٠ دقيقة</div><div class="scl">تكفي الخوارزمية لبناء "بصمة نفسية" للمستخدم</div></div>
 </div>
-
 <!-- ch2 -->
 <div class="chl fu">الفصل الثاني</div>
-<h2 id="c2" class="fu">الخوارزمية كسلاح: ما الذي يجعل تيك توك مختلفاً؟</h2>
-
+<h2 class="fu" id="c2">الخوارزمية كسلاح: ما الذي يجعل تيك توك مختلفاً؟</h2>
 <p class="fu">ما يجعل تيك توك تهديداً جيوسياسياً في نظر واشنطن ليس حجمه فحسب، بل طبيعة خوارزميته الفريدة. على عكس فيسبوك أو إنستغرام اللذين يعتمدان أساساً على "الشبكة الاجتماعية" — أي محتوى من أصدقائك ومتابعيك — يعتمد تيك توك على "الرسم البياني للاهتمام" (Interest Graph): الخوارزمية لا تهتم بمن تعرفه بل بما يثيرك عاطفياً. هذا يعني أن ByteDance تملك خريطة نفسية تفصيلية لأكثر من مليار إنسان — أكبر قاعدة بيانات سلوكية في تاريخ البشرية.</p>
-
 <p class="fu">الجانب الأخطر هو ما يُسمّيه خبراء الأمن السيبراني "التلاعب الخوارزمي غير المرئي". من الناحية النظرية، تستطيع ByteDance — أو الحكومة الصينية التي تملك حق الوصول بموجب قانون الاستخبارات الصيني لعام ٢٠١٧ — تعديل الخوارزمية بشكل طفيف لتحقيق أهداف استراتيجية: زيادة ظهور المحتوى الذي يُعمّق الانقسام السياسي الأمريكي، تقليل ظهور المحتوى المؤيد لتايوان، ترويج الرسائل التي تُحسّن صورة الصين. هذه التعديلات لا تحتاج إلى "أوامر مباشرة" بل يكفي تغيير معاملات رياضية في الخوارزمية بنسب لا تتجاوز ٠.١٪ — ولن يلاحظ أي مستخدم الفرق.</p>
-
 <blockquote class="fu">
 "تيك توك ليس مجرد تطبيق ترفيهي. إنه أكبر عملية جمع بيانات سلوكية في تاريخ البشرية، تُديرها شركة تخضع لقانون استخباراتي يُلزمها بالتعاون مع الحكومة الصينية."
 <cite>— كريستوفر راي، مدير مكتب التحقيقات الفيدرالي FBI (شهادة أمام الكونغرس، ٢٠٢٣)</cite>
 </blockquote>
-
 <h3 class="fu">الدليل: ما كشفته التسريبات</h3>
-
 <p class="fu">في عام ٢٠٢٢، نشرت مجلة BuzzFeed News تسريبات صوتية من اجتماعات داخلية لتيك توك كشفت أن مهندسين في الصين تمكّنوا من الوصول إلى بيانات المستخدمين الأمريكيين رغم تأكيدات الشركة المتكررة بأن البيانات مُخزَّنة في خوادم أمريكية فقط. أحد الموظفين صرّح حرفياً: "كل شيء يُرى في الصين." هذه التسريبات أطلقت موجة من التحقيقات الحكومية في واشنطن ولندن وبروكسل وكانبيرا، وأدت في نهاية المطاف إلى تشريع قانون "حماية الأمريكيين من تطبيقات الخصوم الأجانب" في أبريل ٢٠٢٤.</p>
-
 <p class="fu">لكن ما لا يُناقَش كثيراً هو البُعد العكسي: الفرق الجوهري بين نسخة تيك توك العالمية والنسخة الصينية "Douyin". في الصين، يُقيَّد استخدام الأطفال بـ ٤٠ دقيقة يومياً، والمحتوى مُراقَب ويُركّز على العلوم والثقافة والإنجازات الوطنية. في النسخة العالمية، لا قيود مماثلة، والخوارزمية تُفضّل المحتوى الأكثر إثارة عاطفياً — بما في ذلك المحتوى المُنقسم سياسياً والمُضلّل. هذا التباين يُعبّر عنه خبراء السياسة التقنية بعبارة لافتة: "الصين تُصدّر الأفيون الرقمي وتحظره على مواطنيها."</p>
-
 <!-- ch3 -->
 <div class="chl fu">الفصل الثالث</div>
-<h2 id="c3" class="fu">ساحة المعركة: من الكونغرس إلى جنيف</h2>
-
+<h2 class="fu" id="c3">ساحة المعركة: من الكونغرس إلى جنيف</h2>
 <p class="fu">الاستجابة الغربية لتهديد تيك توك جاءت على موجات متصاعدة. بدأت مع إدارة ترامب عام ٢٠٢٠ التي أصدرت أمراً تنفيذياً بحظر التطبيق — عُلِّق قضائياً — ثم تصاعدت مع إدارة بايدن التي حظرت التطبيق على الأجهزة الحكومية الفيدرالية في ديسمبر ٢٠٢٢، قبل أن يُقرّ الكونغرس قانون البيع أو الحظر في أبريل ٢٠٢٤ بأغلبية ساحقة من الحزبين — وهو إجماع نادر في واشنطن المنقسمة يكشف عمق القلق الأمني.</p>
-
 <p class="fu">لكن المعركة لا تقتصر على واشنطن. الاتحاد الأوروبي فرض قيوداً صارمة بموجب قانون الخدمات الرقمية (DSA) وغرّم تيك توك ٣٤٥ مليون يورو عام ٢٠٢٣ لانتهاك خصوصية الأطفال. الهند سبقت الجميع وحظرت التطبيق بالكامل في يونيو ٢٠٢٠ بعد مواجهة حدودية مع الصين في لاداخ — في أوضح ربط بين الجيوسياسة وقرار تقني. أستراليا ونيوزيلندا وكندا وبريطانيا حظرت التطبيق على الأجهزة الحكومية. تايوان تدرس حظراً شاملاً خوفاً من "عمليات تأثير" صينية عبر الخوارزمية.</p>
-
 <div class="ctable fu">
 <table>
 <tr><th>الدولة/الكيان</th><th>الإجراء</th><th>التاريخ</th><th>المبرر المعلن</th><th>الأثر</th></tr>
@@ -252,38 +285,25 @@ footer a{color:#b8b4d0;margin:0 .5rem}footer a:hover{color:var(--or)}
 <tr><td>إندونيسيا</td><td>حظر التجارة على التطبيق</td><td>أكتوبر ٢٠٢٣</td><td>حماية التجار المحليين</td><td>إغلاق TikTok Shop</td></tr>
 </table>
 </div>
-
 <!-- ch4 -->
 <div class="chl fu">الفصل الرابع</div>
-<h2 id="c4" class="fu">تيك توك والعالم العربي: فضاء بلا حراسة</h2>
-
+<h2 class="fu" id="c4">تيك توك والعالم العربي: فضاء بلا حراسة</h2>
 <p class="fu">بينما تتسارع الاستجابات الغربية، يبقى العالم العربي في معظمه فضاءً مفتوحاً أمام تأثير تيك توك دون أي إطار تنظيمي يُذكر. تشير التقديرات إلى أن أكثر من ١٢٠ مليون عربي يستخدمون التطبيق بشكل نشط، مع معدلات استخدام يومية تتجاوز المتوسط العالمي في دول مثل مصر والسعودية والعراق والجزائر. اللغة العربية هي خامس أكثر لغة استخداماً على المنصة، والمحتوى العربي يحصد مليارات المشاهدات يومياً.</p>
-
 <p class="fu">الخطورة في السياق العربي مضاعفة لعدة أسباب. أولاً، غياب شبه كامل لقوانين حماية البيانات الشخصية في معظم الدول العربية — باستثناء بعض التشريعات في الإمارات والبحرين — يعني أن بيانات المستخدمين العرب أقل حماية من نظرائهم الغربيين. ثانياً، الفجوة في الوعي الرقمي تجعل المستخدم العربي أكثر عرضة للتلاعب الخوارزمي. ثالثاً، والأهم استراتيجياً، تيك توك أصبح المنصة الإخبارية الأولى للشباب العربي تحت ٢٥ عاماً — الشريحة الأكبر ديموغرافياً — مما يعني أن خوارزمية صينية واحدة تتحكم فعلياً في المعلومات التي يستهلكها الجيل العربي القادم.</p>
-
 <h3 class="fu">حالة غزة: الخوارزمية في الميدان</h3>
-
 <p class="fu">كشفت أحداث غزة منذ أكتوبر ٢٠٢٣ عن الدور الجيوسياسي الفعلي لتيك توك بشكل لم يسبق له مثيل. على عكس المنصات الغربية التي قمعت المحتوى الفلسطيني وفق توثيقات منظمة هيومن رايتس ووتش و7amleh، سمحت خوارزمية تيك توك بانتشار واسع للمحتوى المؤيد لغزة — خاصة بين الشباب الغربي. النتيجة: تحوّلٌ غير مسبوق في الرأي العام الغربي الشبابي، حيث أظهرت استطلاعات هارفارد أن ٥١٪ من الأمريكيين بين ١٨-٢٤ عاماً يتعاطفون مع الفلسطينيين مقابل ١٩٪ فقط يتعاطفون مع إسرائيل. هذا التحول أثار قلقاً إسرائيلياً-أمريكياً صريحاً: السيناتور ميت رومني صرّح علناً بأن تيك توك يجب حظره جزئياً بسبب تأثيره على الرأي العام تجاه إسرائيل.</p>
-
 <blockquote class="fu">
 "تيك توك هو السبب في أن الشباب الأمريكي يرى الصراع بعيون مختلفة عن آبائهم. وهذا بالضبط ما يجعله خطيراً على مصالحنا."
 <cite>— سيناتور أمريكي خلال جلسات الكونغرس حول تيك توك، مارس ٢٠٢٤</cite>
 </blockquote>
-
 <!-- ch5 -->
 <div class="chl fu">الفصل الخامس</div>
-<h2 id="c5" class="fu">مستقبل الحرب الرقمية: ماذا بعد تيك توك؟</h2>
-
+<h2 class="fu" id="c5">مستقبل الحرب الرقمية: ماذا بعد تيك توك؟</h2>
 <p class="fu">بصرف النظر عن مصير تيك توك — بيعاً أو حظراً أو حلاً وسطاً — فإن المعركة التي أشعلها تُشير إلى تحوّل جوهري في طبيعة الصراع الجيوسياسي في القرن الحادي والعشرين. لم يعد السؤال "من يملك الأرض؟" بل "من يملك الخوارزمية؟". السيادة الرقمية أصبحت ركيزة أساسية من ركائز الأمن القومي، والدول التي لا تملك منصاتها الرقمية الخاصة ستبقى عرضة للتلاعب المعلوماتي من الخارج.</p>
-
 <p class="fu">الصين أدركت هذا مبكراً: لديها نسختها الخاصة من كل منصة غربية — Weibo بدل تويتر، WeChat بدل واتساب، Baidu بدل غوغل، Douyin بدل تيك توك — محمية خلف "جدار الحماية العظيم" الذي يمنع أي تطبيق أجنبي من الوصول إلى ١.٤ مليار صيني. أمريكا، بعد عقود من التبشير بحرية الإنترنت المفتوح، تكتشف الآن أن هذا الانفتاح يمكن أن يُستخدم ضدها. أوروبا تحاول بناء "سيادة رقمية" عبر تشريعات مثل GDPR وDSA. أما العالم العربي فيبقى — في الأغلب — مستهلكاً للمنصات الأجنبية دون رؤية استراتيجية للسيادة الرقمية.</p>
-
 <h3 class="fu">سيناريوهات ٢٠٢٦-٢٠٣٠</h3>
-
 <p class="fu">يُرجّح الخبراء ثلاثة سيناريوهات لمستقبل الصراع الرقمي. السيناريو الأول: "شبكة الإنترنت المُنقسمة" (Splinternet) حيث ينقسم الفضاء الرقمي إلى كتل: كتلة أمريكية (غوغل، ميتا، أبل)، كتلة صينية (ByteDance، تينسنت، علي بابا)، وكتلة أوروبية تنظيمية. السيناريو الثاني: "التنظيم المتبادل" حيث تتفق القوى الكبرى على معايير مشتركة لتداول البيانات ومسؤولية الخوارزميات — وهو السيناريو الأقل احتمالاً في ظل التنافس المتصاعد. السيناريو الثالث: "عسكرة الخوارزميات" حيث تتحول المنصات الرقمية صراحةً إلى أدوات حرب معلوماتية تُوظّفها الدول في صراعاتها، مع استخدام الذكاء الاصطناعي التوليدي لإنتاج محتوى مُضلّل على نطاق صناعي.</p>
-
 <p class="fu">ما يجعل هذا الصراع مختلفاً عن كل الحروب السابقة هو أنه يجري داخل عقول البشر — في المساحة بين الوعي واللاوعي — حيث تقرر خوارزمية ما تراه عيناك قبل أن يُقرّر عقلك ما يفكر فيه. في هذا العالم الجديد، القوة ليست في من يملك أكثر الأسلحة فتكاً بل في من يملك أدقّ الخوارزميات تأثيراً.</p>
-
 <!-- verdict -->
 <div class="verdict fu">
 <div class="vt">⟡ الخلاصة الاستراتيجية</div>
@@ -292,7 +312,6 @@ footer a{color:#b8b4d0;margin:0 .5rem}footer a:hover{color:var(--or)}
 <p>بالنسبة للعالم العربي، الرسالة واضحة: في غياب استراتيجية سيادة رقمية عربية — تشمل تشريعات حماية البيانات، ومنصات محلية قادرة على المنافسة، وبرامج توعية رقمية شاملة — سيبقى ١٢٠ مليون مستخدم عربي ساحة مفتوحة لكل من يملك الخوارزمية الأذكى والبيانات الأضخم.</p>
 </div>
 </div>
-
 <!-- faq -->
 <div class="faq fu">
 <div class="faqt">أسئلة شائعة</div>
@@ -313,36 +332,33 @@ footer a{color:#b8b4d0;margin:0 .5rem}footer a:hover{color:var(--or)}
 <div class="fqa">تقليل المعلومات الشخصية في الملف، إيقاف تتبع الموقع، تحديد الجمهور الذي يرى محتواك، استخدام VPN، وأهم من كل ذلك: الوعي بأن كل ثانية تقضيها على التطبيق تُغذّي خوارزمية تبني ملفاً نفسياً مفصّلاً عنك.</div>
 </div>
 </div>
-
 <!-- author -->
 <div class="au fu">
-<img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=120&q=70" alt="طارق الهاشمي"/>
+<img alt="طارق الهاشمي" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=120&amp;q=70"/>
 <div class="aui">
 <div class="aun">طارق الهاشمي</div>
 <div class="aur">خبير أمن سيبراني وتقنيات رقمية</div>
 <div class="aup">باحث متخصص في الأمن السيبراني والحوكمة الرقمية، عمل مستشاراً لعدة حكومات عربية في مجال استراتيجيات السيادة الرقمية. حاصل على ماجستير من MIT في هندسة الأنظمة الذكية، ويكتب بانتظام لمنصات بحثية دولية حول التقاطع بين التكنولوجيا والجيوسياسة.</div>
 </div>
 </div>
-
 <!-- related -->
 <div class="rel fu">
 <div class="relt">مقالات ذات صلة</div>
 <div class="relg">
 <a class="relc" href="/articles/hollywood-pentagone-soft-power.html">
-<img src="https://images.unsplash.com/photo-1485846234645-a62644f84728?w=400&q=60" alt="هوليوود والبنتاغون"/>
+<img alt="هوليوود والبنتاغون" src="https://images.unsplash.com/photo-1485846234645-a62644f84728?w=400&amp;q=60"/>
 <div class="relci"><h4>هوليوود والبنتاغون: كيف يُصنع الوعي عبر الشاشة الكبيرة</h4><p>ثقافة وجيوسياسة</p></div>
 </a>
 <a class="relc" href="/articles/hallyu-coree-soft-power.html">
-<img src="https://images.unsplash.com/photo-1617886903355-9354bb57751f?w=400&q=60" alt="الموجة الكورية"/>
+<img alt="الموجة الكورية" src="https://images.unsplash.com/photo-1617886903355-9354bb57751f?w=400&amp;q=60"/>
 <div class="relci"><h4>الموجة الكورية: غزو ثقافي ناعم يهزّ عروش هوليوود</h4><p>ثقافة وجيوسياسة</p></div>
 </a>
 <a class="relc" href="/articles/cyber-guerre-espionnage-numerique.html">
-<img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=400&q=60" alt="الحرب السيبرانية"/>
+<img alt="الحرب السيبرانية" src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=400&amp;q=60"/>
 <div class="relci"><h4>الحرب السيبرانية والتجسس الرقمي: ساحة المعركة الخفية</h4><p>تحليلات استراتيجية</p></div>
 </a>
 </div>
 </div>
-
 <div class="also">
 <h4>📚 اقرأ أيضاً</h4>
 <ul>
@@ -353,50 +369,69 @@ footer a{color:#b8b4d0;margin:0 .5rem}footer a:hover{color:var(--or)}
 </ul>
 </div>
 </article>
-
-<!-- sidebar -->
-<aside>
-<div class="sb">
-<div class="sbt">فهرس المقال</div>
-<ol class="toc">
-<li><a href="#c1"><span class="num">١</span>صعود تيك توك: من تطبيق كاريوكي إلى قوة عظمى</a></li>
-<li><a href="#c2"><span class="num">٢</span>الخوارزمية كسلاح: ما الذي يجعل تيك توك مختلفاً</a></li>
-<li><a href="#c3"><span class="num">٣</span>ساحة المعركة: من الكونغرس إلى جنيف</a></li>
-<li><a href="#c4"><span class="num">٤</span>تيك توك والعالم العربي: فضاء بلا حراسة</a></li>
-<li><a href="#c5"><span class="num">٥</span>مستقبل الحرب الرقمية: ماذا بعد تيك توك؟</a></li>
-</ol>
+    <div class="nl-cta">
+      <h3>📬 النشرة الأسبوعية — مجاناً</h3>
+      <p>تحليلات جيوسياسية معمّقة كل أحد في بريدك. انضم إلى 12,000 قارئ.</p>
+      <form class="nl-form" onsubmit="return false">
+        <input class="nl-input" type="email" placeholder="بريدك الإلكتروني"/>
+        <button class="nl-btn" type="submit">اشترك</button>
+      </form>
+      <p class="nl-note">بدون إزعاج · إلغاء في أي وقت</p>
+    </div>
+  </div>
+  <aside class="sidebar">
+    <div class="sb2">
+      <div class="stl2">📋 المحتويات</div>
+      <ul class="tl2"><li><a href="#c1"><span class="tn2">1.</span>صعود تيك توك: من تطبيق كاريوكي إلى قوة ع</a></li>
+<li><a href="#c2"><span class="tn2">2.</span>الخوارزمية كسلاح: ما الذي يجعل تيك توك م</a></li>
+<li><a href="#c3"><span class="tn2">3.</span>ساحة المعركة: من الكونغرس إلى جنيف</a></li>
+<li><a href="#c4"><span class="tn2">4.</span>تيك توك والعالم العربي: فضاء بلا حراسة</a></li>
+<li><a href="#c5"><span class="tn2">5.</span>مستقبل الحرب الرقمية: ماذا بعد تيك توك؟</a></li>
+</ul>
+    </div>
+    <div class="sb2">
+      <div class="sb-nl">
+        <h4>النشرة الأسبوعية</h4>
+        <p>تحليلات جيوسياسية معمّقة كل أحد — مجاناً.</p>
+        <a href="/abonnement.html">اشترك مجاناً ←</a>
+      </div>
+    </div>
+  </aside>
 </div>
-<div class="sb">
-<div class="sbt">صورة من الميدان</div>
-<div class="field">
-<img src="https://images.unsplash.com/photo-1563986768609-322da13575f2?w=400&q=60" alt="شاب يستخدم تيك توك"/>
-<p>شاب يتصفح تيك توك — ٩٥ دقيقة يومياً من الاستهلاك تُغذّي أكبر قاعدة بيانات سلوكية في التاريخ. © Reuters</p>
-</div>
-</div>
-<div class="sb">
-<div class="cta-sb">
-<p>للاطلاع على تحليلاتنا الحصرية حول الثقافة والجيوسياسة</p>
-<a href="/abonnement.html">اشترك الآن ←</a>
-</div>
-</div>
-</aside>
-</div>
-
-<footer>
-<div>جيوبولو — تحليلات جيوسياسية معمّقة © ٢٠٢٥</div>
-<div style="margin-top:.5rem">
-<a href="/">الرئيسية</a>
-<a href="/culture.html">ثقافة</a>
-<a href="/sante.html">صحة</a>
-<a href="/voyage.html">سفر</a>
-<a href="/abonnement.html">اشتراك</a>
-</div>
-</footer>
-
+<footer class="site-footer"><div class="footer-inner">
+  <div class="footer-bottom">
+    <span>© 2026 geopolô · ar.geopolo.com</span>
+    <div class="fl2">
+      <a href="/">الرئيسية</a>
+      <a href="/culture.html">جيوسياسة</a>
+      <a href="/abonnement.html">الاشتراك</a>
+      <a href="https://geopolo.com">🇫🇷 Français</a>
+    </div>
+  </div>
+</div></footer>
 <script>
-const pb=document.getElementById('pb');window.addEventListener('scroll',()=>{const s=document.documentElement,h=s.scrollHeight-s.clientHeight;pb.style.width=h?(s.scrollTop/h*100).toFixed(1)+'%':'0%'});
-const io=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('vis');io.unobserve(e.target)}})},{threshold:.12});
-document.querySelectorAll('.fu').forEach(el=>io.observe(el));
+window.addEventListener('scroll',()=>{
+  const d=document.documentElement;
+  document.getElementById('pb').style.width=(d.scrollTop/(d.scrollHeight-d.clientHeight)*100)+'%';
+});
+// Fade in article
+const art=document.querySelector('.article-body');
+if(art)setTimeout(()=>art.classList.add('visible'),100);
+// Active TOC
+const secs=document.querySelectorAll('[id^="s"]');
+const tocLinks=document.querySelectorAll('.tl2 a');
+if(secs.length&&tocLinks.length){
+  const obs=new IntersectionObserver(entries=>{
+    entries.forEach(e=>{if(e.isIntersecting){
+      tocLinks.forEach(l=>l.classList.remove('toc-active'));
+      const a=document.querySelector('.tl2 a[href="#'+e.target.id+'"]');
+      if(a)a.classList.add('toc-active');
+    }});
+  },{rootMargin:'-25% 0px -65% 0px'});
+  secs.forEach(s=>obs.observe(s));
+}
+function shareX(){window.open('https://twitter.com/intent/tweet?url='+encodeURIComponent(location.href)+'&text='+encodeURIComponent(document.title));}
+function shareWA(){window.open('https://wa.me/?text='+encodeURIComponent(document.title+' '+location.href));}
+function copyLink(){navigator.clipboard.writeText(location.href).then(()=>alert('تم نسخ الرابط ✓'));}
 </script>
-</body>
-</html>
+</body></html>

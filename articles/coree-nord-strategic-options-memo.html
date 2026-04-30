@@ -1,104 +1,21 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-<meta charset="UTF-8"/>
-<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/>
 <title>مذكرة الخيارات الاستراتيجية — كوريا الشمالية | محاكاة صينية</title>
   <link rel="alternate" hreflang="fr" href="https://geopolo.com/articles/coree-nord-strategic-options-memo.html"/>
   <link rel="alternate" hreflang="ar" href="https://ar.geopolo.com/articles/coree-nord-strategic-options-memo.html"/>
   <link rel="alternate" hreflang="x-default" href="https://geopolo.com/articles/coree-nord-strategic-options-memo.html"/>
 <meta name="description" content="مذكرة خيارات استراتيجية: باسم الصين في أزمة كوريا الشمالية — محاكاة NSC. كيف تدعم الصين بيونغ يانغ دون استفزاز واشنطن؟"/>
-<link rel="preconnect" href="https://fonts.googleapis.com"/>
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Arabic:wght@400;700;900&family=Noto+Naskh+Arabic:wght@400;600;700&display=swap" rel="stylesheet"/>
-<style>
-:root{
-  --a:#8b1a1a;--ink:#1a1a2a;--bg:#f5f3ef;--paper:#fff;
-  --mid:#5a5870;--rule:#d4cfc8;--or:#9a7a1a;
-  --header-bg:#0a0a14;--accent:#c8a020;
-}
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-body{font-family:'Noto Naskh Arabic',sans-serif;background:var(--bg);color:var(--ink);direction:rtl;line-height:1.85;font-size:1rem}
-a{color:inherit;text-decoration:none}
-
-/* ── PAGE HEADER — gouvernemental ── */
-.memo-header{background:var(--header-bg);color:#fff;padding:0}
-.mh-stripe{background:var(--a);height:5px}
-.mh-body{padding:2rem 3rem;display:flex;align-items:center;justify-content:space-between;gap:2rem;flex-wrap:wrap}
-.mh-logo{font-family:'Noto Serif Arabic',serif;font-size:1.5rem;font-weight:900;color:var(--accent)}
-.mh-logo span{display:block;font-size:.7em;font-weight:400;color:#6a6585;margin-top:.2rem}
-.mh-classify{text-align:left}
-.mh-classify .stamp{display:inline-block;border:2px solid var(--a);color:var(--a);font-weight:700;font-size:.75rem;padding:.3rem .8rem;letter-spacing:.08em}
-.mh-classify .series{font-size:.65rem;color:#5a5570;margin-top:.4rem}
-
-/* ── META TABLE ── */
-.memo-meta{background:#f0ece3;border-bottom:2px solid var(--a);padding:1.2rem 3rem}
-.meta-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:.5rem 2rem;font-size:.82rem}
-.meta-row{display:flex;gap:.5rem}
-.meta-label{color:var(--a);font-weight:700;white-space:nowrap}
-.meta-val{color:var(--ink)}
-
-/* ── DOCUMENT BODY ── */
-.memo-body{max-width:940px;margin:2rem auto;padding:0 2rem 4rem}
-
-/* SUBJECT LINE */
-.subject-line{background:var(--a);color:#fff;padding:1rem 1.5rem;margin-bottom:2rem}
-.subject-line .sub-label{font-size:.7rem;letter-spacing:.1em;opacity:.7;margin-bottom:.3rem}
-.subject-line .sub-text{font-family:'Noto Serif Arabic',serif;font-size:1.2rem;font-weight:700;line-height:1.3}
-
-/* EXECUTIVE SUMMARY */
-.exec-summary{background:#fef9f0;border:1px solid #d4c090;border-right:4px solid var(--or);padding:1.3rem 1.5rem;margin-bottom:2rem}
-.exec-summary .es-label{font-size:.7rem;font-weight:700;color:var(--or);letter-spacing:.1em;margin-bottom:.6rem}
-.exec-summary p{font-size:.92rem;color:#3a3020;line-height:1.8}
-
-/* SECTIONS */
-.memo-section{margin-bottom:2.5rem}
-.section-header{display:flex;align-items:center;gap:.8rem;margin-bottom:1.2rem;padding-bottom:.5rem;border-bottom:1px solid var(--rule)}
-.section-num{background:var(--a);color:#fff;width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.75rem;font-weight:700;flex-shrink:0}
-.section-title{font-family:'Noto Serif Arabic',serif;font-size:1.1rem;font-weight:700;color:var(--ink)}
-.memo-body p{margin-bottom:1rem;font-size:.95rem;line-height:1.85}
-.memo-body p:last-child{margin-bottom:0}
-
-/* THREATS / OPPORTUNITIES — bullet-like */
-.point-list{list-style:none;padding:0;margin:.5rem 0 1rem}
-.point-list li{display:flex;gap:.8rem;align-items:flex-start;margin-bottom:.7rem;padding:.7rem 1rem;background:#f8f7f4;border-right:3px solid var(--rule)}
-.point-list li .pi{flex-shrink:0;font-size:.9rem;margin-top:.1rem}
-.point-list li .pt{font-size:.9rem;line-height:1.75}
-.point-list.threats li{border-right-color:#c0302a}
-.point-list.threats li .pi{color:#c0302a}
-.point-list.opport li{border-right-color:#2a7a3a}
-.point-list.opport li .pi{color:#2a7a3a}
-.point-list.tactics li{border-right-color:#1e5fa8}
-.point-list.tactics li .pi{color:#1e5fa8}
-
-/* STRATEGY RECOMMENDED */
-.strategy-box{background:#0a0a14;color:#fff;padding:1.5rem;margin:1.5rem 0}
-.strategy-box .sb-label{font-size:.68rem;color:#6a6585;letter-spacing:.1em;margin-bottom:.8rem}
-.strategy-box h3{font-family:'Noto Serif Arabic',serif;font-size:1.05rem;color:var(--accent);margin-bottom:.8rem}
-.strategy-box p{font-size:.88rem;color:#c8c4d4;line-height:1.8;margin-bottom:.6rem}
-.strategy-box p:last-child{margin-bottom:0}
-
-/* SIGNATURE BLOCK */
-.memo-sig{border-top:2px solid var(--a);padding-top:1.5rem;margin-top:3rem;display:flex;justify-content:space-between;flex-wrap:wrap;gap:1rem;font-size:.8rem;color:var(--mid)}
-.sig-block .sig-name{font-family:'Noto Serif Arabic',serif;font-size:1rem;font-weight:700;color:var(--ink);margin-top:.4rem}
-.sig-block .sig-role{font-size:.75rem;color:var(--mid)}
-
-/* NAVIGATION */
-.memo-nav{max-width:940px;margin:0 auto 2rem;padding:0 2rem;display:flex;gap:1rem;flex-wrap:wrap}
-.nav-btn{display:inline-flex;align-items:center;gap:.4rem;padding:.5rem 1rem;border:1px solid var(--rule);font-size:.78rem;font-family:'Noto Naskh Arabic',sans-serif;color:var(--mid);transition:all .2s;background:var(--paper)}
-.nav-btn:hover{border-color:var(--a);color:var(--a)}
-
-/* TOPBAR */
-.topbar{background:#07070f;color:#5a5570;font-family:'Noto Naskh Arabic',sans-serif;font-size:.72rem;padding:.4rem 2rem;display:flex;justify-content:space-between}
-.topbar a{color:#9a95b0}
-
-@media(max-width:640px){
-  .mh-body{flex-direction:column;padding:1.5rem}
-  .memo-meta{padding:1rem 1.5rem}
-  .memo-body{padding:0 1rem 3rem}
-  .memo-nav{padding:0 1rem}
-}
-</style>
+<meta name="keywords" content=""/>
+<meta property="og:title" content="مذكرة الخيارات الاستراتيجية — كوريا الشمالية | محاكاة صينية"/>
+<meta property="og:description" content="مذكرة خيارات استراتيجية: باسم الصين في أزمة كوريا الشمالية — محاكاة NSC. كيف تدعم الصين بيونغ يانغ دون استفزاز واشنطن؟"/>
+<meta property="og:image" content=""/>
+<meta property="og:type" content="article"/>
+<meta property="og:locale" content="ar_AR"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:site" content="@geopolo_ar"/>
+<link rel="canonical" href=""/>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -126,170 +43,260 @@ a{color:inherit;text-decoration:none}
   "isAccessibleForFree": true
 }
 </script>
-<meta property="og:locale" content="ar_AR"/>
-<meta name="twitter:card" content="summary_large_image"/>
-<meta name="twitter:site" content="@geopolo_ar"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Arabic:wght@400;600;700;900&family=Noto+Naskh+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+<style>
+:root{--brand:#0f4c81;--brand-dark:#0a3560;--accent:#c8920a;--accent-light:#fdf3dc;--danger:#b83232;--ink:#12131a;--ink-2:#2e3040;--ink-3:#5a5c72;--rule:#ddd9d0;--bg:#f6f4ef;--surface:#ffffff;--cream:#f0ece3;--serif:'Noto Serif Arabic',Georgia,serif;--sans:'Noto Naskh Arabic',sans-serif;--layout-max:1200px;--cat-asie:#1a8a6e;--cat-orient:#8b3a8b;--cat-europe:#1e5fa8;--cat-afrique:#c8821a;--cat-amerique:#b83232}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}
+body{font-family:var(--serif);background:var(--bg);color:var(--ink);direction:rtl;line-height:1.9;-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%;height:auto}a{color:inherit;text-decoration:none}
+#pb{position:fixed;top:0;right:0;left:0;height:3px;background:var(--accent);width:0%;z-index:1000;transition:width .1s linear}
+.topbar{background:var(--ink);color:#7a788a;font-family:var(--sans);font-size:.72rem;padding:.4rem 1.5rem;display:flex;justify-content:space-between;align-items:center;gap:1rem}
+.topbar a{color:#b0adcc;transition:color .2s}.topbar a:hover{color:var(--accent)}
+.site-header{background:var(--surface);border-bottom:2px solid var(--ink);padding:1rem 1.5rem;display:flex;align-items:center;justify-content:space-between;gap:1rem}
+.logo{font-family:var(--serif);font-size:clamp(1.4rem,3vw,2rem);font-weight:900;color:var(--brand);line-height:1}
+.logo em{font-style:normal;color:var(--accent)}
+.logo-tagline{font-family:var(--sans);font-size:.6rem;color:var(--ink-3);margin-top:.2rem}
+.header-cta{display:inline-flex;align-items:center;gap:.4rem;background:var(--danger);color:#fff;font-family:var(--sans);font-size:.75rem;font-weight:600;padding:.5rem 1rem;transition:background .2s;white-space:nowrap}
+.header-cta:hover{background:#9a2020}
+.site-nav{background:var(--ink);border-bottom:3px solid var(--brand);position:sticky;top:0;z-index:200;overflow-x:auto;scrollbar-width:none}
+.site-nav::-webkit-scrollbar{display:none}
+.nav-inner{display:flex;align-items:stretch;min-width:max-content}
+.nav-inner a{display:flex;align-items:center;gap:.35rem;padding:.65rem 1rem;font-family:var(--sans);font-size:.78rem;color:#9a96b4;border-left:1px solid #252535;transition:background .15s,color .15s;white-space:nowrap}
+.nav-inner a:hover,.nav-inner a.active{background:#1a1a2e;color:var(--accent)}
+.nav-dot{width:7px;height:7px;border-radius:50%;flex-shrink:0}
+.nav-sub{margin-right:auto}.nav-sub a{background:var(--brand);color:#fff;border:none;font-weight:600}
+.nav-sub a:hover{background:var(--brand-dark);color:#fff}
+.hero{position:relative;height:clamp(280px,42vw,500px);background:var(--ink);overflow:hidden}
+.hero img{width:100%;height:100%;object-fit:cover;filter:brightness(.42) saturate(1.1)}
+.hero-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(12,13,22,.98) 30%,rgba(12,13,22,.4) 65%,transparent 100%)}
+.hero-content{position:absolute;bottom:0;right:0;left:0;padding:2.5rem 1.5rem;max-width:1200px;margin:0 auto}
+.hero-category{display:inline-flex;align-items:center;gap:.4rem;background:var(--brand);color:#fff;font-family:var(--sans);font-size:.68rem;font-weight:600;padding:.25rem .7rem;margin-bottom:.9rem;letter-spacing:.04em}
+.hero h1{font-family:var(--serif);font-size:clamp(1.5rem,3.5vw,2.8rem);font-weight:900;line-height:1.18;color:#fff;margin-bottom:.75rem;text-shadow:0 2px 12px rgba(0,0,0,.4)}
+.hero h1 em{font-style:normal;color:var(--accent)}
+.hero-subtitle{font-family:var(--sans);font-size:clamp(.85rem,1.5vw,1rem);color:rgba(255,255,255,.78);max-width:620px;line-height:1.8}
+.meta-bar{background:var(--surface);border-bottom:1px solid var(--rule);padding:.75rem 1.5rem}
+.meta-inner{max-width:1200px;margin:0 auto;display:flex;flex-wrap:wrap;align-items:center;gap:.5rem 1.2rem}
+.mi{font-family:var(--sans);font-size:.7rem;color:var(--ink-3)}.mi strong{color:var(--ink-2)}
+.sep{color:var(--rule);font-size:.8rem}
+.reading-badge{margin-right:auto;background:var(--accent-light);color:var(--accent);font-family:var(--sans);font-size:.65rem;font-weight:700;padding:.2rem .6rem;border:1px solid var(--accent)}
+.share-bar{background:var(--cream);border-bottom:1px solid var(--rule);padding:.55rem 1.5rem}
+.share-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;gap:.6rem}
+.share-label{font-family:var(--sans);font-size:.65rem;color:var(--ink-3);margin-left:.2rem}
+.share-btn{display:inline-flex;align-items:center;gap:.3rem;padding:.3rem .7rem;font-family:var(--sans);font-size:.65rem;font-weight:600;cursor:pointer;transition:opacity .2s;border:none}
+.share-btn:hover{opacity:.85}
+.share-x{background:#000;color:#fff}.share-wa{background:#25d366;color:#fff}.share-copy{background:var(--ink-2);color:#fff}
+.page-layout{max-width:var(--layout-max);margin:0 auto;padding:2.5rem 1.5rem;display:grid;grid-template-columns:1fr 260px;gap:3.5rem;align-items:start}
+@media(max-width:960px){.page-layout{grid-template-columns:1fr;gap:2rem}}
+/* ── ARTICLE BODY (keep old classes + new) ── */
+.article-body{min-width:0;opacity:0;transform:translateY(20px);transition:opacity .6s,transform .6s}
+.article-body.visible{opacity:1;transform:none}
+.kwb{background:var(--cream);border:1px solid var(--rule);border-right:3px solid var(--brand);padding:.65rem 1rem;margin-bottom:2rem;display:flex;flex-wrap:wrap;gap:.4rem;align-items:center}
+.kwl{font-family:var(--sans);font-size:.65rem;font-weight:700;color:var(--brand);margin-left:.5rem}
+.kw{font-family:var(--sans);font-size:.65rem;padding:.18rem .55rem;border:1px solid var(--rule);background:var(--surface);color:var(--ink-3)}
+.body>p:first-of-type::first-letter{font-size:4rem;font-weight:900;float:right;line-height:.82;margin:.04em 0 -.04em .15em;color:var(--brand)}
+.body p{font-size:1.06rem;line-height:2;color:var(--ink-2);margin-bottom:1.5rem}
+.body strong{color:var(--ink);font-weight:700}
+.body a.ext{color:var(--brand);border-bottom:1px dotted var(--brand)}
+.body ul{margin:1rem 0 1.5rem;padding-right:1.8rem}.body li{font-size:1rem;line-height:1.85;color:var(--ink-2);margin-bottom:.5rem}
+.chl{font-family:var(--sans);font-size:.65rem;color:var(--brand);margin-bottom:.25rem;display:flex;align-items:center;gap:.7rem;flex-direction:row-reverse}
+.chl::before{content:'';flex:1;height:1px;background:var(--rule)}
+.body h2{font-family:var(--serif);font-size:clamp(1.3rem,2.5vw,1.65rem);font-weight:800;line-height:1.25;color:var(--ink);margin:2.8rem 0 .85rem;padding-top:.6rem;border-top:2px solid var(--ink)}
+.body h3{font-family:var(--serif);font-size:1.1rem;font-weight:700;color:var(--brand);margin:2rem 0 .65rem}
+.body blockquote{margin:2rem 0;padding:1.5rem 1.8rem;border-right:4px solid var(--brand);background:var(--cream);font-family:var(--serif);font-size:1.05rem;font-weight:600;line-height:1.65;color:var(--ink)}
+.body blockquote cite{display:block;margin-top:.6rem;font-family:var(--sans);font-size:.65rem;font-weight:400;color:var(--ink-3)}
+.quote{margin:2.5rem 0;padding:1.6rem 2rem;border-right:5px solid var(--brand);background:var(--surface);font-family:var(--serif);font-size:1.15rem;font-weight:700;line-height:1.6;color:var(--ink);font-style:italic}
+.quote cite{display:block;margin-top:.7rem;font-size:.68rem;font-weight:400;font-style:normal;font-family:var(--sans);color:var(--ink-3)}
+.stats{display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:1px;background:var(--rule);border:1px solid var(--rule);margin:2rem 0}
+.sc{background:var(--surface);padding:1.1rem;text-align:center}
+.scn{font-family:var(--serif);font-size:1.7rem;font-weight:900;color:var(--brand);line-height:1}
+.scl{font-family:var(--sans);font-size:.6rem;color:var(--ink-3);margin-top:.25rem;line-height:1.4}
+.ctable{margin:2rem 0;overflow-x:auto}.ctable table{width:100%;border-collapse:collapse;font-size:.88rem}
+.ctable th{background:var(--ink);color:#fff;font-family:var(--sans);font-size:.65rem;padding:.65rem 1rem;text-align:right}
+.ctable td{padding:.6rem 1rem;border-bottom:1px solid var(--rule);text-align:right}
+.ctable tr:nth-child(even) td{background:var(--cream)}
+.box{margin:2.2rem 0;padding:1.4rem 1.6rem;background:var(--cream);border:1px solid var(--rule);border-right:4px solid var(--brand)}
+.box h4{font-family:var(--sans);font-size:.72rem;font-weight:700;color:var(--brand);margin-bottom:.75rem}
+.box p{font-size:.95rem;line-height:1.85;color:var(--ink-2);margin-bottom:.6rem}
+.alert{margin:2.2rem 0;padding:1.2rem 1.5rem;background:#fff8e8;border:1px solid #e8c84a;border-right:4px solid #c8a020}
+.alert h4{font-family:var(--sans);font-size:.72rem;font-weight:700;color:#8a6010;margin-bottom:.65rem}
+.alert p{font-size:.95rem;line-height:1.85;color:#3a3020;margin-bottom:.5rem}
+.chead{display:grid;grid-template-columns:1fr auto 1fr;gap:.8rem;align-items:center;margin:2rem 0;padding:1.3rem;background:var(--surface);border:1px solid var(--rule)}
+.cbox{text-align:center}.cflag{font-size:2.5rem;margin-bottom:.3rem}
+.cname{font-family:var(--serif);font-size:1.1rem;font-weight:900;margin-bottom:.2rem}
+.cscore{font-family:var(--sans);font-size:.65rem;color:var(--ink-3)}
+.vs{font-family:var(--serif);font-size:2rem;font-weight:900;color:var(--brand);text-align:center}
+.verdict{margin:2.5rem 0;border:2px solid var(--brand);background:var(--surface);overflow:hidden}
+.vt{background:var(--brand);color:#fff;font-family:var(--sans);font-size:.76rem;padding:.7rem 1.2rem;font-weight:700}
+.vc{padding:1.3rem 1.5rem}.vc p{font-size:.93rem;line-height:1.75;margin-bottom:.6rem;color:var(--ink-2)}
+.scenario{margin:2rem 0;background:var(--surface);border:1px solid var(--rule);overflow:hidden}
+.sc-head{background:var(--brand);color:#fff;font-family:var(--sans);font-size:.76rem;padding:.7rem 1.2rem;font-weight:700;display:flex;justify-content:space-between}
+.sc-body{padding:1.3rem 1.5rem}
+.sc-step{display:flex;gap:1rem;margin-bottom:1.2rem;padding-bottom:1.2rem;border-bottom:1px solid var(--rule)}.sc-step:last-child{border:none;margin:0;padding:0}
+.sc-num{font-family:var(--serif);font-size:1.8rem;font-weight:900;color:var(--brand);opacity:.3;flex-shrink:0;line-height:1;min-width:2rem;text-align:center}
+.sc-text h4{font-family:var(--serif);font-size:.98rem;font-weight:700;margin-bottom:.3rem;color:var(--ink)}
+.sc-text p{font-family:var(--sans);font-size:.85rem;color:var(--ink-3);line-height:1.65;margin:0}
+.faq{margin:2.5rem 0;background:var(--surface);border:1px solid var(--rule);overflow:hidden}
+.faqt{background:var(--ink);color:#fff;font-family:var(--sans);font-size:.76rem;padding:.75rem 1.2rem;font-weight:700}
+.fqi{border-bottom:1px solid var(--rule);padding:.9rem 1.2rem}.fqi:last-child{border:none}
+.fqq{font-family:var(--serif);font-size:.92rem;font-weight:700;color:var(--ink);margin-bottom:.35rem}
+.fqa{font-family:var(--sans);font-size:.85rem;color:var(--ink-3);line-height:1.65}
+.also{margin:2.5rem 0;padding:1.3rem 1.5rem;background:var(--surface);border:1px solid var(--rule)}
+.also h4{font-family:var(--sans);font-size:.72rem;font-weight:700;color:var(--ink);border-bottom:2px solid var(--brand);padding-bottom:.4rem;margin-bottom:.9rem}
+.also ul{list-style:none;padding:0}.also li{border-bottom:1px solid var(--rule);padding:.55rem 0}.also li:last-child{border:none}
+.also a{font-family:var(--serif);font-size:.92rem;font-weight:600;color:var(--brand)}.also a:hover{color:var(--accent)}
+.au{margin:2.5rem 0;padding:1.3rem 1.5rem;background:var(--cream);border:1px solid var(--rule);border-right:4px solid var(--brand);display:flex;gap:1rem}
+.av{width:52px;height:52px;border-radius:50%;background:var(--brand);flex-shrink:0;display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-size:.85rem;font-weight:900;color:#fff;letter-spacing:-.03em;text-align:center;line-height:1.2}
+.an{font-family:var(--serif);font-size:.95rem;font-weight:700;color:var(--ink)}
+.ar2{font-family:var(--sans);font-size:.65rem;color:var(--brand);margin-bottom:.4rem}
+.ab{font-size:.85rem;color:var(--ink-3);line-height:1.65;margin:0!important}
+.rel{margin-top:3rem;padding-top:1.3rem;border-top:2px solid var(--ink)}
+.relt{font-family:var(--serif);font-size:1.1rem;font-weight:700;margin-bottom:1.2rem}
+.rg{display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:.9rem}
+.rc{border:1px solid var(--rule);background:var(--surface);overflow:hidden;transition:transform .2s,box-shadow .2s;display:block}
+.rc:hover{transform:translateY(-3px);box-shadow:0 6px 20px rgba(0,0,0,.1)}
+.rs{height:4px}.rb{padding:.9rem 1rem}
+.rc h4{font-family:var(--serif);font-size:.92rem;font-weight:700;line-height:1.35;margin-bottom:.35rem;color:var(--ink)}
+.rd{font-family:var(--sans);font-size:.72rem;color:var(--ink-3);margin-bottom:.35rem;line-height:1.4}
+.ra{font-family:var(--sans);font-size:.68rem;color:var(--brand)}
+.ext-box{margin:2rem 0;padding:1.2rem 1.5rem;background:var(--cream);border:1px solid var(--rule);border-right:3px solid var(--brand)}
+.ext-box h4{font-family:var(--sans);font-size:.7rem;font-weight:700;color:var(--brand);margin-bottom:.8rem}
+.ext-box ul{list-style:none;padding:0}.ext-box li{margin-bottom:.4rem}
+.ext-box a{font-family:var(--sans);font-size:.82rem;color:var(--brand);border-bottom:1px dotted var(--brand)}
+/* Newsletter CTA */
+.nl-cta{margin:2.5rem 0;background:linear-gradient(135deg,var(--brand-dark),#1a2a4a);padding:2rem 1.8rem;text-align:center;position:relative;overflow:hidden}
+.nl-cta::before{content:'';position:absolute;top:-50%;left:-50%;width:200%;height:200%;background:radial-gradient(circle at 70% 50%,rgba(200,146,10,.08),transparent 60%)}
+.nl-cta h3{font-family:var(--serif);font-size:1.3rem;font-weight:800;color:#fff;margin-bottom:.5rem}
+.nl-cta p{font-family:var(--sans);font-size:.85rem;color:rgba(255,255,255,.65);margin-bottom:1.3rem;line-height:1.7}
+.nl-form{display:flex;gap:.5rem;max-width:420px;margin:0 auto;flex-direction:row-reverse}
+.nl-input{flex:1;padding:.7rem 1rem;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);color:#fff;font-family:var(--sans);font-size:.85rem;text-align:right;outline:none}
+.nl-input::placeholder{color:rgba(255,255,255,.4)}
+.nl-btn{padding:.7rem 1.2rem;background:var(--accent);color:#fff;border:none;font-family:var(--sans);font-size:.82rem;font-weight:700;cursor:pointer;white-space:nowrap}
+.nl-note{font-family:var(--sans);font-size:.62rem;color:rgba(255,255,255,.4);margin-top:.7rem}
+/* Sidebar */
+.sidebar{position:sticky;top:3.5rem}
+.sb2{margin-bottom:1.5rem;background:var(--surface);border:1px solid var(--rule);overflow:hidden}
+.stl2{font-family:var(--sans);font-size:.68rem;font-weight:700;color:var(--ink);background:var(--cream);border-bottom:2px solid var(--brand);padding:.6rem 1rem;letter-spacing:.03em}
+.tl2{list-style:none;padding:.2rem 0}
+.tl2 li{border-bottom:1px solid var(--rule)}.tl2 li:last-child{border:none}
+.tl2 a{display:flex;align-items:flex-start;gap:.5rem;padding:.55rem 1rem;font-family:var(--sans);font-size:.8rem;color:var(--ink-3);transition:background .15s,color .15s;line-height:1.4;flex-direction:row-reverse}
+.tl2 a:hover{background:var(--accent-light);color:var(--accent)}
+.tl2 a.toc-active{color:var(--brand);font-weight:600;background:var(--cream)}
+.tn2{font-size:.6rem;color:var(--brand);flex-shrink:0;margin-top:.1rem;font-weight:700}
+.sb-nl{background:linear-gradient(160deg,var(--brand-dark),#1a2a4a);padding:1.3rem;text-align:center}
+.sb-nl h4{font-family:var(--serif);font-size:1rem;font-weight:800;color:var(--accent);margin-bottom:.4rem}
+.sb-nl p{font-family:var(--sans);font-size:.78rem;color:rgba(255,255,255,.6);line-height:1.65;margin-bottom:1rem}
+.sb-nl a{display:block;width:100%;padding:.6rem;background:var(--accent);color:#fff;font-family:var(--sans);font-size:.78rem;font-weight:700;text-align:center}
+/* Footer */
+.site-footer{background:var(--ink);color:#5a5870;border-top:3px solid var(--brand);padding:2rem 1.5rem 1.2rem;font-family:var(--sans);font-size:.72rem}
+.footer-inner{max-width:var(--layout-max);margin:0 auto}
+.footer-bottom{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:.5rem;color:#3a3850;padding-top:1rem;border-top:1px solid #252535;margin-top:1rem}
+.fl2{display:flex;gap:1.2rem}.fl2 a{color:#5a5870;transition:color .2s}.fl2 a:hover{color:var(--accent)}
+@media(max-width:640px){.site-header{padding:.8rem 1rem}.hero-content{padding:1.5rem 1rem}.page-layout{padding:1.5rem 1rem}.nl-form{flex-direction:column}.topbar{display:none}}
+</style>
 </head>
 <body>
-
+<div id="pb"></div>
 <div class="topbar">
-  <span>تحليلات جيوسياسية — سلسلة محاكاة بحر الصين الجنوبي · ITAB · تورسينج، فرنسا</span>
-  <span><a href="/">الرئيسية</a> · <a href="/asie.html">آسيا</a></span>
+  <span>تحليلات جيوسياسية — <strong style="color:var(--accent)">القوى والصراعات في القرن الحادي والعشرين</strong></span>
+  <span><a href="https://geopolo.com">🇫🇷 Français</a> · <a href="/abonnement.html">الاشتراك</a></span>
 </div>
-
-<div class="memo-header">
-  <div class="mh-stripe"></div>
-  <div class="mh-body">
-    <div class="mh-logo">
-      تحليلات جيوسياسية · ITAB
-      <span>محاكاة استراتيجية — بحر الصين وكوريا الشمالية</span>
-    </div>
-    <div class="mh-classify">
-      <div class="stamp">🔒 وثيقة تحليلية — محاكاة</div>
-      <div class="series">سلسلة المحاكاة · الوثيقة 5 من 5</div>
-    </div>
+<header class="site-header">
+  <a href="/" style="display:block">
+    <div class="logo">geo<em>polô</em></div>
+    <div class="logo-tagline">مجلة جيوسياسية استراتيجية مستقلة · ar.geopolo.com</div>
+  </a>
+  <a href="/abonnement.html" class="header-cta">📧 الاشتراك ←</a>
+</header>
+<nav class="site-nav"><div class="nav-inner">
+  <a href="/">الرئيسية</a>
+  <a href="/afr.html" data-r="afrique"><span class="nav-dot" style="background:var(--cat-afrique)"></span>أفريقيا</a>
+  <a href="/ame.html" data-r="amerique"><span class="nav-dot" style="background:var(--cat-amerique)"></span>أمريكا</a>
+  <a href="/eu.html" data-r="europe"><span class="nav-dot" style="background:var(--cat-europe)"></span>أوروبا</a>
+  <a href="/asie.html" data-r="asie"  class="active"><span class="nav-dot" style="background:var(--cat-asie)"></span>آسيا</a>
+  <a href="/proche-or.html" data-r="orient"><span class="nav-dot" style="background:var(--cat-orient)"></span>الشرق الأوسط</a>
+  <div class="nav-sub"><a href="/abonnement.html">الاشتراك ←</a></div>
+</div></nav>
+<div class="hero">
+  <img src="" alt="مذكرة الخيارات الاستراتيجية — كوريا الشمالية | محاكاة صينية" loading="eager"/>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <div class="hero-category" style="background:#1a8a6e">آسيا</div>
+    <h1 style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0)">مذكرة الخيارات الاستراتيجية الصينية في أزمة كوريا الشمالية</h1>
+    <p class="hero-subtitle">مذكرة خيارات استراتيجية: باسم الصين في أزمة كوريا الشمالية — محاكاة NSC. كيف تدعم الصين بيونغ يانغ دون استفزاز واشنطن؟</p>
   </div>
 </div>
-
-<div class="memo-meta">
-  <div class="meta-grid">
-    <div class="meta-row"><span class="meta-label">إلى:</span><span class="meta-val">مجلس الاستراتيجية الوطنية (نموذج محاكاة)</span></div>
-    <div class="meta-row"><span class="meta-label">من:</span><span class="meta-val">فريق التحليل الاستراتيجي · ITAB</span></div>
-    <div class="meta-row"><span class="meta-label">الموضوع:</span><span class="meta-val">الخيارات الاستراتيجية الصينية — أزمة كوريا الشمالية</span></div>
-    <div class="meta-row"><span class="meta-label">التاريخ:</span><span class="meta-val">مارس 2026</span></div>
-    <div class="meta-row"><span class="meta-label">الفاعل:</span><span class="meta-val">جمهورية الصين الشعبية (الموقع المُحاكى)</span></div>
-    <div class="meta-row"><span class="meta-label">التصنيف:</span><span class="meta-val">وثيقة تحليلية أكاديمية — محاكاة</span></div>
+<div class="meta-bar"><div class="meta-inner">
+  
+  <span class="reading-badge">⏱ 10 دقائق قراءة</span>
+</div></div>
+<div class="share-bar"><div class="share-inner">
+  <span class="share-label">شارك:</span>
+  <button class="share-btn share-x" onclick="shareX()">𝕏</button>
+  <button class="share-btn share-wa" onclick="shareWA()">📱 واتساب</button>
+  <button class="share-btn share-copy" onclick="copyLink()">🔗 نسخ الرابط</button>
+</div></div>
+<div class="page-layout">
+  <div class="article-body">
+    
+    <div class="nl-cta">
+      <h3>📬 النشرة الأسبوعية — مجاناً</h3>
+      <p>تحليلات جيوسياسية معمّقة كل أحد في بريدك. انضم إلى 12,000 قارئ.</p>
+      <form class="nl-form" onsubmit="return false">
+        <input class="nl-input" type="email" placeholder="بريدك الإلكتروني"/>
+        <button class="nl-btn" type="submit">اشترك</button>
+      </form>
+      <p class="nl-note">بدون إزعاج · إلغاء في أي وقت</p>
+    </div>
   </div>
+  <aside class="sidebar">
+    <div class="sb2">
+      <div class="stl2">📋 المحتويات</div>
+      <ul class="tl2"></ul>
+    </div>
+    <div class="sb2">
+      <div class="sb-nl">
+        <h4>النشرة الأسبوعية</h4>
+        <p>تحليلات جيوسياسية معمّقة كل أحد — مجاناً.</p>
+        <a href="/abonnement.html">اشترك مجاناً ←</a>
+      </div>
+    </div>
+  </aside>
 </div>
-
-<div class="memo-nav">
-  <a href="/articles/chine-problemes-reponses.html" class="nav-btn">← الوثيقة السابقة: مشكلات الصين وردودها</a>
-  <a href="/articles/chine-puissance-portrait-strategique.html" class="nav-btn">↩ بداية السلسلة: بورتريه الصين</a>
-  <a href="/asie.html" class="nav-btn">📂 ملف آسيا</a>
-</div>
-
-<div class="memo-body">
-
-  <h1 style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0)">مذكرة الخيارات الاستراتيجية الصينية في أزمة كوريا الشمالية</h1>
-  <div class="subject-line">
-    <div class="sub-label">موضوع المذكرة</div>
-    <div class="sub-text">كيف تدعم الصين كوريا الشمالية في سياق أزمة نووية حادة دون الدخول في مواجهة مع الولايات المتحدة أو الانزلاق إلى حرب؟</div>
-  </div>
-
-  <div class="exec-summary">
-    <div class="es-label">ملخص تنفيذي</div>
-    <p>أطلقت الجمهورية الشعبية الديمقراطية لكوريا بنجاح صاروخاً بثلاث مراحل وضع في مداره قمراً صناعياً، ما يُثبت — وفق التقييمات الاستخباراتية الأمريكية — امتلاكها تكنولوجيا إعادة الدخول الجوي القادرة على حمل رؤوس حربية نووية إلى عمق الأراضي الأمريكية. جلس مجلس الأمن القومي الأمريكي (NSC) لتقييم الخيارات. هذه المذكرة تُحدّد الموقف الاستراتيجي الصيني والخيارات المُتاحة للتعامل مع الأزمة، وفق موقع الصين كفاعل رئيسي في المحاكاة.</p>
-  </div>
-
-  <!-- SECTION 1 -->
-  <div class="memo-section">
-    <div class="section-header">
-      <div class="section-num">١</div>
-      <div class="section-title">الرهان الاستراتيجي الجوهري</div>
-    </div>
-    <p>تقف الصين أمام معادلة صعبة تتطلب إدارة دقيقة ومتوازنة: الحفاظ على الاستقرار الاستراتيجي في شبه الجزيرة الكورية دون السماح للأزمة بالتصعيد إلى مواجهة مسلحة، والحيلولة دون أي ضربة أمريكية على الأراضي الكورية الشمالية التي ستُربك التوازن الإقليمي بأكمله وستُقيم سابقة خطيرة قرب الحدود الصينية. في الوقت نفسه، يُريد بكين أن تظل المُفاوِضة الحتمية لأي تسوية — وليس جزءاً من مشكلة تُحلّها واشنطن بمفردها أو بمعزل عن المصالح الصينية.</p>
-    <p>السيناريو الأخطر على المصالح الصينية ليس الحرب — إنه الاتفاق الأمريكي-الكوري الشمالي المباشر الذي يتجاوز بكين ويُقلّص نفوذها على الجار الحدودي. أي تسوية لا تمر عبر الصين هي هزيمة استراتيجية حتى لو لم تُطلق رصاصة واحدة.</p>
-  </div>
-
-  <!-- SECTION 2 -->
-  <div class="memo-section">
-    <div class="section-header">
-      <div class="section-num">٢</div>
-      <div class="section-title">التهديدات التي تواجه الصين في هذه الأزمة</div>
-    </div>
-    <ul class="point-list threats">
-      <li><span class="pi">⚠</span><span class="pt"><strong>خطر التصعيد العسكري الأمريكي:</strong> إذا قرّر البيت الأبيض توجيه ضربة وقائية للمنشآت النووية الكورية الشمالية، ستنزلق المنطقة في فوضى تُهدد الحدود الصينية مباشرةً — سواء من خلال موجات نزوح كارثية أو من خلال سقوط النظام في بيونغ يانغ.</span></li>
-      <li><span class="pi">⚠</span><span class="pt"><strong>الضغط الاقتصادي الأمريكي على الشركات الصينية:</strong> قد تُوسّع واشنطن نطاق العقوبات الثانوية لتشمل شركات صينية تتعامل مع القطاعات الاقتصادية الكورية الشمالية، مما قد يُكلّف الاقتصاد الصيني خسائر ملموسة.</span></li>
-      <li><span class="pi">⚠</span><span class="pt"><strong>اتفاق أمريكي-كوري شمالي يُقصي الصين:</strong> على غرار قمة سنغافورة 2018، قد تسلك واشنطن مسار التفاوض المباشر مع بيونغ يانغ، محوِّلةً كوريا الشمالية من ورقة ضغط صينية إلى شريك أمريكي محتمل.</span></li>
-      <li><span class="pi">⚠</span><span class="pt"><strong>تسارع التحالف الأمريكي-الياباني-الكوري الجنوبي:</strong> الأزمة تُوفّر الذريعة المثالية لتعزيز القدرات الصاروخية الاعتراضية في اليابان وكوريا الجنوبية وتوسيع المناورات المشتركة — مما يُقرّب الحضور العسكري الأمريكي من الحدود الصينية.</span></li>
-    </ul>
-  </div>
-
-  <!-- SECTION 3 -->
-  <div class="memo-section">
-    <div class="section-header">
-      <div class="section-num">٣</div>
-      <div class="section-title">الفرص المتاحة للصين في هذه الأزمة</div>
-    </div>
-    <ul class="point-list opport">
-      <li><span class="pi">✦</span><span class="pt"><strong>تعزيز صورة «المُستقرّ الإقليمي»:</strong> الصين القادرة على إقناع بيونغ يانغ بضبط النفس — أو على الأقل تقديم نفسها على هذا الأساس — تكسب مكانة دولية لا تستطيع أي قوة أخرى منافستها في هذا الملف.</span></li>
-      <li><span class="pi">✦</span><span class="pt"><strong>استثمار الأزمة لتحسين العلاقات مع كوريا الجنوبية:</strong> سيول التي تشعر بالقلق من بيونغ يانغ قد تكون أكثر استعداداً لقبول الدور الصيني الوسيط إذا قدّمت بكين ضمانات مقنعة تُقلّص التهديد الشمالي.</span></li>
-      <li><span class="pi">✦</span><span class="pt"><strong>اختبار تماسك التحالف الأمريكي:</strong> الأزمة الحادة تكشف التناقضات الداخلية في التحالف — اليابان تُفضّل الحذر، كوريا الجنوبية تخشى الحرب على أراضيها، وأمريكا تواجه ضغوطاً داخلية. الصين تستطيع تعميق هذه الشقوق دبلوماسياً.</span></li>
-      <li><span class="pi">✦</span><span class="pt"><strong>الدبلوماسية الثلاثية مع روسيا:</strong> توسيع التنسيق الصيني-الروسي في مجلس الأمن يُعطّل أي قرار ملزم ضد كوريا الشمالية ويُرسل رسالة بأن المحور البديل يتحرك بإرادة موحّدة.</span></li>
-    </ul>
-  </div>
-
-  <!-- SECTION 4 -->
-  <div class="memo-section">
-    <div class="section-header">
-      <div class="section-num">٤</div>
-      <div class="section-title">الموارد الصينية المتاحة للتعامل مع الأزمة</div>
-    </div>
-    <p>تمتلك الصين رصيداً استراتيجياً متعدد الأبعاد يُميّزها عن أي فاعل آخر في هذه الأزمة:</p>
-    <p><strong>الرافعة الاقتصادية الكورية الشمالية:</strong> نحو 90% من صادرات بيونغ يانغ تتجه للصين. عشرات الآلاف من العمال الكوريين الشماليين يعملون على الأراضي الصينية ويُرسلون ما يُقارب 1.5 مليار دولار سنوياً. هذا الاعتماد يمنح بكين نفوذاً فعلياً — إذا اختارت استخدامه صراحةً.</p>
-    <p><strong>العضوية الدائمة في مجلس الأمن:</strong> حق النقض (الفيتو) يمنع أي قرار أممي ملزم ضد كوريا الشمالية، ويُعطي الصين ورقة تعطيلية لا تمتلكها أي قوة أخرى.</p>
-    <p><strong>المكانة الاقتصادية العالمية:</strong> أمريكا لا تستطيع فرض حصار اقتصادي شامل على الصين دون أن تُضرّ سلاسل التوريد العالمية وأسعار الاستهلاك الأمريكية — وهذا يُعطي بكين هامشاً في التفاوض.</p>
-    <p><strong>الشراكة الاستراتيجية مع روسيا:</strong> التنسيق الصيني-الروسي يُوفّر جبهة دبلوماسية موحّدة تجعل أي عمل أمريكي أحادي أكثر كلفة سياسياً دولياً.</p>
-  </div>
-
-  <!-- SECTION 5 -->
-  <div class="strategy-box">
-    <div class="sb-label">الاستراتيجية الموصى بها</div>
-    <h3>«الدعم الصامت مع الواجهة الدبلوماسية»</h3>
-    <p>الإعلان العلني عن دعم الدبلوماسية والحوار والتهدئة، مع تقديم الصين نفسها على الصعيد الدولي كـ«مسؤول إقليمي» يسعى لخفض التوتر — وهذا يُقلّص الضغط الأمريكي ويُرسّخ المكانة الدولية.</p>
-    <p>في المقابل، مواصلة دعم الاستقرار الاقتصادي للنظام الكوري الشمالي بصورة هادئة ومُدارة، دون تصعيد علني يُعطي واشنطن ذريعة لعقوبات إضافية. الهدف: إبقاء النظام قائماً ومستقراً دون تصعيد نووي جديد.</p>
-    <p>تجنّب أي التزام عسكري مباشر، إلا في سيناريو هجوم أمريكي على الأراضي الصينية أو على الحدود المشتركة مباشرةً — وهو سيناريو منخفض الاحتمال لكن يجب تحديده كخط أحمر.</p>
-  </div>
-
-  <!-- SECTION 6 -->
-  <div class="memo-section">
-    <div class="section-header">
-      <div class="section-num">٥</div>
-      <div class="section-title">الخيارات التكتيكية الفورية</div>
-    </div>
-    <ul class="point-list tactics">
-      <li><span class="pi">→</span><span class="pt"><strong>إطلاق مبادرة دبلوماسية ثلاثية فورية (الصين-روسيا-كوريا الشمالية):</strong> إصدار بيان مشترك يدعو لوقف التصعيد والعودة للمفاوضات وفق «إطار الخطوتَين» (تجميد نووي مقابل تخفيف عقوبات). هذا يُقدّم الصين كمبادِرة دبلوماسية لا كحامية لبرنامج نووي.</span></li>
-      <li><span class="pi">→</span><span class="pt"><strong>تعزيز المراقبة العسكرية الهادئة على الحدود:</strong> رفع جاهزية القوات في المنطقة العسكرية الشمالية دون إعلان تعبئة علنية — إرسال رسالة ردعية لواشنطن من أن أي عملية عسكرية ستُلامس مناطق الاهتمام الصيني.</span></li>
-      <li><span class="pi">→</span><span class="pt"><strong>فتح قناة هادئة مع واشنطن:</strong> إتاحة اتصالات سرية مع الجانب الأمريكي تُوضّح فيها الصين «الخطوط الحمراء» والمصالح غير القابلة للمساس — مع التشديد على رفض أي عمل عسكري أحادي.</span></li>
-      <li><span class="pi">→</span><span class="pt"><strong>تفعيل الاتصالات الاقتصادية مع كوريا الجنوبية:</strong> تقديم حوافز اقتصادية لسيول تجعل التنسيق مع الصين أكثر جاذبية من التصعيد مع واشنطن — مشاريع بنية تحتية، تبادل طاقة، تخفيف التوترات التجارية.</span></li>
-      <li><span class="pi">→</span><span class="pt"><strong>إدارة الجانب الإعلامي:</strong> توجيه الخطاب الرسمي الصيني نحو «المخاوف الإنسانية والاستقرار الإقليمي»، مع تجنب أي تصريح يُفسَّر كدعم صريح للتهديدات الكورية الشمالية.</span></li>
-    </ul>
-  </div>
-
-  <!-- SECTION 7: Objectifs opérationnels -->
-  <div class="memo-section">
-    <div class="section-header">
-      <div class="section-num">٦</div>
-      <div class="section-title">الأهداف التشغيلية قصيرة المدى ومتوسطة المدى</div>
-    </div>
-    <p><strong>قصير المدى (4-8 أسابيع):</strong> منع أي عمل عسكري أمريكي. تجميد التصعيد الكوري الشمالي. تقديم مبادرة تفاوضية تُضع الصين في موقع الوسيط لا الشريك المتهم.</p>
-    <p><strong>متوسط المدى (6-18 شهراً):</strong> إرساء إطار تفاوضي متعدد الأطراف تكون الصين ركيزته. استخدام الفترة لتعميق الاعتماد الاقتصادي لكوريا الجنوبية على الصين وتقليص زخم تحالفها الأمريكي. الإبقاء على النظام الكوري الشمالي مستقراً ومُحكَم السيطرة دون أن يكون مصدر أزمة دائمة تستنزف الموقف الصيني.</p>
-    <p><strong>بعيد المدى:</strong> تكريس مبدأ أن أي تسوية دائمة في شبه الجزيرة الكورية لا يمكن أن تتم دون ضمانات صينية — وبالتالي تأمين أن «حق التوقيع» الصيني على أي معاهدة إقليمية مستقبلية أمر لا يمكن تجاهله.</p>
-  </div>
-
-  <!-- SIGNATURE BLOCK -->
-  <div class="memo-sig">
-    <div class="sig-block">
-      <div class="sig-role">وثيقة تحليلية أكاديمية — لأغراض المحاكاة الاستراتيجية فقط</div>
-      <div class="sig-name">المعهد الدولي لتحليل التهديدات — ITAB</div>
-      <div class="sig-role">تورسينج، فرنسا · مارس 2026</div>
-    </div>
-    <div class="sig-block" style="text-align:left">
-      <div class="sig-role">الوثيقة 5 من 5 في سلسلة محاكاة بحر الصين</div>
-      <div class="sig-name">ناصر الصبري</div>
-      <div class="sig-role">مدير ITAB · محلل جيوسياسي</div>
+<footer class="site-footer"><div class="footer-inner">
+  <div class="footer-bottom">
+    <span>© 2026 geopolô · ar.geopolo.com</span>
+    <div class="fl2">
+      <a href="/">الرئيسية</a>
+      <a href="/asie.html">آسيا</a>
+      <a href="/abonnement.html">الاشتراك</a>
+      <a href="https://geopolo.com">🇫🇷 Français</a>
     </div>
   </div>
-
-  <!-- NAV BOTTOM -->
-  <div style="margin-top:2.5rem;padding-top:1.5rem;border-top:1px solid var(--rule);display:flex;flex-wrap:wrap;gap:1rem">
-    <a href="/articles/chine-puissance-portrait-strategique.html" style="font-size:.82rem;color:var(--a);font-family:'Noto Naskh Arabic',sans-serif">← الوثيقة 1: بورتريه الصين</a>
-    <a href="/articles/chine-strategie-3-ans.html" style="font-size:.82rem;color:var(--a);font-family:'Noto Naskh Arabic',sans-serif">← الوثيقة 2: استراتيجية 3 سنوات</a>
-    <a href="/articles/chine-equilibre-forces-mer-chine.html" style="font-size:.82rem;color:var(--a);font-family:'Noto Naskh Arabic',sans-serif">← الوثيقة 3: التوازن العسكري</a>
-    <a href="/articles/chine-problemes-reponses.html" style="font-size:.82rem;color:var(--a);font-family:'Noto Naskh Arabic',sans-serif">← الوثيقة 4: المشكلات والردود</a>
-  </div>
-
-</div><!-- /memo-body -->
-
-</body>
-</html>
+</div></footer>
+<script>
+window.addEventListener('scroll',()=>{
+  const d=document.documentElement;
+  document.getElementById('pb').style.width=(d.scrollTop/(d.scrollHeight-d.clientHeight)*100)+'%';
+});
+// Fade in article
+const art=document.querySelector('.article-body');
+if(art)setTimeout(()=>art.classList.add('visible'),100);
+// Active TOC
+const secs=document.querySelectorAll('[id^="s"]');
+const tocLinks=document.querySelectorAll('.tl2 a');
+if(secs.length&&tocLinks.length){
+  const obs=new IntersectionObserver(entries=>{
+    entries.forEach(e=>{if(e.isIntersecting){
+      tocLinks.forEach(l=>l.classList.remove('toc-active'));
+      const a=document.querySelector('.tl2 a[href="#'+e.target.id+'"]');
+      if(a)a.classList.add('toc-active');
+    }});
+  },{rootMargin:'-25% 0px -65% 0px'});
+  secs.forEach(s=>obs.observe(s));
+}
+function shareX(){window.open('https://twitter.com/intent/tweet?url='+encodeURIComponent(location.href)+'&text='+encodeURIComponent(document.title));}
+function shareWA(){window.open('https://wa.me/?text='+encodeURIComponent(document.title+' '+location.href));}
+function copyLink(){navigator.clipboard.writeText(location.href).then(()=>alert('تم نسخ الرابط ✓'));}
+</script>
+</body></html>
