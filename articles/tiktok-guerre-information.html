@@ -193,6 +193,65 @@ img{display:block;max-width:100%;height:auto}a{color:inherit;text-decoration:non
 .footer-bottom{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:.5rem;color:#3a3850;padding-top:1rem;border-top:1px solid #252535;margin-top:1rem}
 .fl2{display:flex;gap:1.2rem}.fl2 a{color:#5a5870;transition:color .2s}.fl2 a:hover{color:var(--accent)}
 @media(max-width:640px){.site-header{padding:.8rem 1rem}.hero-content{padding:1.5rem 1rem}.page-layout{padding:1.5rem 1rem}.nl-form{flex-direction:column}.topbar{display:none}}
+
+/* ══ WORLD MAP FOOTER ══ */
+.geo-footer{position:relative;width:100%;background:#f0f0ee;overflow:hidden;border-top:2px solid #d0cfc8}
+.map-layer{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;pointer-events:none;z-index:0}
+.map-layer svg{width:100%;height:100%;opacity:.28;pointer-events:all}
+.region{transition:opacity .25s ease,filter .25s ease;cursor:default}
+.region:hover{opacity:.85!important;filter:brightness(1.12)}
+.map-layer::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 60% 80% at 50% 50%,rgba(240,240,238,.55) 0%,transparent 100%);z-index:1;pointer-events:none}
+.footer-content{position:relative;z-index:2;max-width:1100px;margin:0 auto;padding:4rem 2rem 2rem;display:flex;flex-direction:column;align-items:center}
+.footer-brand{text-align:center;margin-bottom:2.8rem}
+.footer-logo{display:inline-flex;align-items:baseline;gap:1px;font-size:2rem;font-weight:800;letter-spacing:-.04em;color:#1a2340;line-height:1;margin-bottom:.5rem}
+.footer-logo .accent{color:#c8920a}
+.footer-logo .dot{width:6px;height:6px;background:#e05a2b;border-radius:50%;margin-bottom:2px;display:inline-block}
+.footer-tagline{font-size:.78rem;font-weight:500;letter-spacing:.18em;text-transform:uppercase;color:#6a6a72;margin-top:.3rem}
+.footer-divider{display:flex;align-items:center;gap:.6rem;margin-bottom:2.5rem;width:100%;max-width:600px}
+.footer-divider::before,.footer-divider::after{content:'';flex:1;height:1px;background:linear-gradient(to right,transparent,#c0bdb5,transparent)}
+.footer-divider span{display:flex;gap:4px;align-items:center}
+.footer-divider span i{width:4px;height:4px;border-radius:50%;background:#c8920a;opacity:.6;display:block}
+.footer-links{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem 4rem;width:100%;max-width:680px;margin-bottom:3rem}
+.link-col h4{font-size:.62rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#1a2340;margin-bottom:.9rem;display:flex;align-items:center;gap:.4rem}
+.link-col h4::after{content:'';flex:1;height:1px;background:#d0cfc8}
+.link-col ul{list-style:none}
+.link-col li{margin-bottom:.45rem}
+.link-col a{font-size:.78rem;color:#4a4e5a;text-decoration:none;transition:color .2s;display:inline-flex;align-items:center;gap:.3rem}
+.link-col a::before{content:'';width:3px;height:3px;border-radius:50%;background:currentColor;opacity:.4;flex-shrink:0;transition:opacity .2s}
+.link-col a:hover{color:#1a2340}
+.link-col a:hover::before{opacity:1}
+.footer-legend{display:flex;flex-wrap:wrap;gap:.5rem 1.2rem;justify-content:center;margin-bottom:2rem}
+.legend-item{display:flex;align-items:center;gap:.35rem;font-size:.65rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:#5a5e6a}
+.legend-swatch{width:10px;height:10px;border-radius:2px;flex-shrink:0}
+.footer-bottom{width:100%;border-top:1px solid #d0cfc8;padding-top:1.2rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:.6rem}
+.footer-bottom p{font-size:.68rem;color:#8a8a92;letter-spacing:.04em}
+.footer-bottom-links{display:flex;gap:1.2rem}
+.footer-bottom-links a{font-size:.68rem;color:#8a8a92;text-decoration:none;transition:color .2s}
+.footer-bottom-links a:hover{color:#1a2340}
+@media(max-width:640px){.footer-links{grid-template-columns:1fr 1fr;gap:1.5rem 2rem;max-width:100%}.footer-links .link-col:last-child{grid-column:1/-1}.footer-bottom{flex-direction:column;align-items:center;text-align:center}.footer-logo{font-size:1.6rem}.map-layer svg{opacity:.18}}
+@media(max-width:400px){.footer-links{grid-template-columns:1fr}.footer-links .link-col:last-child{grid-column:auto}}
+
+
+/* ═══ BUG FIXES ═══ */
+/* Fix 1: nested .article-body — inner element must always be visible */
+.article-body .article-body,
+.article-body article,
+.article-body .fade-up,
+.article-body .fu{opacity:1!important;transform:none!important;transition:none!important}
+/* Fix 1b: safe fallback — content visible even if JS fails */
+.article-body{opacity:1;transform:none}
+.article-body.will-animate{opacity:0;transform:translateY(20px);transition:opacity .6s,transform .6s}
+.article-body.will-animate.visible{opacity:1;transform:none}
+/* Fix 3: newsletter form — pseudo overlay must not block inputs */
+.nl-cta::before{pointer-events:none!important}
+.nl-cta,.nl-cta *{position:relative}
+.nl-input,.nl-btn{position:relative;z-index:10;pointer-events:all!important}
+.nl-form{position:relative;z-index:10}
+/* Fix 2: additional share buttons */
+.share-fb{background:#1877f2;color:#fff}
+.share-rd{background:#ff4500;color:#fff}
+.share-ss{background:#ff6719;color:#fff}
+
 </style>
 </head>
 <body>
@@ -398,17 +457,100 @@ img{display:block;max-width:100%;height:auto}a{color:inherit;text-decoration:non
     </div>
   </aside>
 </div>
-<footer class="site-footer"><div class="footer-inner">
-  <div class="footer-bottom">
-    <span>© 2026 geopolô · ar.geopolo.com</span>
-    <div class="fl2">
-      <a href="/">الرئيسية</a>
-      <a href="/culture.html">جيوسياسة</a>
-      <a href="/abonnement.html">الاشتراك</a>
-      <a href="https://geopolo.com">🇫🇷 Français</a>
+<footer class="geo-footer">
+  <div class="map-layer">
+    <svg viewBox="0 0 1000 480" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice">
+      <rect width="1000" height="480" fill="#dde8f0"/>
+      <path class="region" fill="#1a3a6e" opacity=".55" d="M 298 28 L 318 20 L 345 18 L 372 22 L 390 32 L 395 48 L 385 62 L 365 72 L 345 78 L 322 76 L 305 65 L 295 50 Z"/>
+      <path class="region" id="r-na" fill="#1a3a6e" d="M 38 52 L 62 44 L 90 42 L 118 46 L 145 54 L 162 64 L 172 80 L 176 96 L 188 108 L 205 118 L 218 132 L 228 148 L 232 166 L 226 182 L 232 196 L 242 210 L 252 228 L 258 244 L 248 252 L 236 246 L 224 238 L 214 226 L 204 220 L 196 210 L 190 198 L 194 186 L 196 172 L 186 162 L 175 166 L 164 160 L 156 148 L 154 134 L 142 124 L 126 118 L 108 120 L 92 118 L 76 108 L 60 96 L 44 82 L 36 66 Z"/>
+      <ellipse class="region" fill="#1a3a6e" opacity=".7" cx="240" cy="212" rx="12" ry="5" transform="rotate(-15 240 212)"/>
+      <path class="region" id="r-sa" fill="#2c5f8a" d="M 244 252 L 260 242 L 282 244 L 308 248 L 332 258 L 356 272 L 374 290 L 388 312 L 398 338 L 402 368 L 394 398 L 378 420 L 358 434 L 336 438 L 314 428 L 296 410 L 282 388 L 272 362 L 266 336 L 262 308 L 256 282 L 248 264 Z"/>
+      <ellipse class="region" fill="#2d6a4f" opacity=".6" cx="412" cy="48" rx="16" ry="9"/>
+      <path class="region" fill="#2d6a4f" opacity=".7" d="M 434 76 L 444 70 L 452 74 L 456 84 L 450 94 L 440 96 L 432 88 Z"/>
+      <ellipse class="region" fill="#2d6a4f" opacity=".65" cx="426" cy="84" rx="5" ry="7"/>
+      <path class="region" id="r-eu" fill="#2d6a4f" d="M 452 58 L 476 48 L 510 46 L 538 52 L 556 64 L 560 78 L 552 92 L 540 100 L 524 106 L 508 108 L 494 112 L 482 120 L 468 124 L 454 120 L 448 110 L 446 96 L 448 80 Z"/>
+      <path class="region" fill="#3a8060" opacity=".75" d="M 470 46 L 490 38 L 508 40 L 514 52 L 506 62 L 492 66 L 476 62 L 468 52 Z"/>
+      <path class="region" id="r-as" fill="#1b4965" d="M 452 58 L 510 46 L 580 38 L 660 32 L 750 30 L 840 34 L 910 40 L 958 50 L 975 62 L 965 76 L 942 88 L 912 96 L 878 100 L 848 96 L 822 104 L 800 114 L 780 118 L 758 116 L 738 124 L 718 130 L 700 126 L 682 118 L 662 114 L 646 110 L 628 118 L 614 116 L 598 120 L 578 114 L 562 104 L 550 92 L 546 78 L 538 68 Z"/>
+      <path class="region" id="r-me" fill="#e07a30" d="M 556 118 L 594 112 L 626 116 L 654 126 L 668 144 L 668 164 L 656 184 L 638 198 L 616 206 L 594 200 L 574 188 L 558 172 L 550 154 L 550 136 Z"/>
+      <path class="region" id="r-af" fill="#40916c" d="M 446 134 L 506 126 L 548 132 L 570 148 L 578 168 L 580 196 L 574 228 L 566 264 L 554 300 L 538 334 L 518 360 L 498 378 L 476 382 L 456 372 L 440 352 L 430 324 L 426 294 L 428 262 L 432 230 L 436 198 L 440 168 L 442 150 Z"/>
+      <ellipse class="region" fill="#52b788" opacity=".7" cx="580" cy="336" rx="10" ry="22" transform="rotate(15 580 336)"/>
+      <path class="region" fill="#1b4965" opacity=".9" d="M 630 130 L 668 124 L 704 132 L 730 150 L 748 172 L 750 196 L 740 216 L 724 230 L 706 234 L 694 222 L 686 204 L 674 196 L 660 204 L 650 218 L 636 214 L 624 198 L 616 178 L 616 158 L 624 142 Z"/>
+      <path class="region" fill="#1b4965" opacity=".85" d="M 762 162 L 800 152 L 834 158 L 858 172 L 862 194 L 852 212 L 832 222 L 810 224 L 792 214 L 774 200 L 762 182 Z"/>
+      <ellipse class="region" fill="#1b4965" opacity=".7" cx="862" cy="230" rx="30" ry="12" transform="rotate(-10 862 230)"/>
+      <ellipse class="region" fill="#1b4965" opacity=".65" cx="840" cy="256" rx="24" ry="10" transform="rotate(5 840 256)"/>
+      <ellipse class="region" fill="#1b4965" opacity=".75" cx="900" cy="112" rx="8" ry="18" transform="rotate(20 900 112)"/>
+      <path class="region" id="r-oc" fill="#1d3557" d="M 812 306 L 858 290 L 906 292 L 944 308 L 968 332 L 972 362 L 960 392 L 936 410 L 906 418 L 872 414 L 842 398 L 820 374 L 808 346 L 810 320 Z"/>
+      <path class="region" fill="#1d3557" opacity=".75" d="M 974 370 L 986 356 L 992 366 L 988 382 L 976 390 L 970 378 Z"/>
+      <g stroke="#b8c8d8" stroke-width=".4" opacity=".5" fill="none">
+        <line x1="0" y1="240" x2="1000" y2="240" stroke-dasharray="4,6"/>
+        <line x1="0" y1="180" x2="1000" y2="180" stroke-dasharray="2,8" opacity=".4"/>
+        <line x1="0" y1="300" x2="1000" y2="300" stroke-dasharray="2,8" opacity=".4"/>
+        <line x1="278" y1="0" x2="278" y2="480" stroke-dasharray="2,8" opacity=".3"/>
+        <line x1="500" y1="0" x2="500" y2="480" stroke-dasharray="2,8" opacity=".3"/>
+        <line x1="722" y1="0" x2="722" y2="480" stroke-dasharray="2,8" opacity=".3"/>
+      </g>
+      <g opacity=".5">
+        <circle cx="604" cy="164" r="3.5" fill="#e05a2b" opacity=".8"/>
+        <circle cx="618" cy="172" r="2.5" fill="#e05a2b" opacity=".6"/>
+        <circle cx="484" cy="228" r="3" fill="#e05a2b" opacity=".7"/>
+        <circle cx="554" cy="98" r="2.8" fill="#e05a2b" opacity=".75"/>
+        <circle cx="786" cy="190" r="2" fill="#e05a2b" opacity=".5"/>
+      </g>
+    </svg>
+  </div>
+  <div class="footer-content">
+    <div class="footer-brand">
+      <div class="footer-logo">geo<span class="accent">pol</span><span class="dot"></span></div>
+      <p class="footer-tagline">Global Geopolitical Analysis</p>
+    </div>
+    <div class="footer-divider"><span><i></i><i></i><i></i></span></div>
+    <nav class="footer-links">
+      <div class="link-col">
+        <h4>À propos</h4>
+        <ul>
+          <li><a href="/abonnement.html">الاشتراك</a></li>
+          <li><a href="https://geopolo.com">Version française</a></li>
+          <li><a href="/opinion.html">Opinion</a></li>
+        </ul>
+      </div>
+      <div class="link-col">
+        <h4>Régions</h4>
+        <ul>
+          <li><a href="/proche-or.html">Moyen-Orient</a></li>
+          <li><a href="/afr.html">Afrique</a></li>
+          <li><a href="/asie.html">Asie</a></li>
+          <li><a href="/eu.html">Europe</a></li>
+          <li><a href="/ame.html">Amériques</a></li>
+        </ul>
+      </div>
+      <div class="link-col">
+        <h4>Données</h4>
+        <ul>
+          <li><a href="/sitemap.xml">Sitemap</a></li>
+          <li><a href="/abonnement.html">Newsletter</a></li>
+          <li><a href="https://geopolo.com">geopolo.com</a></li>
+        </ul>
+      </div>
+    </nav>
+    <div class="footer-legend">
+      <div class="legend-item"><span class="legend-swatch" style="background:#1a3a6e"></span>Amérique du Nord</div>
+      <div class="legend-item"><span class="legend-swatch" style="background:#2c5f8a"></span>Amérique du Sud</div>
+      <div class="legend-item"><span class="legend-swatch" style="background:#2d6a4f"></span>Europe</div>
+      <div class="legend-item"><span class="legend-swatch" style="background:#40916c"></span>Afrique</div>
+      <div class="legend-item"><span class="legend-swatch" style="background:#e07a30"></span>Moyen-Orient</div>
+      <div class="legend-item"><span class="legend-swatch" style="background:#1b4965"></span>Asie</div>
+      <div class="legend-item"><span class="legend-swatch" style="background:#1d3557"></span>Océanie</div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 geopolô · ar.geopolo.com · تحليلات جيوسياسية مستقلة</p>
+      <nav class="footer-bottom-links">
+        <a href="/">الرئيسية</a>
+        <a href="/abonnement.html">الاشتراك</a>
+        <a href="/sitemap.xml">Sitemap</a>
+      </nav>
     </div>
   </div>
-</div></footer>
+</footer>
 <script>
 window.addEventListener('scroll',()=>{
   const d=document.documentElement;
