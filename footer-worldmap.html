@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Geopolo — Footer World Map</title>
+<style>
+  /* ── RESET ── */
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Segoe UI', system-ui, sans-serif; background: #e8e8e8; }
+
+  /* ══════════════════════════════════════
+     FOOTER
+  ══════════════════════════════════════ */
+  .geo-footer {
+    position: relative;
+    width: 100%;
+    background: #f0f0ee;
+    overflow: hidden;
+    border-top: 2px solid #d0cfc8;
+  }
+
+  /* ── MAP LAYER ── */
+  .map-layer {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none;
+    z-index: 0;
+  }
+  .map-layer svg {
+    width: 100%;
+    height: 100%;
+    opacity: 0.28;
+    pointer-events: all;
+  }
+
+  /* Region hover — pointer-events re-enabled for regions */
+  .region {
+    transition: opacity .25s ease, filter .25s ease;
+    cursor: default;
+  }
+  .region:hover {
+    opacity: 0.85 !important;
+    filter: brightness(1.12);
+  }
+
+  /* ── GRADIENT OVERLAYS (text readability) ── */
+  .map-layer::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse 60% 80% at 50% 50%,
+        rgba(240,240,238,0.55) 0%,
+        transparent 100%);
+    z-index: 1;
+    pointer-events: none;
+  }
+
+  /* ── CONTENT LAYER ── */
+  .footer-content {
+    position: relative;
+    z-index: 2;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 4rem 2rem 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+  }
+
+  /* Brand */
+  .footer-brand {
+    text-align: center;
+    margin-bottom: 2.8rem;
+  }
+  .footer-logo {
+    display: inline-flex;
+    align-items: baseline;
+    gap: 1px;
+    font-size: 2rem;
+    font-weight: 800;
+    letter-spacing: -.04em;
+    color: #1a2340;
+    line-height: 1;
+    margin-bottom: .5rem;
+  }
+  .footer-logo .accent { color: #c8920a; }
+  .footer-logo .dot {
+    width: 6px; height: 6px;
+    background: #e05a2b;
+    border-radius: 50%;
+    margin-bottom: 2px;
+    display: inline-block;
+  }
+  .footer-tagline {
+    font-size: .78rem;
+    font-weight: 500;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+    color: #6a6a72;
+    margin-top: .3rem;
+  }
+
+  /* Divider line with dots */
+  .footer-divider {
+    display: flex;
+    align-items: center;
+    gap: .6rem;
+    margin-bottom: 2.5rem;
+    width: 100%;
+    max-width: 600px;
+  }
+  .footer-divider::before,
+  .footer-divider::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(to right, transparent, #c0bdb5, transparent);
+  }
+  .footer-divider span {
+    display: flex;
+    gap: 4px;
+    align-items: center;
+  }
+  .footer-divider span i {
+    width: 4px; height: 4px;
+    border-radius: 50%;
+    background: #c8920a;
+    opacity: .6;
+    display: block;
+  }
+
+  /* Links grid */
+  .footer-links {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem 4rem;
+    width: 100%;
+    max-width: 680px;
+    margin-bottom: 3rem;
+  }
+  .link-col h4 {
+    font-size: .62rem;
+    font-weight: 700;
+    letter-spacing: .16em;
+    text-transform: uppercase;
+    color: #1a2340;
+    margin-bottom: .9rem;
+    display: flex;
+    align-items: center;
+    gap: .4rem;
+  }
+  .link-col h4::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: #d0cfc8;
+  }
+  .link-col ul { list-style: none; }
+  .link-col li { margin-bottom: .45rem; }
+  .link-col a {
+    font-size: .78rem;
+    color: #4a4e5a;
+    text-decoration: none;
+    transition: color .2s;
+    display: inline-flex;
+    align-items: center;
+    gap: .3rem;
+  }
+  .link-col a::before {
+    content: '';
+    width: 3px; height: 3px;
+    border-radius: 50%;
+    background: currentColor;
+    opacity: .4;
+    flex-shrink: 0;
+    transition: opacity .2s;
+  }
+  .link-col a:hover { color: #1a2340; }
+  .link-col a:hover::before { opacity: 1; }
+
+  /* Region legend */
+  .footer-legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .5rem 1.2rem;
+    justify-content: center;
+    margin-bottom: 2rem;
+  }
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: .35rem;
+    font-size: .65rem;
+    font-weight: 600;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    color: #5a5e6a;
+  }
+  .legend-swatch {
+    width: 10px; height: 10px;
+    border-radius: 2px;
+    flex-shrink: 0;
+  }
+
+  /* Bottom bar */
+  .footer-bottom {
+    width: 100%;
+    border-top: 1px solid #d0cfc8;
+    padding-top: 1.2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: .6rem;
+  }
+  .footer-bottom p {
+    font-size: .68rem;
+    color: #8a8a92;
+    letter-spacing: .04em;
+  }
+  .footer-bottom-links {
+    display: flex;
+    gap: 1.2rem;
+  }
+  .footer-bottom-links a {
+    font-size: .68rem;
+    color: #8a8a92;
+    text-decoration: none;
+    transition: color .2s;
+  }
+  .footer-bottom-links a:hover { color: #1a2340; }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 640px) {
+    .footer-links {
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem 2rem;
+      max-width: 100%;
+    }
+    .footer-links .link-col:last-child {
+      grid-column: 1 / -1;
+    }
+    .footer-bottom {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+    .footer-logo { font-size: 1.6rem; }
+    .map-layer svg { opacity: .18; }
+  }
+  @media (max-width: 400px) {
+    .footer-links { grid-template-columns: 1fr; }
+    .footer-links .link-col:last-child { grid-column: auto; }
+  }
+</style>
+</head>
+<body>
+
+<footer class="geo-footer">
+
+  <!-- ══ WORLD MAP SVG ══ -->
+  <div class="map-layer">
+    <svg viewBox="0 0 1000 480" xmlns="http://www.w3.org/2000/svg"
+         aria-hidden="true" preserveAspectRatio="xMidYMid slice">
+
+      <!-- Ocean background -->
+      <rect width="1000" height="480" fill="#dde8f0"/>
+
+      <!-- ── GREENLAND ── -->
+      <path class="region" id="greenland" fill="#1a3a6e" opacity=".55"
+        d="M 298 28 L 318 20 L 345 18 L 372 22 L 390 32 L 395 48 L 385 62
+           L 365 72 L 345 78 L 322 76 L 305 65 L 295 50 Z"/>
+
+      <!-- ── NORTH AMERICA ── -->
+      <path class="region" id="north-america" fill="#1a3a6e"
+        d="M 38 52 L 62 44 L 90 42 L 118 46 L 145 54 L 162 64 L 172 80
+           L 176 96 L 188 108 L 205 118 L 218 132 L 228 148 L 232 166
+           L 226 182 L 232 196 L 242 210 L 252 228 L 258 244 L 248 252
+           L 236 246 L 224 238 L 214 226 L 204 220 L 196 210 L 190 198
+           L 194 186 L 196 172 L 186 162 L 175 166 L 164 160 L 156 148
+           L 154 134 L 142 124 L 126 118 L 108 120 L 92 118 L 76 108
+           L 60 96 L 44 82 L 36 66 Z"/>
+
+      <!-- ── CUBA / CARIBBEAN (small shape) ── -->
+      <ellipse class="region" fill="#1a3a6e" opacity=".7"
+        cx="240" cy="212" rx="12" ry="5" transform="rotate(-15 240 212)"/>
+
+      <!-- ── SOUTH AMERICA ── -->
+      <path class="region" id="south-america" fill="#2c5f8a"
+        d="M 244 252 L 260 242 L 282 244 L 308 248 L 332 258 L 356 272
+           L 374 290 L 388 312 L 398 338 L 402 368 L 394 398 L 378 420
+           L 358 434 L 336 438 L 314 428 L 296 410 L 282 388 L 272 362
+           L 266 336 L 262 308 L 256 282 L 248 264 Z"/>
+
+      <!-- ── ICELAND ── -->
+      <ellipse class="region" fill="#2d6a4f" opacity=".6"
+        cx="412" cy="48" rx="16" ry="9"/>
+
+      <!-- ── UK & IRELAND ── -->
+      <path class="region" fill="#2d6a4f" opacity=".7"
+        d="M 434 76 L 444 70 L 452 74 L 456 84 L 450 94 L 440 96 L 432 88 Z"/>
+      <ellipse class="region" fill="#2d6a4f" opacity=".65"
+        cx="426" cy="84" rx="5" ry="7"/>
+
+      <!-- ── EUROPE ── -->
+      <path class="region" id="europe" fill="#2d6a4f"
+        d="M 452 58 L 476 48 L 510 46 L 538 52 L 556 64 L 560 78 L 552 92
+           L 540 100 L 524 106 L 508 108 L 494 112 L 482 120 L 468 124
+           L 454 120 L 448 110 L 446 96 L 448 80 Z"/>
+
+      <!-- ── SCANDINAVIA (lighter green tone) ── -->
+      <path class="region" fill="#3a8060" opacity=".75"
+        d="M 470 46 L 490 38 L 508 40 L 514 52 L 506 62 L 492 66 L 476 62 L 468 52 Z"/>
+
+      <!-- ── RUSSIA / NORTH ASIA ── -->
+      <path class="region" id="russia-asia" fill="#1b4965"
+        d="M 452 58 L 510 46 L 580 38 L 660 32 L 750 30 L 840 34 L 910 40
+           L 958 50 L 975 62 L 965 76 L 942 88 L 912 96 L 878 100 L 848 96
+           L 822 104 L 800 114 L 780 118 L 758 116 L 738 124 L 718 130
+           L 700 126 L 682 118 L 662 114 L 646 110 L 628 118 L 614 116
+           L 598 120 L 578 114 L 562 104 L 550 92 L 546 78 L 538 68 Z"/>
+
+      <!-- ── MIDDLE EAST ── -->
+      <path class="region" id="middle-east" fill="#e07a30"
+        d="M 556 118 L 594 112 L 626 116 L 654 126 L 668 144 L 668 164
+           L 656 184 L 638 198 L 616 206 L 594 200 L 574 188 L 558 172
+           L 550 154 L 550 136 Z"/>
+
+      <!-- ── AFRICA ── -->
+      <path class="region" id="africa" fill="#40916c"
+        d="M 446 134 L 506 126 L 548 132 L 570 148 L 578 168 L 580 196
+           L 574 228 L 566 264 L 554 300 L 538 334 L 518 360 L 498 378
+           L 476 382 L 456 372 L 440 352 L 430 324 L 426 294 L 428 262
+           L 432 230 L 436 198 L 440 168 L 442 150 Z"/>
+
+      <!-- ── MADAGASCAR ── -->
+      <ellipse class="region" fill="#52b788" opacity=".7"
+        cx="580" cy="336" rx="10" ry="22" transform="rotate(15 580 336)"/>
+
+      <!-- ── SOUTH ASIA (India etc.) ── -->
+      <path class="region" id="south-asia" fill="#1b4965" opacity=".9"
+        d="M 630 130 L 668 124 L 704 132 L 730 150 L 748 172 L 750 196
+           L 740 216 L 724 230 L 706 234 L 694 222 L 686 204 L 674 196
+           L 660 204 L 650 218 L 636 214 L 624 198 L 616 178 L 616 158
+           L 624 142 Z"/>
+
+      <!-- ── SOUTHEAST ASIA ── -->
+      <path class="region" id="southeast-asia" fill="#1b4965" opacity=".85"
+        d="M 762 162 L 800 152 L 834 158 L 858 172 L 862 194 L 852 212
+           L 832 222 L 810 224 L 792 214 L 774 200 L 762 182 Z"/>
+
+      <!-- ── SE ASIA ISLANDS (Indonesia/Philippines) ── -->
+      <ellipse class="region" fill="#1b4965" opacity=".7"
+        cx="862" cy="230" rx="30" ry="12" transform="rotate(-10 862 230)"/>
+      <ellipse class="region" fill="#1b4965" opacity=".65"
+        cx="840" cy="256" rx="24" ry="10" transform="rotate(5 840 256)"/>
+      <ellipse class="region" fill="#1b4965" opacity=".6"
+        cx="890" cy="202" rx="18" ry="8" transform="rotate(-15 890 202)"/>
+
+      <!-- ── JAPAN ── -->
+      <ellipse class="region" fill="#1b4965" opacity=".75"
+        cx="900" cy="112" rx="8" ry="18" transform="rotate(20 900 112)"/>
+
+      <!-- ── EAST AFRICA / HORN (Somalia, Ethiopia) ── -->
+      <path class="region" fill="#52b788" opacity=".6"
+        d="M 578 200 L 610 200 L 616 218 L 600 240 L 576 248 L 564 236 L 570 216 Z"/>
+
+      <!-- ── OCEANIA (Australia) ── -->
+      <path class="region" id="oceania" fill="#1d3557"
+        d="M 812 306 L 858 290 L 906 292 L 944 308 L 968 332 L 972 362
+           L 960 392 L 936 410 L 906 418 L 872 414 L 842 398 L 820 374
+           L 808 346 L 810 320 Z"/>
+
+      <!-- ── NEW ZEALAND ── -->
+      <path class="region" fill="#1d3557" opacity=".75"
+        d="M 974 370 L 986 356 L 992 366 L 988 382 L 976 390 L 970 378 Z"/>
+      <ellipse class="region" fill="#1d3557" opacity=".65"
+        cx="984" cy="400" rx="7" ry="12" transform="rotate(10 984 400)"/>
+
+      <!-- ── ALASKA (separate label) ── -->
+      <path class="region" fill="#1a3a6e" opacity=".8"
+        d="M 38 52 L 62 44 L 82 48 L 86 62 L 74 74 L 52 78 L 36 70 Z"/>
+
+      <!-- ── CANADA ARCTIC ISLANDS ── -->
+      <ellipse class="region" fill="#1a3a6e" opacity=".4"
+        cx="230" cy="38" rx="28" ry="10"/>
+
+      <!-- ── GRID LINES (subtle latitude/longitude) ── -->
+      <g stroke="#b8c8d8" stroke-width=".4" opacity=".5" fill="none">
+        <!-- Equator -->
+        <line x1="0" y1="240" x2="1000" y2="240" stroke-dasharray="4,6"/>
+        <!-- Tropics -->
+        <line x1="0" y1="180" x2="1000" y2="180" stroke-dasharray="2,8" opacity=".4"/>
+        <line x1="0" y1="300" x2="1000" y2="300" stroke-dasharray="2,8" opacity=".4"/>
+        <!-- Arctic/Antarctic circles -->
+        <line x1="0" y1="113" x2="1000" y2="113" stroke-dasharray="1,10" opacity=".3"/>
+        <line x1="0" y1="367" x2="1000" y2="367" stroke-dasharray="1,10" opacity=".3"/>
+        <!-- Meridians -->
+        <line x1="278" y1="0" x2="278" y2="480" stroke-dasharray="2,8" opacity=".3"/>
+        <line x1="500" y1="0" x2="500" y2="480" stroke-dasharray="2,8" opacity=".3"/>
+        <line x1="722" y1="0" x2="722" y2="480" stroke-dasharray="2,8" opacity=".3"/>
+      </g>
+
+      <!-- ── CONFLICT / DATA DOTS (decorative ACLED-style) ── -->
+      <g opacity=".5">
+        <!-- Middle East cluster -->
+        <circle cx="604" cy="164" r="3.5" fill="#e05a2b" opacity=".8"/>
+        <circle cx="618" cy="172" r="2.5" fill="#e05a2b" opacity=".6"/>
+        <circle cx="596" cy="180" r="2" fill="#e05a2b" opacity=".5"/>
+        <circle cx="624" cy="158" r="1.8" fill="#e05a2b" opacity=".4"/>
+        <!-- Sahel cluster -->
+        <circle cx="484" cy="228" r="3" fill="#e05a2b" opacity=".7"/>
+        <circle cx="496" cy="240" r="2" fill="#e05a2b" opacity=".5"/>
+        <circle cx="474" cy="236" r="1.5" fill="#e05a2b" opacity=".4"/>
+        <!-- Ukraine cluster -->
+        <circle cx="554" cy="98" r="2.8" fill="#e05a2b" opacity=".75"/>
+        <circle cx="562" cy="106" r="1.8" fill="#e05a2b" opacity=".5"/>
+        <!-- Sudan cluster -->
+        <circle cx="556" cy="234" r="2.2" fill="#e05a2b" opacity=".6"/>
+        <!-- Myanmar cluster -->
+        <circle cx="786" cy="190" r="2" fill="#e05a2b" opacity=".5"/>
+      </g>
+
+      <!-- ── COUNTRY BORDERS (very subtle grid lines on land) ── -->
+      <g stroke="#c8d8c8" stroke-width=".3" opacity=".4" fill="none">
+        <!-- Europe internal borders (approximate) -->
+        <line x1="470" y1="72" x2="480" y2="110"/>
+        <line x1="490" y1="68" x2="494" y2="112"/>
+        <line x1="510" y1="66" x2="512" y2="108"/>
+        <line x1="528" y1="70" x2="526" y2="100"/>
+      </g>
+
+    </svg>
+  </div>
+
+  <!-- ══ FOOTER CONTENT ══ -->
+  <div class="footer-content">
+
+    <!-- Brand -->
+    <div class="footer-brand">
+      <div class="footer-logo">
+        geo<span class="accent">pol</span><span class="dot"></span>
+      </div>
+      <p class="footer-tagline">Global Geopolitical Analysis</p>
+    </div>
+
+    <!-- Divider -->
+    <div class="footer-divider">
+      <span><i></i><i></i><i></i></span>
+    </div>
+
+    <!-- Links -->
+    <nav class="footer-links" aria-label="Footer navigation">
+      <div class="link-col">
+        <h4>About</h4>
+        <ul>
+          <li><a href="#">Our Mission</a></li>
+          <li><a href="#">Editorial Charter</a></li>
+          <li><a href="#">Methodology</a></li>
+          <li><a href="#">Team</a></li>
+          <li><a href="#">Partners</a></li>
+        </ul>
+      </div>
+      <div class="link-col">
+        <h4>Regions</h4>
+        <ul>
+          <li><a href="#">Middle East</a></li>
+          <li><a href="#">Africa</a></li>
+          <li><a href="#">Asia-Pacific</a></li>
+          <li><a href="#">Europe</a></li>
+          <li><a href="#">Americas</a></li>
+        </ul>
+      </div>
+      <div class="link-col">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="#">Newsletter</a></li>
+          <li><a href="#">Press</a></li>
+          <li><a href="#">Submissions</a></li>
+          <li><a href="#">Advertising</a></li>
+          <li><a href="#">RSS Feed</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- Region legend -->
+    <div class="footer-legend" role="list" aria-label="Map regions">
+      <div class="legend-item" role="listitem">
+        <span class="legend-swatch" style="background:#1a3a6e"></span>North America
+      </div>
+      <div class="legend-item" role="listitem">
+        <span class="legend-swatch" style="background:#2c5f8a"></span>South America
+      </div>
+      <div class="legend-item" role="listitem">
+        <span class="legend-swatch" style="background:#2d6a4f"></span>Europe
+      </div>
+      <div class="legend-item" role="listitem">
+        <span class="legend-swatch" style="background:#40916c"></span>Africa
+      </div>
+      <div class="legend-item" role="listitem">
+        <span class="legend-swatch" style="background:#e07a30"></span>Middle East
+      </div>
+      <div class="legend-item" role="listitem">
+        <span class="legend-swatch" style="background:#1b4965"></span>Asia
+      </div>
+      <div class="legend-item" role="listitem">
+        <span class="legend-swatch" style="background:#1d3557"></span>Oceania
+      </div>
+    </div>
+
+    <!-- Bottom bar -->
+    <div class="footer-bottom">
+      <p>© 2026 Geopolo · ar.geopolo.com · Independent geopolitical analysis</p>
+      <nav class="footer-bottom-links" aria-label="Legal">
+        <a href="#">Privacy</a>
+        <a href="#">Terms</a>
+        <a href="#">Cookies</a>
+        <a href="#">Sitemap</a>
+      </nav>
+    </div>
+
+  </div><!-- /footer-content -->
+
+</footer>
+
+</body>
+</html>
