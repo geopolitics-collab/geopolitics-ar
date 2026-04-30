@@ -373,8 +373,9 @@ window.addEventListener('scroll',()=>{
   document.getElementById('pb').style.width=(d.scrollTop/(d.scrollHeight-d.clientHeight)*100)+'%';
 });
 // Fade in article
-const art=document.querySelector('.article-body');
-if(art)setTimeout(()=>art.classList.add('visible'),100);
+document.querySelectorAll('.article-body').forEach(el=>{
+  setTimeout(()=>el.classList.add('visible'),100);
+});
 // Active TOC
 const secs=document.querySelectorAll('[id^="s"]');
 const tocLinks=document.querySelectorAll('.tl2 a');
