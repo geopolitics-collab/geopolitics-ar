@@ -25,6 +25,7 @@
 <meta name="twitter:site" content="@geopolo_ar"/>
 <link rel="canonical" href="https://ar.geopolo.com/articles/maroc-vs-egypte-militaire.html"/>
 <script type="application/ld+json">
+
 {
   "@context": "https://schema.org",
   "@type": "NewsArticle",
@@ -50,7 +51,8 @@
   "inLanguage": "ar",
   "isAccessibleForFree": true
 }
-
+</script>
+<script>
 function subscribeGeo(form, lang) {
   lang = lang || 'ar';
   var input = form.querySelector('input[type="email"]');
@@ -97,6 +99,7 @@ function subscribeGeo(form, lang) {
   });
   return false;
 }
+
 
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
@@ -310,6 +313,22 @@ img{display:block;max-width:100%;height:auto}a{color:inherit;text-decoration:non
 
 
 .nl-msg{margin-top:.6rem;min-height:1.2rem;text-align:center;font-family:var(--sans,'Noto Naskh Arabic',sans-serif);font-size:.82rem;line-height:1.5;position:relative;z-index:11}
+
+/* ── AUTHOR CARD v2 ── */
+.author-card-v2{margin:2.5rem 0;display:flex;gap:1.5rem;align-items:flex-start;background:var(--surface,#fff);border:1px solid var(--rule,#ddd9d0);border-right:4px solid var(--brand,#0f4c81);padding:1.5rem;position:relative;overflow:hidden}
+.author-card-v2::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--brand,#0f4c81),var(--accent,#c8920a),var(--brand,#0f4c81));background-size:200% 100%;animation:shimmer 3s infinite linear}
+@keyframes shimmer{0%{background-position:200% 0}100%{background-position:-200% 0}}
+.author-photo{width:88px;height:88px;border-radius:50%;object-fit:cover;object-position:top center;flex-shrink:0;border:3px solid var(--brand,#0f4c81);box-shadow:0 4px 16px rgba(15,76,129,.2)}
+.author-info{flex:1;min-width:0}
+.author-name-v2{font-family:var(--serif,'Noto Serif Arabic',serif);font-size:1.05rem;font-weight:900;color:var(--ink,#12131a);margin-bottom:.15rem;line-height:1.2}
+.author-title-v2{font-family:var(--sans,'Noto Naskh Arabic',sans-serif);font-size:.68rem;font-weight:600;color:var(--brand,#0f4c81);letter-spacing:.04em;text-transform:uppercase;margin-bottom:.55rem}
+.author-bio-v2{font-family:var(--sans,'Noto Naskh Arabic',sans-serif);font-size:.85rem;color:var(--ink-3,#5a5c72);line-height:1.7;margin-bottom:.8rem}
+.author-links{display:flex;gap:.5rem;flex-wrap:wrap}
+.author-link{display:inline-flex;align-items:center;gap:.3rem;font-family:var(--sans,'Noto Naskh Arabic',sans-serif);font-size:.65rem;font-weight:600;padding:.28rem .7rem;border:1px solid currentColor;border-radius:2px;transition:background .2s,color .2s;text-decoration:none}
+.author-link.x-link{color:#000}.author-link.x-link:hover{background:#000;color:#fff}
+.author-link.site-link{color:var(--brand,#0f4c81)}.author-link.site-link:hover{background:var(--brand,#0f4c81);color:#fff}
+@media(max-width:480px){.author-card-v2{flex-direction:column;align-items:center;text-align:center}.author-links{justify-content:center}}
+
 </style>
 </head>
 <body>
@@ -386,7 +405,18 @@ img{display:block;max-width:100%;height:auto}a{color:inherit;text-decoration:non
 <li><a href="/articles/afrique-strategique-2026.html">Pourquoi l'Afrique devient stratégique en 2026 : ressources, puissances et enjeux</a></li>
 </ul>
 </div>
-<div class="au"><div class="av">ن</div><div><div class="an">ناصر الصبري</div><div class="ar2">مدير · ITAB</div><p class="ab">محلل جيوسياسي. يُدير ITAB ويُصدر مجلة ARES.</p></div></div><div class="rel"><div class="relt">📚 مقالات ذات صلة</div><div class="rg"><a class="rc" href="/articles/maroc-vs-algerie-armee-2026.html"><div class="rs" style="background:#c8821a"></div><div class="rb"><h4>المغرب والجزائر</h4><p class="rd">التنافس الأقرب</p><span class="ra">← اقرأ المقال</span></div></a><a class="rc" href="/articles/egypte-vs-israel-puissance-militaire.html"><div class="rs" style="background:#8b3a8b"></div><div class="rb"><h4>مصر ضد إسرائيل</h4><p class="rd">الميزان</p><span class="ra">← اقرأ المقال</span></div></a><a class="rc" href="/articles/top-10-armees-africaines.html"><div class="rs" style="background:#c8821a"></div><div class="rb"><h4>Top 10 جيوش أفريقيا</h4><p class="rd">التصنيف الكامل</p><span class="ra">← اقرأ المقال</span></div></a><a class="rc" href="/articles/afrique-future-superpuissance.html"><div class="rs" style="background:#c8821a"></div><div class="rb"><h4>أفريقيا 2050</h4><p class="rd">قوة مستقبلية؟</p><span class="ra">← اقرأ المقال</span></div></a></div></div></article>
+<div class="author-card-v2">
+  <img class="author-photo" src="https://pub-a7b1a75f72ab40548a0709f708ca2678.r2.dev/Nasser.jpg" alt="ناصر الصبري — محلل جيوسياسي" loading="lazy"/>
+  <div class="author-info">
+    <div class="author-name-v2">ناصر الصبري</div>
+    <div class="author-title-v2">محلل جيوسياسي · مؤسس geopolô</div>
+    <p class="author-bio-v2">محلل في الجيوسياسة والاستراتيجية الدولية. يتابع ملفات الشرق الأوسط وآسيا والقوى الكبرى. مؤسس مجلة geopolô للتحليلات الاستراتيجية المستقلة.</p>
+    <div class="author-links">
+      <a class="author-link x-link" href="https://x.com/geopolo_ar" target="_blank" rel="noopener">𝕏 Twitter</a>
+      <a class="author-link site-link" href="https://ar.geopolo.com" target="_blank" rel="noopener">🌐 geopolô</a>
+    </div>
+  </div>
+</div><div class="rel"><div class="relt">📚 مقالات ذات صلة</div><div class="rg"><a class="rc" href="/articles/maroc-vs-algerie-armee-2026.html"><div class="rs" style="background:#c8821a"></div><div class="rb"><h4>المغرب والجزائر</h4><p class="rd">التنافس الأقرب</p><span class="ra">← اقرأ المقال</span></div></a><a class="rc" href="/articles/egypte-vs-israel-puissance-militaire.html"><div class="rs" style="background:#8b3a8b"></div><div class="rb"><h4>مصر ضد إسرائيل</h4><p class="rd">الميزان</p><span class="ra">← اقرأ المقال</span></div></a><a class="rc" href="/articles/top-10-armees-africaines.html"><div class="rs" style="background:#c8821a"></div><div class="rb"><h4>Top 10 جيوش أفريقيا</h4><p class="rd">التصنيف الكامل</p><span class="ra">← اقرأ المقال</span></div></a><a class="rc" href="/articles/afrique-future-superpuissance.html"><div class="rs" style="background:#c8821a"></div><div class="rb"><h4>أفريقيا 2050</h4><p class="rd">قوة مستقبلية؟</p><span class="ra">← اقرأ المقال</span></div></a></div></div></article>
     <div class="nl-cta">
       <h3>📬 النشرة الأسبوعية — مجاناً</h3>
       <p>تحليلات جيوسياسية معمّقة كل أحد في بريدك. انضم إلى 12,000 قارئ.</p>
