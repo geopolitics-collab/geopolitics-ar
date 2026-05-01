@@ -1,0 +1,1597 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Design System — ar.geopolitique · نظام التصميم</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Arabic:wght@300;400;600;700;900&family=Noto+Naskh+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+
+<style>
+/* ═══════════════════════════════════════════════════════════════════
+   DESIGN TOKENS — ar.geopolitique Design System v1.0
+   Art Direction: Premium Editorial · The Economist × Bloomberg aesthetic
+   Primary: Deep Navy · Accent: Antique Gold · RTL-first
+═══════════════════════════════════════════════════════════════════ */
+:root {
+  /* ── BRAND SIGNATURE ── */
+  --navy-950: #060D14;
+  --navy-900: #0E1A2B;   /* PRIMARY — brand signature */
+  --navy-800: #162336;
+  --navy-700: #1E2F45;
+  --navy-600: #263B54;
+  --navy-500: #3A5470;
+  --navy-400: #5C7A96;
+  --navy-300: #8AAABB;
+  --navy-200: #B8CCDA;
+  --navy-100: #DDE8F0;
+  --navy-50:  #F0F5F9;
+
+  /* ── ANTIQUE GOLD (editorial accent) ── */
+  --gold-900: #6B4A00;
+  --gold-700: #9A6E0A;
+  --gold-500: #C4952A;   /* ACCENT — signature gold */
+  --gold-400: #D4AA4A;
+  --gold-300: #E4C472;
+  --gold-100: #FBF3DC;
+
+  /* ── PAPER TONES (backgrounds) ── */
+  --paper:    #F9F7F2;   /* main bg — warm ivory */
+  --paper-2:  #F3F0E8;   /* cards, sections */
+  --paper-3:  #EAE5D8;   /* borders, dividers */
+  --white:    #FFFFFF;
+
+  /* ── INK SCALE ── */
+  --ink-900: #0A0C0E;    /* headlines */
+  --ink-700: #1E2630;    /* body text */
+  --ink-500: #4A5568;    /* secondary text */
+  --ink-300: #8A94A6;    /* tertiary, captions */
+  --ink-100: #C8D0DC;    /* borders */
+
+  /* ── SECTION ACCENT COLORS ── */
+  --sec-global:   #0E1A2B;  /* Global — Navy (brand) */
+  --sec-mideast:  #B84A0C;  /* Middle East — Burnt Amber */
+  --sec-europe:   #1A4E8C;  /* Europe — Royal Blue */
+  --sec-africa:   #A0461A;  /* Africa — Terracotta */
+  --sec-asia:     #0B6B5A;  /* Asia — Jade */
+  --sec-strategy: #8C1A2A;  /* Strategic — Crimson */
+  --sec-economy:  #1A5C36;  /* Economy — Forest */
+  --sec-opinion:  #4A1A6B;  /* Opinion — Plum */
+
+  /* ── TYPOGRAPHY ── */
+  --serif: 'Noto Serif Arabic', Georgia, serif;
+  --sans:  'Noto Naskh Arabic', sans-serif;
+
+  /* ── SPACING SCALE ── */
+  --sp-1: .25rem;  --sp-2: .5rem;   --sp-3: .75rem;
+  --sp-4: 1rem;    --sp-6: 1.5rem;  --sp-8: 2rem;
+  --sp-12: 3rem;   --sp-16: 4rem;   --sp-24: 6rem;
+
+  /* ── BORDER RADIUS ── */
+  --r-none: 0;  --r-sm: 2px;  --r-md: 4px;
+
+  /* ── SHADOWS ── */
+  --shadow-sm: 0 1px 3px rgba(14,26,43,.06), 0 1px 2px rgba(14,26,43,.04);
+  --shadow-md: 0 4px 16px rgba(14,26,43,.08), 0 2px 6px rgba(14,26,43,.05);
+  --shadow-lg: 0 12px 40px rgba(14,26,43,.12), 0 4px 12px rgba(14,26,43,.06);
+
+  /* ── TRANSITIONS ── */
+  --ease: cubic-bezier(.4,0,.2,1);
+  --t-fast: 150ms;
+  --t-base: 250ms;
+  --t-slow: 400ms;
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   BASE RESET + FOUNDATION
+═══════════════════════════════════════════════════════════════════ */
+*,*::before,*::after { box-sizing:border-box; margin:0; padding:0; }
+html { scroll-behavior:smooth; font-size:16px; }
+body {
+  font-family: var(--serif);
+  background: var(--paper);
+  color: var(--ink-700);
+  direction: rtl;
+  line-height: 1.85;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+img { display:block; max-width:100%; height:auto; }
+a  { color:inherit; text-decoration:none; }
+button { cursor:pointer; font-family:inherit; }
+
+/* ═══════════════════════════════════════════════════════════════════
+   TYPOGRAPHY SYSTEM
+═══════════════════════════════════════════════════════════════════ */
+
+/* Display — for hero headlines */
+.t-display {
+  font-family: var(--serif);
+  font-size: clamp(2.4rem, 5vw, 4.2rem);
+  font-weight: 900;
+  line-height: 1.1;
+  letter-spacing: -.02em;
+  color: var(--ink-900);
+}
+
+/* Headline scale */
+.t-h1 { font-family:var(--serif); font-size:clamp(1.8rem,3.5vw,2.8rem); font-weight:900; line-height:1.18; color:var(--ink-900); }
+.t-h2 { font-family:var(--serif); font-size:clamp(1.3rem,2.5vw,1.9rem); font-weight:700; line-height:1.25; color:var(--ink-900); }
+.t-h3 { font-family:var(--serif); font-size:clamp(1.1rem,2vw,1.4rem); font-weight:700; line-height:1.3; color:var(--ink-900); }
+.t-h4 { font-family:var(--serif); font-size:1.05rem; font-weight:700; line-height:1.4; color:var(--ink-700); }
+
+/* Body scale */
+.t-body-lg { font-family:var(--serif); font-size:1.12rem; line-height:2; color:var(--ink-700); }
+.t-body    { font-family:var(--serif); font-size:1rem; line-height:1.95; color:var(--ink-700); }
+.t-body-sm { font-family:var(--sans); font-size:.88rem; line-height:1.75; color:var(--ink-500); }
+
+/* UI elements */
+.t-label  { font-family:var(--sans); font-size:.62rem; font-weight:700; letter-spacing:.14em; text-transform:uppercase; }
+.t-caption{ font-family:var(--sans); font-size:.72rem; color:var(--ink-300); line-height:1.5; }
+.t-overline{ font-family:var(--sans); font-size:.58rem; font-weight:700; letter-spacing:.22em; text-transform:uppercase; opacity:.7; }
+
+/* ═══════════════════════════════════════════════════════════════════
+   HEADER — Premium masthead
+═══════════════════════════════════════════════════════════════════ */
+.masthead {
+  background: var(--white);
+  border-bottom: 1px solid var(--paper-3);
+  position: sticky;
+  top: 0;
+  z-index: 200;
+}
+.masthead-top {
+  background: var(--navy-900);
+  padding: .35rem 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.masthead-top-text { font-family:var(--sans); font-size:.62rem; color:rgba(255,255,255,.55); letter-spacing:.08em; }
+.masthead-top-links { display:flex; gap:1rem; }
+.masthead-top-links a { font-family:var(--sans); font-size:.62rem; color:rgba(255,255,255,.55); transition:color var(--t-fast); }
+.masthead-top-links a:hover { color:var(--gold-400); }
+
+.masthead-main {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: .9rem 1.5rem;
+  gap: 1.5rem;
+}
+.logo-mark {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.logo-name {
+  font-family: var(--serif);
+  font-size: 1.7rem;
+  font-weight: 900;
+  color: var(--navy-900);
+  letter-spacing: -.03em;
+  line-height: 1;
+}
+.logo-name span { color: var(--gold-500); }
+.logo-sub {
+  font-family: var(--sans);
+  font-size: .55rem;
+  color: var(--ink-300);
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  margin-top: .15rem;
+}
+.logo-rule {
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, var(--gold-500) 0%, var(--navy-900) 100%);
+  margin-top: .3rem;
+}
+
+.masthead-actions { display:flex; align-items:center; gap:.8rem; }
+.btn-subscribe {
+  display:inline-flex; align-items:center; gap:.4rem;
+  padding:.5rem 1.1rem;
+  background: var(--navy-900);
+  color:#fff;
+  font-family: var(--sans);
+  font-size: .72rem;
+  font-weight: 700;
+  letter-spacing: .06em;
+  border: none;
+  transition: background var(--t-fast) var(--ease);
+}
+.btn-subscribe:hover { background: var(--navy-700); }
+.btn-subscribe .dot {
+  width: 5px; height:5px;
+  border-radius:50%;
+  background: var(--gold-400);
+  animation: pulse-dot 2s infinite;
+}
+@keyframes pulse-dot {
+  0%,100% { opacity:1; transform:scale(1); }
+  50%      { opacity:.5; transform:scale(.7); }
+}
+
+/* Navigation */
+.site-nav {
+  border-top: 1px solid var(--paper-3);
+  padding: 0 1.5rem;
+  display: flex;
+  align-items: stretch;
+  overflow-x: auto;
+  scrollbar-width: none;
+  gap: 0;
+}
+.site-nav::-webkit-scrollbar { display:none; }
+.nav-item {
+  display: flex;
+  align-items: center;
+  gap: .4rem;
+  padding: .6rem 1rem;
+  font-family: var(--sans);
+  font-size: .75rem;
+  font-weight: 600;
+  color: var(--ink-500);
+  border-bottom: 2px solid transparent;
+  white-space: nowrap;
+  transition: color var(--t-fast), border-color var(--t-fast);
+  position: relative;
+}
+.nav-item:hover { color: var(--ink-900); }
+.nav-item.active { color: var(--navy-900); border-bottom-color: var(--gold-500); }
+.nav-dot {
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  transition: transform var(--t-base) var(--ease);
+}
+.nav-item:hover .nav-dot { transform: scale(1.4); }
+
+/* ═══════════════════════════════════════════════════════════════════
+   PROGRESS BAR
+═══════════════════════════════════════════════════════════════════ */
+.reading-progress {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--gold-500), var(--navy-600));
+  width: 0%;
+  z-index: 999;
+  transition: width .1s linear;
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   SECTION IDENTITY SYSTEM
+   Each section has a unique accent + visual signature
+═══════════════════════════════════════════════════════════════════ */
+.section-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: .35rem;
+  padding: .2rem .65rem;
+  font-family: var(--sans);
+  font-size: .58rem;
+  font-weight: 700;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: #fff;
+  background: var(--sec-color, var(--navy-900));
+}
+.section-badge.outline {
+  background: transparent;
+  border: 1px solid currentColor;
+  color: var(--sec-color, var(--navy-900));
+}
+.section-badge .badge-dot {
+  width: 4px; height: 4px;
+  border-radius: 50%;
+  background: currentColor;
+}
+
+/* Section header strip */
+.section-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: .8rem 0;
+  border-bottom: 2px solid var(--sec-color, var(--navy-900));
+  margin-bottom: 1.5rem;
+}
+.section-header-name {
+  font-family: var(--serif);
+  font-size: 1.1rem;
+  font-weight: 900;
+  color: var(--sec-color, var(--navy-900));
+  letter-spacing: -.01em;
+}
+.section-header-line {
+  flex: 1;
+  height: 1px;
+  background: var(--paper-3);
+}
+.section-header-more {
+  font-family: var(--sans);
+  font-size: .65rem;
+  font-weight: 600;
+  color: var(--sec-color, var(--navy-900));
+  opacity: .8;
+  transition: opacity var(--t-fast);
+}
+.section-header-more:hover { opacity:1; }
+
+/* Section pull-quote line */
+.section-rule {
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+  margin: .6rem 0;
+}
+.section-rule::before {
+  content: '';
+  width: 24px;
+  height: 2px;
+  background: var(--sec-color, var(--gold-500));
+  flex-shrink: 0;
+}
+.section-rule span {
+  font-family: var(--sans);
+  font-size: .6rem;
+  font-weight: 700;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--sec-color, var(--gold-500));
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   ARTICLE CARDS — 4 distinct styles
+═══════════════════════════════════════════════════════════════════ */
+
+/* Card Base */
+.card {
+  background: var(--white);
+  transition: transform var(--t-base) var(--ease), box-shadow var(--t-base) var(--ease);
+  position: relative;
+  overflow: hidden;
+}
+.card:hover { transform: translateY(-2px); box-shadow: var(--shadow-md); }
+
+/* Style 1: Feature card (main story) */
+.card-feature {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+  border: 1px solid var(--paper-3);
+}
+.card-feature-img {
+  height: 320px;
+  object-fit: cover;
+  filter: brightness(.92) saturate(.9);
+  transition: filter var(--t-slow) var(--ease);
+}
+.card-feature:hover .card-feature-img { filter: brightness(.96) saturate(1.05); }
+.card-feature-body {
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-right: 3px solid var(--sec-color, var(--navy-900));
+}
+@media(max-width:640px) {
+  .card-feature { grid-template-columns:1fr; }
+  .card-feature-img { height:220px; }
+}
+
+/* Style 2: Standard editorial card */
+.card-editorial {
+  border: 1px solid var(--paper-3);
+  display: flex;
+  flex-direction: column;
+}
+.card-editorial-img {
+  height: 180px;
+  object-fit: cover;
+  filter: saturate(.88);
+  transition: filter var(--t-slow) var(--ease), transform var(--t-slow) var(--ease);
+  overflow: hidden;
+}
+.card-editorial:hover .card-editorial-img { filter: saturate(1); transform: scale(1.02); }
+.card-editorial-body { padding: 1.2rem; flex: 1; }
+.card-editorial-foot {
+  padding: .8rem 1.2rem;
+  border-top: 1px solid var(--paper-3);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Style 3: Horizontal compact card */
+.card-compact {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+  padding: 1rem 0;
+  border-bottom: 1px solid var(--paper-3);
+}
+.card-compact:last-child { border-bottom: none; }
+.card-compact-num {
+  font-family: var(--serif);
+  font-size: 1.8rem;
+  font-weight: 900;
+  color: var(--paper-3);
+  line-height: 1;
+  flex-shrink: 0;
+  width: 2rem;
+  text-align: center;
+}
+.card-compact-body { flex: 1; }
+
+/* Style 4: Analysis card (long-form) */
+.card-analysis {
+  background: var(--navy-900);
+  color: #fff;
+  padding: 2rem;
+  position: relative;
+  overflow: hidden;
+}
+.card-analysis::before {
+  content: '';
+  position: absolute;
+  top: 0; right: 0;
+  width: 200px; height: 200px;
+  background: radial-gradient(circle, rgba(196,149,42,.15) 0%, transparent 70%);
+  pointer-events: none;
+}
+.card-analysis-tag { color: var(--gold-400); }
+.card-analysis h3 { color: #fff; margin: .8rem 0; }
+.card-analysis p { color: rgba(255,255,255,.7); font-size:.9rem; }
+
+/* ═══════════════════════════════════════════════════════════════════
+   HERO SECTION
+═══════════════════════════════════════════════════════════════════ */
+.hero {
+  position: relative;
+  height: clamp(400px, 55vw, 680px);
+  overflow: hidden;
+  background: var(--navy-900);
+}
+.hero-img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  filter: brightness(.35) saturate(1.1);
+  transform: scale(1.02);
+  transition: transform 8s ease;
+}
+.hero:hover .hero-img { transform: scale(1); }
+.hero-overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(
+    105deg,
+    rgba(14,26,43,.95) 0%,
+    rgba(14,26,43,.7) 50%,
+    transparent 100%
+  );
+}
+.hero-content {
+  position: absolute;
+  bottom: 0; right: 0; left: 0;
+  padding: 3rem 2rem;
+  max-width: 800px;
+}
+.hero-kicker {
+  display: flex;
+  align-items: center;
+  gap: .6rem;
+  margin-bottom: 1rem;
+}
+.hero-kicker-line {
+  width: 28px;
+  height: 1.5px;
+  background: var(--gold-500);
+}
+.hero-kicker-text {
+  font-family: var(--sans);
+  font-size: .62rem;
+  font-weight: 700;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: var(--gold-400);
+}
+.hero h1 {
+  font-family: var(--serif);
+  font-size: clamp(1.8rem, 4vw, 3.2rem);
+  font-weight: 900;
+  line-height: 1.12;
+  color: #fff;
+  margin-bottom: .8rem;
+  text-shadow: 0 2px 20px rgba(0,0,0,.3);
+}
+.hero h1 em { font-style:normal; color: var(--gold-400); }
+.hero-deck {
+  font-family: var(--sans);
+  font-size: clamp(.85rem, 1.5vw, 1rem);
+  color: rgba(255,255,255,.72);
+  line-height: 1.75;
+  max-width: 560px;
+}
+.hero-meta {
+  display: flex;
+  align-items: center;
+  gap: .8rem;
+  margin-top: 1.2rem;
+  flex-wrap: wrap;
+}
+.hero-meta-item {
+  display: flex;
+  align-items: center;
+  gap: .3rem;
+  font-family: var(--sans);
+  font-size: .65rem;
+  color: rgba(255,255,255,.5);
+}
+.hero-meta-sep { color: rgba(255,255,255,.2); }
+
+/* ═══════════════════════════════════════════════════════════════════
+   ARTICLE PAGE TYPOGRAPHY
+═══════════════════════════════════════════════════════════════════ */
+.article-body { max-width: 700px; }
+
+.article-body p {
+  font-family: var(--serif);
+  font-size: 1.08rem;
+  line-height: 2.05;
+  color: var(--ink-700);
+  margin-bottom: 1.5rem;
+}
+
+/* Drop cap — first paragraph */
+.article-body > p:first-of-type::first-letter {
+  font-family: var(--serif);
+  font-size: 4.5rem;
+  font-weight: 900;
+  float: right;
+  line-height: .78;
+  margin: .06em 0 -.06em .18em;
+  color: var(--navy-900);
+  padding-right: .05em;
+}
+
+.article-body h2 {
+  font-family: var(--serif);
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: var(--ink-900);
+  margin: 2.8rem 0 .8rem;
+  padding-top: .7rem;
+  border-top: 1.5px solid var(--ink-100);
+  line-height: 1.25;
+}
+
+.article-body h3 {
+  font-family: var(--serif);
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--navy-700);
+  margin: 2rem 0 .6rem;
+}
+
+/* Pull quote */
+.pull-quote {
+  margin: 2.5rem -1.5rem;
+  padding: 1.8rem 2.2rem 1.8rem 1.8rem;
+  border-right: 3px solid var(--gold-500);
+  background: var(--paper-2);
+  font-family: var(--serif);
+  font-size: 1.2rem;
+  font-weight: 700;
+  font-style: italic;
+  line-height: 1.65;
+  color: var(--ink-900);
+  position: relative;
+}
+.pull-quote::before {
+  content: '\201C';
+  font-size: 5rem;
+  font-style: normal;
+  color: var(--gold-300);
+  position: absolute;
+  top: -.5rem;
+  right: 1.5rem;
+  line-height: 1;
+  opacity: .5;
+}
+.pull-quote cite {
+  display: block;
+  margin-top: .8rem;
+  font-family: var(--sans);
+  font-size: .68rem;
+  font-style: normal;
+  font-weight: 600;
+  color: var(--ink-300);
+  letter-spacing: .06em;
+}
+
+/* Data box */
+.data-box {
+  margin: 2rem 0;
+  background: var(--white);
+  border: 1px solid var(--paper-3);
+  border-right: 3px solid var(--sec-color, var(--navy-900));
+}
+.data-box-header {
+  background: var(--sec-color, var(--navy-900));
+  color: #fff;
+  font-family: var(--sans);
+  font-size: .62rem;
+  font-weight: 700;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  padding: .5rem 1rem;
+}
+.data-box-body { padding: 1.1rem 1.2rem; }
+.data-box-body p { font-size:.9rem; line-height:1.8; margin-bottom:.5rem; color:var(--ink-700); }
+.data-box-body p:last-child { margin:0; }
+
+/* Stats strip */
+.stats-strip {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
+  gap: 1px;
+  background: var(--paper-3);
+  border: 1px solid var(--paper-3);
+  margin: 2rem 0;
+}
+.stat-cell {
+  background: var(--white);
+  padding: 1rem;
+  text-align: center;
+}
+.stat-number {
+  font-family: var(--serif);
+  font-size: 2rem;
+  font-weight: 900;
+  color: var(--sec-color, var(--navy-900));
+  line-height: 1;
+  display: block;
+}
+.stat-label {
+  font-family: var(--sans);
+  font-size: .58rem;
+  color: var(--ink-300);
+  margin-top: .3rem;
+  line-height: 1.4;
+  display: block;
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   VERDICT / ANALYSIS BLOCK
+═══════════════════════════════════════════════════════════════════ */
+.verdict {
+  margin: 2.5rem 0;
+  background: var(--navy-900);
+  color: #fff;
+  padding: 1.8rem 2rem;
+  position: relative;
+  overflow: hidden;
+}
+.verdict::after {
+  content: '';
+  position: absolute;
+  top: 0; right: 0;
+  width: 120px; height: 100%;
+  background: linear-gradient(270deg, rgba(196,149,42,.08), transparent);
+}
+.verdict-label {
+  font-family: var(--sans);
+  font-size: .6rem;
+  font-weight: 700;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: var(--gold-400);
+  margin-bottom: .6rem;
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+}
+.verdict-label::before {
+  content: '';
+  width: 16px;
+  height: 1.5px;
+  background: var(--gold-400);
+}
+.verdict p { font-size:.95rem; line-height:1.8; color:rgba(255,255,255,.85); }
+
+/* ═══════════════════════════════════════════════════════════════════
+   FAQ ACCORDION
+═══════════════════════════════════════════════════════════════════ */
+.faq { border: 1px solid var(--paper-3); margin: 2rem 0; }
+.faq-header {
+  background: var(--navy-900);
+  color: #fff;
+  padding: .65rem 1.2rem;
+  font-family: var(--sans);
+  font-size: .65rem;
+  font-weight: 700;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+}
+.faq-item { border-bottom: 1px solid var(--paper-3); }
+.faq-item:last-child { border: none; }
+.faq-q {
+  width: 100%;
+  background: none;
+  border: none;
+  padding: 1rem 1.2rem;
+  text-align: right;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  font-family: var(--serif);
+  font-size: .95rem;
+  font-weight: 700;
+  color: var(--ink-900);
+  transition: background var(--t-fast);
+}
+.faq-q:hover { background: var(--paper-2); }
+.faq-q[aria-expanded="true"] { color: var(--navy-700); }
+.faq-icon {
+  width: 22px; height: 22px;
+  border: 1.5px solid var(--paper-3);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: .7rem;
+  color: var(--ink-300);
+  flex-shrink: 0;
+  transition: transform var(--t-base) var(--ease), background var(--t-fast), border-color var(--t-fast);
+}
+.faq-q[aria-expanded="true"] .faq-icon {
+  transform: rotate(45deg);
+  background: var(--navy-900);
+  border-color: var(--navy-900);
+  color: #fff;
+}
+.faq-a { max-height:0; overflow:hidden; transition:max-height .35s var(--ease), padding .35s; }
+.faq-a.open { max-height:300px; padding-bottom:.8rem; }
+.faq-a p { padding: 0 1.2rem; font-family:var(--sans); font-size:.88rem; line-height:1.75; color:var(--ink-500); }
+
+/* ═══════════════════════════════════════════════════════════════════
+   NEWSLETTER CTA — Premium inline
+═══════════════════════════════════════════════════════════════════ */
+.newsletter-cta {
+  margin: 3rem 0;
+  background: var(--paper-2);
+  border: 1px solid var(--paper-3);
+  border-right: 3px solid var(--gold-500);
+  padding: 2rem 2.5rem;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+.newsletter-cta-icon {
+  font-size: 2rem;
+  flex-shrink: 0;
+  opacity: .8;
+}
+.newsletter-cta-text { flex: 1; }
+.newsletter-cta-text h4 {
+  font-family: var(--serif);
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--ink-900);
+  margin-bottom: .25rem;
+}
+.newsletter-cta-text p {
+  font-family: var(--sans);
+  font-size: .8rem;
+  color: var(--ink-500);
+  line-height: 1.6;
+}
+.newsletter-form {
+  display: flex;
+  gap: .4rem;
+  flex-direction: row-reverse;
+  flex-shrink: 0;
+}
+.newsletter-input {
+  padding: .6rem 1rem;
+  border: 1px solid var(--paper-3);
+  background: var(--white);
+  font-family: var(--sans);
+  font-size: .82rem;
+  color: var(--ink-700);
+  text-align: right;
+  outline: none;
+  width: 220px;
+  transition: border-color var(--t-fast), box-shadow var(--t-fast);
+}
+.newsletter-input:focus {
+  border-color: var(--navy-400);
+  box-shadow: 0 0 0 3px rgba(14,26,43,.06);
+}
+.newsletter-input::placeholder { color:var(--ink-100); }
+.newsletter-btn {
+  padding: .6rem 1.2rem;
+  background: var(--navy-900);
+  color: #fff;
+  border: none;
+  font-family: var(--sans);
+  font-size: .75rem;
+  font-weight: 700;
+  letter-spacing: .04em;
+  transition: background var(--t-fast) var(--ease);
+}
+.newsletter-btn:hover { background: var(--navy-700); }
+@media(max-width:640px) {
+  .newsletter-cta { flex-direction:column; text-align:center; }
+  .newsletter-form { width:100%; flex-direction:column; }
+  .newsletter-input { width:100%; }
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   AUTHOR CARD — Refined
+═══════════════════════════════════════════════════════════════════ */
+.author-card {
+  display: flex;
+  gap: 1.2rem;
+  align-items: flex-start;
+  padding: 1.5rem;
+  background: var(--white);
+  border: 1px solid var(--paper-3);
+  position: relative;
+  overflow: hidden;
+}
+.author-card::before {
+  content: '';
+  position: absolute;
+  top: 0; right: 0; left: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--navy-900), var(--gold-500), var(--navy-900));
+  background-size: 200%;
+  animation: shimmer-gradient 3s linear infinite;
+}
+@keyframes shimmer-gradient {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+.author-photo {
+  width: 72px; height: 72px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: top center;
+  border: 2px solid var(--navy-200);
+  flex-shrink: 0;
+}
+.author-name {
+  font-family: var(--serif);
+  font-size: 1rem;
+  font-weight: 900;
+  color: var(--ink-900);
+  margin-bottom: .1rem;
+}
+.author-title {
+  font-family: var(--sans);
+  font-size: .62rem;
+  font-weight: 700;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--navy-600);
+  margin-bottom: .5rem;
+}
+.author-bio {
+  font-family: var(--sans);
+  font-size: .82rem;
+  color: var(--ink-500);
+  line-height: 1.65;
+  margin-bottom: .7rem;
+}
+.author-links { display:flex; gap:.4rem; }
+.author-link {
+  display: inline-flex;
+  align-items: center;
+  gap: .3rem;
+  padding: .25rem .65rem;
+  font-family: var(--sans);
+  font-size: .62rem;
+  font-weight: 700;
+  border: 1px solid currentColor;
+  transition: background var(--t-fast), color var(--t-fast);
+}
+.author-link:hover { background: var(--navy-900); color:#fff; border-color:var(--navy-900); }
+
+/* ═══════════════════════════════════════════════════════════════════
+   SIDEBAR
+═══════════════════════════════════════════════════════════════════ */
+.sidebar-block {
+  background: var(--white);
+  border: 1px solid var(--paper-3);
+  margin-bottom: 1.5rem;
+  overflow: hidden;
+}
+.sidebar-title {
+  font-family: var(--sans);
+  font-size: .62rem;
+  font-weight: 700;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--white);
+  background: var(--navy-900);
+  padding: .55rem 1rem;
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+}
+.sidebar-title span { color: var(--gold-400); }
+
+/* TOC */
+.toc-list { list-style:none; }
+.toc-item { border-bottom: 1px solid var(--paper-2); }
+.toc-item:last-child { border: none; }
+.toc-link {
+  display: flex;
+  align-items: flex-start;
+  gap: .5rem;
+  padding: .6rem 1rem;
+  font-family: var(--sans);
+  font-size: .78rem;
+  color: var(--ink-500);
+  transition: background var(--t-fast), color var(--t-fast);
+  flex-direction: row-reverse;
+}
+.toc-link:hover { background: var(--paper-2); color: var(--navy-900); }
+.toc-link.active { color: var(--navy-900); font-weight: 600; background: var(--navy-50); }
+.toc-num { font-size:.6rem; color:var(--gold-500); flex-shrink:0; font-weight:700; margin-top:.1rem; }
+
+/* ═══════════════════════════════════════════════════════════════════
+   FOOTER — World map version (kept from existing)
+═══════════════════════════════════════════════════════════════════ */
+.site-footer {
+  background: var(--navy-900);
+  color: rgba(255,255,255,.5);
+  border-top: 3px solid var(--gold-500);
+  padding: 3rem 2rem 1.5rem;
+  font-family: var(--sans);
+  font-size: .72rem;
+}
+.footer-inner { max-width: 1200px; margin: 0 auto; }
+.footer-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 2.5rem;
+  margin-bottom: 2rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid rgba(255,255,255,.08);
+}
+@media(max-width:768px) { .footer-grid { grid-template-columns:1fr 1fr; } }
+@media(max-width:480px) { .footer-grid { grid-template-columns:1fr; } }
+.footer-brand-name {
+  font-family: var(--serif);
+  font-size: 1.5rem;
+  font-weight: 900;
+  color: #fff;
+  margin-bottom: .4rem;
+}
+.footer-brand-name span { color: var(--gold-500); }
+.footer-tagline { font-size:.7rem; color:rgba(255,255,255,.35); line-height:1.7; max-width:240px; margin-top:.4rem; }
+.footer-col-title {
+  font-size: .58rem;
+  font-weight: 700;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,.35);
+  margin-bottom: .9rem;
+}
+.footer-col ul { list-style:none; }
+.footer-col li { margin-bottom:.5rem; }
+.footer-col a { color:rgba(255,255,255,.45); transition:color var(--t-fast); }
+.footer-col a:hover { color:var(--gold-400); }
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: .5rem;
+  color: rgba(255,255,255,.25);
+  font-size: .65rem;
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   LAYOUT UTILITIES
+═══════════════════════════════════════════════════════════════════ */
+.container { max-width: 1200px; margin: 0 auto; padding: 0 1.5rem; }
+.page-grid {
+  display: grid;
+  grid-template-columns: 1fr 280px;
+  gap: 3rem;
+  align-items: start;
+}
+@media(max-width:960px) { .page-grid { grid-template-columns:1fr; } }
+
+.share-bar {
+  background: var(--paper-2);
+  border-top: 1px solid var(--paper-3);
+  border-bottom: 1px solid var(--paper-3);
+  padding: .55rem 0;
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+}
+.share-label { font-family:var(--sans); font-size:.62rem; color:var(--ink-300); margin-left:.3rem; }
+.share-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: .3rem;
+  padding: .28rem .7rem;
+  font-family: var(--sans);
+  font-size: .62rem;
+  font-weight: 700;
+  border: none;
+  cursor: pointer;
+  transition: opacity var(--t-fast);
+}
+.share-btn:hover { opacity:.85; }
+.share-x   { background:#000; color:#fff; }
+.share-wa  { background:#25d366; color:#fff; }
+.share-fb  { background:#1877f2; color:#fff; }
+.share-rd  { background:#ff4500; color:#fff; }
+.share-copy{ background:var(--navy-600); color:#fff; }
+
+/* ═══════════════════════════════════════════════════════════════════
+   DESIGN SYSTEM SHOWCASE — demo sections
+═══════════════════════════════════════════════════════════════════ */
+.ds-section { margin-bottom: 4rem; }
+.ds-section-title {
+  font-family: var(--sans);
+  font-size: .6rem;
+  font-weight: 700;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  color: var(--ink-300);
+  border-bottom: 1px solid var(--paper-3);
+  padding-bottom: .5rem;
+  margin-bottom: 1.5rem;
+}
+.color-grid { display:flex; flex-wrap:wrap; gap:.5rem; margin:.5rem 0; }
+.color-swatch {
+  width: 80px;
+  aspect-ratio: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: .3rem;
+  font-family: var(--sans);
+  font-size: .5rem;
+  font-weight: 700;
+  border: 1px solid rgba(0,0,0,.06);
+}
+.section-colors { display:flex; flex-wrap:wrap; gap:.5rem; }
+.section-color-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: .5rem;
+  padding: .4rem .8rem;
+  font-family: var(--sans);
+  font-size: .65rem;
+  font-weight: 700;
+  color: #fff;
+}
+
+/* Micro-interactions showcase */
+.mi-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(180px,1fr)); gap:1rem; }
+.mi-card {
+  background: var(--white);
+  border: 1px solid var(--paper-3);
+  padding: 1.2rem;
+  text-align: center;
+  cursor: pointer;
+  transition: all var(--t-base) var(--ease);
+  position: relative;
+  overflow: hidden;
+}
+.mi-card::after {
+  content: '';
+  position: absolute;
+  bottom: 0; right: 0; left: 0;
+  height: 2px;
+  background: var(--gold-500);
+  transform: scaleX(0);
+  transition: transform var(--t-base) var(--ease);
+}
+.mi-card:hover::after { transform: scaleX(1); }
+.mi-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); }
+.mi-card:active { transform: translateY(-1px); box-shadow: var(--shadow-sm); }
+.mi-icon { font-size: 1.8rem; margin-bottom: .6rem; }
+.mi-label { font-family:var(--sans); font-size:.72rem; font-weight:600; color:var(--ink-500); }
+
+/* ═══════════════════════════════════════════════════════════════════
+   RESPONSIVE BREAKPOINTS
+═══════════════════════════════════════════════════════════════════ */
+@media(max-width:640px) {
+  .masthead-main { padding:.7rem 1rem; }
+  .hero-content { padding:1.5rem 1rem; }
+  .pull-quote { margin:2rem 0; }
+  .newsletter-cta { padding:1.5rem; }
+}
+</style>
+</head>
+<body>
+
+<!-- READING PROGRESS -->
+<div class="reading-progress" id="rp"></div>
+
+<!-- ═══ MASTHEAD ═══════════════════════════════════════════════════ -->
+<header class="masthead">
+  <div class="masthead-top">
+    <span class="masthead-top-text">تحليلات جيوسياسية مستقلة · ar.geopolitique · 2026</span>
+    <div class="masthead-top-links">
+      <a href="https://geopolo.com">🇫🇷 Français</a>
+      <a href="/abonnement.html">الاشتراك المميز</a>
+    </div>
+  </div>
+  <div class="masthead-main container">
+    <a href="/" class="logo-mark">
+      <div class="logo-name">ar.<span>géo</span>politique</div>
+      <div class="logo-sub">مجلة جيوسياسية استراتيجية مستقلة</div>
+      <div class="logo-rule"></div>
+    </a>
+    <div class="masthead-actions">
+      <button class="btn-subscribe">
+        <span class="dot"></span>
+        الاشتراك المميز
+      </button>
+    </div>
+  </div>
+  <nav class="site-nav">
+    <a class="nav-item active" href="/">الرئيسية</a>
+    <a class="nav-item" href="/proche-or.html" style="--sec-color:var(--sec-mideast)">
+      <span class="nav-dot" style="background:var(--sec-mideast)"></span>الشرق الأوسط
+    </a>
+    <a class="nav-item" href="/eu.html" style="--sec-color:var(--sec-europe)">
+      <span class="nav-dot" style="background:var(--sec-europe)"></span>أوروبا
+    </a>
+    <a class="nav-item" href="/afr.html" style="--sec-color:var(--sec-africa)">
+      <span class="nav-dot" style="background:var(--sec-africa)"></span>أفريقيا
+    </a>
+    <a class="nav-item" href="/asie.html" style="--sec-color:var(--sec-asia)">
+      <span class="nav-dot" style="background:var(--sec-asia)"></span>آسيا
+    </a>
+    <a class="nav-item" href="/opinion.html" style="--sec-color:var(--sec-opinion)">
+      <span class="nav-dot" style="background:var(--sec-opinion)"></span>رأي
+    </a>
+  </nav>
+</header>
+
+<!-- ═══ HERO ════════════════════════════════════════════════════════ -->
+<section class="hero">
+  <img class="hero-img"
+       src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=1400&q=80"
+       alt="جيوسياسة 2026"/>
+  <div class="hero-overlay"></div>
+  <div class="hero-content container">
+    <div class="hero-kicker">
+      <div class="hero-kicker-line"></div>
+      <span class="hero-kicker-text">تحليل استراتيجي · مقال الأسبوع</span>
+    </div>
+    <h1>المنافسة الأمريكية-الصينية:<br><em>نحو حرب منظومية أم توازن هش؟</em></h1>
+    <p class="hero-deck">بعد عقد من التصعيد التدريجي، يقف النظام الدولي أمام تحوّل هيكلي لم تشهد مثله المنظومة الغربية منذ نهاية الحرب الباردة. تحليل معمّق لديناميكيات القوة وسيناريوهات المستقبل.</p>
+    <div class="hero-meta">
+      <span class="hero-meta-item">✍ ناصر الصبري</span>
+      <span class="hero-meta-sep">·</span>
+      <span class="hero-meta-item">📅 مايو 2026</span>
+      <span class="hero-meta-sep">·</span>
+      <span class="hero-meta-item">⏱ 18 دقيقة</span>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ DESIGN SYSTEM SHOWCASE ═══════════════════════════════════════ -->
+<div class="container" style="padding-top:3rem; padding-bottom:3rem;">
+
+  <!-- COLOR SYSTEM -->
+  <div class="ds-section">
+    <div class="ds-section-title">01 — نظام الألوان / Color System</div>
+
+    <p style="font-family:var(--sans);font-size:.82rem;color:var(--ink-500);margin-bottom:1.2rem;">
+      اللون الأساسي: <strong style="color:var(--navy-900)">Deep Navy #0E1A2B</strong> ·
+      اللهجة: <strong style="color:var(--gold-500)">Antique Gold #C4952A</strong> ·
+      الخلفية: <strong style="color:var(--ink-300)">Ivory Paper #F9F7F2</strong>
+    </p>
+
+    <div class="color-grid">
+      <div class="color-swatch" style="background:var(--navy-900);color:rgba(255,255,255,.6)">Navy 900</div>
+      <div class="color-swatch" style="background:var(--navy-700);color:rgba(255,255,255,.6)">Navy 700</div>
+      <div class="color-swatch" style="background:var(--navy-500);color:rgba(255,255,255,.6)">Navy 500</div>
+      <div class="color-swatch" style="background:var(--navy-300);color:rgba(255,255,255,.6)">Navy 300</div>
+      <div class="color-swatch" style="background:var(--navy-100)">Navy 100</div>
+      <div class="color-swatch" style="background:var(--gold-500);color:#fff">Gold 500</div>
+      <div class="color-swatch" style="background:var(--gold-300)">Gold 300</div>
+      <div class="color-swatch" style="background:var(--gold-100)">Gold 100</div>
+      <div class="color-swatch" style="background:var(--paper);border:1px solid var(--paper-3)">Paper</div>
+    </div>
+
+    <div style="margin-top:1.2rem;">
+      <p class="t-label" style="color:var(--ink-300);margin-bottom:.7rem;">هوية الأقسام / Section Colors</p>
+      <div class="section-colors">
+        <span class="section-color-pill" style="background:var(--sec-global)">🌐 جيوسياسة عالمية</span>
+        <span class="section-color-pill" style="background:var(--sec-mideast)">🕌 الشرق الأوسط</span>
+        <span class="section-color-pill" style="background:var(--sec-europe)">🏛 أوروبا</span>
+        <span class="section-color-pill" style="background:var(--sec-africa)">🌍 أفريقيا</span>
+        <span class="section-color-pill" style="background:var(--sec-asia)">🗺 آسيا</span>
+        <span class="section-color-pill" style="background:var(--sec-strategy)">⚔️ تحليل استراتيجي</span>
+        <span class="section-color-pill" style="background:var(--sec-economy)">📊 الاقتصاد الدولي</span>
+        <span class="section-color-pill" style="background:var(--sec-opinion)">✒️ رأي وأعمدة</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- TYPOGRAPHY -->
+  <div class="ds-section">
+    <div class="ds-section-title">02 — نظام التايبوغرافيا / Typography System</div>
+    <div class="t-display" style="margin-bottom:.5rem">جيوسياسة العالم 2026</div>
+    <div class="t-h1" style="margin-bottom:.5rem">القوى الكبرى وتحولات النظام الدولي</div>
+    <div class="t-h2" style="margin-bottom:.5rem">التنافس الأمريكي الصيني في المحيط الهادئ</div>
+    <div class="t-h3" style="margin-bottom:.5rem">استراتيجية الردع وتوازن القوى في آسيا</div>
+    <div class="t-h4" style="margin-bottom:.5rem">تحليل السيناريوهات والتوقعات المستقبلية</div>
+    <div class="t-body-lg" style="margin-bottom:.4rem">نص تحريري معمّق — يُستخدم للافتتاحيات والمقالات الرئيسية بحجم أكبر وتباعد أوسع.</div>
+    <div class="t-body" style="margin-bottom:.4rem">نص المقال الأساسي — الحجم القياسي للقراءة المريحة عبر الشاشات المختلفة.</div>
+    <div class="t-body-sm" style="margin-bottom:.4rem">نص ثانوي — للتعليقات والتوضيحات والمعلومات التكميلية.</div>
+    <div class="t-label" style="margin-bottom:.4rem;color:var(--sec-mideast)">تصنيف القسم · Label Style</div>
+    <div class="t-caption">تعليق وتاريخ · Caption text — 12 مايو 2026 · 8 دقائق قراءة</div>
+  </div>
+
+  <!-- SECTION HEADERS -->
+  <div class="ds-section">
+    <div class="ds-section-title">03 — ترويسات الأقسام / Section Headers</div>
+    <div style="display:grid;gap:1rem">
+      <div class="section-header" style="--sec-color:var(--sec-mideast)">
+        <div class="section-badge" style="background:var(--sec-mideast)"><span class="badge-dot"></span>الشرق الأوسط</div>
+        <div class="section-header-line"></div>
+        <a class="section-header-more" style="--sec-color:var(--sec-mideast)">جميع المقالات ←</a>
+      </div>
+      <div class="section-header" style="--sec-color:var(--sec-asia)">
+        <div class="section-badge" style="background:var(--sec-asia)"><span class="badge-dot"></span>آسيا والمحيط الهادئ</div>
+        <div class="section-header-line"></div>
+        <a class="section-header-more" style="--sec-color:var(--sec-asia)">جميع المقالات ←</a>
+      </div>
+      <div class="section-header" style="--sec-color:var(--sec-strategy)">
+        <div class="section-badge" style="background:var(--sec-strategy)"><span class="badge-dot"></span>التحليل الاستراتيجي</div>
+        <div class="section-header-line"></div>
+        <a class="section-header-more" style="--sec-color:var(--sec-strategy)">جميع المقالات ←</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- CARDS -->
+  <div class="ds-section">
+    <div class="ds-section-title">04 — بطاقات المقالات / Article Cards</div>
+
+    <!-- Feature card -->
+    <div class="card card-feature" style="margin-bottom:1.5rem;--sec-color:var(--sec-mideast)">
+      <img class="card-feature-img" src="https://images.unsplash.com/photo-1569949381669-ecf31ae8e613?w=800&q=70" alt="الشرق الأوسط"/>
+      <div class="card-feature-body">
+        <div>
+          <div class="section-rule" style="--sec-color:var(--sec-mideast)">
+            <span>الشرق الأوسط</span>
+          </div>
+          <h2 class="t-h2" style="margin:.6rem 0">إيران وإسرائيل: خريطة التصعيد وحسابات المواجهة في 2026</h2>
+          <p class="t-body-sm">تحليل معمّق للديناميكيات الإقليمية بعد سلسلة التصعيد المتبادل — من الهجمات الصاروخية إلى المفاوضات النووية المتوقفة.</p>
+        </div>
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-top:1.2rem">
+          <div class="t-caption">ناصر الصبري · مايو 2026</div>
+          <span style="font-family:var(--sans);font-size:.65rem;color:var(--sec-mideast);font-weight:700">اقرأ التحليل ←</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Editorial cards grid -->
+    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:1rem;margin-bottom:1.5rem">
+      <div class="card card-editorial" style="--sec-color:var(--sec-europe)">
+        <div style="height:180px;overflow:hidden">
+          <img class="card-editorial-img" src="https://images.unsplash.com/photo-1467269204594-9661b134dd2b?w=600&q=70" alt="أوروبا"/>
+        </div>
+        <div class="card-editorial-body">
+          <div class="section-rule" style="--sec-color:var(--sec-europe);margin-bottom:.5rem"><span>أوروبا</span></div>
+          <h3 class="t-h4">الناتو بعد أوكرانيا: إعادة رسم خريطة الأمن الأوروبي</h3>
+          <p class="t-caption" style="margin-top:.4rem">تحليل استراتيجي · 14 دقيقة</p>
+        </div>
+        <div class="card-editorial-foot">
+          <span class="t-caption">ناصر الصبري</span>
+          <span style="font-family:var(--sans);font-size:.62rem;color:var(--sec-europe)">اقرأ ←</span>
+        </div>
+      </div>
+
+      <div class="card card-editorial" style="--sec-color:var(--sec-africa)">
+        <div style="height:180px;overflow:hidden">
+          <img class="card-editorial-img" src="https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?w=600&q=70" alt="أفريقيا"/>
+        </div>
+        <div class="card-editorial-body">
+          <div class="section-rule" style="--sec-color:var(--sec-africa);margin-bottom:.5rem"><span>أفريقيا</span></div>
+          <h3 class="t-h4">الساحل الأفريقي: لماذا يزداد الوضع سوءاً في 2026؟</h3>
+          <p class="t-caption" style="margin-top:.4rem">تقرير ميداني · 10 دقائق</p>
+        </div>
+        <div class="card-editorial-foot">
+          <span class="t-caption">ناصر الصبري</span>
+          <span style="font-family:var(--sans);font-size:.62rem;color:var(--sec-africa)">اقرأ ←</span>
+        </div>
+      </div>
+
+      <div class="card card-analysis">
+        <div class="card-analysis-tag t-label">تحليل استراتيجي</div>
+        <h3 class="t-h3" style="color:#fff;margin:.7rem 0">حرب الرقائق: من يسيطر على التكنولوجيا يسيطر على القرن</h3>
+        <p style="font-family:var(--sans);font-size:.85rem;color:rgba(255,255,255,.65);line-height:1.7">تحليل سباق الهيمنة التكنولوجية بين واشنطن وبكين وتداعياته على ميزان القوى العالمي.</p>
+        <div style="margin-top:1rem;font-family:var(--sans);font-size:.65rem;color:var(--gold-400);font-weight:700">اقرأ التحليل الكامل ←</div>
+      </div>
+    </div>
+
+    <!-- Compact list -->
+    <div style="background:var(--white);border:1px solid var(--paper-3);padding:1.2rem">
+      <div class="section-header" style="--sec-color:var(--sec-economy);margin-bottom:1rem">
+        <div class="section-badge" style="background:var(--sec-economy)"><span class="badge-dot"></span>الاقتصاد الدولي</div>
+      </div>
+      <div class="card-compact" style="--sec-color:var(--sec-economy)">
+        <div class="card-compact-num">١</div>
+        <div class="card-compact-body">
+          <h4 class="t-h4">بريكس وتراجع الدولار: هل ينتهي عصر الهيمنة المالية الغربية؟</h4>
+          <p class="t-caption" style="margin-top:.2rem">ناصر الصبري · 12 دقيقة</p>
+        </div>
+      </div>
+      <div class="card-compact">
+        <div class="card-compact-num">٢</div>
+        <div class="card-compact-body">
+          <h4 class="t-h4">الصين والأزمة العقارية: 300 مليار يوان لإنقاذ قطاع ينزف</h4>
+          <p class="t-caption" style="margin-top:.2rem">ناصر الصبري · 10 دقائق</p>
+        </div>
+      </div>
+      <div class="card-compact">
+        <div class="card-compact-num">٣</div>
+        <div class="card-compact-body">
+          <h4 class="t-h4">تشرذم العولمة: حين يُعيد السياسيون رسم خريطة الاقتصاد</h4>
+          <p class="t-caption" style="margin-top:.2rem">ناصر الصبري · 8 دقائق</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ARTICLE BODY COMPONENTS -->
+  <div class="ds-section">
+    <div class="ds-section-title">05 — مكونات المقال / Article Components</div>
+    <div class="page-grid">
+      <div class="article-body">
+
+        <!-- Share bar -->
+        <div class="share-bar" style="margin-bottom:1.5rem">
+          <span class="share-label">شارك:</span>
+          <button class="share-btn share-x">𝕏</button>
+          <button class="share-btn share-wa">📱 واتساب</button>
+          <button class="share-btn share-fb">f Facebook</button>
+          <button class="share-btn share-rd">⬆ Reddit</button>
+          <button class="share-btn share-copy">🔗 نسخ</button>
+        </div>
+
+        <!-- Body text sample -->
+        <p>قبل ثلاث سنوات، كان تصوّر أن تبني TSMC مصنعاً في الهند ضرباً من الخيال. الشركة التايوانية التي تُصنِّع أكثر من 90٪ من الرقائق الأكثر تقدماً في العالم تتمسّك بتايوان مقراً حصرياً. لكن عالم 2026 اختلف عمّا كان: جيوسياسة الرقائق باتت تُجبر حتى أكثر الشركات انغلاقاً على التنويع.</p>
+
+        <!-- Stats strip -->
+        <div class="stats-strip" style="--sec-color:var(--sec-asia)">
+          <div class="stat-cell"><span class="stat-number">$2.7B</span><span class="stat-label">حزمة الدعم الهندية</span></div>
+          <div class="stat-cell"><span class="stat-number">28nm</span><span class="stat-label">تقنية المصنع</span></div>
+          <div class="stat-cell"><span class="stat-number">2028</span><span class="stat-label">بدء الإنتاج</span></div>
+          <div class="stat-cell"><span class="stat-number">90٪</span><span class="stat-label">حصة TSMC العالمية</span></div>
+        </div>
+
+        <p>الإجابة تقاطع فيها ثلاثة عوامل. أولاً الضغط الجيوسياسي: عملاء TSMC الكبار — Apple وNvidia وAMD وQualcomm — طالبوا منذ سنوات بـ«تنويع جغرافي» للمصانع تقليصاً لمخاطر التركّز في تايوان.</p>
+
+        <!-- Pull quote -->
+        <div class="pull-quote">
+          الهند لا تشتري تكنولوجيا — تشتري وقتاً. كل عام تتأخر فيه ستجد نفسها أبعد عن الحدود التقنية العالمية.
+          <cite>— براهماجيت سنغ، معهد مستقبل التكنولوجيا، نيودلهي</cite>
+        </div>
+
+        <!-- Data box -->
+        <div class="data-box" style="--sec-color:var(--sec-asia)">
+          <div class="data-box-header">📊 تحليل — خارطة مصانع TSMC خارج تايوان</div>
+          <div class="data-box-body">
+            <p><strong>أريزونا (USA):</strong> مصنع 5nm و3nm — دعم 52 مليار دولار من قانون CHIPS.</p>
+            <p><strong>كوماموتو (اليابان):</strong> مصنع 16-12nm مع دعم حكومي ياباني.</p>
+            <p><strong>غوجارات (الهند):</strong> مصنع 28nm — موقَّع ويُبنى حالياً.</p>
+          </div>
+        </div>
+
+        <!-- Verdict -->
+        <div class="verdict">
+          <div class="verdict-label">تقييم ar.geopolitique</div>
+          <p>اتفاقية TSMC-الهند أهم في رمزيتها الجيوسياسية من حجمها التقني المباشر. إنها تُسجّل أن الهند انتقلت من موقع المتفرج في سباق أشباه الموصلات إلى موقع اللاعب.</p>
+        </div>
+
+        <!-- FAQ -->
+        <div class="faq">
+          <div class="faq-header">❓ أسئلة شائعة</div>
+          <div class="faq-item">
+            <button class="faq-q" aria-expanded="false" onclick="toggleFaq(this)">
+              ما الفرق بين مصنع 28nm في الهند ومصنع 3nm في أريزونا؟
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-a">
+              <p>تقنية 3nm تُتيح رقائق أسرع وأكثر كفاءة للهواتف والذكاء الاصطناعي. تقنية 28nm أبسط وأرخص، لكن كافية للسيارات والأنظمة الدفاعية والاتصالات.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q" aria-expanded="false" onclick="toggleFaq(this)">
+              هل ستُصبح الهند قوة رقائق عالمية؟
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-a">
+              <p>مصنع واحد لا يُحوّل الهند قوةً عالمية، لكن الأثر الإشاري عميق: الهند دخلت خريطة الدول الآمنة للتصنيع التكنولوجي الحساس.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Newsletter CTA -->
+        <div class="newsletter-cta">
+          <div class="newsletter-cta-icon">📬</div>
+          <div class="newsletter-cta-text">
+            <h4>النشرة الأسبوعية — مجاناً</h4>
+            <p>تحليلات جيوسياسية معمّقة كل أحد في بريدك.</p>
+          </div>
+          <form class="newsletter-form" onsubmit="return subscribeDemo(this)">
+            <input class="newsletter-input" type="email" placeholder="بريدك الإلكتروني"/>
+            <button class="newsletter-btn" type="submit">اشترك</button>
+          </form>
+        </div>
+
+        <!-- Author card -->
+        <div class="author-card">
+          <img class="author-photo"
+               src="https://pub-a7b1a75f72ab40548a0709f708ca2678.r2.dev/Nasser.jpg"
+               alt="ناصر الصبري"/>
+          <div>
+            <div class="author-name">ناصر الصبري</div>
+            <div class="author-title">محلل جيوسياسي · مؤسس ar.geopolitique</div>
+            <p class="author-bio">محلل في الجيوسياسة والاستراتيجية الدولية. يتابع ملفات الشرق الأوسط وآسيا والقوى الكبرى.</p>
+            <div class="author-links">
+              <a class="author-link" href="https://x.com/geopolo_ar" target="_blank">𝕏 Twitter</a>
+              <a class="author-link" href="https://ar.geopolo.com">🌐 geopolô</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Sidebar -->
+      <aside>
+        <div class="sidebar-block">
+          <div class="sidebar-title">📋 <span>المحتويات</span></div>
+          <ul class="toc-list">
+            <li class="toc-item"><a class="toc-link active" href="#"><span class="toc-num">1.</span> السياق الجيوسياسي</a></li>
+            <li class="toc-item"><a class="toc-link" href="#"><span class="toc-num">2.</span> مصنع غوجارات: التفاصيل</a></li>
+            <li class="toc-item"><a class="toc-link" href="#"><span class="toc-num">3.</span> الأبعاد الاستراتيجية</a></li>
+            <li class="toc-item"><a class="toc-link" href="#"><span class="toc-num">4.</span> السيناريوهات والتوقعات</a></li>
+          </ul>
+        </div>
+        <div class="sidebar-block" style="background:var(--navy-900);border:none">
+          <div style="padding:1.5rem;text-align:center">
+            <div style="font-family:var(--serif);font-size:1rem;font-weight:700;color:var(--gold-400);margin-bottom:.4rem">النشرة الأسبوعية</div>
+            <p style="font-family:var(--sans);font-size:.78rem;color:rgba(255,255,255,.55);margin-bottom:1rem;line-height:1.6">تحليلات جيوسياسية معمّقة كل أحد — مجاناً</p>
+            <a href="/abonnement.html" style="display:block;padding:.6rem;background:var(--gold-500);color:var(--navy-900);font-family:var(--sans);font-size:.75rem;font-weight:700;text-align:center;transition:background var(--t-fast)">اشترك مجاناً ←</a>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </div>
+
+  <!-- MICRO-INTERACTIONS -->
+  <div class="ds-section">
+    <div class="ds-section-title">06 — التفاعلات الدقيقة / Micro-interactions (hover me)</div>
+    <div class="mi-grid">
+      <div class="mi-card"><div class="mi-icon">🌍</div><div class="mi-label">جيوسياسة عالمية</div></div>
+      <div class="mi-card"><div class="mi-icon">🕌</div><div class="mi-label">الشرق الأوسط</div></div>
+      <div class="mi-card"><div class="mi-icon">🏛</div><div class="mi-label">أوروبا</div></div>
+      <div class="mi-card"><div class="mi-icon">🌍</div><div class="mi-label">أفريقيا</div></div>
+      <div class="mi-card"><div class="mi-icon">🗺</div><div class="mi-label">آسيا</div></div>
+      <div class="mi-card"><div class="mi-icon">⚔️</div><div class="mi-label">استراتيجية</div></div>
+      <div class="mi-card"><div class="mi-icon">📊</div><div class="mi-label">الاقتصاد</div></div>
+      <div class="mi-card"><div class="mi-icon">✒️</div><div class="mi-label">رأي وأعمدة</div></div>
+    </div>
+  </div>
+
+</div><!-- /container -->
+
+<!-- ═══ FOOTER ════════════════════════════════════════════════════ -->
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand-name">ar.<span>géo</span>politique</div>
+        <p class="footer-tagline">مجلة جيوسياسية استراتيجية مستقلة — نقرأ العالم بعيون مستقلة ومنهجية تجمع المصادر الأكاديمية والصحفية.</p>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-title">الأقسام</div>
+        <ul>
+          <li><a href="/proche-or.html">الشرق الأوسط</a></li>
+          <li><a href="/afr.html">أفريقيا</a></li>
+          <li><a href="/asie.html">آسيا</a></li>
+          <li><a href="/eu.html">أوروبا</a></li>
+          <li><a href="/ame.html">الأمريكتان</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-title">المجلة</div>
+        <ul>
+          <li><a href="/abonnement.html">الاشتراك</a></li>
+          <li><a href="/newsletter.html">النشرة</a></li>
+          <li><a href="/opinion.html">رأي وأعمدة</a></li>
+          <li><a href="https://geopolo.com">النسخة الفرنسية</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-title">تواصل</div>
+        <ul>
+          <li><a href="https://x.com/geopolo_ar">𝕏 Twitter</a></li>
+          <li><a href="/newsletter.html">📬 النشرة</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 ar.geopolitique · تحليلات جيوسياسية مستقلة</span>
+      <span>صُنع بالتحليل والمعرفة المستقلة</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+// Reading progress
+window.addEventListener('scroll', () => {
+  const d = document.documentElement;
+  document.getElementById('rp').style.width =
+    (d.scrollTop / (d.scrollHeight - d.clientHeight) * 100) + '%';
+}, { passive: true });
+
+// FAQ accordion
+function toggleFaq(btn) {
+  const expanded = btn.getAttribute('aria-expanded') === 'true';
+  document.querySelectorAll('.faq-q').forEach(b => {
+    b.setAttribute('aria-expanded','false');
+    b.nextElementSibling.classList.remove('open');
+  });
+  if (!expanded) {
+    btn.setAttribute('aria-expanded','true');
+    btn.nextElementSibling.classList.add('open');
+  }
+}
+
+// Newsletter demo
+function subscribeDemo(form) {
+  const inp = form.querySelector('input');
+  const btn = form.querySelector('button');
+  if (!inp.value.trim() || !inp.value.includes('@')) {
+    inp.style.borderColor = '#B84A0C';
+    setTimeout(() => inp.style.borderColor = '', 1500);
+    return false;
+  }
+  const orig = btn.textContent;
+  btn.textContent = '⏳';
+  btn.disabled = true;
+  setTimeout(() => {
+    btn.textContent = '✓ تم';
+    btn.style.background = '#0B6B5A';
+    inp.value = '';
+  }, 800);
+  return false;
+}
+
+// Parallax hero image
+const heroImg = document.querySelector('.hero-img');
+if (heroImg) {
+  window.addEventListener('scroll', () => {
+    heroImg.style.transform = `scale(1.02) translateY(${window.scrollY * 0.15}px)`;
+  }, { passive: true });
+}
+</script>
+</body>
+</html>
