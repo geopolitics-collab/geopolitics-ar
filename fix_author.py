@@ -5,7 +5,7 @@ import os, glob, re
 DIR      = "/workspaces/geopolitics-ar"
 ARTICLES = os.path.join(DIR, "articles")
 
-PHOTO = "https://pub-a7b1a75f72ab40548a0709f708ca2678.r2.dev/Nasser.jpg"
+PHOTO = "https://pub-a7b1a75f72ab40548a0709f708ca2678.r2.dev/geopolo.jpg"
 
 AUTHOR_CSS = """
 /* ── AUTHOR CARD v2 ── */
