@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Replace generic geopolô author box with Nasser AL SABRI's photo card."""
+"""Replace generic GeoPolo author box with Nasser AL SABRI's photo card."""
 import os, glob, re
 
 DIR      = "/workspaces/geopolitics-ar"
@@ -28,18 +28,18 @@ NEW_AUTHOR_HTML = f"""<div class="author-card-v2">
   <img class="author-photo" src="{PHOTO}" alt="ناصر الصبري — محلل جيوسياسي" loading="lazy"/>
   <div class="author-info">
     <div class="author-name-v2">ناصر الصبري</div>
-    <div class="author-title-v2">محلل جيوسياسي · مؤسس geopolô</div>
-    <p class="author-bio-v2">محلل في الجيوسياسة والاستراتيجية الدولية. يتابع ملفات الشرق الأوسط وآسيا والقوى الكبرى. مؤسس مجلة geopolô للتحليلات الاستراتيجية المستقلة.</p>
+    <div class="author-title-v2">محلل جيوسياسي · مؤسس GeoPolo</div>
+    <p class="author-bio-v2">محلل في الجيوسياسة والاستراتيجية الدولية. يتابع ملفات الشرق الأوسط وآسيا والقوى الكبرى. مؤسس مجلة GeoPolo للتحليلات الاستراتيجية المستقلة.</p>
     <div class="author-links">
       <a class="author-link x-link" href="https://x.com/geopolo_ar" target="_blank" rel="noopener">𝕏 Twitter</a>
-      <a class="author-link site-link" href="https://ar.geopolo.com" target="_blank" rel="noopener">🌐 geopolô</a>
+      <a class="author-link site-link" href="https://ar.geopolo.com" target="_blank" rel="noopener">🌐 GeoPolo</a>
     </div>
   </div>
 </div>"""
 
 # Patterns to detect and replace old author boxes
 OLD_AU_PATTERNS = [
-    # Pattern 1: full .au div with geo polô avatar
+    # Pattern 1: full .au div with Geo Polo avatar
     re.compile(r'<div class="au">.*?</div>\s*</div>', re.DOTALL),
     # Pattern 2: .author-card variant
     re.compile(r'<div class="author-card">.*?</div>\s*</div>', re.DOTALL),
@@ -62,7 +62,7 @@ def fix_file(filepath):
     # 2. Replace old author box — try exact known patterns first
     replacements = [
         # Pattern from apply_template_v2.py output
-        ('<div class="au"><div class="av" style="font-size:.72rem;letter-spacing:-.03em">geo<br/>polô</div>',
+        ('<div class="au"><div class="av" style="font-size:.72rem;letter-spacing:-.03em">Geo<br/>Polo</div>',
          None),  # Will be handled below
     ]
 
