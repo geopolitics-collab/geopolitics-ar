@@ -255,7 +255,7 @@ def build_page(soup, filepath, cat, color, cat_label):
             reading_time = re.sub(r"⏱\s*", "", txt).strip()
             meta_html += f'<span class="mi">⏱ <strong>{reading_time}</strong></span><span class="sep">·</span>'
         elif "✍" in txt:
-            meta_html += f'<span class="mi">✍ <strong>geopolô</strong></span><span class="sep">·</span>'
+            meta_html += f'<span class="mi">✍ <strong>GeoPolo</strong></span><span class="sep">·</span>'
         elif "📅" in txt:
             date_val = re.sub(r"📅\s*", "", txt).strip()
             meta_html += f'<span class="mi">📅 <strong>{date_val}</strong></span><span class="sep">·</span>'
@@ -393,7 +393,7 @@ def build_page(soup, filepath, cat, color, cat_label):
 </div>
 <footer class="site-footer"><div class="footer-inner">
   <div class="footer-bottom">
-    <span>© 2026 geopolô · ar.geopolo.com</span>
+    <span>© 2026 GeoPolo · ar.geopolo.com</span>
     <div class="fl2">
       <a href="/">الرئيسية</a>
       <a href="/{cat if cat!="default" else "asie"}.html">{cat_label}</a>
