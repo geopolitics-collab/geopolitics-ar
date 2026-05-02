@@ -364,6 +364,48 @@ img{display:block;max-width:100%;height:auto}a{color:inherit;text-decoration:non
 .author-link.site-link{color:var(--brand,#0f4c81)}.author-link.site-link:hover{background:var(--brand,#0f4c81);color:#fff}
 @media(max-width:480px){.author-card-v2{flex-direction:column;align-items:center;text-align:center}.author-links{justify-content:center}}
 
+
+/* ── SHARE BAR v2 — 12 platforms ── */
+.share-bar-v2{background:var(--paper-2,#f3f0e8);border-top:1px solid var(--rule,#e2ddd8);border-bottom:1px solid var(--rule,#e2ddd8);padding:.6rem 1.5rem}
+.share-bar-v2 .share-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;gap:.4rem;flex-wrap:wrap}
+.share-bar-v2 .share-label{font-family:var(--sans,'Noto Naskh Arabic',sans-serif);font-size:.6rem;color:var(--ink-3,#5a5870);margin-left:.3rem;white-space:nowrap}
+.sbtn{display:inline-flex;align-items:center;gap:.25rem;padding:.28rem .6rem;font-family:var(--sans,'Noto Naskh Arabic',sans-serif);font-size:.6rem;font-weight:700;cursor:pointer;border:none;transition:opacity .15s,transform .15s;white-space:nowrap}
+.sbtn:hover{opacity:.88;transform:translateY(-1px)}.sbtn:active{transform:translateY(0)}
+.sb-x{background:#000;color:#fff}
+.sb-wa{background:#25d366;color:#fff}
+.sb-fb{background:#1877f2;color:#fff}
+.sb-tg{background:#2ca5e0;color:#fff}
+.sb-li{background:#0a66c2;color:#fff}
+.sb-rd{background:#ff4500;color:#fff}
+.sb-bk{background:#0085ff;color:#fff}
+.sb-em{background:#5a5870;color:#fff}
+.sb-ms{background:#0078ff;color:#fff}
+.sb-tt{background:#010101;color:#fff}
+.sb-sc{background:#fffc00;color:#000}
+.sb-sg{background:#3a76f0;color:#fff}
+.sb-cp{background:#2e3040;color:#fff}
+@media(max-width:640px){.share-bar-v2{padding:.5rem 1rem}.sbtn{font-size:.55rem;padding:.22rem .5rem}}
+
+
+/* ── TAGS (kwb/kw) REDESIGN ── */
+.kwb{background:linear-gradient(135deg,var(--paper-2,#f3f0e8) 0%,var(--cream,#f3f0e8) 100%);border:1px solid var(--rule,#e2ddd8);border-right:3px solid var(--nav-accent,var(--brand,#0f4c81));padding:.75rem 1.1rem;margin-bottom:2rem;display:flex;flex-wrap:wrap;gap:.4rem .35rem;align-items:center;border-radius:0 4px 4px 0}
+.kwl{font-family:var(--sans);font-size:.6rem;font-weight:800;color:var(--nav-accent,var(--brand,#0f4c81));margin-left:.6rem;letter-spacing:.1em;text-transform:uppercase;flex-shrink:0}
+.kw{font-family:var(--sans);font-size:.62rem;font-weight:600;padding:.22rem .65rem;border:1px solid var(--rule,#e2ddd8);background:var(--surface,#fff);color:var(--ink-3,#5a5870);border-radius:20px;transition:background .15s,color .15s,border-color .15s;cursor:default;letter-spacing:.01em}
+.kw:hover{background:var(--nav-accent,var(--brand,#0f4c81));color:#fff;border-color:var(--nav-accent,var(--brand,#0f4c81))}
+
+/* ── ALSO / اقرأ أيضاً REDESIGN ── */
+.also{margin:2.5rem 0;background:var(--surface,#fff);border:1px solid var(--rule,#e2ddd8);overflow:hidden;border-radius:4px;box-shadow:0 2px 8px rgba(0,0,0,.04)}
+.also h4{font-family:var(--sans);font-size:.65rem;font-weight:800;color:#fff;background:var(--nav-accent,var(--brand,#0f4c81));padding:.6rem 1.2rem;margin:0;letter-spacing:.1em;text-transform:uppercase;display:flex;align-items:center;gap:.5rem}
+.also h4::before{content:'📚';font-size:.9rem}
+.also ul{list-style:none;padding:.3rem 0;margin:0}
+.also li{border-bottom:1px solid var(--rule,#e2ddd8);transition:background .15s}
+.also li:last-child{border:none}
+.also li:hover{background:var(--paper-2,#f3f0e8)}
+.also a{font-family:var(--serif);font-size:.92rem;font-weight:600;color:var(--nav-accent,var(--brand,#0f4c81));display:flex;justify-content:space-between;align-items:center;padding:.7rem 1.2rem;transition:color .15s}
+.also a:hover{color:var(--accent,#c8920a)}
+.also a::before{content:'←';font-size:.75rem;opacity:.5;margin-right:auto;margin-left:.5rem;transition:opacity .15s,transform .15s}
+.also a:hover::before{opacity:1;transform:translateX(-3px)}
+
 </style>
 </head>
 <body>
@@ -401,12 +443,24 @@ img{display:block;max-width:100%;height:auto}a{color:inherit;text-decoration:non
   <span class="mi">✍ <strong>geopolô</strong></span><span class="sep">·</span><span class="mi">📅 <strong>مارس 2026</strong></span><span class="sep">·</span><span class="mi">⏱ <strong>15 دقيقة</strong></span><span class="sep">·</span><span class="mi">🗂 <strong style="color:#1a8a6e">آسيا</strong></span><span class="sep">·</span>
   <span class="reading-badge">⏱ 15 دقيقة قراءة</span>
 </div></div>
-<div class="share-bar"><div class="share-inner">
-  <span class="share-label">شارك:</span>
-  <button class="share-btn share-x" onclick="shareX()">𝕏</button>
-  <button class="share-btn share-wa" onclick="shareWA()">📱 واتساب</button>
-  <button class="share-btn share-copy" onclick="copyLink()">🔗 نسخ الرابط</button>
-</div></div>
+<div class="share-bar-v2">
+  <div class="share-inner">
+    <span class="share-label">شارك:</span>
+    <button class="sbtn sb-x"  onclick="shr('x')"  title="X / Twitter">𝕏</button>
+    <button class="sbtn sb-wa" onclick="shr('wa')" title="WhatsApp">WhatsApp</button>
+    <button class="sbtn sb-fb" onclick="shr('fb')" title="Facebook">Facebook</button>
+    <button class="sbtn sb-tg" onclick="shr('tg')" title="Telegram">Telegram</button>
+    <button class="sbtn sb-li" onclick="shr('li')" title="LinkedIn">LinkedIn</button>
+    <button class="sbtn sb-rd" onclick="shr('rd')" title="Reddit">Reddit</button>
+    <button class="sbtn sb-bk" onclick="shr('bk')" title="Bluesky">Bluesky</button>
+    <button class="sbtn sb-ms" onclick="shr('ms')" title="Messenger">Messenger</button>
+    <button class="sbtn sb-tt" onclick="shr('tt')" title="TikTok">TikTok</button>
+    <button class="sbtn sb-sc" onclick="shr('sc')" title="Snapchat">Snapchat</button>
+    <button class="sbtn sb-sg" onclick="shr('sg')" title="Signal">Signal</button>
+    <button class="sbtn sb-em" onclick="shr('em')" title="Email">Email</button>
+    <button class="sbtn sb-cp" onclick="shr('cp')" title="نسخ الرابط">🔗 نسخ</button>
+  </div>
+</div>
 <div class="page-layout">
   <div class="article-body">
     <article class="body">
@@ -613,8 +667,32 @@ if(secs.length&&tocLinks.length){
   },{rootMargin:'-25% 0px -65% 0px'});
   secs.forEach(s=>obs.observe(s));
 }
-function shareX(){window.open('https://twitter.com/intent/tweet?url='+encodeURIComponent(location.href)+'&text='+encodeURIComponent(document.title));}
-function shareWA(){window.open('https://wa.me/?text='+encodeURIComponent(document.title+' '+location.href));}
-function copyLink(){navigator.clipboard.writeText(location.href).then(()=>alert('تم نسخ الرابط ✓'));}
+function shr(p){
+  var u=encodeURIComponent(location.href);
+  var t=encodeURIComponent(document.title);
+  var urls={
+    x:'https://twitter.com/intent/tweet?url='+u+'&text='+t,
+    wa:'https://wa.me/?text='+t+'%20'+u,
+    fb:'https://www.facebook.com/sharer/sharer.php?u='+u,
+    tg:'https://t.me/share/url?url='+u+'&text='+t,
+    li:'https://www.linkedin.com/shareArticle?mini=true&url='+u+'&title='+t,
+    rd:'https://reddit.com/submit?url='+u+'&title='+t,
+    bk:'https://bsky.app/intent/compose?text='+t+'%20'+decodeURIComponent(u),
+    ms:'https://www.facebook.com/dialog/send?link='+u+'&app_id=291494419107518&redirect_uri='+u,
+    tt:'https://www.tiktok.com/share?url='+u,
+    sc:'https://www.snapchat.com/share?url='+u,
+    sg:'https://signal.me/#p/'+u,
+    em:'mailto:?subject='+t+'&body='+u
+  };
+  if(p==='cp'){
+    navigator.clipboard.writeText(location.href).then(function(){
+      var b=document.querySelector('.sb-cp');
+      if(b){var o=b.textContent;b.textContent='✓ تم';setTimeout(function(){b.textContent=o;},1500);}
+    });
+    return;
+  }
+  if(p==='sg'&&navigator.share){navigator.share({title:document.title,url:location.href});return;}
+  if(urls[p])window.open(urls[p],'_blank','width=600,height=500,noopener');
+}
 </script>
 </body></html>
