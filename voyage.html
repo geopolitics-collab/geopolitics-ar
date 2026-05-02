@@ -196,6 +196,29 @@ footer a{color:#8a87a0;transition:color .2s}footer a:hover{color:var(--or)}
 .share-rd{background:#ff4500;color:#fff}
 .share-ss{background:#ff6719;color:#fff}
 
+
+/* ── ARTICLE CARDS GRID v2 ── */
+.article-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.2rem;margin:2rem 0}
+.article-card{display:flex;flex-direction:column;background:#fff;border:1px solid #e8e4dc;overflow:hidden;transition:transform .22s cubic-bezier(.4,0,.2,1),box-shadow .22s cubic-bezier(.4,0,.2,1);text-decoration:none;color:inherit}
+.article-card:hover{transform:translateY(-4px);box-shadow:0 8px 28px rgba(14,26,43,.1)}
+.article-card__img-wrap{position:relative;height:0;padding-bottom:56.25%;overflow:hidden;background:#d0cfc8}
+.article-card__img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:saturate(.88);transition:filter .4s,transform .4s}
+.article-card:hover .article-card__img{filter:saturate(1);transform:scale(1.04)}
+.article-card__body{padding:1rem 1.1rem;flex:1;display:flex;flex-direction:column}
+.article-card__tag{font-family:'Noto Naskh Arabic',sans-serif;font-size:.58rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#fff;padding:.18rem .55rem;border-radius:2px;display:inline-block;margin-bottom:.55rem;align-self:flex-start}
+.article-card__title{font-family:'Noto Serif Arabic',Georgia,serif;font-size:.95rem;font-weight:700;line-height:1.4;color:#0A0C0E;margin-bottom:.5rem;flex:1}
+.article-card__desc{font-family:'Noto Naskh Arabic',sans-serif;font-size:.78rem;color:#4A5568;line-height:1.6;margin-bottom:.8rem;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.article-card__footer{display:flex;justify-content:space-between;align-items:center;padding-top:.7rem;border-top:1px solid #EAE5D8}
+.article-card__read{font-family:'Noto Naskh Arabic',sans-serif;font-size:.65rem;font-weight:700}
+.article-card__time{font-family:'Noto Naskh Arabic',sans-serif;font-size:.62rem;color:#8A94A6}
+.article-grid-header{display:flex;align-items:center;gap:.8rem;padding:.7rem 0;border-bottom:2px solid;margin-bottom:1.2rem}
+.article-grid-header h2{font-family:'Noto Serif Arabic',Georgia,serif;font-size:1.1rem;font-weight:900;line-height:1}
+.article-grid-header-line{flex:1;height:1px;background:#EAE5D8}
+.article-grid-header a{font-family:'Noto Naskh Arabic',sans-serif;font-size:.65rem;font-weight:600;opacity:.8;transition:opacity .15s}
+.article-grid-header a:hover{opacity:1}
+@media(max-width:640px){.article-grid{grid-template-columns:1fr 1fr;gap:.8rem}}
+@media(max-width:380px){.article-grid{grid-template-columns:1fr}}
+
 </style>
 <script src="https://sites.super.myninja.ai/_assets/ninja-daytona-script.js"></script>
 </head>
@@ -490,6 +513,238 @@ footer a{color:#8a87a0;transition:color .2s}footer a:hover{color:var(--or)}
   </form>
 </section>
 
+
+<section id="grid-voyage" style="margin:3rem 0 2rem;max-width:1200px;margin-left:auto;margin-right:auto;padding:0 1.5rem">
+  <div class="article-grid-header" style="border-color:#0891b2;color:#0891b2">
+    <h2 style="color:#0891b2">السفر والسياحة</h2>
+    <div class="article-grid-header-line"></div>
+    <a href="/voyage.html" style="color:#0891b2">جميع المقالات ←</a>
+  </div>
+  <div class="article-grid"><a href="/articles/arabie-saoudite-tourisme-strategie-politique-2026.html" class="article-card">
+  <div class="article-card__img-wrap">
+    <img class="article-card__img" src="https://images.unsplash.com/photo-1548013146-72479768bada?w=600&q=75" alt="الانفتاح السياحي السعودي: ثورة حقيقية أم استراتيجية سياسية محسوبة؟ 2026" loading="lazy"/>
+  </div>
+  <div class="article-card__body">
+    <span class="article-card__tag" style="background:#0891b2">سفر</span>
+    <h3 class="article-card__title">الانفتاح السياحي السعودي: ثورة حقيقية أم استراتيجية سياسية محسوبة؟ 2026</h3>
+    <p class="article-card__desc">تحليل جيوسياسي لانفتاح السعودية على السياحة: رؤية 2030، مشاريع العلا ونيوم وروح الملكة، ومعادلة التحديث بين الهوية والان</p>
+    <div class="article-card__footer">
+      <span class="article-card__read" style="color:#0891b2">اقرأ التحليل ←</span>
+      <span class="article-card__time">⏱ 8 دقائق</span>
+    </div>
+  </div>
+</a>
+<a href="/articles/bien-etre-wellness-moyen-orient-industrie-strategique.html" class="article-card">
+  <div class="article-card__img-wrap">
+    <img class="article-card__img" src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=600&q=75" alt="طفرة الرفاهية في الشرق الأوسط: صناعة جديدة بأبعاد استراتيجية 2026" loading="lazy"/>
+  </div>
+  <div class="article-card__body">
+    <span class="article-card__tag" style="background:#0891b2">سفر</span>
+    <h3 class="article-card__title">طفرة الرفاهية في الشرق الأوسط: صناعة جديدة بأبعاد استراتيجية 2026</h3>
+    <p class="article-card__desc">تحليل صناعة الرفاهية والاستشفاء في الشرق الأوسط 2026: كيف تحوّلت من خدمة فندقية إلى قطاع اقتصادي استراتيجي يُنافس على مل</p>
+    <div class="article-card__footer">
+      <span class="article-card__read" style="color:#0891b2">اقرأ التحليل ←</span>
+      <span class="article-card__time">⏱ 8 دقائق</span>
+    </div>
+  </div>
+</a>
+<a href="/articles/deconnexion-digitale-desert-elites-mondiales.html" class="article-card">
+  <div class="article-card__img-wrap">
+    <img class="article-card__img" src="https://images.unsplash.com/photo-1509316785289-025f5b846b35?w=600&q=75" alt="الانفصال الرقمي: لماذا تجذب الصحراء العربية نخب العالم في 2026" loading="lazy"/>
+  </div>
+  <div class="article-card__body">
+    <span class="article-card__tag" style="background:#0891b2">سفر</span>
+    <h3 class="article-card__title">الانفصال الرقمي: لماذا تجذب الصحراء العربية نخب العالم في 2026</h3>
+    <p class="article-card__desc">تحليل ظاهرة سياحة الانفصال الرقمي في الصحراء العربية: لماذا يدفع مديرو الشركات العالميون آلاف الدولارات للهرب من الإنترن</p>
+    <div class="article-card__footer">
+      <span class="article-card__read" style="color:#0891b2">اقرأ التحليل ←</span>
+      <span class="article-card__time">⏱ 8 دقائق</span>
+    </div>
+  </div>
+</a>
+<a href="/articles/dubai-capitale-mondiale-luxe-tourisme-2026.html" class="article-card">
+  <div class="article-card__img-wrap">
+    <img class="article-card__img" src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=600&q=75" alt="دبي: كيف أصبحت عاصمة الفخامة والسياحة العالمية — تحليل استراتيجي 2026" loading="lazy"/>
+  </div>
+  <div class="article-card__body">
+    <span class="article-card__tag" style="background:#0891b2">سفر</span>
+    <h3 class="article-card__title">دبي: كيف أصبحت عاصمة الفخامة والسياحة العالمية — تحليل استراتيجي 2026</h3>
+    <p class="article-card__desc">تحليل جيوسياسي لصعود دبي كعاصمة عالمية للسياحة الفاخرة: من إمارة صحراوية إلى مركز يستقبل 20 مليون زائر سنوياً. القوة الن</p>
+    <div class="article-card__footer">
+      <span class="article-card__read" style="color:#0891b2">اقرأ التحليل ←</span>
+      <span class="article-card__time">⏱ 8 دقائق</span>
+    </div>
+  </div>
+</a>
+<a href="/articles/expatries-golfe-qualite-vie-moyen-orient.html" class="article-card">
+  <div class="article-card__img-wrap">
+    <img class="article-card__img" src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=600&q=75" alt="لماذا يختار المغتربون الخليج: تحليل جودة الحياة في الإمارات والسعودية وقطر 2026" loading="lazy"/>
+  </div>
+  <div class="article-card__body">
+    <span class="article-card__tag" style="background:#0891b2">سفر</span>
+    <h3 class="article-card__title">لماذا يختار المغتربون الخليج: تحليل جودة الحياة في الإمارات والسعودية وقطر 2026</h3>
+    <p class="article-card__desc">تحليل استراتيجي لتفضيل المغتربين الدوليين للخليج على الغرب: الضرائب الصفرية، الأمان، التعليم، والرعاية الصحية. ما لم تست</p>
+    <div class="article-card__footer">
+      <span class="article-card__read" style="color:#0891b2">اقرأ التحليل ←</span>
+      <span class="article-card__time">⏱ 8 دقائق</span>
+    </div>
+  </div>
+</a>
+<a href="/articles/hammam-medecine-naturelle-traditions-moderne.html" class="article-card">
+  <div class="article-card__img-wrap">
+    <img class="article-card__img" src="https://images.unsplash.com/photo-1600334089648-b0d9d3028eb2?w=600&q=75" alt="الحمام والطب التقليدي: كيف يُعيد الشرق الأوسط اكتشاف تراثه العلاجي 2026" loading="lazy"/>
+  </div>
+  <div class="article-card__body">
+    <span class="article-card__tag" style="background:#0891b2">سفر</span>
+    <h3 class="article-card__title">الحمام والطب التقليدي: كيف يُعيد الشرق الأوسط اكتشاف تراثه العلاجي 2026</h3>
+    <p class="article-card__desc">تحليل عودة الحمام العربي والطب التقليدي الإسلامي إلى سياحة الرفاهية العالمية: من مراكش إلى مسقط، تراث ألفي يُقدَّم بلغة </p>
+    <div class="article-card__footer">
+      <span class="article-card__read" style="color:#0891b2">اقرأ التحليل ←</span>
+      <span class="article-card__time">⏱ 8 دقائق</span>
+    </div>
+  </div>
+</a>
+<a href="/articles/iles-secretes-resorts-mer-rouge-2026.html" class="article-card">
+  <div class="article-card__img-wrap">
+    <img class="article-card__img" src="https://images.unsplash.com/photo-1582647509711-c8aa8a8bda71?w=600&q=75" alt="جزر وريزورتات سرية في البحر الأحمر: الوجهة الفاخرة الأكثر تفرداً في 2026" loading="lazy"/>
+  </div>
+  <div class="article-card__body">
+    <span class="article-card__tag" style="background:#0891b2">سفر</span>
+    <h3 class="article-card__title">جزر وريزورتات سرية في البحر الأحمر: الوجهة الفاخرة الأكثر تفرداً في 2026</h3>
+    <p class="article-card__desc">دليل تحليلي للجزر الحصرية ومنتجعات البحر الأحمر 2026: من روح الملكة السعودية إلى جزر مصر. النظام البيئي النادر وفرصة الس</p>
+    <div class="article-card__footer">
+      <span class="article-card__read" style="color:#0891b2">اقرأ التحليل ←</span>
+      <span class="article-card__time">⏱ 8 دقائق</span>
+    </div>
+  </div>
+</a>
+<a href="/articles/oman-secret-moyen-orient-tourisme-2026.html" class="article-card">
+  <div class="article-card__img-wrap">
+    <img class="article-card__img" src="https://images.unsplash.com/photo-1574803358668-0aefde651bfb?w=600&q=75" alt="عُمان: السر الأفضل حفاظاً في الشرق الأوسط — لماذا تختارها نخبة المسافرين 2026" loading="lazy"/>
+  </div>
+  <div class="article-card__body">
+    <span class="article-card__tag" style="background:#0891b2">سفر</span>
+    <h3 class="article-card__title">عُمان: السر الأفضل حفاظاً في الشرق الأوسط — لماذا تختارها نخبة المسافرين 2026</h3>
+    <p class="article-card__desc">تحليل جيوسياسي وسياحي لعُمان: كيف حافظت السلطنة على هويتها الأصيلة وجذبت نخبة المسافرين الباحثين عن أصالة يفتقدها العالم</p>
+    <div class="article-card__footer">
+      <span class="article-card__read" style="color:#0891b2">اقرأ التحليل ←</span>
+      <span class="article-card__time">⏱ 8 دقائق</span>
+    </div>
+  </div>
+</a>
+<a href="/articles/qatar-doha-tourisme-influence-soft-power-2026.html" class="article-card">
+  <div class="article-card__img-wrap">
+    <img class="article-card__img" src="https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?w=600&q=75" alt="الدوحة: كيف يُوظّف قطر السياحة لتعزيز نفوذه العالمي — تحليل 2026" loading="lazy"/>
+  </div>
+  <div class="article-card__body">
+    <span class="article-card__tag" style="background:#0891b2">سفر</span>
+    <h3 class="article-card__title">الدوحة: كيف يُوظّف قطر السياحة لتعزيز نفوذه العالمي — تحليل 2026</h3>
+    <p class="article-card__desc">تحليل جيوسياسي لتوظيف قطر للسياحة كقوة ناعمة: من مونديال 2022 إلى متاحف عالمية، استراتيجية الدوحة في بناء مكانة دولية اس</p>
+    <div class="article-card__footer">
+      <span class="article-card__read" style="color:#0891b2">اقرأ التحليل ←</span>
+      <span class="article-card__time">⏱ 8 دقائق</span>
+    </div>
+  </div>
+</a>
+<a href="/articles/top-10-destinations-luxe-moyen-orient-2026.html" class="article-card">
+  <div class="article-card__img-wrap">
+    <img class="article-card__img" src="https://images.unsplash.com/photo-1527402333-4609eb2e6af4?w=600&q=75" alt="أفضل 10 وجهات فاخرة في الشرق الأوسط 2026: التصنيف الذي يغيب عن كتالوجات السياحة العادية" loading="lazy"/>
+  </div>
+  <div class="article-card__body">
+    <span class="article-card__tag" style="background:#0891b2">سفر</span>
+    <h3 class="article-card__title">أفضل 10 وجهات فاخرة في الشرق الأوسط 2026: التصنيف الذي يغيب عن كتالوجات السياحة العادية</h3>
+    <p class="article-card__desc">تصنيف استراتيجي لأفضل 10 وجهات فاخرة في الشرق الأوسط 2026: تحليل جيوسياسي لما تُقدّمه كل وجهة وما يميّزها — ليس قائمة مج</p>
+    <div class="article-card__footer">
+      <span class="article-card__read" style="color:#0891b2">اقرأ التحليل ←</span>
+      <span class="article-card__time">⏱ 8 دقائق</span>
+    </div>
+  </div>
+</a>
+<a href="/articles/tourisme-spirituel-modernite-traditions-moyen-orient.html" class="article-card">
+  <div class="article-card__img-wrap">
+    <img class="article-card__img" src="https://images.unsplash.com/photo-1548013146-72479768bada?w=600&q=75" alt="السياحة الروحية في الشرق الأوسط: حين تلتقي الحداثة والتراث في رحلة البحث عن المعنى 2026" loading="lazy"/>
+  </div>
+  <div class="article-card__body">
+    <span class="article-card__tag" style="background:#0891b2">سفر</span>
+    <h3 class="article-card__title">السياحة الروحية في الشرق الأوسط: حين تلتقي الحداثة والتراث في رحلة البحث عن المعنى 2026</h3>
+    <p class="article-card__desc">تحليل عميق للسياحة الروحية في الشرق الأوسط 2026: ما وراء الحج والعمرة إلى رحلات المعنى والصوفية والأماكن الإبراهيمية الم</p>
+    <div class="article-card__footer">
+      <span class="article-card__read" style="color:#0891b2">اقرأ التحليل ←</span>
+      <span class="article-card__time">⏱ 8 دقائق</span>
+    </div>
+  </div>
+</a>
+<a href="/articles/voyager-moyen-orient-2026-visa-securite-cout.html" class="article-card">
+  <div class="article-card__img-wrap">
+    <img class="article-card__img" src="https://images.unsplash.com/photo-1542401886-65d6c61db217?w=600&q=75" alt="السفر إلى الشرق الأوسط في 2026: كل ما تغيّر في التأشيرة والأمان والتكاليف" loading="lazy"/>
+  </div>
+  <div class="article-card__body">
+    <span class="article-card__tag" style="background:#0891b2">سفر</span>
+    <h3 class="article-card__title">السفر إلى الشرق الأوسط في 2026: كل ما تغيّر في التأشيرة والأمان والتكاليف</h3>
+    <p class="article-card__desc">الدليل الشامل المحدَّث للسفر إلى الشرق الأوسط 2026: تغييرات التأشيرة، واقع الأمان الفعلي، التكاليف الحقيقية، ونصائح لا ت</p>
+    <div class="article-card__footer">
+      <span class="article-card__read" style="color:#0891b2">اقرأ التحليل ←</span>
+      <span class="article-card__time">⏱ 8 دقائق</span>
+    </div>
+  </div>
+</a>
+<a href="/articles/voyage-aeroports-geopolitique.html" class="article-card">
+  <div class="article-card__img-wrap">
+    <img class="article-card__img" src="https://images.unsplash.com/photo-1531122796527-4b65eb12d45b?w=600&q=75" alt="المطارات الكبرى: بوابات النفوذ الجيوسياسي وعقد الاقتصاد العالمي" loading="lazy"/>
+  </div>
+  <div class="article-card__body">
+    <span class="article-card__tag" style="background:#0891b2">سفر</span>
+    <h3 class="article-card__title">المطارات الكبرى: بوابات النفوذ الجيوسياسي وعقد الاقتصاد العالمي</h3>
+    <p class="article-card__desc">تحليل جيوسياسي للمطارات الكبرى: دور دبي وسنغافورة وبكين وإسطنبول كعقد نفوذ. كيف تُوظّف الدول مطاراتها أداةً للقوة الناعم</p>
+    <div class="article-card__footer">
+      <span class="article-card__read" style="color:#0891b2">اقرأ التحليل ←</span>
+      <span class="article-card__time">⏱ 8 دقائق</span>
+    </div>
+  </div>
+</a>
+<a href="/articles/voyage-tourisme-geopolitique.html" class="article-card">
+  <div class="article-card__img-wrap">
+    <img class="article-card__img" src="https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=600&q=75" alt="السياحة والجيوسياسة: حين يصبح السفر قراراً استراتيجياً" loading="lazy"/>
+  </div>
+  <div class="article-card__body">
+    <span class="article-card__tag" style="background:#0891b2">سفر</span>
+    <h3 class="article-card__title">السياحة والجيوسياسة: حين يصبح السفر قراراً استراتيجياً</h3>
+    <p class="article-card__desc">تحليل العلاقة بين السياحة العالمية والجيوسياسة: كيف تُوظّف الدول السياحة أداة نفوذ وتنويع اقتصادي، وكيف تؤثر النزاعات وا</p>
+    <div class="article-card__footer">
+      <span class="article-card__read" style="color:#0891b2">اقرأ التحليل ←</span>
+      <span class="article-card__time">⏱ 8 دقائق</span>
+    </div>
+  </div>
+</a>
+<a href="/articles/voyage-zones-tensions-conseils.html" class="article-card">
+  <div class="article-card__img-wrap">
+    <img class="article-card__img" src="https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?w=600&q=75" alt="السفر إلى مناطق التوتر: الدليل العملي الكامل للمسافر الواعي" loading="lazy"/>
+  </div>
+  <div class="article-card__body">
+    <span class="article-card__tag" style="background:#0891b2">سفر</span>
+    <h3 class="article-card__title">السفر إلى مناطق التوتر: الدليل العملي الكامل للمسافر الواعي</h3>
+    <p class="article-card__desc">دليل عملي للسفر في مناطق التوتر: التحضير الأمني، التأمين الخاص، التواصل مع السفارة، التصرف عند الأزمات، والأماكن التي تب</p>
+    <div class="article-card__footer">
+      <span class="article-card__read" style="color:#0891b2">اقرأ التحليل ←</span>
+      <span class="article-card__time">⏱ 8 دقائق</span>
+    </div>
+  </div>
+</a>
+<a href="/articles/destinations-incontournables-2026.html" class="article-card">
+  <div class="article-card__img-wrap">
+    <img class="article-card__img" src="https://images.unsplash.com/photo-1530521954074-e64f6810b32d?w=600&q=75" alt="الوجهات الأكثر إثارة في 2026: خريطة سفر عالم جديد" loading="lazy"/>
+  </div>
+  <div class="article-card__body">
+    <span class="article-card__tag" style="background:#0891b2">سفر</span>
+    <h3 class="article-card__title">الوجهات الأكثر إثارة في 2026: خريطة سفر عالم جديد</h3>
+    <p class="article-card__desc">دليل الوجهات السياحية الأبرز لعام 2026: اليابان، سلوفينيا، الأردن، جورجيا، وإثيوبيا. ما يُميّز كل وجهة، التوقيت المثالي،</p>
+    <div class="article-card__footer">
+      <span class="article-card__read" style="color:#0891b2">اقرأ التحليل ←</span>
+      <span class="article-card__time">⏱ 8 دقائق</span>
+    </div>
+  </div>
+</a></div>
+</section>
 <footer>
   <div class="foot-links">
     <a href="/">الرئيسية</a>

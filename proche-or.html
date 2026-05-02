@@ -196,6 +196,29 @@ footer a{color:#8a87a0;transition:color .2s}footer a:hover{color:var(--or)}
 .share-rd{background:#ff4500;color:#fff}
 .share-ss{background:#ff6719;color:#fff}
 
+
+/* ── ARTICLE CARDS GRID v2 ── */
+.article-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.2rem;margin:2rem 0}
+.article-card{display:flex;flex-direction:column;background:#fff;border:1px solid #e8e4dc;overflow:hidden;transition:transform .22s cubic-bezier(.4,0,.2,1),box-shadow .22s cubic-bezier(.4,0,.2,1);text-decoration:none;color:inherit}
+.article-card:hover{transform:translateY(-4px);box-shadow:0 8px 28px rgba(14,26,43,.1)}
+.article-card__img-wrap{position:relative;height:0;padding-bottom:56.25%;overflow:hidden;background:#d0cfc8}
+.article-card__img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:saturate(.88);transition:filter .4s,transform .4s}
+.article-card:hover .article-card__img{filter:saturate(1);transform:scale(1.04)}
+.article-card__body{padding:1rem 1.1rem;flex:1;display:flex;flex-direction:column}
+.article-card__tag{font-family:'Noto Naskh Arabic',sans-serif;font-size:.58rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#fff;padding:.18rem .55rem;border-radius:2px;display:inline-block;margin-bottom:.55rem;align-self:flex-start}
+.article-card__title{font-family:'Noto Serif Arabic',Georgia,serif;font-size:.95rem;font-weight:700;line-height:1.4;color:#0A0C0E;margin-bottom:.5rem;flex:1}
+.article-card__desc{font-family:'Noto Naskh Arabic',sans-serif;font-size:.78rem;color:#4A5568;line-height:1.6;margin-bottom:.8rem;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.article-card__footer{display:flex;justify-content:space-between;align-items:center;padding-top:.7rem;border-top:1px solid #EAE5D8}
+.article-card__read{font-family:'Noto Naskh Arabic',sans-serif;font-size:.65rem;font-weight:700}
+.article-card__time{font-family:'Noto Naskh Arabic',sans-serif;font-size:.62rem;color:#8A94A6}
+.article-grid-header{display:flex;align-items:center;gap:.8rem;padding:.7rem 0;border-bottom:2px solid;margin-bottom:1.2rem}
+.article-grid-header h2{font-family:'Noto Serif Arabic',Georgia,serif;font-size:1.1rem;font-weight:900;line-height:1}
+.article-grid-header-line{flex:1;height:1px;background:#EAE5D8}
+.article-grid-header a{font-family:'Noto Naskh Arabic',sans-serif;font-size:.65rem;font-weight:600;opacity:.8;transition:opacity .15s}
+.article-grid-header a:hover{opacity:1}
+@media(max-width:640px){.article-grid{grid-template-columns:1fr 1fr;gap:.8rem}}
+@media(max-width:380px){.article-grid{grid-template-columns:1fr}}
+
 </style>
 <script src="https://sites.super.myninja.ai/_assets/ninja-daytona-script.js"></script>
 </head>
@@ -610,6 +633,196 @@ footer a{color:#8a87a0;transition:color .2s}footer a:hover{color:var(--or)}
   </form>
 </section>
 
+
+<section id="grid-orient" style="margin:3rem 0 2rem;max-width:1200px;margin-left:auto;margin-right:auto;padding:0 1.5rem">
+  <div class="article-grid-header" style="border-color:#8b3a8b;color:#8b3a8b">
+    <h2 style="color:#8b3a8b">الشرق الأوسط</h2>
+    <div class="article-grid-header-line"></div>
+    <a href="/proche-or.html" style="color:#8b3a8b">جميع المقالات ←</a>
+  </div>
+  <div class="article-grid"><a href="/articles/moyen-orient-iran-arabie-rivalite-structurante.html" class="article-card">
+  <div class="article-card__img-wrap">
+    <img class="article-card__img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/07/Strait_of_Hormuz.jpg/1280px-Strait_of_Hormuz.jpg" alt="الشرق الأوسط: التوتّر كنظام دائم، والصراع السعودي-الإيراني كبنية" loading="lazy"/>
+  </div>
+  <div class="article-card__body">
+    <span class="article-card__tag" style="background:#8b3a8b">شرق أوسط</span>
+    <h3 class="article-card__title">الشرق الأوسط: التوتّر كنظام دائم، والصراع السعودي-الإيراني كبنية</h3>
+    <p class="article-card__desc">رغم مصافحة بكين ٢٠٢٣ التاريخية بين الرياض وطهران، لم تنطفئ جمرة المنافسة. إنها تتحوّل أشكالها فقط، من حروب الوكالة إلى ص</p>
+    <div class="article-card__footer">
+      <span class="article-card__read" style="color:#8b3a8b">اقرأ التحليل ←</span>
+      <span class="article-card__time">⏱ 8 دقائق</span>
+    </div>
+  </div>
+</a>
+<a href="/articles/afrique-nouvelle-grande-competition.html" class="article-card">
+  <div class="article-card__img-wrap">
+    <img class="article-card__img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e2/Satellite_image_of_Africa.jpg/1024px-Satellite_image_of_Africa.jpg" alt="أفريقيا في قلب المنافسة الكبرى: قارّة بلا وصاية، ملعب جميع القوى" loading="lazy"/>
+  </div>
+  <div class="article-card__body">
+    <span class="article-card__tag" style="background:#8b3a8b">شرق أوسط</span>
+    <h3 class="article-card__title">أفريقيا في قلب المنافسة الكبرى: قارّة بلا وصاية، ملعب جميع القوى</h3>
+    <p class="article-card__desc">انسحبت فرنسا من الساحل، ودخلت روسيا بفاغنر، وتُوسّع الصين بنيتها التحتية، وتعود أمريكا متأخّرة. أفريقيا لم تعد ''هامش ال</p>
+    <div class="article-card__footer">
+      <span class="article-card__read" style="color:#8b3a8b">اقرأ التحليل ←</span>
+      <span class="article-card__time">⏱ 8 دقائق</span>
+    </div>
+  </div>
+</a>
+<a href="/articles/chine-taiwan-expansion-silencieuse.html" class="article-card">
+  <div class="article-card__img-wrap">
+    <img class="article-card__img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c0/PLA_Navy_Taiwan_Strait.jpg/1280px-PLA_Navy_Taiwan_Strait.jpg" alt="الصين وتايوان: كيف تُعيد بكين تعريف معنى القوّة دون إطلاق رصاصة" loading="lazy"/>
+  </div>
+  <div class="article-card__body">
+    <span class="article-card__tag" style="background:#8b3a8b">شرق أوسط</span>
+    <h3 class="article-card__title">الصين وتايوان: كيف تُعيد بكين تعريف معنى القوّة دون إطلاق رصاصة</h3>
+    <p class="article-card__desc">لا دبّابات على الشواطئ، ولا إنزال برّي وشيك. ما تمارسه الصين في مضيق تايوان هو فنّ استراتيجي أقدم من الحرب نفسها: تغيير </p>
+    <div class="article-card__footer">
+      <span class="article-card__read" style="color:#8b3a8b">اقرأ التحليل ←</span>
+      <span class="article-card__time">⏱ 8 دقائق</span>
+    </div>
+  </div>
+</a>
+<a href="/articles/cyberguerre-front-invisible.html" class="article-card">
+  <div class="article-card__img-wrap">
+    <img class="article-card__img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/Server_room_interior.jpg/1280px-Server_room_interior.jpg" alt="الحرب السيبرانيّة: الجبهة التي لا تُرى، ولا يُمكن تجاهلها" loading="lazy"/>
+  </div>
+  <div class="article-card__body">
+    <span class="article-card__tag" style="background:#8b3a8b">شرق أوسط</span>
+    <h3 class="article-card__title">الحرب السيبرانيّة: الجبهة التي لا تُرى، ولا يُمكن تجاهلها</h3>
+    <p class="article-card__desc">بلا دخان ولا أصوات، تُهاجَم البنى التحتية وتُسرق الأسرار وتُشلّ المستشفيات. الحرب السيبرانيّة ليست مستقبلاً قادماً، إنّه</p>
+    <div class="article-card__footer">
+      <span class="article-card__read" style="color:#8b3a8b">اقرأ التحليل ←</span>
+      <span class="article-card__time">⏱ 8 دقائق</span>
+    </div>
+  </div>
+</a>
+<a href="/articles/energie-petrole-gaz-armes-geopolitiques.html" class="article-card">
+  <div class="article-card__img-wrap">
+    <img class="article-card__img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Oil_refinery_Anacortes_WA.jpg/1280px-Oil_refinery_Anacortes_WA.jpg" alt="الطاقة كسلاح: حين تتحوّل البراميل إلى أدوات حرب" loading="lazy"/>
+  </div>
+  <div class="article-card__body">
+    <span class="article-card__tag" style="background:#8b3a8b">شرق أوسط</span>
+    <h3 class="article-card__title">الطاقة كسلاح: حين تتحوّل البراميل إلى أدوات حرب</h3>
+    <p class="article-card__desc">لم تكن الطاقة يوماً مجرّد سلعة اقتصادية. في العقد الممتدّ من ٢٠٢٢ إلى اليوم، تعلّم العالم من جديد أنّ من يتحكّم في الهيد</p>
+    <div class="article-card__footer">
+      <span class="article-card__read" style="color:#8b3a8b">اقرأ التحليل ←</span>
+      <span class="article-card__time">⏱ 8 دقائق</span>
+    </div>
+  </div>
+</a>
+<a href="/articles/guerre-du-futur-drones-ia-hypersonique.html" class="article-card">
+  <div class="article-card__img-wrap">
+    <img class="article-card__img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1d/Mq-9_Reaper.jpg/1280px-Mq-9_Reaper.jpg" alt="حروب الغد: المسيّرات، الذكاء الاصطناعي، والأسلحة فرط الصوتية" loading="lazy"/>
+  </div>
+  <div class="article-card__body">
+    <span class="article-card__tag" style="background:#8b3a8b">شرق أوسط</span>
+    <h3 class="article-card__title">حروب الغد: المسيّرات، الذكاء الاصطناعي، والأسلحة فرط الصوتية</h3>
+    <p class="article-card__desc">لأوّل مرّة منذ اختراع الأسلحة النووية، يُعيد تطوّر السلاح تعريف ما يعنيه النصر ذاته. وهذا ليس مستقبلاً بعيداً: إنّه يتشك</p>
+    <div class="article-card__footer">
+      <span class="article-card__read" style="color:#8b3a8b">اقرأ التحليل ←</span>
+      <span class="article-card__time">⏱ 8 دقائق</span>
+    </div>
+  </div>
+</a>
+<a href="/articles/nouvel-ordre-mondial-monde-multipolaire.html" class="article-card">
+  <div class="article-card__img-wrap">
+    <img class="article-card__img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/97/The_Earth_seen_from_Apollo_17.jpg/1024px-The_Earth_seen_from_Apollo_17.jpg" alt="النظام الدولي الجديد: نهاية اللحظة أحادية القطب وميلاد عالم متعدّد المحاور" loading="lazy"/>
+  </div>
+  <div class="article-card__body">
+    <span class="article-card__tag" style="background:#8b3a8b">شرق أوسط</span>
+    <h3 class="article-card__title">النظام الدولي الجديد: نهاية اللحظة أحادية القطب وميلاد عالم متعدّد المحاور</h3>
+    <p class="article-card__desc">ثلاثون عاماً بعد سقوط جدار برلين، انتهى الوهم الأمريكي بأنّ التاريخ انتهى. ما يتشكّل اليوم ليس عودة إلى الحرب الباردة، ب</p>
+    <div class="article-card__footer">
+      <span class="article-card__read" style="color:#8b3a8b">اقرأ التحليل ←</span>
+      <span class="article-card__time">⏱ 8 دقائق</span>
+    </div>
+  </div>
+</a>
+<a href="/articles/strategies-maritimes-detroits-routes.html" class="article-card">
+  <div class="article-card__img-wrap">
+    <img class="article-card__img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/25/USS_Gerald_R._Ford_%28CVN-78%29_underway.jpg/1280px-USS_Gerald_R._Ford_%28CVN-78%29_underway.jpg" alt="السيطرة على البحار: المضايق، الأساطيل، وحرب الممرّات" loading="lazy"/>
+  </div>
+  <div class="article-card__body">
+    <span class="article-card__tag" style="background:#8b3a8b">شرق أوسط</span>
+    <h3 class="article-card__title">السيطرة على البحار: المضايق، الأساطيل، وحرب الممرّات</h3>
+    <p class="article-card__desc">سبعة مضايق تُمرّ بها خمسة وثمانون بالمئة من التجارة العالمية. من يسيطر عليها يُحدّد كلفة الاقتصاد الكوكبي. هذا هو جوهر ا</p>
+    <div class="article-card__footer">
+      <span class="article-card__read" style="color:#8b3a8b">اقرأ التحليل ←</span>
+      <span class="article-card__time">⏱ 8 دقائق</span>
+    </div>
+  </div>
+</a>
+<a href="/articles/arabie-saoudite-golfe-securite.html" class="article-card">
+  <div class="article-card__img-wrap">
+    <img class="article-card__img" src="https://images.unsplash.com/photo-1528360983277-13d401cdc186?w=600&q=75" alt="السعودية والأمن الخليجي: منظومة الدفاع في مواجهة التهديدات المتصاعدة" loading="lazy"/>
+  </div>
+  <div class="article-card__body">
+    <span class="article-card__tag" style="background:#8b3a8b">شرق أوسط</span>
+    <h3 class="article-card__title">السعودية والأمن الخليجي: منظومة الدفاع في مواجهة التهديدات المتصاعدة</h3>
+    <p class="article-card__desc">تحليل معمّق لمنظومة الأمن الخليجي السعودية: الإنفاق الدفاعي، التحالف مع أمريكا، نظام باتريوت وثاد، والاستراتيجية في مواج</p>
+    <div class="article-card__footer">
+      <span class="article-card__read" style="color:#8b3a8b">اقرأ التحليل ←</span>
+      <span class="article-card__time">⏱ 8 دقائق</span>
+    </div>
+  </div>
+</a>
+<a href="/articles/emirats-strategie-autonomie-securite.html" class="article-card">
+  <div class="article-card__img-wrap">
+    <img class="article-card__img" src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=600&q=75" alt="الإمارات: الاستقلالية الاستراتيجية في مواجهة التهديد الإيراني" loading="lazy"/>
+  </div>
+  <div class="article-card__body">
+    <span class="article-card__tag" style="background:#8b3a8b">شرق أوسط</span>
+    <h3 class="article-card__title">الإمارات: الاستقلالية الاستراتيجية في مواجهة التهديد الإيراني</h3>
+    <p class="article-card__desc">تحليل الاستراتيجية الإماراتية في التعامل مع التهديد الإيراني: التطبيع الدبلوماسي، برامج التسليح الذاتي، صفقة F-35، وسياس</p>
+    <div class="article-card__footer">
+      <span class="article-card__read" style="color:#8b3a8b">اقرأ التحليل ←</span>
+      <span class="article-card__time">⏱ 8 دقائق</span>
+    </div>
+  </div>
+</a>
+<a href="/articles/iran-menaces-ponts-golfe-arabie-koweit-emirats.html" class="article-card">
+  <div class="article-card__img-wrap">
+    <img class="article-card__img" src="https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=600&q=75" alt="إيران تهدد بضرب جسور خليجية: هل تحتمل دول الخليج إطالة أمد الصراع؟" loading="lazy"/>
+  </div>
+  <div class="article-card__body">
+    <span class="article-card__tag" style="background:#8b3a8b">شرق أوسط</span>
+    <h3 class="article-card__title">إيران تهدد بضرب جسور خليجية: هل تحتمل دول الخليج إطالة أمد الصراع؟</h3>
+    <p class="article-card__desc">تحليل جيوستراتيجي معمّق للتهديدات الإيرانية بضرب الجسور والبنية التحتية في السعودية والكويت والإمارات: أسباب التصعيد، حد</p>
+    <div class="article-card__footer">
+      <span class="article-card__read" style="color:#8b3a8b">اقرأ التحليل ←</span>
+      <span class="article-card__time">⏱ 8 دقائق</span>
+    </div>
+  </div>
+</a>
+<a href="/articles/iran-nuclear-gulf-war-risk.html" class="article-card">
+  <div class="article-card__img-wrap">
+    <img class="article-card__img" src="https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=600&q=75" alt="البرنامج النووي الإيراني وخطر الحرب الخليجية: متى ينفجر الوضع؟" loading="lazy"/>
+  </div>
+  <div class="article-card__body">
+    <span class="article-card__tag" style="background:#8b3a8b">شرق أوسط</span>
+    <h3 class="article-card__title">البرنامج النووي الإيراني وخطر الحرب الخليجية: متى ينفجر الوضع؟</h3>
+    <p class="article-card__desc">تحليل استراتيجي للعلاقة بين البرنامج النووي الإيراني والأمن الخليجي: وقت الاندفاع، ردود الفعل الخليجية والأمريكية والإسر</p>
+    <div class="article-card__footer">
+      <span class="article-card__read" style="color:#8b3a8b">اقرأ التحليل ←</span>
+      <span class="article-card__time">⏱ 8 دقائق</span>
+    </div>
+  </div>
+</a>
+<a href="/articles/koweit-neutralite-strategique-iran-guerre.html" class="article-card">
+  <div class="article-card__img-wrap">
+    <img class="article-card__img" src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&q=75" alt="الكويت بين إيران والخليج: الحياد الاستراتيجي في مواجهة الاختبار الأصعب" loading="lazy"/>
+  </div>
+  <div class="article-card__body">
+    <span class="article-card__tag" style="background:#8b3a8b">شرق أوسط</span>
+    <h3 class="article-card__title">الكويت بين إيران والخليج: الحياد الاستراتيجي في مواجهة الاختبار الأصعب</h3>
+    <p class="article-card__desc">تحليل استراتيجي للسياسة الكويتية في إدارة التوتر الإيراني-الخليجي: دروس 1990، دور الوساطة، حدود الحياد، والخيارات الاستر</p>
+    <div class="article-card__footer">
+      <span class="article-card__read" style="color:#8b3a8b">اقرأ التحليل ←</span>
+      <span class="article-card__time">⏱ 8 دقائق</span>
+    </div>
+  </div>
+</a></div>
+</section>
 <footer>
   <div class="foot-links">
     <a href="/">الرئيسية</a>

@@ -253,6 +253,29 @@ footer{background:#1a1a2a;color:#8a87a0;padding:3rem 2rem 1.5rem;font-family:var
 .share-rd{background:#ff4500;color:#fff}
 .share-ss{background:#ff6719;color:#fff}
 
+
+/* ── ARTICLE CARDS GRID v2 ── */
+.article-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.2rem;margin:2rem 0}
+.article-card{display:flex;flex-direction:column;background:#fff;border:1px solid #e8e4dc;overflow:hidden;transition:transform .22s cubic-bezier(.4,0,.2,1),box-shadow .22s cubic-bezier(.4,0,.2,1);text-decoration:none;color:inherit}
+.article-card:hover{transform:translateY(-4px);box-shadow:0 8px 28px rgba(14,26,43,.1)}
+.article-card__img-wrap{position:relative;height:0;padding-bottom:56.25%;overflow:hidden;background:#d0cfc8}
+.article-card__img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:saturate(.88);transition:filter .4s,transform .4s}
+.article-card:hover .article-card__img{filter:saturate(1);transform:scale(1.04)}
+.article-card__body{padding:1rem 1.1rem;flex:1;display:flex;flex-direction:column}
+.article-card__tag{font-family:'Noto Naskh Arabic',sans-serif;font-size:.58rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#fff;padding:.18rem .55rem;border-radius:2px;display:inline-block;margin-bottom:.55rem;align-self:flex-start}
+.article-card__title{font-family:'Noto Serif Arabic',Georgia,serif;font-size:.95rem;font-weight:700;line-height:1.4;color:#0A0C0E;margin-bottom:.5rem;flex:1}
+.article-card__desc{font-family:'Noto Naskh Arabic',sans-serif;font-size:.78rem;color:#4A5568;line-height:1.6;margin-bottom:.8rem;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.article-card__footer{display:flex;justify-content:space-between;align-items:center;padding-top:.7rem;border-top:1px solid #EAE5D8}
+.article-card__read{font-family:'Noto Naskh Arabic',sans-serif;font-size:.65rem;font-weight:700}
+.article-card__time{font-family:'Noto Naskh Arabic',sans-serif;font-size:.62rem;color:#8A94A6}
+.article-grid-header{display:flex;align-items:center;gap:.8rem;padding:.7rem 0;border-bottom:2px solid;margin-bottom:1.2rem}
+.article-grid-header h2{font-family:'Noto Serif Arabic',Georgia,serif;font-size:1.1rem;font-weight:900;line-height:1}
+.article-grid-header-line{flex:1;height:1px;background:#EAE5D8}
+.article-grid-header a{font-family:'Noto Naskh Arabic',sans-serif;font-size:.65rem;font-weight:600;opacity:.8;transition:opacity .15s}
+.article-grid-header a:hover{opacity:1}
+@media(max-width:640px){.article-grid{grid-template-columns:1fr 1fr;gap:.8rem}}
+@media(max-width:380px){.article-grid{grid-template-columns:1fr}}
+
 </style>
 <script src="https://sites.super.myninja.ai/_assets/ninja-daytona-script.js"></script>
 </head>
@@ -727,6 +750,98 @@ footer{background:#1a1a2a;color:#8a87a0;padding:3rem 2rem 1.5rem;font-family:var
 </section>
 
 <!-- ═══════════════ FOOTER ═══════════════ -->
+
+<section id="grid-asie_ame" style="margin:3rem 0 2rem;max-width:1200px;margin-left:auto;margin-right:auto;padding:0 1.5rem">
+  <div class="article-grid-header" style="border-color:#1a8a6e;color:#1a8a6e">
+    <h2 style="color:#1a8a6e">آسيا وأمريكا</h2>
+    <div class="article-grid-header-line"></div>
+    <a href="/asie.html" style="color:#1a8a6e">جميع المقالات ←</a>
+  </div>
+  <div class="article-grid"><a href="/articles/japon-armement-pologne-philippines-2026.html" class="article-card">
+  <div class="article-card__img-wrap">
+    <img class="article-card__img" src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=75" alt="اليابان تدخل سوق الأسلحة العالمية: بولندا والفلبين زبائن جدد في حقبة غير مسبوقة 2026" loading="lazy"/>
+  </div>
+  <div class="article-card__body">
+    <span class="article-card__tag" style="background:#1a8a6e">آسيا</span>
+    <h3 class="article-card__title">اليابان تدخل سوق الأسلحة العالمية: بولندا والفلبين زبائن جدد في حقبة غير مسبوقة 2026</h3>
+    <p class="article-card__desc">تحليل استراتيجي لدخول اليابان بقوة إلى سوق تصدير الأسلحة: الجيش البولندي والبحرية الفلبينية كزبائن محتملين، وكيف تُعيد ط</p>
+    <div class="article-card__footer">
+      <span class="article-card__read" style="color:#1a8a6e">اقرأ التحليل ←</span>
+      <span class="article-card__time">⏱ 8 دقائق</span>
+    </div>
+  </div>
+</a>
+<a href="/articles/usa-blocus-maritime-iran-petrole-2026.html" class="article-card">
+  <div class="article-card__img-wrap">
+    <img class="article-card__img" src="https://images.unsplash.com/photo-1543349689-9a4d426bee8e?w=600&q=75" alt="الحصار البحري الأمريكي على إيران: وقف 90٪ من الاقتصاد الإيراني بضربة واحدة 2026" loading="lazy"/>
+  </div>
+  <div class="article-card__body">
+    <span class="article-card__tag" style="background:#1a8a6e">آسيا</span>
+    <h3 class="article-card__title">الحصار البحري الأمريكي على إيران: وقف 90٪ من الاقتصاد الإيراني بضربة واحدة 2026</h3>
+    <p class="article-card__desc">تحليل استراتيجي معمّق للحصار البحري الأمريكي الشامل على إيران: الأثر على 90٪ من الاقتصاد، مفاوضات ترامب مع طهران، وتداعي</p>
+    <div class="article-card__footer">
+      <span class="article-card__read" style="color:#1a8a6e">اقرأ التحليل ←</span>
+      <span class="article-card__time">⏱ 8 دقائق</span>
+    </div>
+  </div>
+</a>
+<a href="/articles/usa-iran-tanker-chinois-hormuz-2026.html" class="article-card">
+  <div class="article-card__img-wrap">
+    <img class="article-card__img" src="https://images.unsplash.com/photo-1511884642898-4c92249e20b6?w=600&q=75" alt="الناقلة الصينية ريتش ستاري: الرحلة التي كشفت حدود الحصار الأمريكي 2026" loading="lazy"/>
+  </div>
+  <div class="article-card__body">
+    <span class="article-card__tag" style="background:#1a8a6e">آسيا</span>
+    <h3 class="article-card__title">الناقلة الصينية ريتش ستاري: الرحلة التي كشفت حدود الحصار الأمريكي 2026</h3>
+    <p class="article-card__desc">تحليل استراتيجي لقضية الناقلة الصينية ريتش ستاري المُعاقَب عليها: عودتها إلى هرمز بعد محاولة فاشلة لاختراق الحصار الأمري</p>
+    <div class="article-card__footer">
+      <span class="article-card__read" style="color:#1a8a6e">اقرأ التحليل ←</span>
+      <span class="article-card__time">⏱ 8 دقائق</span>
+    </div>
+  </div>
+</a>
+<a href="/articles/usa-japon-vente-armes-trump-allies-2026.html" class="article-card">
+  <div class="article-card__img-wrap">
+    <img class="article-card__img" src="https://images.unsplash.com/photo-1544197150-b99a580bb7a8?w=600&q=75" alt="أكبر صفقة أسلحة أمريكية لليابان منذ الحرب العالمية الثانية: حلفاء واشنطن قلقون من ترامب 2026" loading="lazy"/>
+  </div>
+  <div class="article-card__body">
+    <span class="article-card__tag" style="background:#1a8a6e">آسيا</span>
+    <h3 class="article-card__title">أكبر صفقة أسلحة أمريكية لليابان منذ الحرب العالمية الثانية: حلفاء واشنطن قلقون من ترامب 2026</h3>
+    <p class="article-card__desc">تحليل معمّق لأضخم صفقة تسليح أمريكية لليابان منذ 1945، وكيف أن قلق الحلفاء من قرارات ترامب غير المتوقعة يدفع طوكيو نحو ب</p>
+    <div class="article-card__footer">
+      <span class="article-card__read" style="color:#1a8a6e">اقرأ التحليل ←</span>
+      <span class="article-card__time">⏱ 8 دقائق</span>
+    </div>
+  </div>
+</a>
+<a href="/articles/etats-unis-leadership-ou-repli.html" class="article-card">
+  <div class="article-card__img-wrap">
+    <img class="article-card__img" src="https://media.defense.gov/2018/Jun/20/2001933532/1088/820/0/180620-D-BN624-019.JPG" alt="الولايات المتحدة بين القيادة والتراجع: إمبراطوريّة في منتصف الشكّ" loading="lazy"/>
+  </div>
+  <div class="article-card__body">
+    <span class="article-card__tag" style="background:#1a8a6e">آسيا</span>
+    <h3 class="article-card__title">الولايات المتحدة بين القيادة والتراجع: إمبراطوريّة في منتصف الشكّ</h3>
+    <p class="article-card__desc">يملك البنتاغون أقوى جيش في التاريخ، وتملك وول ستريت أعمق أسواق المال. ومع ذلك، تعيش أمريكا لحظة نادرة من التساؤل: هل لا </p>
+    <div class="article-card__footer">
+      <span class="article-card__read" style="color:#1a8a6e">اقرأ التحليل ←</span>
+      <span class="article-card__time">⏱ 8 دقائق</span>
+    </div>
+  </div>
+</a>
+<a href="/articles/sun-tzu-strategies-indirectes-guerre-hybride.html" class="article-card">
+  <div class="article-card__img-wrap">
+    <img class="article-card__img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b4/%E5%AD%99%E5%AD%90%E5%85%B5%E6%B3%95.jpg/800px-%E5%AD%99%E5%AD%90%E5%85%B5%E6%B3%95.jpg" alt="سون تزو في العصر الرقمي: الحرب الهجينة وإرث الاستراتيجية غير المباشرة" loading="lazy"/>
+  </div>
+  <div class="article-card__body">
+    <span class="article-card__tag" style="background:#1a8a6e">آسيا</span>
+    <h3 class="article-card__title">سون تزو في العصر الرقمي: الحرب الهجينة وإرث الاستراتيجية غير المباشرة</h3>
+    <p class="article-card__desc">كتب الجنرال الصيني قبل خمسة وعشرين قرناً: ''ذروة الانتصار أن تُخضع عدوّك بلا قتال''. اليوم، تُحوّل هذه العبارة إلى عقيدة</p>
+    <div class="article-card__footer">
+      <span class="article-card__read" style="color:#1a8a6e">اقرأ التحليل ←</span>
+      <span class="article-card__time">⏱ 8 دقائق</span>
+    </div>
+  </div>
+</a></div>
+</section>
 <footer>
   <div class="footer-inner">
     <div class="footer-col">

@@ -196,6 +196,29 @@ footer a{color:#8a87a0;transition:color .2s}footer a:hover{color:var(--or)}
 .share-rd{background:#ff4500;color:#fff}
 .share-ss{background:#ff6719;color:#fff}
 
+
+/* ── ARTICLE CARDS GRID v2 ── */
+.article-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.2rem;margin:2rem 0}
+.article-card{display:flex;flex-direction:column;background:#fff;border:1px solid #e8e4dc;overflow:hidden;transition:transform .22s cubic-bezier(.4,0,.2,1),box-shadow .22s cubic-bezier(.4,0,.2,1);text-decoration:none;color:inherit}
+.article-card:hover{transform:translateY(-4px);box-shadow:0 8px 28px rgba(14,26,43,.1)}
+.article-card__img-wrap{position:relative;height:0;padding-bottom:56.25%;overflow:hidden;background:#d0cfc8}
+.article-card__img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:saturate(.88);transition:filter .4s,transform .4s}
+.article-card:hover .article-card__img{filter:saturate(1);transform:scale(1.04)}
+.article-card__body{padding:1rem 1.1rem;flex:1;display:flex;flex-direction:column}
+.article-card__tag{font-family:'Noto Naskh Arabic',sans-serif;font-size:.58rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#fff;padding:.18rem .55rem;border-radius:2px;display:inline-block;margin-bottom:.55rem;align-self:flex-start}
+.article-card__title{font-family:'Noto Serif Arabic',Georgia,serif;font-size:.95rem;font-weight:700;line-height:1.4;color:#0A0C0E;margin-bottom:.5rem;flex:1}
+.article-card__desc{font-family:'Noto Naskh Arabic',sans-serif;font-size:.78rem;color:#4A5568;line-height:1.6;margin-bottom:.8rem;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.article-card__footer{display:flex;justify-content:space-between;align-items:center;padding-top:.7rem;border-top:1px solid #EAE5D8}
+.article-card__read{font-family:'Noto Naskh Arabic',sans-serif;font-size:.65rem;font-weight:700}
+.article-card__time{font-family:'Noto Naskh Arabic',sans-serif;font-size:.62rem;color:#8A94A6}
+.article-grid-header{display:flex;align-items:center;gap:.8rem;padding:.7rem 0;border-bottom:2px solid;margin-bottom:1.2rem}
+.article-grid-header h2{font-family:'Noto Serif Arabic',Georgia,serif;font-size:1.1rem;font-weight:900;line-height:1}
+.article-grid-header-line{flex:1;height:1px;background:#EAE5D8}
+.article-grid-header a{font-family:'Noto Naskh Arabic',sans-serif;font-size:.65rem;font-weight:600;opacity:.8;transition:opacity .15s}
+.article-grid-header a:hover{opacity:1}
+@media(max-width:640px){.article-grid{grid-template-columns:1fr 1fr;gap:.8rem}}
+@media(max-width:380px){.article-grid{grid-template-columns:1fr}}
+
 </style>
 <script src="https://sites.super.myninja.ai/_assets/ninja-daytona-script.js"></script>
 </head>
@@ -490,6 +513,154 @@ footer a{color:#8a87a0;transition:color .2s}footer a:hover{color:var(--or)}
   </form>
 </section>
 
+
+<section id="grid-sante" style="margin:3rem 0 2rem;max-width:1200px;margin-left:auto;margin-right:auto;padding:0 1.5rem">
+  <div class="article-grid-header" style="border-color:#2a9d5c;color:#2a9d5c">
+    <h2 style="color:#2a9d5c">الصحة والمجتمع</h2>
+    <div class="article-grid-header-line"></div>
+    <a href="/sante.html" style="color:#2a9d5c">جميع المقالات ←</a>
+  </div>
+  <div class="article-grid"><a href="/articles/ai-anxiety-tech-2026.html" class="article-card">
+  <div class="article-card__img-wrap">
+    <img class="article-card__img" src="https://images.unsplash.com/photo-1677442135703-1787eea5ce01?w=600&q=75" alt="الذكاء الاصطناعي والقلق: هل التكنولوجيا تجعلنا أكثر توتراً؟" loading="lazy"/>
+  </div>
+  <div class="article-card__body">
+    <span class="article-card__tag" style="background:#2a9d5c">صحة</span>
+    <h3 class="article-card__title">الذكاء الاصطناعي والقلق: هل التكنولوجيا تجعلنا أكثر توتراً؟</h3>
+    <p class="article-card__desc">تحليل نفسي معمّق لتأثير الذكاء الاصطناعي على القلق: قلق الاستبدال الوظيفي، ضغط التحسين الرقمي المستمر، وكيف تُعيد الآلة </p>
+    <div class="article-card__footer">
+      <span class="article-card__read" style="color:#2a9d5c">اقرأ التحليل ←</span>
+      <span class="article-card__time">⏱ 8 دقائق</span>
+    </div>
+  </div>
+</a>
+<a href="/articles/burnout-wazifi-2026.html" class="article-card">
+  <div class="article-card__img-wrap">
+    <img class="article-card__img" src="https://images.unsplash.com/photo-1474511320723-9a56873867b5?w=600&q=75" alt="الاحتراق الوظيفي: كيف تكتشفه قبل فوات الأوان؟" loading="lazy"/>
+  </div>
+  <div class="article-card__body">
+    <span class="article-card__tag" style="background:#2a9d5c">صحة</span>
+    <h3 class="article-card__title">الاحتراق الوظيفي: كيف تكتشفه قبل فوات الأوان؟</h3>
+    <p class="article-card__desc">تحليل معمّق للاحتراق الوظيفي: الأعراض الخفية، الأسباب الجذرية، وكيف تتعرف على إرهاقك قبل أن يُصبح أزمة حقيقية. دليل نفسي</p>
+    <div class="article-card__footer">
+      <span class="article-card__read" style="color:#2a9d5c">اقرأ التحليل ←</span>
+      <span class="article-card__time">⏱ 8 دقائق</span>
+    </div>
+  </div>
+</a>
+<a href="/articles/inflation-stress-2026.html" class="article-card">
+  <div class="article-card__img-wrap">
+    <img class="article-card__img" src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=600&q=75" alt="التضخم والضغط النفسي: عندما يصبح المال مصدر قلق دائم" loading="lazy"/>
+  </div>
+  <div class="article-card__body">
+    <span class="article-card__tag" style="background:#2a9d5c">صحة</span>
+    <h3 class="article-card__title">التضخم والضغط النفسي: عندما يصبح المال مصدر قلق دائم</h3>
+    <p class="article-card__desc">تحليل نفسي واجتماعي لتأثير التضخم والأزمات الاقتصادية على الصحة النفسية: قلق المال، إرهاق الكفاح اليومي، والثمن النفسي ا</p>
+    <div class="article-card__footer">
+      <span class="article-card__read" style="color:#2a9d5c">اقرأ التحليل ←</span>
+      <span class="article-card__time">⏱ 8 دقائق</span>
+    </div>
+  </div>
+</a>
+<a href="/articles/smartphone-addiction-2026.html" class="article-card">
+  <div class="article-card__img-wrap">
+    <img class="article-card__img" src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=600&q=75" alt="إدمان الهاتف: الخطر الصامت في حياتنا اليومية" loading="lazy"/>
+  </div>
+  <div class="article-card__body">
+    <span class="article-card__tag" style="background:#2a9d5c">صحة</span>
+    <h3 class="article-card__title">إدمان الهاتف: الخطر الصامت في حياتنا اليومية</h3>
+    <p class="article-card__desc">تحليل علمي ونفسي لإدمان الهاتف الذكي: كيف صُمّمت التطبيقات لاستعباد دماغك، الدوبامين والإشعارات، وكيف تستعيد حياتك من شا</p>
+    <div class="article-card__footer">
+      <span class="article-card__read" style="color:#2a9d5c">اقرأ التحليل ←</span>
+      <span class="article-card__time">⏱ 8 دقائق</span>
+    </div>
+  </div>
+</a>
+<a href="/articles/wars-mental-health-2026.html" class="article-card">
+  <div class="article-card__img-wrap">
+    <img class="article-card__img" src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?w=600&q=75" alt="كيف تؤثر الحروب على الصحة النفسية حتى لمن لا يعيشها؟" loading="lazy"/>
+  </div>
+  <div class="article-card__body">
+    <span class="article-card__tag" style="background:#2a9d5c">صحة</span>
+    <h3 class="article-card__title">كيف تؤثر الحروب على الصحة النفسية حتى لمن لا يعيشها؟</h3>
+    <p class="article-card__desc">تحليل معمّق لتأثير الحروب والصراعات على الصحة النفسية للأفراد البعيدين جغرافياً: الصدمة الإعلامية، الإرهاق التعاطفي، وكي</p>
+    <div class="article-card__footer">
+      <span class="article-card__read" style="color:#2a9d5c">اقرأ التحليل ←</span>
+      <span class="article-card__time">⏱ 8 دقائق</span>
+    </div>
+  </div>
+</a>
+<a href="/articles/alimentation-securite-geopolitique.html" class="article-card">
+  <div class="article-card__img-wrap">
+    <img class="article-card__img" src="https://images.unsplash.com/photo-1500651230702-0e2d8a49d4ad?w=600&q=75" alt="الأمن الغذائي والجيوسياسة: حين يصبح الطعام سلاح حرب وأداة نفوذ" loading="lazy"/>
+  </div>
+  <div class="article-card__body">
+    <span class="article-card__tag" style="background:#2a9d5c">صحة</span>
+    <h3 class="article-card__title">الأمن الغذائي والجيوسياسة: حين يصبح الطعام سلاح حرب وأداة نفوذ</h3>
+    <p class="article-card__desc">تحليل الأمن الغذائي بوصفه مسألة جيوسياسية: هيمنة روسيا والصين على سلاسل الغذاء العالمية، تأثير حرب أوكرانيا على أسعار ال</p>
+    <div class="article-card__footer">
+      <span class="article-card__read" style="color:#2a9d5c">اقرأ التحليل ←</span>
+      <span class="article-card__time">⏱ 8 دقائق</span>
+    </div>
+  </div>
+</a>
+<a href="/articles/pandemie-prochaine-preparation-mondiale.html" class="article-card">
+  <div class="article-card__img-wrap">
+    <img class="article-card__img" src="https://images.unsplash.com/photo-1584118624012-df056829fbd0?w=600&q=75" alt="الجائحة القادمة: هل تعلّم العالم الدرس من كوفيد-19؟" loading="lazy"/>
+  </div>
+  <div class="article-card__body">
+    <span class="article-card__tag" style="background:#2a9d5c">صحة</span>
+    <h3 class="article-card__title">الجائحة القادمة: هل تعلّم العالم الدرس من كوفيد-19؟</h3>
+    <p class="article-card__desc">تحليل استعداد العالم للجائحة القادمة بعد كوفيد-19: معاهدة الصحة الدولية، نظام الإنذار المبكر، سياسة اللقاحات الوقائية، و</p>
+    <div class="article-card__footer">
+      <span class="article-card__read" style="color:#2a9d5c">اقرأ التحليل ←</span>
+      <span class="article-card__time">⏱ 8 دقائق</span>
+    </div>
+  </div>
+</a>
+<a href="/articles/sante-mentale-guerre-conflit-monde.html" class="article-card">
+  <div class="article-card__img-wrap">
+    <img class="article-card__img" src="https://images.unsplash.com/photo-1559757175-0eb30cd8c063?w=600&q=75" alt="الصحة النفسية في زمن الحروب: الجائحة الصامتة التي لا يراها أحد" loading="lazy"/>
+  </div>
+  <div class="article-card__body">
+    <span class="article-card__tag" style="background:#2a9d5c">صحة</span>
+    <h3 class="article-card__title">الصحة النفسية في زمن الحروب: الجائحة الصامتة التي لا يراها أحد</h3>
+    <p class="article-card__desc">تحليل أزمة الصحة النفسية في مناطق النزاع 2026: صدمة ما بعد الحرب، غياب الدعم النفسي، تداعيات الجيل القادم، والفجوة بين ا</p>
+    <div class="article-card__footer">
+      <span class="article-card__read" style="color:#2a9d5c">اقرأ التحليل ←</span>
+      <span class="article-card__time">⏱ 8 دقائق</span>
+    </div>
+  </div>
+</a>
+<a href="/articles/sante-mondiale-geopolitique-2026.html" class="article-card">
+  <div class="article-card__img-wrap">
+    <img class="article-card__img" src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=600&q=75" alt="الصحة العالمية والجيوسياسة: حين تصبح الأوبئة أسلحة استراتيجية" loading="lazy"/>
+  </div>
+  <div class="article-card__body">
+    <span class="article-card__tag" style="background:#2a9d5c">صحة</span>
+    <h3 class="article-card__title">الصحة العالمية والجيوسياسة: حين تصبح الأوبئة أسلحة استراتيجية</h3>
+    <p class="article-card__desc">تحليل العلاقة بين الصحة العالمية والجيوسياسة: دور منظمة الصحة العالمية، دبلوماسية اللقاحات، التنافس الصيني الأمريكي في ا</p>
+    <div class="article-card__footer">
+      <span class="article-card__read" style="color:#2a9d5c">اقرأ التحليل ←</span>
+      <span class="article-card__time">⏱ 8 دقائق</span>
+    </div>
+  </div>
+</a>
+<a href="/articles/systemes-sante-pays-emergents.html" class="article-card">
+  <div class="article-card__img-wrap">
+    <img class="article-card__img" src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=600&q=75" alt="أنظمة الصحة في الدول الناشئة: الهوّة بين الطموح والواقع" loading="lazy"/>
+  </div>
+  <div class="article-card__body">
+    <span class="article-card__tag" style="background:#2a9d5c">صحة</span>
+    <h3 class="article-card__title">أنظمة الصحة في الدول الناشئة: الهوّة بين الطموح والواقع</h3>
+    <p class="article-card__desc">تحليل أنظمة الصحة في الدول الناشئة 2026: الهند والبرازيل والمغرب وإثيوبيا نماذجاً. التحديات الهيكلية، استنزاف الكفاءات، </p>
+    <div class="article-card__footer">
+      <span class="article-card__read" style="color:#2a9d5c">اقرأ التحليل ←</span>
+      <span class="article-card__time">⏱ 8 دقائق</span>
+    </div>
+  </div>
+</a></div>
+</section>
 <footer>
   <div class="foot-links">
     <a href="/">الرئيسية</a>
