@@ -1,0 +1,1203 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>كيف تؤثر الحروب على الصحة النفسية حتى لمن لا يعيشها؟ — geopolô</title>
+<meta name="description" content="تحليل معمّق لتأثير الحروب والصراعات على الصحة النفسية للأفراد البعيدين جغرافياً: الصدمة الإعلامية، الإرهاق التعاطفي، وكيف تشكّل الحروب عقولنا دون أن ندرك."/>
+<meta name="keywords" content="الحروب والصحة النفسية، الصدمة الثانوية، الإرهاق التعاطفي، القلق الإعلامي، الحرب والاكتئاب"/>
+<meta property="og:title" content="كيف تؤثر الحروب على الصحة النفسية حتى لمن لا يعيشها؟"/>
+<meta property="og:description" content="الصدمة الإعلامية والإرهاق التعاطفي وكيف تُشكّل الحروب عقولنا من بُعد — تحليل نفسي واجتماعي شامل."/>
+<meta property="og:image" content="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?w=1200&q=80"/>
+<meta property="og:type" content="article"/>
+<link rel="canonical" href="https://ar.geopolo.com/articles/wars-mental-health-2026.html"/>
+<link rel="alternate" hreflang="ar" href="https://ar.geopolo.com/articles/wars-mental-health-2026.html"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Arabic:wght@300;400;600;700;900&family=Noto+Naskh+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+
+<style>
+/* ══════════════════════════════════════════════════════
+   PALETTE — Nuit pluvieuse / cendres bleues
+   Contraste avec l'article 1 (ambre chaud)
+   Ici: bleu nuit profond, gris ardoise, touches de rouge douleur
+══════════════════════════════════════════════════════ */
+:root {
+  --ink:      #12151e;
+  --bg:       #f6f7fa;
+  --paper:    #ffffff;
+  --cream:    #eef0f5;
+  --mist:     #e2e5ed;
+  --mid:      #5a6172;
+  --light:    #8a93a8;
+  --rule:     #d8dce8;
+
+  /* Tonalités nuit-guerre */
+  --blue:     #2a4a7f;
+  --blue-lt:  #5a8fd4;
+  --blue-bg:  #edf2fa;
+  --ash:      #4a5568;
+  --ember:    #9e3a2f;
+  --slate:    #334155;
+  --fog:      #94a3b8;
+  --silver:   #cbd5e1;
+
+  --serif:   'Noto Serif Arabic', Georgia, serif;
+  --sans:    'Noto Naskh Arabic', sans-serif;
+}
+
+*,*::before,*::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: var(--serif);
+  background: var(--bg);
+  color: var(--ink);
+  direction: rtl;
+  line-height: 1.9;
+  overflow-x: hidden;
+}
+a { color: inherit; text-decoration: none; }
+img { max-width: 100%; display: block; }
+
+/* ── PROGRESS BAR ────────────────────────────────────── */
+#pb {
+  position: fixed; top: 0; right: 0; left: 0; height: 3px;
+  background: linear-gradient(to left, var(--blue), var(--blue-lt), #8ab4f8);
+  width: 0%; z-index: 9999; transition: width .12s linear;
+}
+
+/* ── TOPBAR ──────────────────────────────────────────── */
+.top {
+  background: var(--ink); color: rgba(255,255,255,.5);
+  font-family: var(--sans); font-size: .72rem;
+  padding: .4rem 2rem;
+  display: flex; justify-content: space-between; align-items: center;
+}
+.top a { color: rgba(255,255,255,.65); transition: color .2s; }
+.top a:hover { color: #8ab4f8; }
+.top .fr-link {
+  display: inline-flex; align-items: center; gap: .3rem;
+  background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.18);
+  padding: .2rem .6rem; border-radius: 3px; font-weight: 600;
+}
+
+/* ── MASTHEAD ────────────────────────────────────────── */
+.mast {
+  background: var(--paper); border-bottom: 2px solid var(--ink);
+  padding: 1.1rem 2rem;
+  display: flex; justify-content: space-between; align-items: flex-end;
+}
+.logo {
+  font-family: var(--serif); font-size: clamp(1.4rem,3vw,2.1rem);
+  font-weight: 900; color: var(--blue); letter-spacing: -.02em;
+}
+.logo span { display: block; font-size: .5em; font-weight: 400; color: var(--mid); }
+.msub { font-family: var(--sans); font-size: .68rem; color: var(--light); text-align: left; }
+
+/* ── NAV ─────────────────────────────────────────────── */
+nav {
+  background: var(--ink); display: flex; flex-wrap: wrap;
+  position: sticky; top: 0; z-index: 100;
+  border-bottom: 3px solid var(--blue);
+}
+nav a {
+  display: flex; align-items: center; gap: .4rem;
+  padding: .62rem .9rem; font-family: var(--sans); font-size: .77rem;
+  color: rgba(255,255,255,.5); border-left: 1px solid rgba(255,255,255,.07);
+  transition: all .2s;
+}
+nav a:hover, nav a.active { background: rgba(255,255,255,.05); color: #8ab4f8; }
+nav a .dot { width: 6px; height: 6px; border-radius: 50%; flex-shrink: 0; }
+nav a[data-r="afrique"] .dot  { background: #c8821a; }
+nav a[data-r="amerique"] .dot { background: #b83232; }
+nav a[data-r="europe"] .dot   { background: #1e5fa8; }
+nav a[data-r="asie"] .dot     { background: #1a8a6e; }
+nav a[data-r="orient"] .dot   { background: #8b3a8b; }
+nav a[data-r="sante"] .dot    { background: var(--blue-lt); }
+nav .nav-cta {
+  margin-right: auto; background: var(--blue);
+  color: #fff !important; font-weight: 600; border: none;
+}
+
+/* ══════════════════════════════════════════════════════
+   HERO — Paysage pluie nocturne / ville en cendres
+   Palette: bleu nuit profond, reflets dans l'eau de pluie
+══════════════════════════════════════════════════════ */
+.hero {
+  position: relative;
+  min-height: clamp(440px,56vw,700px);
+  overflow: hidden;
+  background: #0a0e1a;
+}
+
+/* Ciel nocturne orageux en dégradé */
+.hero-sky {
+  position: absolute; inset: 0;
+  background: linear-gradient(
+    180deg,
+    #050810 0%,
+    #0d1428 20%,
+    #152040 40%,
+    #1e2e50 60%,
+    #1a2840 80%,
+    #0d1525 100%
+  );
+}
+
+/* Nuages orageux lumineux */
+.hero-clouds {
+  position: absolute; inset: 0;
+  background:
+    radial-gradient(ellipse 70% 35% at 25% 25%, rgba(42,74,127,.4) 0%, transparent 70%),
+    radial-gradient(ellipse 50% 25% at 75% 15%, rgba(90,143,212,.15) 0%, transparent 60%),
+    radial-gradient(ellipse 60% 20% at 50% 40%, rgba(158,58,47,.08) 0%, transparent 80%);
+}
+
+/* Éclairs distants (animation subtile) */
+.hero-lightning {
+  position: absolute; inset: 0;
+  background: rgba(90,143,212,.03);
+  animation: lightning 8s ease-in-out infinite;
+}
+@keyframes lightning {
+  0%,100%  { opacity: 0; }
+  2%       { opacity: 1; background: rgba(200,220,255,.06); }
+  4%       { opacity: 0; }
+  35%      { opacity: 0; }
+  36%      { opacity: 1; background: rgba(200,220,255,.04); }
+  38%      { opacity: 0; }
+  70%      { opacity: 0; }
+  71%      { opacity: 1; background: rgba(200,220,255,.05); }
+  73%      { opacity: 0; }
+}
+
+/* Pluie animée */
+.hero-rain {
+  position: absolute; inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+.raindrop {
+  position: absolute;
+  width: 1px;
+  background: linear-gradient(to bottom, transparent, rgba(180,200,240,.35), transparent);
+  animation: rain-fall linear infinite;
+  border-radius: 1px;
+}
+/* 20 gouttes positionnées */
+.raindrop:nth-child(1)  { left: 5%;   height: 80px;  animation-duration: 1.1s; animation-delay: 0s;    top: -80px; }
+.raindrop:nth-child(2)  { left: 12%;  height: 60px;  animation-duration: .9s;  animation-delay: .3s;   top: -60px; }
+.raindrop:nth-child(3)  { left: 19%;  height: 90px;  animation-duration: 1.2s; animation-delay: .7s;   top: -90px; }
+.raindrop:nth-child(4)  { left: 27%;  height: 70px;  animation-duration: 1.0s; animation-delay: .1s;   top: -70px; }
+.raindrop:nth-child(5)  { left: 34%;  height: 55px;  animation-duration: .85s; animation-delay: .5s;   top: -55px; }
+.raindrop:nth-child(6)  { left: 42%;  height: 75px;  animation-duration: 1.15s;animation-delay: .2s;   top: -75px; }
+.raindrop:nth-child(7)  { left: 50%;  height: 85px;  animation-duration: 1.05s;animation-delay: .9s;   top: -85px; }
+.raindrop:nth-child(8)  { left: 58%;  height: 65px;  animation-duration: .95s; animation-delay: .4s;   top: -65px; }
+.raindrop:nth-child(9)  { left: 65%;  height: 78px;  animation-duration: 1.1s; animation-delay: .6s;   top: -78px; }
+.raindrop:nth-child(10) { left: 73%;  height: 60px;  animation-duration: .88s; animation-delay: .15s;  top: -60px; }
+.raindrop:nth-child(11) { left: 80%;  height: 90px;  animation-duration: 1.2s; animation-delay: .8s;   top: -90px; }
+.raindrop:nth-child(12) { left: 88%;  height: 70px;  animation-duration: 1.0s; animation-delay: .35s;  top: -70px; }
+.raindrop:nth-child(13) { left: 95%;  height: 65px;  animation-duration: .92s; animation-delay: .55s;  top: -65px; }
+.raindrop:nth-child(14) { left: 8%;   height: 72px;  animation-duration: 1.08s;animation-delay: 1.1s;  top: -72px; }
+.raindrop:nth-child(15) { left: 23%;  height: 58px;  animation-duration: .87s; animation-delay: .45s;  top: -58px; }
+.raindrop:nth-child(16) { left: 37%;  height: 82px;  animation-duration: 1.18s;animation-delay: .72s;  top: -82px; }
+.raindrop:nth-child(17) { left: 46%;  height: 68px;  animation-duration: .98s; animation-delay: .28s;  top: -68px; }
+.raindrop:nth-child(18) { left: 55%;  height: 88px;  animation-duration: 1.14s;animation-delay: .62s;  top: -88px; }
+.raindrop:nth-child(19) { left: 70%;  height: 62px;  animation-duration: .91s; animation-delay: .18s;  top: -62px; }
+.raindrop:nth-child(20) { left: 84%;  height: 76px;  animation-duration: 1.06s;animation-delay: .85s;  top: -76px; }
+
+@keyframes rain-fall {
+  0%   { transform: translateY(0) translateX(0); opacity: 0; }
+  10%  { opacity: .8; }
+  90%  { opacity: .6; }
+  100% { transform: translateY(105vh) translateX(-12px); opacity: 0; }
+}
+
+/* Ville silhouette — toits brisés, immeubles en ruine stylisés */
+.hero-city {
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+}
+
+/* Reflets pluviaux au sol */
+.hero-puddle {
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 18%;
+  background: linear-gradient(to top,
+    rgba(20,32,64,.9) 0%,
+    rgba(20,32,64,.6) 40%,
+    transparent 100%
+  );
+}
+.hero-puddle::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 10%; right: 10%; height: 8px;
+  background: linear-gradient(to right,
+    transparent, rgba(90,143,212,.2), rgba(42,74,127,.3),
+    rgba(90,143,212,.2), transparent
+  );
+  filter: blur(2px);
+}
+
+/* Contenu hero */
+.hero-content {
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  padding: 3rem 2.5rem;
+  max-width: 900px; margin: 0 auto;
+  animation: rise-in .9s ease-out both;
+}
+@keyframes rise-in {
+  from { opacity: 0; transform: translateY(28px); }
+  to   { opacity: 1; transform: none; }
+}
+.hero-badge {
+  display: inline-flex; align-items: center; gap: .5rem;
+  background: rgba(42,74,127,.3);
+  border: 1px solid rgba(90,143,212,.35);
+  color: var(--blue-lt);
+  font-family: var(--sans); font-size: .68rem; font-weight: 600;
+  padding: .28rem .8rem; border-radius: 20px;
+  letter-spacing: .06em; margin-bottom: 1rem;
+  backdrop-filter: blur(6px);
+}
+.hero-badge::before {
+  content: ''; width: 6px; height: 6px; border-radius: 50%;
+  background: var(--blue-lt);
+  animation: pulse 2.5s ease-in-out infinite;
+}
+@keyframes pulse {
+  0%,100% { opacity: 1; transform: scale(1); }
+  50%      { opacity: .3; transform: scale(.5); }
+}
+.hero h1 {
+  font-family: var(--serif);
+  font-size: clamp(1.8rem,4.5vw,3.1rem);
+  font-weight: 900; color: #fff;
+  line-height: 1.2; margin-bottom: .9rem;
+  text-shadow: 0 2px 24px rgba(0,0,0,.7);
+}
+.hero h1 em { font-style: normal; color: var(--blue-lt); }
+.hero-sub {
+  font-family: var(--sans); font-size: .96rem;
+  color: rgba(255,255,255,.68);
+  max-width: 580px; line-height: 1.85;
+  text-shadow: 0 1px 8px rgba(0,0,0,.5);
+}
+
+/* ── META BAR ────────────────────────────────────────── */
+.meta-bar {
+  background: var(--paper); border-bottom: 1px solid var(--rule);
+  padding: .85rem 2rem;
+}
+.meta-inner {
+  max-width: 1100px; margin: 0 auto;
+  display: flex; flex-wrap: wrap; gap: .9rem; align-items: center;
+}
+.meta-item { font-family: var(--sans); font-size: .69rem; color: var(--light); display: flex; align-items: center; gap: .3rem; }
+.meta-item strong { color: var(--mid); }
+.meta-sep { color: var(--rule); }
+.meta-cat {
+  background: var(--blue-bg); color: var(--blue);
+  border: 1px solid rgba(42,74,127,.25);
+  padding: .18rem .65rem; border-radius: 12px;
+  font-weight: 600; font-size: .67rem; font-family: var(--sans);
+}
+
+/* ── LAYOUT ──────────────────────────────────────────── */
+.layout {
+  max-width: 1160px; margin: 0 auto;
+  padding: 3rem 1.5rem;
+  display: grid; grid-template-columns: 1fr 280px;
+  gap: 4rem; align-items: start;
+}
+@media (max-width: 960px) { .layout { grid-template-columns: 1fr; gap: 2rem; } }
+
+/* ── ARTICLE BODY ────────────────────────────────────── */
+.body { opacity: 0; transform: translateY(24px); transition: opacity .7s ease, transform .7s ease; }
+.body.vis { opacity: 1; transform: none; }
+
+.body > p:first-of-type::first-letter {
+  font-size: 4.2rem; font-weight: 900;
+  float: right; line-height: .8;
+  margin: .05em 0 -.1em .2em;
+  color: var(--blue);
+}
+.body p { font-size: 1.02rem; line-height: 1.95; color: var(--ink); margin-bottom: 1.3rem; }
+.body p:last-child { margin-bottom: 0; }
+
+.body h2 {
+  font-family: var(--serif); font-size: 1.45rem; font-weight: 700;
+  color: var(--ink); margin: 2.8rem 0 1.2rem;
+  padding-right: 1rem; border-right: 4px solid var(--blue);
+  line-height: 1.4;
+}
+.body h2::before {
+  content: attr(data-num); display: block;
+  font-family: var(--sans); font-size: .62rem; font-weight: 700;
+  color: var(--blue); letter-spacing: .1em; margin-bottom: .3rem; opacity: .7;
+}
+.body h3 { font-family: var(--serif); font-size: 1.15rem; font-weight: 700; color: var(--ink); margin: 1.8rem 0 .8rem; }
+
+/* ══ ENCADRÉS ══════════════════════════════════════════ */
+
+/* Analyse — fond bleu nuit */
+.analysis-box {
+  margin: 2.5rem 0; position: relative;
+  padding: 1.8rem; background: var(--blue-bg);
+  border-radius: 16px 4px 4px 16px;
+  border-right: 5px solid var(--blue); overflow: hidden;
+}
+.analysis-box::before {
+  content: ''; position: absolute; inset: 0;
+  background: radial-gradient(ellipse 80% 80% at 10% 50%, rgba(42,74,127,.07) 0%, transparent 70%);
+}
+.analysis-box .box-label {
+  font-family: var(--sans); font-size: .65rem; font-weight: 700;
+  color: var(--blue); letter-spacing: .12em; margin-bottom: .75rem;
+  display: flex; align-items: center; gap: .4rem;
+}
+.analysis-box .box-label::after { content: ''; flex: 1; height: 1px; background: rgba(42,74,127,.25); }
+.analysis-box p { font-size: .94rem; line-height: 1.85; color: #1a2840; margin-bottom: .6rem !important; }
+
+/* Citation poétique — nuit froide */
+.poetic-quote {
+  margin: 2.8rem 0; padding: 2rem 2rem 2rem 2.5rem;
+  background: var(--paper); border-radius: 12px;
+  box-shadow: 0 2px 20px rgba(0,0,0,.07), inset 0 0 0 1px rgba(42,74,127,.12);
+  position: relative; overflow: hidden;
+}
+.poetic-quote::before {
+  content: '❝'; position: absolute; top: .5rem; right: 1.2rem;
+  font-size: 5rem; color: rgba(42,74,127,.1); font-family: serif; line-height: 1;
+}
+.poetic-quote blockquote {
+  font-family: var(--serif); font-size: 1.1rem; font-weight: 600;
+  line-height: 1.75; color: var(--ink); font-style: italic; margin-bottom: .9rem;
+}
+.poetic-quote cite { font-family: var(--sans); font-size: .7rem; color: var(--light); font-style: normal; display: block; }
+
+/* Grille stats */
+.stats-grid {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(155px, 1fr));
+  gap: 1rem; margin: 2.5rem 0;
+}
+.stat-card {
+  background: var(--paper); border: 1px solid var(--rule);
+  border-radius: 14px; padding: 1.3rem 1.1rem; text-align: center;
+  transition: transform .25s, box-shadow .25s; position: relative; overflow: hidden;
+}
+.stat-card::before {
+  content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
+  background: linear-gradient(to right, var(--blue), var(--blue-lt));
+  border-radius: 14px 14px 0 0;
+}
+.stat-card:hover { transform: translateY(-4px); box-shadow: 0 8px 24px rgba(0,0,0,.09); }
+.stat-num { font-family: var(--serif); font-size: 2rem; font-weight: 900; color: var(--blue); line-height: 1; margin-bottom: .4rem; }
+.stat-lbl { font-family: var(--sans); font-size: .68rem; color: var(--light); line-height: 1.4; }
+
+/* Alerte / avertissement */
+.warning-box {
+  margin: 2.2rem 0; padding: 1.5rem 1.6rem;
+  background: rgba(158,58,47,.05);
+  border: 1px solid rgba(158,58,47,.18);
+  border-right: 4px solid var(--ember); border-radius: 8px;
+}
+.warning-box .warn-title {
+  font-family: var(--sans); font-size: .7rem; font-weight: 700;
+  color: var(--ember); letter-spacing: .06em;
+  margin-bottom: .65rem; display: flex; align-items: center; gap: .4rem;
+}
+.warning-box p { font-size: .93rem; color: #2a1210; margin-bottom: .5rem !important; }
+
+/* Liste */
+.styled-list { margin: 1.2rem 0; list-style: none; }
+.styled-list li {
+  display: flex; align-items: flex-start; gap: .75rem;
+  padding: .6rem 0; border-bottom: 1px solid var(--mist);
+  font-size: .97rem; line-height: 1.75;
+}
+.styled-list li:last-child { border-bottom: none; }
+.styled-list li::before {
+  content: ''; width: 7px; height: 7px; border-radius: 50%;
+  background: var(--blue); flex-shrink: 0; margin-top: .55rem;
+}
+
+/* Étapes */
+.steps { margin: 2rem 0; }
+.step { display: flex; gap: 1.2rem; padding: 1.2rem 0; border-bottom: 1px solid var(--mist); align-items: flex-start; }
+.step:last-child { border-bottom: none; }
+.step-num {
+  width: 36px; height: 36px; border-radius: 50%;
+  background: linear-gradient(135deg, var(--blue), var(--blue-lt));
+  color: #fff; font-family: var(--serif); font-weight: 700;
+  font-size: .9rem; display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0; box-shadow: 0 3px 8px rgba(42,74,127,.3);
+}
+.step-body h4 { font-family: var(--serif); font-size: 1rem; font-weight: 700; color: var(--ink); margin-bottom: .4rem; }
+.step-body p { font-size: .92rem; color: var(--mid); margin-bottom: 0 !important; }
+
+/* Tableau */
+.compare-table {
+  width: 100%; border-collapse: collapse; margin: 2rem 0;
+  font-family: var(--sans); font-size: .86rem;
+}
+.compare-table th {
+  background: var(--slate); color: rgba(255,255,255,.9);
+  padding: .75rem 1rem; font-weight: 600; text-align: right;
+}
+.compare-table th:first-child { border-radius: 0 8px 0 0; }
+.compare-table th:last-child  { border-radius: 8px 0 0 0; }
+.compare-table td { padding: .65rem 1rem; border-bottom: 1px solid var(--mist); color: var(--ink); vertical-align: top; }
+.compare-table tr:nth-child(even) td { background: var(--cream); }
+.compare-table tr:hover td { background: var(--blue-bg); }
+
+/* Infographie — cercles de propagation */
+.ripple-chart {
+  margin: 2.5rem 0;
+  display: flex; align-items: center; justify-content: center;
+  padding: 2rem;
+  background: var(--paper);
+  border: 1px solid var(--rule);
+  border-radius: 16px;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+.ripple-item {
+  text-align: center;
+  position: relative;
+}
+.ripple-circle {
+  width: 90px; height: 90px; border-radius: 50%;
+  background: conic-gradient(var(--blue) var(--pct), var(--mist) 0%);
+  display: flex; align-items: center; justify-content: center;
+  margin: 0 auto .7rem;
+  position: relative;
+}
+.ripple-inner {
+  width: 65px; height: 65px; border-radius: 50%;
+  background: var(--paper);
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--serif); font-size: 1rem; font-weight: 700; color: var(--blue);
+}
+.ripple-label { font-family: var(--sans); font-size: .7rem; color: var(--mid); line-height: 1.4; max-width: 90px; }
+
+/* ══ FAQ ══════════════════════════════════════════════ */
+.faq-section {
+  margin: 3rem 0 1rem; padding: 2rem;
+  background: var(--cream); border-radius: 20px; position: relative; overflow: hidden;
+}
+.faq-section::before {
+  content: ''; position: absolute; top: -30px; right: -30px;
+  width: 120px; height: 120px; border-radius: 50%;
+  background: radial-gradient(circle, rgba(42,74,127,.1) 0%, transparent 70%);
+}
+.faq-title {
+  font-family: var(--serif); font-size: 1.25rem; font-weight: 700;
+  color: var(--ink); margin-bottom: 1.5rem;
+  display: flex; align-items: center; gap: .6rem;
+}
+.faq-item { border-bottom: 1px solid var(--mist); margin-bottom: .5rem; }
+.faq-item:last-child { border-bottom: none; margin-bottom: 0; }
+.faq-q {
+  width: 100%; text-align: right; background: none; border: none;
+  padding: 1rem .5rem; cursor: pointer;
+  font-family: var(--serif); font-size: .98rem; font-weight: 700;
+  color: var(--ink); display: flex; justify-content: space-between;
+  align-items: center; gap: .8rem; transition: color .2s;
+}
+.faq-q:hover { color: var(--blue); }
+.faq-icon {
+  width: 22px; height: 22px; border-radius: 50%;
+  background: var(--blue-bg); border: 1px solid rgba(42,74,127,.3);
+  color: var(--blue); font-size: .85rem; font-weight: 700;
+  display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+  transition: transform .3s, background .3s;
+}
+.faq-item.open .faq-icon { transform: rotate(45deg); background: var(--blue); color: #fff; }
+.faq-a { max-height: 0; overflow: hidden; transition: max-height .4s ease, padding .3s; }
+.faq-item.open .faq-a { max-height: 320px; padding-bottom: 1rem; }
+.faq-a p { font-family: var(--sans); font-size: .92rem; line-height: 1.85; color: var(--mid); padding: 0 .5rem; }
+
+/* ══ AUTEUR ══════════════════════════════════════════ */
+.author-card {
+  margin: 3rem 0 2rem; padding: 1.8rem;
+  background: var(--paper); border-radius: 16px;
+  border: 1px solid var(--rule);
+  display: flex; gap: 1.3rem; align-items: flex-start;
+  box-shadow: 0 4px 16px rgba(0,0,0,.05);
+}
+.author-avatar {
+  width: 56px; height: 56px; border-radius: 50%;
+  background: linear-gradient(135deg, var(--blue), var(--blue-lt));
+  display: flex; align-items: center; justify-content: center;
+  color: #fff; font-family: var(--serif); font-size: .7rem; font-weight: 700;
+  flex-shrink: 0; letter-spacing: -.02em; line-height: 1.2; text-align: center;
+  box-shadow: 0 3px 10px rgba(42,74,127,.3);
+}
+.author-name  { font-family: var(--serif); font-size: 1rem; font-weight: 700; margin-bottom: .2rem; }
+.author-role  { font-family: var(--sans); font-size: .67rem; color: var(--blue); margin-bottom: .5rem; }
+.author-bio   { font-family: var(--sans); font-size: .82rem; color: var(--mid); line-height: 1.7; }
+
+/* ══ ARTICLES LIÉS ═══════════════════════════════════ */
+.related { margin-top: 3rem; }
+.related-title {
+  font-family: var(--serif); font-size: 1.1rem; font-weight: 700;
+  color: var(--ink); margin-bottom: 1.2rem;
+  padding-bottom: .6rem; border-bottom: 2px solid var(--blue);
+  display: flex; align-items: center; gap: .5rem;
+}
+.related-grid { display: grid; gap: .85rem; }
+.rel-card {
+  display: flex; gap: 1rem; padding: 1rem;
+  background: var(--paper); border: 1px solid var(--rule);
+  border-radius: 12px; transition: transform .2s, box-shadow .2s, border-color .2s;
+}
+.rel-card:hover { transform: translateX(-4px); box-shadow: 4px 4px 16px rgba(0,0,0,.07); border-color: var(--blue); }
+.rel-color { width: 4px; border-radius: 2px; background: var(--blue); flex-shrink: 0; }
+.rel-body h4 { font-family: var(--serif); font-size: .92rem; font-weight: 700; margin-bottom: .25rem; }
+.rel-body p  { font-family: var(--sans); font-size: .75rem; color: var(--light); margin: 0; line-height: 1.5; }
+.rel-arrow   { margin-top: .4rem; font-family: var(--sans); font-size: .7rem; color: var(--blue); font-weight: 600; }
+
+/* ══ SIDEBAR ════════════════════════════════════════ */
+.sidebar { position: sticky; top: 80px; display: flex; flex-direction: column; gap: 1.5rem; }
+.sb-card { background: var(--paper); border: 1px solid var(--rule); border-radius: 16px; overflow: hidden; }
+.sb-head { padding: .9rem 1.2rem; background: var(--cream); border-bottom: 1px solid var(--rule); font-family: var(--sans); font-size: .72rem; font-weight: 700; color: var(--mid); letter-spacing: .06em; }
+
+.toc-list { list-style: none; padding: .6rem .4rem; }
+.toc-list a {
+  display: flex; align-items: center; gap: .6rem;
+  padding: .6rem .8rem; border-radius: 8px;
+  font-family: var(--sans); font-size: .8rem; color: var(--mid);
+  transition: all .2s; line-height: 1.4;
+}
+.toc-list a:hover { background: var(--blue-bg); color: var(--blue); padding-right: 1.1rem; }
+.toc-list .tnum { font-family: var(--serif); font-size: .72rem; color: var(--blue); font-weight: 700; min-width: 18px; }
+
+/* Paysage sidebar — pluie nocturne */
+.sb-landscape { position: relative; height: 140px; overflow: hidden; border-radius: 12px; margin: .8rem; }
+.sb-landscape-bg { position: absolute; inset: 0; background: linear-gradient(180deg, #050810 0%, #0d1428 40%, #1e2e50 70%, #0d1525 100%); }
+.sb-landscape-text { position: absolute; bottom: .8rem; right: .8rem; left: .8rem; font-family: var(--sans); font-size: .68rem; color: rgba(255,255,255,.6); text-align: center; font-style: italic; }
+
+.read-meter { padding: 1rem 1.2rem; }
+.read-meter-bar { height: 4px; background: var(--mist); border-radius: 2px; overflow: hidden; margin-bottom: .5rem; }
+.read-meter-fill { height: 100%; background: linear-gradient(to left, var(--blue), var(--blue-lt)); border-radius: 2px; width: 0%; transition: width .3s; }
+.read-meter-label { font-family: var(--sans); font-size: .68rem; color: var(--light); text-align: center; }
+
+/* Ornements */
+.jp-ornament { text-align: center; margin: 2.5rem 0; font-size: 1.4rem; color: rgba(42,74,127,.3); letter-spacing: .8rem; }
+.section-break { margin: 3rem 0; display: flex; align-items: center; gap: 1rem; }
+.section-break::before,.section-break::after { content: ''; flex: 1; height: 1px; background: linear-gradient(to right, transparent, var(--rule), transparent); }
+.section-break-icon { font-size: 1.1rem; color: var(--blue); opacity: .5; }
+
+.fu { opacity: 0; transform: translateY(20px); transition: opacity .6s ease, transform .6s ease; }
+.fu.vis { opacity: 1; transform: none; }
+
+/* FOOTER */
+footer { background: var(--ink); color: rgba(255,255,255,.4); padding: 2rem; font-family: var(--sans); font-size: .72rem; border-top: 3px solid var(--blue); margin-top: 4rem; }
+.fi { max-width: 1160px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; }
+.fl { display: flex; gap: 1.2rem; }
+.fl a { color: rgba(255,255,255,.5); transition: color .2s; }
+.fl a:hover { color: #8ab4f8; }
+
+@media (max-width: 760px) {
+  .hero-content { padding: 2rem 1.2rem; }
+  .hero h1 { font-size: 1.7rem; }
+  .layout { padding: 2rem 1rem; }
+  .author-card { flex-direction: column; gap: .8rem; }
+}
+</style>
+</head>
+<body>
+
+<div id="pb"></div>
+
+<div class="top">
+  <span>geopolô — <strong style="color:#8ab4f8">الصحة النفسية والمجتمع</strong></span>
+  <span>
+    <a href="https://fr.geopolo.com" class="fr-link">🇫🇷 Français</a>
+    <a href="/abonnement.html" style="margin-right:.7rem">الاشتراك</a>
+  </span>
+</div>
+
+<header class="mast">
+  <a href="/" class="logo">geopolô<span>مجلة جيوسياسية استراتيجية مستقلة</span></a>
+  <div class="msub">ar.geopolo.com · 2026</div>
+</header>
+
+<nav>
+  <a href="/">الرئيسية</a>
+  <a href="/afr.html"      data-r="afrique"><span class="dot"></span>أفريقيا</a>
+  <a href="/ame.html"      data-r="amerique"><span class="dot"></span>أمريكا</a>
+  <a href="/eu.html"       data-r="europe"><span class="dot"></span>أوروبا</a>
+  <a href="/asie.html"     data-r="asie"><span class="dot"></span>آسيا</a>
+  <a href="/proche-or.html" data-r="orient"><span class="dot"></span>الشرق الأوسط</a>
+  <a href="/sante.html"    data-r="sante" class="active"><span class="dot"></span>صحة نفسية</a>
+  <a href="/abonnement.html" class="nav-cta">الاشتراك ←</a>
+</nav>
+
+<!-- ════════ HERO — Nuit de pluie / ville blessée ════════ -->
+<div class="hero" role="banner">
+  <div class="hero-sky"></div>
+  <div class="hero-clouds"></div>
+  <div class="hero-lightning"></div>
+
+  <!-- Pluie animée -->
+  <div class="hero-rain" aria-hidden="true">
+    <div class="raindrop"></div><div class="raindrop"></div>
+    <div class="raindrop"></div><div class="raindrop"></div>
+    <div class="raindrop"></div><div class="raindrop"></div>
+    <div class="raindrop"></div><div class="raindrop"></div>
+    <div class="raindrop"></div><div class="raindrop"></div>
+    <div class="raindrop"></div><div class="raindrop"></div>
+    <div class="raindrop"></div><div class="raindrop"></div>
+    <div class="raindrop"></div><div class="raindrop"></div>
+    <div class="raindrop"></div><div class="raindrop"></div>
+    <div class="raindrop"></div><div class="raindrop"></div>
+  </div>
+
+  <!-- Ville silhouette SVG — toits brisés -->
+  <svg viewBox="0 0 1440 380" preserveAspectRatio="xMidYMax slice"
+       style="position:absolute;bottom:0;left:0;right:0;width:100%;height:auto"
+       xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <defs>
+      <linearGradient id="cityGrad" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0%" stop-color="#0a0e1a" stop-opacity=".7"/>
+        <stop offset="100%" stop-color="#050810"/>
+      </linearGradient>
+    </defs>
+
+    <!-- Bâtiments lointains (couche arrière) -->
+    <rect x="0"    y="220" width="60"  height="160" fill="#0a0e1a" opacity=".5"/>
+    <rect x="65"   y="190" width="45"  height="190" fill="#0a0e1a" opacity=".5"/>
+    <rect x="115"  y="210" width="80"  height="170" fill="#0a0e1a" opacity=".5"/>
+    <rect x="200"  y="170" width="50"  height="210" fill="#0a0e1a" opacity=".5"/>
+    <rect x="255"  y="200" width="65"  height="180" fill="#0a0e1a" opacity=".5"/>
+    <rect x="1200" y="185" width="55"  height="195" fill="#0a0e1a" opacity=".5"/>
+    <rect x="1260" y="210" width="70"  height="170" fill="#0a0e1a" opacity=".5"/>
+    <rect x="1335" y="195" width="60"  height="185" fill="#0a0e1a" opacity=".5"/>
+    <rect x="1400" y="220" width="40"  height="160" fill="#0a0e1a" opacity=".5"/>
+
+    <!-- Bâtiments principaux (couche avant — ville blessée) -->
+    <!-- Immeuble haut gauche avec toit brisé -->
+    <polygon points="80,380 80,120 140,120 140,100 155,80 170,100 170,380" fill="url(#cityGrad)"/>
+    <!-- Fenêtres allumées (quelques-unes) -->
+    <rect x="90"  y="140" width="12" height="10" fill="rgba(255,240,150,.15)" rx="1"/>
+    <rect x="110" y="160" width="12" height="10" fill="rgba(255,240,150,.12)" rx="1"/>
+    <rect x="90"  y="200" width="12" height="10" fill="rgba(255,240,150,.18)" rx="1"/>
+    <rect x="110" y="230" width="12" height="10" fill="rgba(255,240,150,.1)"  rx="1"/>
+    <rect x="90"  y="270" width="12" height="10" fill="rgba(255,240,150,.15)" rx="1"/>
+
+    <!-- Grand immeuble central -->
+    <rect x="350" y="100" width="120" height="280" fill="url(#cityGrad)"/>
+    <polygon points="350,100 410,60 470,100" fill="#080c18"/>
+    <!-- Antenne brisée -->
+    <line x1="410" y1="60" x2="415" y2="20" stroke="#0a0e1a" stroke-width="3"/>
+    <line x1="415" y1="20" x2="425" y2="35" stroke="#0a0e1a" stroke-width="2"/>
+    <!-- Fenêtres -->
+    <g fill="rgba(200,220,255,.08)">
+      <rect x="360" y="120" width="20" height="14" rx="1"/>
+      <rect x="390" y="120" width="20" height="14" rx="1"/>
+      <rect x="420" y="120" width="20" height="14" rx="1"/>
+      <rect x="360" y="150" width="20" height="14" rx="1"/>
+      <rect x="420" y="150" width="20" height="14" rx="1"/>
+      <rect x="360" y="180" width="20" height="14" rx="1"/>
+      <rect x="390" y="180" width="20" height="14" rx="1"/>
+    </g>
+    <!-- Une fenêtre allumée -->
+    <rect x="390" y="150" width="20" height="14" fill="rgba(255,240,150,.2)" rx="1"/>
+
+    <!-- Immeuble à minarets -->
+    <rect x="580" y="140" width="90"  height="240" fill="#080c18"/>
+    <rect x="620" y="100" width="18"  height="80"  fill="#080c18"/>
+    <polygon points="620,100 629,75 638,100" fill="#060a15"/>
+    <!-- Croissant stylisé -->
+    <circle cx="629" cy="68" r="8" fill="transparent" stroke="#0a1428" stroke-width="2"/>
+    <circle cx="634" cy="65" r="7" fill="#060a15"/>
+
+    <!-- Tour détruite / en ruine -->
+    <polygon points="750,380 750,160 780,130 800,145 820,120 850,160 850,380" fill="#070b18"/>
+    <!-- Bords irréguliers (ruine) -->
+    <polygon points="750,160 760,150 770,165 780,130 790,155 800,145 810,135 820,120 835,148 850,160" fill="#060a14"/>
+    <!-- Fumée / cendres -->
+    <ellipse cx="800" cy="115" rx="25" ry="8" fill="rgba(50,70,100,.3)"/>
+    <ellipse cx="810" cy="100" rx="18" ry="6" fill="rgba(50,70,100,.2)"/>
+
+    <!-- Série d'immeubles droite -->
+    <rect x="950"  y="155" width="75"  height="225" fill="#080c18"/>
+    <rect x="1030" y="130" width="55"  height="250" fill="#070b18"/>
+    <rect x="1090" y="165" width="90"  height="215" fill="#080c18"/>
+    <g fill="rgba(200,220,255,.06)">
+      <rect x="960"  y="175" width="18" height="12" rx="1"/>
+      <rect x="985"  y="175" width="18" height="12" rx="1"/>
+      <rect x="960"  y="205" width="18" height="12" rx="1"/>
+      <rect x="1040" y="155" width="18" height="12" rx="1"/>
+      <rect x="1100" y="185" width="18" height="12" rx="1"/>
+      <rect x="1130" y="185" width="18" height="12" rx="1"/>
+    </g>
+    <!-- Quelques fenêtres allumées à droite -->
+    <rect x="985"  y="205" width="18" height="12" fill="rgba(255,240,150,.15)" rx="1"/>
+    <rect x="1040" y="185" width="18" height="12" fill="rgba(255,240,150,.12)" rx="1"/>
+
+    <!-- Sol / reflets dans les flaques -->
+    <rect x="0" y="360" width="1440" height="20" fill="#050810"/>
+    <ellipse cx="410"  cy="370" rx="120" ry="5"   fill="rgba(42,74,127,.2)"/>
+    <ellipse cx="810"  cy="368" rx="80"  ry="4"   fill="rgba(42,74,127,.15)"/>
+    <ellipse cx="1090" cy="370" rx="100" ry="4"   fill="rgba(42,74,127,.18)"/>
+
+    <!-- Halos de lampadaires -->
+    <circle cx="280"  cy="330" r="30" fill="rgba(255,240,180,.04)"/>
+    <circle cx="700"  cy="320" r="25" fill="rgba(255,240,180,.03)"/>
+    <circle cx="1160" cy="325" r="28" fill="rgba(255,240,180,.04)"/>
+    <line x1="280"  y1="380" x2="280"  y2="330" stroke="rgba(200,180,100,.15)" stroke-width="2"/>
+    <line x1="700"  y1="380" x2="700"  y2="320" stroke="rgba(200,180,100,.12)" stroke-width="2"/>
+    <line x1="1160" y1="380" x2="1160" y2="325" stroke="rgba(200,180,100,.12)" stroke-width="2"/>
+  </svg>
+
+  <div class="hero-puddle"></div>
+
+  <div class="hero-content">
+    <div class="hero-badge">🕊️ صحة نفسية · حرب ومجتمع</div>
+    <h1>كيف تؤثر الحروب على <em>صحتنا النفسية</em><br>حتى لمن لا يعيشها؟</h1>
+    <p class="hero-sub">
+      الصدمة تعبر الحدود بلا جواز سفر — تحليل نفسي واجتماعي لكيفية تشكيل الحروب
+      البعيدة لعقولنا وأجسادنا، من الصدمة الإعلامية إلى الإرهاق التعاطفي وجيل تربّى
+      على وقع الأزمات المتواصلة.
+    </p>
+  </div>
+</div>
+
+<!-- META BAR -->
+<div class="meta-bar">
+  <div class="meta-inner">
+    <span class="meta-item">✍ <strong>د. علي المنصور</strong></span>
+    <span class="meta-sep">·</span>
+    <span class="meta-item">📅 <strong>أبريل 2026</strong></span>
+    <span class="meta-sep">·</span>
+    <span class="meta-item">⏱ <strong>17 دقيقة</strong></span>
+    <span class="meta-sep">·</span>
+    <span class="meta-cat">🕊️ صحة نفسية وحرب</span>
+    <span class="meta-sep">·</span>
+    <span class="meta-item">🔗 <a href="/sante.html" style="color:var(--blue)">عودة للقسم</a></span>
+  </div>
+</div>
+
+<!-- ════════════════ LAYOUT ════════════════ -->
+<div class="layout">
+<article class="body fu" id="main-article">
+
+  <p>
+    أنت في مكتبك في القاهرة، الرياض، باريس أو لوس أنجلوس. لا قذائف، لا ملاجئ، لا نزوح. ومع ذلك، مضت أسابيع وأنت تُحدّق في سقف الليل عاجزاً عن النوم، يطاردك مشهد من تلك الصور التي رأيتها على شاشة صغيرة في راحة يدك. تشعر بذنب غريب لأنك بخير بينما آخرون ليسوا كذلك. تتهيّج بسرعة، يصعب عليك التركيز، تتجنب الأخبار ثم تعود إليها بلا إرادة. هل أنت بخير؟ الجواب الصادق: ليس تماماً.
+  </p>
+  <p>
+    الصدمة النفسية لم تعد حكراً على من يعيشون الحرب مباشرةً — في عالم ترافقنا فيه كاميرات المحاربين ووكالات الأنباء وشبكات التواصل على كل خطوة في الميدان، أصبح بإمكان الحرب أن تُصيب عقولنا من آلاف الكيلومترات.
+  </p>
+
+  <!-- STATS -->
+  <div class="stats-grid fu">
+    <div class="stat-card">
+      <div class="stat-num">73٪</div>
+      <div class="stat-lbl">من المشاهدين الكثيفين لأخبار الحروب يُفيدون بقلق متواصل</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-num">25٪</div>
+      <div class="stat-lbl">من المتعاطفين عن بُعد مع نزاع ما يُظهرون أعراضاً صدمية خفيفة</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-num">4×</div>
+      <div class="stat-lbl">ارتفاع معدلات اضطرابات القلق في بلدان مجاورة للنزاعات</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-num">18</div>
+      <div class="stat-lbl">شهراً متوسط الوقت قبل أن تظهر أعراض الصدمة الثانوية علنياً</div>
+    </div>
+  </div>
+
+  <!-- H2 — 1 -->
+  <h2 id="secondhand" data-num="المفهوم الأول">الصدمة الثانوية: حين تُصبح مُشاهِداً مصاباً</h2>
+
+  <p>
+    علم النفس الحديث يُميّز بين «صدمة الصدمة الأولية» التي تُصيب من يعيشون الحدث مباشرة، و«الصدمة الثانوية» أو «الإجهاد التعاطفي الثانوي» التي تصيب من يتعرضون لصور الحدث ورواياته المكثفة. ليست اختراعاً نفسياً تنظيرياً — إنها مسار عصبي موثّق بالتصوير الدماغي.
+  </p>
+
+  <div class="analysis-box fu">
+    <div class="box-label">🔬 ما يحدث في دماغك حين تُشاهد مشاهد الحرب</div>
+    <p>اللوزة الدماغية (Amygdala) — مركز الاستجابة العاطفية — لا تُميّز دائماً بين الخطر الذي تعيشه والخطر الذي تُشاهده بوضوح مُقرّب على شاشة عالية الدقة. تُطلق نفس الاستجابة: ارتفاع هرمون الكورتيزول، تنشيط منظومة القتال أو الهرب، تسريع ضربات القلب.</p>
+    <p>الفارق: حين تعيش الخطر فعلياً، ثمة نهاية (نجاة، هرب). حين تُشاهده على الشاشة، لا نهاية محددة — الصور تتجدد كل يوم، وجسمك يبقى في حالة تأهب مزمن دون إفراج.</p>
+  </div>
+
+  <!-- H2 — 2 -->
+  <h2 id="channels" data-num="المفهوم الثاني">قنوات التأثير: كيف تصل الحرب إلى من هم بعيدون</h2>
+
+  <div class="steps fu">
+    <div class="step">
+      <div class="step-num">١</div>
+      <div class="step-body">
+        <h4>الاستهلاك الإعلامي المكثف</h4>
+        <p>إدمان الأخبار — التحديث المستمر، المقاطع الصادمة، الإحصاءات المتصاعدة — يُغرق الدماغ في موجة مستمرة من الكورتيزول. الخوارزميات تُفضّل المحتوى العاطفي الشديد، مما يُضاعف التعرض للمحتوى الأكثر صدمةً.</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">٢</div>
+      <div class="step-body">
+        <h4>التعاطف المتعدد المستويات</h4>
+        <p>البشر مُبرمَجون تطورياً على الاستجابة لمعاناة الآخرين — خاصة من يشتركون معنا في هوية (دينية، قومية، إنسانية). التعاطف يُفعّل «الخلايا العصبية المرآتية»، فتتألم دماغياً لما يتألم منه الآخر فعلياً.</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">٣</div>
+      <div class="step-body">
+        <h4>الذنب الوجودي</h4>
+        <p>«لماذا أنا بخير بينما هم ليسوا؟» — شعور يُسمّيه علماء النفس «ذنب الناجي» ويطال ليس فقط من نجوا من كوارث مباشرة، بل كل من يُدرك امتيازه بالمقارنة مع ضحايا حرب يُشاهدها. هذا الذنب حين لا يُعالَج يُحوَّل إلى خدر أو عدوانية.</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">٤</div>
+      <div class="step-body">
+        <h4>الشعور بالعجز الممنهج</h4>
+        <p>المشاهدة اليومية لمعاناة متواصلة دون قدرة على التأثير تُولّد ما يُسمى «العجز المكتسب» — حالة من اللامبالاة التدريجية التي قد تتمدد خارج موضوع الحرب لتطال الحياة كلها.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="poetic-quote fu">
+    <blockquote>
+      «المأساة المُشاهَدة عن بُعد ليست أقل ألماً من المُعاشة — إنها فقط ألم بلا حل، جرح بلا ضمادة.»
+    </blockquote>
+    <cite>— فيكتوريا ألكسندر، باحثة في علم الصدمة النفسية، جامعة كولومبيا</cite>
+  </div>
+
+  <!-- H2 — 3 -->
+  <h2 id="arabic" data-num="البُعد الخاص">الحالة العربية: حين تكون الحرب «قريبة من البيت»</h2>
+
+  <p>
+    الواقع العربي يُضيف طبقات من التعقيد: الروابط الدينية، القومية، والعائلية المتشابكة مع مناطق النزاع تجعل «المسافة النفسية» أقل كثيراً مما تُشير إليه المسافة الجغرافية. مصري يُشاهد حرباً في غزة، أو سوري في الشتات يرى بلده يحترق، أو يمني في الخارج يتابع عائلته — كل هؤلاء يعيشون ما يُسميه الباحثون «التعلق عن بُعد» (Distant Attachment).
+  </p>
+
+  <div class="warning-box fu">
+    <div class="warn-title">⚠️ ظاهرة الإرهاق التعاطفي الجماعي</div>
+    <p>حين تمتد الأزمة لسنوات، يُصاب المجتمعات بأكملها بـ«إرهاق التعاطف الجماعي» — حالة من الخدر الجمعي حيث يبدو أن الناس «اعتادوا» على الأخبار المروّعة. هذا ليس قسوة — إنه آلية دفاع نفسية جمعية تحمي الأفراد من الانهيار، لكنها تُنتج مجتمعات أقل حساسية وأكثر قبولاً للظلم.</p>
+    <p>الأخطر: هذا الخدر يُصعّب التعافي حتى بعد انتهاء الصراع.</p>
+  </div>
+
+  <!-- H2 — 4 -->
+  <h2 id="generation" data-num="الجيل الرقمي">الجيل الذي كبر على الحروب: ما الذي يحمله؟</h2>
+
+  <p>
+    الأطفال والمراهقون الذين نشأوا في العقد الأخير مع تدفق مستمر من صور الصراعات — حرب سوريا، اليمن، الحرب على غزة، أوكرانيا — يُشكّلون جيلاً مختلفاً نفسياً عن أسلافهم. الدراسات الأولى بدأت ترسم صورة مقلقة:
+  </p>
+
+  <div class="compare-table-wrap fu">
+    <table class="compare-table">
+      <thead><tr>
+        <th>المؤشر النفسي</th>
+        <th>جيل ما قبل الثورة الرقمية</th>
+        <th>جيل Z وAlpha</th>
+      </tr></thead>
+      <tbody>
+        <tr><td>التعرض لصور الحرب</td><td>عبر التلفاز في أوقات محددة</td><td>مستمر ومُخصَّص بالخوارزمية</td></tr>
+        <tr><td>معدلات القلق العام</td><td>مرجعي (قياس معياري)</td><td>أعلى بـ 47٪ (APA 2024)</td></tr>
+        <tr><td>الشعور بالأمان العالمي</td><td>65٪ يشعرون بعالم آمن</td><td>28٪ فقط</td></tr>
+        <tr><td>استيعاب الصدمة</td><td>معالجة أبطأ ولكن أعمق</td><td>تدفق صور بدون معالجة كافية</td></tr>
+        <tr><td>التفاؤل بالمستقبل</td><td>مرتفع نسبياً</td><td>متراجع — خاصة الأمن المناخي والسياسي</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="section-break fu"><div class="section-break-icon">🌧️</div></div>
+
+  <!-- H2 — 5 -->
+  <h2 id="symptoms" data-num="الأعراض">ماذا يحدث لك فعلاً؟ الأعراض التي تتجاهلها</h2>
+
+  <ul class="styled-list fu">
+    <li><div><strong>اضطرابات النوم:</strong> كوابيس، أفكار اجترارية قبل النوم، صعوبة الإغلاق الذهني.</div></li>
+    <li><div><strong>فرط اليقظة (Hypervigilance):</strong> تنبّه مفرط للأصوات والأحداث، توقع خطر في بيئات آمنة.</div></li>
+    <li><div><strong>العزل الاجتماعي:</strong> تجنب الفعاليات السعيدة لأنها «غير لائقة» في ظل الأحداث الجارية.</div></li>
+    <li><div><strong>الخدر العاطفي:</strong> فقدان القدرة على الشعور بالفرح أو الاستمتاع بالحياة اليومية.</div></li>
+    <li><div><strong>التحيّز في التفكير:</strong> رؤية كل شيء من منظور كارثي، صعوبة التفريق بين الخطر الحقيقي والمتخيَّل.</div></li>
+    <li><div><strong>الغضب أو الاكتئاب:</strong> كردّ فعل على الشعور بالعجز والظلم.</div></li>
+  </ul>
+
+  <!-- H2 — 6 -->
+  <h2 id="protection" data-num="الحماية والتعامل">كيف تُقاوم دون أن تتخلى عن الوعي</h2>
+
+  <p>
+    الحل ليس تجاهل ما يحدث أو التخلي عن التضامن — بل بناء علاقة صحية ومستدامة مع الأخبار والتعاطف. إليك المقاربة النفسية المُوصى بها:
+  </p>
+
+  <div class="steps fu">
+    <div class="step">
+      <div class="step-num">أ</div>
+      <div class="step-body">
+        <h4>«الصمود الرحيم» — ليس الخدر</h4>
+        <p>الهدف ليس أن لا تتأثر بل أن تتأثر بطريقة لا تشلّك. التمييز الواعي بين «أشعر بالحزن لما يحدث» و«أنا غارق في ألم لا يمكنني تحمّله» خطوة حاسمة. الأولى تُحفّز الفعل، الثانية تُولّد العجز.</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">ب</div>
+      <div class="step-body">
+        <h4>جرعة إخبارية مُقرَّرة</h4>
+        <p>تحديد وقتَين في اليوم لمتابعة الأخبار بدلاً من التدفق المستمر. إيقاف الإشعارات. الاختيار الواعي للمصادر. التوقف حين تشعر بعلامات الإجهاد (خفقان القلب، توتر الكتفين).</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">ج</div>
+      <div class="step-body">
+        <h4>تحويل التعاطف إلى فعل</h4>
+        <p>الشعور بالعجز يتضاءل حين تُترجم التعاطف إلى شيء ملموس — تبرع، توعية، دعم نفسي لمعارفك المتأثرين مباشرة. حتى الفعل الصغير يُعيد الإحساس بالوكالة والفاعلية.</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">د</div>
+      <div class="step-body">
+        <h4>الحضور في جسدك وزمانك</h4>
+        <p>ممارسات الحضور الذهني (Mindfulness) ليست هروباً من الواقع — إنها تُعلّم الدماغ التمييز بين الخطر المشاهَد والواقع المعاش. التمرين الجسدي المنتظم يُفرز الكورتيزول المتراكم من مشاهدة المحتوى الصادم.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="analysis-box fu">
+    <div class="box-label">📌 الخلاصة الاستراتيجية — geopolô</div>
+    <p>
+      الحروب في القرن الحادي والعشرين لا تُسبّب ضحايا في مناطق الصراع فحسب — تُنتج موجات من الصدمات النفسية الثانوية تطال مئات الملايين من المتابعين عن بُعد. هذا تحدٍّ صحي عام لم تتهيأ له أنظمة الصحة النفسية العالمية بعد.
+    </p>
+    <p>
+      اللحظة التي نُدرك فيها أن المُشاهَدة الكثيفة للحروب لها ثمن نفسي حقيقي هي اللحظة التي نبدأ بإعطاء أنفسنا إذناً بالرعاية — لأن إعادة شحن طاقتنا العاطفية شرط لأن نستمر في التضامن والفاعلية، لا التوقف عنهما.
+    </p>
+  </div>
+
+  <div class="jp-ornament" aria-hidden="true">— ◈ —</div>
+
+  <!-- FAQ -->
+  <div class="faq-section fu" id="faq">
+    <div class="faq-title">🌿 أسئلة شائعة</div>
+
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">
+        هل التوقف عن متابعة أخبار الحرب يعني أنني لا أبالي؟
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-a">
+        <p>لا — التوقف المؤقت عن الاستهلاك الإعلامي المفرط ليس لامبالاةً بل حكمةً نفسية. لا يمكنك التضامن بشكل فاعل وأنت منهك. المقارنة: ممرضة تهتم بنفسها بين وردياتها لا تُهمل مرضاها — بل تحافظ على قدرتها على الاهتمام بهم.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">
+        كيف أُساعد طفلي على التعامل مع ما يراه عن الحروب؟
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-a">
+        <p>تحدّث بصدق مناسب للعمر، لا تتجاهل ولا تبالغ. أجِب على أسئلته بدلاً من تغيير الموضوع. أكّد له أمانه الشخصي. قلّل تعرضه للصور الصادمة. وعلّمه أن الحزن على معاناة الآخرين طبيعي وصحي. الأهم: اهتمّ بصحتك النفسية أنت — الأطفال يقرؤون قلق الوالدين قبل الكلمات.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">
+        ما الفرق بين الحداد الطبيعي على الضحايا والصدمة الثانوية المرضية؟
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-a">
+        <p>الحداد يتحرك — يبكي، يثور، يهدأ، يبحث عن معنى. الصدمة الثانوية تتجمّد أو تتصلب — أعراض تتكرر بدون تخفّف، تؤثر على الوظيفة اليومية، تستمر لأسابيع. المعيار: هل تستطيع أن تُكمل حياتك العادية رغم الحزن؟ إذا أصبح الإجابة «لا» لفترة ممتدة — طلب المساعدة المتخصصة ضروري.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">
+        هل الغضب من الظلم صحي أم ضار نفسياً؟
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-a">
+        <p>الغضب من الظلم عاطفة صحية وضرورية — إنه وقود الحركات الاجتماعية والتغيير. الضار هو الغضب الذي يتحول إلى يأس أو عداوة أو إدمان على الغضب ذاته. المعادلة: «أنا غاضب وسأفعل شيئاً» صحي. «أنا غاضب ولا أستطيع فعل أي شيء وأنا غاضب من غضبي» — هذا يحتاج معالجة.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">
+        هل الأمراض الجسدية يمكن أن تنتج من مشاهدة الحروب عن بُعد؟
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-a">
+        <p>نعم، وهذا موثّق علمياً. الكورتيزول المرتفع المزمن يُضعف الجهاز المناعي، يُعطّل جهاز الهضم، يرفع ضغط الدم، يُسبّب توترات عضلية مزمنة وصداعاً متكرراً. الجسم لا يُفرّق بين ضغط «حقيقي» وضغط «إعلامي» — كلاهما يُنتج نفس الاستجابة البيولوجية.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- AUTEUR -->
+  <div class="author-card fu">
+    <div class="author-avatar">د.علي<br>المنصور</div>
+    <div>
+      <div class="author-name">د. علي المنصور</div>
+      <div class="author-role">طبيب نفسي · متخصص في الصدمة النفسية والأزمات الجماعية · geopolô</div>
+      <p class="author-bio">
+        دكتوراه في الطب النفسي مع تخصص في الصدمات الجمعية وإعادة التأهيل النفسي. عمل مع منظمات إنسانية دولية في مناطق النزاع، ويُركّز أبحاثه على التأثيرات النفسية للإعلام الحربي على المجتمعات البعيدة جغرافياً.
+      </p>
+    </div>
+  </div>
+
+  <!-- ARTICLES LIÉS -->
+  <div class="related fu">
+    <div class="related-title">🌿 من السلسلة ذاتها</div>
+    <div class="related-grid">
+      <a href="/articles/burnout-wazifi-2026.html" class="rel-card">
+        <div class="rel-color" style="background:#c8863c"></div>
+        <div class="rel-body">
+          <h4>الاحتراق الوظيفي: كيف تكتشفه قبل فوات الأوان؟</h4>
+          <p>حين يُصبح العمل ثقلاً لا طاقةً — التشخيص والمخرج</p>
+          <div class="rel-arrow">← اقرأ المقال</div>
+        </div>
+      </a>
+      <a href="/articles/ai-anxiety-tech-2026.html" class="rel-card">
+        <div class="rel-color" style="background:#1e5fa8"></div>
+        <div class="rel-body">
+          <h4>الذكاء الاصطناعي والقلق: هل التكنولوجيا تجعلنا أكثر توتراً؟</h4>
+          <p>التقنية كمصدر للاضطراب لا الراحة</p>
+          <div class="rel-arrow">← اقرأ المقال</div>
+        </div>
+      </a>
+      <a href="/articles/info-overload-mental-health-2026.html" class="rel-card">
+        <div class="rel-color" style="background:#4a6741"></div>
+        <div class="rel-body">
+          <h4>الإرهاق المعلوماتي: كيف تؤثر الأخبار المستمرة على صحتنا؟</h4>
+          <p>في عصر الفيض المعلوماتي — الدماغ المحاصر</p>
+          <div class="rel-arrow">← اقرأ المقال</div>
+        </div>
+      </a>
+    </div>
+  </div>
+
+</article>
+
+<!-- SIDEBAR -->
+<aside class="sidebar">
+  <!-- Paysage nuit pluvieuse miniature -->
+  <div class="sb-card">
+    <div class="sb-landscape">
+      <div class="sb-landscape-bg"></div>
+      <svg viewBox="0 0 280 140" style="position:absolute;bottom:0;left:0;right:0;width:100%"
+           xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <rect x="30"  y="60"  width="40" height="80" fill="#070b18"/>
+        <rect x="80"  y="40"  width="30" height="100" fill="#060a15"/>
+        <rect x="115" y="55"  width="50" height="85" fill="#070b18"/>
+        <rect x="170" y="45"  width="35" height="95" fill="#060a15"/>
+        <rect x="210" y="60"  width="45" height="80" fill="#070b18"/>
+        <!-- Quelques fenêtres allumées -->
+        <rect x="38"  y="75"  width="8" height="6" fill="rgba(255,240,150,.2)" rx="1"/>
+        <rect x="88"  y="60"  width="8" height="6" fill="rgba(255,240,150,.15)" rx="1"/>
+        <rect x="185" y="65"  width="8" height="6" fill="rgba(255,240,150,.18)" rx="1"/>
+        <!-- Pluie animée mini -->
+        <line x1="50"  y1="0" x2="44"  y2="140" stroke="rgba(180,200,240,.15)" stroke-width=".8"/>
+        <line x1="100" y1="0" x2="94"  y2="140" stroke="rgba(180,200,240,.12)" stroke-width=".8"/>
+        <line x1="150" y1="0" x2="144" y2="140" stroke="rgba(180,200,240,.15)" stroke-width=".8"/>
+        <line x1="200" y1="0" x2="194" y2="140" stroke="rgba(180,200,240,.1)"  stroke-width=".8"/>
+        <!-- Reflet -->
+        <ellipse cx="140" cy="138" rx="100" ry="4" fill="rgba(42,74,127,.15)"/>
+        <rect x="0" y="132" width="280" height="8" fill="#050810"/>
+      </svg>
+      <div class="sb-landscape-text">المدينة الصامتة تحت المطر</div>
+    </div>
+  </div>
+
+  <!-- Indicateur de lecture -->
+  <div class="sb-card">
+    <div class="sb-head">📖 تقدم القراءة</div>
+    <div class="read-meter">
+      <div class="read-meter-bar">
+        <div class="read-meter-fill" id="read-fill"></div>
+      </div>
+      <div class="read-meter-label" id="read-label">ابدأ القراءة ↓</div>
+    </div>
+  </div>
+
+  <!-- TOC -->
+  <div class="sb-card">
+    <div class="sb-head">📋 المحتويات</div>
+    <ul class="toc-list">
+      <li><a href="#secondhand"><span class="tnum">١</span> الصدمة الثانوية</a></li>
+      <li><a href="#channels"><span class="tnum">٢</span> قنوات التأثير</a></li>
+      <li><a href="#arabic"><span class="tnum">٣</span> الحالة العربية</a></li>
+      <li><a href="#generation"><span class="tnum">٤</span> الجيل الرقمي</a></li>
+      <li><a href="#symptoms"><span class="tnum">٥</span> الأعراض</a></li>
+      <li><a href="#protection"><span class="tnum">٦</span> الحماية والتعامل</a></li>
+      <li><a href="#faq"><span class="tnum">✦</span> أسئلة شائعة</a></li>
+    </ul>
+  </div>
+
+  <!-- Tags -->
+  <div class="sb-card">
+    <div class="sb-head">🏷️ الموضوعات</div>
+    <div style="padding:.8rem 1rem;display:flex;flex-wrap:wrap;gap:.4rem;">
+      <span style="background:var(--blue-bg);color:var(--blue);border:1px solid rgba(42,74,127,.25);padding:.2rem .6rem;border-radius:12px;font-family:var(--sans);font-size:.66rem;font-weight:600">الصدمة الثانوية</span>
+      <span style="background:var(--cream);color:var(--mid);border:1px solid var(--rule);padding:.2rem .6rem;border-radius:12px;font-family:var(--sans);font-size:.66rem;">الحرب والنفس</span>
+      <span style="background:var(--cream);color:var(--mid);border:1px solid var(--rule);padding:.2rem .6rem;border-radius:12px;font-family:var(--sans);font-size:.66rem;">الإرهاق التعاطفي</span>
+      <span style="background:var(--cream);color:var(--mid);border:1px solid var(--rule);padding:.2rem .6rem;border-radius:12px;font-family:var(--sans);font-size:.66rem;">الصحة الإعلامية</span>
+      <span style="background:var(--cream);color:var(--mid);border:1px solid var(--rule);padding:.2rem .6rem;border-radius:12px;font-family:var(--sans);font-size:.66rem;">الجيل الرقمي</span>
+    </div>
+  </div>
+</aside>
+
+</div><!-- /layout -->
+
+<footer>
+  <div class="fi">
+    <span>© 2026 geopolô · ar.geopolo.com · جميع الحقوق محفوظة</span>
+    <div class="fl">
+      <a href="/">الرئيسية</a>
+      <a href="/sante.html">صحة نفسية</a>
+      <a href="https://fr.geopolo.com">🇫🇷 Français</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+/* Progress bar + read meter */
+const pb = document.getElementById('pb');
+window.addEventListener('scroll', () => {
+  const d = document.documentElement;
+  const pct = d.scrollTop / (d.scrollHeight - d.clientHeight) * 100;
+  pb.style.width = pct + '%';
+  const fill  = document.getElementById('read-fill');
+  const label = document.getElementById('read-label');
+  if (fill) fill.style.width = pct + '%';
+  if (label) {
+    if      (pct < 5)  label.textContent = 'ابدأ القراءة ↓';
+    else if (pct < 30) label.textContent = Math.round(pct) + '٪ — في البداية';
+    else if (pct < 60) label.textContent = Math.round(pct) + '٪ — في المنتصف';
+    else if (pct < 90) label.textContent = Math.round(pct) + '٪ — تقترب من النهاية';
+    else               label.textContent = '✓ قراءة اكتملت';
+  }
+});
+
+/* Intersection observer */
+const obs = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('vis'); obs.unobserve(e.target); } });
+}, { threshold: .06 });
+document.querySelectorAll('.fu').forEach(el => obs.observe(el));
+
+/* FAQ */
+function toggleFaq(btn) {
+  const item = btn.closest('.faq-item');
+  const isOpen = item.classList.contains('open');
+  document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+  if (!isOpen) item.classList.add('open');
+}
+
+/* TOC highlight */
+const sections = document.querySelectorAll('h2[id]');
+const tocLinks = document.querySelectorAll('.toc-list a');
+const tocObs = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      tocLinks.forEach(a => a.style.fontWeight = '');
+      const active = document.querySelector(`.toc-list a[href="#${e.target.id}"]`);
+      if (active) active.style.fontWeight = '700';
+    }
+  });
+}, { rootMargin: '-20% 0px -70% 0px' });
+sections.forEach(s => tocObs.observe(s));
+</script>
+
+</body>
+</html>

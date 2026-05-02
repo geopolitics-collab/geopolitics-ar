@@ -1,0 +1,1756 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>الاحتراق الوظيفي: كيف تكتشفه قبل فوات الأوان؟ — geopolô</title>
+<meta name="description" content="تحليل معمّق للاحتراق الوظيفي: الأعراض الخفية، الأسباب الجذرية، وكيف تتعرف على إرهاقك قبل أن يُصبح أزمة حقيقية. دليل نفسي واجتماعي شامل."/>
+<meta name="keywords" content="الاحتراق الوظيفي، إرهاق العمل، الصحة النفسية في العمل، التوتر المهني، أعراض الاحتراق"/>
+<meta property="og:title" content="الاحتراق الوظيفي: كيف تكتشفه قبل فوات الأوان؟"/>
+<meta property="og:description" content="تحليل معمّق للاحتراق الوظيفي: الأعراض الخفية، الأسباب الجذرية، وكيف تتعرف على إرهاقك قبل أن يُصبح أزمة حقيقية."/>
+<meta property="og:image" content="https://images.unsplash.com/photo-1474511320723-9a56873867b5?w=1200&q=80"/>
+<meta property="og:type" content="article"/>
+<link rel="canonical" href="https://ar.geopolo.com/articles/burnout-wazifi-2026.html"/>
+<link rel="alternate" hreflang="ar" href="https://ar.geopolo.com/articles/burnout-wazifi-2026.html"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Arabic:wght@300;400;600;700;900&family=Noto+Naskh+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+
+<style>
+/* ══════════════════════════════════════════════════════════
+   VARIABLES — Palette japonaise illustrée
+   Chaude, désaturée, nostalgie dorée
+══════════════════════════════════════════════════════════ */
+:root {
+  --ink:      #1c1a18;
+  --bg:       #faf8f4;
+  --paper:    #fffdf9;
+  --cream:    #f2ede3;
+  --mist:     #e8e2d8;
+  --mid:      #6b6358;
+  --light:    #9c9286;
+  --rule:     #ddd7cc;
+
+  /* Tonalités japonaises */
+  --amber:    #c8863c;
+  --amber-lt: #e8b06a;
+  --amber-bg: #fdf3e4;
+  --crimson:  #9e3a2f;
+  --moss:     #4a6741;
+  --sky:      #4a7a9b;
+  --dusk:     #7a5a7e;
+  --gold:     #d4a843;
+
+  /* Typographie */
+  --serif:   'Noto Serif Arabic', Georgia, serif;
+  --sans:    'Noto Naskh Arabic', sans-serif;
+
+  /* Espacements */
+  --r:        1rem;
+  --r2:       2rem;
+  --r3:       3rem;
+}
+
+*,*::before,*::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--serif);
+  background: var(--bg);
+  color: var(--ink);
+  direction: rtl;
+  line-height: 1.9;
+  overflow-x: hidden;
+}
+
+a { color: inherit; text-decoration: none; }
+img { max-width: 100%; display: block; }
+
+/* ── BARRE DE PROGRESSION ───────────────────────────── */
+#pb {
+  position: fixed; top: 0; right: 0; left: 0;
+  height: 3px;
+  background: linear-gradient(to left, var(--amber), var(--gold), var(--crimson));
+  width: 0%;
+  z-index: 9999;
+  transition: width .12s linear;
+}
+
+/* ── TOPBAR ──────────────────────────────────────────── */
+.top {
+  background: var(--ink);
+  color: rgba(255,255,255,.55);
+  font-family: var(--sans);
+  font-size: .72rem;
+  padding: .4rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  letter-spacing: .02em;
+}
+.top a { color: rgba(255,255,255,.7); transition: color .2s; }
+.top a:hover { color: var(--gold); }
+.top .fr-link {
+  display: inline-flex; align-items: center; gap: .3rem;
+  background: rgba(255,255,255,.08);
+  border: 1px solid rgba(255,255,255,.18);
+  padding: .2rem .6rem; border-radius: 3px;
+  font-weight: 600;
+}
+
+/* ── MASTHEAD ────────────────────────────────────────── */
+.mast {
+  background: var(--paper);
+  border-bottom: 2px solid var(--ink);
+  padding: 1.1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+.logo {
+  font-family: var(--serif);
+  font-size: clamp(1.4rem, 3vw, 2.1rem);
+  font-weight: 900;
+  color: var(--amber);
+  letter-spacing: -.02em;
+}
+.logo span {
+  display: block;
+  font-size: .5em;
+  font-weight: 400;
+  color: var(--mid);
+  letter-spacing: 0;
+}
+.msub {
+  font-family: var(--sans);
+  font-size: .68rem;
+  color: var(--light);
+  text-align: left;
+}
+
+/* ── NAV ─────────────────────────────────────────────── */
+nav {
+  background: var(--ink);
+  display: flex;
+  flex-wrap: wrap;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  border-bottom: 3px solid var(--amber);
+}
+nav a {
+  display: flex; align-items: center; gap: .4rem;
+  padding: .62rem .9rem;
+  font-family: var(--sans);
+  font-size: .77rem;
+  color: rgba(255,255,255,.55);
+  border-left: 1px solid rgba(255,255,255,.07);
+  transition: all .2s;
+}
+nav a:hover, nav a.active { background: rgba(255,255,255,.05); color: var(--gold); }
+nav a .dot { width: 6px; height: 6px; border-radius: 50%; flex-shrink: 0; }
+nav a[data-r="afrique"] .dot  { background: #c8821a; }
+nav a[data-r="amerique"] .dot { background: #b83232; }
+nav a[data-r="europe"] .dot   { background: #1e5fa8; }
+nav a[data-r="asie"] .dot     { background: #1a8a6e; }
+nav a[data-r="orient"] .dot   { background: #8b3a8b; }
+nav a[data-r="sante"] .dot    { background: var(--amber); }
+nav .nav-cta {
+  margin-right: auto;
+  background: var(--amber);
+  color: #fff !important;
+  font-weight: 600;
+  border: none;
+}
+
+/* ══════════════════════════════════════════════════════
+   HERO — Paysage japonais illustré
+══════════════════════════════════════════════════════ */
+.hero {
+  position: relative;
+  min-height: clamp(420px, 55vw, 680px);
+  overflow: hidden;
+  background: #1c1814;
+}
+
+/* Couches atmosphériques superposées */
+.hero-sky {
+  position: absolute; inset: 0;
+  background: linear-gradient(
+    175deg,
+    #2a1f3d 0%,
+    #4a2e5a 15%,
+    #7a3f3a 30%,
+    #c86830 50%,
+    #e8a04a 65%,
+    #f2c870 80%,
+    #fce8a8 100%
+  );
+}
+
+/* Texture de nuages aquarelle */
+.hero-clouds {
+  position: absolute; inset: 0;
+  background:
+    radial-gradient(ellipse 80% 40% at 20% 30%, rgba(255,220,160,.15) 0%, transparent 70%),
+    radial-gradient(ellipse 60% 30% at 70% 20%, rgba(255,180,100,.12) 0%, transparent 60%),
+    radial-gradient(ellipse 50% 25% at 50% 50%, rgba(200,120,80,.1) 0%, transparent 80%);
+  mix-blend-mode: screen;
+}
+
+/* Montagne silhouette — premier plan droit */
+.hero-mountain {
+  position: absolute;
+  bottom: 0; right: 0; left: 0;
+  height: 55%;
+  background:
+    /* Montagne principale */
+    polygon-clip;
+}
+.hero-mountain::before {
+  content: '';
+  position: absolute; inset: 0;
+  background:
+    radial-gradient(ellipse 120% 100% at 50% 110%, #0d0b09 0%, #1a1410 40%, transparent 70%);
+}
+/* Silhouette SVG inline via background */
+.hero-mt-svg {
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 60%;
+}
+
+/* Brume de profondeur */
+.hero-mist {
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 35%;
+  background: linear-gradient(to top,
+    rgba(20,15,10,.95) 0%,
+    rgba(20,15,10,.7) 40%,
+    transparent 100%
+  );
+}
+
+/* Reflets d'eau stylisés */
+.hero-water {
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 20%;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 3px,
+    rgba(200,140,80,.06) 3px,
+    rgba(200,140,80,.06) 4px
+  );
+  mix-blend-mode: screen;
+}
+
+/* Particules flottantes (feuilles/étincelles) */
+.hero-particles {
+  position: absolute; inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+.particle {
+  position: absolute;
+  width: 4px; height: 4px;
+  border-radius: 50%;
+  background: rgba(240,180,80,.6);
+  animation: float-up linear infinite;
+}
+.particle:nth-child(1)  { left: 15%; width: 3px; height: 3px; animation-duration: 8s;  animation-delay: 0s;   bottom: -5%; }
+.particle:nth-child(2)  { left: 35%; width: 5px; height: 5px; animation-duration: 12s; animation-delay: 2s;   bottom: -5%; background: rgba(220,160,60,.5); }
+.particle:nth-child(3)  { left: 55%; width: 3px; height: 3px; animation-duration: 9s;  animation-delay: 4s;   bottom: -5%; }
+.particle:nth-child(4)  { left: 70%; width: 4px; height: 4px; animation-duration: 11s; animation-delay: 1s;   bottom: -5%; background: rgba(200,100,60,.4); }
+.particle:nth-child(5)  { left: 85%; width: 2px; height: 2px; animation-duration: 7s;  animation-delay: 3s;   bottom: -5%; }
+.particle:nth-child(6)  { left: 25%; width: 4px; height: 4px; animation-duration: 10s; animation-delay: 5.5s; bottom: -5%; }
+.particle:nth-child(7)  { left: 60%; width: 3px; height: 3px; animation-duration: 13s; animation-delay: 0.5s; bottom: -5%; background: rgba(255,200,100,.7); }
+.particle:nth-child(8)  { left: 42%; width: 5px; height: 5px; animation-duration: 8.5s;animation-delay: 7s;   bottom: -5%; }
+.particle:nth-child(9)  { left: 78%; width: 2px; height: 2px; animation-duration: 14s; animation-delay: 2.5s; bottom: -5%; background: rgba(240,170,70,.5); }
+.particle:nth-child(10) { left: 8%;  width: 4px; height: 4px; animation-duration: 9.5s;animation-delay: 6s;   bottom: -5%; }
+
+@keyframes float-up {
+  0%   { transform: translateY(0) translateX(0) scale(1);  opacity: 0; }
+  10%  { opacity: .8; }
+  50%  { transform: translateY(-50vh) translateX(30px) scale(.7); opacity: .6; }
+  90%  { opacity: .2; }
+  100% { transform: translateY(-100vh) translateX(-20px) scale(.3); opacity: 0; }
+}
+
+/* Contenu hero */
+.hero-content {
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  padding: 3rem 2.5rem;
+  max-width: 900px;
+  margin: 0 auto;
+  animation: rise-in .9s ease-out both;
+}
+@keyframes rise-in {
+  from { opacity: 0; transform: translateY(30px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: .5rem;
+  background: rgba(200,134,60,.2);
+  border: 1px solid rgba(200,134,60,.4);
+  color: var(--amber-lt);
+  font-family: var(--sans);
+  font-size: .68rem;
+  font-weight: 600;
+  padding: .28rem .8rem;
+  border-radius: 20px;
+  letter-spacing: .06em;
+  margin-bottom: 1rem;
+  backdrop-filter: blur(4px);
+}
+.hero-badge::before {
+  content: '';
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background: var(--amber-lt);
+  animation: pulse 2s ease-in-out infinite;
+}
+@keyframes pulse {
+  0%,100% { opacity: 1; transform: scale(1); }
+  50%      { opacity: .4; transform: scale(.6); }
+}
+
+.hero h1 {
+  font-family: var(--serif);
+  font-size: clamp(1.8rem, 4.5vw, 3.2rem);
+  font-weight: 900;
+  color: #fff;
+  line-height: 1.2;
+  margin-bottom: .9rem;
+  text-shadow: 0 2px 20px rgba(0,0,0,.5);
+}
+.hero h1 em {
+  font-style: normal;
+  color: var(--amber-lt);
+}
+
+.hero-sub {
+  font-family: var(--sans);
+  font-size: .96rem;
+  color: rgba(255,255,255,.72);
+  max-width: 580px;
+  line-height: 1.85;
+  text-shadow: 0 1px 6px rgba(0,0,0,.4);
+}
+
+/* Ligne décorative japonaise */
+.hero-line {
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 1px;
+  background: linear-gradient(to right, transparent, rgba(200,134,60,.5), transparent);
+}
+
+/* ══════════════════════════════════════════════════════
+   META BAR
+══════════════════════════════════════════════════════ */
+.meta-bar {
+  background: var(--paper);
+  border-bottom: 1px solid var(--rule);
+  padding: .85rem 2rem;
+}
+.meta-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: .9rem;
+  align-items: center;
+}
+.meta-item {
+  font-family: var(--sans);
+  font-size: .69rem;
+  color: var(--light);
+  display: flex;
+  align-items: center;
+  gap: .3rem;
+}
+.meta-item strong { color: var(--mid); }
+.meta-sep { color: var(--rule); font-size: .8rem; }
+.meta-cat {
+  background: var(--amber-bg);
+  color: var(--amber);
+  border: 1px solid rgba(200,134,60,.3);
+  padding: .18rem .65rem;
+  border-radius: 12px;
+  font-weight: 600;
+  font-size: .67rem;
+}
+
+/* ══════════════════════════════════════════════════════
+   LAYOUT
+══════════════════════════════════════════════════════ */
+.layout {
+  max-width: 1160px;
+  margin: 0 auto;
+  padding: 3rem 1.5rem;
+  display: grid;
+  grid-template-columns: 1fr 280px;
+  gap: 4rem;
+  align-items: start;
+}
+@media (max-width: 960px) {
+  .layout { grid-template-columns: 1fr; gap: 2rem; }
+}
+
+/* ══════════════════════════════════════════════════════
+   ARTICLE BODY
+══════════════════════════════════════════════════════ */
+.body {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity .7s ease, transform .7s ease;
+}
+.body.vis { opacity: 1; transform: none; }
+
+/* Lettre capitale drop-cap style magazine */
+.body > p:first-of-type::first-letter {
+  font-size: 4.2rem;
+  font-weight: 900;
+  float: right;
+  line-height: .8;
+  margin: .05em 0 -.1em .2em;
+  color: var(--amber);
+  font-family: var(--serif);
+}
+
+.body p {
+  font-size: 1.02rem;
+  line-height: 1.95;
+  color: var(--ink);
+  margin-bottom: 1.3rem;
+}
+.body p:last-child { margin-bottom: 0; }
+
+/* Titres H2 */
+.body h2 {
+  font-family: var(--serif);
+  font-size: 1.45rem;
+  font-weight: 700;
+  color: var(--ink);
+  margin: 2.8rem 0 1.2rem;
+  padding-right: 1rem;
+  border-right: 4px solid var(--amber);
+  line-height: 1.4;
+  position: relative;
+}
+.body h2::before {
+  content: attr(data-num);
+  display: block;
+  font-family: var(--sans);
+  font-size: .62rem;
+  font-weight: 700;
+  color: var(--amber);
+  letter-spacing: .1em;
+  margin-bottom: .3rem;
+  opacity: .7;
+}
+
+/* Titres H3 */
+.body h3 {
+  font-family: var(--serif);
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--ink);
+  margin: 1.8rem 0 .8rem;
+}
+
+/* ══════════════════════════════════════════════════════
+   ENCADRÉS — Style japonais aquarelle
+══════════════════════════════════════════════════════ */
+
+/* Encadré Analyse Stratégique */
+.analysis-box {
+  margin: 2.5rem 0;
+  position: relative;
+  padding: 1.8rem 1.8rem 1.8rem 2.2rem;
+  background: var(--amber-bg);
+  border-radius: 16px 4px 4px 16px;
+  border-right: 5px solid var(--amber);
+  overflow: hidden;
+}
+.analysis-box::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: radial-gradient(ellipse 80% 80% at 10% 50%, rgba(200,134,60,.08) 0%, transparent 70%);
+  pointer-events: none;
+}
+.analysis-box .box-label {
+  font-family: var(--sans);
+  font-size: .65rem;
+  font-weight: 700;
+  color: var(--amber);
+  letter-spacing: .12em;
+  margin-bottom: .75rem;
+  display: flex;
+  align-items: center;
+  gap: .4rem;
+}
+.analysis-box .box-label::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: rgba(200,134,60,.3);
+}
+.analysis-box p {
+  font-size: .94rem;
+  line-height: 1.85;
+  color: #3a2e20;
+  margin-bottom: .6rem !important;
+}
+
+/* Citation poétique */
+.poetic-quote {
+  margin: 2.8rem 0;
+  padding: 2rem 2rem 2rem 2.5rem;
+  position: relative;
+  background: var(--paper);
+  border-radius: 12px;
+  box-shadow:
+    0 2px 20px rgba(0,0,0,.06),
+    inset 0 0 0 1px rgba(200,134,60,.15);
+  overflow: hidden;
+}
+.poetic-quote::before {
+  content: '❝';
+  position: absolute;
+  top: .5rem;
+  right: 1.2rem;
+  font-size: 5rem;
+  color: rgba(200,134,60,.12);
+  font-family: serif;
+  line-height: 1;
+  pointer-events: none;
+}
+.poetic-quote blockquote {
+  font-family: var(--serif);
+  font-size: 1.1rem;
+  font-weight: 600;
+  line-height: 1.75;
+  color: var(--ink);
+  font-style: italic;
+  margin-bottom: .9rem;
+}
+.poetic-quote cite {
+  display: block;
+  font-family: var(--sans);
+  font-size: .7rem;
+  color: var(--light);
+  font-style: normal;
+}
+
+/* Grille de statistiques */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 1rem;
+  margin: 2.5rem 0;
+}
+.stat-card {
+  background: var(--paper);
+  border: 1px solid var(--rule);
+  border-radius: 14px;
+  padding: 1.3rem 1.1rem;
+  text-align: center;
+  transition: transform .25s, box-shadow .25s;
+  position: relative;
+  overflow: hidden;
+}
+.stat-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  background: linear-gradient(to right, var(--amber), var(--gold));
+  border-radius: 14px 14px 0 0;
+}
+.stat-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0,0,0,.1);
+}
+.stat-num {
+  font-family: var(--serif);
+  font-size: 2rem;
+  font-weight: 900;
+  color: var(--amber);
+  line-height: 1;
+  margin-bottom: .4rem;
+}
+.stat-lbl {
+  font-family: var(--sans);
+  font-size: .68rem;
+  color: var(--light);
+  line-height: 1.4;
+}
+
+/* Encadré Avertissement */
+.warning-box {
+  margin: 2.2rem 0;
+  padding: 1.5rem 1.6rem;
+  background: rgba(158, 58, 47, .06);
+  border: 1px solid rgba(158, 58, 47, .2);
+  border-right: 4px solid var(--crimson);
+  border-radius: 8px;
+}
+.warning-box .warn-title {
+  font-family: var(--sans);
+  font-size: .7rem;
+  font-weight: 700;
+  color: var(--crimson);
+  letter-spacing: .06em;
+  margin-bottom: .65rem;
+  display: flex;
+  align-items: center;
+  gap: .4rem;
+}
+.warning-box p {
+  font-size: .93rem;
+  color: #3a1a18;
+  margin-bottom: .5rem !important;
+}
+
+/* Liste stylisée */
+.styled-list {
+  margin: 1.2rem 0;
+  padding: 0;
+  list-style: none;
+}
+.styled-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: .75rem;
+  padding: .6rem 0;
+  border-bottom: 1px solid var(--mist);
+  font-size: .97rem;
+  line-height: 1.75;
+}
+.styled-list li:last-child { border-bottom: none; }
+.styled-list li::before {
+  content: '';
+  width: 7px; height: 7px;
+  border-radius: 50%;
+  background: var(--amber);
+  flex-shrink: 0;
+  margin-top: .55rem;
+}
+
+/* Étapes numérotées */
+.steps {
+  margin: 2rem 0;
+  counter-reset: steps;
+}
+.step {
+  display: flex;
+  gap: 1.2rem;
+  padding: 1.2rem 0;
+  border-bottom: 1px solid var(--mist);
+  align-items: flex-start;
+}
+.step:last-child { border-bottom: none; }
+.step-num {
+  width: 36px; height: 36px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--amber), var(--gold));
+  color: #fff;
+  font-family: var(--serif);
+  font-weight: 700;
+  font-size: .9rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  box-shadow: 0 3px 8px rgba(200,134,60,.3);
+}
+.step-body h4 {
+  font-family: var(--serif);
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--ink);
+  margin-bottom: .4rem;
+}
+.step-body p {
+  font-size: .92rem;
+  color: var(--mid);
+  margin-bottom: 0 !important;
+}
+
+/* Tableau comparatif */
+.compare-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 2rem 0;
+  font-family: var(--sans);
+  font-size: .86rem;
+}
+.compare-table th {
+  background: var(--ink);
+  color: rgba(255,255,255,.9);
+  padding: .75rem 1rem;
+  font-weight: 600;
+  text-align: right;
+}
+.compare-table th:first-child { border-radius: 0 8px 0 0; }
+.compare-table th:last-child  { border-radius: 8px 0 0 0; }
+.compare-table td {
+  padding: .65rem 1rem;
+  border-bottom: 1px solid var(--mist);
+  color: var(--ink);
+  vertical-align: top;
+}
+.compare-table tr:nth-child(even) td { background: var(--cream); }
+.compare-table tr:hover td { background: var(--amber-bg); }
+
+/* ══════════════════════════════════════════════════════
+   FAQ
+══════════════════════════════════════════════════════ */
+.faq-section {
+  margin: 3rem 0 1rem;
+  padding: 2rem;
+  background: var(--cream);
+  border-radius: 20px;
+  position: relative;
+  overflow: hidden;
+}
+.faq-section::before {
+  content: '';
+  position: absolute;
+  top: -30px; right: -30px;
+  width: 120px; height: 120px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(200,134,60,.12) 0%, transparent 70%);
+}
+.faq-title {
+  font-family: var(--serif);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--ink);
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: .6rem;
+}
+.faq-item {
+  border-bottom: 1px solid var(--mist);
+  margin-bottom: .5rem;
+}
+.faq-item:last-child { border-bottom: none; margin-bottom: 0; }
+.faq-q {
+  width: 100%;
+  text-align: right;
+  background: none;
+  border: none;
+  padding: 1rem .5rem;
+  cursor: pointer;
+  font-family: var(--serif);
+  font-size: .98rem;
+  font-weight: 700;
+  color: var(--ink);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: .8rem;
+  transition: color .2s;
+}
+.faq-q:hover { color: var(--amber); }
+.faq-icon {
+  width: 22px; height: 22px;
+  border-radius: 50%;
+  background: var(--amber-bg);
+  border: 1px solid rgba(200,134,60,.3);
+  color: var(--amber);
+  font-size: .85rem;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+  transition: transform .3s, background .3s;
+  font-weight: 700;
+}
+.faq-item.open .faq-icon {
+  transform: rotate(45deg);
+  background: var(--amber);
+  color: #fff;
+}
+.faq-a {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height .4s ease, padding .3s;
+}
+.faq-item.open .faq-a { max-height: 300px; padding-bottom: 1rem; }
+.faq-a p {
+  font-family: var(--sans);
+  font-size: .92rem;
+  line-height: 1.85;
+  color: var(--mid);
+  padding: 0 .5rem;
+}
+
+/* ══════════════════════════════════════════════════════
+   AUTEUR
+══════════════════════════════════════════════════════ */
+.author-card {
+  margin: 3rem 0 2rem;
+  padding: 1.8rem;
+  background: var(--paper);
+  border-radius: 16px;
+  border: 1px solid var(--rule);
+  display: flex;
+  gap: 1.3rem;
+  align-items: flex-start;
+  box-shadow: 0 4px 16px rgba(0,0,0,.06);
+}
+.author-avatar {
+  width: 56px; height: 56px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--amber), var(--gold));
+  display: flex; align-items: center; justify-content: center;
+  color: #fff;
+  font-family: var(--serif);
+  font-size: .7rem;
+  font-weight: 700;
+  flex-shrink: 0;
+  letter-spacing: -.03em;
+  line-height: 1.2;
+  text-align: center;
+  box-shadow: 0 3px 10px rgba(200,134,60,.3);
+}
+.author-name {
+  font-family: var(--serif);
+  font-size: 1rem;
+  font-weight: 700;
+  margin-bottom: .2rem;
+}
+.author-role {
+  font-family: var(--sans);
+  font-size: .67rem;
+  color: var(--amber);
+  margin-bottom: .5rem;
+  letter-spacing: .02em;
+}
+.author-bio {
+  font-family: var(--sans);
+  font-size: .82rem;
+  color: var(--mid);
+  line-height: 1.7;
+}
+
+/* ══════════════════════════════════════════════════════
+   ARTICLES LIÉS — séries
+══════════════════════════════════════════════════════ */
+.related {
+  margin-top: 3rem;
+}
+.related-title {
+  font-family: var(--serif);
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--ink);
+  margin-bottom: 1.2rem;
+  padding-bottom: .6rem;
+  border-bottom: 2px solid var(--amber);
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+}
+.related-grid {
+  display: grid;
+  gap: .85rem;
+}
+.rel-card {
+  display: flex;
+  gap: 1rem;
+  padding: 1rem;
+  background: var(--paper);
+  border: 1px solid var(--rule);
+  border-radius: 12px;
+  transition: transform .2s, box-shadow .2s, border-color .2s;
+}
+.rel-card:hover {
+  transform: translateX(-4px);
+  box-shadow: 4px 4px 16px rgba(0,0,0,.08);
+  border-color: var(--amber);
+}
+.rel-color {
+  width: 4px;
+  border-radius: 2px;
+  background: var(--amber);
+  flex-shrink: 0;
+}
+.rel-body h4 {
+  font-family: var(--serif);
+  font-size: .92rem;
+  font-weight: 700;
+  margin-bottom: .25rem;
+  color: var(--ink);
+}
+.rel-body p {
+  font-family: var(--sans);
+  font-size: .75rem;
+  color: var(--light);
+  margin: 0;
+  line-height: 1.5;
+}
+.rel-arrow {
+  margin-top: .4rem;
+  font-family: var(--sans);
+  font-size: .7rem;
+  color: var(--amber);
+  font-weight: 600;
+}
+
+/* ══════════════════════════════════════════════════════
+   SIDEBAR
+══════════════════════════════════════════════════════ */
+.sidebar {
+  position: sticky;
+  top: 80px;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+.sb-card {
+  background: var(--paper);
+  border: 1px solid var(--rule);
+  border-radius: 16px;
+  overflow: hidden;
+}
+.sb-head {
+  padding: .9rem 1.2rem;
+  background: var(--cream);
+  border-bottom: 1px solid var(--rule);
+  font-family: var(--sans);
+  font-size: .72rem;
+  font-weight: 700;
+  color: var(--mid);
+  letter-spacing: .06em;
+}
+
+/* TOC sidebar */
+.toc-list {
+  list-style: none;
+  padding: .6rem .4rem;
+}
+.toc-list li { }
+.toc-list a {
+  display: flex;
+  align-items: center;
+  gap: .6rem;
+  padding: .6rem .8rem;
+  border-radius: 8px;
+  font-family: var(--sans);
+  font-size: .8rem;
+  color: var(--mid);
+  transition: all .2s;
+  line-height: 1.4;
+}
+.toc-list a:hover {
+  background: var(--amber-bg);
+  color: var(--amber);
+  padding-right: 1.1rem;
+}
+.toc-list .tnum {
+  font-family: var(--serif);
+  font-size: .72rem;
+  color: var(--amber);
+  font-weight: 700;
+  min-width: 18px;
+}
+
+/* Widget paysage miniature */
+.sb-landscape {
+  position: relative;
+  height: 140px;
+  overflow: hidden;
+  border-radius: 12px;
+  margin: .8rem;
+}
+.sb-landscape-bg {
+  position: absolute; inset: 0;
+  background: linear-gradient(
+    to bottom,
+    #2a1f3d 0%,
+    #7a3f3a 40%,
+    #c86830 65%,
+    #1a1008 100%
+  );
+}
+.sb-landscape-mt {
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 55%;
+  background: linear-gradient(to top, #0d0b08, #1a1410 60%, transparent);
+}
+.sb-landscape-text {
+  position: absolute;
+  bottom: .8rem; right: .8rem; left: .8rem;
+  font-family: var(--sans);
+  font-size: .68rem;
+  color: rgba(255,255,255,.7);
+  text-align: center;
+  font-style: italic;
+}
+
+/* Indicateur de lecture */
+.read-meter {
+  padding: 1rem 1.2rem;
+}
+.read-meter-bar {
+  height: 4px;
+  background: var(--mist);
+  border-radius: 2px;
+  overflow: hidden;
+  margin-bottom: .5rem;
+}
+.read-meter-fill {
+  height: 100%;
+  background: linear-gradient(to left, var(--amber), var(--gold));
+  border-radius: 2px;
+  width: 0%;
+  transition: width .3s;
+}
+.read-meter-label {
+  font-family: var(--sans);
+  font-size: .68rem;
+  color: var(--light);
+  text-align: center;
+}
+
+/* ══════════════════════════════════════════════════════
+   FOOTER
+══════════════════════════════════════════════════════ */
+footer {
+  background: var(--ink);
+  color: rgba(255,255,255,.4);
+  padding: 2rem;
+  font-family: var(--sans);
+  font-size: .72rem;
+  border-top: 3px solid var(--amber);
+  margin-top: 4rem;
+}
+.fi {
+  max-width: 1160px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+.fl { display: flex; gap: 1.2rem; }
+.fl a { color: rgba(255,255,255,.5); transition: color .2s; }
+.fl a:hover { color: var(--gold); }
+
+/* ══════════════════════════════════════════════════════
+   ORNEMENTS JAPONAIS
+══════════════════════════════════════════════════════ */
+.jp-ornament {
+  text-align: center;
+  margin: 2.5rem 0;
+  font-size: 1.4rem;
+  color: rgba(200,134,60,.35);
+  letter-spacing: .8rem;
+  line-height: 1;
+}
+
+/* Section break illustré */
+.section-break {
+  margin: 3rem 0;
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.section-break::before,
+.section-break::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(to right, transparent, var(--rule), transparent);
+}
+.section-break-icon {
+  font-size: 1.1rem;
+  color: var(--amber);
+  opacity: .6;
+}
+
+/* ══════════════════════════════════════════════════════
+   ANIMATIONS D'APPARITION
+══════════════════════════════════════════════════════ */
+.fu {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity .6s ease, transform .6s ease;
+}
+.fu.vis {
+  opacity: 1;
+  transform: none;
+}
+.fu:nth-child(2) { transition-delay: .1s; }
+.fu:nth-child(3) { transition-delay: .2s; }
+.fu:nth-child(4) { transition-delay: .3s; }
+
+/* ══════════════════════════════════════════════════════
+   RESPONSIVE
+══════════════════════════════════════════════════════ */
+@media (max-width: 760px) {
+  .hero-content { padding: 2rem 1.2rem; }
+  .hero h1      { font-size: 1.7rem; }
+  .layout       { padding: 2rem 1rem; }
+  .meta-bar     { padding: .7rem 1rem; }
+  .mast         { padding: .9rem 1rem; }
+  .top          { padding: .35rem 1rem; }
+  .analysis-box { padding: 1.4rem; }
+  .author-card  { flex-direction: column; gap: .8rem; }
+}
+</style>
+</head>
+<body>
+
+<!-- BARRE DE PROGRESSION -->
+<div id="pb"></div>
+
+<!-- TOPBAR -->
+<div class="top">
+  <span>geopolô — <strong style="color:var(--gold)">الصحة النفسية والمجتمع</strong></span>
+  <span>
+    <a href="https://fr.geopolo.com" class="fr-link">🇫🇷 Français</a>
+    <a href="/abonnement.html" style="margin-right:.7rem">الاشتراك</a>
+  </span>
+</div>
+
+<!-- MASTHEAD -->
+<header class="mast">
+  <a href="/" class="logo">geopolô<span>مجلة جيوسياسية استراتيجية مستقلة</span></a>
+  <div class="msub">ar.geopolo.com · 2026</div>
+</header>
+
+<!-- NAV -->
+<nav>
+  <a href="/">الرئيسية</a>
+  <a href="/afr.html"     data-r="afrique"><span class="dot"></span>أفريقيا</a>
+  <a href="/ame.html"     data-r="amerique"><span class="dot"></span>أمريكا</a>
+  <a href="/eu.html"      data-r="europe"><span class="dot"></span>أوروبا</a>
+  <a href="/asie.html"    data-r="asie"><span class="dot"></span>آسيا</a>
+  <a href="/proche-or.html" data-r="orient"><span class="dot"></span>الشرق الأوسط</a>
+  <a href="/sante.html"   data-r="sante" class="active"><span class="dot"></span>صحة نفسية</a>
+  <a href="/abonnement.html" class="nav-cta">الاشتراك ←</a>
+</nav>
+
+<!-- ═══════════════════════════════════════════════
+     HERO — Illustration paysage crépuscule japonais
+════════════════════════════════════════════════════ -->
+<div class="hero" role="banner">
+  <div class="hero-line"></div>
+  <div class="hero-sky"></div>
+  <div class="hero-clouds"></div>
+
+  <!-- Montagnes SVG en silhouette -->
+  <svg class="hero-mt-svg" viewBox="0 0 1440 400" preserveAspectRatio="xMidYMax slice"
+       xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <!-- Montagne lointaine gauche -->
+    <polygon points="0,400 200,180 400,320 600,140 800,280 1000,160 1200,300 1440,200 1440,400"
+             fill="#0d0b09" opacity=".7"/>
+    <!-- Montagne principale centrale -->
+    <polygon points="100,400 400,200 500,280 650,80 780,260 950,180 1100,300 1300,220 1440,320 1440,400"
+             fill="#0d0b09"/>
+    <!-- Ligne d'eau réfléchissante -->
+    <rect x="0" y="370" width="1440" height="30" fill="#0d0b09"/>
+    <!-- Reflets lumineux sur l'eau -->
+    <ellipse cx="720" cy="385" rx="280" ry="8"
+             fill="rgba(200,140,60,.15)"/>
+    <!-- Petite pagode silhouette -->
+    <g fill="#0d0b09" opacity=".9">
+      <rect x="685" y="300" width="70" height="6"/>
+      <polygon points="685,300 720,270 755,300"/>
+      <polygon points="689,295 720,260 751,295"/>
+      <rect x="708" y="306" width="24" height="40"/>
+    </g>
+    <!-- Arbres de pin stylisés -->
+    <g fill="#0d0b09" opacity=".85">
+      <polygon points="180,340 193,290 206,340"/>
+      <polygon points="176,330 193,280 210,330"/>
+      <rect x="191" y="340" width="4" height="30"/>
+      <polygon points="1220,330 1233,278 1246,330"/>
+      <polygon points="1216,322 1233,268 1250,322"/>
+      <rect x="1231" y="330" width="4" height="30"/>
+      <polygon points="360,360 371,320 382,360"/>
+      <polygon points="357,350 371,308 385,350"/>
+      <rect x="369" y="360" width="4" height="20"/>
+    </g>
+    <!-- Cercle solaire/lunaire -->
+    <circle cx="720" cy="130" r="55"
+            fill="rgba(240,180,80,.25)"
+            filter="url(#glow)"/>
+    <circle cx="720" cy="130" r="40"
+            fill="rgba(240,180,80,.3)"/>
+    <defs>
+      <filter id="glow">
+        <feGaussianBlur stdDeviation="12" result="coloredBlur"/>
+        <feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge>
+      </filter>
+    </defs>
+    <!-- Oiseaux calligraphiques -->
+    <g stroke="rgba(255,255,255,.25)" stroke-width="1.2" fill="none">
+      <path d="M500,110 Q510,104 520,110"/>
+      <path d="M528,105 Q538,99 548,105"/>
+      <path d="M555,115 Q565,109 575,115"/>
+      <path d="M880,95  Q890,89 900,95"/>
+      <path d="M908,100 Q918,94 928,100"/>
+    </g>
+  </svg>
+
+  <div class="hero-mist"></div>
+  <div class="hero-water"></div>
+
+  <!-- Particules flottantes -->
+  <div class="hero-particles" aria-hidden="true">
+    <div class="particle"></div><div class="particle"></div>
+    <div class="particle"></div><div class="particle"></div>
+    <div class="particle"></div><div class="particle"></div>
+    <div class="particle"></div><div class="particle"></div>
+    <div class="particle"></div><div class="particle"></div>
+  </div>
+
+  <div class="hero-content">
+    <div class="hero-badge">🕯️ صحة نفسية · عمل ومجتمع</div>
+    <h1>الاحتراق الوظيفي<br><em>كيف تكتشفه قبل فوات الأوان؟</em></h1>
+    <p class="hero-sub">
+      حين يُصبح العمل ثقلاً لا طاقةً — تحليل نفسي واجتماعي معمّق لظاهرة تُصيب الملايين
+      دون أن يعوا بها، وكيف تُشخّص مبكراً قبل أن تُسرق منك صحتك وفرحك.
+    </p>
+  </div>
+</div>
+
+<!-- META BAR -->
+<div class="meta-bar">
+  <div class="meta-inner">
+    <span class="meta-item">✍ <strong>د. نورة السعدي</strong></span>
+    <span class="meta-sep">·</span>
+    <span class="meta-item">📅 <strong>أبريل 2026</strong></span>
+    <span class="meta-sep">·</span>
+    <span class="meta-item">⏱ <strong>16 دقيقة</strong></span>
+    <span class="meta-sep">·</span>
+    <span class="meta-cat">🧠 صحة نفسية</span>
+    <span class="meta-sep">·</span>
+    <span class="meta-item">🔗 <a href="/sante.html" style="color:var(--amber)">عودة للقسم</a></span>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════
+     LAYOUT PRINCIPAL
+════════════════════════════════════════════════════ -->
+<div class="layout">
+
+  <!-- ARTICLE -->
+  <article class="body fu" id="main-article">
+
+    <!-- INTRO -->
+    <p>
+      تستيقظ كل صباح والتعب يجثم على صدرك قبل أن تبدأ يومك. القهوة لم تعد تُفيد. بريد إلكتروني واحد يُشعلك. اجتماع عادي يُرهقك كأنه معركة. لا تتذكر متى كان عملك مصدر فرح لا مصدر قلق. إذا وجدت نفسك في هذا الوصف — فأنت على الأرجح في دوامة الاحتراق الوظيفي، تلك الظاهرة التي صنّفتها منظمة الصحة العالمية عام 2019 ظاهرةً صحية مهنية رسمية بعد عقود من التجاهل.
+    </p>
+    <p>
+      الاحتراق الوظيفي ليس كسلاً ولا ضعف شخصية — إنه استجابة فيزيولوجية ونفسية مُعقّدة لضغط مُزمن لم تُعالَج جذوره. ويُدمّر بشكل منهجي: الصحة، العلاقات، الهوية، وأحياناً الحياة نفسها.
+    </p>
+
+    <!-- STATS -->
+    <div class="stats-grid fu">
+      <div class="stat-card">
+        <div class="stat-num">89٪</div>
+        <div class="stat-lbl">من الموظفين قالوا أنهم عانوا من احتراق وظيفي في 2024</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num">$322B</div>
+        <div class="stat-lbl">خسائر الاقتصاد العالمي سنوياً من الاحتراق الوظيفي</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num">3-5×</div>
+        <div class="stat-lbl">احتمال الإصابة بأمراض القلب لدى من يعانون الإرهاق المزمن</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num">76٪</div>
+        <div class="stat-lbl">من الموظفين يرون أن جائحة كوفيد فاقمت الاحتراق لديهم</div>
+      </div>
+    </div>
+
+    <!-- H2 — 1 -->
+    <h2 id="definition" data-num="الجزء الأول">ما الاحتراق الوظيفي فعلاً؟ وما الفرق بينه وبين التعب العادي؟</h2>
+
+    <p>
+      صاغ عالم النفس الأمريكي هيربرت فرودنبرغر مصطلح «burnout» عام 1974 ليصف حالة الإنهاك الشامل الذي كان يراه عند المتطوعين في عيادته. لاحقاً طوّرت الباحثة كريستينا ماسلاش نموذجاً ثلاثي الأبعاد صار مرجعاً عالمياً:
+    </p>
+
+    <ul class="styled-list">
+      <li><strong>الإنهاك العاطفي:</strong> الشعور بأن طاقتك انتهت تماماً، لا يوجد ما تُعطيه لأحد.</li>
+      <li><strong>تبلّد المشاعر (Depersonalization):</strong> تصبح بارداً، ساخراً، غير مُبالٍ تجاه من حولك في العمل.</li>
+      <li><strong>تراجع الكفاءة الذاتية:</strong> تشعر أن كل ما تعمله لا معنى له، وأنك لم تعد جيداً في ما اعتدت الإجادة فيه.</li>
+    </ul>
+
+    <p>
+      التعب العادي يزول بعد نوم جيد أو إجازة قصيرة. الاحتراق الوظيفي لا يزول بالراحة فحسب — لأن جذوره أعمق وأعقد. تستطيع أن تأخذ إجازة أسبوعاً كاملاً وتعود تشعر بنفس الثقل لأن المشكلة ليست التعب بل البيئة التي أنتجته.
+    </p>
+
+    <div class="analysis-box fu">
+      <div class="box-label">📊 تحليل استراتيجي</div>
+      <p>
+        الاحتراق الوظيفي ليس فردياً بطبيعته — إنه أزمة منظومة. دراسة نشرتها Harvard Business Review عام 2023 وجدت أن 85٪ من حالات الاحتراق قابلة للتفسير من خلال ستة عوامل تنظيمية: عبء العمل الزائد، انعدام السيطرة، الشعور بعدم العدالة، المكافأة غير الكافية، تفكّك المجتمع، وتعارض القيم. وليس ضعف الموظف.
+      </p>
+      <p>
+        هذا يعني أن علاج الاحتراق الحقيقي لا يكمن فقط في «الرعاية الذاتية» التي تُروّج لها الشركات، بل في إعادة هيكلة بيئة العمل نفسها.
+      </p>
+    </div>
+
+    <!-- H2 — 2 -->
+    <h2 id="symptoms" data-num="الجزء الثاني">الأعراض الخفية: علامات تُخبرك قبل أن يستهلكك</h2>
+
+    <p>
+      المشكلة أن الاحتراق الوظيفي يتقدم تدريجياً وبشكل خادع — حين تدرك أنك تحترق تكون في الغالب قد احترقت فعلاً منذ أمد. إليك الأعراض التي يتجاهلها كثيرون:
+    </p>
+
+    <div class="steps fu">
+      <div class="step">
+        <div class="step-num">١</div>
+        <div class="step-body">
+          <h4>الاتصال العاطفي يتلاشى</h4>
+          <p>تجد نفسك تؤدي واجبات العمل كآلة — دون أن يُهمّك الناتج. زميل يحكي مشكلة وأنت تُحدّق في شاشتك. عميل يطلب مساعدة وتتمنى لو ينتهي الأمر بسرعة. هذا البرود ليس طبيعتك — بل دفاع عاطفي خفي.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">٢</div>
+        <div class="step-body">
+          <h4>السخرية تغزو حديثك</h4>
+          <p>تبدأ في السخرية المفرطة من المؤسسة، المسؤولين، الزملاء، وأحياناً العملاء. هذا ليس نقداً ذكياً بل هو «التبلّد الدفاعي» الذي وصفه نموذج ماسلاش — حين تُعالج عقلك برفض كل شيء قبل أن يُحبطك.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">٣</div>
+        <div class="step-body">
+          <h4>الجسم يصرخ بلغة المرض</h4>
+          <p>صداع متكرر بلا سبب واضح. ألم في الظهر والرقبة. اضطرابات في الهضم. نزلات برد متكررة (الجهاز المناعي يضعف تحت الكورتيزول المزمن). كلها طرق الجسم لقول ما لم تعترف به بعقلك.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">٤</div>
+        <div class="step-body">
+          <h4>الأداء يتراجع رغم الجهد</h4>
+          <p>تعمل ساعات أكثر لكن تُنجز أقل. القرارات البسيطة تستغرق وقتاً. الإبداع يجفّ. تُسوّف المهام التي كنت تُحبها. هذا تراجع إدراكي حقيقي ناجم عن الإجهاد المزمن الذي يُقلّص الفص الأمامي للمخ — مقر التخطيط والتركيز.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">٥</div>
+        <div class="step-body">
+          <h4>حياتك خارج العمل تتآكل</h4>
+          <p>تُلغي مواعيد الأصدقاء «لأنك متعب». الهوايات التي أحببتها تبدو ثقيلة. تُمضي وقتك في التمرير اللاواعي للهاتف بدلاً من أنشطة تُجدّد طاقتك. الاحتراق يُسرب نفسه إلى كل تفصيل من حياتك الشخصية.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="poetic-quote fu">
+      <blockquote>
+        «الاحتراق الوظيفي لا يُشبه حريقاً ضخماً — بل جمرة تحت الرماد تأكلك ببطء حتى لا يتبقى منك سوى الذاكرة.»
+      </blockquote>
+      <cite>— كريستينا ماسلاش، عالمة النفس، جامعة كاليفورنيا بيركلي</cite>
+    </div>
+
+    <!-- H2 — 3 -->
+    <h2 id="stages" data-num="الجزء الثالث">مراحل الاحتراق: أين أنت الآن؟</h2>
+
+    <p>
+      نموذج المراحل الثلاث عشرة الذي طوّره علماء النفس هربرت فرودنبرغر وجيل نورث يُمثّل رحلة الاحتراق الوظيفي من الطموح إلى الانهيار. الخطير أن كثيرين يبدؤون من النقطة الأولى بصدر مفتوح:
+    </p>
+
+    <div class="compare-table-wrap fu">
+      <table class="compare-table">
+        <thead>
+          <tr>
+            <th>المرحلة</th>
+            <th>ما تشعر به</th>
+            <th>إشارة الخطر</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>١–٣</strong> الانطلاق</td>
+            <td>طاقة مفرطة، رغبة بالإثبات، تجاهل الراحة</td>
+            <td>تعمل لساعات طويلة دون إحساس بالتعب</td>
+          </tr>
+          <tr>
+            <td><strong>٤–٦</strong> الضغط يتراكم</td>
+            <td>تبدأ بتجاهل احتياجاتك، صراعات تتصاعد، قلق لا تعرف مصدره</td>
+            <td>تنسحب اجتماعياً وتُقلّل من النوم</td>
+          </tr>
+          <tr>
+            <td><strong>٧–٩</strong> التبلّد يبدأ</td>
+            <td>فقدان الهوية، اللامبالاة، عزلة</td>
+            <td>تصبح غير مبالٍ بنتائج عملك</td>
+          </tr>
+          <tr>
+            <td><strong>١٠–١٢</strong> الانهيار</td>
+            <td>يأس، إحساس بالفراغ، قد تظهر أعراض جسدية خطيرة</td>
+            <td>تبدأ التفكير بترك كل شيء أو تتمنى لو تمرض</td>
+          </tr>
+          <tr>
+            <td><strong>١٣</strong> الانهيار التام</td>
+            <td>انهيار جسدي و/أو نفسي كامل، حاجة لتدخل طبي</td>
+            <td>لا تستطيع الاستمرار بالوظيفة اليومية</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="jp-ornament" aria-hidden="true">— ◇ —</div>
+
+    <!-- H2 — 4 -->
+    <h2 id="causes" data-num="الجزء الرابع">لماذا يحدث؟ الجذور البنيوية لا الفردية</h2>
+
+    <p>
+      الثقافة السائدة تُلقي اللوم على الفرد: «تعلّم إدارة وقتك»، «افعل اليوغا»، «اعتنِ بنفسك». لكن الأبحاث تُخبرنا بشيء مختلف — معظم الاحتراق الوظيفي يُولد في بيئات تُفتقر إلى عوامل جوهرية:
+    </p>
+
+    <div class="warning-box fu">
+      <div class="warn-title">⚠️ العوامل المؤسسية الستة — نموذج ماسلاش وليتر</div>
+      <p><strong>١. عبء العمل:</strong> حين تُطلب منك كمية عمل تتجاوز طاقتك الزمنية والجسدية المعقولة.</p>
+      <p><strong>٢. انعدام السيطرة:</strong> حين لا تملك صلاحية القرار في ما يؤثر عليك مباشرة.</p>
+      <p><strong>٣. المكافأة غير الكافية:</strong> مالية أو معنوية — حين لا تُقابَل جهودك بتقدير.</p>
+      <p><strong>٤. انهيار المجتمع:</strong> غياب الدعم، المعارك التنافسية السمّية، العزلة في بيئة العمل.</p>
+      <p><strong>٥. الظلم المُدرَك:</strong> معاملة مزدوجة المعايير، التحيّز، الترقيات غير العادلة.</p>
+      <p><strong>٦. تعارض القيم:</strong> حين تطلب منك الوظيفة أن تتصرف بطريقة تتعارض مع قيمك الجوهرية.</p>
+    </div>
+
+    <p>
+      وفي سياق العالم العربي تتضافر ضغوط إضافية: توقعات اجتماعية بالنجاح المادي المستمر، ثقافة «العيب» التي تُصعّب الاعتراف بالتعب، حدود ضعيفة بين وقت العمل والحياة الشخصية خاصة مع انتشار العمل عن بُعد، وضغوط العائلة الممتدة التي تُضيف إلى الحمل بدلاً من تخفيفه.
+    </p>
+
+    <!-- H2 — 5 -->
+    <h2 id="gender" data-num="الجزء الخامس">جنسك وعمرك ومهنتك: من الأكثر عرضة؟</h2>
+
+    <p>
+      ليس كل الناس بنفس الدرجة من المخاطرة. تشير الدراسات إلى أنماط واضحة:
+    </p>
+
+    <ul class="styled-list fu">
+      <li>
+        <div>
+          <strong>النساء:</strong> أكثر عرضة بسبب «العبء المزدوج» — عمل مدفوع + رعاية غير مدفوعة. الضغط على النساء للثبات عاطفياً في المهن «المساعِدة» كالتعليم والصحة والاجتماع مُدمّر بشكل خاص.
+        </div>
+      </li>
+      <li>
+        <div>
+          <strong>جيل الألفية (Millennials):</strong> دخلوا سوق العمل بتوقعات عالية وعثروا على واقع مختلف — انعدام الأمان الوظيفي، ديون دراسة، رواتب لا تُواكب الغلاء. هذا «الخداع النظامي» يُولّد احتراقاً خاصاً.
+        </div>
+      </li>
+      <li>
+        <div>
+          <strong>المهن «المساعِدة»:</strong> الأطباء والممرضون والمعلمون والمعالجون النفسيون يُعانون ما يُسمى «الإرهاق التعاطفي» — استنزاف العواطف في خدمة الآخرين.
+        </div>
+      </li>
+      <li>
+        <div>
+          <strong>العاملون عن بُعد:</strong> التحول إلى العمل من المنزل طمس الحدود بين العمل والراحة، وفقدان «طقوس الانتقال» (ركوب المواصلات مثلاً) التي كانت تُفصل الأدوار نفسياً.
+        </div>
+      </li>
+    </ul>
+
+    <div class="section-break fu"><div class="section-break-icon">🌸</div></div>
+
+    <!-- H2 — 6 -->
+    <h2 id="recovery" data-num="الجزء السادس">المخرج: من الاكتشاف إلى التعافي</h2>
+
+    <p>
+      التعافي من الاحتراق الوظيفي رحلة لا خطوة واحدة. تبدأ باعتراف وتنتهي بإعادة بناء. إليك المحطات الجوهرية:
+    </p>
+
+    <div class="steps fu">
+      <div class="step">
+        <div class="step-num">أ</div>
+        <div class="step-body">
+          <h4>الاعتراف: أصعب خطوة وأهمها</h4>
+          <p>كثيرون يرفضون التسمية خوفاً من الظهور بمظهر الضعيف. الاعتراف ليس استسلاماً — إنه شرط الشفاء. تحدّث مع نفسك بصدق: «أنا منهك، وهذا يحتاج اهتماماً».
+          </p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">ب</div>
+        <div class="step-body">
+          <h4>الحدود: أعِد رسم ما تقبله</h4>
+          <p>الحد النفسي السليم ليس «لا أعمل شيئاً بعد الخامسة» — بل وضوح ما تقبل تحمّله وما لا تقبل. بدء الحدود خطوة صعبة لكنها شرط للتعافي المستدام.
+          </p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">ج</div>
+        <div class="step-body">
+          <h4>الدعم المتخصص: العلاج النفسي ليس رفاهية</h4>
+          <p>الاحتراق الشديد يحتاج مرافقة متخصصة. العلاج المعرفي السلوكي (CBT) والعلاج القائم على القبول والالتزام (ACT) أثبتا فاعليتهما. لا تنتظر حتى الانهيار.
+          </p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">د</div>
+        <div class="step-body">
+          <h4>إعادة تعريف الهوية: أنت لستَ وظيفتك</h4>
+          <p>جوهر الاحتراق الوظيفي في كثير من الأحيان هو دمج الهوية بالأداء. من تكون حين لا تعمل؟ ما الذي يُسعدك بمعزل عن الإنتاج؟ أعِد الإجابة على هذه الأسئلة.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="analysis-box fu">
+      <div class="box-label">💡 الخلاصة الاستراتيجية — geopolô</div>
+      <p>
+        الاحتراق الوظيفي أزمة حضارة، لا أزمة أفراد. في عالم يُمجّد الإنتاجية بلا حدود، ويربط القيمة بالإنجاز، ويُنظر للراحة كتقصير — الاحتراق ليس خللاً في الإنسان، بل ردّة فعل صحية لجسم وعقل يرفضان ظلماً منهجياً.
+      </p>
+      <p>
+        الحل ليس حصراً فردياً. يحتاج أصحاب العمل إلى إعادة تصميم بيئات العمل، والحكومات إلى تشريعات تحمي العمال، والمجتمعات إلى تفكيك ثقافة «النجاح بأي ثمن». لكن في انتظار ذلك — ابدأ أنت بالاعتراف.
+      </p>
+    </div>
+
+    <!-- SECTION DÉCORATIVE -->
+    <div class="jp-ornament" aria-hidden="true">✦ ✦ ✦</div>
+
+    <!-- FAQ -->
+    <div class="faq-section fu" id="faq">
+      <div class="faq-title">🌸 أسئلة شائعة حول الاحتراق الوظيفي</div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          ما الفرق بين الاحتراق الوظيفي والاكتئاب؟
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">
+          <p>الاحتراق الوظيفي مرتبط ببيئة العمل — يتحسن حين تتغير البيئة أو تأخذ إجازة طويلة فعلاً. الاكتئاب أعمق، يمسّ كل جوانب الحياة، ولا يتحسن فقط بتغيير الوضيفة. لكن الاحتراق الوظيفي غير المعالَج يتطور في كثير من الأحيان إلى اكتئاب سريري. الفحص المتخصص ضروري للتمييز بينهما.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          هل تغيير الوظيفة يعالج الاحتراق؟
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">
+          <p>أحياناً نعم — خاصة إذا كانت البيئة هي الجذر (مسؤول مُعنّف، ثقافة تنظيمية سامّة). لكن كثيرون يُغيّرون وظائفهم ويجدون نفس الأنماط لأنهم لم يُعالجوا «الجرح الداخلي» — أنماط التفكير التي تجعلهم يتعاملون مع أي وظيفة بنفس الطريقة المُنهِكة. التغيير الخارجي وحده لا يكفي بدون عمل داخلي.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          كم يستغرق التعافي من الاحتراق الوظيفي؟
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">
+          <p>يتراوح بين أشهر قليلة لسنوات بحسب الشدة وسرعة التدخل. الحالات المبكرة (مراحل 1-5) قد تتحسن خلال 3-6 أشهر بتغييرات نمط حياة وحدود واضحة. الحالات المتقدمة قد تحتاج سنة أو أكثر مع دعم متخصص. الأهم هو البدء فور الإدراك — كل يوم تأخير يُرسّخ الأنماط أعمق.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          كيف أُساعد صديقاً أو زميلاً يبدو محترقاً وظيفياً؟
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">
+          <p>الأهم: لا تُقلّل مما يشعر به («الكل يعاني»). اسمع بدون حكم أو نصائح فورية. اعرض مساعدة محددة («هل تريد أن نتناول الغداء هذا الأسبوع؟» أفضل من «أخبرني إن احتجت شيئاً»). شجّع على طلب مساعدة متخصصة بلطف. كن حاضراً باستمرار — الإجهاد الوظيفي يُصيب الوحيدين أشد.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          هل الاحتراق الوظيفي شائع في البيئات العربية؟
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">
+          <p>الدراسات في الخليج وشمال أفريقيا تُشير إلى معدلات مرتفعة، خاصة في القطاعات الصحية والتعليم والمهن التقنية. يُضاف إلى الضغط المهني ضغوط اجتماعية فريدة: توقعات الأسرة، ثقافة «التشمّر»، وصمة طلب المساعدة النفسية. لكن الوعي يتنامى — وهذا أمر بالغ الأهمية.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- AUTEUR -->
+    <div class="author-card fu">
+      <div class="author-avatar">د.نورة<br>السعدي</div>
+      <div>
+        <div class="author-name">د. نورة السعدي</div>
+        <div class="author-role">طبيبة نفسية · متخصصة في الصحة النفسية المهنية · geopolô</div>
+        <p class="author-bio">
+          دكتوراه في الطب النفسي مع تخصص في الصحة النفسية للمهنيين وبيئات العمل. تعمل على الربط بين التحليل الاجتماعي-الاقتصادي والصحة النفسية الفردية، وتكتب في geopolô عن التداخل بين الضغوط المجتمعية والرفاه النفسي.
+        </p>
+      </div>
+    </div>
+
+    <!-- ARTICLES LIÉS -->
+    <div class="related fu">
+      <div class="related-title">🌿 من السلسلة ذاتها — الصحة النفسية والمجتمع</div>
+      <div class="related-grid">
+        <a href="/articles/wars-mental-health-2026.html" class="rel-card">
+          <div class="rel-color" style="background:#b83232"></div>
+          <div class="rel-body">
+            <h4>كيف تؤثر الحروب على الصحة النفسية حتى لمن لا يعيشها؟</h4>
+            <p>الصدمة الإعلامية والتعاطف المجهد وجيل تشكّل وعيه وسط الأزمات</p>
+            <div class="rel-arrow">← اقرأ المقال</div>
+          </div>
+        </a>
+        <a href="/articles/ai-anxiety-tech-2026.html" class="rel-card">
+          <div class="rel-color" style="background:#1e5fa8"></div>
+          <div class="rel-body">
+            <h4>الذكاء الاصطناعي والقلق: هل التكنولوجيا تجعلنا أكثر توتراً؟</h4>
+            <p>حين يُصبح التطور التقني مصدراً للاضطراب لا الراحة</p>
+            <div class="rel-arrow">← اقرأ المقال</div>
+          </div>
+        </a>
+        <a href="/articles/smartphone-addiction-2026.html" class="rel-card">
+          <div class="rel-color" style="background:#4a6741"></div>
+          <div class="rel-body">
+            <h4>إدمان الهاتف: الخطر الصامت في حياتنا اليومية</h4>
+            <p>ما تكشفه علوم الأعصاب عن تصميم الإدمان الرقمي</p>
+            <div class="rel-arrow">← اقرأ المقال</div>
+          </div>
+        </a>
+      </div>
+    </div>
+
+  </article><!-- /article -->
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+
+    <!-- Paysage miniature décoratif -->
+    <div class="sb-card">
+      <div class="sb-landscape">
+        <div class="sb-landscape-bg"></div>
+        <svg viewBox="0 0 280 140" style="position:absolute;bottom:0;left:0;right:0;width:100%"
+             xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <polygon points="0,140 80,70 140,100 200,50 280,90 280,140" fill="#0d0b09"/>
+          <circle cx="140" cy="42" r="22" fill="rgba(240,160,60,.3)"/>
+          <g fill="#0d0b09" opacity=".8">
+            <rect x="126" y="90" width="28" height="3"/>
+            <polygon points="126,90 140,73 154,90"/>
+            <rect x="134" y="93" width="12" height="20"/>
+          </g>
+        </svg>
+        <div class="sb-landscape-mt"></div>
+        <div class="sb-landscape-text">سكون في ظل العمل</div>
+      </div>
+    </div>
+
+    <!-- Indicateur de lecture -->
+    <div class="sb-card">
+      <div class="sb-head">📖 تقدم القراءة</div>
+      <div class="read-meter">
+        <div class="read-meter-bar">
+          <div class="read-meter-fill" id="read-fill"></div>
+        </div>
+        <div class="read-meter-label" id="read-label">ابدأ القراءة ↓</div>
+      </div>
+    </div>
+
+    <!-- TOC -->
+    <div class="sb-card">
+      <div class="sb-head">📋 المحتويات</div>
+      <ul class="toc-list">
+        <li><a href="#definition"><span class="tnum">١</span> تعريف الاحتراق</a></li>
+        <li><a href="#symptoms"><span class="tnum">٢</span> الأعراض الخفية</a></li>
+        <li><a href="#stages"><span class="tnum">٣</span> مراحل الاحتراق</a></li>
+        <li><a href="#causes"><span class="tnum">٤</span> الجذور البنيوية</a></li>
+        <li><a href="#gender"><span class="tnum">٥</span> من الأكثر عرضة؟</a></li>
+        <li><a href="#recovery"><span class="tnum">٦</span> المخرج والتعافي</a></li>
+        <li><a href="#faq"><span class="tnum">✦</span> أسئلة شائعة</a></li>
+      </ul>
+    </div>
+
+    <!-- Tags -->
+    <div class="sb-card">
+      <div class="sb-head">🏷️ الموضوعات</div>
+      <div style="padding:.8rem 1rem;display:flex;flex-wrap:wrap;gap:.4rem;">
+        <span style="background:var(--amber-bg);color:var(--amber);border:1px solid rgba(200,134,60,.3);padding:.2rem .6rem;border-radius:12px;font-family:var(--sans);font-size:.66rem;font-weight:600">الاحتراق الوظيفي</span>
+        <span style="background:var(--cream);color:var(--mid);border:1px solid var(--rule);padding:.2rem .6rem;border-radius:12px;font-family:var(--sans);font-size:.66rem;">الصحة النفسية</span>
+        <span style="background:var(--cream);color:var(--mid);border:1px solid var(--rule);padding:.2rem .6rem;border-radius:12px;font-family:var(--sans);font-size:.66rem;">بيئة العمل</span>
+        <span style="background:var(--cream);color:var(--mid);border:1px solid var(--rule);padding:.2rem .6rem;border-radius:12px;font-family:var(--sans);font-size:.66rem;">الإرهاق المهني</span>
+        <span style="background:var(--cream);color:var(--mid);border:1px solid var(--rule);padding:.2rem .6rem;border-radius:12px;font-family:var(--sans);font-size:.66rem;">جودة الحياة</span>
+        <span style="background:var(--cream);color:var(--mid);border:1px solid var(--rule);padding:.2rem .6rem;border-radius:12px;font-family:var(--sans);font-size:.66rem;">الأداء المهني</span>
+      </div>
+    </div>
+
+  </aside>
+
+</div><!-- /layout -->
+
+<!-- FOOTER -->
+<footer>
+  <div class="fi">
+    <span>© 2026 geopolô · ar.geopolo.com · جميع الحقوق محفوظة</span>
+    <div class="fl">
+      <a href="/">الرئيسية</a>
+      <a href="/sante.html">صحة نفسية</a>
+      <a href="https://fr.geopolo.com">🇫🇷 Français</a>
+    </div>
+  </div>
+</footer>
+
+<!-- ══════════════════════════════════════════════
+     JAVASCRIPT
+════════════════════════════════════════════════ -->
+<script>
+/* ── Barre de progression ──────────────────────────────── */
+const pb = document.getElementById('pb');
+window.addEventListener('scroll', () => {
+  const d = document.documentElement;
+  const pct = d.scrollTop / (d.scrollHeight - d.clientHeight) * 100;
+  pb.style.width = pct + '%';
+
+  // Indicateur de lecture sidebar
+  const fill  = document.getElementById('read-fill');
+  const label = document.getElementById('read-label');
+  if (fill) fill.style.width = pct + '%';
+  if (label) {
+    if (pct < 5)       label.textContent = 'ابدأ القراءة ↓';
+    else if (pct < 30) label.textContent = Math.round(pct) + '٪ — في البداية';
+    else if (pct < 60) label.textContent = Math.round(pct) + '٪ — في المنتصف';
+    else if (pct < 90) label.textContent = Math.round(pct) + '٪ — تقترب من النهاية';
+    else               label.textContent = '✓ قراءة اكتملت';
+  }
+});
+
+/* ── Intersection Observer (animations) ───────────────── */
+const obs = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.classList.add('vis');
+      obs.unobserve(e.target);
+    }
+  });
+}, { threshold: .06 });
+document.querySelectorAll('.fu').forEach(el => obs.observe(el));
+
+/* ── FAQ accordion ────────────────────────────────────── */
+function toggleFaq(btn) {
+  const item = btn.closest('.faq-item');
+  const isOpen = item.classList.contains('open');
+  // Fermer tous
+  document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+  // Ouvrir si était fermé
+  if (!isOpen) item.classList.add('open');
+}
+
+/* ── TOC active highlight ─────────────────────────────── */
+const sections  = document.querySelectorAll('h2[id]');
+const tocLinks  = document.querySelectorAll('.toc-list a');
+const tocObserver = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      tocLinks.forEach(a => a.style.fontWeight = '');
+      const active = document.querySelector(`.toc-list a[href="#${e.target.id}"]`);
+      if (active) active.style.fontWeight = '700';
+    }
+  });
+}, { rootMargin: '-20% 0px -70% 0px' });
+sections.forEach(s => tocObserver.observe(s));
+</script>
+
+</body>
+</html>

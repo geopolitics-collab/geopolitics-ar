@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>الذكاء الاصطناعي والقلق: هل التكنولوجيا تجعلنا أكثر توتراً؟ — geopolô</title>
+<meta name="description" content="تحليل نفسي معمّق لتأثير الذكاء الاصطناعي على القلق: قلق الاستبدال الوظيفي، ضغط التحسين الرقمي المستمر، وكيف تُعيد الآلة الذكية تعريف هويتنا المهنية والإنسانية."/>
+<meta name="keywords" content="الذكاء الاصطناعي والقلق، التكنولوجيا والصحة النفسية، قلق الاستبدال، التوتر الرقمي، مستقبل العمل"/>
+<meta property="og:title" content="الذكاء الاصطناعي والقلق: هل التكنولوجيا تجعلنا أكثر توتراً؟"/>
+<meta property="og:description" content="حين تُصبح الآلة مصدر قلق لا راحة — تحليل نفسي واجتماعي لأزمة الهوية في عصر الذكاء الاصطناعي."/>
+<meta property="og:image" content="https://images.unsplash.com/photo-1677442135703-1787eea5ce01?w=1200&q=80"/>
+<meta property="og:type" content="article"/>
+<link rel="canonical" href="https://ar.geopolo.com/articles/ai-anxiety-tech-2026.html"/>
+<link rel="alternate" hreflang="ar" href="https://ar.geopolo.com/articles/ai-anxiety-tech-2026.html"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Arabic:wght@300;400;600;700;900&family=Noto+Naskh+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+<style>
+:root{--ink:#0f1a14;--bg:#f4f8f5;--paper:#fff;--cream:#edf5ef;--mist:#deeae0;--mid:#4a6654;--light:#7a9a84;--rule:#ccddd2;--teal:#1a7a5e;--teal-lt:#3dba94;--teal-bg:#ebf7f2;--neon:#00e5a0;--dark:#061410;--serif:'Noto Serif Arabic',Georgia,serif;--sans:'Noto Naskh Arabic',sans-serif}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}
+body{font-family:var(--serif);background:var(--bg);color:var(--ink);direction:rtl;line-height:1.9;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+#pb{position:fixed;top:0;right:0;left:0;height:3px;background:linear-gradient(to left,var(--teal),var(--neon),var(--teal-lt));width:0%;z-index:9999;transition:width .12s;box-shadow:0 0 8px var(--neon)}
+.top{background:var(--dark);color:rgba(255,255,255,.5);font-family:var(--sans);font-size:.72rem;padding:.4rem 2rem;display:flex;justify-content:space-between;align-items:center}
+.top a{color:rgba(255,255,255,.65);transition:color .2s}.top a:hover{color:var(--neon)}
+.top .fr-link{display:inline-flex;align-items:center;gap:.3rem;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.15);padding:.2rem .6rem;border-radius:3px;font-weight:600}
+.mast{background:var(--paper);border-bottom:2px solid var(--ink);padding:1.1rem 2rem;display:flex;justify-content:space-between;align-items:flex-end}
+.logo{font-family:var(--serif);font-size:clamp(1.4rem,3vw,2.1rem);font-weight:900;color:var(--teal);letter-spacing:-.02em}
+.logo span{display:block;font-size:.5em;font-weight:400;color:var(--mid)}
+.msub{font-family:var(--sans);font-size:.68rem;color:var(--light);text-align:left}
+nav{background:var(--dark);display:flex;flex-wrap:wrap;position:sticky;top:0;z-index:100;border-bottom:3px solid var(--teal)}
+nav a{display:flex;align-items:center;gap:.4rem;padding:.62rem .9rem;font-family:var(--sans);font-size:.77rem;color:rgba(255,255,255,.5);border-left:1px solid rgba(255,255,255,.06);transition:all .2s}
+nav a:hover,nav a.active{background:rgba(0,229,160,.05);color:var(--neon)}
+nav a .dot{width:6px;height:6px;border-radius:50%;flex-shrink:0}
+nav a[data-r="afrique"] .dot{background:#c8821a}nav a[data-r="amerique"] .dot{background:#b83232}
+nav a[data-r="europe"] .dot{background:#1e5fa8}nav a[data-r="asie"] .dot{background:#1a8a6e}
+nav a[data-r="orient"] .dot{background:#8b3a8b}nav a[data-r="sante"] .dot{background:var(--teal-lt)}
+nav .nav-cta{margin-right:auto;background:var(--teal);color:#fff!important;font-weight:600;border:none}
+/* HERO */
+.hero{position:relative;min-height:clamp(440px,56vw,700px);overflow:hidden;background:var(--dark)}
+.hero-sky{position:absolute;inset:0;background:radial-gradient(ellipse 100% 80% at 50% 0%,#0a2518 0%,#061410 40%,#030e09 100%)}
+.hero-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(0,229,160,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(0,229,160,.04) 1px,transparent 1px);background-size:48px 48px;animation:grid-pulse 6s ease-in-out infinite}
+@keyframes grid-pulse{0%,100%{opacity:.5}50%{opacity:1}}
+.hero-aurora{position:absolute;top:-20%;left:50%;transform:translateX(-50%);width:120%;height:80%;background:radial-gradient(ellipse at 50% 30%,rgba(0,229,160,.12) 0%,rgba(26,122,94,.08) 30%,transparent 70%);filter:blur(20px);animation:aurora-breathe 8s ease-in-out infinite}
+@keyframes aurora-breathe{0%,100%{opacity:.6;transform:translateX(-50%) scaleY(1)}50%{opacity:1;transform:translateX(-50%) scaleY(1.15)}}
+.hero-nodes{position:absolute;inset:0;pointer-events:none;overflow:hidden}
+.node{position:absolute;border-radius:50%;background:radial-gradient(circle,var(--neon) 0%,transparent 70%);animation:node-float ease-in-out infinite;opacity:0}
+.node:nth-child(1){width:6px;height:6px;left:10%;top:20%;animation-duration:7s;animation-delay:0s}
+.node:nth-child(2){width:4px;height:4px;left:25%;top:35%;animation-duration:9s;animation-delay:1.5s}
+.node:nth-child(3){width:8px;height:8px;left:40%;top:15%;animation-duration:6s;animation-delay:3s}
+.node:nth-child(4){width:5px;height:5px;left:60%;top:28%;animation-duration:8s;animation-delay:.8s}
+.node:nth-child(5){width:4px;height:4px;left:75%;top:18%;animation-duration:10s;animation-delay:2s}
+.node:nth-child(6){width:6px;height:6px;left:88%;top:32%;animation-duration:7s;animation-delay:4s}
+.node:nth-child(7){width:3px;height:3px;left:15%;top:55%;animation-duration:11s;animation-delay:.3s}
+.node:nth-child(8){width:5px;height:5px;left:50%;top:45%;animation-duration:8s;animation-delay:2.5s}
+.node:nth-child(9){width:4px;height:4px;left:70%;top:50%;animation-duration:9s;animation-delay:1s}
+.node:nth-child(10){width:7px;height:7px;left:32%;top:60%;animation-duration:6.5s;animation-delay:3.5s}
+@keyframes node-float{0%{opacity:0;transform:translateY(0) scale(1)}20%{opacity:.8}50%{opacity:.5;transform:translateY(-20px) scale(1.3)}80%{opacity:.7}100%{opacity:0;transform:translateY(-40px) scale(.5)}}
+.hero-content{position:absolute;bottom:0;left:0;right:0;padding:3rem 2.5rem;max-width:900px;margin:0 auto;animation:rise-in .9s ease-out both}
+@keyframes rise-in{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:none}}
+.hero-badge{display:inline-flex;align-items:center;gap:.5rem;background:rgba(0,229,160,.1);border:1px solid rgba(0,229,160,.3);color:var(--neon);font-family:var(--sans);font-size:.68rem;font-weight:600;padding:.28rem .8rem;border-radius:20px;letter-spacing:.06em;margin-bottom:1rem;backdrop-filter:blur(6px);box-shadow:0 0 12px rgba(0,229,160,.1)}
+.hero-badge::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--neon);box-shadow:0 0 6px var(--neon);animation:blink 1.8s ease-in-out infinite}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.2}}
+.hero h1{font-family:var(--serif);font-size:clamp(1.8rem,4.5vw,3.1rem);font-weight:900;color:#fff;line-height:1.2;margin-bottom:.9rem;text-shadow:0 0 40px rgba(0,229,160,.2),0 2px 20px rgba(0,0,0,.6)}
+.hero h1 em{font-style:normal;color:var(--neon)}
+.hero-sub{font-family:var(--sans);font-size:.96rem;color:rgba(255,255,255,.65);max-width:580px;line-height:1.85;text-shadow:0 1px 6px rgba(0,0,0,.5)}
+/* META */
+.meta-bar{background:var(--paper);border-bottom:1px solid var(--rule);padding:.85rem 2rem}
+.meta-inner{max-width:1100px;margin:0 auto;display:flex;flex-wrap:wrap;gap:.9rem;align-items:center}
+.meta-item{font-family:var(--sans);font-size:.69rem;color:var(--light);display:flex;align-items:center;gap:.3rem}
+.meta-item strong{color:var(--mid)}.meta-sep{color:var(--rule)}
+.meta-cat{background:var(--teal-bg);color:var(--teal);border:1px solid rgba(26,122,94,.25);padding:.18rem .65rem;border-radius:12px;font-weight:600;font-size:.67rem;font-family:var(--sans)}
+/* LAYOUT */
+.layout{max-width:1160px;margin:0 auto;padding:3rem 1.5rem;display:grid;grid-template-columns:1fr 280px;gap:4rem;align-items:start}
+@media(max-width:960px){.layout{grid-template-columns:1fr;gap:2rem}}
+/* BODY */
+.body{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease}
+.body.vis{opacity:1;transform:none}
+.body>p:first-of-type::first-letter{font-size:4.2rem;font-weight:900;float:right;line-height:.8;margin:.05em 0 -.1em .2em;color:var(--teal)}
+.body p{font-size:1.02rem;line-height:1.95;color:var(--ink);margin-bottom:1.3rem}
+.body p:last-child{margin-bottom:0}
+.body h2{font-family:var(--serif);font-size:1.45rem;font-weight:700;color:var(--ink);margin:2.8rem 0 1.2rem;padding-right:1rem;border-right:4px solid var(--teal);line-height:1.4}
+.body h2::before{content:attr(data-num);display:block;font-family:var(--sans);font-size:.62rem;font-weight:700;color:var(--teal);letter-spacing:.1em;margin-bottom:.3rem;opacity:.7}
+.body h3{font-family:var(--serif);font-size:1.15rem;font-weight:700;color:var(--ink);margin:1.8rem 0 .8rem}
+/* ENCADRÉS */
+.analysis-box{margin:2.5rem 0;padding:1.8rem;background:var(--teal-bg);border-radius:16px 4px 4px 16px;border-right:5px solid var(--teal);overflow:hidden;position:relative}
+.analysis-box::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 80% 80% at 10% 50%,rgba(26,122,94,.07) 0%,transparent 70%)}
+.analysis-box .box-label{font-family:var(--sans);font-size:.65rem;font-weight:700;color:var(--teal);letter-spacing:.12em;margin-bottom:.75rem;display:flex;align-items:center;gap:.4rem}
+.analysis-box .box-label::after{content:'';flex:1;height:1px;background:rgba(26,122,94,.25)}
+.analysis-box p{font-size:.94rem;line-height:1.85;color:#0f2a1e;margin-bottom:.6rem!important}
+.poetic-quote{margin:2.8rem 0;padding:2rem 2rem 2rem 2.5rem;background:var(--paper);border-radius:12px;box-shadow:0 2px 20px rgba(0,0,0,.06),inset 0 0 0 1px rgba(26,122,94,.12);position:relative;overflow:hidden}
+.poetic-quote::before{content:'❝';position:absolute;top:.5rem;right:1.2rem;font-size:5rem;color:rgba(26,122,94,.1);font-family:serif;line-height:1}
+.poetic-quote blockquote{font-family:var(--serif);font-size:1.1rem;font-weight:600;line-height:1.75;color:var(--ink);font-style:italic;margin-bottom:.9rem}
+.poetic-quote cite{font-family:var(--sans);font-size:.7rem;color:var(--light);font-style:normal;display:block}
+.stats-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(155px,1fr));gap:1rem;margin:2.5rem 0}
+.stat-card{background:var(--paper);border:1px solid var(--rule);border-radius:14px;padding:1.3rem 1.1rem;text-align:center;transition:transform .25s,box-shadow .25s;position:relative;overflow:hidden}
+.stat-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(to right,var(--teal),var(--neon));border-radius:14px 14px 0 0}
+.stat-card:hover{transform:translateY(-4px);box-shadow:0 8px 24px rgba(0,0,0,.08)}
+.stat-num{font-family:var(--serif);font-size:2rem;font-weight:900;color:var(--teal);line-height:1;margin-bottom:.4rem}
+.stat-lbl{font-family:var(--sans);font-size:.68rem;color:var(--light);line-height:1.4}
+.warning-box{margin:2.2rem 0;padding:1.5rem 1.6rem;background:rgba(26,122,94,.05);border:1px solid rgba(26,122,94,.2);border-right:4px solid var(--teal);border-radius:8px}
+.warning-box .warn-title{font-family:var(--sans);font-size:.7rem;font-weight:700;color:var(--teal);letter-spacing:.06em;margin-bottom:.65rem;display:flex;align-items:center;gap:.4rem}
+.warning-box p{font-size:.93rem;color:var(--ink);margin-bottom:.5rem!important}
+/* Terminal */
+.terminal-box{margin:2.5rem 0;background:#061410;border-radius:12px;overflow:hidden;border:1px solid rgba(0,229,160,.2);box-shadow:0 0 20px rgba(0,229,160,.06),0 4px 16px rgba(0,0,0,.3)}
+.terminal-header{background:#0a1e16;padding:.7rem 1rem;display:flex;align-items:center;gap:.5rem;border-bottom:1px solid rgba(0,229,160,.1)}
+.t-dot{width:10px;height:10px;border-radius:50%}
+.t-dot-1{background:#ff5f57}.t-dot-2{background:#febc2e}.t-dot-3{background:#28c840}
+.t-title{font-family:var(--sans);font-size:.68rem;color:rgba(0,229,160,.5);margin-right:auto;letter-spacing:.08em}
+.terminal-body{padding:1.5rem;font-family:'Courier New',monospace;font-size:.8rem;line-height:1.8}
+.t-line{display:flex;gap:.6rem;margin-bottom:.3rem}
+.t-prompt{color:var(--neon);opacity:.7;flex-shrink:0}
+.t-cmd{color:rgba(255,255,255,.75)}.t-comment{color:rgba(0,229,160,.4);font-style:italic}
+.t-output{color:rgba(200,255,230,.6);padding-right:1.2rem}
+.t-warn{color:#febc2e}.t-err{color:#ff5f57}
+/* Styled list */
+.styled-list{margin:1.2rem 0;list-style:none}
+.styled-list li{display:flex;align-items:flex-start;gap:.75rem;padding:.6rem 0;border-bottom:1px solid var(--mist);font-size:.97rem;line-height:1.75}
+.styled-list li:last-child{border-bottom:none}
+.styled-list li::before{content:'';width:7px;height:7px;border-radius:50%;background:var(--teal);flex-shrink:0;margin-top:.55rem}
+/* Steps */
+.steps{margin:2rem 0}
+.step{display:flex;gap:1.2rem;padding:1.2rem 0;border-bottom:1px solid var(--mist);align-items:flex-start}
+.step:last-child{border-bottom:none}
+.step-num{width:36px;height:36px;border-radius:50%;background:linear-gradient(135deg,var(--teal),var(--teal-lt));color:#fff;font-family:var(--serif);font-weight:700;font-size:.9rem;display:flex;align-items:center;justify-content:center;flex-shrink:0;box-shadow:0 3px 8px rgba(26,122,94,.3)}
+.step-body h4{font-family:var(--serif);font-size:1rem;font-weight:700;color:var(--ink);margin-bottom:.4rem}
+.step-body p{font-size:.92rem;color:var(--mid);margin-bottom:0!important}
+/* Scale chart */
+.scale-chart{margin:2.5rem 0}
+.scale-row{display:flex;align-items:center;gap:1rem;margin-bottom:1rem}
+.scale-label{font-family:var(--sans);font-size:.78rem;color:var(--ink);min-width:150px;text-align:right;font-weight:600}
+.scale-bar-bg{flex:1;height:24px;background:var(--mist);border-radius:12px;overflow:hidden}
+.scale-bar-fill{height:100%;border-radius:12px;display:flex;align-items:center;justify-content:flex-start;padding-right:.6rem;font-family:var(--sans);font-size:.68rem;color:rgba(255,255,255,.9);font-weight:700;transition:width 1.2s ease;width:0%}
+.scale-pct{font-family:var(--sans);font-size:.72rem;color:var(--mid);min-width:38px;text-align:left}
+/* FAQ */
+.faq-section{margin:3rem 0 1rem;padding:2rem;background:var(--cream);border-radius:20px;position:relative;overflow:hidden}
+.faq-section::before{content:'';position:absolute;top:-30px;right:-30px;width:120px;height:120px;border-radius:50%;background:radial-gradient(circle,rgba(26,122,94,.1) 0%,transparent 70%)}
+.faq-title{font-family:var(--serif);font-size:1.25rem;font-weight:700;color:var(--ink);margin-bottom:1.5rem;display:flex;align-items:center;gap:.6rem}
+.faq-item{border-bottom:1px solid var(--mist);margin-bottom:.5rem}
+.faq-item:last-child{border-bottom:none;margin-bottom:0}
+.faq-q{width:100%;text-align:right;background:none;border:none;padding:1rem .5rem;cursor:pointer;font-family:var(--serif);font-size:.98rem;font-weight:700;color:var(--ink);display:flex;justify-content:space-between;align-items:center;gap:.8rem;transition:color .2s}
+.faq-q:hover{color:var(--teal)}
+.faq-icon{width:22px;height:22px;border-radius:50%;background:var(--teal-bg);border:1px solid rgba(26,122,94,.3);color:var(--teal);font-size:.85rem;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:transform .3s,background .3s}
+.faq-item.open .faq-icon{transform:rotate(45deg);background:var(--teal);color:#fff}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .4s ease,padding .3s}
+.faq-item.open .faq-a{max-height:320px;padding-bottom:1rem}
+.faq-a p{font-family:var(--sans);font-size:.92rem;line-height:1.85;color:var(--mid);padding:0 .5rem}
+/* Author */
+.author-card{margin:3rem 0 2rem;padding:1.8rem;background:var(--paper);border-radius:16px;border:1px solid var(--rule);display:flex;gap:1.3rem;align-items:flex-start;box-shadow:0 4px 16px rgba(0,0,0,.05)}
+.author-avatar{width:56px;height:56px;border-radius:50%;background:linear-gradient(135deg,var(--teal),var(--teal-lt));display:flex;align-items:center;justify-content:center;color:#fff;font-family:var(--serif);font-size:.7rem;font-weight:700;flex-shrink:0;line-height:1.2;text-align:center;box-shadow:0 3px 10px rgba(26,122,94,.3)}
+.author-name{font-family:var(--serif);font-size:1rem;font-weight:700;margin-bottom:.2rem}
+.author-role{font-family:var(--sans);font-size:.67rem;color:var(--teal);margin-bottom:.5rem}
+.author-bio{font-family:var(--sans);font-size:.82rem;color:var(--mid);line-height:1.7}
+/* Related */
+.related{margin-top:3rem}
+.related-title{font-family:var(--serif);font-size:1.1rem;font-weight:700;color:var(--ink);margin-bottom:1.2rem;padding-bottom:.6rem;border-bottom:2px solid var(--teal);display:flex;align-items:center;gap:.5rem}
+.related-grid{display:grid;gap:.85rem}
+.rel-card{display:flex;gap:1rem;padding:1rem;background:var(--paper);border:1px solid var(--rule);border-radius:12px;transition:transform .2s,box-shadow .2s,border-color .2s}
+.rel-card:hover{transform:translateX(-4px);box-shadow:4px 4px 16px rgba(0,0,0,.07);border-color:var(--teal)}
+.rel-color{width:4px;border-radius:2px;background:var(--teal);flex-shrink:0}
+.rel-body h4{font-family:var(--serif);font-size:.92rem;font-weight:700;margin-bottom:.25rem}
+.rel-body p{font-family:var(--sans);font-size:.75rem;color:var(--light);margin:0;line-height:1.5}
+.rel-arrow{margin-top:.4rem;font-family:var(--sans);font-size:.7rem;color:var(--teal);font-weight:600}
+/* Sidebar */
+.sidebar{position:sticky;top:80px;display:flex;flex-direction:column;gap:1.5rem}
+.sb-card{background:var(--paper);border:1px solid var(--rule);border-radius:16px;overflow:hidden}
+.sb-head{padding:.9rem 1.2rem;background:var(--cream);border-bottom:1px solid var(--rule);font-family:var(--sans);font-size:.72rem;font-weight:700;color:var(--mid);letter-spacing:.06em}
+.toc-list{list-style:none;padding:.6rem .4rem}
+.toc-list a{display:flex;align-items:center;gap:.6rem;padding:.6rem .8rem;border-radius:8px;font-family:var(--sans);font-size:.8rem;color:var(--mid);transition:all .2s;line-height:1.4}
+.toc-list a:hover{background:var(--teal-bg);color:var(--teal);padding-right:1.1rem}
+.toc-list .tnum{font-family:var(--serif);font-size:.72rem;color:var(--teal);font-weight:700;min-width:18px}
+.read-meter{padding:1rem 1.2rem}
+.read-meter-bar{height:4px;background:var(--mist);border-radius:2px;overflow:hidden;margin-bottom:.5rem}
+.read-meter-fill{height:100%;background:linear-gradient(to left,var(--teal),var(--neon));border-radius:2px;width:0%;transition:width .3s;box-shadow:0 0 4px var(--neon)}
+.read-meter-label{font-family:var(--sans);font-size:.68rem;color:var(--light);text-align:center}
+.jp-ornament{text-align:center;margin:2.5rem 0;font-size:1.4rem;color:rgba(26,122,94,.3);letter-spacing:.8rem}
+.fu{opacity:0;transform:translateY(20px);transition:opacity .6s ease,transform .6s ease}
+.fu.vis{opacity:1;transform:none}
+footer{background:var(--dark);color:rgba(255,255,255,.4);padding:2rem;font-family:var(--sans);font-size:.72rem;border-top:3px solid var(--teal);margin-top:4rem}
+.fi{max-width:1160px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem}
+.fl{display:flex;gap:1.2rem}
+.fl a{color:rgba(255,255,255,.5);transition:color .2s}
+.fl a:hover{color:var(--neon)}
+@media(max-width:760px){.hero-content{padding:2rem 1.2rem}.hero h1{font-size:1.7rem}.layout{padding:2rem 1rem}.author-card{flex-direction:column}.scale-label{min-width:110px;font-size:.72rem}.terminal-body{font-size:.72rem}}
+</style>
+</head>
+<body>
+<div id="pb"></div>
+<div class="top">
+  <span>geopolô — <strong style="color:var(--neon)">الصحة النفسية والمجتمع</strong></span>
+  <span><a href="https://fr.geopolo.com" class="fr-link">🇫🇷 Français</a><a href="/abonnement.html" style="margin-right:.7rem">الاشتراك</a></span>
+</div>
+<header class="mast">
+  <a href="/" class="logo">geopolô<span>مجلة جيوسياسية استراتيجية مستقلة</span></a>
+  <div class="msub">ar.geopolo.com · 2026</div>
+</header>
+<nav>
+  <a href="/">الرئيسية</a>
+  <a href="/afr.html" data-r="afrique"><span class="dot"></span>أفريقيا</a>
+  <a href="/ame.html" data-r="amerique"><span class="dot"></span>أمريكا</a>
+  <a href="/eu.html" data-r="europe"><span class="dot"></span>أوروبا</a>
+  <a href="/asie.html" data-r="asie"><span class="dot"></span>آسيا</a>
+  <a href="/proche-or.html" data-r="orient"><span class="dot"></span>الشرق الأوسط</a>
+  <a href="/sante.html" data-r="sante" class="active"><span class="dot"></span>صحة نفسية</a>
+  <a href="/abonnement.html" class="nav-cta">الاشتراك ←</a>
+</nav>
+
+<!-- HERO -->
+<div class="hero" role="banner">
+  <div class="hero-sky"></div><div class="hero-grid"></div><div class="hero-aurora"></div>
+  <div class="hero-nodes" aria-hidden="true">
+    <div class="node"></div><div class="node"></div><div class="node"></div>
+    <div class="node"></div><div class="node"></div><div class="node"></div>
+    <div class="node"></div><div class="node"></div><div class="node"></div><div class="node"></div>
+  </div>
+  <svg viewBox="0 0 1440 420" preserveAspectRatio="xMidYMax slice"
+       style="position:absolute;bottom:0;left:0;right:0;width:100%;height:auto"
+       xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <defs>
+      <linearGradient id="tg" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0%" stop-color="#0a2518" stop-opacity=".8"/>
+        <stop offset="100%" stop-color="#061410"/>
+      </linearGradient>
+      <radialGradient id="gg" cx="50%" cy="50%" r="50%">
+        <stop offset="0%" stop-color="#00e5a0" stop-opacity=".3"/>
+        <stop offset="100%" stop-color="#00e5a0" stop-opacity="0"/>
+      </radialGradient>
+      <filter id="sg"><feGaussianBlur stdDeviation="3" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+    </defs>
+    <rect x="0" y="360" width="1440" height="60" fill="#061410"/>
+    <!-- Circuit ground lines -->
+    <g stroke="rgba(0,229,160,.12)" stroke-width="1" fill="none">
+      <line x1="0" y1="380" x2="1440" y2="380"/>
+      <circle cx="200" cy="380" r="3" fill="rgba(0,229,160,.2)" stroke="none"/>
+      <circle cx="450" cy="380" r="3" fill="rgba(0,229,160,.2)" stroke="none"/>
+      <circle cx="720" cy="380" r="4" fill="rgba(0,229,160,.3)" stroke="none"/>
+      <circle cx="1000" cy="380" r="3" fill="rgba(0,229,160,.2)" stroke="none"/>
+      <circle cx="1250" cy="380" r="3" fill="rgba(0,229,160,.2)" stroke="none"/>
+    </g>
+    <!-- Left tree - binary -->
+    <g fill="url(#tg)" opacity=".9">
+      <rect x="95" y="200" width="18" height="165"/>
+      <rect x="65" y="200" width="13" height="80" transform="rotate(-25,95,200)"/>
+      <rect x="95" y="200" width="13" height="80" transform="rotate(20,95,200)"/>
+      <rect x="55" y="155" width="10" height="55" transform="rotate(-30,68,155)"/>
+      <rect x="68" y="155" width="10" height="55" transform="rotate(15,68,155)"/>
+      <rect x="108" y="160" width="10" height="50" transform="rotate(-15,115,160)"/>
+      <rect x="120" y="160" width="10" height="50" transform="rotate(28,120,160)"/>
+      <rect x="38" y="120" width="22" height="14" rx="3" opacity=".7"/>
+      <rect x="64" y="108" width="18" height="12" rx="3" opacity=".8"/>
+      <rect x="95" y="115" width="20" height="13" rx="3" opacity=".75"/>
+      <rect x="118" y="122" width="16" height="11" rx="3" opacity=".7"/>
+      <rect x="136" y="110" width="20" height="13" rx="3" opacity=".8"/>
+    </g>
+    <circle cx="104" cy="145" r="40" fill="url(#gg)" opacity=".4"/>
+    <!-- Central AI tree -->
+    <g fill="#061410" opacity=".95">
+      <rect x="703" y="100" width="26" height="265"/>
+      <polygon points="672,200 716,100 760,200" opacity=".9"/>
+      <polygon points="660,165 716,50 772,165" opacity=".85"/>
+      <polygon points="648,130 716,0 784,130" opacity=".8"/>
+      <rect x="712" y="0" width="8" height="40"/>
+      <rect x="706" y="14" width="20" height="2"/>
+      <rect x="700" y="22" width="32" height="2"/>
+      <circle cx="716" cy="0" r="5" fill="#0a1e16" opacity=".6"/>
+    </g>
+    <ellipse cx="716" cy="90" rx="80" ry="50" fill="url(#gg)" opacity=".6" filter="url(#sg)"/>
+    <!-- Data rays -->
+    <g stroke="rgba(0,229,160,.08)" stroke-width="1" stroke-dasharray="4,6">
+      <line x1="716" y1="90" x2="200" y2="380"/>
+      <line x1="716" y1="90" x2="450" y2="380"/>
+      <line x1="716" y1="90" x2="720" y2="380"/>
+      <line x1="716" y1="90" x2="1000" y2="380"/>
+      <line x1="716" y1="90" x2="1250" y2="380"/>
+    </g>
+    <!-- Right broken tree -->
+    <g fill="#0a1e16" opacity=".9">
+      <rect x="1275" y="170" width="20" height="195"/>
+      <rect x="1240" y="170" width="12" height="70" transform="rotate(-22,1275,170)"/>
+      <rect x="1275" y="170" width="12" height="75" transform="rotate(18,1275,170)"/>
+      <rect x="1230" y="130" width="10" height="45" transform="rotate(-35,1240,130)"/>
+      <rect x="1310" y="140" width="10" height="50" transform="rotate(25,1310,140)"/>
+      <rect x="1215" y="100" width="16" height="8" rx="2" transform="rotate(-15,1215,100)" opacity=".6"/>
+    </g>
+    <!-- Small trees -->
+    <g fill="#061410" opacity=".7">
+      <rect x="310" y="260" width="12" height="105"/><polygon points="292,270 316,210 340,270" opacity=".8"/><polygon points="286,240 316,175 346,240" opacity=".7"/>
+      <rect x="540" y="240" width="14" height="125"/><polygon points="520,255 547,190 574,255" opacity=".85"/>
+      <rect x="880" y="250" width="14" height="115"/><polygon points="860,262 887,200 914,262" opacity=".8"/>
+      <rect x="1100" y="265" width="12" height="100"/><polygon points="1083,275 1106,218 1129,275" opacity=".75"/>
+    </g>
+    <rect x="0" y="340" width="1440" height="30" fill="rgba(6,20,16,.7)"/>
+    <ellipse cx="716" cy="370" rx="500" ry="12" fill="rgba(0,229,160,.04)"/>
+  </svg>
+  <div class="hero-content">
+    <div class="hero-badge">🤖 ذكاء اصطناعي · صحة نفسية</div>
+    <h1>الذكاء الاصطناعي والقلق<br><em>هل التكنولوجيا تجعلنا أكثر توتراً؟</em></h1>
+    <p class="hero-sub">الآلة أصبحت تكتب وترسم وتُحلّل — وأنت تتساءل في الظلام: «ما الذي تبقّى لي؟» تحليل نفسي واجتماعي للقلق الأعمق الذي يُولّده الذكاء الاصطناعي.</p>
+  </div>
+</div>
+
+<!-- META -->
+<div class="meta-bar"><div class="meta-inner">
+  <span class="meta-item">✍ <strong>م. سارة الزهراني</strong></span><span class="meta-sep">·</span>
+  <span class="meta-item">📅 <strong>أبريل 2026</strong></span><span class="meta-sep">·</span>
+  <span class="meta-item">⏱ <strong>16 دقيقة</strong></span><span class="meta-sep">·</span>
+  <span class="meta-cat">🤖 ذكاء اصطناعي · نفس</span><span class="meta-sep">·</span>
+  <span class="meta-item">🔗 <a href="/sante.html" style="color:var(--teal)">عودة للقسم</a></span>
+</div></div>
+
+<div class="layout">
+<article class="body fu" id="main-article">
+
+<p>في مارس 2023، دخلت ChatGPT إلى غرفة محاضرات الدكتور ماكس تيغمارك في معهد ماساتشوستس للتكنولوجيا وقدّمت تلخيصاً لأبحاثه بدقة أبهرت طلابه. بعد المحاضرة، أقرّ تيغمارك — أحد أبرز علماء الذكاء الاصطناعي في العالم — بصدق: «لحظة غريبة، للمرة الأولى شعرت بأن شيئاً ما يُضغط على هويتي المهنية». هذا الشعور الذي وصفه عالم عبقري يعيشه مئات الملايين يومياً. والمفارقة العظيمة: التكنولوجيا التي وُعدنا أنها ستُحرّرنا تُنتج نوعاً جديداً من القلق لم نُعرّفه حتى بعد.</p>
+
+<div class="stats-grid fu">
+  <div class="stat-card"><div class="stat-num">67٪</div><div class="stat-lbl">من العمال يقلقون من استبدالهم بالذكاء الاصطناعي (Gallup 2024)</div></div>
+  <div class="stat-card"><div class="stat-num">38٪</div><div class="stat-lbl">ارتفاع حالات القلق المرتبطة بالمستقبل المهني بعد ChatGPT</div></div>
+  <div class="stat-card"><div class="stat-num">300M</div><div class="stat-lbl">وظيفة قد تتأثر جزئياً بالأتمتة خلال 10 سنوات (McKinsey)</div></div>
+  <div class="stat-card"><div class="stat-num">85٪</div><div class="stat-lbl">من الشباب يُفيدون بأن الذكاء الاصطناعي يُضيف ضغطاً للتحسن الدائم</div></div>
+</div>
+
+<h2 id="identity" data-num="المفهوم الأول">قلق الهوية: «من أنا إذا استطاعت الآلة فعل ما أفعله؟»</h2>
+<p>الهوية المهنية ليست مجرد تصنيف في بطاقة عمل — إنها جزء عميق من كيفية تعريف الإنسان لنفسه. «أنا مهندس»، «أنا كاتبة»، «أنا مصمم» — هذه الجمل تحمل معاني تتجاوز الوظيفة إلى الكرامة والغاية والمعنى. حين تُصبح الآلة قادرة على أداء هذه المهام بكفاءة مماثلة أو أعلى، يُطرح سؤال وجودي حقيقي: ما الذي يُبقيني فريداً؟</p>
+
+<div class="analysis-box fu">
+  <div class="box-label">🧠 ما تكشفه علم النفس عن «قلق التفوق»</div>
+  <p>علماء النفس يُميّزون بين «قلق الأداء» (الخوف من الفشل في مهمة محددة) و«قلق الاستبدال» — الخوف من أن تُصبح غير ضروري بالكامل. الأول له حل واضح (التحسين). الثاني يُهاجم الهوية الجوهرية ويُنتج أزمة معنى لا مجرد توتر وظيفي.</p>
+  <p>الدراسات تُشير إلى أن «قلق التفوق» يُفعّل نفس المناطق الدماغية التي تُستثار عند التهديد الجسدي — وهذا يُفسّر لماذا يبدو بعضهم «عدوانياً» تجاه الذكاء الاصطناعي بدون سبب واضح.</p>
+</div>
+
+<h2 id="improvement" data-num="الضغط الثاني">ضغط التحسين الرقمي الدائم: حين تُصبح الآلة المعيار</h2>
+<p>حين تنتج أداة ذكاء اصطناعي خلال ثوانٍ ما كنت تحتاج ساعات لإنجازه، يبدأ الناس يُطبّقون هذا المقياس على أنفسهم — وهو مقياس قاسٍ بشكل غير إنساني تماماً.</p>
+
+<div class="terminal-box fu">
+  <div class="terminal-header">
+    <div class="t-dot t-dot-1"></div><div class="t-dot t-dot-2"></div><div class="t-dot t-dot-3"></div>
+    <div class="t-title">human_vs_ai_comparison.log</div>
+  </div>
+  <div class="terminal-body">
+    <div class="t-line"><span class="t-prompt">$</span><span class="t-cmd">compare --task "كتابة تقرير 2000 كلمة"</span></div>
+    <div class="t-line"><span class="t-output">→ GPT-4o:    18 ثانية   | دقة: 94٪</span></div>
+    <div class="t-line"><span class="t-output">→ الإنسان:  4-6 ساعات  | دقة: متغيرة</span></div>
+    <div class="t-line"><span class="t-warn">⚠ تحذير: المقارنة المباشرة تتجاهل السياق والحكم والتجربة البشرية</span></div>
+    <div class="t-line" style="margin-top:.5rem"><span class="t-prompt">$</span><span class="t-cmd">analyze --hidden-value "ما الذي لا تُقيسه هذه المقارنة؟"</span></div>
+    <div class="t-line"><span class="t-output">→ الفهم العاطفي العميق للسياق</span></div>
+    <div class="t-line"><span class="t-output">→ القيم الأخلاقية المُضمَّنة في القرار</span></div>
+    <div class="t-line"><span class="t-output">→ الفضول والدهشة والمعنى</span></div>
+    <div class="t-line"><span class="t-output">→ المسؤولية والتبعات الاجتماعية</span></div>
+    <div class="t-line"><span class="t-err">✗ الخوارزمية لا تعرف لماذا تكتب — أنت تعرف</span></div>
+  </div>
+</div>
+
+<p>المشكلة تتعمق حين يُصبح «الإنتاج السريع» معياراً للقيمة في ثقافة مؤسسية تُقارن بين الإنسان والآلة. موظفون يقضون ساعاتهم يُعيدون كتابة مخرجات الذكاء الاصطناعي ليُضيفوا «لمسة إنسانية» كافية — وهذا في حد ذاته نوع جديد من العمل المُنهِك نفسياً.</p>
+
+<h2 id="types" data-num="أنواع القلق">أنواع القلق المرتبطة بالذكاء الاصطناعي: خريطة نفسية</h2>
+
+<div class="scale-chart fu" id="scale-chart">
+  <div class="scale-row">
+    <div class="scale-label">قلق فقدان الوظيفة</div>
+    <div class="scale-bar-bg"><div class="scale-bar-fill" style="background:linear-gradient(to left,var(--teal),var(--neon))" data-target="78">78٪</div></div>
+    <div class="scale-pct">78٪</div>
+  </div>
+  <div class="scale-row">
+    <div class="scale-label">قلق فقدان المعنى</div>
+    <div class="scale-bar-bg"><div class="scale-bar-fill" style="background:linear-gradient(to left,#2a7a5a,#5aaa8a)" data-target="65">65٪</div></div>
+    <div class="scale-pct">65٪</div>
+  </div>
+  <div class="scale-row">
+    <div class="scale-label">ضغط التكيّف السريع</div>
+    <div class="scale-bar-bg"><div class="scale-bar-fill" style="background:linear-gradient(to left,#4a7a3a,#7aaa5a)" data-target="71">71٪</div></div>
+    <div class="scale-pct">71٪</div>
+  </div>
+  <div class="scale-row">
+    <div class="scale-label">قلق الخصوصية</div>
+    <div class="scale-bar-bg"><div class="scale-bar-fill" style="background:linear-gradient(to left,#1a5a6a,#4a8a9a)" data-target="82">82٪</div></div>
+    <div class="scale-pct">82٪</div>
+  </div>
+  <div class="scale-row">
+    <div class="scale-label">مخاوف وجودية</div>
+    <div class="scale-bar-bg"><div class="scale-bar-fill" style="background:linear-gradient(to left,#5a2a7a,#8a5aaa)" data-target="44">44٪</div></div>
+    <div class="scale-pct">44٪</div>
+  </div>
+  <p style="font-family:var(--sans);font-size:.68rem;color:var(--light);margin-top:.8rem">المصدر: Pew Research Center + American Psychological Association 2024-2025</p>
+</div>
+
+<h2 id="paradox" data-num="المفارقة الكبرى">المفارقة الكبرى: الأداة التي صُنعت لتُريحنا تُتعبنا</h2>
+
+<div class="poetic-quote fu">
+  <blockquote>«وعدوا بأن الآلة ستعمل فاسترحنا — لكنهم نسوا أن العمل لم يكن فقط إنتاجاً، بل كان أيضاً هوية وكرامة وسبب للاستيقاظ صباحاً.»</blockquote>
+  <cite>— يوفال نوح هراري، «نيكسوس»، 2024</cite>
+</div>
+
+<p>الأبحاث تُثبت مفارقة عجيبة: كلما أتقن الناس استخدام أدوات الذكاء الاصطناعي، ارتفعت مستويات قلقهم منه. التفسير: كلما فهمت الأداة أكثر، أدركت حدودك وإمكانياتها بشكل أعمق — وهذا يستدعي إعادة تعريف مستمرة للذات المهنية، عملية مُنهِكة حين تصبح دورية.</p>
+
+<h2 id="arabic" data-num="البُعد العربي">الحالة العربية: قلق التقنية في سياق اقتصادي هشّ</h2>
+<p>في السياق العربي، يُضاف إلى القلق النفسي العام طبقات من التعقيد: بطالة شباب مرتفعة أصلاً، أسواق عمل تعتمد على الوظائف المكتبية الروتينية (الأكثر قابليةً للأتمتة)، وأنظمة تعليمية لم تتكيف بعد مع متطلبات سوق العمل الرقمي.</p>
+
+<div class="warning-box fu">
+  <div class="warn-title">⚠️ الفجوة الرقمية تُعمّق الهشاشة النفسية</div>
+  <p>الطلاب في الدول النامية يتلقّون تعليماً لمهارات مرتفعة مخاطر أتمتتها. هذا يُنتج «قلقاً استباقياً» حاداً حين تلتقي الشكوك الاقتصادية بالغموض التقني وضغط الأسرة على النجاح المادي.</p>
+  <p>النتيجة: قلق مُركَّب من ثلاثة مصادر — اقتصادي، مهني، ووجودي — يتغذى بعضه على بعض.</p>
+</div>
+
+<h2 id="what-remains" data-num="ما يتبقى للإنسان">ما يتبقّى للإنسان: الأجوبة التي لا تُحسبها الخوارزمية</h2>
+
+<div class="steps fu">
+  <div class="step"><div class="step-num">١</div><div class="step-body"><h4>الحكم الأخلاقي المتجذّر في السياق</h4><p>الذكاء الاصطناعي يُحسن النمط لكنه لا يُقرّر القيم. من يقرر ماذا تفعل بالنتيجة؟ من يُدرك أن السياق يستوجب رفضها بالكامل؟ هذا الحكم البشري الذي لا خوارزمية تُقلّده بمسؤولية حقيقية.</p></div></div>
+  <div class="step"><div class="step-num">٢</div><div class="step-body"><h4>العلاقات والثقة والمعنى الاجتماعي</h4><p>يمكن لروبوت أن يُجري محادثة، لكنه لا يُبني علاقة. الثقة الحقيقية والتعاطف الأصيل والحضور الإنساني في لحظات الهشاشة لا تُستبدل بالمعالجة الحسابية ولو بلغت دقتها 99٪.</p></div></div>
+  <div class="step"><div class="step-num">٣</div><div class="step-body"><h4>الإبداع المُدفوع بالتجربة المُعاشة</h4><p>الذكاء الاصطناعي يُعيد تركيب ما تعلّمه. الإنسان يخلق من المعاناة والفرح والذاكرة الجسدية والصدمة والأمل. الشعر الذي كتبته بعد خسارة لا تستطيع خوارزمية كتابته — لأنها لم تخسر.</p></div></div>
+  <div class="step"><div class="step-num">٤</div><div class="step-body"><h4>القيادة في اللحظات غير المُبرمَجة</h4><p>في الأزمات الحقيقية وغير المتوقعة، الإنسان يتكيف من خلال القيم لا الأنماط. القرارات التي تأتي من السياق الأخلاقي والتجربة الحياتية لا تُعلَّم الآلة بنفس العمق.</p></div></div>
+</div>
+
+<div class="analysis-box fu">
+  <div class="box-label">📌 الخلاصة الاستراتيجية — geopolô</div>
+  <p>القلق من الذكاء الاصطناعي حقيقي ومُبرَّر جزئياً — لكن يُصبح مُدمّراً حين يُشلّ بدلاً من أن يُحفّز. المقاربة الصحية: لا رفض التكنولوجيا ولا استسلام لها، بل إعادة تعريف واعية للقيمة الإنسانية بعيداً عن قياسها بمعايير الآلة.</p>
+  <p>أنت لستَ أبطأ من ChatGPT — أنت شيء مختلف جذرياً لا يُقاس بنفس الوحدة.</p>
+</div>
+
+<div class="jp-ornament" aria-hidden="true">⬡ ⬡ ⬡</div>
+
+<div class="faq-section fu" id="faq">
+  <div class="faq-title">🌿 أسئلة شائعة</div>
+  <div class="faq-item">
+    <button class="faq-q" onclick="toggleFaq(this)">هل قلق الذكاء الاصطناعي مشروع أم مبالغة إعلامية؟<span class="faq-icon">+</span></button>
+    <div class="faq-a"><p>مشروع جزئياً وطبيعي تماماً. التحولات التقنية الكبرى دائماً أنتجت قلقاً مشروعاً. ما هو مبالغة هو التنبؤ بسقف زمني محدد للكارثة أو طوباوية الحل. القلق المعتدل يُبقيك يقظاً للتكيف — الذعر يُشلّ.</p></div>
+  </div>
+  <div class="faq-item">
+    <button class="faq-q" onclick="toggleFaq(this)">كيف أُفرّق بين القلق المُنتج والقلق المُدمّر؟<span class="faq-icon">+</span></button>
+    <div class="faq-a"><p>القلق المُنتج يُولّد أسئلة: «ما المهارات التي يجب أن أُطوّر؟» القلق المُدمّر يُولّد جموداً: «لا فائدة من التعلم». المعيار العملي: هل يقودك هذا الشعور إلى خطوة ما؟ إذا نعم — قلق مُنتج. إذا يُبقيك جامداً ليوم كامل — وقت التدخل.</p></div>
+  </div>
+  <div class="faq-item">
+    <button class="faq-q" onclick="toggleFaq(this)">هل يُشعر الناس بذنب حين يستخدمون الذكاء الاصطناعي؟<span class="faq-icon">+</span></button>
+    <div class="faq-a"><p>نعم — ظاهرة موثّقة تُسمّى «ذنب الأتمتة». كثيرون يشعرون بأنهم «يغشون» حين يستخدمون ChatGPT لعمل كانوا يُنجزونه بأنفسهم. هذا الذنب يرتبط بثقافات تربط القيمة بالجهد المبذول لا بالنتيجة.</p></div>
+  </div>
+  <div class="faq-item">
+    <button class="faq-q" onclick="toggleFaq(this)">كيف أُحضّر أطفالي نفسياً لعالم الذكاء الاصطناعي؟<span class="faq-icon">+</span></button>
+    <div class="faq-a"><p>ثلاثة محاور: التفكير النقدي (علّمهم التساؤل)، القيم الإنسانية (الحكم الأخلاقي والتعاطف)، والمرونة العاطفية (القدرة على التكيف دون فقدان الهوية). هذه ليست تحضيراً لعالم الذكاء الاصطناعي فحسب — بل للحياة في أي زمن.</p></div>
+  </div>
+  <div class="faq-item">
+    <button class="faq-q" onclick="toggleFaq(this)">هل استخدام الذكاء الاصطناعي يُقلّل القلق أم يزيده؟<span class="faq-icon">+</span></button>
+    <div class="faq-a"><p>الإجابة مزدوجة: الاستخدام المُحكم يُقلّل القلق (يُخفّف عبء المهام الروتينية). الاستخدام غير الواعي يزيده (يُكرّس مقارنة الإنسان بالآلة). المفتاح: استخدم الذكاء الاصطناعي كأداة تخدم أهدافك لا كمعيار تقيس به قيمتك.</p></div>
+  </div>
+</div>
+
+<div class="author-card fu">
+  <div class="author-avatar">م.سارة<br>الزهراني</div>
+  <div>
+    <div class="author-name">م. سارة الزهراني</div>
+    <div class="author-role">باحثة في علم النفس التقني · أثر التكنولوجيا على الرفاه النفسي · geopolô</div>
+    <p class="author-bio">ماجستير في علم النفس المعرفي مع تركيز على التأثيرات النفسية للتكنولوجيا والذكاء الاصطناعي. تُساهم في geopolô بتحليل التقاطعات بين السياسة التقنية والصحة النفسية الجماعية.</p>
+  </div>
+</div>
+
+<div class="related fu">
+  <div class="related-title">🌿 من السلسلة ذاتها</div>
+  <div class="related-grid">
+    <a href="/articles/burnout-wazifi-2026.html" class="rel-card">
+      <div class="rel-color" style="background:#c8863c"></div>
+      <div class="rel-body"><h4>الاحتراق الوظيفي: كيف تكتشفه قبل فوات الأوان؟</h4><p>الإرهاق المهني في عصر الإنتاجية الرقمية</p><div class="rel-arrow">← اقرأ المقال</div></div>
+    </a>
+    <a href="/articles/smartphone-addiction-2026.html" class="rel-card">
+      <div class="rel-color" style="background:#b83232"></div>
+      <div class="rel-body"><h4>إدمان الهاتف: الخطر الصامت في حياتنا اليومية</h4><p>ما تكشفه علوم الأعصاب عن تصميم الإدمان الرقمي</p><div class="rel-arrow">← اقرأ المقال</div></div>
+    </a>
+    <a href="/articles/info-overload-mental-health-2026.html" class="rel-card">
+      <div class="rel-color" style="background:#4a7a3a"></div>
+      <div class="rel-body"><h4>الإرهاق المعلوماتي: كيف تؤثر الأخبار المستمرة علينا؟</h4><p>دماغ حديث في عالم فائق المعلومات</p><div class="rel-arrow">← اقرأ المقال</div></div>
+    </a>
+  </div>
+</div>
+
+</article>
+
+<aside class="sidebar">
+  <div class="sb-card">
+    <div style="position:relative;height:140px;overflow:hidden;border-radius:12px;margin:.8rem">
+      <div style="position:absolute;inset:0;background:var(--dark)"></div>
+      <svg viewBox="0 0 280 140" style="position:absolute;bottom:0;left:0;right:0;width:100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <defs><pattern id="gp" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse"><line x1="0" y1="10" x2="20" y2="10" stroke="rgba(0,229,160,.06)" stroke-width=".5"/><line x1="10" y1="0" x2="10" y2="20" stroke="rgba(0,229,160,.06)" stroke-width=".5"/></pattern></defs>
+        <rect width="280" height="140" fill="url(#gp)"/>
+        <ellipse cx="140" cy="30" rx="80" ry="25" fill="rgba(0,229,160,.08)"/>
+        <rect x="48" y="70" width="10" height="70" fill="#061410" opacity=".9"/>
+        <polygon points="40,80 53,45 66,80" fill="#061410" opacity=".85"/>
+        <rect x="126" y="50" width="14" height="90" fill="#061410"/>
+        <polygon points="115,65 133,20 151,65" fill="#061410" opacity=".9"/>
+        <polygon points="110,48 133,5 156,48" fill="#061410" opacity=".85"/>
+        <rect x="210" y="65" width="10" height="75" fill="#061410" opacity=".9"/>
+        <polygon points="202,75 215,42 228,75" fill="#061410" opacity=".8"/>
+        <circle cx="53" cy="80" r="2" fill="rgba(0,229,160,.4)"/>
+        <circle cx="133" cy="55" r="3" fill="rgba(0,229,160,.5)"/>
+        <circle cx="215" cy="68" r="2" fill="rgba(0,229,160,.35)"/>
+        <rect x="0" y="130" width="280" height="10" fill="#030e09"/>
+      </svg>
+      <div style="position:absolute;bottom:.8rem;left:0;right:0;text-align:center;font-family:var(--sans);font-size:.68rem;color:rgba(0,229,160,.5);font-style:italic">الغابة الرقمية</div>
+    </div>
+  </div>
+  <div class="sb-card">
+    <div class="sb-head">📖 تقدم القراءة</div>
+    <div class="read-meter">
+      <div class="read-meter-bar"><div class="read-meter-fill" id="read-fill"></div></div>
+      <div class="read-meter-label" id="read-label">ابدأ القراءة ↓</div>
+    </div>
+  </div>
+  <div class="sb-card">
+    <div class="sb-head">📋 المحتويات</div>
+    <ul class="toc-list">
+      <li><a href="#identity"><span class="tnum">١</span> قلق الهوية</a></li>
+      <li><a href="#improvement"><span class="tnum">٢</span> ضغط التحسين الدائم</a></li>
+      <li><a href="#types"><span class="tnum">٣</span> أنواع القلق</a></li>
+      <li><a href="#paradox"><span class="tnum">٤</span> المفارقة الكبرى</a></li>
+      <li><a href="#arabic"><span class="tnum">٥</span> البُعد العربي</a></li>
+      <li><a href="#what-remains"><span class="tnum">٦</span> ما يتبقى للإنسان</a></li>
+      <li><a href="#faq"><span class="tnum">✦</span> أسئلة شائعة</a></li>
+    </ul>
+  </div>
+  <div class="sb-card">
+    <div class="sb-head">🏷️ الموضوعات</div>
+    <div style="padding:.8rem 1rem;display:flex;flex-wrap:wrap;gap:.4rem">
+      <span style="background:var(--teal-bg);color:var(--teal);border:1px solid rgba(26,122,94,.25);padding:.2rem .6rem;border-radius:12px;font-family:var(--sans);font-size:.66rem;font-weight:600">الذكاء الاصطناعي</span>
+      <span style="background:var(--cream);color:var(--mid);border:1px solid var(--rule);padding:.2rem .6rem;border-radius:12px;font-family:var(--sans);font-size:.66rem">قلق العمل</span>
+      <span style="background:var(--cream);color:var(--mid);border:1px solid var(--rule);padding:.2rem .6rem;border-radius:12px;font-family:var(--sans);font-size:.66rem">هوية مهنية</span>
+      <span style="background:var(--cream);color:var(--mid);border:1px solid var(--rule);padding:.2rem .6rem;border-radius:12px;font-family:var(--sans);font-size:.66rem">مستقبل العمل</span>
+    </div>
+  </div>
+</aside>
+</div>
+
+<footer><div class="fi">
+  <span>© 2026 geopolô · ar.geopolo.com · جميع الحقوق محفوظة</span>
+  <div class="fl"><a href="/">الرئيسية</a><a href="/sante.html">صحة نفسية</a><a href="https://fr.geopolo.com">🇫🇷 Français</a></div>
+</div></footer>
+
+<script>
+const pb=document.getElementById('pb');
+window.addEventListener('scroll',()=>{
+  const d=document.documentElement;
+  const pct=d.scrollTop/(d.scrollHeight-d.clientHeight)*100;
+  pb.style.width=pct+'%';
+  const fill=document.getElementById('read-fill');
+  const label=document.getElementById('read-label');
+  if(fill)fill.style.width=pct+'%';
+  if(label){
+    if(pct<5)label.textContent='ابدأ القراءة ↓';
+    else if(pct<30)label.textContent=Math.round(pct)+'٪ — في البداية';
+    else if(pct<60)label.textContent=Math.round(pct)+'٪ — في المنتصف';
+    else if(pct<90)label.textContent=Math.round(pct)+'٪ — تقترب من النهاية';
+    else label.textContent='✓ قراءة اكتملت';
+  }
+});
+const obs=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){
+      e.target.classList.add('vis');
+      obs.unobserve(e.target);
+      if(e.target.id==='scale-chart'){
+        setTimeout(()=>{
+          e.target.querySelectorAll('.scale-bar-fill').forEach(bar=>{
+            bar.style.width=bar.dataset.target+'%';
+          });
+        },200);
+      }
+    }
+  });
+},{threshold:.06});
+document.querySelectorAll('.fu').forEach(el=>obs.observe(el));
+function toggleFaq(btn){
+  const item=btn.closest('.faq-item');
+  const isOpen=item.classList.contains('open');
+  document.querySelectorAll('.faq-item').forEach(i=>i.classList.remove('open'));
+  if(!isOpen)item.classList.add('open');
+}
+const sections=document.querySelectorAll('h2[id]');
+const tocLinks=document.querySelectorAll('.toc-list a');
+const tocObs=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){
+      tocLinks.forEach(a=>a.style.fontWeight='');
+      const active=document.querySelector(`.toc-list a[href="#${e.target.id}"]`);
+      if(active)active.style.fontWeight='700';
+    }
+  });
+},{rootMargin:'-20% 0px -70% 0px'});
+sections.forEach(s=>tocObs.observe(s));
+</script>
+</body>
+</html>

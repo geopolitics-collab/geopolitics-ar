@@ -1,0 +1,902 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>إدمان الهاتف: الخطر الصامت في حياتنا اليومية — geopolô</title>
+<meta name="description" content="تحليل علمي ونفسي لإدمان الهاتف الذكي: كيف صُمّمت التطبيقات لاستعباد دماغك، الدوبامين والإشعارات، وكيف تستعيد حياتك من شاشة لا تتوقف."/>
+<meta name="keywords" content="إدمان الهاتف، الصحة النفسية الرقمية، الدوبامين والتطبيقات، وسائل التواصل الإدمان، ساعات الشاشة"/>
+<meta property="og:title" content="إدمان الهاتف: الخطر الصامت في حياتنا اليومية"/>
+<meta property="og:description" content="كيف صُمّمت التطبيقات لاستعباد دماغك — تحليل علمي ونفسي معمّق لأخطر إدمان في تاريخ البشرية."/>
+<meta property="og:type" content="article"/>
+<link rel="canonical" href="https://ar.geopolo.com/articles/smartphone-addiction-2026.html"/>
+<link rel="alternate" hreflang="ar" href="https://ar.geopolo.com/articles/smartphone-addiction-2026.html"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Arabic:wght@300;400;600;700;900&family=Noto+Naskh+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+<style>
+/* ══════════════════════════════════════════════════════
+   PALETTE — Violet nocturne / lumière bleue écran
+   #6a3a8b violet profond · #c084fc lilas · #3b0764 nuit
+══════════════════════════════════════════════════════ */
+:root {
+  --ink:     #1a0a2e;
+  --bg:      #f7f4ff;
+  --paper:   #ffffff;
+  --cream:   #f0ebff;
+  --mist:    #e2d9f3;
+  --mid:     #6b5a8a;
+  --light:   #9c8ab8;
+  --rule:    #d6ccec;
+  --purple:  #6a3a8b;
+  --purple-lt:#c084fc;
+  --purple-bg:#f3eeff;
+  --indigo:  #3730a3;
+  --screen:  #7c3aed;
+  --glow-p:  rgba(192,132,252,.25);
+  --dark:    #0d0520;
+  --serif:   'Noto Serif Arabic',Georgia,serif;
+  --sans:    'Noto Naskh Arabic',sans-serif;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--serif);background:var(--bg);color:var(--ink);direction:rtl;line-height:1.9;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+
+/* PROGRESS */
+#pb{position:fixed;top:0;right:0;left:0;height:3px;background:linear-gradient(to left,var(--purple),var(--purple-lt),#e879f9);width:0%;z-index:9999;transition:width .12s;box-shadow:0 0 8px var(--glow-p)}
+
+/* TOP */
+.top{background:var(--dark);color:rgba(255,255,255,.5);font-family:var(--sans);font-size:.72rem;padding:.4rem 2rem;display:flex;justify-content:space-between;align-items:center}
+.top a{color:rgba(255,255,255,.65);transition:color .2s}.top a:hover{color:var(--purple-lt)}
+.top .fr-link{display:inline-flex;align-items:center;gap:.3rem;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.15);padding:.2rem .6rem;border-radius:3px;font-weight:600}
+
+/* MAST */
+.mast{background:var(--paper);border-bottom:2px solid var(--ink);padding:1.1rem 2rem;display:flex;justify-content:space-between;align-items:flex-end}
+.logo{font-family:var(--serif);font-size:clamp(1.4rem,3vw,2.1rem);font-weight:900;color:var(--purple);letter-spacing:-.02em}
+.logo span{display:block;font-size:.5em;font-weight:400;color:var(--mid)}
+.msub{font-family:var(--sans);font-size:.68rem;color:var(--light);text-align:left}
+
+/* NAV */
+nav{background:var(--dark);display:flex;flex-wrap:wrap;position:sticky;top:0;z-index:100;border-bottom:3px solid var(--purple)}
+nav a{display:flex;align-items:center;gap:.4rem;padding:.62rem .9rem;font-family:var(--sans);font-size:.77rem;color:rgba(255,255,255,.5);border-left:1px solid rgba(255,255,255,.06);transition:all .2s}
+nav a:hover,nav a.active{background:rgba(192,132,252,.07);color:var(--purple-lt)}
+nav a .dot{width:6px;height:6px;border-radius:50%;flex-shrink:0}
+nav a[data-r="afrique"] .dot{background:#c8821a}nav a[data-r="amerique"] .dot{background:#b83232}
+nav a[data-r="europe"] .dot{background:#1e5fa8}nav a[data-r="asie"] .dot{background:#1a8a6e}
+nav a[data-r="orient"] .dot{background:#8b3a8b}nav a[data-r="sante"] .dot{background:var(--purple-lt)}
+nav .nav-cta{margin-right:auto;background:var(--purple);color:#fff!important;font-weight:600;border:none}
+
+/* ══════════════════════════════════════════════════════
+   HERO — Nuit urbaine / écrans et lumière bleue
+══════════════════════════════════════════════════════ */
+.hero{position:relative;min-height:clamp(440px,56vw,700px);overflow:hidden;background:var(--dark)}
+
+/* Fond nocturne violet-profond */
+.hero-sky{position:absolute;inset:0;background:radial-gradient(ellipse 120% 70% at 50% 100%,#1a0535 0%,#0d0520 50%,#060210 100%)}
+
+/* Halo d'écran — lumière bleue qui pulse */
+.hero-screen-glow{
+  position:absolute;top:-10%;left:50%;transform:translateX(-50%);
+  width:140%;height:90%;
+  background:radial-gradient(ellipse at 50% 65%,rgba(124,58,237,.18) 0%,rgba(79,70,229,.08) 30%,transparent 70%);
+  filter:blur(30px);
+  animation:screen-pulse 4s ease-in-out infinite;
+}
+@keyframes screen-pulse{0%,100%{opacity:.6}50%{opacity:1}}
+
+/* Notifications flottantes */
+.hero-notifs{position:absolute;inset:0;pointer-events:none;overflow:hidden}
+.notif{
+  position:absolute;right:-220px;
+  background:rgba(255,255,255,.08);
+  backdrop-filter:blur(8px);
+  border:1px solid rgba(255,255,255,.12);
+  border-radius:10px;padding:.5rem .8rem;
+  font-family:var(--sans);font-size:.65rem;color:rgba(255,255,255,.8);
+  display:flex;align-items:center;gap:.5rem;
+  animation:notif-slide ease-in-out infinite;
+  white-space:nowrap;
+}
+.notif-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0}
+.notif:nth-child(1){top:18%;animation-duration:7s;animation-delay:0s}
+.notif:nth-child(2){top:32%;animation-duration:9s;animation-delay:2s}
+.notif:nth-child(3){top:48%;animation-duration:6s;animation-delay:4s}
+.notif:nth-child(4){top:62%;animation-duration:8s;animation-delay:1s}
+.notif:nth-child(5){top:76%;animation-duration:7.5s;animation-delay:3s}
+@keyframes notif-slide{
+  0%{transform:translateX(0);opacity:0}
+  8%{opacity:1}
+  30%{transform:translateX(-280px);opacity:1}
+  55%{transform:translateX(-280px);opacity:.8}
+  70%{transform:translateX(-280px);opacity:0}
+  100%{transform:translateX(0);opacity:0}
+}
+
+/* Contenu hero */
+.hero-content{position:absolute;bottom:0;left:0;right:0;padding:3rem 2.5rem;max-width:900px;margin:0 auto;animation:rise-in .9s ease-out both}
+@keyframes rise-in{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:none}}
+.hero-badge{display:inline-flex;align-items:center;gap:.5rem;background:rgba(124,58,237,.2);border:1px solid rgba(192,132,252,.4);color:var(--purple-lt);font-family:var(--sans);font-size:.68rem;font-weight:600;padding:.28rem .8rem;border-radius:20px;letter-spacing:.06em;margin-bottom:1rem;backdrop-filter:blur(6px)}
+.hero-badge::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--purple-lt);box-shadow:0 0 6px var(--purple-lt);animation:blink 1.5s ease-in-out infinite}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.2}}
+.hero h1{font-family:var(--serif);font-size:clamp(1.8rem,4.5vw,3.1rem);font-weight:900;color:#fff;line-height:1.2;margin-bottom:.9rem;text-shadow:0 0 40px rgba(192,132,252,.3),0 2px 20px rgba(0,0,0,.7)}
+.hero h1 em{font-style:normal;color:var(--purple-lt)}
+.hero-sub{font-family:var(--sans);font-size:.96rem;color:rgba(255,255,255,.65);max-width:580px;line-height:1.85;text-shadow:0 1px 6px rgba(0,0,0,.5)}
+
+/* META */
+.meta-bar{background:var(--paper);border-bottom:1px solid var(--rule);padding:.85rem 2rem}
+.meta-inner{max-width:1100px;margin:0 auto;display:flex;flex-wrap:wrap;gap:.9rem;align-items:center}
+.meta-item{font-family:var(--sans);font-size:.69rem;color:var(--light);display:flex;align-items:center;gap:.3rem}
+.meta-item strong{color:var(--mid)}.meta-sep{color:var(--rule)}
+.meta-cat{background:var(--purple-bg);color:var(--purple);border:1px solid rgba(106,58,139,.25);padding:.18rem .65rem;border-radius:12px;font-weight:600;font-size:.67rem;font-family:var(--sans)}
+
+/* LAYOUT */
+.layout{max-width:1160px;margin:0 auto;padding:3rem 1.5rem;display:grid;grid-template-columns:1fr 280px;gap:4rem;align-items:start}
+@media(max-width:960px){.layout{grid-template-columns:1fr;gap:2rem}}
+
+/* BODY */
+.body{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease}
+.body.vis{opacity:1;transform:none}
+.body>p:first-of-type::first-letter{font-size:4.2rem;font-weight:900;float:right;line-height:.8;margin:.05em 0 -.1em .2em;color:var(--purple)}
+.body p{font-size:1.02rem;line-height:1.95;color:var(--ink);margin-bottom:1.3rem}
+.body p:last-child{margin-bottom:0}
+.body h2{font-family:var(--serif);font-size:1.45rem;font-weight:700;color:var(--ink);margin:2.8rem 0 1.2rem;padding-right:1rem;border-right:4px solid var(--purple);line-height:1.4}
+.body h2::before{content:attr(data-num);display:block;font-family:var(--sans);font-size:.62rem;font-weight:700;color:var(--purple);letter-spacing:.1em;margin-bottom:.3rem;opacity:.7}
+.body h3{font-family:var(--serif);font-size:1.15rem;font-weight:700;color:var(--ink);margin:1.8rem 0 .8rem}
+
+/* ENCADRÉS */
+.analysis-box{margin:2.5rem 0;padding:1.8rem;background:var(--purple-bg);border-radius:16px 4px 4px 16px;border-right:5px solid var(--purple);overflow:hidden;position:relative}
+.analysis-box::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 80% 80% at 10% 50%,rgba(106,58,139,.07) 0%,transparent 70%)}
+.analysis-box .box-label{font-family:var(--sans);font-size:.65rem;font-weight:700;color:var(--purple);letter-spacing:.12em;margin-bottom:.75rem;display:flex;align-items:center;gap:.4rem}
+.analysis-box .box-label::after{content:'';flex:1;height:1px;background:rgba(106,58,139,.25)}
+.analysis-box p{font-size:.94rem;line-height:1.85;color:#1a0a2e;margin-bottom:.6rem!important}
+
+.poetic-quote{margin:2.8rem 0;padding:2rem 2rem 2rem 2.5rem;background:var(--paper);border-radius:12px;box-shadow:0 2px 20px rgba(0,0,0,.06),inset 0 0 0 1px rgba(106,58,139,.12);position:relative;overflow:hidden}
+.poetic-quote::before{content:'❝';position:absolute;top:.5rem;right:1.2rem;font-size:5rem;color:rgba(106,58,139,.1);font-family:serif;line-height:1}
+.poetic-quote blockquote{font-family:var(--serif);font-size:1.1rem;font-weight:600;line-height:1.75;color:var(--ink);font-style:italic;margin-bottom:.9rem}
+.poetic-quote cite{font-family:var(--sans);font-size:.7rem;color:var(--light);font-style:normal;display:block}
+
+.stats-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(155px,1fr));gap:1rem;margin:2.5rem 0}
+.stat-card{background:var(--paper);border:1px solid var(--rule);border-radius:14px;padding:1.3rem 1.1rem;text-align:center;transition:transform .25s,box-shadow .25s;position:relative;overflow:hidden}
+.stat-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(to right,var(--purple),var(--purple-lt));border-radius:14px 14px 0 0}
+.stat-card:hover{transform:translateY(-4px);box-shadow:0 8px 24px rgba(106,58,139,.12)}
+.stat-num{font-family:var(--serif);font-size:2rem;font-weight:900;color:var(--purple);line-height:1;margin-bottom:.4rem}
+.stat-lbl{font-family:var(--sans);font-size:.68rem;color:var(--light);line-height:1.4}
+
+.warning-box{margin:2.2rem 0;padding:1.5rem 1.6rem;background:rgba(106,58,139,.05);border:1px solid rgba(106,58,139,.2);border-right:4px solid var(--purple);border-radius:8px}
+.warning-box .warn-title{font-family:var(--sans);font-size:.7rem;font-weight:700;color:var(--purple);letter-spacing:.06em;margin-bottom:.65rem;display:flex;align-items:center;gap:.4rem}
+.warning-box p{font-size:.93rem;color:var(--ink);margin-bottom:.5rem!important}
+
+/* ── Dopamine Loop — infographie cycle ── */
+.dopamine-loop{
+  margin:2.5rem 0;padding:2rem;
+  background:var(--dark);border-radius:20px;
+  border:1px solid rgba(192,132,252,.15);
+  box-shadow:0 0 30px rgba(124,58,237,.08);
+  position:relative;overflow:hidden;
+}
+.dopamine-loop::before{
+  content:'';position:absolute;inset:0;
+  background:radial-gradient(ellipse 60% 60% at 50% 50%,rgba(124,58,237,.06) 0%,transparent 70%);
+}
+.dopamine-title{
+  font-family:var(--sans);font-size:.7rem;font-weight:700;
+  color:rgba(192,132,252,.7);letter-spacing:.12em;
+  text-align:center;margin-bottom:1.5rem;
+}
+.dopamine-steps{
+  display:flex;justify-content:center;align-items:center;
+  flex-wrap:wrap;gap:.5rem;position:relative;
+}
+.d-step{
+  display:flex;flex-direction:column;align-items:center;gap:.4rem;
+  padding:.8rem 1rem;
+  background:rgba(255,255,255,.04);
+  border:1px solid rgba(192,132,252,.15);
+  border-radius:12px;min-width:90px;
+  transition:border-color .3s;
+}
+.d-step:hover{border-color:rgba(192,132,252,.4)}
+.d-icon{font-size:1.4rem}
+.d-label{font-family:var(--sans);font-size:.65rem;color:rgba(255,255,255,.65);text-align:center;line-height:1.3}
+.d-arrow{font-size:1.2rem;color:rgba(192,132,252,.4);flex-shrink:0}
+
+/* ── Timeline addiction ── */
+.addiction-timeline{margin:2.5rem 0}
+.timeline-item{
+  display:flex;gap:1.2rem;padding:1.2rem 0;
+  border-bottom:1px solid var(--mist);
+  align-items:flex-start;
+  position:relative;
+}
+.timeline-item:last-child{border-bottom:none}
+.timeline-num{
+  width:42px;height:42px;border-radius:12px;
+  background:linear-gradient(135deg,var(--purple),var(--purple-lt));
+  color:#fff;font-family:var(--serif);font-weight:700;font-size:.85rem;
+  display:flex;align-items:center;justify-content:center;flex-shrink:0;
+  box-shadow:0 3px 10px rgba(106,58,139,.3);
+}
+.timeline-body h4{font-family:var(--serif);font-size:1rem;font-weight:700;color:var(--ink);margin-bottom:.35rem}
+.timeline-body p{font-size:.92rem;color:var(--mid);margin-bottom:0}
+.timeline-tag{
+  display:inline-block;margin-bottom:.4rem;
+  font-family:var(--sans);font-size:.6rem;font-weight:700;
+  letter-spacing:.08em;padding:.15rem .5rem;border-radius:8px;
+}
+.tag-mild{background:rgba(74,222,128,.15);color:#166534}
+.tag-mod{background:rgba(251,191,36,.15);color:#92400e}
+.tag-severe{background:rgba(239,68,68,.15);color:#991b1b}
+
+/* Styled list */
+.styled-list{margin:1.2rem 0;list-style:none}
+.styled-list li{display:flex;align-items:flex-start;gap:.75rem;padding:.6rem 0;border-bottom:1px solid var(--mist);font-size:.97rem;line-height:1.75}
+.styled-list li:last-child{border-bottom:none}
+.styled-list li::before{content:'';width:7px;height:7px;border-radius:50%;background:var(--purple);flex-shrink:0;margin-top:.55rem}
+
+/* Steps */
+.steps{margin:2rem 0}
+.step{display:flex;gap:1.2rem;padding:1.2rem 0;border-bottom:1px solid var(--mist);align-items:flex-start}
+.step:last-child{border-bottom:none}
+.step-num{width:36px;height:36px;border-radius:50%;background:linear-gradient(135deg,var(--purple),var(--purple-lt));color:#fff;font-family:var(--serif);font-weight:700;font-size:.9rem;display:flex;align-items:center;justify-content:center;flex-shrink:0;box-shadow:0 3px 8px rgba(106,58,139,.3)}
+.step-body h4{font-family:var(--serif);font-size:1rem;font-weight:700;color:var(--ink);margin-bottom:.4rem}
+.step-body p{font-size:.92rem;color:var(--mid);margin-bottom:0!important}
+
+/* FAQ */
+.faq-section{margin:3rem 0 1rem;padding:2rem;background:var(--cream);border-radius:20px;position:relative;overflow:hidden}
+.faq-section::before{content:'';position:absolute;top:-30px;right:-30px;width:120px;height:120px;border-radius:50%;background:radial-gradient(circle,rgba(106,58,139,.12) 0%,transparent 70%)}
+.faq-title{font-family:var(--serif);font-size:1.25rem;font-weight:700;color:var(--ink);margin-bottom:1.5rem;display:flex;align-items:center;gap:.6rem}
+.faq-item{border-bottom:1px solid var(--mist);margin-bottom:.5rem}
+.faq-item:last-child{border-bottom:none;margin-bottom:0}
+.faq-q{width:100%;text-align:right;background:none;border:none;padding:1rem .5rem;cursor:pointer;font-family:var(--serif);font-size:.98rem;font-weight:700;color:var(--ink);display:flex;justify-content:space-between;align-items:center;gap:.8rem;transition:color .2s}
+.faq-q:hover{color:var(--purple)}
+.faq-icon{width:22px;height:22px;border-radius:50%;background:var(--purple-bg);border:1px solid rgba(106,58,139,.3);color:var(--purple);font-size:.85rem;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:transform .3s,background .3s}
+.faq-item.open .faq-icon{transform:rotate(45deg);background:var(--purple);color:#fff}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .4s ease,padding .3s}
+.faq-item.open .faq-a{max-height:320px;padding-bottom:1rem}
+.faq-a p{font-family:var(--sans);font-size:.92rem;line-height:1.85;color:var(--mid);padding:0 .5rem}
+
+/* Author */
+.author-card{margin:3rem 0 2rem;padding:1.8rem;background:var(--paper);border-radius:16px;border:1px solid var(--rule);display:flex;gap:1.3rem;align-items:flex-start;box-shadow:0 4px 16px rgba(0,0,0,.05)}
+.author-avatar{width:56px;height:56px;border-radius:50%;background:linear-gradient(135deg,var(--purple),var(--purple-lt));display:flex;align-items:center;justify-content:center;color:#fff;font-family:var(--serif);font-size:.7rem;font-weight:700;flex-shrink:0;line-height:1.2;text-align:center;box-shadow:0 3px 10px rgba(106,58,139,.3)}
+.author-name{font-family:var(--serif);font-size:1rem;font-weight:700;margin-bottom:.2rem}
+.author-role{font-family:var(--sans);font-size:.67rem;color:var(--purple);margin-bottom:.5rem}
+.author-bio{font-family:var(--sans);font-size:.82rem;color:var(--mid);line-height:1.7}
+
+/* Related */
+.related{margin-top:3rem}
+.related-title{font-family:var(--serif);font-size:1.1rem;font-weight:700;color:var(--ink);margin-bottom:1.2rem;padding-bottom:.6rem;border-bottom:2px solid var(--purple);display:flex;align-items:center;gap:.5rem}
+.related-grid{display:grid;gap:.85rem}
+.rel-card{display:flex;gap:1rem;padding:1rem;background:var(--paper);border:1px solid var(--rule);border-radius:12px;transition:transform .2s,box-shadow .2s,border-color .2s}
+.rel-card:hover{transform:translateX(-4px);box-shadow:4px 4px 16px rgba(0,0,0,.07);border-color:var(--purple)}
+.rel-color{width:4px;border-radius:2px;flex-shrink:0}
+.rel-body h4{font-family:var(--serif);font-size:.92rem;font-weight:700;margin-bottom:.25rem}
+.rel-body p{font-family:var(--sans);font-size:.75rem;color:var(--light);margin:0;line-height:1.5}
+.rel-arrow{margin-top:.4rem;font-family:var(--sans);font-size:.7rem;color:var(--purple);font-weight:600}
+
+/* Sidebar */
+.sidebar{position:sticky;top:80px;display:flex;flex-direction:column;gap:1.5rem}
+.sb-card{background:var(--paper);border:1px solid var(--rule);border-radius:16px;overflow:hidden}
+.sb-head{padding:.9rem 1.2rem;background:var(--cream);border-bottom:1px solid var(--rule);font-family:var(--sans);font-size:.72rem;font-weight:700;color:var(--mid);letter-spacing:.06em}
+.toc-list{list-style:none;padding:.6rem .4rem}
+.toc-list a{display:flex;align-items:center;gap:.6rem;padding:.6rem .8rem;border-radius:8px;font-family:var(--sans);font-size:.8rem;color:var(--mid);transition:all .2s;line-height:1.4}
+.toc-list a:hover{background:var(--purple-bg);color:var(--purple);padding-right:1.1rem}
+.toc-list .tnum{font-family:var(--serif);font-size:.72rem;color:var(--purple);font-weight:700;min-width:18px}
+.read-meter{padding:1rem 1.2rem}
+.read-meter-bar{height:4px;background:var(--mist);border-radius:2px;overflow:hidden;margin-bottom:.5rem}
+.read-meter-fill{height:100%;background:linear-gradient(to left,var(--purple),var(--purple-lt));border-radius:2px;width:0%;transition:width .3s;box-shadow:0 0 4px var(--glow-p)}
+.read-meter-label{font-family:var(--sans);font-size:.68rem;color:var(--light);text-align:center}
+
+.jp-ornament{text-align:center;margin:2.5rem 0;font-size:1.4rem;color:rgba(106,58,139,.3);letter-spacing:.8rem}
+.fu{opacity:0;transform:translateY(20px);transition:opacity .6s ease,transform .6s ease}
+.fu.vis{opacity:1;transform:none}
+
+footer{background:var(--dark);color:rgba(255,255,255,.4);padding:2rem;font-family:var(--sans);font-size:.72rem;border-top:3px solid var(--purple);margin-top:4rem}
+.fi{max-width:1160px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem}
+.fl{display:flex;gap:1.2rem}
+.fl a{color:rgba(255,255,255,.5);transition:color .2s}.fl a:hover{color:var(--purple-lt)}
+
+@media(max-width:760px){
+  .hero-content{padding:2rem 1.2rem}.hero h1{font-size:1.7rem}
+  .layout{padding:2rem 1rem}.author-card{flex-direction:column}
+  .dopamine-steps{gap:.3rem}.d-step{min-width:72px;padding:.6rem .7rem}
+}
+</style>
+</head>
+<body>
+<div id="pb"></div>
+
+<div class="top">
+  <span>geopolô — <strong style="color:var(--purple-lt)">الصحة النفسية والمجتمع</strong></span>
+  <span><a href="https://fr.geopolo.com" class="fr-link">🇫🇷 Français</a><a href="/abonnement.html" style="margin-right:.7rem">الاشتراك</a></span>
+</div>
+
+<header class="mast">
+  <a href="/" class="logo">geopolô<span>مجلة جيوسياسية استراتيجية مستقلة</span></a>
+  <div class="msub">ar.geopolo.com · 2026</div>
+</header>
+
+<nav>
+  <a href="/">الرئيسية</a>
+  <a href="/afr.html" data-r="afrique"><span class="dot"></span>أفريقيا</a>
+  <a href="/ame.html" data-r="amerique"><span class="dot"></span>أمريكا</a>
+  <a href="/eu.html"  data-r="europe"><span class="dot"></span>أوروبا</a>
+  <a href="/asie.html" data-r="asie"><span class="dot"></span>آسيا</a>
+  <a href="/proche-or.html" data-r="orient"><span class="dot"></span>الشرق الأوسط</a>
+  <a href="/sante.html" data-r="sante" class="active"><span class="dot"></span>صحة نفسية</a>
+  <a href="/abonnement.html" class="nav-cta">الاشتراك ←</a>
+</nav>
+
+<!-- ══════════════ HERO — Nuit urbaine / écrans ══════════════ -->
+<div class="hero" role="banner">
+  <div class="hero-sky"></div>
+  <div class="hero-screen-glow"></div>
+
+  <!-- Notifications qui glissent depuis la droite -->
+  <div class="hero-notifs" aria-hidden="true">
+    <div class="notif"><div class="notif-dot" style="background:#e879f9"></div>إشعار جديد من إنستغرام</div>
+    <div class="notif"><div class="notif-dot" style="background:#f59e0b"></div>١٢ شخصاً أعجبهم منشورك</div>
+    <div class="notif"><div class="notif-dot" style="background:#3b82f6"></div>رسالة جديدة من أحمد</div>
+    <div class="notif"><div class="notif-dot" style="background:#ef4444"></div>🔴 بث مباشر يبدأ الآن</div>
+    <div class="notif"><div class="notif-dot" style="background:#10b981"></div>تم قبول طلبك</div>
+  </div>
+
+  <!-- SVG: Ville nocturne + silhouette personnage au téléphone -->
+  <svg viewBox="0 0 1440 420" preserveAspectRatio="xMidYMax slice"
+       style="position:absolute;bottom:0;left:0;right:0;width:100%;height:auto"
+       xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <defs>
+      <linearGradient id="bld" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0%" stop-color="#0d0520" stop-opacity=".9"/>
+        <stop offset="100%" stop-color="#060210"/>
+      </linearGradient>
+      <radialGradient id="screenGlow" cx="50%" cy="50%" r="50%">
+        <stop offset="0%" stop-color="#7c3aed" stop-opacity=".6"/>
+        <stop offset="100%" stop-color="#7c3aed" stop-opacity="0"/>
+      </radialGradient>
+      <filter id="blur4"><feGaussianBlur stdDeviation="4"/></filter>
+      <filter id="blur2"><feGaussianBlur stdDeviation="2"/></filter>
+    </defs>
+
+    <!-- Sol -->
+    <rect x="0" y="380" width="1440" height="40" fill="#060210"/>
+
+    <!-- Bâtiments arrière-plan (couche 1 — lointain) -->
+    <g fill="#0a0318" opacity=".6">
+      <rect x="0"    y="220" width="55"  height="200"/>
+      <rect x="60"   y="185" width="40"  height="235"/>
+      <rect x="105"  y="205" width="70"  height="215"/>
+      <rect x="180"  y="160" width="50"  height="260"/>
+      <rect x="1230" y="190" width="60"  height="230"/>
+      <rect x="1295" y="165" width="45"  height="255"/>
+      <rect x="1345" y="200" width="55"  height="220"/>
+      <rect x="1400" y="220" width="40"  height="200"/>
+    </g>
+
+    <!-- Bâtiments principaux (couche 2) -->
+    <g fill="url(#bld)">
+      <!-- Tour gauche haute -->
+      <rect x="60"   y="90"  width="80"  height="310"/>
+      <!-- Fenêtres éteintes -->
+      <g fill="rgba(255,255,255,.04)">
+        <rect x="72"  y="108" width="14" height="10" rx="1"/>
+        <rect x="92"  y="108" width="14" height="10" rx="1"/>
+        <rect x="112" y="108" width="14" height="10" rx="1"/>
+        <rect x="72"  y="130" width="14" height="10" rx="1"/>
+        <rect x="112" y="130" width="14" height="10" rx="1"/>
+        <rect x="72"  y="152" width="14" height="10" rx="1"/>
+        <rect x="92"  y="152" width="14" height="10" rx="1"/>
+        <rect x="72"  y="174" width="14" height="10" rx="1"/>
+        <rect x="112" y="174" width="14" height="10" rx="1"/>
+      </g>
+      <!-- Fenêtres allumées (écrans bleus/violets) -->
+      <rect x="92"  y="130" width="14" height="10" fill="rgba(124,58,237,.45)" rx="1"/>
+      <rect x="112" y="152" width="14" height="10" fill="rgba(59,130,246,.35)" rx="1"/>
+      <rect x="92"  y="174" width="14" height="10" fill="rgba(124,58,237,.4)"  rx="1"/>
+
+      <!-- Bloc central gauche -->
+      <rect x="200" y="140" width="110" height="260"/>
+      <g fill="rgba(255,255,255,.04)">
+        <rect x="212" y="158" width="18" height="13" rx="1"/>
+        <rect x="236" y="158" width="18" height="13" rx="1"/>
+        <rect x="260" y="158" width="18" height="13" rx="1"/>
+        <rect x="284" y="158" width="18" height="13" rx="1"/>
+        <rect x="212" y="182" width="18" height="13" rx="1"/>
+        <rect x="260" y="182" width="18" height="13" rx="1"/>
+        <rect x="212" y="206" width="18" height="13" rx="1"/>
+        <rect x="236" y="206" width="18" height="13" rx="1"/>
+        <rect x="284" y="206" width="18" height="13" rx="1"/>
+        <rect x="212" y="230" width="18" height="13" rx="1"/>
+        <rect x="260" y="230" width="18" height="13" rx="1"/>
+        <rect x="284" y="230" width="18" height="13" rx="1"/>
+      </g>
+      <!-- Écrans allumés -->
+      <rect x="236" y="182" width="18" height="13" fill="rgba(192,132,252,.3)" rx="1"/>
+      <rect x="284" y="182" width="18" height="13" fill="rgba(59,130,246,.25)" rx="1"/>
+      <rect x="236" y="230" width="18" height="13" fill="rgba(124,58,237,.35)" rx="1"/>
+
+      <!-- Grande tour centrale -->
+      <rect x="550" y="80"  width="130" height="340"/>
+      <polygon points="550,80 615,30 680,80" fill="#0a0318"/>
+      <!-- Antenne -->
+      <rect x="612" y="30" width="6" height="50" fill="#060210"/>
+      <rect x="606" y="42" width="18" height="2" fill="#060210"/>
+      <!-- Fenêtres tour centrale -->
+      <g fill="rgba(255,255,255,.05)">
+        <rect x="562" y="95"  width="20" height="14" rx="1"/>
+        <rect x="588" y="95"  width="20" height="14" rx="1"/>
+        <rect x="614" y="95"  width="20" height="14" rx="1"/>
+        <rect x="640" y="95"  width="20" height="14" rx="1"/>
+        <rect x="562" y="122" width="20" height="14" rx="1"/>
+        <rect x="614" y="122" width="20" height="14" rx="1"/>
+        <rect x="640" y="122" width="20" height="14" rx="1"/>
+        <rect x="562" y="149" width="20" height="14" rx="1"/>
+        <rect x="588" y="149" width="20" height="14" rx="1"/>
+        <rect x="640" y="149" width="20" height="14" rx="1"/>
+      </g>
+      <!-- Écrans allumés tour centrale -->
+      <rect x="588" y="122" width="20" height="14" fill="rgba(124,58,237,.45)" rx="1"/>
+      <rect x="562" y="176" width="20" height="14" fill="rgba(192,132,252,.3)"  rx="1"/>
+      <rect x="614" y="149" width="20" height="14" fill="rgba(59,130,246,.35)"  rx="1"/>
+      <rect x="588" y="176" width="20" height="14" fill="rgba(124,58,237,.4)"   rx="1"/>
+      <rect x="640" y="176" width="20" height="14" fill="rgba(236,72,153,.3)"   rx="1"/>
+
+      <!-- Bâtiments droite -->
+      <rect x="850"  y="120" width="100" height="300"/>
+      <rect x="960"  y="150" width="80"  height="270"/>
+      <rect x="1050" y="100" width="120" height="320"/>
+      <rect x="1180" y="130" width="90"  height="290"/>
+      <g fill="rgba(255,255,255,.04)">
+        <rect x="862" y="138" width="17" height="12" rx="1"/>
+        <rect x="885" y="138" width="17" height="12" rx="1"/>
+        <rect x="862" y="162" width="17" height="12" rx="1"/>
+        <rect x="972" y="168" width="17" height="12" rx="1"/>
+        <rect x="1062" y="118" width="17" height="12" rx="1"/>
+        <rect x="1085" y="118" width="17" height="12" rx="1"/>
+        <rect x="1192" y="148" width="17" height="12" rx="1"/>
+      </g>
+      <rect x="908" y="138" width="17" height="12" fill="rgba(124,58,237,.4)" rx="1"/>
+      <rect x="885" y="162" width="17" height="12" fill="rgba(59,130,246,.3)" rx="1"/>
+      <rect x="995" y="168" width="17" height="12" fill="rgba(192,132,252,.35)" rx="1"/>
+      <rect x="1108" y="118" width="17" height="12" fill="rgba(124,58,237,.45)" rx="1"/>
+      <rect x="1215" y="148" width="17" height="12" fill="rgba(236,72,153,.3)" rx="1"/>
+    </g>
+
+    <!-- ★ Silhouette personnage assis regardant son téléphone -->
+    <g transform="translate(690,260)">
+      <!-- Corps assis -->
+      <ellipse cx="35" cy="90" rx="25" ry="12" fill="#060210" opacity=".9"/><!-- ombre -->
+      <rect x="22" y="52" width="26" height="40" rx="4" fill="#0a0318"/><!-- torse -->
+      <!-- Jambes pliées -->
+      <rect x="18" y="78" width="18" height="14" rx="3" fill="#0a0318" transform="rotate(15,27,85)"/>
+      <rect x="32" y="80" width="18" height="14" rx="3" fill="#0a0318" transform="rotate(-10,41,87)"/>
+      <!-- Tête -->
+      <circle cx="35" cy="40" r="14" fill="#0a0318"/>
+      <!-- Bras tenant le téléphone -->
+      <rect x="10" y="58" width="12" height="28" rx="4" fill="#0a0318" transform="rotate(-30,16,72)"/>
+      <!-- Téléphone -->
+      <rect x="2"  y="52" width="16" height="26" rx="3" fill="#1a0535"/>
+      <rect x="4"  y="54" width="12" height="22" rx="2" fill="rgba(124,58,237,.7)"/>
+      <!-- Lueur écran sur le visage -->
+      <ellipse cx="35" cy="40" rx="16" ry="12" fill="rgba(124,58,237,.15)" filter="url(#blur4)"/>
+    </g>
+
+    <!-- Halos lumineux des fenêtres écrans -->
+    <ellipse cx="100" cy="140" rx="30" ry="12" fill="rgba(124,58,237,.08)" filter="url(#blur4)"/>
+    <ellipse cx="615" cy="130" rx="60" ry="20" fill="rgba(124,58,237,.1)"  filter="url(#blur4)"/>
+    <ellipse cx="970" cy="165" rx="35" ry="12" fill="rgba(192,132,252,.07)" filter="url(#blur4)"/>
+
+    <!-- Reflets au sol -->
+    <rect x="0" y="375" width="1440" height="10" fill="#060210"/>
+    <ellipse cx="615" cy="386" rx="200" ry="6" fill="rgba(124,58,237,.12)" filter="url(#blur2)"/>
+    <ellipse cx="100" cy="385" rx="80"  ry="4" fill="rgba(59,130,246,.08)" filter="url(#blur2)"/>
+  </svg>
+
+  <div class="hero-content">
+    <div class="hero-badge">📱 إدمان رقمي · صحة نفسية</div>
+    <h1>إدمان الهاتف<br><em>الخطر الصامت في حياتنا اليومية</em></h1>
+    <p class="hero-sub">
+      بُنيت لتبقيك مستيقظاً. صُمّمت لتجعلك تعود. خططت لك شركات تعرف دماغك أكثر مما تعرفه أنت.
+      كيف حوّل الهاتف الذكي أذكى بشر الأرض إلى مدمنين لا يعرفون أنهم يدمنون؟
+    </p>
+  </div>
+</div>
+
+<!-- META -->
+<div class="meta-bar"><div class="meta-inner">
+  <span class="meta-item">✍ <strong>د. ياسمين الحربي</strong></span><span class="meta-sep">·</span>
+  <span class="meta-item">📅 <strong>أبريل 2026</strong></span><span class="meta-sep">·</span>
+  <span class="meta-item">⏱ <strong>17 دقيقة</strong></span><span class="meta-sep">·</span>
+  <span class="meta-cat">📱 إدمان رقمي</span><span class="meta-sep">·</span>
+  <span class="meta-item">🔗 <a href="/sante.html" style="color:var(--purple)">عودة للقسم</a></span>
+</div></div>
+
+<!-- LAYOUT -->
+<div class="layout">
+<article class="body fu" id="main-article">
+
+  <p>
+    تفتح عينيك في الصباح. قبل أن تُلقي نظرة على الشخص المنوم بجانبك، قبل أن تشرب الماء، قبل أن تُفكّر في يومك — يدك تمتد نحو هاتفك. هذا السلوك الذي يبدو بسيطاً هو في الواقع واحد من أكثر الأنماط العصبية ترسّخاً في تاريخ الإدمان الإنساني. الفرق الوحيد بينه وبين إدمانات «الشريرة» الأخرى: أن المجتمع يُصفّق له.
+  </p>
+  <p>
+    إدمان الهاتف ليس ضعفاً شخصياً — إنه انتصار هندسي. مئات المهندسين والمصممين وعلماء الأعصاب يعملون على شيء واحد: إبقاؤك على الشاشة ثانية أطول مما قررت. وهم يُحسنون هذا الفن كل يوم.
+  </p>
+
+  <!-- STATS -->
+  <div class="stats-grid fu">
+    <div class="stat-card"><div class="stat-num">4.8h</div><div class="stat-lbl">متوسط استخدام الهاتف يومياً لدى البالغين عالمياً 2025</div></div>
+    <div class="stat-card"><div class="stat-num">96</div><div class="stat-lbl">مرة في المتوسط يُفتح الهاتف يومياً — مرة كل 10 دقائق</div></div>
+    <div class="stat-card"><div class="stat-num">67٪</div><div class="stat-lbl">من الناس يُفيدون بالقلق حين يبتعدون عن هواتفهم</div></div>
+    <div class="stat-card"><div class="stat-num">79٪</div><div class="stat-lbl">يتحققون من هواتفهم خلال 15 دقيقة من الاستيقاظ</div></div>
+  </div>
+
+  <!-- H2 — 1 -->
+  <h2 id="design" data-num="المفهوم الأول">الإدمان بالتصميم: كيف صُنع الفخ بعناية</h2>
+
+  <p>
+    في عام 2017، اعترف شون باركر — المؤسس المشارك لفيسبوك — بشيء صادم: «فكّرنا بوعي في كيفية استغلال الثغرة النفسية البشرية، ثغرة الموافقة الاجتماعية». هذه الجملة تُلخّص فلسفة كاملة في تصميم التطبيقات تُسمّى «التصميم المُلحّ» أو «Dark Patterns».
+  </p>
+
+  <div class="dopamine-loop fu">
+    <div class="dopamine-title">حلقة الدوبامين — كيف يعمل الإدمان الرقمي</div>
+    <div class="dopamine-steps">
+      <div class="d-step">
+        <div class="d-icon">👀</div>
+        <div class="d-label">محفّز خارجي (إشعار)</div>
+      </div>
+      <div class="d-arrow">←</div>
+      <div class="d-step">
+        <div class="d-icon">🧠</div>
+        <div class="d-label">إفراز دوبامين (توقّع المكافأة)</div>
+      </div>
+      <div class="d-arrow">←</div>
+      <div class="d-step">
+        <div class="d-icon">📲</div>
+        <div class="d-label">الفعل (فتح التطبيق)</div>
+      </div>
+      <div class="d-arrow">←</div>
+      <div class="d-step">
+        <div class="d-icon">❤️</div>
+        <div class="d-label">مكافأة متقطعة (إعجاب / مشاركة)</div>
+      </div>
+      <div class="d-arrow">←</div>
+      <div class="d-step" style="border-color:rgba(192,132,252,.4)">
+        <div class="d-icon">🔄</div>
+        <div class="d-label">تعزيز الحلقة والعودة</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="analysis-box fu">
+    <div class="box-label">🧠 علم الأعصاب خلف الإشعار الواحد</div>
+    <p>المكافأة المتقطعة — أن تحصل على الإعجاب أحياناً لكن ليس دائماً — هي أكثر آليات تعزيز الإدمان فاعليةً في علم الأعصاب. اكتشف عالم الأعصاب بيتر ميلنر أن الفئران التي تضغط على زر يُحفّز مركز المتعة مباشرة تتوقف عن الأكل والشرب حتى تموت. نحن نفعل الشيء ذاته مع هواتفنا — بشكل أبطأ وأكثر قبولاً اجتماعياً.</p>
+    <p>التمرير اللانهائي (Infinite Scroll) أضاف طبقة إضافية: لا نهاية للمحتوى تعني أن الدماغ لا يتلقّى إشارة «انتهى» — فيظل في حالة طلب دائمة.</p>
+  </div>
+
+  <!-- H2 — 2 -->
+  <h2 id="stages" data-num="مراحل الإدمان">مراحل الإدمان الرقمي: من الاستخدام إلى الاستعباد</h2>
+
+  <div class="addiction-timeline fu">
+
+    <div class="timeline-item">
+      <div class="timeline-num">١</div>
+      <div class="timeline-body">
+        <div class="timeline-tag tag-mild">استخدام طبيعي</div>
+        <h4>الاستخدام الأداتي الواعي</h4>
+        <p>الهاتف كأداة — للتواصل المحدد، البحث، المهام. تضع الهاتف ولا تُفكّر فيه. الإشعارات لا تُسيطر على انتباهك. ساعات الاستخدام في حدود معقولة ومدروسة.</p>
+      </div>
+    </div>
+
+    <div class="timeline-item">
+      <div class="timeline-num">٢</div>
+      <div class="timeline-body">
+        <div class="timeline-tag tag-mild">إشارة تحذير</div>
+        <h4>الانتباه المتشتّت</h4>
+        <p>تبدأ بفتح الهاتف «عشوائياً» دون سبب محدد. تُلاحظ انخفاضاً في تركيزك في المهام الطويلة. تمضي في الهاتف وقتاً أطول مما قررت.</p>
+      </div>
+    </div>
+
+    <div class="timeline-item">
+      <div class="timeline-num">٣</div>
+      <div class="timeline-body">
+        <div class="timeline-tag tag-mod">تحذير متوسط</div>
+        <h4>نوموفوبيا — الخوف من غياب الهاتف</h4>
+        <p>قلق واضح عند نسيان الهاتف. تُفقد تجارب الحياة الفعلية (الطعام، المشي، اللقاءات) لأنك منشغل بالتوثيق والمشاركة. صعوبة في الانتظار دون فتح الهاتف.</p>
+      </div>
+    </div>
+
+    <div class="timeline-item">
+      <div class="timeline-num">٤</div>
+      <div class="timeline-body">
+        <div class="timeline-tag tag-severe">تحذير عالٍ</div>
+        <h4>الإدمان الوظيفي</h4>
+        <p>الهاتف يتدخّل في نومك، علاقاتك، عملك. محاولات التوقف تفشل. اضطرابات مزاجية واضحة حين لا تستطيع استخدامه. الحياة الحقيقية تبدو «بطيئة جداً» مقارنة بالشاشة.</p>
+      </div>
+    </div>
+
+    <div class="timeline-item">
+      <div class="timeline-num">٥</div>
+      <div class="timeline-body">
+        <div class="timeline-tag tag-severe">أزمة</div>
+        <h4>الاستعباد الرقمي الكامل</h4>
+        <p>الهاتف هو محور الحياة. انهيار الحضور الإنساني الكامل في العلاقات. اكتئاب أو قلق مزمن مرتبط بالإشعارات. عجز عن قراءة كتاب أو مشاهدة فيلم بدون هاتف.</p>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- H2 — 3 -->
+  <h2 id="brain" data-num="ماذا يفعل بالدماغ">ماذا يفعل الهاتف بدماغك فعلاً: علم الأعصاب يُجيب</h2>
+
+  <div class="poetic-quote fu">
+    <blockquote>«كلما زاد استخدامنا للأجهزة الذكية ليُفكّر عنّا، كلما ضمرت قدرتنا على التفكير المستقل. نُفقّر عقولنا في اللحظة ذاتها التي نُظنّ أننا نُثريها.»</blockquote>
+    <cite>— نيكولاس كار، «الضحالة: ماذا يفعل الإنترنت بعقولنا»، 2010</cite>
+  </div>
+
+  <ul class="styled-list fu">
+    <li><div><strong>تقلّص قشرة الفص الأمامي:</strong> الدراسات تُشير إلى أن كثيفي استخدام الهاتف يُظهرون ضمور ملحوظ في المناطق المسؤولة عن التركيز وضبط الدوافع والتخطيط طويل المدى.</div></li>
+    <li><div><strong>إضعاف الذاكرة العميقة:</strong> حين نعلم أن المعلومة متاحة دائماً على جوجل، يُقلّل الدماغ استثماره في تخزينها — ظاهرة يُسمّيها الباحثون «ذاكرة جوجل» (Google Effect).</div></li>
+    <li><div><strong>تشتّت الانتباه البنيوي:</strong> الانتقال المتكرر بين التطبيقات يُعيد برمجة الدماغ على «الانتباه المجزّأ» — فيصعب لاحقاً التركيز العميق لأكثر من دقائق.</div></li>
+    <li><div><strong>اضطرابات النوم البيولوجية:</strong> الضوء الأزرق يُثبّط إفراز الميلاتونين (هرمون النوم). الاستخدام قُبيل النوم يُؤخّر نوم عميق ويُقلّل جودة الترميم الدماغي الليلي.</div></li>
+    <li><div><strong>الكحّة الرقمية (Digital Phantom):</strong> الشعور بالاهتزاز حين لا يهتز الهاتف فعلاً — ظاهرة تُثبت درجة ترسّخ الحلقة الشرطية في الجهاز العصبي.</div></li>
+  </ul>
+
+  <!-- H2 — 4 -->
+  <h2 id="children" data-num="الأطفال والمراهقون">الأكثر هشاشةً: كيف يُعيد الهاتف تشكيل دماغ الأطفال</h2>
+
+  <div class="warning-box fu">
+    <div class="warn-title">⚠️ الفترة الحرجة لتطور الدماغ</div>
+    <p>الدماغ بين سن 10-25 سنة في طور تشكيل نهائي حاسم — خاصة الاتصالات بين الفص الأمامي ومركز المكافأة. التعرض المكثف للمحتوى الرقمي سريع الإيقاع في هذه المرحلة يُقلّص قدرة التحمّل العاطفي، ويُضخّم الحساسية للنقد (خاصة عبر الإعجابات)، ويُنمّي الاعتماد على التحقق الاجتماعي الخارجي.</p>
+    <p>دراسة Jean Twenge (2023) ربطت بين زيادة ساعات وسائل التواصل لدى المراهقين وارتفاع معدلات الاكتئاب والقلق بنسبة تتجاوز 150٪ بين 2010 و2022.</p>
+  </div>
+
+  <!-- H2 — 5 -->
+  <h2 id="recovery" data-num="استعادة السيطرة">استعادة السيطرة: ليس عزل ذاتي بل علاقة مختلفة</h2>
+
+  <div class="steps fu">
+    <div class="step">
+      <div class="step-num">١</div>
+      <div class="step-body">
+        <h4>التدقيق الرقمي — أولاً اعرف ما تفعله</h4>
+        <p>قبل أي تغيير، أسبوع من المراقبة الصادقة: تفعيل ميزة «وقت الشاشة» وتسجيل الأرقام الحقيقية. معظم الناس يُقدّرون استخدامهم بـ30-40٪ أقل من الواقع — المواجهة بالأرقام تُصدم وتُحفّز في آنٍ واحد.</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">٢</div>
+      <div class="step-body">
+        <h4>إعادة تصميم البيئة — الإرادة تفشل أمام التصميم</h4>
+        <p>إزالة التطبيقات الأكثر استهلاكاً من الشاشة الرئيسية. تعطيل إشعارات التطبيقات غير الضرورية كلياً. شحن الهاتف خارج غرفة النوم. وضع الهاتف في درج حين تتحدث مع أحبائك.</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">٣</div>
+      <div class="step-body">
+        <h4>ملء الفراغ — الإدمان يكره الفراغ</h4>
+        <p>الإدمان الرقمي يملأ فراغات تجنّبها الإنسان. الملل، الوحدة، القلق، اللحظات الصامتة — الهاتف هرب سريع منها جميعاً. بدائل حقيقية (قراءة، نزهة، تأمل، محادثة) تُعلّم الدماغ تحمّل هذه اللحظات مجدداً.</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">٤</div>
+      <div class="step-body">
+        <h4>الصيام الرقمي التدريجي — لا صدمة</h4>
+        <p>ساعة بدون هاتف يومياً → نصف يوم أسبوعياً → يوم كامل شهرياً. الهدف ليس التحرر الكامل بل استعادة الإحساس بأن الحياة تسير بدون إذن من الشاشة.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="analysis-box fu">
+    <div class="box-label">📌 الخلاصة الاستراتيجية — geopolô</div>
+    <p>إدمان الهاتف الذكي هو أول إدمان جماعي في التاريخ صمّمه مجموعة صغيرة من الناس لتطبيقه على مليارات. هذا يجعله أزمة صحية عامة لا مجرد ضعف فردي.</p>
+    <p>الحل لا يكمن في رفض التكنولوجيا بل في فهم آليات تصميمها واستعادة «الوكالة الرقمية» — القدرة على اختيار متى وكيف ولماذا نستخدم ما بُني لاستخدامنا.</p>
+  </div>
+
+  <div class="jp-ornament" aria-hidden="true">◈ ◈ ◈</div>
+
+  <!-- FAQ -->
+  <div class="faq-section fu" id="faq">
+    <div class="faq-title">🌸 أسئلة شائعة</div>
+
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">
+        هل إدمان الهاتف اضطراب نفسي معترف به رسمياً؟
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-a">
+        <p>«اضطراب إدمان الإنترنت» و«اضطراب استخدام الهاتف الذكي» قيد النظر في DSM-6 ولم يُدرَجا رسمياً بعد. لكن الأعراض السريرية موثّقة وتُعالَج كاضطرابات سلوكية فعلاً. الجدل العلمي لا يتعلق بوجود المشكلة بل بمعايير التصنيف الدقيقة.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">
+        كيف أساعد طفلي على تقليل استخدام الهاتف دون مواجهة؟
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-a">
+        <p>ثلاثة مبادئ: النمذجة (أنت تفعل ما تطلبه)، الاتفاق لا التحريم (يُشركه في وضع الحدود)، والبدائل الجذابة لا الواجبات المفروضة. مناطق «خالية من الهاتف» (وقت الطعام، ساعة قبل النوم) أفضل من الحصص الزمنية الصارمة لأنها تربّي وعياً لا امتثالاً.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">
+        هل هناك فرق في التأثير بين التطبيقات المختلفة؟
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-a">
+        <p>نعم. تطبيقات الفيديو القصير (تيك توك، ريلز) الأشد تأثيراً لأنها تُقدّم إشباعاً فورياً بدون جهد. وسائل التواصل التي تعتمد على الإعجابات والتعليقات تُفعّل التحقق الاجتماعي بشكل أقوى. تطبيقات المحادثة الفردية أقل ضرراً لأنها استجابة لتواصل حقيقي لا بحث عن إثبات.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">
+        هل ميزات «وقت الشاشة» في الهواتف فعلاً تُقلّل الاستخدام؟
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-a">
+        <p>الأبحاث: تُقلّل الاستخدام بنسبة 15-20٪ في المتوسط حين يُفعّلها شخص مُحفَّز. أقل فاعلية حين تُفرض بدون وعي ذاتي. الحدود ذات الكلمة المرور (لا تضعها أنت) أكثر فاعليةً من الحدود المرنة (يمكنك تجاهلها). الأفضل استخدامها كأداة مراقبة وبيانات لا أداة ضبط مستقلة.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">
+        متى يجب طلب مساعدة متخصصة؟
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-a">
+        <p>حين يُؤثّر الاستخدام سلباً على النوم بشكل منتظم، العلاقات الحقيقية، الأداء المهني أو الدراسي. حين تُجرّب التوقف وتفشل مراراً. حين يُرافق الاستخدام قلقاً أو اكتئاباً واضحاً. التدخل المبكر أسهل بكثير والبرامج العلاجية المتخصصة في الإدمان الرقمي تتوسع عالمياً.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- AUTEUR -->
+  <div class="author-card fu">
+    <div class="author-avatar">د.ياسمين<br>الحربي</div>
+    <div>
+      <div class="author-name">د. ياسمين الحربي</div>
+      <div class="author-role">معالجة نفسية سلوكية · متخصصة في الإدمان الرقمي وصحة الإعلام · geopolô</div>
+      <p class="author-bio">دكتوراه في علم النفس الإكلينيكي مع تركيز على الإدمانات السلوكية والتكنولوجية. أجرت أبحاثاً ميدانية على التأثيرات النفسية لوسائل التواصل الاجتماعي على المراهقين العرب وتُساهم في geopolô بتحليل التقاطعات بين التصميم الرقمي والصحة النفسية الجماعية.</p>
+    </div>
+  </div>
+
+  <!-- ARTICLES LIÉS -->
+  <div class="related fu">
+    <div class="related-title">🌿 من السلسلة ذاتها</div>
+    <div class="related-grid">
+      <a href="/articles/social-media-brain-2026.html" class="rel-card">
+        <div class="rel-color" style="background:#7c3aed"></div>
+        <div class="rel-body"><h4>وسائل التواصل الاجتماعي والدماغ: هل نحن مدمنون دون أن ندرك؟</h4><p>ما تكشفه الدراسات الأخيرة عن الخوارزميات ودماغك</p><div class="rel-arrow">← اقرأ المقال</div></div>
+      </a>
+      <a href="/articles/sleep-disorders-anxiety-2026.html" class="rel-card">
+        <div class="rel-color" style="background:#3730a3"></div>
+        <div class="rel-body"><h4>اضطرابات النوم والقلق: لماذا لا نستطيع إيقاف التفكير ليلاً؟</h4><p>الشاشات والنوم والدماغ الذي لا يُغلق</p><div class="rel-arrow">← اقرأ المقال</div></div>
+      </a>
+      <a href="/articles/ai-anxiety-tech-2026.html" class="rel-card">
+        <div class="rel-color" style="background:#1a7a5e"></div>
+        <div class="rel-body"><h4>الذكاء الاصطناعي والقلق: هل التكنولوجيا تجعلنا أكثر توتراً؟</h4><p>أزمة الهوية في عصر الآلة الذكية</p><div class="rel-arrow">← اقرأ المقال</div></div>
+      </a>
+    </div>
+  </div>
+
+</article>
+
+<!-- SIDEBAR -->
+<aside class="sidebar">
+
+  <!-- Paysage miniature nuit urbaine -->
+  <div class="sb-card">
+    <div style="position:relative;height:140px;overflow:hidden;border-radius:12px;margin:.8rem">
+      <div style="position:absolute;inset:0;background:var(--dark)"></div>
+      <svg viewBox="0 0 280 140" style="position:absolute;bottom:0;left:0;right:0;width:100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <!-- Mini buildings -->
+        <rect x="10"  y="55"  width="30" height="85" fill="#0a0318" opacity=".95"/>
+        <rect x="45"  y="40"  width="22" height="100" fill="#0a0318"/>
+        <rect x="72"  y="60"  width="35" height="80" fill="#0a0318" opacity=".9"/>
+        <rect x="112" y="30"  width="28" height="110" fill="#0a0318"/>
+        <rect x="145" y="50"  width="40" height="90" fill="#0a0318" opacity=".95"/>
+        <rect x="190" y="38"  width="25" height="102" fill="#0a0318"/>
+        <rect x="220" y="55"  width="32" height="85" fill="#0a0318" opacity=".9"/>
+        <rect x="255" y="45"  width="25" height="95" fill="#0a0318"/>
+        <!-- Screen windows -->
+        <rect x="18"  y="70"  width="8" height="6" fill="rgba(124,58,237,.6)" rx="1"/>
+        <rect x="52"  y="55"  width="8" height="6" fill="rgba(59,130,246,.5)" rx="1"/>
+        <rect x="118" y="48"  width="8" height="6" fill="rgba(192,132,252,.7)" rx="1"/>
+        <rect x="155" y="65"  width="8" height="6" fill="rgba(124,58,237,.6)" rx="1"/>
+        <rect x="196" y="55"  width="8" height="6" fill="rgba(236,72,153,.5)" rx="1"/>
+        <rect x="226" y="70"  width="8" height="6" fill="rgba(59,130,246,.6)" rx="1"/>
+        <!-- Person silhouette + phone -->
+        <g transform="translate(95,88)">
+          <circle cx="12" cy="8" r="6" fill="#060210"/>
+          <rect x="8" y="14" width="8" height="12" rx="2" fill="#060210"/>
+          <rect x="2" y="16" width="5" height="9" rx="1" fill="#1a0535"/>
+          <rect x="3" y="17" width="3" height="7" rx="1" fill="rgba(124,58,237,.8)"/>
+        </g>
+        <!-- Ground + reflection -->
+        <rect x="0" y="130" width="280" height="10" fill="#060210"/>
+        <ellipse cx="140" cy="136" rx="130" ry="5" fill="rgba(124,58,237,.08)"/>
+      </svg>
+      <div style="position:absolute;bottom:.8rem;left:0;right:0;text-align:center;font-family:var(--sans);font-size:.68rem;color:rgba(192,132,252,.6);font-style:italic">في ضوء الشاشة وحيداً</div>
+    </div>
+  </div>
+
+  <!-- Read meter -->
+  <div class="sb-card">
+    <div class="sb-head">📖 تقدم القراءة</div>
+    <div class="read-meter">
+      <div class="read-meter-bar"><div class="read-meter-fill" id="read-fill"></div></div>
+      <div class="read-meter-label" id="read-label">ابدأ القراءة ↓</div>
+    </div>
+  </div>
+
+  <!-- TOC -->
+  <div class="sb-card">
+    <div class="sb-head">📋 المحتويات</div>
+    <ul class="toc-list">
+      <li><a href="#design"><span class="tnum">١</span> الإدمان بالتصميم</a></li>
+      <li><a href="#stages"><span class="tnum">٢</span> مراحل الإدمان</a></li>
+      <li><a href="#brain"><span class="tnum">٣</span> ماذا يفعل بالدماغ</a></li>
+      <li><a href="#children"><span class="tnum">٤</span> الأطفال والمراهقون</a></li>
+      <li><a href="#recovery"><span class="tnum">٥</span> استعادة السيطرة</a></li>
+      <li><a href="#faq"><span class="tnum">✦</span> أسئلة شائعة</a></li>
+    </ul>
+  </div>
+
+  <!-- Tags -->
+  <div class="sb-card">
+    <div class="sb-head">🏷️ الموضوعات</div>
+    <div style="padding:.8rem 1rem;display:flex;flex-wrap:wrap;gap:.4rem">
+      <span style="background:var(--purple-bg);color:var(--purple);border:1px solid rgba(106,58,139,.25);padding:.2rem .6rem;border-radius:12px;font-family:var(--sans);font-size:.66rem;font-weight:600">إدمان الهاتف</span>
+      <span style="background:var(--cream);color:var(--mid);border:1px solid var(--rule);padding:.2rem .6rem;border-radius:12px;font-family:var(--sans);font-size:.66rem">الدوبامين</span>
+      <span style="background:var(--cream);color:var(--mid);border:1px solid var(--rule);padding:.2rem .6rem;border-radius:12px;font-family:var(--sans);font-size:.66rem">الشاشات والنوم</span>
+      <span style="background:var(--cream);color:var(--mid);border:1px solid var(--rule);padding:.2rem .6rem;border-radius:12px;font-family:var(--sans);font-size:.66rem">صحة رقمية</span>
+      <span style="background:var(--cream);color:var(--mid);border:1px solid var(--rule);padding:.2rem .6rem;border-radius:12px;font-family:var(--sans);font-size:.66rem">المراهقون</span>
+    </div>
+  </div>
+
+</aside>
+</div>
+
+<footer><div class="fi">
+  <span>© 2026 geopolô · ar.geopolo.com · جميع الحقوق محفوظة</span>
+  <div class="fl"><a href="/">الرئيسية</a><a href="/sante.html">صحة نفسية</a><a href="https://fr.geopolo.com">🇫🇷 Français</a></div>
+</div></footer>
+
+<script>
+const pb=document.getElementById('pb');
+window.addEventListener('scroll',()=>{
+  const d=document.documentElement;
+  const pct=d.scrollTop/(d.scrollHeight-d.clientHeight)*100;
+  pb.style.width=pct+'%';
+  const fill=document.getElementById('read-fill');
+  const label=document.getElementById('read-label');
+  if(fill)fill.style.width=pct+'%';
+  if(label){
+    if(pct<5)label.textContent='ابدأ القراءة ↓';
+    else if(pct<30)label.textContent=Math.round(pct)+'٪ — في البداية';
+    else if(pct<60)label.textContent=Math.round(pct)+'٪ — في المنتصف';
+    else if(pct<90)label.textContent=Math.round(pct)+'٪ — تقترب من النهاية';
+    else label.textContent='✓ قراءة اكتملت';
+  }
+});
+const obs=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('vis');obs.unobserve(e.target)}});
+},{threshold:.06});
+document.querySelectorAll('.fu').forEach(el=>obs.observe(el));
+function toggleFaq(btn){
+  const item=btn.closest('.faq-item'),isOpen=item.classList.contains('open');
+  document.querySelectorAll('.faq-item').forEach(i=>i.classList.remove('open'));
+  if(!isOpen)item.classList.add('open');
+}
+const sections=document.querySelectorAll('h2[id]');
+const tocLinks=document.querySelectorAll('.toc-list a');
+const tocObs=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){
+      tocLinks.forEach(a=>a.style.fontWeight='');
+      const a=document.querySelector(`.toc-list a[href="#${e.target.id}"]`);
+      if(a)a.style.fontWeight='700';
+    }
+  });
+},{rootMargin:'-20% 0px -70% 0px'});
+sections.forEach(s=>tocObs.observe(s));
+</script>
+</body>
+</html>

@@ -1,0 +1,833 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>التضخم والضغط النفسي: عندما يصبح المال مصدر قلق دائم — geopolô</title>
+<meta name="description" content="تحليل نفسي واجتماعي لتأثير التضخم والأزمات الاقتصادية على الصحة النفسية: قلق المال، إرهاق الكفاح اليومي، والثمن النفسي الخفي لأزمة الغلاء العالمية."/>
+<meta name="keywords" content="التضخم والصحة النفسية، قلق المال، الضغط المالي، الغلاء والاكتئاب، الأزمة الاقتصادية والنفس"/>
+<meta property="og:title" content="التضخم والضغط النفسي: عندما يصبح المال مصدر قلق دائم"/>
+<meta property="og:description" content="الثمن النفسي الخفي للغلاء — تحليل معمّق لكيفية تحوّل الأزمة الاقتصادية إلى أزمة نفسية جماعية."/>
+<meta property="og:type" content="article"/>
+<link rel="canonical" href="https://ar.geopolo.com/articles/inflation-stress-2026.html"/>
+<link rel="alternate" hreflang="ar" href="https://ar.geopolo.com/articles/inflation-stress-2026.html"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Arabic:wght@300;400;600;700;900&family=Noto+Naskh+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+<style>
+/* ══════════════════════════════════════════════════════
+   PALETTE — Terre cuite / or oxydé / crépuscule de marché
+   #c87a2a terre brûlée · #e8a84a or doux · #7a3a1e rouille
+   Contraste total avec les 4 articles précédents
+══════════════════════════════════════════════════════ */
+:root {
+  --ink:      #1e1208;
+  --bg:       #faf6f0;
+  --paper:    #fffdf8;
+  --cream:    #f5ede0;
+  --mist:     #ecddd0;
+  --mid:      #6b4e35;
+  --light:    #9a7a5e;
+  --rule:     #ddc9b4;
+  --terra:    #c87a2a;
+  --terra-lt: #e8a84a;
+  --terra-bg: #fdf3e4;
+  --rust:     #7a3a1e;
+  --olive:    #5a6a2a;
+  --copper:   #b8621a;
+  --dark:     #140a02;
+  --serif:   'Noto Serif Arabic', Georgia, serif;
+  --sans:    'Noto Naskh Arabic', sans-serif;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--serif);background:var(--bg);color:var(--ink);direction:rtl;line-height:1.9;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+
+#pb{position:fixed;top:0;right:0;left:0;height:3px;background:linear-gradient(to left,var(--terra),var(--terra-lt),#fbbf24);width:0%;z-index:9999;transition:width .12s}
+
+.top{background:var(--dark);color:rgba(255,255,255,.5);font-family:var(--sans);font-size:.72rem;padding:.4rem 2rem;display:flex;justify-content:space-between;align-items:center}
+.top a{color:rgba(255,255,255,.65);transition:color .2s}.top a:hover{color:var(--terra-lt)}
+.top .fr-link{display:inline-flex;align-items:center;gap:.3rem;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.15);padding:.2rem .6rem;border-radius:3px;font-weight:600}
+
+.mast{background:var(--paper);border-bottom:2px solid var(--ink);padding:1.1rem 2rem;display:flex;justify-content:space-between;align-items:flex-end}
+.logo{font-family:var(--serif);font-size:clamp(1.4rem,3vw,2.1rem);font-weight:900;color:var(--terra);letter-spacing:-.02em}
+.logo span{display:block;font-size:.5em;font-weight:400;color:var(--mid)}
+.msub{font-family:var(--sans);font-size:.68rem;color:var(--light);text-align:left}
+
+nav{background:var(--dark);display:flex;flex-wrap:wrap;position:sticky;top:0;z-index:100;border-bottom:3px solid var(--terra)}
+nav a{display:flex;align-items:center;gap:.4rem;padding:.62rem .9rem;font-family:var(--sans);font-size:.77rem;color:rgba(255,255,255,.5);border-left:1px solid rgba(255,255,255,.06);transition:all .2s}
+nav a:hover,nav a.active{background:rgba(200,122,42,.08);color:var(--terra-lt)}
+nav a .dot{width:6px;height:6px;border-radius:50%;flex-shrink:0}
+nav a[data-r="afrique"] .dot{background:#c8821a}nav a[data-r="amerique"] .dot{background:#b83232}
+nav a[data-r="europe"] .dot{background:#1e5fa8}nav a[data-r="asie"] .dot{background:#1a8a6e}
+nav a[data-r="orient"] .dot{background:#8b3a8b}nav a[data-r="sante"] .dot{background:var(--terra-lt)}
+nav .nav-cta{margin-right:auto;background:var(--terra);color:#fff!important;font-weight:600;border:none}
+
+/* ══════════════════════════════════════════════════════
+   HERO — Marché au crépuscule / balance et monnaie
+   Tons chauds, ocre, lumière rasante de fin de journée
+══════════════════════════════════════════════════════ */
+.hero{position:relative;min-height:clamp(440px,56vw,700px);overflow:hidden;background:var(--dark)}
+
+/* Ciel crépusculaire — dégradé ocre-rouille */
+.hero-sky{
+  position:absolute;inset:0;
+  background:linear-gradient(
+    175deg,
+    #0e0602 0%,
+    #2a1005 15%,
+    #5a2510 30%,
+    #a84820 50%,
+    #c87a2a 65%,
+    #e8a84a 80%,
+    #f5c870 100%
+  );
+}
+
+/* Texture poussière / grain de marché */
+.hero-dust{
+  position:absolute;inset:0;
+  background:radial-gradient(ellipse 90% 50% at 30% 60%,rgba(200,122,42,.15) 0%,transparent 60%),
+             radial-gradient(ellipse 60% 40% at 70% 30%,rgba(232,168,74,.12) 0%,transparent 60%);
+  mix-blend-mode:screen;
+}
+
+/* Particules de poussière de marché */
+.hero-particles{position:absolute;inset:0;pointer-events:none;overflow:hidden}
+.dust{
+  position:absolute;border-radius:50%;
+  background:rgba(232,168,74,.5);
+  animation:dust-drift linear infinite;
+}
+.dust:nth-child(1){width:3px;height:3px;left:8%;animation-duration:12s;animation-delay:0s;bottom:20%}
+.dust:nth-child(2){width:2px;height:2px;left:22%;animation-duration:9s;animation-delay:2s;bottom:35%}
+.dust:nth-child(3){width:4px;height:4px;left:38%;animation-duration:14s;animation-delay:1s;bottom:25%}
+.dust:nth-child(4){width:2px;height:2px;left:55%;animation-duration:11s;animation-delay:3.5s;bottom:40%}
+.dust:nth-child(5){width:3px;height:3px;left:68%;animation-duration:10s;animation-delay:.5s;bottom:30%}
+.dust:nth-child(6){width:2px;height:2px;left:82%;animation-duration:13s;animation-delay:4s;bottom:22%}
+.dust:nth-child(7){width:4px;height:4px;left:15%;animation-duration:8s;animation-delay:6s;bottom:50%}
+.dust:nth-child(8){width:2px;height:2px;left:48%;animation-duration:15s;animation-delay:2.5s;bottom:15%}
+@keyframes dust-drift{
+  0%{transform:translateY(0) translateX(0);opacity:0}
+  10%{opacity:.7}60%{opacity:.4}
+  100%{transform:translateY(-60vh) translateX(40px);opacity:0}
+}
+
+/* Contenu hero */
+.hero-content{position:absolute;bottom:0;left:0;right:0;padding:3rem 2.5rem;max-width:900px;margin:0 auto;animation:rise-in .9s ease-out both}
+@keyframes rise-in{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:none}}
+.hero-badge{display:inline-flex;align-items:center;gap:.5rem;background:rgba(200,122,42,.2);border:1px solid rgba(232,168,74,.4);color:var(--terra-lt);font-family:var(--sans);font-size:.68rem;font-weight:600;padding:.28rem .8rem;border-radius:20px;letter-spacing:.06em;margin-bottom:1rem;backdrop-filter:blur(6px)}
+.hero-badge::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--terra-lt);animation:pulse 2s ease-in-out infinite}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.3;transform:scale(.5)}}
+.hero h1{font-family:var(--serif);font-size:clamp(1.8rem,4.5vw,3.1rem);font-weight:900;color:#fff;line-height:1.2;margin-bottom:.9rem;text-shadow:0 2px 24px rgba(0,0,0,.6)}
+.hero h1 em{font-style:normal;color:var(--terra-lt)}
+.hero-sub{font-family:var(--sans);font-size:.96rem;color:rgba(255,255,255,.68);max-width:580px;line-height:1.85;text-shadow:0 1px 6px rgba(0,0,0,.4)}
+
+.meta-bar{background:var(--paper);border-bottom:1px solid var(--rule);padding:.85rem 2rem}
+.meta-inner{max-width:1100px;margin:0 auto;display:flex;flex-wrap:wrap;gap:.9rem;align-items:center}
+.meta-item{font-family:var(--sans);font-size:.69rem;color:var(--light);display:flex;align-items:center;gap:.3rem}
+.meta-item strong{color:var(--mid)}.meta-sep{color:var(--rule)}
+.meta-cat{background:var(--terra-bg);color:var(--terra);border:1px solid rgba(200,122,42,.25);padding:.18rem .65rem;border-radius:12px;font-weight:600;font-size:.67rem;font-family:var(--sans)}
+
+.layout{max-width:1160px;margin:0 auto;padding:3rem 1.5rem;display:grid;grid-template-columns:1fr 280px;gap:4rem;align-items:start}
+@media(max-width:960px){.layout{grid-template-columns:1fr;gap:2rem}}
+
+.body{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease}
+.body.vis{opacity:1;transform:none}
+.body>p:first-of-type::first-letter{font-size:4.2rem;font-weight:900;float:right;line-height:.8;margin:.05em 0 -.1em .2em;color:var(--terra)}
+.body p{font-size:1.02rem;line-height:1.95;color:var(--ink);margin-bottom:1.3rem}
+.body p:last-child{margin-bottom:0}
+.body h2{font-family:var(--serif);font-size:1.45rem;font-weight:700;color:var(--ink);margin:2.8rem 0 1.2rem;padding-right:1rem;border-right:4px solid var(--terra);line-height:1.4}
+.body h2::before{content:attr(data-num);display:block;font-family:var(--sans);font-size:.62rem;font-weight:700;color:var(--terra);letter-spacing:.1em;margin-bottom:.3rem;opacity:.7}
+
+/* ENCADRÉS */
+.analysis-box{margin:2.5rem 0;padding:1.8rem;background:var(--terra-bg);border-radius:16px 4px 4px 16px;border-right:5px solid var(--terra);overflow:hidden;position:relative}
+.analysis-box::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 80% 80% at 10% 50%,rgba(200,122,42,.07) 0%,transparent 70%)}
+.analysis-box .box-label{font-family:var(--sans);font-size:.65rem;font-weight:700;color:var(--terra);letter-spacing:.12em;margin-bottom:.75rem;display:flex;align-items:center;gap:.4rem}
+.analysis-box .box-label::after{content:'';flex:1;height:1px;background:rgba(200,122,42,.25)}
+.analysis-box p{font-size:.94rem;line-height:1.85;color:#1e1208;margin-bottom:.6rem!important}
+
+.poetic-quote{margin:2.8rem 0;padding:2rem 2rem 2rem 2.5rem;background:var(--paper);border-radius:12px;box-shadow:0 2px 20px rgba(0,0,0,.06),inset 0 0 0 1px rgba(200,122,42,.12);position:relative;overflow:hidden}
+.poetic-quote::before{content:'❝';position:absolute;top:.5rem;right:1.2rem;font-size:5rem;color:rgba(200,122,42,.1);font-family:serif;line-height:1}
+.poetic-quote blockquote{font-family:var(--serif);font-size:1.1rem;font-weight:600;line-height:1.75;color:var(--ink);font-style:italic;margin-bottom:.9rem}
+.poetic-quote cite{font-family:var(--sans);font-size:.7rem;color:var(--light);font-style:normal;display:block}
+
+.stats-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(155px,1fr));gap:1rem;margin:2.5rem 0}
+.stat-card{background:var(--paper);border:1px solid var(--rule);border-radius:14px;padding:1.3rem 1.1rem;text-align:center;transition:transform .25s,box-shadow .25s;position:relative;overflow:hidden}
+.stat-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(to right,var(--terra),var(--terra-lt));border-radius:14px 14px 0 0}
+.stat-card:hover{transform:translateY(-4px);box-shadow:0 8px 24px rgba(200,122,42,.12)}
+.stat-num{font-family:var(--serif);font-size:2rem;font-weight:900;color:var(--terra);line-height:1;margin-bottom:.4rem}
+.stat-lbl{font-family:var(--sans);font-size:.68rem;color:var(--light);line-height:1.4}
+
+.warning-box{margin:2.2rem 0;padding:1.5rem 1.6rem;background:rgba(122,58,30,.05);border:1px solid rgba(122,58,30,.2);border-right:4px solid var(--rust);border-radius:8px}
+.warning-box .warn-title{font-family:var(--sans);font-size:.7rem;font-weight:700;color:var(--rust);letter-spacing:.06em;margin-bottom:.65rem;display:flex;align-items:center;gap:.4rem}
+.warning-box p{font-size:.93rem;color:var(--ink);margin-bottom:.5rem!important}
+
+/* ── Pyramide des besoins sous pression économique ── */
+.pyramid-wrap{
+  margin:2.5rem 0;
+  background:var(--paper);
+  border:1px solid var(--rule);
+  border-radius:16px;
+  padding:2rem 1.5rem;
+  overflow:hidden;
+  position:relative;
+}
+.pyramid-wrap::before{
+  content:'';position:absolute;top:0;left:0;right:0;height:4px;
+  background:linear-gradient(to right,var(--terra),var(--terra-lt),var(--terra));
+  border-radius:16px 16px 0 0;
+}
+.pyramid-title{font-family:var(--sans);font-size:.7rem;font-weight:700;color:var(--mid);letter-spacing:.1em;margin-bottom:1.5rem;text-align:center}
+.pyramid-levels{display:flex;flex-direction:column;align-items:center;gap:.4rem}
+.pyramid-level{
+  display:flex;align-items:center;justify-content:center;
+  border-radius:6px;height:44px;
+  font-family:var(--sans);font-size:.78rem;font-weight:600;
+  color:#fff;transition:transform .2s;cursor:default;
+  text-align:center;padding:0 1rem;
+}
+.pyramid-level:hover{transform:scaleX(1.02)}
+.p-lv1{width:100%;background:linear-gradient(to left,#7a3a1e,#a84820)}/* Base — physiologique */
+.p-lv2{width:85%;background:linear-gradient(to left,#c87a2a,#a86020)}
+.p-lv3{width:68%;background:linear-gradient(to left,#d4943a,#c07a2a)}
+.p-lv4{width:52%;background:linear-gradient(to left,#e8a84a,#d49030)}
+.p-lv5{width:36%;background:linear-gradient(to left,#f5c870,#e8a850)}
+.p-tag{
+  margin-top:.4rem;font-family:var(--sans);font-size:.63rem;
+  color:var(--rust);text-align:center;font-style:italic;
+}
+
+/* ── Comparateur de prix psychologique ── */
+.price-compare{
+  margin:2.5rem 0;
+  border:1px solid var(--rule);
+  border-radius:14px;
+  overflow:hidden;
+}
+.pc-header{
+  background:var(--ink);color:rgba(255,255,255,.85);
+  padding:.85rem 1.2rem;
+  display:grid;grid-template-columns:1fr 1fr 1fr;
+  font-family:var(--sans);font-size:.72rem;font-weight:700;
+  letter-spacing:.04em;gap:1rem;
+}
+.pc-row{
+  display:grid;grid-template-columns:1fr 1fr 1fr;
+  padding:.7rem 1.2rem;
+  border-bottom:1px solid var(--mist);
+  font-family:var(--sans);font-size:.84rem;
+  align-items:center;gap:1rem;
+  transition:background .2s;
+}
+.pc-row:last-child{border-bottom:none}
+.pc-row:hover{background:var(--terra-bg)}
+.pc-item{font-weight:600;color:var(--ink)}
+.pc-old{color:var(--light);text-decoration:line-through}
+.pc-new{color:var(--rust);font-weight:700}
+.pc-feel{font-size:.72rem;color:var(--mid);font-style:italic}
+
+/* Styled list */
+.styled-list{margin:1.2rem 0;list-style:none}
+.styled-list li{display:flex;align-items:flex-start;gap:.75rem;padding:.6rem 0;border-bottom:1px solid var(--mist);font-size:.97rem;line-height:1.75}
+.styled-list li:last-child{border-bottom:none}
+.styled-list li::before{content:'';width:7px;height:7px;border-radius:50%;background:var(--terra);flex-shrink:0;margin-top:.55rem}
+
+/* Steps */
+.steps{margin:2rem 0}
+.step{display:flex;gap:1.2rem;padding:1.2rem 0;border-bottom:1px solid var(--mist);align-items:flex-start}
+.step:last-child{border-bottom:none}
+.step-num{width:36px;height:36px;border-radius:50%;background:linear-gradient(135deg,var(--terra),var(--terra-lt));color:#fff;font-family:var(--serif);font-weight:700;font-size:.9rem;display:flex;align-items:center;justify-content:center;flex-shrink:0;box-shadow:0 3px 8px rgba(200,122,42,.3)}
+.step-body h4{font-family:var(--serif);font-size:1rem;font-weight:700;color:var(--ink);margin-bottom:.4rem}
+.step-body p{font-size:.92rem;color:var(--mid);margin-bottom:0!important}
+
+/* FAQ */
+.faq-section{margin:3rem 0 1rem;padding:2rem;background:var(--cream);border-radius:20px;position:relative;overflow:hidden}
+.faq-section::before{content:'';position:absolute;top:-30px;right:-30px;width:120px;height:120px;border-radius:50%;background:radial-gradient(circle,rgba(200,122,42,.12) 0%,transparent 70%)}
+.faq-title{font-family:var(--serif);font-size:1.25rem;font-weight:700;color:var(--ink);margin-bottom:1.5rem;display:flex;align-items:center;gap:.6rem}
+.faq-item{border-bottom:1px solid var(--mist);margin-bottom:.5rem}
+.faq-item:last-child{border-bottom:none;margin-bottom:0}
+.faq-q{width:100%;text-align:right;background:none;border:none;padding:1rem .5rem;cursor:pointer;font-family:var(--serif);font-size:.98rem;font-weight:700;color:var(--ink);display:flex;justify-content:space-between;align-items:center;gap:.8rem;transition:color .2s}
+.faq-q:hover{color:var(--terra)}
+.faq-icon{width:22px;height:22px;border-radius:50%;background:var(--terra-bg);border:1px solid rgba(200,122,42,.3);color:var(--terra);font-size:.85rem;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:transform .3s,background .3s}
+.faq-item.open .faq-icon{transform:rotate(45deg);background:var(--terra);color:#fff}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .4s ease,padding .3s}
+.faq-item.open .faq-a{max-height:320px;padding-bottom:1rem}
+.faq-a p{font-family:var(--sans);font-size:.92rem;line-height:1.85;color:var(--mid);padding:0 .5rem}
+
+.author-card{margin:3rem 0 2rem;padding:1.8rem;background:var(--paper);border-radius:16px;border:1px solid var(--rule);display:flex;gap:1.3rem;align-items:flex-start;box-shadow:0 4px 16px rgba(0,0,0,.05)}
+.author-avatar{width:56px;height:56px;border-radius:50%;background:linear-gradient(135deg,var(--terra),var(--terra-lt));display:flex;align-items:center;justify-content:center;color:#fff;font-family:var(--serif);font-size:.7rem;font-weight:700;flex-shrink:0;line-height:1.2;text-align:center;box-shadow:0 3px 10px rgba(200,122,42,.3)}
+.author-name{font-family:var(--serif);font-size:1rem;font-weight:700;margin-bottom:.2rem}
+.author-role{font-family:var(--sans);font-size:.67rem;color:var(--terra);margin-bottom:.5rem}
+.author-bio{font-family:var(--sans);font-size:.82rem;color:var(--mid);line-height:1.7}
+
+.related{margin-top:3rem}
+.related-title{font-family:var(--serif);font-size:1.1rem;font-weight:700;color:var(--ink);margin-bottom:1.2rem;padding-bottom:.6rem;border-bottom:2px solid var(--terra);display:flex;align-items:center;gap:.5rem}
+.related-grid{display:grid;gap:.85rem}
+.rel-card{display:flex;gap:1rem;padding:1rem;background:var(--paper);border:1px solid var(--rule);border-radius:12px;transition:transform .2s,box-shadow .2s,border-color .2s}
+.rel-card:hover{transform:translateX(-4px);box-shadow:4px 4px 16px rgba(0,0,0,.07);border-color:var(--terra)}
+.rel-color{width:4px;border-radius:2px;flex-shrink:0}
+.rel-body h4{font-family:var(--serif);font-size:.92rem;font-weight:700;margin-bottom:.25rem}
+.rel-body p{font-family:var(--sans);font-size:.75rem;color:var(--light);margin:0;line-height:1.5}
+.rel-arrow{margin-top:.4rem;font-family:var(--sans);font-size:.7rem;color:var(--terra);font-weight:600}
+
+.sidebar{position:sticky;top:80px;display:flex;flex-direction:column;gap:1.5rem}
+.sb-card{background:var(--paper);border:1px solid var(--rule);border-radius:16px;overflow:hidden}
+.sb-head{padding:.9rem 1.2rem;background:var(--cream);border-bottom:1px solid var(--rule);font-family:var(--sans);font-size:.72rem;font-weight:700;color:var(--mid);letter-spacing:.06em}
+.toc-list{list-style:none;padding:.6rem .4rem}
+.toc-list a{display:flex;align-items:center;gap:.6rem;padding:.6rem .8rem;border-radius:8px;font-family:var(--sans);font-size:.8rem;color:var(--mid);transition:all .2s;line-height:1.4}
+.toc-list a:hover{background:var(--terra-bg);color:var(--terra);padding-right:1.1rem}
+.toc-list .tnum{font-family:var(--serif);font-size:.72rem;color:var(--terra);font-weight:700;min-width:18px}
+.read-meter{padding:1rem 1.2rem}
+.read-meter-bar{height:4px;background:var(--mist);border-radius:2px;overflow:hidden;margin-bottom:.5rem}
+.read-meter-fill{height:100%;background:linear-gradient(to left,var(--terra),var(--terra-lt));border-radius:2px;width:0%;transition:width .3s}
+.read-meter-label{font-family:var(--sans);font-size:.68rem;color:var(--light);text-align:center}
+
+.jp-ornament{text-align:center;margin:2.5rem 0;font-size:1.4rem;color:rgba(200,122,42,.3);letter-spacing:.8rem}
+.fu{opacity:0;transform:translateY(20px);transition:opacity .6s ease,transform .6s ease}
+.fu.vis{opacity:1;transform:none}
+
+footer{background:var(--dark);color:rgba(255,255,255,.4);padding:2rem;font-family:var(--sans);font-size:.72rem;border-top:3px solid var(--terra);margin-top:4rem}
+.fi{max-width:1160px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem}
+.fl{display:flex;gap:1.2rem}
+.fl a{color:rgba(255,255,255,.5);transition:color .2s}.fl a:hover{color:var(--terra-lt)}
+
+@media(max-width:760px){
+  .hero-content{padding:2rem 1.2rem}.hero h1{font-size:1.7rem}
+  .layout{padding:2rem 1rem}.author-card{flex-direction:column}
+  .pc-header,.pc-row{grid-template-columns:1fr 1fr;font-size:.75rem}
+  .pc-feel{display:none}
+  .pyramid-level{font-size:.68rem}
+}
+</style>
+</head>
+<body>
+<div id="pb"></div>
+
+<div class="top">
+  <span>geopolô — <strong style="color:var(--terra-lt)">الصحة النفسية والمجتمع</strong></span>
+  <span><a href="https://fr.geopolo.com" class="fr-link">🇫🇷 Français</a><a href="/abonnement.html" style="margin-right:.7rem">الاشتراك</a></span>
+</div>
+
+<header class="mast">
+  <a href="/" class="logo">geopolô<span>مجلة جيوسياسية استراتيجية مستقلة</span></a>
+  <div class="msub">ar.geopolo.com · 2026</div>
+</header>
+
+<nav>
+  <a href="/">الرئيسية</a>
+  <a href="/afr.html" data-r="afrique"><span class="dot"></span>أفريقيا</a>
+  <a href="/ame.html" data-r="amerique"><span class="dot"></span>أمريكا</a>
+  <a href="/eu.html"  data-r="europe"><span class="dot"></span>أوروبا</a>
+  <a href="/asie.html" data-r="asie"><span class="dot"></span>آسيا</a>
+  <a href="/proche-or.html" data-r="orient"><span class="dot"></span>الشرق الأوسط</a>
+  <a href="/sante.html" data-r="sante" class="active"><span class="dot"></span>صحة نفسية</a>
+  <a href="/abonnement.html" class="nav-cta">الاشتراك ←</a>
+</nav>
+
+<!-- ══════════════ HERO — Marché crépuscule / monnaie ══════════════ -->
+<div class="hero" role="banner">
+  <div class="hero-sky"></div>
+  <div class="hero-dust"></div>
+
+  <!-- Particules de poussière -->
+  <div class="hero-particles" aria-hidden="true">
+    <div class="dust"></div><div class="dust"></div><div class="dust"></div>
+    <div class="dust"></div><div class="dust"></div><div class="dust"></div>
+    <div class="dust"></div><div class="dust"></div>
+  </div>
+
+  <!-- SVG: Marché au crépuscule — balance, étals, silhouettes -->
+  <svg viewBox="0 0 1440 420" preserveAspectRatio="xMidYMax slice"
+       style="position:absolute;bottom:0;left:0;right:0;width:100%;height:auto"
+       xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <defs>
+      <linearGradient id="groundGrad" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0%" stop-color="#1e0e04" stop-opacity=".95"/>
+        <stop offset="100%" stop-color="#0e0602"/>
+      </linearGradient>
+      <radialGradient id="lampGlow" cx="50%" cy="50%" r="50%">
+        <stop offset="0%" stop-color="#e8a84a" stop-opacity=".5"/>
+        <stop offset="100%" stop-color="#e8a84a" stop-opacity="0"/>
+      </radialGradient>
+      <filter id="glow3"><feGaussianBlur stdDeviation="3"/></filter>
+      <filter id="glow6"><feGaussianBlur stdDeviation="6"/></filter>
+    </defs>
+
+    <!-- Sol du marché -->
+    <rect x="0" y="370" width="1440" height="50" fill="#0a0502"/>
+    <!-- Ombres au sol -->
+    <ellipse cx="300"  cy="382" rx="120" ry="8" fill="rgba(0,0,0,.4)"/>
+    <ellipse cx="750"  cy="380" rx="160" ry="7" fill="rgba(0,0,0,.35)"/>
+    <ellipse cx="1150" cy="382" rx="130" ry="8" fill="rgba(0,0,0,.4)"/>
+
+    <!-- ─── Étal de marché gauche ─── -->
+    <!-- Tente -->
+    <polygon points="80,220 220,220 230,200 70,200" fill="#3a1a08"/>
+    <polygon points="70,200 230,200 200,170 100,170" fill="#5a2810"/>
+    <!-- Comptoir -->
+    <rect x="85"  y="220" width="130" height="18" rx="2" fill="#2a1206"/>
+    <rect x="80"  y="238" width="140" height="120" fill="url(#groundGrad)"/>
+    <!-- Marchandises sur le comptoir -->
+    <ellipse cx="120" cy="220" rx="12" ry="6" fill="#c87a2a" opacity=".8"/>
+    <ellipse cx="148" cy="220" rx="10" ry="5" fill="#a84820" opacity=".7"/>
+    <ellipse cx="172" cy="220" rx="11" ry="5" fill="#c87a2a" opacity=".75"/>
+    <!-- Lampe à pétrole -->
+    <rect x="193" y="205" width="6" height="15" fill="#5a2810"/>
+    <ellipse cx="196" cy="205" rx="8" ry="4" fill="#3a1a08"/>
+    <ellipse cx="196" cy="202" rx="5" ry="8" fill="rgba(232,168,74,.4)" filter="url(#glow3)"/>
+    <circle cx="196" cy="202" r="3" fill="rgba(255,200,80,.7)"/>
+
+    <!-- ─── Silhouette marchand gauche ─── -->
+    <g fill="#140802" opacity=".92">
+      <circle cx="155" cy="245" r="10"/>
+      <rect x="148" y="255" width="14" height="22" rx="3"/>
+      <!-- Bras tendu (il donne de la monnaie) -->
+      <rect x="162" y="260" width="18" height="6" rx="2" transform="rotate(-10,162,263)"/>
+      <!-- Petite pièce dans la main -->
+      <circle cx="179" cy="258" r="4" fill="rgba(232,168,74,.8)"/>
+    </g>
+
+    <!-- ─── Balance centrale ─── -->
+    <g transform="translate(650,140)">
+      <!-- Poteau -->
+      <rect x="67" y="0" width="6" height="140" fill="#2a1206"/>
+      <!-- Bras de balance -->
+      <rect x="20" y="40" width="100" height="4" rx="2" fill="#3a1a08" transform="rotate(-8,70,42)"/>
+      <!-- Chaînes -->
+      <line x1="28" y1="44" x2="28" y2="78" stroke="#5a3010" stroke-width="1.5" stroke-dasharray="3,2"/>
+      <line x1="110" y1="34" x2="110" y2="65" stroke="#5a3010" stroke-width="1.5" stroke-dasharray="3,2"/>
+      <!-- Plateaux -->
+      <ellipse cx="28" cy="80" rx="22" ry="6" fill="#2a1206"/><!-- lourd, bas -->
+      <ellipse cx="110" cy="67" rx="18" ry="5" fill="#2a1206"/><!-- léger, haut -->
+      <!-- Contenu des plateaux -->
+      <ellipse cx="28" cy="77" rx="14" ry="4" fill="#c87a2a" opacity=".6"/><!-- pièces -->
+      <rect x="100" y="60" width="20" height="10" rx="2" fill="#5a3010" opacity=".7"/><!-- billets -->
+      <!-- Halo balance -->
+      <ellipse cx="70" cy="42" rx="60" ry="20" fill="rgba(200,122,42,.06)" filter="url(#glow6)"/>
+    </g>
+
+    <!-- ─── Étal central grand ─── -->
+    <polygon points="580,250 860,250 880,225 560,225" fill="#3a1a08"/>
+    <polygon points="560,225 880,225 840,185 600,185" fill="#5a2810"/>
+    <rect x="585" y="250" width="270" height="130" fill="url(#groundGrad)"/>
+    <!-- Marchandises -->
+    <ellipse cx="640" cy="250" rx="18" ry="7" fill="#c87a2a" opacity=".7"/>
+    <ellipse cx="680" cy="250" rx="15" ry="6" fill="#a84820" opacity=".65"/>
+    <ellipse cx="720" cy="250" rx="20" ry="7" fill="#c87a2a" opacity=".72"/>
+    <ellipse cx="760" cy="250" rx="14" ry="6" fill="#d49030" opacity=".6"/>
+    <ellipse cx="798" cy="250" rx="16" ry="6" fill="#a84820" opacity=".68"/>
+    <!-- Panneau de prix -->
+    <rect x="680" y="192" width="80" height="32" rx="4" fill="#2a1206"/>
+    <text x="720" y="212" text-anchor="middle" fill="rgba(232,168,74,.8)" font-size="10" font-family="monospace">+28%</text>
+
+    <!-- Silhouettes acheteurs devant l'étal central -->
+    <g fill="#0e0602" opacity=".9">
+      <!-- Personne 1 — courbée, découragée -->
+      <circle cx="618" cy="272" r="9"/>
+      <rect x="612" y="281" width="12" height="20" rx="3"/>
+      <rect x="606" y="290" width="12" height="5" rx="1" transform="rotate(25,612,292)"/>
+      <!-- Personne 2 — droite, consulte son portefeuille -->
+      <circle cx="700" cy="268" r="9"/>
+      <rect x="694" y="277" width="12" height="22" rx="3"/>
+      <rect x="706" y="282" width="16" height="10" rx="2" transform="rotate(-15,706,287)"/>
+      <!-- Petite pièce visible -->
+      <circle cx="721" cy="280" r="5" fill="rgba(200,122,42,.5)"/>
+      <!-- Personne 3 — regarde les prix, main à la tête -->
+      <circle cx="800" cy="270" r="9"/>
+      <rect x="794" y="279" width="12" height="20" rx="3"/>
+      <rect x="806" y="272" width="10" height="5" rx="1" transform="rotate(-30,806,274)"/>
+    </g>
+
+    <!-- ─── Étal droit ─── -->
+    <polygon points="1150,240 1380,240 1400,215 1130,215" fill="#3a1a08"/>
+    <polygon points="1130,215 1400,215 1360,178 1170,178" fill="#4a2210"/>
+    <rect x="1155" y="240" width="220" height="140" fill="url(#groundGrad)"/>
+    <!-- Marchandises -->
+    <ellipse cx="1200" cy="240" rx="15" ry="6" fill="#c87a2a" opacity=".7"/>
+    <ellipse cx="1240" cy="240" rx="18" ry="7" fill="#a84820" opacity=".65"/>
+    <ellipse cx="1280" cy="240" rx="14" ry="6" fill="#d49030" opacity=".6"/>
+    <ellipse cx="1320" cy="240" rx="16" ry="6" fill="#c87a2a" opacity=".68"/>
+    <!-- Lampe -->
+    <rect x="1356" y="220" width="5" height="20" fill="#4a2210"/>
+    <circle cx="1358" cy="218" r="6" fill="rgba(232,168,74,.4)" filter="url(#glow3)"/>
+    <circle cx="1358" cy="218" r="3" fill="rgba(255,200,80,.6)"/>
+
+    <!-- ─── Halos de lanternes ─── -->
+    <circle cx="196" cy="202" r="35" fill="url(#lampGlow)" filter="url(#glow6)" opacity=".6"/>
+    <circle cx="1358" cy="218" r="30" fill="url(#lampGlow)" filter="url(#glow6)" opacity=".5"/>
+    <!-- Halo soleil couchant sur le marché -->
+    <ellipse cx="720" cy="420" rx="500" ry="60" fill="rgba(200,122,42,.08)"/>
+  </svg>
+
+  <div class="hero-content">
+    <div class="hero-badge">💰 اقتصاد · صحة نفسية</div>
+    <h1>التضخم والضغط النفسي<br><em>عندما يصبح المال مصدر قلق دائم</em></h1>
+    <p class="hero-sub">
+      كل مرة تقف فيها أمام رف السوبرماركت وتُعيد حسابك — شيء ما يُنهش في داخلك أعمق
+      من مجرد تضيّق في الميزانية. التضخم لا يسرق أموالك فحسب — يسرق طمأنينتك وكرامتك
+      وإحساسك بالسيطرة على حياتك.
+    </p>
+  </div>
+</div>
+
+<!-- META -->
+<div class="meta-bar"><div class="meta-inner">
+  <span class="meta-item">✍ <strong>د. خالد المزروعي</strong></span><span class="meta-sep">·</span>
+  <span class="meta-item">📅 <strong>أبريل 2026</strong></span><span class="meta-sep">·</span>
+  <span class="meta-item">⏱ <strong>16 دقيقة</strong></span><span class="meta-sep">·</span>
+  <span class="meta-cat">💰 اقتصاد نفسي</span><span class="meta-sep">·</span>
+  <span class="meta-item">🔗 <a href="/sante.html" style="color:var(--terra)">عودة للقسم</a></span>
+</div></div>
+
+<div class="layout">
+<article class="body fu" id="main-article">
+
+  <p>
+    قال لي صديق مهندس في الخامسة والثلاثين — راتبه جيد، عمله مستقر، لا ديون حقيقية — إنه يُصحو منذ أشهر في الثالثة صباحاً وينام لا يتذكّر آخر يوم لم يُفكّر فيه في المال. لا يتذكّر. هذه الجملة تُلخّص ما يمرّ به عشرات الملايين في العالم العربي وخارجه منذ موجة التضخم الكبرى التي اندلعت بعد الجائحة ولم تُخمَد تماماً حتى الآن.
+  </p>
+  <p>
+    التضخم ليس رقماً إحصائياً فحسب — إنه تجربة نفسية حادة. كل ارتفاع في سعر الخبز أو الإيجار أو فاتورة الكهرباء يُنتج موجة من الكورتيزول، وشعوراً بالعجز، وأحياناً خزياً اجتماعياً عميقاً لمن يُجاهد ألّا يُقلّص نمط حياته أمام أعين الآخرين.
+  </p>
+
+  <div class="stats-grid fu">
+    <div class="stat-card"><div class="stat-num">72٪</div><div class="stat-lbl">من البالغين يُفيدون بأن المال المصدر الرئيسي لقلقهم عام 2025 (APA)</div></div>
+    <div class="stat-card"><div class="stat-num">3×</div><div class="stat-lbl">ارتفاع حالات القلق المالي في دول التضخم المرتفع مقارنة بما قبل 2020</div></div>
+    <div class="stat-card"><div class="stat-num">41٪</div><div class="stat-lbl">يُعانون من اضطرابات نوم مرتبطة بالقلق المالي وفق دراسة 2024</div></div>
+    <div class="stat-card"><div class="stat-num">28٪</div><div class="stat-lbl">من المتزوجين يُفيدون بتصاعد الخلافات الزوجية بسبب الضغط المالي المباشر</div></div>
+  </div>
+
+  <h2 id="mechanism" data-num="الآلية النفسية">الآلية النفسية: كيف يُحوّل التضخم المال إلى تهديد وجودي</h2>
+
+  <p>
+    دماغ الإنسان مُصمَّم تطورياً للاستجابة للتهديدات الجسدية المباشرة — الحيوان المفترس، الجوع، الخطر الفيزيائي. لكنه يُطلق نفس الاستجابة الفيزيولوجية (إفراز كورتيزول وأدرينالين) تجاه التهديد المالي المُدرَك. ارتفاع فاتورة الإيجار قد يُطلق في جسدك استجابة «قتال أو فرار» تماثل ما تُطلقه مواجهة خطر فيزيائي.
+  </p>
+
+  <div class="analysis-box fu">
+    <div class="box-label">🧠 علم الأعصاب وراء قلق التضخم</div>
+    <p>ثلاثة مسارات عصبية تتفاعل: اللوزة الدماغية (تُفعّل استجابة الخطر)، الفص الأمامي (يُحاول التحكم والتخطيط)، ومركز المكافأة (يُعاني من غياب الإحساس بالتقدم). حين ترتفع الأسعار باستمرار، يُطغي الأول على الثاني، ويضمر الثالث — وهذا بالضبط ما يُنتج «إرهاق الكفاح اليومي».</p>
+    <p>الأشد خطورةً: حين يصبح القلق المالي مزمناً، تتراجع قدرة الإنسان على اتخاذ قرارات مالية جيدة. دراسة Science (2013) أثبتت أن الضغط المالي الشديد يُقلّص قدرة «العقل المعرفي» بما يعادل فقدان 13 نقطة ذكاء — مما يجعل التخطيط أصعب في اللحظة التي يكون فيها التخطيط أهم شيء.</p>
+  </div>
+
+  <h2 id="hierarchy" data-num="هرم ماسلو">التضخم يقلب هرم ماسلو: العودة إلى البداية</h2>
+
+  <p>
+    نظرية هرم ماسلو للاحتياجات الإنسانية تقول إن الإنسان ينتقل من احتياجات أساسية (طعام، مأوى، أمان) إلى احتياجات أعلى (الانتماء، التقدير، تحقيق الذات). التضخم الحاد يعمل بالعكس — يُعيد الناس قسراً إلى قاع الهرم ليُعيدوا القلق على ما ظنّوا أنهم جاوزوه.
+  </p>
+
+  <div class="pyramid-wrap fu">
+    <div class="pyramid-title">هرم ماسلو تحت ضغط التضخم — كيف تتراجع الاحتياجات</div>
+    <div class="pyramid-levels">
+      <div class="pyramid-level p-lv5">تحقيق الذات</div>
+      <div class="pyramid-level p-lv4">التقدير والمكانة</div>
+      <div class="pyramid-level p-lv3">الانتماء الاجتماعي</div>
+      <div class="pyramid-level p-lv2">الأمان والاستقرار ← <strong>الضربة الأولى للتضخم</strong></div>
+      <div class="pyramid-level p-lv1">الاحتياجات الأساسية: طعام · مأوى · دواء ← <strong>المنطقة الحرجة</strong></div>
+    </div>
+    <div class="p-tag">
+      التضخم يُهدد الطبقتَين الأساسيتَين — وحين تُهدَد القاعدة تنهار البناءات الأعلى تلقائياً
+    </div>
+  </div>
+
+  <h2 id="prices" data-num="ثمن نفسي">ما وراء الأرقام: الثمن النفسي الخفي لكل ارتفاع</h2>
+
+  <p>
+    ليس التضخم مجرد ارتفاع في الأسعار — إنه ارتفاع في التكلفة النفسية لكل قرار معيشي يومي. كل شراء بات مُحمَّلاً بحسابات وتردد وأحياناً خزي.
+  </p>
+
+  <!-- Tableau comparateur de prix + coût psychologique -->
+  <div class="price-compare fu">
+    <div class="pc-header">
+      <div>السلعة</div>
+      <div>قبل التضخم / بعده</div>
+      <div>التكلفة النفسية الخفية</div>
+    </div>
+    <div class="pc-row">
+      <div class="pc-item">🛒 سلة تسوق أسبوعية</div>
+      <div><span class="pc-old">150$</span> → <span class="pc-new">215$</span></div>
+      <div class="pc-feel">خزي من التقليص أمام الأطفال</div>
+    </div>
+    <div class="pc-row">
+      <div class="pc-item">🏠 إيجار شهري</div>
+      <div><span class="pc-old">600$</span> → <span class="pc-new">890$</span></div>
+      <div class="pc-feel">قلق مزمن من الإخلاء</div>
+    </div>
+    <div class="pc-row">
+      <div class="pc-item">🎓 مصاريف دراسية</div>
+      <div><span class="pc-old">2,400$</span> → <span class="pc-new">3,600$</span></div>
+      <div class="pc-feel">ذنب تجاه أبناء لا يُعرفهم السبب</div>
+    </div>
+    <div class="pc-row">
+      <div class="pc-item">⚡ فاتورة كهرباء وغاز</div>
+      <div><span class="pc-old">80$</span> → <span class="pc-new">145$</span></div>
+      <div class="pc-feel">توتر عند فتح كل فاتورة</div>
+    </div>
+    <div class="pc-row">
+      <div class="pc-item">🍽️ وجبة عائلية خارجية</div>
+      <div><span class="pc-old">40$</span> → <span class="pc-new">68$</span></div>
+      <div class="pc-feel">التخلي عن لحظات الراحة والبهجة</div>
+    </div>
+  </div>
+
+  <h2 id="social" data-num="الأثر الاجتماعي">الأثر الاجتماعي: حين يُفرّق المال بين الناس</h2>
+
+  <div class="poetic-quote fu">
+    <blockquote>«الفقر ليس مجرد نقص في المال — إنه نقص في الوقت الذهني. حين تُفكّر في كيفية دفع الفاتورة يشغل هذا 40٪ من طاقتك الذهنية الكاملة — وهذه الطاقة لن تذهب لمكان آخر.»</blockquote>
+    <cite>— سيندهيل مولايناثان وإلدار شفير، «الشُّح: لماذا يعني القليل الكثير»، 2013</cite>
+  </div>
+
+  <ul class="styled-list fu">
+    <li><div><strong>العزلة الاجتماعية الصامتة:</strong> الناس يتوقفون عن المشاركة في النشاطات الاجتماعية (الحفلات، الخروجات، الهدايا) خجلاً من عجزهم المادي، فيبتعدون تدريجياً دون أن يُعلنوا السبب الحقيقي.</div></li>
+    <li><div><strong>توتر العلاقات الزوجية:</strong> الضغط المالي هو السبب الأول أو الثاني للخلافات الزوجية في معظم الدراسات. ليس لأن المال في حد ذاته مشكلة بل لأن ضيقه يُفجّر التوترات الكامنة ويُقلّص الموارد العاطفية اللازمة للتسامح.</div></li>
+    <li><div><strong>خزي «التراجع في المستوى»:</strong> الأصعب نفسياً ليس الفقر الأصلي بل «التراجع» — من حياة مريحة إلى ضيق. الشعور بالخسارة يُولّد ألماً نفسياً أكثر حدةً من عدم الكسب الأصلي.</div></li>
+    <li><div><strong>تأثير الجيل الصاعد:</strong> الأطفال يُدركون التوتر المالي حتى حين لا يُخبَرون به — يرونه في وجوه الوالدين، في الرفض الصامت لطلباتهم، في اختفاء الرحلات والهدايا. يترسّخ لديهم قلق غير مُسمَّى.</div></li>
+  </ul>
+
+  <h2 id="arab" data-num="الحالة العربية">الحالة العربية: ضغوط مُضاعفة في بيئة ثقافية صعبة</h2>
+
+  <div class="warning-box fu">
+    <div class="warn-title">⚠️ ثلاثة عوامل تُعمّق الأثر النفسي في السياق العربي</div>
+    <p><strong>١. ثقافة الكرم الإلزامي:</strong> في ثقافات تربط الكرم بالكرامة، العجز عن الإنفاق على الأسرة والضيوف يُنتج خزياً أعمق مما يُنتجه في ثقافات أخرى. «أنا لا أستطيع» جملة تُكلّف نفسياً أكثر مما تُكلّف مالياً.</p>
+    <p><strong>٢. الاقتصادات الريعية:</strong> المجتمعات التي اعتادت على دعم حكومي وتكاليف معيشية منخفضة تُعاني صدمة مضاعفة حين يُرفع الدعم وترتفع الأسعار فجأة — لم يتدرّبوا نفسياً على هذا التحول.</p>
+    <p><strong>٣. وصمة الاستشارة النفسية:</strong> القلق المالي في البيئة العربية نادراً ما يُحوَّل إلى طلب مساعدة نفسية — يُحوَّل عوضاً عنه إلى تذمّر، عدوانية، أو صمت محمّل. المرض الخفي يظل خفياً.</p>
+  </div>
+
+  <h2 id="resilience" data-num="الصمود والتعافي">الصمود النفسي المالي: كيف تُقاوم دون إنكار</h2>
+
+  <div class="steps fu">
+    <div class="step">
+      <div class="step-num">١</div>
+      <div class="step-body">
+        <h4>التمييز بين القلق المُنتج والهلع العقيم</h4>
+        <p>القلق المالي المُنتج يُولّد خطة: «كيف أُقلّص هذا الإنفاق؟» الهلع يُولّد دوّامة: «لن نستطيع أبداً». المعيار: هل أُفكّر في حلول أم أُكرّر المخاوف ذاتها؟ إذا الثانية، الدماغ في حالة هلع لا تخطيط.</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">٢</div>
+      <div class="step-body">
+        <h4>فصل القيمة الذاتية عن المركز المالي</h4>
+        <p>القلق المالي يتحوّل إلى أزمة هوية حين نربط قيمتنا كبشر بمدى نجاحنا المالي. هذا الربط شرطي ومكتسب — ويمكن التشكيك فيه. «أنا في ضائقة مالية» جملة صحيحة. «أنا فاشل» جملة تفسيرية غير صحيحة.</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">٣</div>
+      <div class="step-body">
+        <h4>الشفافية الأسرية المُجرَّدة من الخزي</h4>
+        <p>إخبار أفراد الأسرة بالوضع المالي بصدق مناسب للأعمار يُقلّص ضغط الكتمان، يُشعلهم بمسؤولية جماعية، ويُزيل «القلق الضبابي» الذي يكون أشد وطأةً من الحقيقة المعلنة.</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">٤</div>
+      <div class="step-body">
+        <h4>صون «الجيوب النفسية» — بهجة لا ثمن لها</h4>
+        <p>التقشير الكامل لكل بهجة باسم الاقتصاد يُنهك نفسياً ويجعل الوضع يبدو أشد مما هو. الحفاظ على نشاطات متعة منخفضة التكلفة (نزهة، قراءة، لقاءات بسيطة) ليس ترفاً — إنه استثمار في الصمود النفسي.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="analysis-box fu">
+    <div class="box-label">📌 الخلاصة الاستراتيجية — geopolô</div>
+    <p>القلق المالي في عصر التضخم ليس أزمة فردية يحلّها «تحسين الميزانية» — إنه أزمة نظامية تحتاج استجابة نظامية: سياسات اقتصادية تُقلّص الفجوة الاجتماعية، ودعماً نفسياً يُعترف فيه بالأثر النفسي للضغط الاقتصادي بدلاً من اختزاله في «تحسين الذات».</p>
+    <p>على المستوى الفردي: الاعتراف بأن «هذا صعب حقاً» — لا كاستسلام بل كبداية صادقة للتعامل مع واقع دون إضافة عبء الخزي فوق عبء الشُّح.</p>
+  </div>
+
+  <div class="jp-ornament" aria-hidden="true">⊙ ⊙ ⊙</div>
+
+  <!-- FAQ -->
+  <div class="faq-section fu" id="faq">
+    <div class="faq-title">🌸 أسئلة شائعة</div>
+
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">
+        هل القلق المالي يمكن أن يتطور إلى اكتئاب سريري؟
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-a">
+        <p>نعم — القلق المالي المزمن يُعدّ من أبرز عوامل الخطر للاكتئاب. آلية التحوّل: الكورتيزول المرتفع المزمن يُضعف إنتاج الدوبامين والسيروتونين مع الوقت، فيتحوّل القلق التكيفي إلى يأس مُقعِد. إذا استمر القلق المالي لأكثر من شهرَين مع انخفاض الطاقة وفقدان المتعة من الحياة — استشارة متخصصة ضرورية.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">
+        كيف أتحدث مع أطفالي عن الضائقة المالية دون إخافتهم؟
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-a">
+        <p>المبدأ: صادق بدون تفاصيل مُرهِقة. للأطفال دون 8 سنوات: «نختار الآن إنفاق المال في الأشياء المهمة فقط» — دون ذكر الأزمة. للمراهقين: أفكار عامة عن الاقتصاد والتقشير المؤقت دون أرقام مُحدّدة تُثقل كاهلهم. الأهم: طمأنتهم أن احتياجاتهم الأساسية مضمونة.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">
+        لماذا يبدو التضخم أشد وطأةً نفسياً على الطبقة المتوسطة من الفقراء؟
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-a">
+        <p>ظاهرة موثّقة تُسمّى «ألم التراجع»: نظرية الآفاق (Prospect Theory) لكانيمان وتفرسكي تُثبت أن ألم الخسارة ضعف متعة الكسب بالحجم ذاته. الطبقة المتوسطة تُعاني «خسارة» ما كانت تملكه — وهذا الألم أشد من حرمان لم يُختبَر. الفقراء تأقلموا مع ضيق لم يكن عندهم بديل، المتوسطون يُقارنون مع ماضٍ أريح.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">
+        هل ثمة فرق في كيفية تأثير الضغط المالي على الرجال والنساء؟
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-a">
+        <p>نعم — الأنماط تختلف: الرجال في ثقافات تُربط فيها قيمتهم بالعطاء المادي يُعانون أزمة هوية أعمق وأكثر صمتاً. النساء — خاصة في ظل الضغط المزدوج لرعاية الأطفال والإدارة المنزلية — يُعانون إرهاقاً قرارياً أكبر. كلا الأنماطَين خطيران بطريقتهما.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">
+        ما أولى الخطوات العملية حين يُصبح القلق المالي لا يُطاق؟
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-a">
+        <p>ثلاث خطوات فورية: الأولى — الكتابة. سجّل مخاوفك المالية كلها على ورقة. إخراجها من الذهن إلى الورق يُخفّف الضغط الذهني بشكل موثوق. الثانية — التحديد. ميّز بين ما يمكن التأثير فيه الآن وما لا يمكن (الاقتصاد الكلي ليس في يدك). الثالثة — شخص واحد. أخبر شخصاً موثوقاً واحداً على الأقل — الكتمان الكامل يُضاعف الأثر.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- AUTEUR -->
+  <div class="author-card fu">
+    <div class="author-avatar" style="font-size:.62rem">د.خالد<br>المزروعي</div>
+    <div>
+      <div class="author-name">د. خالد المزروعي</div>
+      <div class="author-role">اقتصادي نفسي · متخصص في علم الاقتصاد السلوكي والصحة النفسية · geopolô</div>
+      <p class="author-bio">دكتوراه في الاقتصاد السلوكي مع تركيز على التأثيرات النفسية للأزمات الاقتصادية. يُحلّل التقاطعات بين السياسات المالية الكلية والرفاه النفسي الجماعي، ويُساهم في geopolô بتحليل الأبعاد الإنسانية للمعطيات الاقتصادية.</p>
+    </div>
+  </div>
+
+  <!-- ARTICLES LIÉS -->
+  <div class="related fu">
+    <div class="related-title">🌿 من السلسلة ذاتها</div>
+    <div class="related-grid">
+      <a href="/articles/burnout-wazifi-2026.html" class="rel-card">
+        <div class="rel-color" style="background:#c8863c"></div>
+        <div class="rel-body"><h4>الاحتراق الوظيفي: كيف تكتشفه قبل فوات الأوان؟</h4><p>حين يُصبح العمل ثقلاً لا طاقةً</p><div class="rel-arrow">← اقرأ المقال</div></div>
+      </a>
+      <a href="/articles/info-overload-mental-health-2026.html" class="rel-card">
+        <div class="rel-color" style="background:#2a4a7f"></div>
+        <div class="rel-body"><h4>الإرهاق المعلوماتي: كيف تؤثر الأخبار المستمرة علينا؟</h4><p>أخبار التضخم والاقتصاد في كل مكان</p><div class="rel-arrow">← اقرأ المقال</div></div>
+      </a>
+      <a href="/articles/loneliness-digital-age-2026.html" class="rel-card">
+        <div class="rel-color" style="background:#4a6741"></div>
+        <div class="rel-body"><h4>الوحدة في العصر الرقمي: لماذا نشعر بالوحدة رغم الاتصال الدائم؟</h4><p>العزلة الاجتماعية الناجمة عن الضغوط الاقتصادية</p><div class="rel-arrow">← اقرأ المقال</div></div>
+      </a>
+    </div>
+  </div>
+
+</article>
+
+<!-- SIDEBAR -->
+<aside class="sidebar">
+  <div class="sb-card">
+    <div style="position:relative;height:140px;overflow:hidden;border-radius:12px;margin:.8rem">
+      <div style="position:absolute;inset:0;background:linear-gradient(175deg,#2a1005 0%,#5a2510 40%,#c87a2a 80%,#e8a84a 100%)"></div>
+      <svg viewBox="0 0 280 140" style="position:absolute;bottom:0;left:0;right:0;width:100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <rect x="0" y="110" width="280" height="30" fill="#0a0502"/>
+        <!-- Mini market stalls -->
+        <polygon points="20,110 90,110 96,96 14,96" fill="#2a1206"/>
+        <polygon points="14,96 96,96 82,78 28,78" fill="#3a1a08"/>
+        <rect x="22" y="96" width="66" height="20" fill="#0e0602" opacity=".7"/>
+        <ellipse cx="55" cy="96" rx="20" ry="6" fill="#c87a2a" opacity=".6"/>
+        <!-- Balance mini -->
+        <rect x="130" y="60" width="4" height="55" fill="#1a0a04"/>
+        <rect x="110" y="75" width="44" height="3" rx="1" fill="#2a1206" transform="rotate(-6,132,76)"/>
+        <ellipse cx="115" cy="80" rx="12" ry="4" fill="#1a0a04"/>
+        <ellipse cx="148" cy="74" rx="10" ry="3" fill="#1a0a04"/>
+        <ellipse cx="115" cy="78" rx="7" ry="2" fill="#c87a2a" opacity=".5"/>
+        <!-- Person with phone-wallet -->
+        <circle cx="210" cy="85" r="7" fill="#0a0502"/>
+        <rect x="205" y="92" width="10" height="18" rx="2" fill="#0a0502"/>
+        <rect x="215" y="97" width="14" height="8" rx="1" fill="#2a1206"/>
+        <!-- Lamp glow -->
+        <circle cx="80" cy="90" r="2" fill="rgba(232,168,74,.8)"/>
+        <circle cx="80" cy="90" r="10" fill="rgba(232,168,74,.15)"/>
+        <!-- Ground reflection -->
+        <ellipse cx="140" cy="135" rx="120" ry="5" fill="rgba(200,122,42,.1)"/>
+      </svg>
+      <div style="position:absolute;bottom:.8rem;left:0;right:0;text-align:center;font-family:var(--sans);font-size:.68rem;color:rgba(232,168,74,.7);font-style:italic">سوق الغروب</div>
+    </div>
+  </div>
+
+  <div class="sb-card">
+    <div class="sb-head">📖 تقدم القراءة</div>
+    <div class="read-meter">
+      <div class="read-meter-bar"><div class="read-meter-fill" id="read-fill"></div></div>
+      <div class="read-meter-label" id="read-label">ابدأ القراءة ↓</div>
+    </div>
+  </div>
+
+  <div class="sb-card">
+    <div class="sb-head">📋 المحتويات</div>
+    <ul class="toc-list">
+      <li><a href="#mechanism"><span class="tnum">١</span> الآلية النفسية</a></li>
+      <li><a href="#hierarchy"><span class="tnum">٢</span> هرم ماسلو</a></li>
+      <li><a href="#prices"><span class="tnum">٣</span> الثمن النفسي الخفي</a></li>
+      <li><a href="#social"><span class="tnum">٤</span> الأثر الاجتماعي</a></li>
+      <li><a href="#arab"><span class="tnum">٥</span> الحالة العربية</a></li>
+      <li><a href="#resilience"><span class="tnum">٦</span> الصمود والتعافي</a></li>
+      <li><a href="#faq"><span class="tnum">✦</span> أسئلة شائعة</a></li>
+    </ul>
+  </div>
+
+  <div class="sb-card">
+    <div class="sb-head">🏷️ الموضوعات</div>
+    <div style="padding:.8rem 1rem;display:flex;flex-wrap:wrap;gap:.4rem">
+      <span style="background:var(--terra-bg);color:var(--terra);border:1px solid rgba(200,122,42,.25);padding:.2rem .6rem;border-radius:12px;font-family:var(--sans);font-size:.66rem;font-weight:600">التضخم والنفس</span>
+      <span style="background:var(--cream);color:var(--mid);border:1px solid var(--rule);padding:.2rem .6rem;border-radius:12px;font-family:var(--sans);font-size:.66rem">القلق المالي</span>
+      <span style="background:var(--cream);color:var(--mid);border:1px solid var(--rule);padding:.2rem .6rem;border-radius:12px;font-family:var(--sans);font-size:.66rem">اقتصاد سلوكي</span>
+      <span style="background:var(--cream);color:var(--mid);border:1px solid var(--rule);padding:.2rem .6rem;border-radius:12px;font-family:var(--sans);font-size:.66rem">ضغط الغلاء</span>
+    </div>
+  </div>
+</aside>
+</div>
+
+<footer><div class="fi">
+  <span>© 2026 geopolô · ar.geopolo.com · جميع الحقوق محفوظة</span>
+  <div class="fl"><a href="/">الرئيسية</a><a href="/sante.html">صحة نفسية</a><a href="https://fr.geopolo.com">🇫🇷 Français</a></div>
+</div></footer>
+
+<script>
+const pb=document.getElementById('pb');
+window.addEventListener('scroll',()=>{
+  const d=document.documentElement;
+  const pct=d.scrollTop/(d.scrollHeight-d.clientHeight)*100;
+  pb.style.width=pct+'%';
+  const fill=document.getElementById('read-fill');
+  const label=document.getElementById('read-label');
+  if(fill)fill.style.width=pct+'%';
+  if(label){
+    if(pct<5)label.textContent='ابدأ القراءة ↓';
+    else if(pct<30)label.textContent=Math.round(pct)+'٪ — في البداية';
+    else if(pct<60)label.textContent=Math.round(pct)+'٪ — في المنتصف';
+    else if(pct<90)label.textContent=Math.round(pct)+'٪ — تقترب من النهاية';
+    else label.textContent='✓ قراءة اكتملت';
+  }
+});
+const obs=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('vis');obs.unobserve(e.target)}});
+},{threshold:.06});
+document.querySelectorAll('.fu').forEach(el=>obs.observe(el));
+function toggleFaq(btn){
+  const item=btn.closest('.faq-item'),isOpen=item.classList.contains('open');
+  document.querySelectorAll('.faq-item').forEach(i=>i.classList.remove('open'));
+  if(!isOpen)item.classList.add('open');
+}
+const sections=document.querySelectorAll('h2[id]');
+const tocLinks=document.querySelectorAll('.toc-list a');
+const tocObs=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){
+      tocLinks.forEach(a=>a.style.fontWeight='');
+      const a=document.querySelector(`.toc-list a[href="#${e.target.id}"]`);
+      if(a)a.style.fontWeight='700';
+    }
+  });
+},{rootMargin:'-20% 0px -70% 0px'});
+sections.forEach(s=>tocObs.observe(s));
+</script>
+</body>
+</html>
