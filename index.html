@@ -3,23 +3,23 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
-  <title>Geopolo — مجلة جيوسياسية استراتيجية مستقلة | تحليلات معمّقة</title>
+  <title>Geopolo - مجلة جيوسياسية استراتيجية مستقلة | تحليلات معمّقة</title>
   <meta name="description" content="Geopolo: مجلة جيوسياسية استراتيجية مستقلة. تحليلات معمّقة في الشرق الأوسط، أفريقيا، أوروبا، آسيا وأمريكا. ثقافة، مجلة، نشرة إخبارية."/>
   <meta name="author" content="Geopolo"/>
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"/>
-  <meta property="og:title" content="Geopolo — تحليلات جيوسياسية استراتيجية مستقلة"/>
-  <meta property="og:description" content="مجلة Geopolo — تحليلات جيوسياسية استراتيجية معمّقة في الشرق الأوسط، أفريقيا، أوروبا، آسيا وأمريكا."/>
+  <meta property="og:title" content="Geopolo - تحليلات جيوسياسية استراتيجية مستقلة"/>
+  <meta property="og:description" content="مجلة Geopolo - تحليلات جيوسياسية استراتيجية معمّقة في الشرق الأوسط، أفريقيا، أوروبا، آسيا وأمريكا."/>
   <meta property="og:image" content="https://pub-a7b1a75f72ab40548a0709f708ca2678.r2.dev/le-monde.png"/>
   <meta property="og:image:width" content="1200"/>
   <meta property="og:image:height" content="630"/>
-  <meta property="og:image:alt" content="geopolô — تحليلات جيوسياسية"/>/>
+  <meta property="og:image:alt" content="geopolô - تحليلات جيوسياسية"/>/>
   <meta property="og:type" content="website"/>
   <meta property="og:url" content="https://ar.geopolo.com/"/>
   <meta property="og:site_name" content="Geopolo"/>
   <meta property="og:locale" content="ar_AR"/>
   <meta name="twitter:card" content="summary_large_image"/>
-  <meta name="twitter:title" content="Geopolo — تحليلات جيوسياسية استراتيجية"/>
-  <meta name="twitter:description" content="مجلة Geopolo — تحليلات جيوسياسية استراتيجية معمّقة"/>
+  <meta name="twitter:title" content="Geopolo - تحليلات جيوسياسية استراتيجية"/>
+  <meta name="twitter:description" content="مجلة Geopolo - تحليلات جيوسياسية استراتيجية معمّقة"/>
   <meta name="twitter:image" content="https://pub-a7b1a75f72ab40548a0709f708ca2678.r2.dev/le-monde.png"/>
   <link rel="canonical" href="https://ar.geopolo.com/"/>
   <link rel="alternate" hreflang="ar" href="https://ar.geopolo.com/"/>
@@ -80,7 +80,7 @@ function subscribeGeo(form, lang) {
   .then(function(r) { return r.json(); })
   .then(function(data) {
     if (data.message || data.success) {
-      msg.innerHTML = '<span style="color:#1a8a6e;font-family:var(--sans,sans-serif);font-size:.85rem">✅ تم الاشتراك بنجاح — شكراً!</span>';
+      msg.innerHTML = '<span style="color:#1a8a6e;font-family:var(--sans,sans-serif);font-size:.85rem">✅ تم الاشتراك بنجاح - شكراً!</span>';
       if(input) input.value = '';
       if(btn)   { btn.textContent = '✓ تم'; btn.style.background='#1a8a6e'; }
     } else {
@@ -94,7 +94,7 @@ function subscribeGeo(form, lang) {
     }
   })
   .catch(function() {
-    msg.innerHTML = '<span style="color:#e05a2b;font-family:var(--sans,sans-serif);font-size:.85rem">❌ خطأ في الاتصال — حاول مجدداً</span>';
+    msg.innerHTML = '<span style="color:#e05a2b;font-family:var(--sans,sans-serif);font-size:.85rem">❌ خطأ في الاتصال - حاول مجدداً</span>';
     if(btn) { btn.textContent = origText; btn.disabled = false; }
   });
   return false;
@@ -105,7 +105,7 @@ function subscribeGeo(form, lang) {
 
   <style>
   /* ═══════════════════════════════════════════════════════════════
-     DESIGN TOKENS — Premium Light Mode
+     DESIGN TOKENS - Premium Light Mode
   ═══════════════════════════════════════════════════════════════ */
   :root{
     --bg:#f8f7f4;
@@ -930,16 +930,16 @@ function subscribeGeo(form, lang) {
 
 
 /* ═══ BUG FIXES ═══ */
-/* Fix 1: nested .article-body — inner element must always be visible */
+/* Fix 1: nested .article-body - inner element must always be visible */
 .article-body .article-body,
 .article-body article,
 .article-body .fade-up,
 .article-body .fu{opacity:1!important;transform:none!important;transition:none!important}
-/* Fix 1b: safe fallback — content visible even if JS fails */
+/* Fix 1b: safe fallback - content visible even if JS fails */
 .article-body{opacity:1;transform:none}
 .article-body.will-animate{opacity:0;transform:translateY(20px);transition:opacity .6s,transform .6s}
 .article-body.will-animate.visible{opacity:1;transform:none}
-/* Fix 3: newsletter form — pseudo overlay must not block inputs */
+/* Fix 3: newsletter form - pseudo overlay must not block inputs */
 .nl-cta::before{pointer-events:none!important}
 .nl-cta,.nl-cta *{position:relative}
 .nl-input,.nl-btn{position:relative;z-index:10;pointer-events:all!important}
@@ -960,7 +960,7 @@ function subscribeGeo(form, lang) {
 <!-- ═══ TOPBAR ═══ -->
 <div class="topbar">
   <span class="topbar-brand">
-    <span class="t-geo">Geo</span><span class="t-polo">polo</span> —
+    <span class="t-geo">Geo</span><span class="t-polo">polo</span> -
     القوى والصراعات في القرن الحادي والعشرين
   </span>
   <div class="topbar-links">
@@ -1010,7 +1010,7 @@ function subscribeGeo(form, lang) {
   <div class="hero__content">
     <div class="hero__badge">
       <span class="hero__badge-dot"></span>
-      تحليل مستمر — 2025
+      تحليل مستمر - 2025
     </div>
     <h1 class="hero__title">
       وراء الأحداث<br>
@@ -1028,7 +1028,7 @@ function subscribeGeo(form, lang) {
       <div class="author-card__avatar">ن.ص</div>
       <div class="author-card__info">
         <div class="author-card__name">ناصر الصبري</div>
-        <div class="author-card__role">رئيس التحرير — Geopolo</div>
+        <div class="author-card__role">رئيس التحرير - Geopolo</div>
       </div>
     </div>
   </div>
@@ -1043,14 +1043,14 @@ function subscribeGeo(form, lang) {
     <span class="stats-bar__sep">·</span>
     <span class="stats-bar__item"><strong>10</strong> أقسام متخصصة</span>
     <span class="stats-bar__sep">·</span>
-    <span class="stats-bar__item"><strong>ar.geopolo.com</strong> — تحليل مستقل</span>
+    <span class="stats-bar__item"><strong>ar.geopolo.com</strong> - تحليل مستقل</span>
   </div>
 </div>
 
 <!-- ═══ MAIN CONTENT ═══ -->
 <main>
 
-  <!-- §A — FEATURED ARTICLE -->
+  <!-- §A - FEATURED ARTICLE -->
   <div class="wrap">
     <div class="section-head fade-up">
       <h2><span class="accent" style="background:var(--amerique)"></span>مقال الأسبوع</h2>
@@ -1091,7 +1091,7 @@ function subscribeGeo(form, lang) {
       </div>
     </a>
 
-    <!-- §B — GRID + SIDEBAR -->
+    <!-- §B - GRID + SIDEBAR -->
     <div class="layout-with-aside">
       <div>
         <div class="section-head fade-up" style="margin-top:1rem">
@@ -1243,7 +1243,7 @@ function subscribeGeo(form, lang) {
 
   <hr class="section-sep"/>
 
-  <!-- §C — REGIONS -->
+  <!-- §C - REGIONS -->
   <div class="wrap">
     <div class="section-head fade-up">
       <h2><span class="accent" style="background:var(--or)"></span>استكشف المناطق والمواضيع</h2>
@@ -1302,7 +1302,7 @@ function subscribeGeo(form, lang) {
 
   <hr class="section-sep"/>
 
-  <!-- §D — ARAB COUNTRIES + YEMEN -->
+  <!-- §D - ARAB COUNTRIES + YEMEN -->
   <div class="wrap">
     <div class="two-col">
       <div>
@@ -1396,15 +1396,15 @@ function subscribeGeo(form, lang) {
 
   <hr class="section-sep"/>
 
-  <!-- §E — EDITORIAL QUOTE -->
+  <!-- §E - EDITORIAL QUOTE -->
   <div class="quote-band">
     <blockquote>
-      الصراع الجيوسياسي ليس استثناءً في التاريخ — إنه الحالة الطبيعية للنظام الدولي في غياب سلطة عليا.
+      الصراع الجيوسياسي ليس استثناءً في التاريخ - إنه الحالة الطبيعية للنظام الدولي في غياب سلطة عليا.
     </blockquote>
-    <cite>— Geopolo · تحليلات جيوسياسية استراتيجية مستقلة</cite>
+    <cite>- Geopolo · تحليلات جيوسياسية استراتيجية مستقلة</cite>
   </div>
 
-  <!-- §F — CULTURE SECTION 🎭 -->
+  <!-- §F - CULTURE SECTION 🎭 -->
   <div class="wrap">
     <div class="section-head fade-up">
       <h2><span class="accent" style="background:var(--culture)"></span>🎭 ثقافة</h2>
@@ -1481,7 +1481,7 @@ function subscribeGeo(form, lang) {
 
   <hr class="section-sep"/>
 
-  <!-- §G — MAGAZINE SECTION 📚 -->
+  <!-- §G - MAGAZINE SECTION 📚 -->
   <div class="wrap">
     <div class="section-head fade-up">
       <h2><span class="accent" style="background:var(--magazine)"></span>📚 المجلة</h2>
@@ -1492,7 +1492,7 @@ function subscribeGeo(form, lang) {
       <div class="mag-card fade-up">
         <img class="mag-card__cover" src="https://images.unsplash.com/photo-1504711434969-e33886168d5c?w=600&q=70" alt="العدد الأول" loading="lazy"/>
         <div class="mag-card__body">
-          <div class="mag-card__edition">العدد 01 — 2025</div>
+          <div class="mag-card__edition">العدد 01 - 2025</div>
           <div class="mag-card__title">الشرق الأوسط الجديد: خرائط القوة المتغيرة</div>
           <div class="mag-card__desc">تحليل شامل لتحولات القوة في المنطقة العربية وتأثيراتها على النظام الدولي.</div>
           <div class="mag-card__price">$9.99</div>
@@ -1506,7 +1506,7 @@ function subscribeGeo(form, lang) {
       <div class="mag-card fade-up">
         <img class="mag-card__cover" src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=600&q=70" alt="العدد الثاني" loading="lazy"/>
         <div class="mag-card__body">
-          <div class="mag-card__edition">العدد 02 — 2025</div>
+          <div class="mag-card__edition">العدد 02 - 2025</div>
           <div class="mag-card__title">الحروب التكنولوجية: من يتحكم في المستقبل؟</div>
           <div class="mag-card__desc">ملف خاص حول التنافس التكنولوجي بين القوى العظمى وتأثيره على الجيوسياسة.</div>
           <div class="mag-card__price">$9.99</div>
@@ -1520,7 +1520,7 @@ function subscribeGeo(form, lang) {
       <div class="mag-card fade-up">
         <img class="mag-card__cover" src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=600&q=70" alt="العدد الثالث" loading="lazy"/>
         <div class="mag-card__body">
-          <div class="mag-card__edition">العدد 03 — 2025</div>
+          <div class="mag-card__edition">العدد 03 - 2025</div>
           <div class="mag-card__title">أفريقيا: القارة التي تعيد رسم قواعد اللعبة</div>
           <div class="mag-card__desc">كيف تتحول أفريقيا إلى ساحة تنافس كبرى بين القوى العالمية.</div>
           <div class="mag-card__price">$9.99</div>
@@ -1536,7 +1536,7 @@ function subscribeGeo(form, lang) {
 
   <hr class="section-sep"/>
 
-  <!-- §H — SANTÉ + VOYAGE -->
+  <!-- §H - SANTÉ + VOYAGE -->
   <div class="wrap">
     <div class="section-head fade-up">
       <h2><span class="accent" style="background:var(--sante)"></span>مواضيع جديدة</h2>
@@ -1586,7 +1586,7 @@ function subscribeGeo(form, lang) {
 
   <hr class="section-sep"/>
 
-  <!-- §I — CROSS-BORDER DOSSIERS -->
+  <!-- §I - CROSS-BORDER DOSSIERS -->
   <div class="wrap">
     <div class="section-head fade-up">
       <h2><span class="accent" style="background:var(--asie)"></span>ملفات عابرة للحدود</h2>
@@ -1643,7 +1643,7 @@ function subscribeGeo(form, lang) {
 
   <hr class="section-sep"/>
 
-  <!-- §J — RELATED ARTICLES -->
+  <!-- §J - RELATED ARTICLES -->
   <div class="wrap">
     <div class="section-head fade-up">
       <h2><span class="accent" style="background:var(--red)"></span>مقالات ذات صلة</h2>
@@ -1668,7 +1668,7 @@ function subscribeGeo(form, lang) {
     </div>
   </div>
 
-  <!-- §K — NEWSLETTER -->
+  <!-- §K - NEWSLETTER -->
   <section class="newsletter-section">
     <div class="newsletter__inner fade-up">
       <span class="newsletter__icon">📬</span>
