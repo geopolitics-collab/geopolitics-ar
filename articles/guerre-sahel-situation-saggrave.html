@@ -9,6 +9,41 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Arabic:wght@300;400;600;700;900&family=Noto+Naskh+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet"/>
   <style>
+:root{--nav-accent:#A0461A; --brand:#A0461A;}
+/* AR.GEOPOLITIQUE Design System v1.0 */
+:root{--navy-900:#0E1A2B;--navy-700:#1E2F45;--navy-600:#263B54;--navy-500:#3A5470;--navy-400:#5C7A96;--navy-200:#B8CCDA;--navy-100:#DDE8F0;--navy-50:#F0F5F9;--gold-500:#C4952A;--gold-400:#D4AA4A;--gold-300:#E4C472;--gold-100:#FBF3DC;--paper:#F9F7F2;--paper-2:#F3F0E8;--paper-3:#EAE5D8;--ink-900:#0A0C0E;--ink-700:#1E2630;--ink-500:#4A5568;--ink-300:#8A94A6;--ink-100:#C8D0DC;--shadow-sm:0 1px 3px rgba(14,26,43,.06),0 1px 2px rgba(14,26,43,.04);--shadow-md:0 4px 16px rgba(14,26,43,.08),0 2px 6px rgba(14,26,43,.05);--ease:cubic-bezier(.4,0,.2,1);--t-fast:150ms;--t-base:250ms;--t-slow:400ms;--bg:var(--paper);--surface:#fff;--cream:var(--paper-2);--rule:var(--paper-3);--accent:var(--gold-500);--or:var(--gold-500);--serif:'Noto Serif Arabic',Georgia,serif;--sans:'Noto Naskh Arabic',sans-serif}
+body{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
+.hero img{filter:brightness(.38) saturate(1.1);transition:filter var(--t-slow) var(--ease)}
+.hero:hover img{filter:brightness(.44) saturate(1.15)}
+.hero-overlay{background:linear-gradient(105deg,rgba(10,12,14,.96) 0%,rgba(10,12,14,.65) 50%,transparent 100%)}
+.body p{line-height:2.05;letter-spacing:.01em}
+.body h2{font-size:clamp(1.3rem,2.5vw,1.7rem);font-weight:800;border-top:1.5px solid var(--ink-100);padding-top:.7rem;margin-top:2.8rem;margin-bottom:.8rem}
+.body blockquote,.quote{border-right:3px solid var(--gold-500);background:var(--paper-2);padding:1.6rem 2rem 1.6rem 1.6rem;margin:2.2rem 0;position:relative}
+.body blockquote::before,.quote::before{content:'"';font-size:4.5rem;font-style:normal;color:var(--gold-300);position:absolute;top:-.4rem;right:1.2rem;line-height:1;opacity:.5;font-family:var(--serif)}
+.verdict{overflow:hidden;position:relative}
+.verdict::after{content:'';position:absolute;top:0;right:0;width:120px;height:100%;background:linear-gradient(270deg,rgba(196,149,42,.07),transparent);pointer-events:none}
+.vt{background:var(--navy-900);font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;display:flex;align-items:center;gap:.5rem}
+.vt::before{content:'';width:16px;height:1.5px;background:var(--gold-400)}
+.rc,.card{transition:transform var(--t-base) var(--ease),box-shadow var(--t-base) var(--ease)}
+.rc:hover,.card:hover{transform:translateY(-3px);box-shadow:var(--shadow-md)}
+.sc{transition:background var(--t-fast)}.sc:hover{background:var(--navy-50)}
+.scn{color:var(--nav-accent,var(--navy-900))}
+.also a{display:flex;justify-content:space-between;align-items:center;padding:.6rem 0;transition:color var(--t-fast)}
+.also a::after{content:'←';font-size:.75rem;opacity:.4;transition:opacity var(--t-fast)}
+.also a:hover::after{opacity:1}
+.fqi{transition:background var(--t-fast)}.fqi:hover{background:var(--paper-2)}
+.nl-btn{letter-spacing:.04em}
+.nl-input:focus{border-color:var(--navy-400);box-shadow:0 0 0 3px rgba(14,26,43,.06);outline:none}
+.author-card-v2{box-shadow:var(--shadow-sm);transition:box-shadow var(--t-base) var(--ease)}
+.author-card-v2:hover{box-shadow:var(--shadow-md)}
+.share-btn{transition:opacity var(--t-fast),transform var(--t-fast)}
+.share-btn:hover{opacity:.88;transform:translateY(-1px)}
+.share-btn:active{transform:translateY(0)}
+.tl2 a.toc-active{border-right:2px solid var(--nav-accent,var(--navy-900));padding-right:.8rem}
+.site-header{box-shadow:0 1px 0 var(--paper-3)}
+#pb{background:linear-gradient(90deg,var(--gold-500),var(--navy-600))}
+.geo-footer{border-top:3px solid var(--gold-500)}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important}}
     :root{
       --ink:#1a1a2a; --paper:#ffffff; --offwhite:#f8f7f4; --cream:#f3f0e8;
       --mid:#5a5870; --light:#9a96b0; --rule:#e2ddd8;
