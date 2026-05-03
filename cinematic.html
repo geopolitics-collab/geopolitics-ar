@@ -1,0 +1,1084 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>GeoPolo — مجلة جيوسياسية استراتيجية</title>
+<meta name="description" content="تحليلات جيوسياسية معمّقة تكشف الخيوط الخفية التي تُحرّك الصراعات والاقتصادات والحضارات."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Noto+Naskh+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+
+<style>
+/* ═══════════════════════════════════════
+   TOKENS
+═══════════════════════════════════════ */
+:root {
+  --black:  #040302;
+  --dark:   #0c0804;
+  --brown:  #18100a;
+  --mid:    #2a1a0e;
+  --warm:   #4a2e14;
+  --gold:   #c8920a;
+  --gold-l: #d4a843;
+  --gold-d: #7a5c08;
+  --cream:  #e8d5a3;
+  --sepia:  #a88060;
+  --text:   #c8b890;
+  --serif:  'Amiri', Georgia, serif;
+  --sans:   'Noto Naskh Arabic', sans-serif;
+}
+
+*,*::before,*::after { box-sizing:border-box; margin:0; padding:0; }
+
+html { scroll-behavior:smooth; font-size:16px; }
+
+body {
+  background: var(--black);
+  color: var(--text);
+  font-family: var(--sans);
+  direction: rtl;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+a { color:inherit; text-decoration:none; }
+img { display:block; max-width:100%; }
+
+/* ═══════════════════════════════════════
+   FILM GRAIN  (SVG noise via CSS)
+═══════════════════════════════════════ */
+.grain {
+  position: fixed; inset:0; z-index:60;
+  pointer-events: none; opacity:.05;
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)'/%3E%3C/svg%3E");
+  animation: grain-anim .12s steps(1) infinite;
+}
+@keyframes grain-anim {
+  0%  { transform:translate(0,0) }   14% { transform:translate(-2%,-3%) }
+  28% { transform:translate(3%,2%) } 42% { transform:translate(-1%,4%) }
+  57% { transform:translate(4%,-2%)} 71% { transform:translate(-3%,1%) }
+  85% { transform:translate(2%,-4%)} 100%{ transform:translate(-1%,3%) }
+}
+
+/* ═══════════════════════════════════════
+   VIGNETTE
+═══════════════════════════════════════ */
+.vignette {
+  position: fixed; inset:0; z-index:55; pointer-events:none;
+  background: radial-gradient(ellipse at 50% 50%,
+    transparent 30%, rgba(4,3,2,.55) 70%, rgba(4,3,2,.92) 100%);
+}
+
+/* ═══════════════════════════════════════
+   NAVIGATION
+═══════════════════════════════════════ */
+.nav {
+  position: fixed; top:0; left:0; right:0; z-index:100;
+  display: flex; align-items:center; justify-content:space-between;
+  padding: 1.1rem 2.5rem;
+  background: linear-gradient(to bottom, rgba(4,3,2,.9) 0%, transparent 100%);
+  opacity: 0; /* GSAP */
+}
+
+.nav__brand {
+  font-family: var(--serif);
+  font-size: 1.55rem; font-weight:700; line-height:1;
+  color: var(--gold); letter-spacing:.01em;
+}
+.nav__brand em { color:var(--cream); font-style:normal; }
+
+.nav__links {
+  display: flex; gap:1.6rem; list-style:none;
+  flex-direction: row-reverse; flex-wrap:nowrap;
+}
+.nav__links a {
+  font-size:.74rem; font-weight:600; letter-spacing:.04em;
+  color: rgba(200,176,128,.5);
+  position:relative; transition: color .3s;
+}
+.nav__links a::after {
+  content:''; position:absolute;
+  bottom:-3px; right:0; left:auto;
+  width:0; height:1px; background:var(--gold);
+  transition: width .35s;
+}
+.nav__links a:hover { color:var(--gold); }
+.nav__links a:hover::after { width:100%; }
+
+/* ═══════════════════════════════════════
+   HERO
+═══════════════════════════════════════ */
+#hero {
+  position:relative; width:100%; height:100vh;
+  overflow:hidden; background:var(--black);
+}
+
+/* Three.js canvas (injected by JS) */
+#three-canvas {
+  position:absolute; inset:0;
+  width:100% !important; height:100% !important;
+  z-index:1;
+}
+
+/* Root canvas */
+#root-canvas {
+  position:absolute; inset:0;
+  width:100%; height:100%;
+  z-index:2; pointer-events:none;
+  opacity:0; /* GSAP */
+}
+
+/* Hero text */
+.hero-content {
+  position:absolute; inset:0; z-index:10;
+  display:flex; flex-direction:column;
+  align-items:center; justify-content:center;
+  text-align:center; pointer-events:none;
+  padding:0 1.5rem;
+}
+
+.hero-eyebrow {
+  font-size:.64rem; font-weight:600;
+  letter-spacing:.28em; color:var(--gold);
+  text-transform:uppercase; margin-bottom:1.3rem;
+  opacity:0; /* GSAP */
+}
+
+.hero-title {
+  font-family:var(--serif);
+  font-size:clamp(2.6rem,7vw,5.8rem);
+  font-weight:700; color:var(--cream);
+  line-height:1.15; margin-bottom:1rem;
+  opacity:0; /* GSAP */
+}
+.hero-title .accent { color:var(--gold); }
+
+.hero-sub {
+  font-size:clamp(.82rem,1.4vw,1rem);
+  color:var(--sepia); max-width:480px;
+  line-height:2; margin-bottom:2.5rem;
+  opacity:0; /* GSAP */
+}
+
+.hero-cta {
+  display:inline-flex; align-items:center; gap:.7rem;
+  font-family:var(--sans); font-size:.8rem; font-weight:700;
+  letter-spacing:.08em; color:var(--black);
+  background:var(--gold); padding:.8rem 2.2rem;
+  border:none; cursor:pointer; pointer-events:all;
+  transition: background .3s, transform .25s, box-shadow .3s;
+  opacity:0; /* GSAP */
+}
+.hero-cta:hover {
+  background:var(--gold-l); transform:translateY(-2px);
+  box-shadow: 0 10px 30px rgba(200,146,10,.3);
+}
+
+/* Scroll cue */
+.scroll-cue {
+  position:absolute; bottom:2.2rem; left:50%;
+  transform:translateX(-50%);
+  z-index:10; display:flex;
+  flex-direction:column; align-items:center; gap:.5rem;
+  opacity:0; /* GSAP */
+}
+.scroll-cue__line {
+  width:1px; height:44px;
+  background:linear-gradient(to bottom,var(--gold),transparent);
+  animation: pulse-line 2s ease-in-out infinite;
+}
+.scroll-cue__label {
+  font-size:.58rem; letter-spacing:.18em; color:var(--gold-d);
+}
+@keyframes pulse-line {
+  0%,100% { opacity:.3; transform:scaleY(.9); }
+  50% { opacity:1; transform:scaleY(1.1); }
+}
+
+/* ═══════════════════════════════════════
+   DIVIDER
+═══════════════════════════════════════ */
+.divider {
+  width:100%; height:1px; margin:0;
+  background:linear-gradient(to right,transparent,rgba(200,146,10,.3),transparent);
+}
+
+/* ═══════════════════════════════════════
+   SECTION BASE
+═══════════════════════════════════════ */
+.section {
+  max-width:1180px; margin:0 auto;
+  padding:6rem 2.5rem;
+}
+
+.section-label {
+  font-size:.6rem; font-weight:700;
+  letter-spacing:.26em; text-transform:uppercase;
+  color:var(--gold); margin-bottom:.9rem;
+}
+
+.section-title {
+  font-family:var(--serif);
+  font-size:clamp(1.7rem,3.5vw,2.8rem);
+  color:var(--cream); line-height:1.25;
+  margin-bottom:1.2rem;
+}
+
+/* ═══════════════════════════════════════
+   REGIONS GRID
+═══════════════════════════════════════ */
+.regions {
+  display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(180px,1fr));
+  gap:1px; margin-top:3rem;
+  background:rgba(200,146,10,.08);
+  border:1px solid rgba(200,146,10,.08);
+}
+
+.region-card {
+  background:var(--dark); padding:1.8rem 1.4rem;
+  display:flex; flex-direction:column; gap:.4rem;
+  cursor:pointer; position:relative; overflow:hidden;
+  transition: background .35s;
+}
+.region-card::before {
+  content:''; position:absolute; inset:0;
+  background:linear-gradient(135deg,var(--gold),transparent 55%);
+  opacity:0; transition:opacity .4s;
+}
+.region-card:hover { background:var(--brown); }
+.region-card:hover::before { opacity:.07; }
+
+.region-card__icon { font-size:1.35rem; line-height:1; margin-bottom:.2rem; }
+.region-card__name {
+  font-family:var(--serif); font-size:1rem;
+  color:var(--gold-l); font-weight:700;
+}
+.region-card__count { font-size:.65rem; color:var(--sepia); }
+.region-card__arrow {
+  margin-top:auto; padding-top:.8rem;
+  font-size:.78rem; color:var(--gold-d);
+  transition:transform .3s;
+}
+.region-card:hover .region-card__arrow { transform:translateX(-5px); }
+
+/* ═══════════════════════════════════════
+   MANIFESTO
+═══════════════════════════════════════ */
+.manifesto {
+  background:var(--brown);
+  border-top:1px solid rgba(200,146,10,.12);
+  border-bottom:1px solid rgba(200,146,10,.12);
+  padding:7rem 2.5rem; text-align:center;
+  position:relative; overflow:hidden;
+}
+.manifesto::before {
+  content:'"';
+  position:absolute; top:-3rem; left:50%;
+  transform:translateX(-50%);
+  font-family:var(--serif); font-size:22rem;
+  color:var(--gold); opacity:.025;
+  line-height:1; pointer-events:none;
+}
+.manifesto__text {
+  font-family:var(--serif);
+  font-size:clamp(1.2rem,2.6vw,1.9rem);
+  color:var(--cream); line-height:1.85;
+  max-width:720px; margin:0 auto 1.4rem;
+}
+.manifesto__by {
+  font-size:.68rem; letter-spacing:.14em; color:var(--gold-d);
+}
+
+/* ═══════════════════════════════════════
+   ARTICLE CARDS
+═══════════════════════════════════════ */
+.articles-grid {
+  display:grid;
+  grid-template-columns:1.6fr 1fr 1fr;
+  gap:1.5rem; margin-top:2.8rem;
+}
+
+.art-card {
+  border:1px solid rgba(200,146,10,.1);
+  background:var(--dark); overflow:hidden;
+  transition:border-color .35s,transform .35s;
+  display:flex; flex-direction:column;
+}
+.art-card:hover {
+  border-color:rgba(200,146,10,.35);
+  transform:translateY(-5px);
+}
+
+.art-card__thumb {
+  width:100%; aspect-ratio:16/9;
+  background:var(--brown);
+  display:flex; align-items:center; justify-content:center;
+  font-size:2.2rem; color:rgba(200,146,10,.25);
+  overflow:hidden; position:relative;
+}
+.art-card__thumb::after {
+  content:''; position:absolute; inset:0;
+  background:linear-gradient(to bottom,transparent 40%,var(--dark) 100%);
+}
+
+.art-card__body { padding:1.3rem 1.2rem; flex:1; display:flex; flex-direction:column; gap:.45rem; }
+
+.art-card__tag {
+  font-size:.56rem; font-weight:700;
+  letter-spacing:.12em; text-transform:uppercase;
+  color:var(--gold);
+}
+.art-card__title {
+  font-family:var(--serif); font-size:.97rem;
+  color:var(--cream); line-height:1.5; flex:1;
+}
+.art-card__excerpt {
+  font-size:.76rem; color:var(--sepia); line-height:1.8;
+  display:-webkit-box; -webkit-line-clamp:3;
+  -webkit-box-orient:vertical; overflow:hidden;
+}
+.art-card__read {
+  font-size:.65rem; color:var(--gold-d);
+  padding-top:.7rem;
+  border-top:1px solid rgba(200,146,10,.1);
+  transition:color .3s;
+}
+.art-card:hover .art-card__read { color:var(--gold); }
+
+/* ═══════════════════════════════════════
+   NEWSLETTER
+═══════════════════════════════════════ */
+.newsletter {
+  background:linear-gradient(135deg,var(--dark) 0%,var(--brown) 100%);
+  border-top:1px solid rgba(200,146,10,.1);
+  padding:5.5rem 2.5rem; text-align:center;
+}
+.newsletter h3 {
+  font-family:var(--serif);
+  font-size:clamp(1.4rem,2.8vw,2rem);
+  color:var(--cream); margin-bottom:.6rem;
+}
+.newsletter p { font-size:.82rem; color:var(--sepia); margin-bottom:2rem; }
+
+.nl-form {
+  display:flex; gap:.4rem;
+  max-width:420px; margin:0 auto; direction:rtl;
+}
+.nl-form input {
+  flex:1; background:rgba(255,255,255,.04);
+  border:1px solid rgba(200,146,10,.2);
+  color:var(--cream); font-family:var(--sans);
+  font-size:.82rem; padding:.72rem 1rem; outline:none;
+  transition:border-color .3s;
+}
+.nl-form input:focus { border-color:var(--gold); }
+.nl-form button {
+  background:var(--gold); color:var(--black);
+  border:none; font-family:var(--sans);
+  font-size:.8rem; font-weight:700;
+  padding:.72rem 1.5rem; cursor:pointer;
+  transition:background .3s; white-space:nowrap;
+}
+.nl-form button:hover { background:var(--gold-l); }
+
+/* ═══════════════════════════════════════
+   FOOTER
+═══════════════════════════════════════ */
+footer {
+  background:var(--black);
+  border-top:1px solid rgba(200,146,10,.07);
+  padding:2.5rem 2.5rem;
+  display:flex; justify-content:space-between;
+  align-items:center; flex-wrap:wrap; gap:1rem;
+}
+.footer-brand {
+  font-family:var(--serif); font-size:1.2rem; color:var(--gold);
+}
+.footer-brand span { color:var(--cream); }
+.footer-copy { font-size:.66rem; color:rgba(200,176,128,.25); }
+
+/* ═══════════════════════════════════════
+   RESPONSIVE
+═══════════════════════════════════════ */
+@media(max-width:900px) {
+  .articles-grid { grid-template-columns:1fr 1fr; }
+  .articles-grid .art-card:first-child { grid-column:1/-1; }
+}
+@media(max-width:600px) {
+  .nav__links { display:none; }
+  .articles-grid { grid-template-columns:1fr; }
+  .articles-grid .art-card:first-child { grid-column:auto; }
+}
+</style>
+</head>
+<body>
+
+<!-- ── Atmosphere overlays ── -->
+<div class="grain" aria-hidden="true"></div>
+<div class="vignette" aria-hidden="true"></div>
+
+<!-- ══════════════════════════════
+     NAVIGATION
+══════════════════════════════ -->
+<nav class="nav" id="nav">
+  <div class="nav__brand">geo<em>polo</em></div>
+  <ul class="nav__links">
+    <li><a href="#hero">الرئيسية</a></li>
+    <li><a href="#regions">أفريقيا</a></li>
+    <li><a href="#regions">أمريكا</a></li>
+    <li><a href="#regions">أوروبا</a></li>
+    <li><a href="#regions">آسيا</a></li>
+    <li><a href="#regions">الشرق الأوسط</a></li>
+    <li><a href="#regions">الأقطار العربية</a></li>
+    <li><a href="#articles">ثقافة</a></li>
+    <li><a href="#articles">مجلة</a></li>
+    <li><a href="#articles">صحة</a></li>
+    <li><a href="#articles">سفر</a></li>
+  </ul>
+</nav>
+
+<!-- ══════════════════════════════
+     HERO
+══════════════════════════════ -->
+<section id="hero">
+  <!-- Three.js canvas injected here by JS -->
+  <canvas id="root-canvas"></canvas>
+
+  <div class="hero-content">
+    <div class="hero-eyebrow" id="hero-eyebrow">مجلة جيوسياسية · تحليل وعمق</div>
+    <h1 class="hero-title" id="hero-title">
+      فهم <span class="accent">العالم</span><br>من جذوره
+    </h1>
+    <p class="hero-sub" id="hero-sub">
+      تحليلات معمّقة تكشف الخيوط الخفية التي تُحرّك<br>الصراعات، الاقتصادات، والحضارات.
+    </p>
+    <a href="#regions" class="hero-cta" id="hero-cta">اكتشف التحليلات ←</a>
+  </div>
+
+  <div class="scroll-cue" id="scroll-cue">
+    <div class="scroll-cue__line"></div>
+    <span class="scroll-cue__label">مرر للأسفل</span>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ══════════════════════════════
+     REGIONS
+══════════════════════════════ -->
+<section class="section" id="regions">
+  <div class="section-label">استكشف العالم</div>
+  <h2 class="section-title">التحليلات حسب المنطقة</h2>
+  <div class="regions">
+    <div class="region-card"><div class="region-card__icon">🌍</div><div class="region-card__name">الشرق الأوسط</div><div class="region-card__count">+38 تحليلاً</div><div class="region-card__arrow">←</div></div>
+    <div class="region-card"><div class="region-card__icon">🌍</div><div class="region-card__name">أفريقيا</div><div class="region-card__count">+24 تحليلاً</div><div class="region-card__arrow">←</div></div>
+    <div class="region-card"><div class="region-card__icon">🌏</div><div class="region-card__name">آسيا</div><div class="region-card__count">+31 تحليلاً</div><div class="region-card__arrow">←</div></div>
+    <div class="region-card"><div class="region-card__icon">🌎</div><div class="region-card__name">أمريكا</div><div class="region-card__count">+19 تحليلاً</div><div class="region-card__arrow">←</div></div>
+    <div class="region-card"><div class="region-card__icon">🌍</div><div class="region-card__name">أوروبا</div><div class="region-card__count">+27 تحليلاً</div><div class="region-card__arrow">←</div></div>
+    <div class="region-card"><div class="region-card__icon">🌐</div><div class="region-card__name">الأقطار العربية</div><div class="region-card__count">+42 تحليلاً</div><div class="region-card__arrow">←</div></div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ══════════════════════════════
+     MANIFESTO
+══════════════════════════════ -->
+<div class="manifesto" id="manifesto">
+  <p class="manifesto__text">
+    الجيوسياسة ليست مجرد خرائط وحدود — إنها فهم الطاقة الكامنة في الأرض، التاريخ، والإنسان.
+  </p>
+  <div class="manifesto__by">— ناصر الصبري · مؤسس GeoPolo</div>
+</div>
+
+<!-- ══════════════════════════════
+     ARTICLES
+══════════════════════════════ -->
+<section class="section" id="articles">
+  <div class="section-label">آخر التحليلات</div>
+  <h2 class="section-title">ما الذي يحرّك العالم اليوم؟</h2>
+  <div class="articles-grid">
+
+    <a href="/articles/iran-israel-usa-escalade.html" class="art-card">
+      <div class="art-card__thumb">🗺️</div>
+      <div class="art-card__body">
+        <span class="art-card__tag">الشرق الأوسط</span>
+        <h3 class="art-card__title">إيران - إسرائيل - أمريكا: نحو تصعيد لا رجعة منه؟</h3>
+        <p class="art-card__excerpt">ثلاثة أطراف، ثلاثة منطقَي ردع، ودائرة صراع باتت أضيق من أن تستوعب سياسات الغموض الاستراتيجي التي حالت دون الانفجار لعقود.</p>
+        <div class="art-card__read">اقرأ التحليل ←</div>
+      </div>
+    </a>
+
+    <a href="/articles/taiwan-ile-strategique-monde.html" class="art-card">
+      <div class="art-card__thumb">🌐</div>
+      <div class="art-card__body">
+        <span class="art-card__tag">آسيا</span>
+        <h3 class="art-card__title">تايوان: لماذا هذه الجزيرة مفتاح استقرار العالم؟</h3>
+        <p class="art-card__excerpt">كيف باتت جزيرة صغيرة تُحكم مصير القرن الحادي والعشرين وتهدد التوازن الاستراتيجي العالمي.</p>
+        <div class="art-card__read">اقرأ التحليل ←</div>
+      </div>
+    </a>
+
+    <a href="/articles/guerre-hybride-europe-menaces-invisibles.html" class="art-card">
+      <div class="art-card__thumb">⚡</div>
+      <div class="art-card__body">
+        <span class="art-card__tag">أوروبا</span>
+        <h3 class="art-card__title">الحرب الهجينة: حين يصبح كل شيء سلاحاً</h3>
+        <p class="art-card__excerpt">من الطاقة إلى المعلومات — كيف تُعيد القوى الكبرى رسم حدود الصراع في عصر ما بعد الحرب التقليدية.</p>
+        <div class="art-card__read">اقرأ التحليل ←</div>
+      </div>
+    </a>
+
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ══════════════════════════════
+     NEWSLETTER
+══════════════════════════════ -->
+<div class="newsletter" id="newsletter">
+  <h3>تحليلات استراتيجية أسبوعية</h3>
+  <p>اشترك لتصلك أعمق التحليلات الجيوسياسية مباشرة في بريدك الإلكتروني</p>
+  <form class="nl-form" onsubmit="return false">
+    <input type="email" placeholder="بريدك الإلكتروني" autocomplete="email"/>
+    <button type="submit">اشترك</button>
+  </form>
+</div>
+
+<!-- ══════════════════════════════
+     FOOTER
+══════════════════════════════ -->
+<footer>
+  <div class="footer-brand">geo<span>polo</span></div>
+  <div class="footer-copy">© 2026 geopolô · تحليلات جيوسياسية مستقلة · ar.geopolo.com</div>
+</footer>
+
+<!-- ══════════════════════════════
+     LIBRARIES
+══════════════════════════════ -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+<script>
+'use strict';
+gsap.registerPlugin(ScrollTrigger);
+
+/* ════════════════════════════════════════════════════════
+   THREE.JS — WORLD MAP PARTICLE SYSTEM
+════════════════════════════════════════════════════════ */
+(function initThree() {
+
+  const hero = document.getElementById('hero');
+  const W = window.innerWidth, H = window.innerHeight;
+
+  /* Scene / Camera / Renderer */
+  const scene    = new THREE.Scene();
+  const camera   = new THREE.PerspectiveCamera(52, W / H, 0.01, 100);
+  camera.position.set(0, 0, 2.8);
+
+  const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+  renderer.setSize(W, H);
+  renderer.setClearColor(0x000000, 0);
+  renderer.domElement.id = 'three-canvas';
+  renderer.domElement.style.cssText =
+    'position:absolute;inset:0;z-index:1;';
+  hero.insertBefore(renderer.domElement, hero.firstChild);
+
+  /* ─── Build world map on an offscreen canvas, then sample ─── */
+  const MW = 600, MH = 300;
+  const mapCvs = document.createElement('canvas');
+  mapCvs.width = MW; mapCvs.height = MH;
+  const mc = mapCvs.getContext('2d');
+  mc.fillStyle = '#ffffff';
+
+  /* Simplified continent polygons [x,y] in 0-1 normalised space */
+  const continents = [
+    /* North America */
+    [[.08,.12],[.14,.07],[.22,.06],[.30,.08],[.36,.13],[.39,.20],
+     [.37,.30],[.32,.38],[.29,.50],[.24,.58],[.18,.55],[.14,.48],
+     [.11,.38],[.09,.26]],
+    /* Greenland */
+    [[.28,.05],[.34,.02],[.41,.05],[.42,.11],[.37,.15],[.29,.13]],
+    /* South America */
+    [[.22,.58],[.28,.55],[.34,.58],[.37,.66],[.38,.76],
+     [.35,.85],[.30,.93],[.24,.96],[.18,.90],[.16,.80],
+     [.16,.70],[.19,.62]],
+    /* Europe */
+    [[.44,.12],[.49,.09],[.55,.10],[.58,.14],[.59,.19],
+     [.55,.24],[.50,.25],[.46,.22],[.43,.16]],
+    /* Scandinavia */
+    [[.47,.06],[.52,.04],[.56,.08],[.53,.14],[.48,.14],[.45,.10]],
+    /* UK */
+    [[.43,.12],[.45,.10],[.47,.12],[.46,.17],[.43,.17]],
+    /* Africa */
+    [[.44,.26],[.51,.23],[.58,.25],[.61,.32],[.61,.42],
+     [.58,.53],[.56,.63],[.52,.72],[.48,.80],[.44,.82],
+     [.40,.77],[.39,.66],[.40,.55],[.42,.44],[.43,.34]],
+    /* Madagascar */
+    [[.59,.58],[.61,.56],[.63,.61],[.62,.67],[.59,.66]],
+    /* Middle East / Arabia */
+    [[.58,.23],[.63,.21],[.69,.23],[.71,.29],[.69,.36],
+     [.64,.38],[.60,.35],[.58,.29]],
+    /* Asia (main) */
+    [[.56,.12],[.63,.08],[.72,.07],[.83,.09],[.92,.11],
+     [.98,.15],[.99,.22],[.95,.30],[.88,.35],[.80,.40],
+     [.73,.44],[.68,.46],[.64,.43],[.60,.38],[.58,.30],[.56,.20]],
+    /* Indian subcontinent */
+    [[.64,.36],[.69,.35],[.73,.40],[.74,.48],[.70,.56],
+     [.65,.53],[.62,.46],[.62,.40]],
+    /* SE Asia */
+    [[.76,.40],[.83,.38],[.87,.43],[.88,.49],[.83,.53],
+     [.77,.51],[.74,.45]],
+    /* Japan */
+    [[.88,.21],[.91,.19],[.94,.22],[.93,.27],[.89,.28],[.87,.24]],
+    /* Australia */
+    [[.78,.62],[.87,.59],[.93,.61],[.96,.68],[.95,.75],
+     [.88,.81],[.80,.81],[.76,.75],[.74,.67],[.76,.63]],
+    /* New Zealand */
+    [[.96,.74],[.98,.72],[.995,.76],[.99,.81],[.96,.81]],
+  ];
+
+  continents.forEach(pts => {
+    mc.beginPath();
+    mc.moveTo(pts[0][0] * MW, pts[0][1] * MH);
+    pts.slice(1).forEach(([x,y]) => mc.lineTo(x * MW, y * MH));
+    mc.closePath(); mc.fill();
+  });
+
+  /* Sample all white pixels */
+  const pxData = mc.getImageData(0, 0, MW, MH).data;
+  const allTargets = [];
+  const SAMPLE = 2; // step in pixels — lower = more particles
+  for (let y = 0; y < MH; y += SAMPLE) {
+    for (let x = 0; x < MW; x += SAMPLE) {
+      if (pxData[(y * MW + x) * 4] > 200) {
+        allTargets.push(
+          (x / MW - 0.5) * 4.2,
+          -(y / MH - 0.5) * 2.1,
+          0
+        );
+      }
+    }
+  }
+
+  /* Cap at 6000 particles, shuffle targets */
+  const N = Math.min(Math.floor(allTargets.length / 3), 6000);
+  const shuffled = [];
+  for (let i = 0; i < allTargets.length / 3; i++) shuffled.push(i);
+  for (let i = shuffled.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+  }
+
+  const posArr  = new Float32Array(N * 3);
+  const tgtArr  = new Float32Array(N * 3);
+  const colArr  = new Float32Array(N * 3);
+  const szArr   = new Float32Array(N);
+  const rndArr  = new Float32Array(N);
+
+  for (let i = 0; i < N; i++) {
+    const si = shuffled[i] * 3;
+    tgtArr[i*3]   = allTargets[si];
+    tgtArr[i*3+1] = allTargets[si+1];
+    tgtArr[i*3+2] = allTargets[si+2];
+
+    /* Random start positions — scattered dust */
+    posArr[i*3]   = (Math.random() - .5) * 9;
+    posArr[i*3+1] = (Math.random() - .5) * 5;
+    posArr[i*3+2] = (Math.random() - .5) * 5;
+
+    /* Gold → warm sepia colour variation */
+    const c = Math.random();
+    colArr[i*3]   = .76 + c * .22;
+    colArr[i*3+1] = .52 + c * .18;
+    colArr[i*3+2] = .02 + c * .10;
+
+    szArr[i]  = Math.random() * 2.4 + 1.0;
+    rndArr[i] = Math.random();
+  }
+
+  const geo = new THREE.BufferGeometry();
+  geo.setAttribute('position', new THREE.BufferAttribute(posArr, 3));
+  geo.setAttribute('aTarget',  new THREE.BufferAttribute(tgtArr, 3));
+  geo.setAttribute('aColor',   new THREE.BufferAttribute(colArr, 3));
+  geo.setAttribute('aSize',    new THREE.BufferAttribute(szArr,  1));
+  geo.setAttribute('aRandom',  new THREE.BufferAttribute(rndArr, 1));
+
+  /* Vertex shader — interpolates from scattered → map positions */
+  const VERT = `
+    attribute vec3  aTarget;
+    attribute vec3  aColor;
+    attribute float aSize;
+    attribute float aRandom;
+    uniform   float uProgress;
+    uniform   float uTime;
+    uniform   float uPR;
+    varying   vec3  vColor;
+    varying   float vAlpha;
+
+    void main(){
+      vColor = aColor;
+      /* per-particle staggered delay */
+      float delay = aRandom * 0.45;
+      float t = clamp((uProgress - delay) / (1.0 - delay), 0.0, 1.0);
+      t = t*t*(3.0 - 2.0*t); /* smoothstep */
+
+      vec3 pos = mix(position, aTarget, t);
+
+      /* ambient floating when not yet settled */
+      float chaos = 1.0 - t;
+      pos.x += sin(uTime*0.35 + aRandom*6.28) * chaos * 0.18;
+      pos.y += cos(uTime*0.28 + aRandom*6.28) * chaos * 0.18;
+      pos.z += sin(uTime*0.50 + aRandom*3.14) * chaos * 0.10;
+
+      /* settled particles breathe gently */
+      pos.x += sin(uTime*0.18 + aRandom*12.0) * 0.003 * t;
+      pos.y += cos(uTime*0.14 + aRandom*12.0) * 0.003 * t;
+
+      vec4 mv = modelViewMatrix * vec4(pos, 1.0);
+      gl_Position  = projectionMatrix * mv;
+      gl_PointSize = aSize * uPR * (280.0 / -mv.z);
+      vAlpha = 0.35 + t * 0.65;
+    }
+  `;
+
+  /* Fragment shader — soft glowing disk */
+  const FRAG = `
+    varying vec3  vColor;
+    varying float vAlpha;
+    void main(){
+      vec2 uv = gl_PointCoord - 0.5;
+      float d = length(uv);
+      if(d > 0.5) discard;
+      float a = smoothstep(0.5, 0.08, d) * vAlpha;
+      gl_FragColor = vec4(vColor, a);
+    }
+  `;
+
+  const mat = new THREE.ShaderMaterial({
+    vertexShader:   VERT,
+    fragmentShader: FRAG,
+    uniforms: {
+      uProgress: { value: 0 },
+      uTime:     { value: 0 },
+      uPR:       { value: renderer.getPixelRatio() }
+    },
+    transparent: true,
+    depthWrite:  false,
+    blending:    THREE.AdditiveBlending
+  });
+
+  const particles = new THREE.Points(geo, mat);
+  scene.add(particles);
+
+  /* ─── Background ambient dust ─── */
+  const DUST = 500;
+  const dGeo  = new THREE.BufferGeometry();
+  const dPos  = new Float32Array(DUST * 3);
+  const dSz   = new Float32Array(DUST);
+  for (let i = 0; i < DUST; i++) {
+    dPos[i*3]   = (Math.random()-0.5)*12;
+    dPos[i*3+1] = (Math.random()-0.5)*7;
+    dPos[i*3+2] = (Math.random()-0.5)*5 - 1.5;
+    dSz[i]      = Math.random() * 1.8 + 0.4;
+  }
+  dGeo.setAttribute('position', new THREE.BufferAttribute(dPos, 3));
+  dGeo.setAttribute('aSize',    new THREE.BufferAttribute(dSz, 1));
+
+  const dMat = new THREE.ShaderMaterial({
+    vertexShader: `
+      attribute float aSize;
+      uniform float uTime, uPR;
+      void main(){
+        vec3 p = position;
+        p.y += sin(uTime*0.09 + position.x*0.5)*0.06;
+        p.x += cos(uTime*0.07 + position.y*0.5)*0.04;
+        vec4 mv = modelViewMatrix * vec4(p,1.0);
+        gl_Position  = projectionMatrix * mv;
+        gl_PointSize = aSize * uPR * (90.0/-mv.z);
+      }`,
+    fragmentShader: `
+      void main(){
+        vec2 uv=gl_PointCoord-0.5;
+        if(length(uv)>0.5) discard;
+        float a=smoothstep(0.5,0.0,length(uv))*0.22;
+        gl_FragColor=vec4(0.78,0.55,0.08,a);
+      }`,
+    uniforms: { uTime:{value:0}, uPR:{value:renderer.getPixelRatio()} },
+    transparent:true, depthWrite:false, blending:THREE.AdditiveBlending
+  });
+  scene.add(new THREE.Points(dGeo, dMat));
+
+  /* ─── Mouse parallax & scroll ─── */
+  let mX = 0, mY = 0, scrollY = 0;
+  window.addEventListener('mousemove', e => {
+    mX = (e.clientX/window.innerWidth  - .5) * 2;
+    mY = (e.clientY/window.innerHeight - .5) * 2;
+  });
+  window.addEventListener('scroll', () => { scrollY = window.scrollY; });
+
+  /* ─── Resize ─── */
+  window.addEventListener('resize', () => {
+    camera.aspect = window.innerWidth / window.innerHeight;
+    camera.updateProjectionMatrix();
+    renderer.setSize(window.innerWidth, window.innerHeight);
+    mat.uniforms.uPR.value  = renderer.getPixelRatio();
+    dMat.uniforms.uPR.value = renderer.getPixelRatio();
+  });
+
+  /* ─── Render loop ─── */
+  const clock = new THREE.Clock();
+  (function loop() {
+    requestAnimationFrame(loop);
+    const t = clock.getElapsedTime();
+    mat.uniforms.uTime.value  = t;
+    dMat.uniforms.uTime.value = t;
+
+    camera.position.x += (mX * 0.07 - camera.position.x) * 0.04;
+    camera.position.y += (-mY * 0.05 - camera.position.y) * 0.04;
+    particles.position.y = -scrollY * 0.0009;
+    camera.lookAt(0, 0, 0);
+    renderer.render(scene, camera);
+  })();
+
+  /* Expose progress hook for GSAP */
+  window._mapProgress = v => { mat.uniforms.uProgress.value = v; };
+
+})(); // end initThree
+
+
+/* ════════════════════════════════════════════════════════
+   ROOT SYSTEM — Organic 2D canvas
+════════════════════════════════════════════════════════ */
+(function initRoots() {
+
+  const canvas = document.getElementById('root-canvas');
+  const ctx    = canvas.getContext('2d');
+
+  function resize() {
+    canvas.width  = window.innerWidth;
+    canvas.height = window.innerHeight;
+  }
+  resize();
+  window.addEventListener('resize', () => { resize(); buildRoots(); });
+
+  const branches = [];
+
+  /* ─── Branch class — cubic bezier with organic jitter ─── */
+  function Branch(x, y, angle, len, depth, w) {
+    this.x = x; this.y = y;
+    this.angle = angle; this.len = len;
+    this.depth = depth; this.w = w;
+    this.grown = false;
+
+    const jit = () => (Math.random() - .5);
+    /* End point */
+    this.ex = x + Math.cos(angle + jit()*.4) * len;
+    this.ey = y + Math.sin(angle + jit()*.4) * len;
+    /* Control points */
+    this.cx1 = x + Math.cos(angle + jit()*.55) * len * .32;
+    this.cy1 = y + Math.sin(angle + jit()*.55) * len * .32;
+    this.cx2 = x + Math.cos(angle + jit()*.55) * len * .70;
+    this.cy2 = y + Math.sin(angle + jit()*.55) * len * .70;
+  }
+
+  /* Point on cubic bezier at t ∈ [0,1] */
+  Branch.prototype.pt = function(t) {
+    const m = 1 - t;
+    return {
+      x: m*m*m*this.x + 3*m*m*t*this.cx1 + 3*m*t*t*this.cx2 + t*t*t*this.ex,
+      y: m*m*m*this.y + 3*m*m*t*this.cy1 + 3*m*t*t*this.cy2 + t*t*t*this.ey
+    };
+  };
+
+  /* Spawn child branches when ~75% grown */
+  Branch.prototype.sprout = function() {
+    if (this.grown || this.depth <= 0) return;
+    this.grown = true;
+    const count = Math.random() > .35 ? 2 : 1;
+    for (let i = 0; i < count; i++) {
+      const spread = (Math.random() - .5) * 1.1 + (i === 0 ? -.35 : .35);
+      branches.push(new Branch(
+        this.ex, this.ey,
+        this.angle + spread,
+        this.len * (.48 + Math.random()*.28),
+        this.depth - 1,
+        this.w * .58
+      ));
+    }
+  };
+
+  /* Draw up to progress t ∈ [0,1] */
+  Branch.prototype.draw = function(t) {
+    if (t <= 0) return;
+    t = Math.min(t, 1);
+    const alpha = (this.depth / 6) * .7;
+    const lw    = Math.max(this.w * (.9 - (1-t)*.4), .2);
+
+    ctx.beginPath();
+    ctx.moveTo(this.x, this.y);
+    const steps = 18;
+    for (let i = 1; i <= steps; i++) {
+      const p = this.pt((i/steps) * t);
+      ctx.lineTo(p.x, p.y);
+    }
+
+    /* Glow pass (thick, low alpha) */
+    ctx.strokeStyle = `rgba(200,146,10,${alpha * .28})`;
+    ctx.lineWidth   = lw * 3.5;
+    ctx.lineCap     = 'round';
+    ctx.lineJoin    = 'round';
+    ctx.stroke();
+
+    /* Core pass */
+    ctx.strokeStyle = `rgba(212,168,67,${alpha})`;
+    ctx.lineWidth   = lw;
+    ctx.stroke();
+
+    if (t > .75) this.sprout();
+  };
+
+  /* Build initial root trunks from top of screen */
+  function buildRoots() {
+    branches.length = 0;
+    const W = canvas.width;
+    const startXs = [.12, .27, .45, .62, .78, .90];
+    startXs.forEach(sx => {
+      branches.push(new Branch(
+        W * sx, -4,
+        Math.PI * (.42 + Math.random()*.16),
+        window.innerHeight * (.22 + Math.random()*.18),
+        6,
+        1.4 + Math.random() * .8
+      ));
+    });
+  }
+  buildRoots();
+
+  let rootProg = 0;
+  window._rootProgress = v => { rootProg = v; };
+
+  /* Render loop */
+  (function loop() {
+    requestAnimationFrame(loop);
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    if (rootProg <= 0) return;
+
+    branches.forEach((b, idx) => {
+      /* Stagger: each branch starts slightly later based on depth */
+      const depthDelay = (6 - b.depth) * .22;
+      const localT = Math.max(0, Math.min(1,
+        (rootProg * 4.2 - depthDelay) / 1.5
+      ));
+      b.draw(localT);
+    });
+  })();
+
+})(); // end initRoots
+
+
+/* ════════════════════════════════════════════════════════
+   GSAP — CINEMATIC TIMELINE
+════════════════════════════════════════════════════════ */
+(function initGSAP() {
+
+  /* Set initial y offsets so elements slide in */
+  gsap.set(['#hero-eyebrow','#hero-title','#hero-sub','#hero-cta'], { y: 28 });
+  gsap.set('#scroll-cue', { y: 10 });
+
+  const tl = gsap.timeline({ delay: .2 });
+
+  /* 1. Nav */
+  tl.to('#nav', { opacity:1, duration:1.4, ease:'power2.out' }, 0.6);
+
+  /* 2. Map assembles — drive uProgress from 0 → 1 */
+  const mapProxy = { v: 0 };
+  tl.to(mapProxy, {
+    v: 1, duration: 5.5, ease: 'power1.inOut',
+    onUpdate() { if (window._mapProgress) window._mapProgress(mapProxy.v); }
+  }, 1.2);
+
+  /* 3. Root canvas fades in */
+  tl.to('#root-canvas', { opacity:1, duration:1.8, ease:'power2.inOut' }, 3.2);
+
+  /* 4. Roots grow */
+  const rootProxy = { v: 0 };
+  tl.to(rootProxy, {
+    v: 1, duration: 5, ease: 'power1.inOut',
+    onUpdate() { if (window._rootProgress) window._rootProgress(rootProxy.v); }
+  }, 3.2);
+
+  /* 5. Hero text — staggered cinematic reveal */
+  tl.to('#hero-eyebrow', { opacity:1, y:0, duration:1, ease:'power3.out' }, 3.8);
+  tl.to('#hero-title',   { opacity:1, y:0, duration:1.3, ease:'power3.out' }, 4.2);
+  tl.to('#hero-sub',     { opacity:1, y:0, duration:1,   ease:'power2.out' }, 4.8);
+  tl.to('#hero-cta',     { opacity:1, y:0, duration:.9,  ease:'power2.out' }, 5.4);
+  tl.to('#scroll-cue',   { opacity:1, y:0, duration:1,   ease:'power2.out' }, 6.8);
+
+  /* ── SCROLL ANIMATIONS ── */
+
+  /* Hero parallax — content rises as user scrolls */
+  ScrollTrigger.create({
+    trigger:'#hero', start:'top top', end:'bottom top', scrub:1.2,
+    onUpdate(self) {
+      const p = self.progress;
+      gsap.set('.hero-content', { y: p * 110, opacity: 1 - p * 1.5 });
+    }
+  });
+
+  /* Sections fade in on scroll */
+  gsap.utils.toArray(['.section', '.manifesto', '.newsletter']).forEach(el => {
+    gsap.from(el, {
+      y:55, opacity:0, duration:1.25, ease:'power2.out',
+      scrollTrigger: { trigger:el, start:'top 84%', toggleActions:'play none none none' }
+    });
+  });
+
+  /* Regions — stagger */
+  gsap.from('.region-card', {
+    y:40, opacity:0, duration:.8, ease:'power2.out', stagger:.08,
+    scrollTrigger: { trigger:'.regions', start:'top 80%', toggleActions:'play none none none' }
+  });
+
+  /* Article cards — stagger */
+  gsap.from('.art-card', {
+    y:50, opacity:0, duration:1, ease:'power2.out', stagger:.12,
+    scrollTrigger: { trigger:'.articles-grid', start:'top 82%', toggleActions:'play none none none' }
+  });
+
+  /* Manifesto text */
+  gsap.from('.manifesto__text', {
+    y:35, opacity:0, duration:1.5, ease:'power3.out',
+    scrollTrigger: { trigger:'.manifesto', start:'top 75%', toggleActions:'play none none none' }
+  });
+
+  /* Root canvas parallax on scroll (roots move slower than content) */
+  gsap.to('#root-canvas', {
+    y: -80,
+    scrollTrigger: { trigger:'#hero', start:'top top', end:'bottom top', scrub:2 }
+  });
+
+})(); // end initGSAP
+
+
+/* ════════════════════════════════════════════════════════
+   SMOOTH ANCHOR SCROLL
+════════════════════════════════════════════════════════ */
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', e => {
+    const target = document.querySelector(a.getAttribute('href'));
+    if (!target) return;
+    e.preventDefault();
+    target.scrollIntoView({ behavior:'smooth', block:'start' });
+  });
+});
+</script>
+
+</body>
+</html>
