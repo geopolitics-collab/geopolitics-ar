@@ -2,17 +2,35 @@
 <html lang="ar" dir="rtl">
 <head>
 <meta charset="UTF-8"/>
-<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0,viewport-fit=cover"/>
+<meta name="mobile-web-app-capable" content="yes"/>
+<meta name="apple-mobile-web-app-capable" content="yes"/>
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
+<meta name="theme-color" content="#2d3d1e"/>
 <title>اختفاء غامض لجنديين أمريكيين في المغرب خلال مناورات الأسد الإفريقي 2026 | GeoPolo</title>
 <link rel="alternate" hreflang="ar" href="https://ar.geopolo.com/articles/geopolo-article-missing-soldiers.html"/>
 <link rel="alternate" hreflang="x-default" href="https://geopolo.com/"/>
 <meta name="description" content="اختفى جنديان أمريكيان مساء السبت 2 مايو 2026 خلال مناورات الأسد الإفريقي 2026 جنوب المغرب، قرب منطقة باب دراع بإقليم طانطان. AFRICOM تفتح تحقيقاً وعمليات البحث مستمرة."/>
 <meta name="keywords" content="اختفاء جنود أمريكيين المغرب, الأسد الإفريقي 2026, AFRICOM, طانطان, باب دراع, مناورات عسكرية, القوات المسلحة الملكية المغربية, التعاون الأمريكي المغربي"/>
-<meta name="author" content="ناصر الصبري"/>
-<meta property="og:title" content="اختفاء غامض لجنديين أمريكيين في المغرب خلال مناورات الأسد الإفريقي 2026"/>
-<meta property="og:description" content="تفاصيل متطورة عن اختفاء جنديين أمريكيين خلال أكبر تمرين عسكري مشترك في إفريقيا"/>
-<meta property="og:image" content="https://pub-a7b1a75f72ab40548a0709f708ca2678.r2.dev/asie/solidar-usa-morroco.png"/>
+<<meta name="author" content="ناصر الصبري"/>
+
 <meta property="og:type" content="article"/>
+<meta property="og:url" content="https://example.com/article-page"/>
+
+<meta property="og:title" content="اختفاء غامض لجنديين أمريكيين في المغرب خلال مناورات الأسد الإفريقي 2026"/>
+
+<meta property="og:description" content="تفاصيل متطورة عن اختفاء جنديين أمريكيين خلال أكبر تمرين عسكري مشترك في إفريقيا"/>
+
+<meta property="og:image" content="https://pub-a7b1a75f72ab40548a0709f708ca2678.r2.dev/asie/solidar-usa-morroco.png"/>
+
+<meta property="og:image:secure_url" content="https://pub-a7b1a75f72ab40548a0709f708ca2678.r2.dev/asie/solidar-usa-morroco.png"/>
+
+<meta property="og:image:type" content="image/png"/>
+<meta property="og:image:width" content="1200"/>
+<meta property="og:image:height" content="630"/>
+<meta property="og:image:alt" content="جنود أمريكيون ومغاربة خلال مناورات الأسد الإفريقي 2026"/>
+
+<meta name="twitter:card" content="summary_large_image"/>
 <meta property="og:site_name" content="geopolô"/>
 <meta property="og:url" content="https://ar.geopolo.com/articles/geopolo-article-missing-soldiers.html"/>
 <meta property="og:locale" content="ar_AR"/>
@@ -114,7 +132,16 @@ function copyShareLink(url, btn) {
   --rule:#ddd9d0
 }
 *{box-sizing:border-box;margin:0;padding:0}
-body{font-family:var(--sans);background:#f8f6f0;color:var(--ink);direction:rtl}
+body{
+  font-family:var(--sans);
+  background:#f8f6f0;
+  color:var(--ink);
+  direction:rtl;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  text-rendering:optimizeLegibility;
+  overflow-x:hidden;
+}
 a{color:inherit;text-decoration:none}
 
 /* ═══ NAV ═══ */
@@ -152,7 +179,6 @@ nav .nav-links a:hover{color:var(--gold)}
 
 /* ═══ HERO ═══ */
 .hero{position:relative;height:460px;overflow:hidden;background:#0d1208}
-.hero img{width:100%;height:100%;object-fit:cover;filter:brightness(.52) saturate(.75)}
 .hero-body{
   position:absolute;inset:0;
   display:flex;flex-direction:column;justify-content:flex-end;
@@ -443,7 +469,7 @@ nav .nav-links a:hover{color:var(--gold)}
 .nl-form button:hover{background:#a67c20}
 
 /* ═══ FOOTER ═══ */
-footer{background:var(--navy);color:rgba(255,255,255,.6);text-align:center;padding:2rem;font-family:var(--sans);font-size:.75rem;margin-top:2rem;border-top:2px solid var(--gold)}
+footer{background:var(--navy);color:rgba(255,255,255,.6);text-align:center;padding:2rem 2rem calc(2rem + env(safe-area-inset-bottom));font-family:var(--sans);font-size:.75rem;margin-top:2rem;border-top:2px solid var(--gold)}
 footer .logo{color:var(--gold);font-size:1.3rem;font-weight:900;margin-bottom:.5rem;font-family:var(--serif)}
 footer a{color:var(--gold);margin:0 .5rem;transition:opacity .2s}
 footer a:hover{opacity:.75}
@@ -451,15 +477,214 @@ footer a:hover{opacity:.75}
 /* ═══ READING PROGRESS ═══ */
 #reading-progress{position:fixed;top:0;right:0;height:3px;background:var(--olive);z-index:999;width:0%;transition:width .1s linear;left:auto}
 
-/* ═══ RESPONSIVE ═══ */
-@media(max-width:640px){
-  .hero{height:360px}
-  .hero-title{font-size:1.2rem}
-  .container{padding:1.5rem 1rem}
-  .author-card-v2{flex-direction:column;align-items:center;text-align:center}
-  .author-photo{width:80px;height:80px}
-  .share-bar-top{padding:.5rem 1rem}
-  .key-facts__grid{grid-template-columns:repeat(2,1fr)}
+/* ═══ RESPONSIVE — MOBILE FIRST ═══ */
+
+/* ── Tablette ── */
+@media(max-width:768px){
+  .topbar-army{
+    flex-direction:column;
+    gap:.3rem;
+    text-align:center;
+    padding:.5rem 1rem;
+    font-size:.68rem;
+  }
+  nav .nav-links{
+    gap:.9rem;
+    flex-wrap:wrap;
+    justify-content:flex-end;
+  }
+  nav .nav-links a{font-size:.72rem}
+  .hero{height:400px}
+  .hero-title{font-size:1.3rem;line-height:1.38}
+  .container{padding:1.5rem 1.1rem}
+  .nl-form{flex-direction:column}
+  .nl-form button{width:100%}
+}
+
+/* ── Mobile (≤480px) — refonte complète ── */
+@media(max-width:480px){
+
+  /* Topbar : 1 ligne centrée */
+  .topbar-army{
+    flex-direction:column;
+    gap:.28rem;
+    padding:.5rem .9rem;
+    font-size:.62rem;
+    text-align:center;
+  }
+
+  /* Nav : logo + hamburger-like scroll */
+  nav{
+    padding:.7rem 1rem;
+    gap:.6rem;
+  }
+  nav a{font-size:.95rem}
+  nav .nav-links{
+    display:flex;
+    gap:.6rem;
+    overflow-x:auto;
+    -webkit-overflow-scrolling:touch;
+    scrollbar-width:none;
+    padding-bottom:.1rem;
+    flex-wrap:nowrap;
+  }
+  nav .nav-links::-webkit-scrollbar{display:none}
+  nav .nav-links a{font-size:.7rem;white-space:nowrap}
+
+  /* Hero : hauteur réduite, texte lisible */
+  .hero{height:300px}
+  .hero-body{padding:1.2rem 1rem 1rem}
+  .hero-tag{font-size:.58rem;padding:.2rem .65rem;margin-bottom:.65rem}
+  .hero-meta-bar{gap:.7rem;margin-bottom:.65rem}
+  .hero-meta-bar span{font-size:.65rem}
+  .hero-title{
+    font-size:1.12rem;
+    line-height:1.38;
+    margin-bottom:.6rem;
+    text-shadow:0 1px 10px rgba(0,0,0,.9);
+  }
+  .hero-dek{font-size:.82rem;line-height:1.65;padding-right:.7rem}
+  .hero-credit{font-size:.5rem}
+
+  /* Share bar top : scroll horizontal */
+  .share-bar-top{
+    padding:.5rem .9rem;
+    gap:.5rem;
+    flex-wrap:nowrap;
+    overflow-x:auto;
+    -webkit-overflow-scrolling:touch;
+    scrollbar-width:none;
+  }
+  .share-bar-top::-webkit-scrollbar{display:none}
+  .sbt-btns{flex-wrap:nowrap;gap:.3rem}
+  .sbt{
+    font-size:.6rem;
+    padding:.3rem .55rem;
+    white-space:nowrap;
+    flex-shrink:0;
+  }
+  .share-bar-top .read-time{
+    flex-shrink:0;
+    white-space:nowrap;
+    font-size:.6rem;
+  }
+
+  /* Container */
+  .container{padding:1.2rem .95rem}
+
+  /* Status badge */
+  .status-badge{
+    font-size:.6rem;
+    padding:.28rem .75rem;
+    margin-bottom:1rem;
+  }
+
+  /* Lead paragraph */
+  .lead-p{
+    font-size:.95rem;
+    line-height:1.8;
+    padding:.85rem 1rem;
+    margin-bottom:1.5rem;
+  }
+
+  /* Key facts : 2 colonnes fixes sur mobile */
+  .key-facts{padding:1rem 1.1rem;margin:1.5rem 0}
+  .key-facts__title{font-size:.6rem;margin-bottom:.85rem}
+  .key-facts__grid{
+    grid-template-columns:repeat(2,1fr);
+    gap:.6rem;
+  }
+  .kf-num{font-size:1.3rem}
+  .kf-label{font-size:.58rem}
+  .kf-item{padding:.45rem 0}
+
+  /* Titres h2 */
+  .article-body h2{
+    font-size:1.05rem;
+    margin:1.8rem 0 .65rem;
+    padding-right:.7rem;
+    border-right-width:3px;
+    line-height:1.4;
+  }
+
+  /* Paragraphes */
+  .article-body p{
+    font-size:.95rem;
+    line-height:1.88;
+    margin-bottom:1.1rem;
+  }
+
+  /* Pull quote */
+  .pull-quote{
+    font-size:.92rem;
+    padding:1.1rem 1.1rem 1.1rem 2rem;
+    margin:1.7rem 0;
+    line-height:1.6;
+    border-right-width:3px;
+  }
+  .pull-quote::before{font-size:2.8rem;left:.6rem;top:-.1rem}
+
+  /* Info box */
+  .info-box{padding:1rem 1.1rem;margin:1.5rem 0}
+  .info-box h3{font-size:.63rem}
+  .info-box ul li{font-size:.84rem;padding:.45rem 0;gap:.6rem;line-height:1.5}
+
+  /* Army share block */
+  .share-army{
+    padding:1.1rem 1.2rem;
+    margin:2rem 0;
+  }
+  .share-army__label{font-size:.6rem}
+  .share-army__btns{
+    gap:.3rem;
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+  }
+  .sa-btn{
+    font-size:.58rem;
+    padding:.38rem .4rem;
+    justify-content:center;
+    letter-spacing:.02em;
+  }
+  .sa-btn svg{width:11px;height:11px}
+
+  /* Author card */
+  .author-card-v2{
+    flex-direction:column;
+    align-items:center;
+    text-align:center;
+    padding:1.1rem;
+    gap:1rem;
+    margin:2rem 0;
+  }
+  .author-photo{width:72px;height:72px}
+  .author-name-v2{font-size:.95rem}
+  .author-title-v2{font-size:.62rem}
+  .author-bio-v2{font-size:.8rem;line-height:1.68}
+  .author-links{justify-content:center}
+  .author-link{font-size:.62rem;padding:.25rem .65rem}
+
+  /* Tags */
+  .tags-section{margin-top:1.8rem;padding-top:1rem}
+  .tags-label{font-size:.6rem}
+  .tag{font-size:.62rem;padding:.22rem .65rem}
+
+  /* Newsletter */
+  .nl-cta{padding:1.5rem 1.1rem;margin:2rem 0}
+  .nl-cta h3{font-size:1rem}
+  .nl-cta p{font-size:.82rem;margin-bottom:.9rem}
+  .nl-form{flex-direction:column;gap:.5rem;max-width:100%}
+  .nl-form input{font-size:.9rem;padding:.7rem .9rem;text-align:right}
+  .nl-form button{
+    font-size:.9rem;padding:.75rem 1rem;
+    width:100%;
+  }
+
+  /* Footer */
+  footer{padding:1.5rem 1rem;font-size:.68rem}
+  footer .logo{font-size:1.1rem}
+  footer p{line-height:1.9}
+  footer a{margin:0 .3rem}
 }
 </style>
 </head>
@@ -489,12 +714,7 @@ footer a:hover{opacity:.75}
 
 <!-- HERO -->
 <div class="hero">
-  <img
-    src="https://pub-a7b1a75f72ab40548a0709f708ca2678.r2.dev/asie/solidar-usa-morroco.png"
-    alt="التضامن العسكري الأمريكي المغربي — مناورات الأسد الإفريقي 2026"
-    loading="eager"
-    fetchpriority="high"
-  />
+
   <div class="hero-body">
     <span class="hero-tag">⚑ إفريقيا · دفاع</span>
     <div class="hero-meta-bar">
@@ -647,13 +867,7 @@ footer a:hover{opacity:.75}
 
     <!-- ═══ AUTHOR ═══ -->
     <div class="author-card-v2">
-      <img class="author-photo"
-        src="https://pub-a7b1a75f72ab40548a0709f708ca2678.r2.dev/Nasser.jpg"
-        alt="ناصر الصبري — محلل جيوسياسي"
-        loading="lazy"
-        onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"
-      />
-      <div style="display:none;width:90px;height:90px;border-radius:50%;background:var(--military);align-items:center;justify-content:center;flex-shrink:0;font-family:var(--serif);font-size:1.4rem;font-weight:900;color:var(--gold);border:3px solid var(--olive)">ن ص</div>
+      <div style="display:flex;width:90px;height:90px;border-radius:50%;background:var(--military);align-items:center;justify-content:center;flex-shrink:0;font-family:var(--serif);font-size:1.4rem;font-weight:900;color:var(--gold);border:3px solid var(--olive)">ن ص</div>
       <div class="author-info">
         <div class="author-name-v2">ناصر الصبري</div>
         <div class="author-title-v2">محلل جيوسياسي · مؤسس GeoPolo</div>
