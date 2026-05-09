@@ -209,6 +209,29 @@ footer{background:#1a1a2a;color:#8a87a0;padding:3rem 2rem 1.5rem;font-family:var
 .share-rd{background:#ff4500;color:#fff}
 .share-ss{background:#ff6719;color:#fff}
 
+
+/* ── ARTICLE CARDS GRID v2 ── */
+.article-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.2rem;margin:2rem 0}
+.article-card{display:flex;flex-direction:column;background:#fff;border:1px solid #e8e4dc;overflow:hidden;transition:transform .22s cubic-bezier(.4,0,.2,1),box-shadow .22s cubic-bezier(.4,0,.2,1);text-decoration:none;color:inherit}
+.article-card:hover{transform:translateY(-4px);box-shadow:0 8px 28px rgba(14,26,43,.1)}
+.article-card__img-wrap{position:relative;height:0;padding-bottom:56.25%;overflow:hidden;background:#d0cfc8}
+.article-card__img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:saturate(.88);transition:filter .4s,transform .4s}
+.article-card:hover .article-card__img{filter:saturate(1);transform:scale(1.04)}
+.article-card__body{padding:1rem 1.1rem;flex:1;display:flex;flex-direction:column}
+.article-card__tag{font-family:'Noto Naskh Arabic',sans-serif;font-size:.58rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#fff;padding:.18rem .55rem;border-radius:2px;display:inline-block;margin-bottom:.55rem;align-self:flex-start}
+.article-card__title{font-family:'Noto Serif Arabic',Georgia,serif;font-size:.95rem;font-weight:700;line-height:1.4;color:#0A0C0E;margin-bottom:.5rem;flex:1}
+.article-card__desc{font-family:'Noto Naskh Arabic',sans-serif;font-size:.78rem;color:#4A5568;line-height:1.6;margin-bottom:.8rem;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.article-card__footer{display:flex;justify-content:space-between;align-items:center;padding-top:.7rem;border-top:1px solid #EAE5D8}
+.article-card__read{font-family:'Noto Naskh Arabic',sans-serif;font-size:.65rem;font-weight:700}
+.article-card__time{font-family:'Noto Naskh Arabic',sans-serif;font-size:.62rem;color:#8A94A6}
+.article-grid-header{display:flex;align-items:center;gap:.8rem;padding:.7rem 0;border-bottom:2px solid;margin-bottom:1.2rem}
+.article-grid-header h2{font-family:'Noto Serif Arabic',Georgia,serif;font-size:1.1rem;font-weight:900;line-height:1}
+.article-grid-header-line{flex:1;height:1px;background:#EAE5D8}
+.article-grid-header a{font-family:'Noto Naskh Arabic',sans-serif;font-size:.65rem;font-weight:600;opacity:.8;transition:opacity .15s}
+.article-grid-header a:hover{opacity:1}
+@media(max-width:640px){.article-grid{grid-template-columns:1fr 1fr;gap:.8rem}}
+@media(max-width:380px){.article-grid{grid-template-columns:1fr}}
+
 </style>
 <script src="https://sites.super.myninja.ai/_assets/ninja-daytona-script.js"></script>
 </head>
@@ -262,7 +285,7 @@ footer{background:#1a1a2a;color:#8a87a0;padding:3rem 2rem 1.5rem;font-family:var
 <section class="wrap">
   <div class="section-header reveal">
     <h2>📰 أحدث المقالات</h2>
-    <span class="count">13 مقالاً</span>
+    <span class="count">25 مقالاً</span>
   </div>
 
   <div class="grid">
@@ -475,6 +498,188 @@ footer{background:#1a1a2a;color:#8a87a0;padding:3rem 2rem 1.5rem;font-family:var
       </div>
     </a>
 
+    <!-- egypte-vs-turquie-militaire -->
+    <a href="articles/egypte-vs-turquie-militaire.html" class="card reveal">
+      <div class="card__img">
+        <img src="https://images.unsplash.com/photo-1489370321024-e0410ad08da4?w=600&q=75" alt="مصر ضد تركيا عسكرياً: المقارنة الكاملة 2026" loading="lazy"/>
+        <span class="card__badge">⚔ مقارنة عسكرية</span>
+      </div>
+      <div class="card__body">
+        <h3 class="card__title">مصر ضد تركيا عسكرياً: المقارنة الكاملة 2026</h3>
+        <p class="card__excerpt">مقارنة عسكرية شاملة بين مصر وتركيا في 2026: الميزانيات والجيوش والأسطول والجو. من يتفوق في مواجهة محتملة؟</p>
+        <div class="card__meta">
+          <div class="card__author"><span class="card__author-dot">ن.ص</span>ناصر الصبري</div>
+          <span class="card__read">اقرأ المزيد ←</span>
+        </div>
+      </div>
+    </a>
+
+    <!-- bases-militaires-usa-afrique-secretes -->
+    <a href="articles/bases-militaires-usa-afrique-secretes.html" class="card reveal">
+      <div class="card__img">
+        <img src="https://images.unsplash.com/photo-1604357209793-fca5dca89f97?w=600&q=75" alt="القواعد الأمريكية السرية في أفريقيا: أين هي ولماذا؟" loading="lazy"/>
+        <span class="card__badge">🔍 قواعد عسكرية</span>
+      </div>
+      <div class="card__body">
+        <h3 class="card__title">القواعد الأمريكية السرية في أفريقيا: أين هي ولماذا؟</h3>
+        <p class="card__excerpt">الولايات المتحدة تمتلك شبكة من القواعد العسكرية السرية وشبه السرية في أفريقيا. خريطة كاملة ومحدَّثة لعام 2026.</p>
+        <div class="card__meta">
+          <div class="card__author"><span class="card__author-dot">ن.ص</span>ناصر الصبري</div>
+          <span class="card__read">اقرأ المزيد ←</span>
+        </div>
+      </div>
+    </a>
+    <!-- drones-turcs-guerres-africaines -->
+    <a href="articles/drones-turcs-guerres-africaines.html" class="card reveal">
+      <div class="card__img">
+        <img src="https://images.unsplash.com/photo-1473968512647-3e447244af8f?w=600&q=75" alt="كيف تُسيطر الدرونات التركية على حروب أفريقيا؟" loading="lazy"/>
+        <span class="card__badge">✈ طائرات مسيّرة</span>
+      </div>
+      <div class="card__body">
+        <h3 class="card__title">كيف تُسيطر الدرونات التركية على حروب أفريقيا؟</h3>
+        <p class="card__excerpt">Bayraktar TB2 التركية غيّرت موازين القوى في أثيوبيا وليبيا ومالي وأذربيجان. كيف تُهيمن المسيّرة التركية على حروب القارة؟</p>
+        <div class="card__meta">
+          <div class="card__author"><span class="card__author-dot">ن.ص</span>ناصر الصبري</div>
+          <span class="card__read">اقرأ المزيد ←</span>
+        </div>
+      </div>
+    </a>
+    <!-- forces-speciales-africaines-redoutees -->
+    <a href="articles/forces-speciales-africaines-redoutees.html" class="card reveal">
+      <div class="card__img">
+        <img src="https://pub-a7b1a75f72ab40548a0709f708ca2678.r2.dev/afrique/africa-army-best.jpg" alt="قوات العمليات الخاصة الأفريقية: أيها الأكثر رهبةً؟" loading="lazy"/>
+        <span class="card__badge">🎖 قوات خاصة</span>
+      </div>
+      <div class="card__body">
+        <h3 class="card__title">قوات العمليات الخاصة الأفريقية: أيها الأكثر رهبةً؟</h3>
+        <p class="card__excerpt">مصر والمغرب وجنوب أفريقيا وإثيوبيا تمتلك وحدات نخبة يخشاها أعداؤها. تعرف على أكثر قوات العمليات الخاصة في أفريقيا رهبةً.</p>
+        <div class="card__meta">
+          <div class="card__author"><span class="card__author-dot">ن.ص</span>ناصر الصبري</div>
+          <span class="card__read">اقرأ المزيد ←</span>
+        </div>
+      </div>
+    </a>
+    <!-- russie-militaire-afrique-avance -->
+    <a href="articles/russie-militaire-afrique-avance.html" class="card reveal">
+      <div class="card__img">
+        <img src="https://images.unsplash.com/photo-1567427017947-545c5f8d16ad?w=600&q=75" alt="روسيا تكسب أفريقيا: الاستراتيجية العسكرية الجديدة" loading="lazy"/>
+        <span class="card__badge">🇷🇺 روسيا في أفريقيا</span>
+      </div>
+      <div class="card__body">
+        <h3 class="card__title">روسيا تكسب أفريقيا: الاستراتيجية العسكرية الجديدة</h3>
+        <p class="card__excerpt">من مالي إلى أفريقيا الوسطى وليبيا والنيجر — روسيا وواغنر يُعمّقان حضورهما العسكري في أفريقيا. لماذا ينجحون؟</p>
+        <div class="card__meta">
+          <div class="card__author"><span class="card__author-dot">ن.ص</span>ناصر الصبري</div>
+          <span class="card__read">اقرأ المزيد ←</span>
+        </div>
+      </div>
+    </a>
+    <!-- 15-armes-dangereuses-sahel -->
+    <a href="articles/15-armes-dangereuses-sahel.html" class="card reveal">
+      <div class="card__img">
+        <img src="https://images.unsplash.com/photo-1516026672322-bc52d61a9e8c?w=600&q=75" alt="الأسلحة الأكثر خطورةً في حروب الساحل الأفريقي" loading="lazy"/>
+        <span class="card__badge">⚠ أسلحة الساحل</span>
+      </div>
+      <div class="card__body">
+        <h3 class="card__title">الأسلحة الأكثر خطورةً في حروب الساحل الأفريقي</h3>
+        <p class="card__excerpt">من العبوات الناسفة إلى مسيّرات شاهد الإيرانية والصواريخ الروسية — هذه الأسلحة تُحوّل الساحل إلى مختبر حرب الجيل القادم.</p>
+        <div class="card__meta">
+          <div class="card__author"><span class="card__author-dot">ن.ص</span>ناصر الصبري</div>
+          <span class="card__read">اقرأ المزيد ←</span>
+        </div>
+      </div>
+    </a>
+    <!-- afrique-pays-renforcent-armee -->
+    <a href="articles/afrique-pays-renforcent-armee.html" class="card reveal">
+      <div class="card__img">
+        <img src="https://pub-a7b1a75f72ab40548a0709f708ca2678.r2.dev/afrique/africa-army-best.jpg" alt="دول أفريقية تتسلح سراً: من يُعزز جيشه في 2026؟" loading="lazy"/>
+        <span class="card__badge">💪 تعزيز الجيوش</span>
+      </div>
+      <div class="card__body">
+        <h3 class="card__title">دول أفريقية تتسلح سراً: من يُعزز جيشه في 2026؟</h3>
+        <p class="card__excerpt">دول أفريقية تُضاعف ميزانياتها الدفاعية وتُدرب قوات نخبة بعيداً عن الأضواء. من يتسلح ولماذا؟</p>
+        <div class="card__meta">
+          <div class="card__author"><span class="card__author-dot">ن.ص</span>ناصر الصبري</div>
+          <span class="card__read">اقرأ المزيد ←</span>
+        </div>
+      </div>
+    </a>
+    <!-- afrique-pays-plus-chars -->
+    <a href="articles/afrique-pays-plus-chars.html" class="card reveal">
+      <div class="card__img">
+        <img src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=600&q=75" alt="الدبابات في أفريقيا: من يملك أكبر ترسانة؟" loading="lazy"/>
+        <span class="card__badge">🛡 دبابات</span>
+      </div>
+      <div class="card__body">
+        <h3 class="card__title">الدبابات في أفريقيا: من يملك أكبر ترسانة؟</h3>
+        <p class="card__excerpt">مصر والجزائر والمغرب وإثيوبيا — من يمتلك أكبر أسطول من الدبابات في أفريقيا وهل لا تزال الدبابات ذات قيمة في حروب 2026؟</p>
+        <div class="card__meta">
+          <div class="card__author"><span class="card__author-dot">ن.ص</span>ناصر الصبري</div>
+          <span class="card__read">اقرأ المزيد ←</span>
+        </div>
+      </div>
+    </a>
+    <!-- top-10-puissances-militaires-maghreb -->
+    <a href="articles/top-10-puissances-militaires-maghreb.html" class="card reveal">
+      <div class="card__img">
+        <img src="https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?w=600&q=75" alt="أقوى الجيوش في المغرب العربي 2026: من يتصدر؟" loading="lazy"/>
+        <span class="card__badge">🏆 Top 10 مغرب</span>
+      </div>
+      <div class="card__body">
+        <h3 class="card__title">أقوى الجيوش في المغرب العربي 2026: من يتصدر؟</h3>
+        <p class="card__excerpt">المغرب والجزائر وتونس وليبيا وموريتانيا — تصنيف شامل لأقوى القوى العسكرية في منطقة المغرب العربي لعام 2026.</p>
+        <div class="card__meta">
+          <div class="card__author"><span class="card__author-dot">ن.ص</span>ناصر الصبري</div>
+          <span class="card__read">اقرأ المزيد ←</span>
+        </div>
+      </div>
+    </a>
+    <!-- armees-africaines-equipees-russie -->
+    <a href="articles/armees-africaines-equipees-russie.html" class="card reveal">
+      <div class="card__img">
+        <img src="https://images.unsplash.com/photo-1567427017947-545c5f8d16ad?w=600&q=75" alt="أي الجيوش الأفريقية تعتمد على السلاح الروسي؟" loading="lazy"/>
+        <span class="card__badge">🔫 تسليح روسي</span>
+      </div>
+      <div class="card__body">
+        <h3 class="card__title">أي الجيوش الأفريقية تعتمد على السلاح الروسي؟</h3>
+        <p class="card__excerpt">من الجزائر إلى إثيوبيا وأنغولا ومالي — خريطة الدول الأفريقية المعتمدة على الأسلحة الروسية وكيف تأثرت بعد أوكرانيا.</p>
+        <div class="card__meta">
+          <div class="card__author"><span class="card__author-dot">ن.ص</span>ناصر الصبري</div>
+          <span class="card__read">اقرأ المزيد ←</span>
+        </div>
+      </div>
+    </a>
+    <!-- chine-usa-geopolitique-afrique -->
+    <a href="articles/chine-usa-geopolitique-afrique.html" class="card reveal">
+      <div class="card__img">
+        <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=600&q=75" alt="الصين وأمريكا يتصارعان في أفريقيا: من يكسب؟" loading="lazy"/>
+        <span class="card__badge">🌍 جيوسياسة</span>
+      </div>
+      <div class="card__body">
+        <h3 class="card__title">الصين وأمريكا يتصارعان في أفريقيا: من يكسب؟</h3>
+        <p class="card__excerpt">أفريقيا أصبحت أرض المعركة الجيوسياسية بين الصين والولايات المتحدة. من الموانئ للقواعد العسكرية — من يتقدم في 2026؟</p>
+        <div class="card__meta">
+          <div class="card__author"><span class="card__author-dot">ن.ص</span>ناصر الصبري</div>
+          <span class="card__read">اقرأ المزيد ←</span>
+        </div>
+      </div>
+    </a>
+    <!-- sahel-centre-guerres-mondiales -->
+    <a href="articles/sahel-centre-guerres-mondiales.html" class="card reveal">
+      <div class="card__img">
+        <img src="https://images.unsplash.com/photo-1516026672322-bc52d61a9e8c?w=600&q=75" alt="الساحل الأفريقي: المركز الجديد للحروب العالمية" loading="lazy"/>
+        <span class="card__badge">🔥 الساحل</span>
+      </div>
+      <div class="card__body">
+        <h3 class="card__title">الساحل الأفريقي: المركز الجديد للحروب العالمية</h3>
+        <p class="card__excerpt">من مالي إلى النيجر وبوركينا فاسو وتشاد — الساحل الأفريقي تحوّل إلى مسرح الصراع الأكبر في العالم. لماذا الآن؟</p>
+        <div class="card__meta">
+          <div class="card__author"><span class="card__author-dot">ن.ص</span>ناصر الصبري</div>
+          <span class="card__read">اقرأ المزيد ←</span>
+        </div>
+      </div>
+    </a>
+
   </div>
 
   <div class="section-header reveal"><h2>🔥 الأكثر قراءة</h2></div>
@@ -534,7 +739,6 @@ footer{background:#1a1a2a;color:#8a87a0;padding:3rem 2rem 1.5rem;font-family:var
     </form>
   </div>
 </section>
-
 <footer>
   <div class="footer-inner">
     <div class="footer-col">
