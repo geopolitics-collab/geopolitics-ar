@@ -179,11 +179,11 @@ body::before {
   border-bottom: 1px solid rgba(176,141,91,.25);
   overflow-x: auto; scrollbar-width: none;
   box-shadow: 0 2px 30px rgba(10,22,40,.15);
-  /* row-reverse + ltr : 1er élément DOM (الرئيسية) ancré à droite,
-     dernier (المجلة) à gauche — scroll LTR fiable tous navigateurs */
+  /* row-reverse = 1er DOM (الرئيسية) à DROITE, dernier (المجلة) à GAUCHE
+     justify-content:flex-start = main-start en row-reverse = DROITE */
   flex-direction: row-reverse;
   direction: ltr;
-  justify-content: flex-end;
+  justify-content: flex-start;
 }
 .site-nav::-webkit-scrollbar { display: none; }
 .site-nav a {
