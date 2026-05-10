@@ -4,3 +4,6 @@
 !.dev.vars.example
 .env*
 !.env.example
+
+# Claude Code project directory (nested git repo — breaks Pages checkout)
+.claude/
