@@ -179,12 +179,15 @@ body::before {
   border-bottom: 1px solid rgba(176,141,91,.25);
   overflow-x: auto; scrollbar-width: none;
   box-shadow: 0 2px 30px rgba(10,22,40,.15);
-  /* row + rtl : flex-start = droite, items dans l'ordre DOM de droite à gauche */
-  flex-direction: row;
-  direction: rtl;
+  /* row-reverse + ltr : 1er élément DOM (الرئيسية) ancré à droite,
+     dernier (المجلة) à gauche — scroll LTR fiable tous navigateurs */
+  flex-direction: row-reverse;
+  direction: ltr;
+  justify-content: flex-end;
 }
 .site-nav::-webkit-scrollbar { display: none; }
 .site-nav a {
+  direction: rtl;
   display: flex; align-items: center; gap: .45rem;
   padding: .85rem 1.1rem;
   font-family: var(--f-sans);
