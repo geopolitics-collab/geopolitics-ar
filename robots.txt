@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /abonnement.html
+
+Sitemap: https://ar.geopolo.com/sitemap.xml
